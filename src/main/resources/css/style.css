@@ -1,0 +1,80 @@
+* {
+	font-family: tahoma, arial, verdana, sans-serif;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 9pt;
+}
+
+.header {
+	background: #7889A3;
+	height: 60px;
+}
+
+.container {
+	text-align: center;
+}
+
+.content {
+	border: 1px solid black;
+	margin: 1em auto;
+	padding: 0 0 5em 0;
+	text-align: left;
+	width: 90%;
+	overflow: hidden;
+}
+
+.message {
+	padding: 0.5em 0.5em 0.5em 3em;
+	margin: 0 0 1em 0;
+	background: black url(../images/info.png) 0.7em center no-repeat;
+	color: white;
+	font-size: 1.5em;
+}
+
+form {
+	padding: 1em 1em 1em 150px;
+	background: url(../images/user.png) no-repeat left top;
+}
+
+form > div {
+	padding-bottom: 1em;
+}
+
+label,input {
+	display: block;
+	font-size: 1.5em;
+	margin: 0.5em 0;
+	width: 90%;
+}
+
+label[for=remember], #remember {
+	display: inline-block;
+	font-size: 1em;
+	width: auto;
+}
+
+
+button{
+	background: #F8F8F8 -webkit-linear-gradient(top, white,#EEE);
+	border-radius: 3px;
+	border: 1px solid #BBB;
+	font-size: 1.4em;
+	padding: 0.4em 0.8em;
+	margin-right: 1em;
+}
+
+section {
+	float: left;
+	width: 48%;
+}
+
+section#or {
+	width: 2%;
+	margin: 0 0.5%;
+	text-align: center;
+	border: 1px dashed green;
+	height: 20em;
+}

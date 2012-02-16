@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NextThought Login</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Application Login">
+	<meta name="author" content="NextThought">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
+	<link rel="stylesheet" href="resources/css/style.css" media="screen">
+	<script type="text/javascript" src="js/login.js"></script>
+</head>
+<body>
+
+<div class="header">
+	<img src="resources/images/ntbanner.png" width="180" height="60" border="0" alt="NextThought">
+</div>
+
+<div class="container">
+
+	<div class="content">
+		<div class="message">Please enter your login information:</div>
+		<section id="nt-login">
+			<div>
+				<form>
+					<label for="username">Username:</label>
+					<input id="username" name="username" type="email" placeholder="email@address.com"/>
+
+					<label for="password">Password:</label>
+					<input id="password" name="password" type="password"/>
+
+					<div><input id="remember" name="remember" type="checkbox"/>
+						<label for="remember">Keep me logged in on this computer</label>
+					</div>
+
+					<button type="submit" disabled>Login</button>
+					<a href="#">Information</a>
+				</form>
+			</div>
+		</section>
+		<section id="or"></section>
+		<section id="oauth-login">
+			Login with...
+		</section>
+	</div>
+
+</div>
+
+</body>
+</html>
