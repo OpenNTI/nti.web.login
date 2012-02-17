@@ -82,7 +82,7 @@ $AppConfig = {
 			clearForm();
 		}
 
-		if(emailLastValid !== username.value){
+		if(validEmail && emailLastValid !== username.value){
 			emailLastValid = username.value;
 			ping();
 		}
@@ -92,6 +92,7 @@ $AppConfig = {
 
 	function clearForm(){
 		removeClass(document.body,/logon.+/i);
+		removeClass(document.body,'or');
 		rel = {};
 		var n = oauth.getElementsByTagName('button'),
 			i = n.length-1;
@@ -248,7 +249,7 @@ $AppConfig = {
 
 		b.rel = rel;
 		addClass(b,rel.replace(/\./g,'-'));
-		b.innerHTML = rel;
+		b.innerHTML = '<span>'+rel+'</span>';
 
 		oauth.appendChild(b);
 	}
@@ -290,6 +291,15 @@ $AppConfig = {
 		}
 	}
 
+	function moveFocus(e){
+		e = e || event;
+		if(e.keyCode === 13){
+			stop(e);
+			console.log('focus logic here...');
+			password.focus();
+		}
+	}
+
 	function onReady(){
 		message = document.getElementById('message');
 		password = document.getElementById('password');
@@ -300,6 +310,7 @@ $AppConfig = {
 		oauth = document.getElementById('oauth-login');
 		setInterval(formValidation,500);
 
+		on(username,'keyup',moveFocus);
 		on(oauth,'click',clickHandler);
 		on(form,'submit',submitHandler);
 		username.focus();
@@ -325,5 +336,6 @@ $AppConfig = {
 			}
 		}
 	}
+
 	window.onload = onReady;
 }());
