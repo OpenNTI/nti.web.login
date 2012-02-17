@@ -255,7 +255,7 @@ $AppConfig = {
 
 		b.rel = rel;
 		addClass(b,rel.replace(/\./g,'-'));
-		b.innerHTML = '<span>'+rel+'</span>';
+		b.innerHTML = rel;
 
 		oauth.appendChild(b);
 	}
