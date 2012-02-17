@@ -260,13 +260,22 @@ $AppConfig = {
 		message.innerHTML = 'Please try again, there was a problem logging in.';
 	}
 
-	function submitHandler(e){
+	function loginWithRel(r,xhr){
 		mask();
 		message.innerHTML = 'Please enter your login information:';
 
 		try{
-			var tick = rel['logon.nti.password'] + "?" + toPost(getRedirects());
-			call(tick,getAuth(),function(o){
+			var url = rel[r];
+
+			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects());
+
+			if(!xhr){
+				location.replace(url);
+				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				return;
+			}
+
+			call(url, getAuth(), function(o){
 				if(!o.success){
 					return error();
 				}
@@ -279,6 +288,10 @@ $AppConfig = {
 			console.error(er.stack);
 			unmask();
 		}
+	}
+
+	function submitHandler(e){
+		loginWithRel('logon.nti.password',true);
 		return stop(e||event);
 	}
 
@@ -288,6 +301,7 @@ $AppConfig = {
 		if(/button/i.test(t.tagName)){
 			rel = t.rel;
 			console.log('act on', rel);
+			loginWithRel(rel,false);
 		}
 	}
 
