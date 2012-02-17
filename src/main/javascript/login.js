@@ -6,11 +6,13 @@ $AppConfig = {
 
 (function(){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+		message,
 		username,
 		password,
 		remember,
 		submit,
 		form,
+		url = location.href.split(/[\?#]/g)[0],
 		host = $AppConfig.server.host,
 		ping = '/dataserver2/logon.ping',
 		rel = {
@@ -57,10 +59,11 @@ $AppConfig = {
 	}
 
 	function toPost(o){
-		var k, string = [];
+		var k, t,string = [];
 		for(k in o){
 			if(o.hasOwnProperty(k)){
-				if(typeof o[k]==='string') {
+				t = typeof o[k];
+				if(t==='string' || t==='boolean' || t==='number') {
 					string.push([encodeURIComponent(k),encodeURIComponent(o[k])].join('='));
 				} else {
 					console.log(typeof o[k], k, o[k]);
@@ -78,6 +81,19 @@ $AppConfig = {
 		};
 	}
 
+	function getRedirects(){
+		var s = url.split('/'),
+			f = s.slice();
+
+		s.splice(-1,1,'success.json');
+		f.splice(-1,1,'failure.json');
+
+		return {
+			success: s.join('/'),
+			failure: f.join('/')
+		};
+	}
+
 	function xhr(){
 		return (function () {
 			try { return new XMLHttpRequest(); } catch(e){}
@@ -86,6 +102,16 @@ $AppConfig = {
 			try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
 			return null;
 		})();
+	}
+
+	function redirect(){
+		var i, v, a = location.search.replace('?','').split("&");
+		for(i=0;i<a.length;i++){
+			v = a[i].split('=');
+			if(v[0]==='return'){
+				location.replace(decodeURIComponent(v[1]));
+			}
+		}
 	}
 
 	function call(url,data,back,forceMethod){
@@ -97,7 +123,7 @@ $AppConfig = {
 
 		x.open( forceMethod? forceMethod : data? 'POST':'GET',
 				host+url,// + "?dc="+(new Date().getTime()),
-				true);
+				true, u,p);
 
 		if(a){
 			x.setRequestHeader('Authorization',a);
@@ -118,17 +144,33 @@ $AppConfig = {
 	}
 
 	function submitHdlr(e){
+		function error(){
+			unmask();
+			document.body.setAttribute('class','error');
+			message.innerHTML = 'Please try again, there was a problem logging in.';
+		}
+
 		mask();
+		message.innerHTML = 'Please enter your login information:';
 		try{
 			call(ping,null,function(o){
 				var pong = getLink(o,'handshake');
-
+				if(!pong){
+					return error();
+				}
 				call(pong, getAuth(), function(o){
 					var tick = getLink(o,'password');
+					if(!tick){
+						return error();
+					}
+					tick += "?" + toPost(getRedirects());
 
 					call(tick,getAuth(),function(o){
-
-						unmask();
+						if(!o.success){
+							return error();
+						}
+						document.getElementById('mask-msg').innerHTML = "Redirecting...";
+						redirect();
 					}, 'GET');
 				});
 			});
@@ -143,6 +185,7 @@ $AppConfig = {
 
 
 	function onReady(){
+		message = document.getElementById('message');
 		password = document.getElementById('password');
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
