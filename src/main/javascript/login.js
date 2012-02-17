@@ -140,16 +140,22 @@ $AppConfig = {
 		};
 	}
 
-	function getRedirects(){
+	function getRedirects(xhr){
 		var s = url.split('/'),
 			f = s.slice();
+		if(xhr){
+			s.splice(-1,1,'success.json');
+			f.splice(-1,1,'failure.json');
 
-		s.splice(-1,1,'success.json');
-		f.splice(-1,1,'failure.json');
+			return {
+				success: s.join('/'),
+				failure: f.join('/')
+			};
+		}
 
 		return {
-			success: s.join('/'),
-			failure: f.join('/')
+			success: params['return'],
+			failure: url + "?failed=true"
 		};
 	}
 
@@ -267,13 +273,14 @@ $AppConfig = {
 		try{
 			var url = rel[r];
 
+			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects(xhr));
+
 			if(!xhr){
 				location.replace(url);
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
 				return;
 			}
 
-			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects());
 			call(url, getAuth(), function(o){
 				if(!o.success){
 					return error();
@@ -297,6 +304,7 @@ $AppConfig = {
 	function clickHandler(e){
 		e = e || event;
 		var t = e.target, rel;
+		console.log('click',t.tagName);
 		if(/button/i.test(t.tagName)){
 			rel = t.rel;
 			console.log('act on', rel);
