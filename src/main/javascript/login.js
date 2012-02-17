@@ -37,6 +37,7 @@ $AppConfig = {
 				return l[i].href;
 			}
 		}
+		return null;
 	}
 
 	function formValidation(){
@@ -146,7 +147,7 @@ $AppConfig = {
 		}
 	}
 
-	function submitHdlr(e){
+	function submitHandler(e){
 		function error(){
 			unmask();
 			document.body.setAttribute('class','error');
@@ -198,7 +199,7 @@ $AppConfig = {
 
 //		call('/dataserver2/logout');
 
-		on(form,'submit',submitHdlr);
+		on(form,'submit',submitHandler());
 
 
 		var i, v, o={}, a = location.search.replace('?','').split("&");
