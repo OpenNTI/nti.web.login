@@ -267,14 +267,13 @@ $AppConfig = {
 		try{
 			var url = rel[r];
 
-			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects());
-
 			if(!xhr){
 				location.replace(url);
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
 				return;
 			}
 
+			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects());
 			call(url, getAuth(), function(o){
 				if(!o.success){
 					return error();
