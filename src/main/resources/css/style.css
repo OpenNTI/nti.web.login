@@ -1,5 +1,5 @@
 * {
-	font-family: tahoma, arial, verdana, sans-serif;
+	font-family: Helvetica, tahoma, arial, verdana, sans-serif;
 }
 
 html,body {
@@ -22,7 +22,8 @@ html,body {
 	margin: 1em auto;
 	padding: 0 0 5em 0;
 	text-align: left;
-	width: 90%;
+	width: 70%;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -35,7 +36,7 @@ html,body {
 }
 
 form {
-	padding: 1em 1em 1em 150px;
+	padding: 1em 150px;
 	background: url(../images/user.png) no-repeat left top;
 }
 
@@ -47,11 +48,11 @@ label,input {
 	display: block;
 	font-size: 1.5em;
 	margin: 0.5em 0;
-	width: 90%;
+	width: 100%;
 }
 
 label[for=remember], #remember {
-	display: inline-block;
+	display: inline;
 	font-size: 1em;
 	width: auto;
 }
@@ -66,15 +67,45 @@ button{
 	margin-right: 1em;
 }
 
-section {
-	float: left;
-	width: 48%;
+section#oauth-login{
+	padding: 1em 1em 1em 150px;
+}
+
+p {
+	font-size: 1.3em;
 }
 
 section#or {
-	width: 2%;
-	margin: 0 0.5%;
 	text-align: center;
-	border: 1px dashed green;
-	height: 20em;
+	font-size: 2em;
+}
+
+#mask {
+	display: none;
+	text-align: center;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 14em 0 0 0;
+	background: #f8f8ff;
+	opacity: 0.9;
+}
+
+#mask div {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+}
+
+#mask span {
+	position: relative;
+	font-size: 2em;
+	background: transparent url("../images/ajax-loader.gif") bottom center no-repeat;
+	padding: 0 0 1em 0;
+}
+
+.loading #mask{
+	display: block;
 }

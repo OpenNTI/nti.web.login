@@ -19,10 +19,10 @@
 <div class="container">
 
 	<div class="content">
-		<div class="message">Please enter your login information:</div>
+		<div id="message" class="message">Please enter your login information:</div>
 		<section id="nt-login">
 			<div>
-				<form>
+				<form id="login" method="post">
 					<label for="username">Username:</label>
 					<input id="username" name="username" type="email" placeholder="email@address.com"/>
 
@@ -33,17 +33,19 @@
 						<label for="remember">Keep me logged in on this computer</label>
 					</div>
 
-					<button type="submit" disabled>Login</button>
+					<button id="submit" type="submit" disabled>Login</button>
 					<a href="#">Information</a>
 				</form>
 			</div>
 		</section>
-		<section id="or"></section>
+		<section id="or">&mdash; or &mdash;</section>
 		<section id="oauth-login">
-			Login with...
+			<p>Login with...</p>
+			<button disabled>Google</button>
+			<button disabled>Etc...</button>
 		</section>
+		<div id="mask"><div></div><span>Loading...</span></div>
 	</div>
-
 </div>
 
 </body>
