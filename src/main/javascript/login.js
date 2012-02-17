@@ -6,34 +6,69 @@ $AppConfig = {
 
 (function(){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+		emailLastValid,
 		message,
 		username,
 		password,
 		remember,
 		submit,
 		form,
+		oauth,
 		params,
 		url = location.href.split(/[\?#]/g)[0],
 		host = $AppConfig.server.host,
-		ping = '/dataserver2/logon.ping',
-		rel = {
-			handshake: 'logon.handshake',
-			password: 'logon.nti.password'
-		};
+		rel = {};
+
+	function getClasses(dom){
+		var cls = dom.getAttribute('class');
+		if(cls) {
+			cls = cls.split(' ');
+		}
+		return cls || [];
+	}
+
+	function addClass(dom, className){
+		var c = className.toLowerCase(),
+			cls = getClasses(dom),
+			i = cls.length-1,
+			f=false;
+		for(; !f&&i>=0; i--){ f = (cls[i].toLowerCase() === c); }
+		if(!f){
+			cls.push(className);
+			dom.setAttribute('class',cls.join(' '));
+		}
+	}
+
+	function removeClass(dom, className){
+		var c = className instanceof RegExp? className : className.toLowerCase(),
+			cls = getClasses(dom),
+			i = cls.length-1;
+		for(; i>=0; i--){
+
+			if( (c instanceof RegExp && c.test(cls[i]) ) || cls[i].toLowerCase() === c){
+				cls.splice(i,1);
+				if(!(c instanceof RegExp)){
+					break;
+				}
+			}
+		}
+
+		dom.setAttribute('class',cls.join(' '));
+	}
 
 	function mask(){
-		document.body.setAttribute('class','loading');
+		addClass(document.body,'loading');
 	}
 
 	function unmask(){
-		document.body.setAttribute('class','');
+		removeClass(document.body,'loading');
 	}
 
 	function getLink(o, relName){
 		var l = (o||{}).Links || [],
 			i = l.length-1;
 		for(;i>=0; i--){
-			if(l[i].rel === rel[relName]){
+			if(l[i].rel === relName){
 				return l[i].href;
 			}
 		}
@@ -41,7 +76,28 @@ $AppConfig = {
 	}
 
 	function formValidation(){
-		submit.disabled = !(emailRx.test(username.value) && password.value );
+		var validEmail = (emailRx.test(username.value));
+
+		if(!validEmail){
+			clearForm();
+		}
+
+		if(emailLastValid !== username.value){
+			emailLastValid = username.value;
+			ping();
+		}
+
+		submit.disabled = !validEmail || !password.value;
+	}
+
+	function clearForm(){
+		removeClass(document.body,/logon.+/i);
+		rel = {};
+		var n = oauth.getElementsByTagName('button'),
+			i = n.length-1;
+		for(; i>=0; i--){
+			oauth.removeChild(n[i]);
+		}
 	}
 
 	function stop(e){
@@ -147,17 +203,19 @@ $AppConfig = {
 		}
 	}
 
-	function submitHandler(e){
-		function error(){
-			unmask();
-			document.body.setAttribute('class','error');
-			message.innerHTML = 'Please try again, there was a problem logging in.';
-		}
-		mask();
-		message.innerHTML = 'Please enter your login information:';
+	function ping(){
+		call('/dataserver2/logon.ping',null,pong);
+	}
 
+	function pong(o){
 		var auth = getAuth(),
+			link = getLink(o,'logon.handshake'),
 			nextMonth = new Date(new Date().getTime()+(1000*60*60*24*31)); //31 days;
+
+		if(!link){
+			error();
+			return;
+		}
 
 		//clear it everytime... just incase they change their mind about 'remember me'
 		document.cookie='username=null; expires=Thu, 01-Jan-70 00:00:01 GMT; path=/';
@@ -166,28 +224,55 @@ $AppConfig = {
 		document.cookie="username="+encodeURIComponent(auth.username) +
 				(auth.remember?('; expires='+nextMonth.toGMTString()) : '') + '; path=/';
 
+		call(link,auth,handshake);
+	}
+
+	function handshake(o){
+		var links = (o||{}).Links || [],
+			i = links.length-1,v;
+		clearForm();
+		for(;i>=0; i--){
+			v = links[i];
+			rel[v.rel] = v.href;
+
+			addClass(document.body,v.rel.replace(/\./g,'-'));
+			if(v.rel!=='logon.nti.password'){
+				addClass(document.body,'or');
+				addButton(v.rel);
+			}
+		}
+	}
+
+	function addButton(rel){
+		var b = document.createElement('button');
+
+		b.rel = rel;
+		addClass(b,rel.replace(/\./g,'-'));
+		b.innerHTML = rel;
+
+		oauth.appendChild(b);
+	}
+
+	function error(){
+		unmask();
+		addClass(document.body,'error');
+		message.innerHTML = 'Please try again, there was a problem logging in.';
+	}
+
+	function submitHandler(e){
+		mask();
+		message.innerHTML = 'Please enter your login information:';
+
 		try{
-			call(ping,null,function(o){
-				var pong = getLink(o,'handshake');
-				if(!pong){
+			var tick = rel['logon.nti.password'] + "?" + toPost(getRedirects());
+			call(tick,getAuth(),function(o){
+				if(!o.success){
 					return error();
 				}
-				call(pong,auth, function(o){
-					var tick = getLink(o,'password');
-					if(!tick){
-						return error();
-					}
-					tick += "?" + toPost(getRedirects());
+				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				redirect();
+			}, 'GET');
 
-					call(tick,auth,function(o){
-						if(!o.success){
-							return error();
-						}
-						document.getElementById('mask-msg').innerHTML = "Redirecting...";
-						redirect();
-					}, 'GET');
-				});
-			});
 		}
 		catch(er){
 			console.error(er.stack);
@@ -196,7 +281,14 @@ $AppConfig = {
 		return stop(e||event);
 	}
 
-
+	function clickHandler(e){
+		e = e || event;
+		var t = e.target, rel;
+		if(/button/i.test(t.tagName)){
+			rel = t.rel;
+			console.log('act on', rel);
+		}
+	}
 
 	function onReady(){
 		message = document.getElementById('message');
@@ -205,8 +297,10 @@ $AppConfig = {
 		remember = document.getElementById('remember');
 		submit = document.getElementById('submit');
 		form = document.getElementById('login');
+		oauth = document.getElementById('oauth-login');
 		setInterval(formValidation,500);
 
+		on(oauth,'click',clickHandler);
 		on(form,'submit',submitHandler);
 		username.focus();
 

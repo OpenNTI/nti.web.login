@@ -24,13 +24,18 @@
 		<section id="nt-login">
 			<div>
 				<form id="login" method="post">
-					<label for="username">Username:</label>
-					<input id="username" name="username" type="email" placeholder="email@address.com"/>
+					<div>
+						<label for="username">Username:</label>
+						<input id="username" name="username" type="email" placeholder="email@address.com"/>
+					</div>
 
-					<label for="password">Password:</label>
-					<input id="password" name="password" type="password"/>
+					<div id="password-field">
+						<label for="password">Password:</label>
+						<input id="password" name="password" type="password"/>
+					</div>
 
-					<div><input id="remember" name="remember" type="checkbox"/>
+					<div>
+						<input id="remember" name="remember" type="checkbox"/>
 						<label for="remember">Keep me logged in on this computer</label>
 					</div>
 
@@ -42,8 +47,6 @@
 		<section id="or">&mdash; or &mdash;</section>
 		<section id="oauth-login">
 			<p>Login with...</p>
-			<button disabled>Google</button>
-			<button disabled>Etc...</button>
 		</section>
 		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
 	</div>

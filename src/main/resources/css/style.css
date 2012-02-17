@@ -47,7 +47,19 @@ form {
 	background: url(../images/user.png) no-repeat left top;
 }
 
-form > div {
+
+#submit, #password-field, #or, #oauth-login {
+	display: none;
+}
+
+.logon-nti-password #submit { display: inline; }
+
+.or #or, .or #oauth-login,
+.logon-nti-password #password-field { display: block; }
+
+
+
+form div {
 	padding-bottom: 1em;
 }
 
