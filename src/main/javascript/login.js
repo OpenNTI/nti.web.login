@@ -153,7 +153,6 @@ $AppConfig = {
 			document.body.setAttribute('class','error');
 			message.innerHTML = 'Please try again, there was a problem logging in.';
 		}
-
 		mask();
 		message.innerHTML = 'Please enter your login information:';
 		try{
@@ -199,7 +198,7 @@ $AppConfig = {
 
 //		call('/dataserver2/logout');
 
-		on(form,'submit',submitHandler());
+		on(form,'submit',submitHandler);
 
 
 		var i, v, o={}, a = location.search.replace('?','').split("&");
