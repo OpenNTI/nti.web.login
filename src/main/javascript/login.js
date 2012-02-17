@@ -155,20 +155,31 @@ $AppConfig = {
 		}
 		mask();
 		message.innerHTML = 'Please enter your login information:';
+
+		var auth = getAuth(),
+			nextMonth = new Date(new Date().getTime()+(1000*60*60*24*31)); //31 days;
+
+		//clear it everytime... just incase they change their mind about 'remember me'
+		document.cookie='username=null; expires=Thu, 01-Jan-70 00:00:01 GMT; path=/';
+
+		//reset it.
+		document.cookie="username="+encodeURIComponent(auth.username) +
+				(auth.remember?('; expires='+nextMonth.toGMTString()) : '') + '; path=/';
+
 		try{
 			call(ping,null,function(o){
 				var pong = getLink(o,'handshake');
 				if(!pong){
 					return error();
 				}
-				call(pong, getAuth(), function(o){
+				call(pong,auth, function(o){
 					var tick = getLink(o,'password');
 					if(!tick){
 						return error();
 					}
 					tick += "?" + toPost(getRedirects());
 
-					call(tick,getAuth(),function(o){
+					call(tick,auth,function(o){
 						if(!o.success){
 							return error();
 						}
@@ -196,9 +207,8 @@ $AppConfig = {
 		form = document.getElementById('login');
 		setInterval(formValidation,500);
 
-//		call('/dataserver2/logout');
-
 		on(form,'submit',submitHandler);
+		username.focus();
 
 
 		var i, v, o={}, a = location.search.replace('?','').split("&");
@@ -207,9 +217,18 @@ $AppConfig = {
 			o[decodeURIComponent(v[0])]=decodeURIComponent(v[1]);
 		}
 		params = o;
-
 		if(o.host){
 			host = $AppConfig.server.host = o.host;
+		}
+
+		a = document.cookie.split(/;\s*/g);
+		for(i=0;i<a.length;i++){
+			v = a[i].split('=');
+			if(v[0]==='username'){
+				remember.checked = true;
+				username.value = decodeURIComponent(v[1]);
+				password.focus();
+			}
 		}
 	}
 	window.onload = onReady;
