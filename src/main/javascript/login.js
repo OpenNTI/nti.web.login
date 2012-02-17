@@ -12,6 +12,7 @@ $AppConfig = {
 		remember,
 		submit,
 		form,
+		params,
 		url = location.href.split(/[\?#]/g)[0],
 		host = $AppConfig.server.host,
 		ping = '/dataserver2/logon.ping',
@@ -105,13 +106,7 @@ $AppConfig = {
 	}
 
 	function redirect(){
-		var i, v, a = location.search.replace('?','').split("&");
-		for(i=0;i<a.length;i++){
-			v = a[i].split('=');
-			if(v[0]==='return'){
-				location.replace(decodeURIComponent(v[1]));
-			}
-		}
+		location.replace(params['return']);
 	}
 
 	function call(url,data,back,forceMethod){
@@ -132,12 +127,20 @@ $AppConfig = {
 		if(data) {
 			x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 		}
+		x.setRequestHeader('Accept','application/json');
 		x.send(data?toPost(data):undefined);
 		x.onreadystatechange = function(){
 			if(x.readyState == 4){
 				clearTimeout(t);
 				if(back){
-					back.call(window, x.status==200 ? JSON.parse(x.responseText): x.status );
+					var o = null;
+					try{
+						o = JSON.parse(x.responseText);
+					}
+					catch(e){
+						console.log(x.responseText);
+					}
+					back.call(window, x.status==200 ? o: x.status );
 				}
 			}
 		}
@@ -197,6 +200,17 @@ $AppConfig = {
 
 		on(form,'submit',submitHdlr);
 
+
+		var i, v, o={}, a = location.search.replace('?','').split("&");
+		for(i=0;i<a.length;i++){
+			v = a[i].split('=');
+			o[decodeURIComponent(v[0])]=decodeURIComponent(v[1]);
+		}
+		params = o;
+
+		if(o.host){
+			host = $AppConfig.server.host = o.host;
+		}
 	}
 	window.onload = onReady;
 }());
