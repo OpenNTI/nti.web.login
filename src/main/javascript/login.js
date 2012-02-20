@@ -177,12 +177,12 @@ $AppConfig = {
 		var x = xhr(),
 			u = data? data.username : undefined,
 			p = data? data.password : undefined,
-			a = u? ('Basic '+btoa(u+':'+p)) : undefined,
+			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
+			m = forceMethod? forceMethod : data? 'POST':'GET',
+			l = host+url,// + "?dc="+(new Date().getTime()),
 			t = setTimeout(function(){x.abort();},60000);
 
-		x.open( forceMethod? forceMethod : data? 'POST':'GET',
-				host+url,// + "?dc="+(new Date().getTime()),
-				true, u,p);
+		x.open( m, l, true );//, u,p);
 
 		if(a){
 			x.setRequestHeader('Authorization',a);
@@ -202,7 +202,7 @@ $AppConfig = {
 						o = JSON.parse(x.responseText);
 					}
 					catch(e){
-						console.log(x.responseText);
+						console.log(x.responseText,e);
 					}
 					back.call(window, x.status==200 ? o: x.status );
 				}
@@ -235,7 +235,12 @@ $AppConfig = {
 	}
 
 	function handshake(o){
-		var links = (o||{}).Links || [],
+		if(typeof o === 'number' || !o){
+			error();
+			return;
+		}
+
+		var links = o.Links || [],
 			i = links.length-1,v;
 		clearForm();
 		for(;i>=0; i--){
