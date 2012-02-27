@@ -1,9 +1,3 @@
-$AppConfig = {
-	server: {
-		host: 'http://localhost:8081'
-	}
-};
-
 (function(){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 		emailLastValid,
@@ -15,8 +9,9 @@ $AppConfig = {
 		form,
 		oauth,
 		params,
-		url = location.href.split(/[\?#]/g)[0],
-		host = $AppConfig.server.host,
+		loc = location,
+		url = loc.href.split(/[\?#]/g)[0],
+		host = loc.protocol+'//'+loc.host,
 		rel = {};
 
 	function getClasses(dom){
@@ -349,7 +344,7 @@ $AppConfig = {
 		}
 		params = o;
 		if(o.host){
-			host = $AppConfig.server.host = o.host;
+			host = o.host;
 		}
 
 		a = document.cookie.split(/;\s*/g);
