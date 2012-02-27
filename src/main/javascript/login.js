@@ -254,7 +254,8 @@
 		var b = document.createElement('button');
 
 		b.rel = rel;
-		addClass(b,rel.replace(/\./g,'-'));
+		b.setAttribute('title',rel);
+		addClass(b,rel.replace(/\./g,' '));
 		b.innerHTML = rel;
 
 		oauth.appendChild(b);

@@ -58,6 +58,30 @@ form {
 .logon-nti-password #password-field { display: block; }
 
 
+button.logon.google {
+ 	background: url(../images/oauth/google_signin.png);
+}
+button.logon.facebook {
+ 	background: url(../images/oauth/facebook_signin.png);
+}
+button.logon.twitter {
+ 	background: url(../images/oauth/twitter_signin.png);
+}
+button.logon.linkedin {
+ 	background: url(../images/oauth/linkedin_signin.png);
+}
+button.logon.openid {
+ 	background: url(../images/oauth/openid_signin.png);
+}
+
+button.logon {
+	width: 150px;
+	height: 22px;
+	overflow: hidden;
+	text-indent: -9999px;
+}
+button.logon:hover { background-position: 0 -24px; }
+button.logon:active { background-position: 0 -48px; }
 
 form div {
 	padding-bottom: 1em;
