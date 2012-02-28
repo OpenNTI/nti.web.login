@@ -12,6 +12,11 @@
 		loc = location,
 		url = loc.href.split(/[\?#]/g)[0],
 		host = loc.protocol+'//'+loc.host,
+		hideRel = {
+			'logon.nti.password': true,
+			'logon.continue': true,
+			'logon.logout': true
+		},
 		rel = {};
 
 	function getClasses(dom){
@@ -243,7 +248,7 @@
 			rel[v.rel] = v.href;
 
 			addClass(document.body,v.rel.replace(/\./g,'-'));
-			if(v.rel!=='logon.nti.password'){
+			if(hideRel[v.rel]!==true){
 				addClass(document.body,'or');
 				addButton(v.rel);
 			}
