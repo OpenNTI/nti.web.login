@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" manifest="manifest.appcache">
 <head>
 	<meta charset="utf-8">
 	<title>NextThought Login</title>
@@ -14,7 +14,9 @@
 <body>
 
 <div class="header">
-	<img src="resources/images/ntbanner.png" width="180" height="60" border="0" alt="NextThought">
+	<div>
+		<img src="resources/images/logo.png" width="164" height="26" border="0" id="logo" alt="NextThought">
+	</div>
 </div>
 
 <div class="container">
@@ -25,13 +27,9 @@
 			<div>
 				<form id="login" method="post">
 					<div>
+					<div>
 						<label for="username">Username:</label>
 						<input id="username" name="username" type="email" placeholder="email@address.com"/>
-					</div>
-
-					<div id="password-field">
-						<label for="password">Password:</label>
-						<input id="password" name="password" type="password"/>
 					</div>
 
 					<div>
@@ -39,18 +37,22 @@
 						<label for="remember">Remember me on this computer</label>
 					</div>
 
-					<button id="submit" type="submit" disabled>Login</button>
-					<a href="#">Information</a>
+					<div>
+						<span id="password-field">
+							<label for="password">Password:</label>
+							<input id="password" name="password" type="password" placeholder="Password"/>
+							<button id="submit" type="submit" disabled>Login</button>
+						</span>
+						<span id="oauth-login"></span>
+					</div>
+
+					<div><a href="http://nextthought.com">Information</a></div>
+					<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
+					</div>
 				</form>
 			</div>
 		</section>
-		<section id="or">&mdash; or &mdash;</section>
-		<section id="oauth-login">
-			<p>Login with...</p>
-		</section>
-		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
 	</div>
 </div>
-
 </body>
 </html>

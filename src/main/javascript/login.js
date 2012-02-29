@@ -210,6 +210,13 @@
 		}
 	}
 
+	function offline(){
+		m('You are offline.','offline');
+		mask();
+		document.getElementById('mask-msg').innerHTML = "";
+		setTimeout(function(){ window.location.reload(); },30000);
+	}
+
 	function ping(){
 		call('/dataserver2/logon.ping',null,pong);
 	}
@@ -218,6 +225,11 @@
 		var auth = getAuth(),
 			link = getLink(o,'logon.handshake'),
 			nextMonth = new Date(new Date().getTime()+(1000*60*60*24*31)); //31 days;
+
+		if(o.offline){
+			offline();
+			return;
+		}
 
 		if(!link){
 			error();
@@ -240,6 +252,11 @@
 			return;
 		}
 
+		if(o.offline){
+			offline();
+			return;
+		}
+
 		var links = o.Links || [],
 			i = links.length-1,v;
 		clearForm();
@@ -259,6 +276,7 @@
 		var b = document.createElement('button');
 
 		b.rel = rel;
+		b.setAttribute('type','button');
 		b.setAttribute('title',rel);
 		addClass(b,rel.replace(/\./g,' '));
 		b.innerHTML = rel;
@@ -266,10 +284,14 @@
 		oauth.appendChild(b);
 	}
 
-	function error(){
+	function error(msg){
+		m(msg||'Please try again, there was a problem logging in.','error');
+	}
+
+	function m(msg,cls){
 		unmask();
-		addClass(document.body,'error');
-		message.innerHTML = 'Please try again, there was a problem logging in.';
+		if(cls) { addClass(document.body,cls); }
+		message.innerHTML = msg;
 	}
 
 	function loginWithRel(r,xhr){
@@ -321,11 +343,28 @@
 	function moveFocus(e){
 		e = e || event;
 		if(e.keyCode === 13){
-			stop(e);
 			console.log('focus logic here...');
 			password.focus();
+			return stop(e);
 		}
+		return true;
 	}
+
+
+	function handleCache(){
+		var ac = window.applicationCache;
+		ac.addEventListener('updateready', function(e) {
+			if (ac.status == ac.UPDATEREADY) {
+				ac.swapCache();
+//				if (confirm('A new version of this site is available. Load it?')) {
+					window.location.reload();
+//				}
+			} else {
+				// Manifest didn't changed. Nothing new to server.
+			}
+		}, false);
+	}
+
 
 	function onReady(){
 		message = document.getElementById('message');
@@ -359,9 +398,12 @@
 			if(v[0]==='username'){
 				remember.checked = true;
 				username.value = decodeURIComponent(v[1]);
-				password.focus();
+				username.focus();
 			}
 		}
+
+
+		handleCache();
 	}
 
 	window.onload = onReady;
