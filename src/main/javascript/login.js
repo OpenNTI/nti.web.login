@@ -108,6 +108,10 @@
 		return false;
 	}
 
+	function appendUrl(base,param) {
+		return base + (base.indexOf('?') === -1 ? '?' : '&') + param;
+	}
+
 	function on(dom,event,fn){
 		if(dom.addEventListener) {
 			dom.addEventListener(event,fn,false);
@@ -155,7 +159,7 @@
 
 		return {
 			success: params['return'],
-			failure: url + "?failed=true"
+			failure: appendUrl(loc.href, "failed=true")
 		};
 	}
 
@@ -299,9 +303,7 @@
 		message.innerHTML = 'Please enter your login information:';
 
 		try{
-			var url = rel[r];
-
-			url += (url.indexOf('?') === -1? "?":"&") + toPost(getRedirects(xhr));
+			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
 
 			if(!xhr){
 				location.replace(url);
@@ -350,7 +352,6 @@
 		return true;
 	}
 
-
 	function handleCache(){
 		var ac = window.applicationCache;
 		ac.addEventListener('updateready', function(e) {
@@ -364,7 +365,6 @@
 			}
 		}, false);
 	}
-
 
 	function onReady(){
 		message = document.getElementById('message');
@@ -390,6 +390,9 @@
 		params = o;
 		if(o.host){
 			host = o.host;
+		}
+		if(o.failed){
+			error();
 		}
 
 		a = document.cookie.split(/;\s*/g);
