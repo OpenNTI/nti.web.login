@@ -23,7 +23,9 @@ resources/images/oauth/linkedin_buttons.png
 resources/images/oauth/openid_buttons.png
 resources/images/oauth/twitter_buttons.png
 
+NETWORK:
+*
 
 FALLBACK:
-/dataserver2/ offline.json
 *.html offline.html
+* offline.json
