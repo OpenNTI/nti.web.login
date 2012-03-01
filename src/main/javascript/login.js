@@ -215,7 +215,7 @@
 	}
 
 	function offline(){
-		m('You are offline.','offline');
+		messageUser('You are offline.','offline');
 		mask();
 		document.getElementById('mask-msg').innerHTML = "";
 		setTimeout(function(){ window.location.reload(); },30000);
@@ -289,10 +289,10 @@
 	}
 
 	function error(msg){
-		m(msg||'Please try again, there was a problem logging in.','error');
+		messageUser(msg||'Please try again, there was a problem logging in.','error');
 	}
 
-	function m(msg,cls){
+	function messageUser(msg,cls){
 		unmask();
 		if(cls) { addClass(document.body,cls); }
 		message.innerHTML = msg;
