@@ -174,7 +174,8 @@ button.logon.linkedin {
  	background-image: url(../images/oauth/linkedin_buttons.png);
 }
 button.logon.openid {
- 	background-image: url(../images/oauth/openid_buttons.png);
+ 	/*background-image: url(../images/oauth/openid_buttons.png);*/
+ 	background-image: url(../images/oauth/google_buttons.png);
 }
 
 button.logon {
