@@ -14,8 +14,8 @@
 		host = loc.protocol+'//'+loc.host,
 		hideRel = {
 			'logon.nti.password': true,
-			'logon.continue': true,
-			'logon.logout': true
+			'logon.continue': true
+			//'logon.logout': true
 		},
 		rel = {};
 
@@ -69,7 +69,9 @@
 			i = l.length-1;
 		for(;i>=0; i--){
 			if(l[i].rel === relName){
-				return l[i].href;
+				l = l[i].href;
+				console.log('rel:',relName, 'link:', l);
+				return l;
 			}
 		}
 		return null;
@@ -109,7 +111,10 @@
 	}
 
 	function appendUrl(base,param) {
-		return base + (base.indexOf('?') === -1 ? '?' : '&') + param;
+
+		return base.indexOf(param) >= 0 
+			? base 
+			: (base + (base.indexOf('?') === -1 ? '?' : '&') + param);
 	}
 
 	function on(dom,event,fn){
@@ -201,12 +206,17 @@
 			if(x.readyState == 4){
 				clearTimeout(t);
 				if(back){
-					var o = null;
+					var o = null, w;
 					try{
 						o = JSON.parse(x.responseText);
+						console.log(url,'response:',o);
 					}
 					catch(e){
 						console.log(x.responseText,e);
+					}
+					w = x.getResponseHeader('Warning');
+					if(w){
+						messageUser(w,'error');
 					}
 					back.call(window, x.status==200 ? o: x.status );
 				}
@@ -267,6 +277,13 @@
 		for(;i>=0; i--){
 			v = links[i];
 			rel[v.rel] = v.href;
+
+			if(/result/i.test(v.rel)){
+				console.log(v.rel, getLink(o,v.rel));
+				call(getLink(o,v.rel),getAuth(),function(){
+					console.log(arguments);
+				});
+			}
 
 			addClass(document.body,v.rel.replace(/\./g,'-'));
 			if(hideRel[v.rel]!==true){
