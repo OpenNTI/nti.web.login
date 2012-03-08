@@ -1,0 +1,193 @@
+* {
+	font-family: Helvetica, tahoma, arial, verdana, sans-serif;
+}
+
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 9pt;
+}
+
+.header {
+	/*background: #7889A3;*/
+	background: url(../images/header_tile.png) top left repeat-x;
+	height: 60px;
+}
+
+#logo {
+	margin-top: 14px;
+	float: right;
+}
+
+.header,
+.container {
+	text-align: center;
+}
+.header div,
+.content {
+	margin: 0 auto;
+	padding: 0 0 5em 0;
+	text-align: left;
+	width: 60%;
+	min-width: 760px;
+	position: relative;
+	overflow: hidden;
+}
+
+.content {
+	margin: 1em auto;
+}
+
+.message {
+	padding: 0.5em 0.5em 0.5em 3em;
+	margin: 0 0 1em 0;
+	background: url(../images/info.png) 0.7em center no-repeat;
+	font-size: 1.5em;
+}
+
+.error .message {
+	color: #cd5c5c;
+	background-image: url(../images/minus-white.png);
+}
+
+form {
+
+	padding: 1em 1em 1em 150px;
+	background: url(../images/user.png) no-repeat left top;
+}
+
+form div {
+	position: relative;
+	padding-bottom: 1em;
+}
+
+input {
+	border: 1px solid #BBB;
+	padding: 5px 0 5px 10px;
+	font-size: 15pt;
+	margin: 0.5em 0;
+	width: 80%;
+}
+
+label{ display: none; }
+label[for=remember], #remember {
+	display: inline;
+	font-size: 1em;
+	width: auto;
+}
+
+#password-field, #oauth-login {
+	display: none;
+}
+
+.or #oauth-login,
+.logon-nti-password #password-field { display: inline-block; }
+
+#password-field {
+	position: relative;
+	overflow: hidden;
+	margin: 0 1em 0 0;
+	padding: 0;
+}
+
+#password {
+	float: left;
+	margin: 0;
+	display: inline;
+	width: 91px;
+	font-size: 14px;
+	border-radius: 5px 0 0 5px;
+}
+
+#submit {
+	float: left;
+	border-radius: 0 5px 5px 0;
+	border-left-color: #DDD;
+	margin: 0;
+}
+
+
+button {
+	background: #F8F8F8 -webkit-linear-gradient(top, white,#EEE);
+	border-radius: 5px;
+	border: 1px solid #BBB;
+	font-size: 14px;
+	padding: 0.4em 0.8em;
+	margin-right: 1em;
+}
+
+section#oauth-login{
+	padding: 1em 1em 1em 150px;
+}
+
+#mask {
+	text-align: left;
+	position: absolute;
+	top: 0; left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	background:white;
+
+	visibility:hidden;
+	opacity:0;
+
+	-webkit-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-moz-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-ms-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	-o-transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+	transition: visibility 0s linear 0.5s,opacity 0.5s linear;
+}
+
+#mask span {
+	position: relative;
+	font-size: 20pt;
+	background: transparent url(../images/ajax-loader.gif) bottom center no-repeat;
+	padding: 30px;
+}
+
+.offline #mask span {
+	background: white;
+}
+
+.loading #mask{
+	visibility:visible;
+	opacity:1;
+	-webkit-transition-delay:0s;
+	-moz-transition-delay:0s;
+	-ms-transition-delay:0s;
+	-o-transition-delay:0s;
+	transition-delay:0s;
+}
+
+
+button.logon.google {
+ 	background-image: url(../images/oauth/google_buttons.png);
+}
+button.logon.facebook {
+ 	background-image: url(../images/oauth/facebook_buttons.png);
+}
+button.logon.twitter {
+ 	background-image: url(../images/oauth/twitter_buttons.png);
+}
+button.logon.linkedin {
+ 	background-image: url(../images/oauth/linkedin_buttons.png);
+}
+button.logon.openid {
+ 	/*background-image: url(../images/oauth/openid_buttons.png);*/
+ 	background-image: url(../images/oauth/google_buttons.png);
+}
+
+button.logon {
+	float: left;
+	padding: 0;
+	background-repeat: no-repeat;
+	border: none;
+	width: 194px;
+	height: 28px;
+	overflow: hidden;
+	text-indent: -9999px;
+	border-radius: 0;
+}
+button.logon:hover { background-position: 0 -30px; }
+button.logon:active { background-position: 0 -60px; }
