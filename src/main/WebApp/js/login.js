@@ -17,7 +17,8 @@
 			'logon.continue': true
 			//'logon.logout': true
 		},
-		rel = {};
+		rel = {},
+		console = window.console || {error:function(){}, log: function(){}};
 
 	function getClasses(dom){
 		var cls = dom.getAttribute('class');
