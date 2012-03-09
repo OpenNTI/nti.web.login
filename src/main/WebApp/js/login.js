@@ -18,7 +18,12 @@
 			//'logon.logout': true
 		},
 		rel = {},
-		console = window.console || {error:function(){}, log: function(){}};
+		noOp = function(){},
+		//for browsers that don't have the console object
+		console = window.console || {
+			error:function(){ window.alert.apply(window,arguments); },
+			log: function(){ noOp.apply(this,arguments); }	//shutup the interpreter warnings about wrong arg-count
+		};
 
 	function getClasses(dom){
 		var cls = dom.getAttribute('class');
@@ -213,11 +218,7 @@
 						console.log(url,'response:',o);
 					}
 					catch(e){
-						console.log(x.responseText,e);
-					}
-					w = x.getResponseHeader('Warning');
-					if(w){
-						messageUser(w,'error');
+						console.error(x.responseText,e);
 					}
 					back.call(window, x.status==200 ? o: x.status );
 				}
@@ -330,7 +331,7 @@
 			}
 
 			call(url, getAuth(), function(o){
-				if(!o.success){
+				if(typeof o === 'number' || !o.success){
 					return error();
 				}
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
