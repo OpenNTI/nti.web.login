@@ -371,6 +371,8 @@
 
 	function handleCache(){
 		var ac = window.applicationCache;
+		if (!ac) {return;}
+
 		ac.addEventListener('updateready', function(e) {
 			if (ac.status == ac.UPDATEREADY) {
 				ac.swapCache();
