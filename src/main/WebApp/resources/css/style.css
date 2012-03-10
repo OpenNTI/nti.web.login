@@ -72,6 +72,7 @@ input {
 label{ display: none; }
 label[for=remember], #remember {
 	display: inline;
+	border: none;
 	font-size: 1em;
 	width: auto;
 }
