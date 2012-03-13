@@ -1,5 +1,6 @@
 * {
 	font-family: Helvetica, tahoma, arial, verdana, sans-serif;
+	box-sizing: border-box;
 }
 
 html,body {
@@ -96,6 +97,7 @@ label[for=remember], #remember {
 	margin: 0;
 	display: inline;
 	width: 91px;
+	height: 28px;
 	font-size: 14px;
 	border-radius: 5px 0 0 5px;
 }
@@ -104,6 +106,7 @@ label[for=remember], #remember {
 	float: left;
 	border-radius: 0 5px 5px 0;
 	border-left-color: #DDD;
+	height: 28px;
 	margin: 0;
 }
 
