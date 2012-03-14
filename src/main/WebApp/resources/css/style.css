@@ -1,5 +1,6 @@
 * {
 	font-family: Helvetica, tahoma, arial, verdana, sans-serif;
+	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
@@ -99,6 +100,7 @@ label[for=remember], #remember {
 	width: 91px;
 	height: 28px;
 	font-size: 14px;
+	padding: 0 0 0 10px;
 	border-radius: 5px 0 0 5px;
 }
 
