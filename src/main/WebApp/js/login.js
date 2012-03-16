@@ -400,7 +400,6 @@
 		on(username,'keyup',moveFocus);
 		on(oauth,'click',clickHandler);
 		on(form,'submit',submitHandler);
-		username.focus();
 
 
 		var i, v, o={}, a = location.search.replace('?','').split("&");
