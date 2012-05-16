@@ -209,18 +209,23 @@
 		x.setRequestHeader('Accept','application/json');
 		x.send(data?toPost(data):undefined);
 		x.onreadystatechange = function(){
-			if(x.readyState == 4){
+			if(x.readyState === 4){
 				clearTimeout(t);
 				if(back){
 					var o = null, w;
 					try{
-						o = JSON.parse(x.responseText);
-						console.log(url,'response:',o);
+						if(x.status === 0 && x.responseText === ''){
+							console.error('The request was canceled. CORS?\nURL: '+l);
+						}
+						else {
+							o = JSON.parse(x.responseText);
+							console.log(url,'\nresponse: ',o);
+						}
 					}
 					catch(e){
 						console.error(x.responseText,e);
 					}
-					back.call(window, x.status==200 ? o: x.status );
+					back.call(window, x.status===200 ? o: x.status );
 				}
 			}
 		}
@@ -325,7 +330,7 @@
 			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
 
 			if(!xhr){
-				location.replace(url);
+				location.replace(host+url);
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
 				return;
 			}
@@ -353,10 +358,8 @@
 	function clickHandler(e){
 		e = e || event;
 		var t = e.target, rel;
-		console.log('click',t.tagName);
 		if(/button/i.test(t.tagName)){
 			rel = t.rel;
-			console.log('act on', rel);
 			loginWithRel(rel,false);
 		}
 	}
@@ -364,7 +367,6 @@
 	function moveFocus(e){
 		e = e || event;
 		if(e.keyCode === 13){
-			console.log('focus logic here...');
 			password.focus();
 			return stop(e);
 		}
@@ -376,13 +378,12 @@
 		if (!ac) {return;}
 
 		ac.addEventListener('updateready', function(e) {
-			if (ac.status == ac.UPDATEREADY) {
-				ac.swapCache();
-//				if (confirm('A new version of this site is available. Load it?')) {
-					window.location.reload();
-//				}
+			if (ac.status === ac.UPDATEREADY) {
+				try{ac.swapCache();}
+				catch(e){/*sigh*/}
+				window.location.reload();
 			} else {
-				// Manifest didn't changed. Nothing new to server.
+				// Manifest didn't changed. Nothing new to serve.
 			}
 		}, false);
 	}

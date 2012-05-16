@@ -1,5 +1,44 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800);
+
+
+@-webkit-keyframes bounceIn {
+	0% {opacity: 0;-webkit-transform: scale(.3);}
+	50% {opacity: 1;-webkit-transform: scale(1.05);}
+	70% {-webkit-transform: scale(.9);}
+	100% {-webkit-transform: scale(1);}
+}
+
+@-moz-keyframes bounceIn {
+	0% {opacity: 0;-moz-transform: scale(.3);}
+	50% {opacity: 1;-moz-transform: scale(1.05);}
+	70% {-moz-transform: scale(.9);}
+	100% {-moz-transform: scale(1);}
+}
+
+@-ms-keyframes bounceIn {
+	0% {opacity: 0;-ms-transform: scale(.3);}
+	50% {opacity: 1;-ms-transform: scale(1.05);}
+	70% {-ms-transform: scale(.9);}
+	100% {-ms-transform: scale(1);}
+}
+
+@-o-keyframes bounceIn {
+	0% {opacity: 0;-o-transform: scale(.3);}
+	50% {opacity: 1;-o-transform: scale(1.05);}
+	70% {-o-transform: scale(.9);}
+	100% {-o-transform: scale(1);}
+}
+
+@keyframes bounceIn {
+	0% {opacity: 0;transform: scale(.3);}
+	50% {opacity: 1;transform: scale(1.05);}
+	70% {transform: scale(.9);}
+	100% {transform: scale(1);}
+}
+
+
 * {
-	font-family: Helvetica, tahoma, arial, verdana, sans-serif;
+	font-family: 'Open Sans', serif !important;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
@@ -8,9 +47,53 @@ html,body {
 	margin: 0;
 	padding: 0;
 	font-size: 9pt;
+	text-align: center;
+	height: 100%;
+	background: #fbfbfb;
+}
+
+a:link,
+a:visited,
+a:active,
+a:hover,
+.links {
+	color: #84b93d;
+	text-decoration: none;
+}
+
+.wrapper {
+	display: table;
+	margin: 0 auto;
+	min-width: 800px;
+	max-width: 1600px;
+	width: 70%;
+	height: 100%;
+}
+
+.wrapper-inner {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.middle {
+	-webkit-animation: bounceIn 0.5s 0.2s ease both;
+	-moz-animation: bounceIn 0.5s 0.2s ease both;
+	-ms-animation: bounceIn 0.5s 0.2s ease both;
+	-o-animation: bounceIn 0.5s 0.2s ease both;
+	animation: bounceIn 0.5s 0.2s ease both;
+
+	box-shadow: 3px 3px 6px -3px #cccccc;
+	border-radius: 5px;
+	border: 1px solid #dbdbdb;
+	background: white;
+	overflow: hidden;
+	min-height: 400px;
+	max-height: 800px;
+	height: 70%;
 }
 
 .header {
+	border-radius: 5px 5px 0 0;
 	/*background: #7889A3;*/
 	background: url(../images/header_tile.png) top left repeat-x;
 	height: 60px;
