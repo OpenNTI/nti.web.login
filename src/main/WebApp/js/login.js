@@ -1,6 +1,7 @@
 (function(){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 		emailLastValid,
+		originalMessage,
 		message,
 		username,
 		password,
@@ -99,8 +100,8 @@
 	}
 
 	function clearForm(){
-		removeClass(document.body,/logon.+/i);
-		removeClass(document.body,'or');
+		messageUser();//reset the message
+		removeClass(document.body,/.*/);
 		rel = {};
 		var n = oauth.getElementsByTagName('button'),
 			i = n.length-1;
@@ -292,6 +293,7 @@
 				});
 			}
 
+
 			addClass(document.body,v.rel.replace(/\./g,'-'));
 			if(hideRel[v.rel]!==true){
 				addClass(document.body,'or');
@@ -320,7 +322,7 @@
 	function messageUser(msg,cls){
 		unmask();
 		if(cls) { addClass(document.body,cls); }
-		message.innerHTML = msg;
+		message.innerHTML = msg || originalMessage;
 	}
 
 	function loginWithRel(r,xhr){
@@ -398,6 +400,8 @@
 		form = document.getElementById('login');
 		oauth = document.getElementById('oauth-login');
 		setInterval(formValidation,1000);
+
+		originalMessage = message.innerHTML;
 
 		on(username,'keyup',moveFocus);
 		on(oauth,'click',clickHandler);
