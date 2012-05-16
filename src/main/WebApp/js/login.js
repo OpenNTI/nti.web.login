@@ -215,7 +215,7 @@
 					var o = null, w;
 					try{
 						if(x.status === 0 && x.responseText === ''){
-							console.error('The request was canceled. CORS?\nURL: '+l);
+							console.error('The request failed. Server up? CORS?\nURL: '+l);
 						}
 						else {
 							o = JSON.parse(x.responseText);
@@ -253,7 +253,7 @@
 		}
 
 		if(!link){
-			error();
+			error(o===0?'Server communication failure, please try again later.':false);
 			return;
 		}
 
@@ -313,6 +313,7 @@
 	}
 
 	function error(msg){
+		emailLastValid = null;
 		messageUser(msg||'Please try again, there was a problem logging in.','error');
 	}
 
@@ -396,7 +397,7 @@
 		submit = document.getElementById('submit');
 		form = document.getElementById('login');
 		oauth = document.getElementById('oauth-login');
-		setInterval(formValidation,500);
+		setInterval(formValidation,1000);
 
 		on(username,'keyup',moveFocus);
 		on(oauth,'click',clickHandler);
