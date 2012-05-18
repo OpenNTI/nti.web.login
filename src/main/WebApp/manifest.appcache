@@ -1,12 +1,10 @@
 CACHE MANIFEST
-# 2012-05-16:v14
+# 2012-05-18:v15
 
 CACHE:
 index.html
 offline.html
 offline.json
-success.json
-failure.json
 js/base64.min.js
 js/login.js
 resources/favicon.ico

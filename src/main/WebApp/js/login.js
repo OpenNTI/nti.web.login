@@ -77,7 +77,6 @@
 		for(;i>=0; i--){
 			if(l[i].rel === relName){
 				l = l[i].href;
-				console.log('rel:',relName, 'link:', l);
 				return l;
 			}
 		}
@@ -157,16 +156,8 @@
 	}
 
 	function getRedirects(xhr){
-		var s = url.split('/'),
-			f = s.slice();
 		if(xhr){
-			s.splice(-1,1,'success.json');
-			f.splice(-1,1,'failure.json');
-
-			return {
-				success: s.join('/'),
-				failure: f.join('/')
-			};
+			return {};
 		}
 
 		return {
@@ -202,11 +193,11 @@
 
 		if(a){
 			x.setRequestHeader('Authorization',a);
-			x.withCredentials = true;
 		}
 		if(data) {
 			x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
 		}
+		x.withCredentials = true;
 		x.setRequestHeader('Accept','application/json');
 		x.send(data?toPost(data):undefined);
 		x.onreadystatechange = function(){
@@ -220,13 +211,12 @@
 						}
 						else {
 							o = JSON.parse(x.responseText);
-							console.log(url,'\nresponse: ',o);
 						}
 					}
 					catch(e){
-						console.error(x.responseText,e);
+						console.error(x.responseText, e.stack || e.stacktrace);
 					}
-					back.call(window, x.status===200 ? o: x.status );
+					back.call(window, o || x.status );
 				}
 			}
 		}
@@ -315,7 +305,7 @@
 	}
 
 	function error(msg){
-		emailLastValid = null;
+		if(msg){emailLastValid = null;}
 		messageUser(msg||'Please try again, there was a problem logging in.','error');
 	}
 
@@ -339,7 +329,8 @@
 			}
 
 			call(url, getAuth(), function(o){
-				if(typeof o === 'number' || !o.success){
+				var t = typeof o;
+				if((t === 'number' && o !== 204) || (t === 'object' && !o.success) || !o){
 					return error();
 				}
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
