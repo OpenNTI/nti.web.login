@@ -9,70 +9,68 @@
 	<meta name="author" content="NextThought">
 	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1">
 	<link rel="stylesheet" href="resources/css/style.css" media="screen">
+	<!--[if gte IE 9]>
+	<style type="text/css">
+		.gradient {
+			filter: none;
+		}
+	</style>
+	<![endif]-->
 	<script type="text/javascript" src="js/base64.min.js"></script>
 	<script type="text/javascript" src="js/login.js"></script>
 </head>
 <body>
+	<div class="wrapper">
+		<div class="wrapper-inner">
+			<div class="middle">
+				<div class="header"></div>
+				<div class="container">
+					<div class="content">
+						<div id="message" class="message"></div>
+						<section id="nt-login">
+								<form id="login" method="post">
+									<div>
+										<div class="field-container">
+											<label for="username">Username:</label>
+											<input id="username" name="username" type="email"
+												   placeholder="email@address.com"/>
+										</div>
 
-<div class="wrapper">
-<div class="wrapper-inner">
-<div class="middle">
+										<div id="password-field" class="field-container">
+											<label for="password">Password:</label>
+											<input id="password" name="password" type="password"
+												   placeholder="password"/>
+										</div>
 
-<div class="header">
-	<div>
-		<img src="resources/images/logo.png" width="164" height="26" border="0" id="logo" alt="NextThought">
-	</div>
-</div>
+										<div class="field-container">
+											<input id="remember" name="remember" type="checkbox"/>
+											<label for="remember">Remember me</label>
 
-<div class="container">
+											<button id="submit" type="submit" disabled>Login</button>
+										</div>
 
-	<div class="content">
-		<div id="message" class="message">Please enter your login information:</div>
-		<section id="nt-login">
-			<div>
-				<form id="login" method="post">
-					<div>
-					<div>
-						<label for="username">Username:</label>
-						<input id="username" name="username" type="email" placeholder="email@address.com"/>
+										<div id="oauth-login"></div>
+
+										<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
+									</div>
+								</form>
+						</section>
 					</div>
-
-					<div>
-						<input id="remember" name="remember" type="checkbox"/>
-						<label for="remember">Remember me on this computer</label>
-					</div>
-
-					<div>
-						<span id="password-field">
-							<label for="password">Password:</label>
-							<input id="password" name="password" type="password" placeholder="Password"/>
-							<button id="submit" type="submit" disabled>Login</button>
-						</span>
-						<span id="oauth-login"></span>
-					</div>
-
-					<div class="links">
-					<a href="http://nextthought.com" title="About NextThought">About</a>
-					| 
-					<a href="mailto:alpha-support@nextthought.com" title="Contact Support">Help</a>
-					| 
-					<a href="https://docs.google.com/document/pub?id=1dUvxe-n1VBuGpFV5CrBrVeaGJ_hH4kzPRiaGN2cWxsg" title="Alpha Release Notes and Known Issues">Release Notes</a>
-					| 
-					<a href="https://docs.google.com/document/pub?id=1Qow6gTT8Kxuw7_oD2TJH7tn1HN8u1VkKW6PehgF2dZc" title="NextThought Terms of Service and User Agreements">Terms</a>
-					| 
+				</div>
+				<div class="links">
+					<a href="http://nextthought.com" title="About NextThought">About</a> |
+					<a href="mailto:alpha-support@nextthought.com" title="Contact Support">Help</a> |
+					<a href="https://docs.google.com/document/pub?id=1dUvxe-n1VBuGpFV5CrBrVeaGJ_hH4kzPRiaGN2cWxsg"
+					   title="Alpha Release Notes and Known Issues">Release Notes</a> |
+					<a href="https://docs.google.com/document/pub?id=1Qow6gTT8Kxuw7_oD2TJH7tn1HN8u1VkKW6PehgF2dZc"
+					   title="NextThought Terms of Service and User Agreements">Terms</a> |
 					<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
-					<strong><a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM" title="Learn about your privacy and NextTHought">Privacy</a></strong>
-					</div>
-					<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
-					</div>
-				</form>
+					<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM"
+					   title="Learn about your privacy and NextTHought"
+					   class="privacy">Privacy</a>
+				</div>
 			</div>
-		</section>
+		</div>
 	</div>
-</div>
-
-</div>
-</div>
-</div>
 </body>
 </html>

@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# 2012-05-18:v15
+# 2012-05-24:v20
 
 CACHE:
 index.html
@@ -10,16 +10,8 @@ js/login.js
 resources/favicon.ico
 resources/css/style.css
 resources/images/logo.png
-resources/images/ajax-loader.gif
-resources/images/header_tile.png
-resources/images/info.png
-resources/images/minus-white.png
-resources/images/user.png
-resources/images/oauth/facebook_buttons.png
-resources/images/oauth/google_buttons.png
-resources/images/oauth/linkedin_buttons.png
-resources/images/oauth/openid_buttons.png
-resources/images/oauth/twitter_buttons.png
+resources/images/oauth/facebook_button.png
+resources/images/oauth/google_button.png
 
 NETWORK:
 *
