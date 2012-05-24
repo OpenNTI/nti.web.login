@@ -317,14 +317,13 @@
 
 	function loginWithRel(r,xhr){
 		mask();
-		message.innerHTML = 'Please enter your login information:';
-
+		message.innerHTML = '';
 		try{
 			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
 
 			if(!xhr){
-				location.replace(host+url);
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				location.replace(host+url);
 				return;
 			}
 

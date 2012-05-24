@@ -76,9 +76,9 @@ a.privacy { font-weight: bold; }
 	border-radius: 3px;
 	background: #ffffff;
 }
-
+.message:empty {display: none;}
 .message {
-	margin: 0 20px;
+	margin: 0 20px 5px 20px;
 	text-align: left;
 	font-size: 11px;
 	font-weight: 600;
