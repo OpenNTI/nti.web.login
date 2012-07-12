@@ -15,7 +15,9 @@
 		host = loc.protocol+'//'+loc.host,
 		hideRel = {
 			'logon.nti.password': true,
-			'logon.continue': true
+			'logon.continue': true,
+			'logon.google': true,
+			'logon.facebook': true
 			//'logon.logout': true
 		},
 		rel = {},
@@ -285,6 +287,7 @@
 
 
 			addClass(document.body,v.rel.replace(/\./g,'-'));
+			console.log('rel=' + v.rel);
 			if(hideRel[v.rel]!==true){
 				addClass(document.body,'or');
 				addButton(v.rel);
