@@ -17,6 +17,7 @@
 			'logon.nti.password': true,
 			'logon.continue': true,
 			'logon.google': true,
+			'logon.openid': true,
 			'logon.facebook': true
 			//'logon.logout': true
 		},
