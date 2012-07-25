@@ -89,16 +89,17 @@
 	function formValidation(){
 		var validEmail = (emailRx.test(username.value));
 
-		if(!validEmail){
+		if(!username.postFix && !validEmail){
 			clearForm();
 		}
 
 		if(validEmail && emailLastValid !== username.value){
+			delete username.postFix;
 			emailLastValid = username.value;
 			ping();
 		}
 
-		submit.disabled = !validEmail || !password.value;
+		submit.disabled = (!validEmail && !username.postFix) || !password.value;
 	}
 
 	function clearForm(){
@@ -152,7 +153,7 @@
 
 	function getAuth(){
 		return {
-			username: username.value,
+			username: username.value + (username.postFix || ''),
 			password: password.value,
 			remember: remember.checked
 		};
@@ -255,7 +256,7 @@
 		document.cookie='username=null; expires=Thu, 01-Jan-70 00:00:01 GMT; path=/';
 
 		//reset it.
-		document.cookie="username="+encodeURIComponent(auth.username) +
+		document.cookie="username="+encodeURIComponent(username.value) +
 				(auth.remember?('; expires='+nextMonth.toGMTString()) : '') + '; path=/';
 
 		call(link,auth,handshake);
@@ -277,6 +278,11 @@
 		clearForm();
 		for(;i>=0; i--){
 			v = links[i];
+
+			if(v.rel === 'logon.continue'){
+				redirect();
+			}
+
 			rel[v.rel] = v.href;
 
 			if(/result/i.test(v.rel)){
@@ -370,20 +376,38 @@
 		return true;
 	}
 
-	function handleCache(){
-		var ac = window.applicationCache;
-		if (!ac) {return;}
 
-		ac.update();
-		ac.addEventListener('updateready', function(e) {
-			if (ac.status === ac.UPDATEREADY) {
-				try{ac.swapCache();}
-				catch(e){/*sigh*/}
-				window.location.reload();
-			} else {
-				// Manifest didn't changed. Nothing new to serve.
+	function hackUsername(e){
+		e = e || event;
+		if(e.keyCode === 13){
+			if (!emailRx.test(username.value)){
+				username.postFix = '@aops_ghana.nextthought';
+				ping();
 			}
-		}, false);
+		}
+		return true;
+	}
+
+
+	function handleCache(){
+		try {
+			var ac = window.applicationCache;
+			if (!ac) {return;}
+
+			ac.update();
+			ac.addEventListener('updateready', function(e) {
+				if (ac.status === ac.UPDATEREADY) {
+					try{ac.swapCache();}
+					catch(e){/*sigh*/}
+					window.location.reload();
+				} else {
+					// Manifest didn't changed. Nothing new to serve.
+				}
+			}, false);
+		}
+		catch(e){
+			//something bad?
+		}
 	}
 
 	function onReady(){
@@ -399,6 +423,7 @@
 		originalMessage = message.innerHTML;
 
 		on(username,'keyup',moveFocus);
+		on(username,'keydown',hackUsername);
 		on(oauth,'click',clickHandler);
 		on(form,'submit',submitHandler);
 
@@ -423,6 +448,8 @@
 				remember.checked = true;
 				username.value = decodeURIComponent(v[1]);
 				username.focus();
+
+				hackUsername({keyCode: 13});
 			}
 		}
 
