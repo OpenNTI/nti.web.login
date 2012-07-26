@@ -9,6 +9,7 @@
 		submit,
 		form,
 		oauth,
+		pingTimeout,
 		params,
 		loc = location,
 		url = loc.href.split(/[\?#]/g)[0],
@@ -379,12 +380,13 @@
 
 	function hackUsername(e){
 		e = e || event;
-		if(e.keyCode === 13){
+		clearTimeout(pingTimeout);
+		pingTimeout = setTimeout(function(){
 			if (!emailRx.test(username.value)){
 				username.postFix = '@aops_ghana.nextthought';
 				ping();
 			}
-		}
+		}, 500);
 		return true;
 	}
 
