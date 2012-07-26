@@ -125,7 +125,7 @@ label[for=remember]{
 }
 
 #submit {
-	display: none;
+/*	display: none;*/
 	float: right;
 }
 
@@ -134,7 +134,7 @@ label[for=remember]{
 }
 
 #password-field, #oauth-login {
-	display: none;
+	/*display: none;*/
 }
 
 .or #oauth-login,
