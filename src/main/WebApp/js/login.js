@@ -22,6 +22,7 @@
 			'logon.facebook': true
 			//'logon.logout': true
 		},
+		cookies = {},
 		rel = {},
 		noOp = function(){},
 		//for browsers that don't have the console object
@@ -181,6 +182,11 @@
 		})();
 	}
 
+	function setCookie(name,value,exp){
+		document.cookie=name+"="+encodeURIComponent(value) +
+						(exp?('; expires='+exp.toGMTString()) : '') + '; path=/';
+	}
+
 	function redirect(){
 		location.replace(params['return']);
 	}
@@ -254,11 +260,10 @@
 		}
 
 		//clear it everytime... just incase they change their mind about 'remember me'
-		document.cookie='username=null; expires=Thu, 01-Jan-70 00:00:01 GMT; path=/';
+		setCookie('username','null',new Date(1));
 
 		//reset it.
-		document.cookie="username="+encodeURIComponent(username.value) +
-				(auth.remember?('; expires='+nextMonth.toGMTString()) : '') + '; path=/';
+		setCookie('username',username.value,auth.remember?nextMonth:null);
 
 		call(link,auth,handshake);
 	}
@@ -280,7 +285,8 @@
 		for(;i>=0; i--){
 			v = links[i];
 
-			if(v.rel === 'logon.continue'){
+			if(v.rel === 'logon.continue' && cookies['continued']!=='1'){
+				setCookie('continued','1', new Date(new Date().getTime()+60000));//one minute from now
 				redirect();
 			}
 
@@ -446,6 +452,7 @@
 		a = document.cookie.split(/;\s*/g);
 		for(i=0;i<a.length;i++){
 			v = a[i].split('=');
+			cookies[v[0]] = v[1];
 			if(v[0]==='username'){
 				remember.checked = true;
 				username.value = decodeURIComponent(v[1]);
@@ -453,6 +460,7 @@
 
 				hackUsername({keyCode: 13});
 			}
+
 		}
 
 
