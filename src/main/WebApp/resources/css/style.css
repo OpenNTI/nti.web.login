@@ -133,8 +133,9 @@ label[for=remember]{
 	display: block;
 }
 
-#password-field, #oauth-login {
-	/*display: none;*/
+/*#password-field,*/
+#oauth-login {
+	display: none;
 }
 
 .or #oauth-login,
