@@ -231,6 +231,7 @@
 				}
 			}
 		}
+		x.onload = x.onreadystatechange;
 	}
 
 	function offline(){
@@ -346,7 +347,7 @@
 
 			call(url, getAuth(), function(o){
 				var t = typeof o;
-				if((t === 'number' && o !== 204) || (t === 'object' && !o.success) || !o){
+				if((t === 'number' && o !== 204 && o !== 1223) || (t === 'object' && !o.success) || !o){
 					return error();
 				}
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
