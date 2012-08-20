@@ -19,8 +19,9 @@
 			'logon.continue': true,
 			'logon.google': true,
 			'logon.openid': true,
-			'logon.facebook': true
-			//'logon.logout': true
+			'logon.facebook': true,
+			'logon.logout': true,
+			'account.create': true
 		},
 		cookies = {},
 		rel = {},
