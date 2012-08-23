@@ -1,4 +1,4 @@
-(function(){
+(function($){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 		emailLastValid,
 		originalMessage,
@@ -6,14 +6,7 @@
 		username,
 		password,
 		remember,
-		submit,
-		form,
-		oauth,
 		pingTimeout,
-		params,
-		loc = location,
-		url = loc.href.split(/[\?#]/g)[0],
-		host = loc.protocol+'//'+loc.host,
 		hideRel = {
 			'logon.nti.password': true,
 			'logon.continue': true,
@@ -32,88 +25,34 @@
 			log: function(){ noOp.apply(this,arguments); }	//shutup the interpreter warnings about wrong arg-count
 		};
 
-	function getClasses(dom){
-		var cls = dom.getAttribute('class');
-		if(cls) {
-			cls = cls.split(' ');
-		}
-		return cls || [];
-	}
-
-	function addClass(dom, className){
-		var c = className.toLowerCase(),
-			cls = getClasses(dom),
-			i = cls.length-1,
-			f=false;
-		for(; !f&&i>=0; i--){ f = (cls[i].toLowerCase() === c); }
-		if(!f){
-			cls.push(className);
-			dom.setAttribute('class',cls.join(' '));
-		}
-	}
-
-	function removeClass(dom, className){
-		var c = className instanceof RegExp? className : className.toLowerCase(),
-			cls = getClasses(dom),
-			i = cls.length-1;
-		for(; i>=0; i--){
-
-			if( (c instanceof RegExp && c.test(cls[i]) ) || cls[i].toLowerCase() === c){
-				cls.splice(i,1);
-				if(!(c instanceof RegExp)){
-					break;
-				}
-			}
-		}
-
-		dom.setAttribute('class',cls.join(' '));
-	}
-
 	function mask(){
-		addClass(document.body,'loading');
+		$('body').addClass('loading');
 	}
 
 	function unmask(){
-		removeClass(document.body,'loading');
-	}
-
-	function getLink(o, relName){
-		var l = (o||{}).Links || [],
-			i = l.length-1;
-		for(;i>=0; i--){
-			if(l[i].rel === relName){
-				l = l[i].href;
-				return l;
-			}
-		}
-		return null;
+		$('body').removeClass('loading');
 	}
 
 	function formValidation(){
-		var validEmail = (emailRx.test(username.value));
+		var validEmail = username.value.length>3;//(emailRx.test(username.value));
 
-		if(!username.postFix && !validEmail){
+		if(!validEmail){
 			clearForm();
 		}
 
 		if(validEmail && emailLastValid !== username.value){
-			delete username.postFix;
 			emailLastValid = username.value;
 			ping();
 		}
 
-		submit.disabled = (!validEmail && !username.postFix) || !password.value;
+		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
 	}
 
 	function clearForm(){
 		messageUser();//reset the message
-		removeClass(document.body,/.*/);
+		$('body').removeClass(function(i,c){return c.replace('signin','');});
+		$('oauth-login button').remove();
 		rel = {};
-		var n = oauth.getElementsByTagName('button'),
-			i = n.length-1;
-		for(; i>=0; i--){
-			oauth.removeChild(n[i]);
-		}
 	}
 
 	function stop(e){
@@ -128,15 +67,6 @@
 		return base.indexOf(param) >= 0 
 			? base 
 			: (base + (base.indexOf('?') === -1 ? '?' : '&') + param);
-	}
-
-	function on(dom,event,fn){
-		if(dom.addEventListener) {
-			dom.addEventListener(event,fn,false);
-		}
-		else if(dom.attachEvent) {
-			dom.attachEvent(event,fn);
-		}
 	}
 
 	function toPost(o){
@@ -156,7 +86,7 @@
 
 	function getAuth(){
 		return {
-			username: username.value + (username.postFix || ''),
+			username: username.value,
 			password: password.value,
 			remember: remember.checked
 		};
@@ -168,19 +98,9 @@
 		}
 
 		return {
-			success: params['return'],
-			failure: appendUrl(loc.href, "failed=true")
+			success: returnUrl,
+			failure: appendUrl(location.href, "failed=true")
 		};
-	}
-
-	function xhr(){
-		return (function () {
-			try { return new XMLHttpRequest(); } catch(e){}
-			try { return new ActiveXObject("Msxml2.XMLHTTP.6.0"); } catch (e) {}
-			try { return new ActiveXObject("Msxml2.XMLHTTP.3.0"); } catch (e) {}
-			try { return new ActiveXObject("Microsoft.XMLHTTP"); } catch (e) {}
-			return null;
-		})();
 	}
 
 	function setCookie(name,value,exp){
@@ -189,57 +109,56 @@
 	}
 
 	function redirect(){
-		location.replace(params['return']);
+		location.replace(returnUrl);
 	}
 
 	function call(url,data,back,forceMethod){
-		var x = xhr(),
-			u = data? data.username : undefined,
+		var u = data? data.username : undefined,
 			p = data? data.password : undefined,
 			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
 			m = forceMethod? forceMethod : data? 'POST':'GET',
 			l = host+url,// + "?dc="+(new Date().getTime()),
-			t = setTimeout(function(){x.abort();},60000);
+			h = {
+				Accept:'application/json',
+				Authorization:a,
+				'Content-Type':'application/x-www-form-urlencoded'
+			};
 
-		x.open( m, l, true );//, u,p);
+		if(!a){ delete h.Authorization; }
+		if(!data) { delete h['Content-Type']; }
 
-		if(a){
-			x.setRequestHeader('Authorization',a);
-		}
-		if(data) {
-			x.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-		}
-		x.withCredentials = true;
-		x.setRequestHeader('Accept','application/json');
-		x.send(data?toPost(data):undefined);
-		x.onreadystatechange = function(){
-			if(x.readyState === 4){
-				clearTimeout(t);
-				if(back){
-					var o = null, w;
-					try{
-						if(x.status === 0 && x.responseText === ''){
-							console.error('The request failed. Server up? CORS?\nURL: '+l);
-						}
-						else {
-							o = JSON.parse(x.responseText);
-						}
+		var x = $.ajax({
+			xhrFields: { withCredentials: true },
+			url: l,
+			type: m,
+			headers: h,
+			data: data
+		})	.always(function(){})
+			.fail(function(){console.error('The request failed. Server up? CORS?\nURL: '+l);})
+			.done(function(){
+			if(back){
+				var o = null;
+				try{
+					if(x.responseText === ''){
+						console.error('The request failed. No response text.\nURL: '+l);
 					}
-					catch(e){
-						console.error(x.responseText, e.stack || e.stacktrace);
+					else {
+						o = JSON.parse(x.responseText);
 					}
-					back.call(window, o || x.status );
 				}
+				catch(e){
+					console.error(x.responseText, e.stack || e.stacktrace);
+				}
+				back.call(window, o || {} );
 			}
-		}
-		x.onload = x.onreadystatechange;
+		})
 	}
 
 	function offline(){
 		messageUser('You are offline.','offline');
 		mask();
 		document.getElementById('mask-msg').innerHTML = "";
-		setTimeout(function(){ window.location.reload(); },30000);
+		setTimeout(function(){ location.reload(); },30000);
 	}
 
 	function ping(){
@@ -302,25 +221,20 @@
 			}
 
 
-			addClass(document.body,v.rel.replace(/\./g,'-'));
-			console.log('rel=' + v.rel);
+			$('body').addClass(v.rel.replace(/\./g,'-'));
 			if(hideRel[v.rel]!==true){
-				addClass(document.body,'or');
+				$('body').addClass('or');
 				addButton(v.rel);
 			}
 		}
 	}
 
 	function addButton(rel){
-		var b = document.createElement('button');
-
-		b.rel = rel;
-		b.setAttribute('type','button');
-		b.setAttribute('title',rel);
-		addClass(b,rel.replace(/\./g,' '));
-		b.innerHTML = rel;
-
-		oauth.appendChild(b);
+		$.tmpl(
+			'<button type="button" name="{rel}" title="{rel}" class="{cls}">{rel}</button>',{
+			cls: rel.replace(/\./g,' '),
+			rel: rel
+		}).appendTo('oauth-login');
 	}
 
 	function error(msg){
@@ -330,7 +244,7 @@
 
 	function messageUser(msg,cls){
 		unmask();
-		if(cls) { addClass(document.body,cls); }
+		if(cls) { $('body').addClass(cls); }
 		message.innerHTML = msg || originalMessage;
 	}
 
@@ -368,11 +282,9 @@
 	}
 
 	function clickHandler(e){
-		e = e || event;
-		var t = e.target, rel;
-		if(/button/i.test(t.tagName)){
-			rel = t.rel;
-			loginWithRel(rel,false);
+		var t = $(e.target);
+		if(t.is('button')){
+			loginWithRel(t.attr('name'),false);
 		}
 	}
 
@@ -385,20 +297,6 @@
 		return true;
 	}
 
-
-	function hackUsername(e){
-		e = e || event;
-		clearTimeout(pingTimeout);
-		pingTimeout = setTimeout(function(){
-			if (!emailRx.test(username.value)){
-				username.postFix = '@aops_ghana.nextthought';
-				ping();
-			}
-		}, 500);
-		return true;
-	}
-
-
 	function handleCache(){
 		try {
 			var ac = window.applicationCache;
@@ -407,9 +305,11 @@
 			ac.update();
 			ac.addEventListener('updateready', function(e) {
 				if (ac.status === ac.UPDATEREADY) {
-					try{ac.swapCache();}
+					try{
+						ac.swapCache();
+						location.reload();
+					}
 					catch(e){/*sigh*/}
-					window.location.reload();
 				} else {
 					// Manifest didn't changed. Nothing new to serve.
 				}
@@ -420,36 +320,25 @@
 		}
 	}
 
-	function onReady(){
+	$(function(){
+		var a, i, v;
+
 		message = document.getElementById('message');
 		password = document.getElementById('password');
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
-		submit = document.getElementById('submit');
-		form = document.getElementById('login');
-		oauth = document.getElementById('oauth-login');
+
 		setInterval(formValidation,1000);
 
 		originalMessage = message.innerHTML;
 
-		on(username,'keyup',moveFocus);
-		on(username,'keydown',hackUsername);
-		on(oauth,'click',clickHandler);
-		on(form,'submit',submitHandler);
+		$(username).keyup(moveFocus);
+		$('oauth-login').click(clickHandler);
+		$('#login').submit(submitHandler);
 
+		if(requestParameters.failed){ error(); }
 
-		var i, v, o={}, a = location.search.replace('?','').split("&");
-		for(i=0;i<a.length;i++){
-			v = a[i].split('=');
-			o[decodeURIComponent(v[0])]=decodeURIComponent(v[1]);
-		}
-		params = o;
-		if(o.host){
-			host = o.host;
-		}
-		if(o.failed){
-			error();
-		}
+		$('#account-creation a').attr('href',function(i,at){ return at + location.search; });
 
 		a = document.cookie.split(/;\s*/g);
 		for(i=0;i<a.length;i++){
@@ -459,15 +348,11 @@
 				remember.checked = true;
 				username.value = decodeURIComponent(v[1]);
 				username.focus();
-
-				hackUsername({keyCode: 13});
 			}
 
 		}
 
 
 		handleCache();
-	}
-
-	window.onload = onReady;
-}());
+	});
+}(jQuery));

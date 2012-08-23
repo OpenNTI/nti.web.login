@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>NextThought Signup</title>
+	<link rel="shortcut icon" href="resources/favicon.ico">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Platform Account Signup">
+	<meta name="author" content="NextThought">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800"/>
+	<link rel="stylesheet" href="resources/css/style.css" media="screen">
+	<!--[if gte IE 9]>
+	<style type="text/css">
+		.gradient {
+			filter: none;
+		}
+	</style>
+	<![endif]-->
+	<script type="text/javascript" src="defaults.js"></script>
+	<script type="text/javascript" src="js/support.js"></script>
+	<script type="text/javascript" src="js/signup.js"></script>
+</head>
+<body class="signup">
+		<div class="middle">
+			<div class="container">
+				<div class="header">
+					<a id="signin" href="./">Have an account? Sign in.</a>
+				</div>
+				<div class="content">
+					<h1>Create an Account</h1>
+					<form>
+						<section>
+							<h4 data-number="1">Birthday</h4>
+							<div class="field-container">
+							<div class="selectbox">
+							<ol class="selectbox month" data-value="1" tabindex="1">
+								<li value="1">January</li>
+								<li value="2">February</li>
+								<li value="3">March</li>
+								<li value="4">April</li>
+								<li value="5">May</li>
+								<li value="6">June</li>
+								<li value="7">July</li>
+								<li value="8">August</li>
+								<li value="9">September</li>
+								<li value="10">October</li>
+								<li value="11">November</li>
+								<li value="12">December</li>
+							</ol>
+							</div><!--
+						--><input type="text" name="day" placeholder="Day" data-type="number" size="2"
+								  tabindex="2"/><!--
+						--><input type="text" name="year" placeholder="Year" data-type="number" size="4"
+								  tabindex="3"/>
+							<div class="line">
+								<span class="blank">?</span>
+								<span class="invalid">Oops.</span>
+								<span class="valid">Thanks.</span>
+							</div>
+							</div>
+						</section>
+						<section class="needs-birthday">
+							<h4 data-number="2">Account Information</h4>
+							<div class="field-container">
+								<input type="text" name="first" size="10" placeholder="First Name"/><!--
+							 --><input type="text" name="last" size="10" placeholder="Last Name"/>
+								<div class="line">
+									<span class="coppa">This won&apos;t be made public.</span>
+									<span class="blank">First and last name, please.</span>
+									<span class="invalid">First and last name, please.</span>
+									<span class="valid">First and last name, please.</span>
+								</div>
+							</div>
+
+							<div class="field-container">
+								<input type="email" name="email" size="20" placeholder="Your Email"/>
+								<div class="line">
+									<span class="coppa">So we can send you a new password if you forget it.</span>
+									<span class="blank">What&apos;s your email address?</span>
+									<span class="invalid">What&apos;s your email address?</span>
+									<span class="valid">What&apos;s your email address?</span>
+								</div>
+							</div>
+
+							<div class="field-container coppa">
+								<input type="email" name="parentemail" size="20" placeholder="Parent's Email"/>
+								<div class="line">
+									<span class="blank coppa">Your parent needs to approve your NextThought
+										account.</span>
+									<span class="invalid">Your parent needs to approve your NextThought account.</span>
+									<span class="valid">Your parent needs to approve your NextThought account.</span>
+								</div>
+							</div>
+							<div class="field-container">
+								<input type="text" name="username" size="20" placeholder="Username"/>
+								<div class="line">
+									<span class="coppa">This should be a made up name. Don&apos;t use your real
+										name.</span>
+									<span class="blank">This needs to be unique.</span>
+									<span class="invalid">Looks taken or invalid, try again?</span>
+									<span class="valid">Got it! Thanks.</span>
+								</div>
+							</div>
+							<div class="field-container">
+								<input type="password" name="password" size="20" placeholder="Password"/>
+								<div class="line">
+									<span class="blank coppa">At least 6 characters. Numbers and special characters
+										help!</span>
+									<span class="invalid">Might be too weak.</span>
+									<span class="valid">Okay, this is our secret.</span>
+								</div>
+							</div>
+						</section>
+						<section class="needs-birthday">
+							<h4 data-number="3">User Agreement</h4>
+							<iframe src="agreement.html" class="agreement" seamless width="100%"
+									height="190"></iframe>
+						</section>
+						<section class="needs-birthday">
+							<a href="#" class="agree">I agree. Create my account!</a>
+							<a href="#" class="privacy">View Our Privacy Policy</a>
+						</section>
+					</form>
+				</div>
+			</div>
+		</div>
+</body>
+</html>

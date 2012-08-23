@@ -7,7 +7,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Application Login">
 	<meta name="author" content="NextThought">
-	<link rel="stylesheet" href="resources/css/style.css" media="screen">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800"/>
+	<link rel="stylesheet" href="resources/css/style.css" media="screen"/>
 	<!--[if gte IE 9]>
 	<style type="text/css">
 		.gradient {
@@ -15,37 +16,27 @@
 		}
 	</style>
 	<![endif]-->
-	<script type="text/javascript" src="js/base64.min.js"></script>
-	<script type="text/javascript" src="js/login.js"></script>
 </head>
-<body>
-	<div class="wrapper">
+<body class="signin">
+	<div class="wrapper spotlight">
 		<div class="wrapper-inner">
-			<div class="middle">
-				<div class="header"></div>
+			<div class="middle zoomin">
 				<div class="container">
+					<div class="header"></div>
 					<div class="content">
 						<section id="nt-login">
 								<form id="login" method="post">
-									<div id="message" class="message">You are offline</div>
+									<div id="message" class="message">You seem to be offline</div>
 									<div>
-
+										<div class="field-container">
+										</div>
+										<div id="account-creation">
+											<a href="javascript:location.replace(document.referrer);">Try Again</a>
+										</div>
 									</div>
 								</form>
 						</section>
 					</div>
-				</div>
-				<div class="links">
-					<a href="http://nextthought.com" title="About NextThought">About</a> |
-					<a href="mailto:alpha-support@nextthought.com" title="Contact Support">Help</a> |
-					<a href="https://docs.google.com/document/pub?id=1dUvxe-n1VBuGpFV5CrBrVeaGJ_hH4kzPRiaGN2cWxsg"
-					   title="Alpha Release Notes and Known Issues">Release Notes</a> |
-					<a href="https://docs.google.com/document/pub?id=1Qow6gTT8Kxuw7_oD2TJH7tn1HN8u1VkKW6PehgF2dZc"
-					   title="NextThought Terms of Service and User Agreements">Terms</a> |
-					<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
-					<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM"
-					   title="Learn about your privacy and NextTHought"
-					   class="privacy">Privacy</a>
 				</div>
 			</div>
 		</div>

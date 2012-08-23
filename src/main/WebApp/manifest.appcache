@@ -1,15 +1,21 @@
 CACHE MANIFEST
-# 2012-08-20:v30
+# 2012-08-23:v3
 
 CACHE:
-index.html
 offline.html
 offline.json
-js/base64.min.js
 js/login.js
+js/offline.js
+js/signup.js
+js/support.js
 resources/favicon.ico
 resources/css/style.css
+resources/images/circles_tile.png
+resources/images/down-arrow.png
+resources/images/header-bg.png
+resources/images/logo-white.png
 resources/images/logo.png
+resources/images/or.png
 resources/images/oauth/facebook_button.png
 resources/images/oauth/google_button.png
 https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,800
@@ -22,5 +28,8 @@ NETWORK:
 *
 
 FALLBACK:
-*.html offline.html
+/ offline.html
+index.html offline.html
+signup.html offline.html
+defaults.js js/offline.js
 * offline.json
