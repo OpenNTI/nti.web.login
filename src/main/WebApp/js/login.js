@@ -135,8 +135,12 @@
 			headers: h,
 			data: data,
 			dataType: 'json'
-		})	.fail(function(){console.error('The request failed. Server up? CORS?\nURL: '+l);})
-			.done(function(data){ if(back){ back.call(window, data || x.status ); } });
+		}).fail(function(){
+			console.error('The request failed. Server up? CORS?\nURL: '+l);
+			if(back){ back.call(window, 0 ); }
+		}).done(function(data){
+			if(back){ back.call(window, data || x.status ); }
+		});
 	}
 
 	function offline(){
