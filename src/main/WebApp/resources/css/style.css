@@ -246,6 +246,7 @@ ol.selectbox.open {
 	background: #ffffff;
 	padding: 6px 10px;
 	margin: 0;
+	min-height: 39px;
 }
 
 .signup input[size='2']{ width: 60px; border-left-width: 0; border-right-width: 0; }
