@@ -270,10 +270,11 @@ iframe.agreement {
 .signup .field-container.valid .line span.blank,
 .signup .coppa .field-container .line span.blank,
 .signup .coppa .field-container.invalid .line span.coppa,
-.signup .coppa .field-container.valid .line span.valid,
+.signup .coppa .field-container.valid .line span.coppa,
 .signup .field-container .line span { display: none; }
 
 .signup .coppa .field-container .line span.coppa,
+.signup .coppa .field-container.valid .line span.valid,
 .signup .field-container .line span.blank,
 .signup .field-container.invalid .line span.invalid,
 .signup .field-container.valid .line span.valid { display: inline; }
