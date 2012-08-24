@@ -242,7 +242,7 @@
 	function buildObj(){
 		var v = validation,
 			o = {
-				DOB: v.birthday,
+				birthdate: v.birthday,
 				email: $('input[name=email]').val(),
 				realname: [$('input[name=first]').val(),$('input[name=last]').val()].join(' '),
 				alias: $('input[name=first]').val(),
