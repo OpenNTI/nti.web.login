@@ -49,13 +49,13 @@
 			var k=e.which||13,el=$(this),
 				m=String(el.val()||'').length>=num(el.attr('size')),
 				a=b(k,37,40),//arrows
-				n=b(k,48,57),//numbers
+				n=b(k,48,57) || b(k,95,105),//numbers
 				s = Math.abs(this.selectionStart - this.selectionEnd) !== 0,
 				mod=e.altKey||e.ctrlKey||e.shiftKey;
 
 			el.change();
 
-			if((m && n && !s && !mod)||(k!==13 && !b(k,8,9) && !a && !n && !mod)){
+			if((m && n && !s && !mod)||(k!==13 && k!==46 && !b(k,8,9) && !a && !n && !mod)){
 				e.stopPropagation();
 				e.preventDefault();
 				return false;
