@@ -149,12 +149,6 @@ h4{
 	font-size: 14px;
 	font-weight: bold;
 }
-h4[data-number]::after {
-	content: attr(data-number);
-	position: absolute;
-	left: -20px;
-	font-style: italic;
-}
 
 .selectbox {
 	cursor: default;
@@ -290,7 +284,7 @@ iframe.agreement {
 	font-size: 14px;
 	position: absolute;
 	top: 0;
-	left: 350px;
+	left: 320px;
 }
 
 div.coppa,
@@ -503,7 +497,7 @@ button.logon:last-of-type {
 	color: #ffffff;
 	font: 16px/45px "Open Sans";
 	font-style: italic;
-	font-weight: 300;
+	font-weight: 600;
 	vertical-align: middle;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
 	background: rgb(70,70,70);
