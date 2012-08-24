@@ -118,40 +118,25 @@
 			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
 			m = forceMethod? forceMethod : data? 'POST':'GET',
 			l = host+url,// + "?dc="+(new Date().getTime()),
+			f = { withCredentials: true },
 			h = {
 				Accept:'application/json',
 				Authorization:a,
 				'Content-Type':'application/x-www-form-urlencoded'
 			};
 
-		if(!a){ delete h.Authorization; }
+		if(!a){ delete h.Authorization; f = {}; }
 		if(!data) { delete h['Content-Type']; }
 
 		var x = $.ajax({
-			xhrFields: { withCredentials: true },
+			xhrFields: f,
 			url: l,
 			type: m,
 			headers: h,
-			data: data
-		})	.always(function(){})
-			.fail(function(){console.error('The request failed. Server up? CORS?\nURL: '+l);})
-			.done(function(){
-			if(back){
-				var o = null;
-				try{
-					if(x.responseText === ''){
-						console.error('The request failed. No response text.\nURL: '+l);
-					}
-					else {
-						o = JSON.parse(x.responseText);
-					}
-				}
-				catch(e){
-					console.error(x.responseText, e.stack || e.stacktrace);
-				}
-				back.call(window, o || {} );
-			}
-		})
+			data: data,
+			dataType: 'json'
+		})	.fail(function(){console.error('The request failed. Server up? CORS?\nURL: '+l);})
+			.done(function(data){ if(back){ back.call(window, data || x.status ); } });
 	}
 
 	function offline(){
