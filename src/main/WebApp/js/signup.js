@@ -223,8 +223,12 @@
 				alert(x.responseText.split(/\n{3}/)[1]||'Ooops... you hit the secret temporary @domain requirement');
 			}
 		}).done(function(data){
+			if(data && data.Class === 'User'){
+				window.location.replace(returnUrl);
+				return;
+			}
 			console.log(data);
-//			window.location.replace(returnUrl);
+			alert('hmm... o_O that wasn\'t expected...');
 		});
 	}
 
