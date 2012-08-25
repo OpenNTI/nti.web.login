@@ -1,6 +1,7 @@
 (function($) {
 
 	var validation = {}, url,
+		now = new Date(),
 		emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	function num(s){return parseInt(s,10);}
@@ -58,15 +59,17 @@
 				s = Math.abs(this.selectionStart - this.selectionEnd) !== 0,
 				mod=e.altKey||e.ctrlKey||e.shiftKey;
 
-			el.change();
-
 			if((m && n && !s && !mod)||(k!==13 && k!==46 && !b(k,8,9) && !a && !n && !mod)){
 				e.stopPropagation();
 				e.preventDefault();
 				return false;
 			}
+			
+			clearTimeout(t);
+			setTimeout(function(){el.change();},500);
 		}
-
+		
+		var t;
 		var e = $('input[data-type="number"]').keydown(f).keypress(f);
 
 		setInterval(function(){
@@ -77,7 +80,7 @@
 					p.change();
 				}
 			});
-		},500);
+		},5000);
 	}
 
 
@@ -95,7 +98,6 @@
 				m = num($('.month').attr('data-value')),
 				d = num($('[name=day]').attr('value')),
 				y = num($('[name=year]').attr('value')),
-				now = new Date(),
 				cpa = new Date(now.getYear()-13, now.getMonth(), now.getDate()),
 				bd;
 
@@ -105,7 +107,7 @@
 			try {
 				bd = new Date(y<1000?NaN:y, m-1, d);
 
-				if(isDateValid(bd)){
+				if(isDateValid(bd) && d >0 && d<=31 && bd < now){
 					p.addClass('valid');
 					f.addClass(cls);
 					if(bd > cpa){
@@ -113,7 +115,9 @@
 						validation.pg = true;
 						lockBirthday();
 					}
-					$('[name=first]').focus();
+					if(!!$('[name=year]:focus').length){
+						$('[name=first]').focus();
+					}
 					validation.birthday = bd;
 				}
 				else if(y>1000 && nb(y) && nb(d)){
