@@ -1,13 +1,11 @@
 CACHE MANIFEST
-# 2012-08-24:v36
+# 2012-08-25:v37
 
-CACHE:
-agreement.html
+CACHE:l
 offline.html
 offline.json
 js/login.js
 js/offline.js
-js/signup.js
 js/support.js
 resources/favicon.ico
 resources/css/style.css
