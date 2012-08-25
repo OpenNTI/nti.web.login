@@ -308,8 +308,28 @@
 			//something bad?
 		}
 	}
+	
+	
+	function maybeShowAccountCreation(){
+		$('#account-creation').hide();
+		$.ajax({
+			dataType: 'json',
+			url:host+'/dataserver2/logon.ping',
+			headers: {Accept:'application/json'},
+			type: 'GET'
+		}).done(function(data){
+			if(getLink(data,'account.create')){
+				$('#account-creation').show();
+			}
+		}).fail(function(){
+			console.error('failed to resolve service...will retry in 5 seconds');
+			setTimeout(maybeShowAccountCreation,5000);
+		});
+	}
+	
 
 	$(function(){
+		maybeShowAccountCreation();
 		var a, i, v;
 
 		message = document.getElementById('message');
