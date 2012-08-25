@@ -249,7 +249,7 @@
 						.html(j.message);
 			}
 			catch(e){
-				alert(x.responseText.split(/\n{3}/)[1]||'Ooops... you hit the secret temporary @domain requirement');
+				alert('We\'re sorry, but there was an unforeseen issue...\n\n'+x.responseText.split(/\n{3}/)[1]);
 			}
 		}).done(function(data){
 			if(data && data.Class === 'User'){
