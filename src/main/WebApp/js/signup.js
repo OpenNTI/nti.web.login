@@ -113,6 +113,7 @@
 						validation.pg = true;
 						lockBirthday();
 					}
+					$('[name=first]').focus();
 					validation.birthday = bd;
 				}
 				else if(y>1000 && nb(y) && nb(d)){
