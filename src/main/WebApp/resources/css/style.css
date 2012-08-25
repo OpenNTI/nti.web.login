@@ -185,6 +185,7 @@ ol.selectbox li {
 
 }
 
+ol.selectbox[data-value='ini'] li.ini,
 ol.selectbox[data-value='1'] li[value='1'],
 ol.selectbox[data-value='2'] li[value='2'],
 ol.selectbox[data-value='3'] li[value='3'],

@@ -17,9 +17,14 @@
 			.mouseenter(function(){ct(t);})
 			.keydown(function(e){
 					var t=$(ol,this),v=num(t.attr(dv)),k=e.which,
-						u=(k>=37&&k<=38),d=(k>=39&&k<=40),m=t.children('li').length;
+						u=(k>=37&&k<=38),d=(k>=39&&k<=40),m=t.children('li').length-1;
+
 					v = v+(u?-1:d?1:0);
-					t.attr(dv, (v>m?1:v)||m).change();
+
+					if(!v && u){v=m;} else if(!v && d){v=1;}
+
+					if(v){ t.attr(dv, (v>m?1:v)||m).change(); }
+
 					if(k===13){ hide(this); }
 
 					if(k!==9  && !e.altKey && !e.ctrlKey && !e.shiftKey ){
