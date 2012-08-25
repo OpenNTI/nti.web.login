@@ -122,6 +122,7 @@
 			catch(e){
 				//invalid date
 			}
+			checkIt();
 		}
 		$('.month,[name=day],[name=year]').change(c);
 	}
@@ -137,6 +138,7 @@
 				p.addClass((b?'':'in')+'valid');
 				validation.name = b;
 			}
+			checkIt();
 		}
 
 		var name = $('[name=first],[name=last]'),
@@ -157,6 +159,7 @@
 			if(!b){
 				p.addClass((v?'':'in')+'valid');
 			}
+			checkIt();
 		}
 		$('input[type=email]').change(t).keyup(t);
 	}
@@ -168,12 +171,20 @@
 				p = m.parents('.field-container'),
 				v = m.val(),
 				b = v==='',
-				n = m.attr('name');
-			validation[n] = v = (v.length > 0);
+				n = m.attr('name'),
+				pg = validation.pg,//under 13 years old
+				f = v.indexOf( $('[name=first]').val().toLowerCase() ) < 0,//v does not contain firstname
+				l = v.indexOf( $('[name=last]').val().toLowerCase() ) < 0;//v does not contain lastname
+
+			validation[n] =
+			v = ((pg && f && l) || !pg)
+					&& v.length>0;
+
 			p.removeClass('invalid valid');
 			if(!b){
 				p.addClass((v?'':'in')+'valid');
 			}
+			checkIt();
 		}
 		$('input[name=username]').change(t).keyup(t);
 	}
@@ -191,6 +202,7 @@
 			if(!b){
 				p.addClass((v?'':'in')+'valid');
 			}
+			checkIt();
 		}
 		$('input[type=password]').change(t).keyup(t);
 	}
@@ -222,7 +234,17 @@
 			try{
 				j = JSON.parse(x.responseText);
 				console.log(j);
-				alert(j.message);
+
+				if(/realname/i.test(j.field)){
+					j.field = 'first';
+				}
+
+				$('[name='+ j.field.toLowerCase()+']')
+						.parents('.field-container')
+						.removeClass('valid')
+						.addClass('invalid')
+						.find('.line .invalid')
+						.html(j.message);
 			}
 			catch(e){
 				alert(x.responseText.split(/\n{3}/)[1]||'Ooops... you hit the secret temporary @domain requirement');
@@ -240,7 +262,14 @@
 
 	function checkIt(){
 		var v=validation;
-		return v.url && Boolean(v.birthday) && v.email && v.name && v.username && v.password && (!v.pg || v.parentemail);
+		v = (v.url && Boolean(v.birthday) && v.email && v.name && v.username && v.password && (!v.pg || v.parentemail));
+		if(v){
+			$('a.agree').removeClass('disabled');
+		}
+		else {
+			$('a.agree').addClass('disabled');
+		}
+		return v;
 	}
 
 
