@@ -219,7 +219,8 @@
 			url = getLink(data,'account.create');
 			validation.url = Boolean(url);
 		}).fail(function(){
-			console.error('failed to ping');
+			console.error('failed to resolve service url...will retry in 5 seconds');
+			setTimeout(ping,5000);
 		});
 	}
 
