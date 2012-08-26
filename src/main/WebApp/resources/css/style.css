@@ -261,6 +261,9 @@ iframe.agreement {
 	color: #757474;
 	background: #fbfbfb;
 	border: 1px solid #dcdcdc;
+	-webkit-transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
 }
 
 
