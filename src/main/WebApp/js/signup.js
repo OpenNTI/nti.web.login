@@ -95,19 +95,19 @@
 			var cls = 'birthday-filled-in',
 				f = $('form'),
 				p = $('.month').parents('.field-container'),
-				m = num($('.month').attr('data-value')),
+				m = num($('.month').attr('data-value'))-1,
 				d = num($('[name=day]').attr('value')),
 				y = num($('[name=year]').attr('value')),
-				cpa = new Date(now.getYear()-13, now.getMonth(), now.getDate()),
+				cpa = new Date(now.getFullYear()-13, now.getMonth(), now.getDate()),
 				bd;
 
 			f.removeClass(cls+' coppa');
 			p.removeClass('valid invalid');
 			validation.birthday = false;
 			try {
-				bd = new Date(y<1000?NaN:y, m-1, d);
-
-				if(isDateValid(bd) && d >0 && d<=31 && bd < now){
+				bd = new Date(y<1000?NaN:y, m, d);				
+				
+				if(isDateValid(bd) && bd.getDate()===d && bd.getMonth()===m && bd.getFullYear()===y && bd < now){
 					p.addClass('valid');
 					f.addClass(cls);
 					if(bd > cpa){
