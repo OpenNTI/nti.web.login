@@ -174,16 +174,14 @@
 		function t(){
 			var m = $(this),
 				p = m.parents('.field-container'),
-				v = m.val()||'',
-				b = v.replace(/^["'\s]+|["'\s]+$/ig,'').length>6,
+				v = (m.val()||'').toLowerCase(),
+				b = v.replace(/^["'\s]+|["'\s]+$/ig,'').length===0,
 				n = m.attr('name'),
 				pg = validation.pg,//under 13 years old
 				f = v.indexOf( $('[name=first]').val().toLowerCase() ) < 0,//v does not contain firstname
 				l = v.indexOf( $('[name=last]').val().toLowerCase() ) < 0;//v does not contain lastname
 
-			validation[n] =
-			v = ((pg && f && l) || !pg)
-					&& v.length>6;
+			validation[n] = v = ((pg? (f&l):true) && v.length > 6);
 
 			p.removeClass('invalid valid');
 			if(!b){
