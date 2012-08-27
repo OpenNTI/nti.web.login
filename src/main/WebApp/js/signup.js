@@ -174,8 +174,8 @@
 		function t(){
 			var m = $(this),
 				p = m.parents('.field-container'),
-				v = m.val(),
-				b = v==='',
+				v = m.val()||'',
+				b = v.replace(/^["'\s]+|["'\s]+$/ig,'').length>6,
 				n = m.attr('name'),
 				pg = validation.pg,//under 13 years old
 				f = v.indexOf( $('[name=first]').val().toLowerCase() ) < 0,//v does not contain firstname
@@ -183,7 +183,7 @@
 
 			validation[n] =
 			v = ((pg && f && l) || !pg)
-					&& v.length>0;
+					&& v.length>6;
 
 			p.removeClass('invalid valid');
 			if(!b){
@@ -286,7 +286,7 @@
 				email: $('input[name=email]').val(),
 				realname: [$('input[name=first]').val(),$('input[name=last]').val()].join(' '),
 				alias: $('input[name=first]').val() +' '+ $('input[name=last]').val().charAt(0),
-				Username: $('input[name=username]').val(),
+				Username: $('input[name=username]').val().replace(/^["'\s]+|["'\s]+$/ig,''),
 				password: $('input[name=password]').val()
 			};
 
