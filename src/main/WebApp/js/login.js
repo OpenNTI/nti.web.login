@@ -14,7 +14,8 @@
 			'logon.openid': true,
 			'logon.facebook': true,
 			'logon.logout': true,
-			'account.create': true
+			'account.create': true,
+			'account.preflight.create': true
 		},
 
 		cookies = {},
@@ -206,12 +207,13 @@
 			if(/result/i.test(v.rel)){
 				console.log(v.rel, getLink(o,v.rel));
 				call(getLink(o,v.rel),getAuth(),function(){
-					console.log(arguments);
+					console.log('What?',arguments);
 				});
 			}
 
 
 			$('body').addClass(v.rel.replace(/\./g,'-'));
+			console.log(v.rel, hideRel[v.rel]);
 			if(hideRel[v.rel]!==true){
 				$('body').addClass('or');
 				addButton(v.rel);
@@ -221,7 +223,7 @@
 
 	function addButton(rel){
 		$('<button type="button" name="'+rel+'" title="'+rel+'" class="'+rel.replace(/\./g,' ')+'">'+rel+'</button>')
-			.appendTo('oauth-login');
+			.appendTo('#oauth-login');
 	}
 
 	function error(msg){
