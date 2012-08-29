@@ -283,14 +283,14 @@
 				birthdate: v.birthday,
 				email: $('input[name=email]').val(),
 				realname: [$('input[name=first]').val(),$('input[name=last]').val()].join(' '),
-				alias: $('input[name=first]').val() +' '+ $('input[name=last]').val().charAt(0),
+				//alias: $('input[name=first]').val() +' '+ $('input[name=last]').val().charAt(0),
 				Username: $('input[name=username]').val().replace(/^["'\s]+|["'\s]+$/ig,''),
 				password: $('input[name=password]').val()
 			};
 
 		if(v.pg){
 			o.parentEmail = $('input[name=parentemail]').val();
-			o.alias = o.Username;
+			//o.alias = o.Username;
 		}
 
 		return o;
