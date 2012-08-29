@@ -16,6 +16,7 @@
 			'logon.logout': true,
 			'account.create': true
 		},
+
 		cookies = {},
 		rel = {},
 		noOp = function(){},
@@ -219,11 +220,8 @@
 	}
 
 	function addButton(rel){
-		$.tmpl(
-			'<button type="button" name="{rel}" title="{rel}" class="{cls}">{rel}</button>',{
-			cls: rel.replace(/\./g,' '),
-			rel: rel
-		}).appendTo('oauth-login');
+		$('<button type="button" name="'+rel+'" title="'+rel+'" class="'+rel.replace(/\./g,' ')+'">'+rel+'</button>')
+			.appendTo('oauth-login');
 	}
 
 	function error(msg){
