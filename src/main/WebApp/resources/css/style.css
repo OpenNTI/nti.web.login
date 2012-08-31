@@ -272,15 +272,15 @@ iframe.agreement {
 	position: relative;
 }
 
+span.avatar.selected {
+	border: solid 2px;
+}
+
 .signup .field-container.invalid .line span.blank,
 .signup .field-container.valid .line span.blank,
-.signup .coppa .field-container .line span.blank,
-.signup .coppa .field-container.invalid .line span.coppa,
-.signup .coppa .field-container.valid .line span.coppa,
+.signup .field-container.disabled,
 .signup .field-container .line span { display: none; }
 
-.signup .coppa .field-container .line span.coppa,
-.signup .coppa .field-container.valid .line span.valid,
 .signup .field-container .line span.blank,
 .signup .field-container.invalid .line span.invalid,
 .signup .field-container.valid .line span.valid { display: inline; }
@@ -298,11 +298,10 @@ iframe.agreement {
 	left: 320px;
 }
 
-div.coppa,
 .needs-birthday {
 	display: none;
 }
-.coppa div.coppa,
+
 .birthday-filled-in .needs-birthday { display: block; }
 
 .signin .field-container {

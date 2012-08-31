@@ -1,11 +1,20 @@
 (function($) {
 
-	var validation = {}, url,
-		now = new Date(),
-		emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	var validation = {},
+		url,
+		preflightutl,
+		profileSchema,
+		avatarURLChoices,
+		schemaToFieldMap = {
+			'first': 'realname',
+			'last': 'realname',
+			'day': 'birthdate',
+			'month': 'birthdate',
+			'year': 'birthdate'
+		};
+
 
 	function num(s){return parseInt(s,10);}
-	function isDateValid(d){var f='getTime';return d && d[f] && !isNaN( d[f]() );}
 
 
 	function setupSelectBox(){
@@ -84,130 +93,217 @@
 	}
 
 
+	function disableFields(){
+		if (!profileSchema) {
+			return;
+		}
+
+		$('.field-container').each(function(index, dom){
+			//get inputs
+			var d = $(dom),
+				inp = d.find('input'),
+				n = inp.attr('name'),
+				mappedName = schemaToFieldMap[n] || n,
+				schemaVal = profileSchema[mappedName];
+
+			//special cases:
+			if (mappedName === 'Username' || mappedName === 'password') {
+				schemaVal = true;
+			}
+
+			if (schemaVal){
+				d.removeClass('disabled');
+			}
+			else {
+				d.addClass('disabled')
+			}
+		})
+	}
+
+
+	function showAvatars(){
+		console.error('disabled style doesnt hide section...');
+		var sec = $('section.avatars'),
+			fc = sec.find('.field-container'),
+			i,s;
+
+		//testing, mock out avatars
+		avatarURLChoices = ['http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=identicon',
+		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=monsterid',
+		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=wavatar',
+		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=retro',
+		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=identicon',
+		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=monsterid',
+		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=wavatar',
+		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=retro'];
+
+
+		if (!avatarURLChoices || avatarURLChoices.length === 0) {
+			//just make sure it's hidden:
+			sec.addClass('disabled');
+			return;
+		}
+
+		//unhide avatar stuff
+		fc.removeClass('disabled');
+		sec.removeClass('disabled');
+
+		//now create spans with avatar images:
+		for (i = 0; i < avatarURLChoices.length; i++) {
+			s = $('<span class="avatar">&nbsp;</span>');
+			fc.append(s);
+			s.css({
+				'background-image': 'url('+avatarURLChoices[i]+')',
+				'display': 'inline-block',
+				'margin-right': '10px'
+			});
+			s.height(64);
+			s.width(64);
+			s.click(function(e){
+				var t = $(e.target),
+					u = t.css('background-image');
+				u = u.substring(4, u.length-1);
+
+				//first unselect everything:
+				$('span.avatar').removeClass('selected');
+				t.addClass('selected');
+
+				validation['avatarURL'] = u;
+				checkIt();
+			});
+		}
+	}
+
+
 	function lockBirthday(){
 		$('.month,[name=day],[name=year]').attr('disabled','true').removeAttr('tabindex');
 	}
 
 
 	function birthdayValidation(){
-		function c(){
-			function nb(d){return typeof d === 'number' && isFinite(d) && !isNaN(d);}
-			var cls = 'birthday-filled-in',
-				f = $('form'),
-				p = $('.month').parents('.field-container'),
-				m = num($('.month').attr('data-value'))-1,
-				d = num($('[name=day]').attr('value')),
-				y = num($('[name=year]').attr('value')),
-				cpa = new Date(now.getFullYear()-13, now.getMonth(), now.getDate()),
-				bd;
+		var bd;
+		function success(data){
+			profileSchema = data.ProfileSchema;
+			avatarURLChoices = data.AvatarURLChoices;
 
-			f.removeClass(cls+' coppa');
-			p.removeClass('valid invalid');
-			validation.birthday = false;
-			try {
-				bd = new Date(y<1000?NaN:y, m, d);				
-				
-				if(isDateValid(bd) && bd.getDate()===d && bd.getMonth()===m && bd.getFullYear()===y && bd < now){
-					p.addClass('valid');
-					f.addClass(cls);
-					if(bd > cpa){
-						f.addClass('coppa');
-						validation.pg = true;
-						lockBirthday();
-					}
-					if(!!$('[name=year]:focus').length){
-						$('[name=first]').focus();
-					}
-					validation.birthday = bd;
-				}
-				else if(y>1000 && nb(y) && nb(d)){
-					p.addClass('invalid');
-				}
-			}
-			catch(e){
-				//invalid date
-			}
+			disableFields();
+
+			form.addClass('birthday-filled-in');
+			p.removeClass('invalid valid');
+			p.addClass('valid');
+
+			lockBirthday();
+			showAvatars();
+
+			validation['birthdate'] = bd;
 			checkIt();
 		}
-		$('.month,[name=day],[name=year]').change(c);
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			p.addClass('invalid');
+		}
+
+		function pf() {
+			var m = num(month.attr('data-value'))-1,
+				d = day.val(),
+				y = year.val();
+
+			//do i need to go further?
+			if (!m || !d || !y){return;}
+
+			//otherwise, make a date:
+			bd = new Date(y<1000?NaN:y, m, d);
+			preflight({birthday: bd}, success, fail);
+		}
+
+		var month = $('.month'),
+			day = $('[name=day]'),
+			year = $('[name=year]'),
+			p = month.parents('.field-container'),
+			form = $('form');
+
+		$('.month,[name=day],[name=year]').blur(pf);
 	}
 
 
 	function nameValidation(){
-		function f(){
-			var b = true,s = '';
+		var rn;
+		function success(data){
 			p.removeClass('invalid valid');
-			name.each(function(i,o){var v=$(o).val();s+=v;b=b&&v!=='';});
-			validation.name = false;
-			if(s !== ''){
-				p.addClass((b?'':'in')+'valid');
-				validation.name = b;
-			}
+			p.addClass('valid');
+			validation['realname'] = rn;
 			checkIt();
 		}
 
-		var name = $('[name=first],[name=last]'),
-			p = name.parents('.field-container');
-		name.change(f).keyup(f);
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			p.addClass('invalid');
+		}
+
+		function pf() {
+			var f = firstname.val(),
+				l = lastname.val();
+
+			if (f && l) {
+				rn = f+' '+l;
+				preflight({realname: rn}, success, fail);
+			}
+		}
+
+		var firstname = $('[name=first]'),
+			lastname = $('[name=last]'),
+			p = firstname.parents('.field-container');
+
+		firstname.blur(pf);
+		lastname.blur(pf);
+	}
+
+
+	function generalValidation(field){
+		var m = $('input[name='+field+']'),
+			p = m.parents('.field-container');
+
+		function success(data){
+			p.removeClass('invalid valid');
+			p.addClass('valid');
+			validation[field] = m.val();
+			checkIt();
+		}
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			p.addClass('invalid');
+			console.log('validation fail', r.message, r);
+		}
+
+		function pf() {
+			var packet = {};
+			packet[field] = m.val();
+			preflight(packet, success, fail);
+		}
+		m.blur(pf);
 	}
 
 
 	function emailValidation(){
-		function t(){
-			var m = $(this),
-				p = m.parents('.field-container'),
-				v = m.val(),
-				b = v==='',
-				n = m.attr('name');
-			validation[n] = v = emailRx.test(v);
-			p.removeClass('invalid valid');
-			if(!b){
-				p.addClass((v?'':'in')+'valid');
-			}
-			checkIt();
-		}
-		$('input[type=email]').change(t).keyup(t);
+		generalValidation('email');
 	}
 
 
 	function usernameValidation(){
-		function t(){
-			var m = $(this),
-				p = m.parents('.field-container'),
-				v = (m.val()||'').toLowerCase(),
-				b = v.replace(/^["'\s]+|["'\s]+$/ig,'').length===0,
-				n = m.attr('name'),
-				pg = validation.pg,//under 13 years old
-				f = v.indexOf( $('[name=first]').val().toLowerCase() ) < 0,//v does not contain firstname
-				l = v.indexOf( $('[name=last]').val().toLowerCase() ) < 0;//v does not contain lastname
-
-			validation[n] = v = ((pg? (f&l):true) && v.length > 6);
-
-			p.removeClass('invalid valid');
-			if(!b){
-				p.addClass((v?'':'in')+'valid');
-			}
-			checkIt();
-		}
-		$('input[name=username]').change(t).keyup(t);
+		generalValidation('Username');
 	}
 
 
 	function passwordValidation(){
-		function t(){
-			var m = $(this),
-				p = m.parents('.field-container'),
-				v = m.val(),
-				b = v==='',
-				n = m.attr('name');
-			validation[n] = v = (v.length > 5);
-			p.removeClass('invalid valid');
-			if(!b){
-				p.addClass((v?'':'in')+'valid');
-			}
-			checkIt();
-		}
-		$('input[type=password]').change(t).keyup(t);
+		generalValidation('password');
 	}
 
 
@@ -219,6 +315,7 @@
 			type: 'GET'
 		}).done(function(data){
 			url = getLink(data,'account.create');
+			preflighturl = getLink(data,'account.preflight.create');
 			validation.url = Boolean(url);
 		}).fail(function(){
 			console.error('failed to resolve service url...will retry in 5 seconds');
@@ -226,10 +323,11 @@
 		});
 	}
 
+
 	function post(data){
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host+url,
+			url: host+ url,
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'
@@ -264,35 +362,60 @@
 	}
 
 
+	function preflight(data, success, fail){
+
+	 	function defaultFail(){
+			console.log('preflight fail');
+		}
+
+		function defaultSuccess(){
+			//go ahead and overwrite, no biggy:
+			profileSchema = this.ProfileSchema;
+			avatarURLChoices = this.AvatarURLChoices;
+			//make sure we got everything we needed:
+			console.log('preflight success', data);
+			checkIt();
+		}
+
+		if (!success){success = defaultSuccess;}
+		if (!fail){fail = defaultFail;}
+
+		var x = $.ajax({
+			headers: {Accept:'application/json'},
+			url: host+ preflighturl,
+			data: JSON.stringify(data),
+			dataType: 'json',
+			type: 'POST'
+		}).fail(fail).done(success);
+	}
+
+
 	function checkIt(){
-		var v=validation;
-		v = (v.url && Boolean(v.birthday) && v.email && v.name && v.username && v.password && (!v.pg || v.parentemail));
+		console.error('consider something smarter here...');
+		var v = validation;
+		v = (v.url && Boolean(v.birthdate) && v.email && v.realname && v.Username && v.password);
 		if(v){
 			$('a.agree').removeClass('disabled');
+			return true;
 		}
 		else {
 			$('a.agree').addClass('disabled');
+			return false;
 		}
-		return v;
 	}
 
 
 	function buildObj(){
 		var v = validation,
-			u = $('input[name=username]').val().replace(/^["'\s]+|["'\s]+$/ig,''),
 			o = {
-				birthdate: v.birthday,
-				email: $('input[name=email]').val(),
-				realname: [$('input[name=first]').val(),$('input[name=last]').val()].join(' '),
-				alias: u,
-				Username: u,
-				password: $('input[name=password]').val()
+				birthdate: v.birthdate,
+				email: v.email,
+				realname: v.realname,
+				Username:	v.Username,
+				password: v.password,
+				avatarURL:v.avatarURL,
+				contact_email:v.contact_email
 			};
-
-		if(v.pg){
-			o.parentEmail = $('input[name=parentemail]').val();
-			o.alias = o.Username;
-		}
 
 		return o;
 	}
@@ -305,6 +428,7 @@
 				s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
 				setTimeout(function(){s.removeClass(att);},1300);
 			} else {
+				debugger;
 				post(buildObj());
 			}
 		}
@@ -316,6 +440,13 @@
 		return false;
 	}
 
+
+	function parseResponseText(data) {
+		if (data && data.responseText) {
+			return JSON.parse(data.responseText);
+		}
+		return null;
+	}
 
 	//onready event
 	$(function(){
