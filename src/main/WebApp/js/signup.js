@@ -126,17 +126,6 @@
 		var sec = $('section.avatars'),
 			fc = sec.find('.field-container');
 
-		//testing, mock out avatars
-		avatarURLChoices = ['http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=identicon',
-		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=monsterid',
-		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=wavatar',
-		                       'http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=retro',
-		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=identicon',
-		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=monsterid',
-		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=wavatar',
-		                       'http://www.gravatar.com/avatar/94591351650bb607445955eacaa5f318?s=128&d=retro'];
-
-
 		if (!avatarURLChoices || avatarURLChoices.length === 0) {
 			//just make sure it's hidden:
 			sec.addClass('disabled');
