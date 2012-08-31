@@ -2,7 +2,7 @@
 
 	var validation = {},
 		url,
-		preflightutl,
+		preflighturl,
 		profileSchema,
 		avatarURLChoices,
 		schemaToFieldMap = {
@@ -124,8 +124,7 @@
 	function showAvatars(){
 		console.error('disabled style doesnt hide section...');
 		var sec = $('section.avatars'),
-			fc = sec.find('.field-container'),
-			i,s;
+			fc = sec.find('.field-container');
 
 		//testing, mock out avatars
 		avatarURLChoices = ['http://www.gravatar.com/avatar/6a108c56908e143adcd1671083c61e6c?s=128&d=identicon',
@@ -149,29 +148,23 @@
 		sec.removeClass('disabled');
 
 		//now create spans with avatar images:
-		for (i = 0; i < avatarURLChoices.length; i++) {
-			s = $('<span class="avatar">&nbsp;</span>');
+		$.each(avatarURLChoices, function(index, u){
+			var s = $('<a class="avatar"><img/></a>');
 			fc.append(s);
-			s.css({
-				'background-image': 'url('+avatarURLChoices[i]+')',
-				'display': 'inline-block',
-				'margin-right': '10px'
-			});
-			s.height(64);
-			s.width(64);
+			s.find('img').attr('src', u);
 			s.click(function(e){
-				var t = $(e.target),
-					u = t.css('background-image');
-				u = u.substring(4, u.length-1);
+				e.preventDefault();
+				e.stopPropagation();
 
 				//first unselect everything:
-				$('span.avatar').removeClass('selected');
-				t.addClass('selected');
+				$('a.avatar').removeClass('selected');
+				s.addClass('selected');
 
 				validation['avatarURL'] = u;
 				checkIt();
+				return false;
 			});
-		}
+		});
 	}
 
 
@@ -181,19 +174,17 @@
 
 
 	function birthdayValidation(){
-		var bd;
+		var bd, pftimer;
 		function success(data){
 			profileSchema = data.ProfileSchema;
 			avatarURLChoices = data.AvatarURLChoices;
+			console.log('birthday validation success', data);
 
 			disableFields();
-
 			form.addClass('birthday-filled-in');
 			p.removeClass('invalid valid');
 			p.addClass('valid');
-
 			lockBirthday();
-			showAvatars();
 
 			validation['birthdate'] = bd;
 			checkIt();
@@ -212,11 +203,18 @@
 				y = year.val();
 
 			//do i need to go further?
-			if (!m || !d || !y){return;}
+			if (m === null || !d || !y){return;}
 
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
-			preflight({birthday: bd}, success, fail);
+			if (bd) {
+				preflight({birthday: bd}, success, fail);
+			}
+		}
+
+		function pftimer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
 		}
 
 		var month = $('.month'),
@@ -225,7 +223,7 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-		$('.month,[name=day],[name=year]').blur(pf);
+		$('.month,[name=day],[name=year]').blur(pf).keyup(pftimer);
 	}
 
 
@@ -264,7 +262,7 @@
 	}
 
 
-	function generalValidation(field){
+	function generalValidation(field, afterSuccess){
 		var m = $('input[name='+field+']'),
 			p = m.parents('.field-container');
 
@@ -273,6 +271,7 @@
 			p.addClass('valid');
 			validation[field] = m.val();
 			checkIt();
+			if (afterSuccess){afterSuccess(data);}
 		}
 
 		function fail(data){
@@ -298,7 +297,7 @@
 
 
 	function usernameValidation(){
-		generalValidation('Username');
+		generalValidation('Username', function(){showAvatars();});
 	}
 
 
@@ -391,33 +390,26 @@
 
 
 	function checkIt(){
-		console.error('consider something smarter here...');
-		var v = validation;
-		v = (v.url && Boolean(v.birthdate) && v.email && v.realname && v.Username && v.password);
-		if(v){
-			$('a.agree').removeClass('disabled');
-			return true;
+		var key, val, o;
+
+		for(key in profileSchema) {
+		    val = profileSchema[key];
+		    o = validation[key];
+
+			if(val.required === 'true' && !o) {
+				$('a.agree').addClass('disabled');
+				return false;
+			}
 		}
-		else {
+
+		//check some things we are sure about, just in case:
+		if (!validation.Username || !validation.password) {
 			$('a.agree').addClass('disabled');
 			return false;
 		}
-	}
 
-
-	function buildObj(){
-		var v = validation,
-			o = {
-				birthdate: v.birthdate,
-				email: v.email,
-				realname: v.realname,
-				Username:	v.Username,
-				password: v.password,
-				avatarURL:v.avatarURL,
-				contact_email:v.contact_email
-			};
-
-		return o;
+		$('a.agree').removeClass('disabled');
+		return true;
 	}
 
 
@@ -428,8 +420,7 @@
 				s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
 				setTimeout(function(){s.removeClass(att);},1300);
 			} else {
-				debugger;
-				post(buildObj());
+				post(validation);
 			}
 		}
 		catch(er){

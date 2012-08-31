@@ -272,13 +272,48 @@ iframe.agreement {
 	position: relative;
 }
 
-span.avatar.selected {
-	border: solid 2px;
+a.avatar {
+	position: relative;
+	display: inline-table;
+	display: inline-block;
+	margin-right: 10px;
+	height: 84px;
+	width: 84px;
+	margin: 4px 20px 0 0;
+	box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.2);
+	border: 1px solid #b8b8b8;
+	vertical-align: top;
 }
 
+a.avatar img{
+	height: 100%;
+	width: 100%;
+}
+
+a.avatar.selected {
+	margin: 0 16px 0 -4px;
+	border: 4px solid #89be3c;
+	border-radius: 5px;
+	box-shadow: none;
+	height: 92px;
+	width: 92px;
+}
+
+
+a.avatar.selected::before,
+a.avatar.selected::after{
+	content: ' ';
+	position: absolute;
+	z-index: 1999;
+	top: -9px;
+	right: -9px;
+	width: 18px; height: 18px;
+	background: url(../images/Green-Check.png) 0 0 no-repeat;
+}
+
+.signup .disabled,
 .signup .field-container.invalid .line span.blank,
 .signup .field-container.valid .line span.blank,
-.signup .field-container.disabled,
 .signup .field-container .line span { display: none; }
 
 .signup .field-container .line span.blank,
