@@ -119,12 +119,12 @@
 			else {
 				d.addClass('disabled')
 			}
-		})
+		});
+		populateAffiliation();
 	}
 
 
 	function showAvatars(){
-		console.error('disabled style doesnt hide section...');
 		var sec = $('section.avatars'),
 			fc = sec.find('.field-container');
 
@@ -159,6 +159,35 @@
 	}
 
 
+	function affiliationValidation(){
+		var selections = $('.affiliation').find('select'),
+			p = $(selections[0]).parents('.field-container'),
+			value = [],
+			aff;
+		$.each(selections, function(i, s){
+			value.push($(s).val());
+		});
+		value.reverse();
+
+		function success(data){
+			p.removeClass('invalid valid');
+			p.addClass('valid');
+			validation['affiliation'] = aff;
+			checkIt();
+		}
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			p.addClass('invalid');
+		}
+
+		aff = value.join(',');
+		preflight({'affiliation': aff}, success, fail);
+	}
+
+
 	function lockBirthday(){
 		$('.month,[name=day],[name=year]').attr('disabled','true').removeAttr('tabindex');
 	}
@@ -189,6 +218,7 @@
 		}
 
 		function pf() {
+			clearTimeout(pftimer);
 			var m = num(month.attr('data-value'))-1,
 				d = day.val(),
 				y = year.val();
@@ -513,6 +543,66 @@
 		}
 		return null;
 	}
+
+
+	function buildSelect(owner, level, obj) {
+		if (!obj){return;}
+
+		owner.parents('.field-container').removeClass('invalid valid');
+		owner.find('[data-level=' +level+']').remove();
+		owner.find('[data-level=' +(level+1)+']').remove();
+
+		var s = $('<select data-level='+level+'>'),
+			key, option;
+		for (key in obj) {
+			if ($.isArray(obj)){key = obj[key];}
+			option = $('<option value="'+key+'">'+key+'</option>');
+			s.append(option);
+		}
+		owner.append(s);
+
+		//SETUP EVENTS:
+		s.change(function(){
+			if (level < 2) {
+				buildSelect(owner, level + 1, obj[$(this).val()]);
+			}
+			else {
+				affiliationValidation();
+			}
+		});
+
+
+		if($.isArray(obj) && obj.length === 1){
+			//already selected:
+			affiliationValidation();
+		}
+	}
+
+
+	function populateAffiliation(){
+		debugger;
+		var sec = $('section.affiliations'),
+			owner = $('.affiliation');
+
+		if (!profileSchema || !profileSchema.affiliation){
+			//just make sure it's hidden:
+			sec.addClass('disabled');
+			return;
+		}
+
+		sec.removeClass('disabled');
+		owner.removeClass('disabled');
+
+		owner.parents('.field-container').removeClass('disabled');
+		owner.html('');
+		$.getJSON('js/school-data.js', function(data){
+			var key;
+			console.log('school data loaded', data);
+			buildSelect(owner, 0, data);
+		});
+	}
+
+
 
 	//onready event
 	$(function(){
