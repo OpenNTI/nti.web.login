@@ -157,6 +157,31 @@ h4{
 	font-weight: bold;
 }
 
+input[type=checkbox] {
+	position: relative;
+}
+
+input[type="checkbox"]::after {
+	position: absolute;
+	content: ' ';
+	width: 20px;
+	height: 30px;
+	background: white url(../images/sprite.png) -65px -10px no-repeat;
+	top: -5px;
+	left: 0;
+}
+
+
+input[type="checkbox"]:hover::after {
+	background-position: -65px -60px;
+}
+
+input[type="checkbox"]:checked::after,
+input[type="checkbox"]:checked:hover::after {
+	background-position: -65px -110px
+}
+
+
 .selectbox {
 	cursor: default;
 	display: inline-table;
@@ -173,7 +198,21 @@ div.selectbox {
 	overflow: visible;
 	height: 39px;
 	width: 160px;
-	background: #ffffff url(../images/down-arrow.png) 140px 18px no-repeat;
+	background: #ffffff url(../images/down-arrow.png) right 18px no-repeat;
+}
+
+div.selectbox[data-level="0"] {
+	width: 60px;
+}
+
+div.selectbox[data-level="1"] {
+	width: 236px;
+	border-left-width: 0;
+}
+
+div.selectbox[data-level="2"] {
+	margin-top: 10px;
+	width: 296px;
 }
 
 ol.selectbox[tabindex]{
@@ -192,37 +231,14 @@ ol.selectbox li {
 
 }
 
-ol.selectbox[data-value='ini'] li.ini,
-ol.selectbox[data-value='1'] li[value='1'],
-ol.selectbox[data-value='2'] li[value='2'],
-ol.selectbox[data-value='3'] li[value='3'],
-ol.selectbox[data-value='4'] li[value='4'],
-ol.selectbox[data-value='5'] li[value='5'],
-ol.selectbox[data-value='6'] li[value='6'],
-ol.selectbox[data-value='7'] li[value='7'],
-ol.selectbox[data-value='8'] li[value='8'],
-ol.selectbox[data-value='9'] li[value='9'],
-ol.selectbox[data-value='10'] li[value='10'],
-ol.selectbox[data-value='11'] li[value='11'],
-ol.selectbox[data-value='12'] li[value='12'],
-ol.selectbox.open li[value] {
+ol.selectbox li.selected,
+ol.selectbox.open li[data-value] {
 	display: block;
 }
 
-ol.selectbox.open[data-value='1'] li[value='1'],
-ol.selectbox.open[data-value='2'] li[value='2'],
-ol.selectbox.open[data-value='3'] li[value='3'],
-ol.selectbox.open[data-value='4'] li[value='4'],
-ol.selectbox.open[data-value='5'] li[value='5'],
-ol.selectbox.open[data-value='6'] li[value='6'],
-ol.selectbox.open[data-value='7'] li[value='7'],
-ol.selectbox.open[data-value='8'] li[value='8'],
-ol.selectbox.open[data-value='9'] li[value='9'],
-ol.selectbox.open[data-value='10'] li[value='10'],
-ol.selectbox.open[data-value='11'] li[value='11'],
-ol.selectbox.open[data-value='12'] li[value='12'],
-ol.selectbox.open li[value]:hover,
-ol.selectbox.open li[value].over {
+ol.selectbox.open li.selected,
+ol.selectbox.open li[data-value]:hover,
+ol.selectbox.open li[data-value].over {
 	background: #dcdcdc;
 }
 
@@ -233,6 +249,9 @@ ol.selectbox.open {
 	height: auto;
 	background: #ffffff;
 	border: 1px solid #dcdcdc;
+	max-height: 400px;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .signup *:focus {

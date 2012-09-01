@@ -19,14 +19,20 @@
 	function num(s){return parseInt(s,10);}
 
 
-	function setupSelectBox(){
+	function setupSelectBox(sb){
 		var t=-1,o='open',oc='.'+o,ct=clearTimeout,c='.selectbox',ol='ol'+c,d='div'+c,l='disabled',dv='data-value';
-		function locked(s){return $(ol,s).attr(l)===l;}
-		function show(s){ct(t); locked(s)||$(ol,s).addClass(o);}
-		function hide(s){ct(t); locked(s)||$(ol,s).removeClass(o);}
-		$(d).click(function(){if($(this).parents(c).has(oc).length===0){show(this);}})
+		function locked(s){return $(ol,sb||s).attr(l)===l;}
+		function show(s){ct(t); locked(s)||$(ol,sb||s).addClass(o);}
+		function hide(s){ct(t); locked(s)||$(ol,sb||s).removeClass(o);}
+		$(sb||d).click(function(){
+			if($(this).parents(c).has(oc).length===0){
+				show(this);
+			}
+		})
+
 			.mouseleave(function(){var e=this;ct(t);t=setTimeout(function(){hide(e);},750);})
 			.mouseenter(function(){ct(t);})
+			/*
 			.keydown(function(e){
 					var t=$(ol,this),v=num(t.attr(dv)),k=e.which,
 						u=(k>=37&&k<=38),d=(k>=39&&k<=40),m=t.children('li').length-1;
@@ -45,11 +51,14 @@
 						return false;
 					}
 				})
+				*/
 				.find('li').click(function(e){
 					var l=$(this),p=l.parent(ol);
 					if(l.parents(c).has(oc).length===0){return;}
 					hide(l.parents(d));
-					p.attr(dv, l.val());
+					p.attr(dv, l.attr(dv));
+					p.find('li').removeClass('selected');
+					l.addClass('selected');
 					p.change();
 					e.stopImmediatePropagation();
 					e.stopPropagation();
@@ -160,12 +169,12 @@
 
 
 	function affiliationValidation(){
-		var selections = $('.affiliation').find('select'),
+		var selections = $('.affiliation').find('ol.selectbox'),
 			p = $(selections[0]).parents('.field-container'),
 			value = [],
 			aff;
 		$.each(selections, function(i, s){
-			value.push($(s).val());
+			value.push($(s).attr('data-value'));
 		});
 		value.reverse();
 
@@ -582,20 +591,29 @@
 		owner.parents('.field-container').removeClass('invalid valid');
 		owner.find('[data-level=' +level+']').remove();
 		owner.find('[data-level=' +(level+1)+']').remove();
+		owner.find('br').remove();
 
-		var s = $('<select data-level='+level+'>'),
+		if(level === 2){
+			owner.append($('<br/>'));
+		}
+
+		var s = $('<div data-level="'+level+'" class="selectbox"></div>'),
+			ol = $('<ol class="selectbox" data-value="'+level+'" tabindex="1"></ol>'),
 			key, option;
 		for (key in obj) {
 			if ($.isArray(obj)){key = obj[key];}
-			option = $('<option value="'+key+'">'+key+'</option>');
-			s.append(option);
+			option = $('<li data-value="'+key+'">'+key+'</li>');
+			ol.append(option);
 		}
+		s.append(ol);
 		owner.append(s);
 
+		setupSelectBox(s);
+
 		//SETUP EVENTS:
-		s.change(function(){
+		ol.change(function(){
 			if (level < 2) {
-				buildSelect(owner, level + 1, obj[$(this).val()]);
+				buildSelect(owner, level + 1, obj[ol.attr('data-value')]);
 			}
 			else {
 				affiliationValidation();
