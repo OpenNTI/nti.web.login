@@ -10,7 +10,9 @@
 			'last': 'realname',
 			'day': 'birthdate',
 			'month': 'birthdate',
-			'year': 'birthdate'
+			'year': 'birthdate',
+			'password_verify': 'password',
+			'email_verify': 'email'
 		};
 
 
@@ -281,7 +283,49 @@
 
 
 	function emailValidation(){
-		generalValidation('email');
+		function success(data){
+			p.removeClass('invalid valid');
+			v.removeClass('invalid valid');
+			p.addClass('valid');
+			v.addClass('valid');
+			validation['email'] = email.val();
+			checkIt();
+		}
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			v.removeClass('invalid valid');
+			p.addClass('invalid');
+			console.log('validation fail', r.message, r);
+		}
+
+
+		function pf(){
+			var e = email.val(),
+				veri = verify.val();
+
+			p.removeClass('invalid');
+			v.removeClass('invalid');
+
+			if (!e || !veri){return;}
+			if (e !== veri){
+				v.removeClass('invalid valid');
+				v.addClass('invalid');
+				return;
+			}
+			preflight({email: e}, success, fail);
+		}
+
+		var email = $('[name=email]'),
+			verify = $('[name=email_verify]'),
+			p = email.parents('.field-container'),
+			v = verify.parents('.field-container');
+
+
+		email.blur(pf);
+		verify.blur(pf);
 	}
 
 
@@ -291,7 +335,49 @@
 
 
 	function passwordValidation(){
-		generalValidation('password');
+		function success(data){
+			p.removeClass('invalid valid');
+			v.removeClass('invalid valid');
+			p.addClass('valid');
+			v.addClass('valid');
+			validation['password'] = ps.val();
+			checkIt();
+		}
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			v.removeClass('invalid valid');
+			p.addClass('invalid');
+			console.log('validation fail', r.message, r);
+		}
+
+
+		function pf(){
+			var pass = ps.val(),
+				veri = verify.val();
+
+			p.removeClass('invalid');
+			v.removeClass('invalid');
+
+			if (!pass || !veri){return;}
+			if (pass !== veri){
+				v.removeClass('invalid valid');
+				v.addClass('invalid');
+				return;
+			}
+			preflight({password: pass}, success, fail);
+		}
+
+		var ps = $('[name=password]'),
+			verify = $('[name=password_verify]'),
+			p = ps.parents('.field-container'),
+			v = verify.parents('.field-container');
+
+
+		ps.blur(pf);
+		verify.blur(pf);
 	}
 
 

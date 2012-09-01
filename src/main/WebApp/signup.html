@@ -82,9 +82,16 @@
 									<span class="valid">Looks good!</span>
 								</div>
 							</div>
-
 							<div class="field-container">
-								<input type="email" name="contact_emailf" size="20" placeholder="Parent's Email" autocomplete="off"/>
+								<input type="email" name="email_verify" size="20" placeholder="Verify your email." autocomplete="off"/>
+								<div class="line">
+									<span class="blank">Verify your email address.</span>
+									<span class="invalid">Emails don't match.</span>
+									<span class="valid">Emails match.</span>
+								</div>
+							</div>
+							<div class="field-container">
+								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"/>
 								<div class="line">
 									<span class="invalid">Your parent needs to approve your NextThought account.</span>
 									<span class="valid">After your parent approves your account, you&apos;ll get some
@@ -103,8 +110,18 @@
 								<input type="password" name="password" size="20"
 									   placeholder="Password" autocomplete="off"/>
 								<div class="line">
+									<span class="blank">Enter a password.</span>
 									<span class="invalid">Might be too weak.</span>
 									<span class="valid">Okay, this will be our secret.</span>
+								</div>
+							</div>
+							<div class="field-container">
+								<input type="password" name="password_verify" size="20"
+									   placeholder="Verify Password" autocomplete="off"/>
+								<div class="line">
+									<span class="blank">Verify password.</span>
+									<span class="invalid">Passwords don't match.</span>
+									<span class="valid">Thanks.</span>
 								</div>
 							</div>
 						</section>
