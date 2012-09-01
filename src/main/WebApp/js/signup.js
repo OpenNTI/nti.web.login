@@ -364,6 +364,37 @@
 	}
 
 
+	function optInValidation(){
+		var field = 'opt_in_email_communication',
+			m = $('input[name='+field+']'),
+			p = m.parents('.field-container');
+
+		function success(data){
+			p.removeClass('invalid valid');
+			if(m[0].checked){p.find('.valid').text('Thanks, we will send you emails.');}
+			else {p.find('.valid').text('Okay, no emails for you.');}
+			p.addClass('valid');
+			validation[field] = m.val();
+			checkIt();
+		}
+
+		function fail(data){
+			var r = parseResponseText(data);
+			p.find('.invalid').text(r.message);
+			p.removeClass('invalid valid');
+			p.addClass('invalid');
+			console.log('validation fail', r.message, r);
+		}
+
+		function pf() {
+			var packet = {};
+			packet[field] = m.val();
+			preflight(packet, success, fail);
+		}
+		m.change(pf);
+	}
+
+
 	function passwordValidation(){
 		function success(data){
 			p.removeClass('invalid valid');
@@ -580,7 +611,6 @@
 
 
 	function populateAffiliation(){
-		debugger;
 		var sec = $('section.affiliations'),
 			owner = $('.affiliation');
 
@@ -613,6 +643,7 @@
 		emailValidation();
 		usernameValidation();
 		passwordValidation();
+		optInValidation();
 
 		$('a.agree').click(makeIt);
 
