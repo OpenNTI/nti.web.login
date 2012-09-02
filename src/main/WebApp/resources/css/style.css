@@ -230,9 +230,16 @@ ol.selectbox {
 
 ol.selectbox li {
 	padding: 0 15px;
+	color: #757474;
+	font-size: 14px;
+	font-weight: 500;
 	list-style: none;
 	display: none;
+}
 
+ol.selectbox li.placeholder {
+	font-style: italic;
+	color: #b8b8b8;
 }
 
 ol.selectbox li.selected,
