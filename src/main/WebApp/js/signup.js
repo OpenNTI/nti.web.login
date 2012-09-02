@@ -233,7 +233,7 @@
 				y = year.val();
 
 			//do i need to go further?
-			if (m === null || !d || !y){return;}
+			if (m === null || !d || !y || y.length < 4){return;}
 
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
@@ -603,7 +603,7 @@
 			key, option;
 
 		//Add the title
-		ol.append($('<li class="selected" data-value="'+titles[level]+'">'+titles[level]+'</li>'));
+		ol.append($('<li class="placeholder selected" data-value="'+titles[level]+'">'+titles[level]+'</li>'));
 
 
 		for (key in obj) {
