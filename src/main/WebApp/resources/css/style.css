@@ -260,7 +260,7 @@ ol.selectbox.open {
 	height: auto;
 	background: #ffffff;
 	border: 1px solid #dcdcdc;
-	max-height: 400px;
+	max-height: 450px;
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
