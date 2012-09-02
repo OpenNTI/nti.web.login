@@ -9,6 +9,7 @@
 		pingTimeout,
 		hideRel = {
 			'logon.nti.password': true,
+			'logon.forgot.username': true,
 			'logon.continue': true,
 			'logon.google': true,
 			'logon.openid': true,
@@ -53,7 +54,7 @@
 	function clearForm(){
 		messageUser();//reset the message
 		$('body').removeClass(function(i,c){return c.replace('signin','');});
-		$('oauth-login button').remove();
+		$('#oauth-login button').remove();
 		rel = {};
 	}
 
