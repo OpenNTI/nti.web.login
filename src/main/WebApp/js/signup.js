@@ -315,6 +315,12 @@
 		function pf() {
 			var packet = {};
 			packet[field] = m.val();
+			if(field !== 'Username' && validation.Username){
+				packet['Username'] = validation.Username;
+			}
+			if(validation.realname){
+				packet['realname'] = validation.realname;
+			}
 			preflight(packet, success, fail);
 		}
 		m.blur(pf);
