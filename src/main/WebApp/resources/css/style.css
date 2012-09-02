@@ -118,8 +118,20 @@ a.agree.disabled {
 	font-weight: 500;
 }
 
+.signin .forgot,
+.signin .forgot a {
+	width: 330px;
+	color: #757474;
+	font-size: 14px;
+	font-style: italic;
+}
+
+.signin .forgot a {
+	color: #3fb3f6;
+}
 
 .signin .container {
+	width: 330px;
 	margin: 20px 0 10px 0;
 	text-align: center;
 	box-shadow: 0 0 10px 0 #999999;

@@ -25,44 +25,47 @@
 	<div class="wrapper spotlight">
 		<div class="wrapper-inner">
 			<div class="middle zoomin">
-				<div class="container">
-					<div class="header"></div>
-					<div class="content">
-						<section id="nt-login">
-								<form id="login" method="post">
-									<div id="message" class="message"></div>
-									<div>
-										<div class="field-container">
-											<label for="username">Username:</label>
-											<input id="username" name="username" type="text"
-												   placeholder="Username"/>
+				<div class="branding">
+					<div class="container">
+						<div class="header"></div>
+						<div class="content">
+							<section id="nt-login">
+									<form id="login" method="post">
+										<div id="message" class="message"></div>
+										<div>
+											<div class="field-container">
+												<label for="username">Username:</label>
+												<input id="username" name="username" type="text"
+													   placeholder="Username"/>
+											</div>
+
+											<div id="password-field" class="field-container">
+												<label for="password">Password:</label>
+												<input id="password" name="password" type="password"
+													   autocomplete="off"
+													   placeholder="Password"/>
+											</div>
+
+											<div class="field-container">
+												<input id="remember" name="remember" type="checkbox"/>
+												<label for="remember">Remember me</label>
+
+												<button id="submit" type="submit" disabled>Login</button>
+											</div>
+
+											<div id="oauth-login"></div>
+
+											<div id="account-creation">
+												<a href="signup.html">Create an Account</a>
+											</div>
+
+											<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
 										</div>
-
-										<div id="password-field" class="field-container">
-											<label for="password">Password:</label>
-											<input id="password" name="password" type="password"
-												   autocomplete="off"
-												   placeholder="Password"/>
-										</div>
-
-										<div class="field-container">
-											<input id="remember" name="remember" type="checkbox"/>
-											<label for="remember">Remember me</label>
-
-											<button id="submit" type="submit" disabled>Login</button>
-										</div>
-
-										<div id="oauth-login"></div>
-
-										<div id="account-creation">
-											<a href="signup.html">Create an Account</a>
-										</div>
-
-										<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
-									</div>
-								</form>
-						</section>
+									</form>
+							</section>
+						</div>
 					</div>
+					<div class="forgot">I forgot my <a href="#" id="forgotit">username</a> or <a href="#">password</a>.</div>
 				</div>
 			</div>
 		</div>
