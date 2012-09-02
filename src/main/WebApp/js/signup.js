@@ -187,7 +187,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			p.addClass('invalid');
 		}
@@ -221,7 +221,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			p.addClass('invalid');
 		}
@@ -268,7 +268,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			p.addClass('invalid');
 		}
@@ -306,7 +306,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			p.addClass('invalid');
 			console.log('validation fail', r.message, r);
@@ -339,7 +339,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			v.removeClass('invalid valid');
 			p.addClass('invalid');
@@ -395,7 +395,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			p.addClass('invalid');
 			console.log('validation fail', r.message, r);
@@ -422,7 +422,7 @@
 
 		function fail(data){
 			var r = parseResponseText(data);
-			p.find('.invalid').text(r.message);
+			p.find('.invalid').text(makeOneLine(r.message));
 			p.removeClass('invalid valid');
 			v.removeClass('invalid valid');
 			p.addClass('invalid');
@@ -656,6 +656,18 @@
 		});
 	}
 
+
+	function makeOneLine(str) {
+		if (str.length < 100) {return str;}
+		//chop at too chars:
+		var result = str.substring(0, 100),
+			period = result.lastIndexOf('.');
+
+		if (period > -1 && period > 30) {
+			result = result.substring(0, period+1);
+		}
+		return result;
+	}
 
 
 	//onready event
