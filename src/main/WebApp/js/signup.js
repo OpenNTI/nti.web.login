@@ -586,12 +586,12 @@
 
 
 	function buildSelect(owner, level, obj) {
-		if (!obj){return;}
-
 		owner.parents('.field-container').removeClass('invalid valid');
 		owner.find('[data-level=' +level+']').remove();
 		owner.find('[data-level=' +(level+1)+']').remove();
 		owner.find('br').remove();
+
+		if (!obj){return;}
 
 		if(level === 2){
 			owner.append($('<br/>'));
@@ -599,7 +599,13 @@
 
 		var s = $('<div data-level="'+level+'" class="selectbox"></div>'),
 			ol = $('<ol class="selectbox" data-value="'+level+'" tabindex="1"></ol>'),
+			titles = ['State', 'City', 'School'],
 			key, option;
+
+		//Add the title
+		ol.append($('<li class="selected" data-value="'+titles[level]+'">'+titles[level]+'</li>'));
+
+
 		for (key in obj) {
 			if ($.isArray(obj)){key = obj[key];}
 			option = $('<li data-value="'+key+'">'+key+'</li>');
@@ -619,12 +625,6 @@
 				affiliationValidation();
 			}
 		});
-
-
-		if($.isArray(obj) && obj.length === 1){
-			//already selected:
-			affiliationValidation();
-		}
 	}
 
 
