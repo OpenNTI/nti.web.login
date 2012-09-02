@@ -238,7 +238,7 @@
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
 			if (bd) {
-				preflight({birthday: bd}, success, fail);
+				preflight({birthdate: bd}, success, fail);
 			}
 		}
 
