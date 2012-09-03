@@ -147,6 +147,9 @@
 			return;
 		}
 
+		//if we have existing avatars, remove and replace them, username may have changed:
+		$('a.avatar').remove();
+
 		//unhide avatar stuff
 		fc.removeClass('disabled');
 		sec.removeClass('disabled');
