@@ -211,6 +211,21 @@
 			hideAffiliation();
 		}
 
+		function isDateThere(){
+			var m = num(month.attr('data-value'))-1,
+				d = day.val(),
+				y = year.val();
+
+			//do i need to go further?
+			if (m === null || isNaN(m) || !d || !y || y.length < 4){return false;}
+
+			//otherwise, make a date:
+			bd = new Date(y<1000?NaN:y, m, d);
+			if (bd) {
+				return true;
+			}
+		}
+
 		function pf() {
 			clearTimeout(pftimer);
 			var m = num(month.attr('data-value'))-1,
@@ -227,9 +242,10 @@
 			}
 		}
 
-		function timer(){
-			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
+		function up(){
+			if (isDateThere()){
+				pf()
+			}
 		}
 
 		var month = $('.month'),
@@ -238,7 +254,7 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-		$('.month,[name=day],[name=year]').blur(pf).keyup(timer);
+		$('.month,[name=day],[name=year]').blur(pf).keyup(up);
 	}
 
 
