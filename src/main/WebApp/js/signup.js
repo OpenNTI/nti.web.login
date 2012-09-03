@@ -117,7 +117,8 @@
 			//get inputs
 			var d = $(dom),
 				inp = d.find('input'),
-				n = inp.attr('name'),
+				oth = d.find('div[data-name]'),
+				n = inp.attr('name') || oth.attr('data-name'),
 				mappedName = schemaToFieldMap[n] || n,
 				schemaVal = profileSchema[mappedName];
 
@@ -255,6 +256,30 @@
 			form = $('form');
 
 		$('.month,[name=day],[name=year]').blur(pf).keyup(up);
+	}
+
+
+	function participatesValidation(){
+		var ol = $('ol.participates_in_mathcounts');
+
+		function pf(){
+			var val = ol.attr('data-value');
+			validate('participates_in_mathcounts', (val === 1));
+		}
+
+		ol.change(pf);
+	}
+
+
+	function roleValidation(){
+		var ol = $('ol.role');
+
+		function pf(){
+			var val = ol.attr('data-value');
+			validate('role', val);
+		}
+
+		ol.change(pf);
 	}
 
 
@@ -728,6 +753,8 @@
 		usernameValidation();
 		passwordValidation();
 		optInValidation();
+		participatesValidation();
+		roleValidation();
 
 		$('a.agree').click(makeIt);
 
