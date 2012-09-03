@@ -341,15 +341,21 @@
 		});
 
 		$('#recover').submit(function(e){
+			var val = $('#recover input').val();
 			e.stopPropagation();
 			e.preventDefault();
+
+			$('#recover').html('<h1>Thanks!</h1>');
+			setTimeout(function(){
+				$('.forgot .dialog').hide();
+			},5000);
 
 			$.ajax({
 				url: host+recoverNameUrl,
 				dataType: 'json',
 				headers: {Accept:'application/json'},
 				type: 'POST',
-				data: {email: $('#recover input').val()}
+				data: {email: val}
 			})
 			.done(function(data){
 				console.log('suc',arguments);
