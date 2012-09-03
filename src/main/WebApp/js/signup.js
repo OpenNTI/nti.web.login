@@ -247,10 +247,17 @@
 		}
 
 		var firstname = $('[name=first]'),
-			lastname = $('[name=last]');
+			lastname = $('[name=last]'),
+			pftimer;
 
-		firstname.blur(pf);
-		lastname.blur(pf);
+
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
+		}
+
+		firstname.blur(pf).keyup(timer);
+		lastname.blur(pf).keyup(timer);
 	}
 
 
@@ -259,8 +266,16 @@
 			validate(field, m.val(), afterSuccess);
 		}
 
-		var m = $('input[name='+field+']');
-		m.blur(pf);
+		var m = $('input[name='+field+']'),
+			pftimer;
+
+
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
+		}
+
+		m.blur(pf).keyup(timer);
 	}
 
 
@@ -284,11 +299,17 @@
 		var email = $('[name=email]'),
 			verify = $('[name=email_verify]'),
 			p = email.parents('.field-container'),
-			v = verify.parents('.field-container');
+			v = verify.parents('.field-container'),
+			pftimer;
 
 
-		email.blur(pf);
-		verify.blur(pf);
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
+		}
+
+		email.blur(pf).keyup(timer);
+		verify.blur(pf).keyup(timer);
 	}
 
 
@@ -300,7 +321,8 @@
 	function optInValidation(){
 		var field = 'opt_in_email_communication',
 			m = $('input[name='+field+']'),
-			p = m.parents('.field-container');
+			p = m.parents('.field-container'),
+			pftimer;
 
 		function afterSuccess(){
 			if(m[0].checked){p.find('.valid').text('Thanks, we will send you emails.');}
@@ -310,7 +332,13 @@
 		function pf() {
 			validate(field, m.val(), afterSuccess);
 		}
-		m.change(pf);
+
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
+		}
+
+		m.change(pf).keyup(timer);
 	}
 
 
@@ -334,11 +362,17 @@
 		var ps = $('[name=password]'),
 			verify = $('[name=password_verify]'),
 			p = ps.parents('.field-container'),
-			v = verify.parents('.field-container');
+			v = verify.parents('.field-container'),
+			pftimer;
 
 
-		ps.blur(pf);
-		verify.blur(pf);
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, 2000);
+		}
+
+		ps.blur(pf).keyup(timer);
+		verify.blur(pf).keyup(timer);
 	}
 
 
