@@ -346,6 +346,8 @@
 
 			$.ajax({
 				url: host+recoverNameUrl,
+				dataType: 'json',
+				headers: {Accept:'application/json'},
 				type: 'POST',
 				data: {email: $('#recover input').val()}
 			})
