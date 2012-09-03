@@ -118,6 +118,38 @@ a.agree.disabled {
 	font-weight: 500;
 }
 
+.signin .forgot {
+	position: relative;
+}
+
+.signin .forgot .dialog {
+	z-index: 9999;
+	text-align: left;
+	width: 426px;
+	position: absolute;
+	top: 20px;
+	left: -95px;
+	overflow: hidden;
+}
+
+.signin .forgot .dialog .top {
+	width: 426px;
+	height: 18px;
+	background: url(../images/bubble_top.png) 0 0 no-repeat;
+}
+.signin .forgot .dialog .middle{
+	width: 426px;
+	min-height: 0;
+	padding: 0 15px 10px 15px;
+	background: url(../images/bubble_middle.png) repeat-y;
+}
+.signin .forgot .dialog .bottom {
+	width: 426px;
+	height: 6px;
+	background: url(../images/bubble_bottom.png) 0 0 no-repeat;
+}
+
+
 .signin .forgot,
 .signin .forgot a {
 	width: 330px;
