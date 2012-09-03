@@ -323,7 +323,21 @@
 			}
 		}).fail(function(){
 			console.error('failed to resolve service...will retry in 5 seconds');
-			setTimeout(maybeShowAccountCreation,5000);
+			setTimeout(anonymousPing,5000);
+		});
+	}
+
+
+
+	function setupRecovery(){
+		$('#recover input').keyup(function(){
+			var sub = $('#recover button');
+			if(emailRx.test( $(this).val() )){
+				sub.removeAttr('disabled');
+			}
+			else {
+				sub.attr('disabled',true);
+			}
 		});
 	}
 	
@@ -340,6 +354,8 @@
 		setInterval(formValidation,1000);
 
 		originalMessage = message.innerHTML;
+
+		setupRecovery();
 
 		$(username).keyup(moveFocus);
 		$('oauth-login').click(clickHandler);
