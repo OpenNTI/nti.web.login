@@ -282,6 +282,11 @@
 	}
 
 
+	function contactEmailValidation() {
+		setupValidationListener('contact_email');
+	}
+
+
 	function emailValidation(){
 		function pf(){
 			var e = email.val(),
@@ -685,6 +690,7 @@
 		birthdayValidation();
 		nameValidation();
 		emailValidation();
+		contactEmailValidation();
 		usernameValidation();
 		passwordValidation();
 		optInValidation();
