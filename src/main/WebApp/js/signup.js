@@ -627,7 +627,7 @@
 
 	function markFieldInvalidated(responseObject) {
 		//Get the fields we will need to manipulate:
-		var fieldName = responseObject.field,
+		var fieldName = fieldToSchemaMap[responseObject.field] || responseObject.field,
 			m = $('input[name='+fieldName+']'),
 			mv = $('input[name='+fieldName+'_verify]'),
 			p = m.parents('.field-container'),
