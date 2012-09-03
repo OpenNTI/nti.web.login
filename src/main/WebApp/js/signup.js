@@ -213,7 +213,7 @@
 				y = year.val();
 
 			//do i need to go further?
-			if (m === null || !d || !y || y.length < 4){return;}
+			if (m === null || isNaN(m) || !d || !y || y.length < 4){return;}
 
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
