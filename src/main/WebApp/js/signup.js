@@ -465,7 +465,7 @@
 		    val = profileSchema[key];
 		    o = validation[key];
 
-			if(val.required === 'true' && !o) {
+			if(val.required && !o) {
 				$('a.agree').addClass('disabled');
 				return false;
 			}
