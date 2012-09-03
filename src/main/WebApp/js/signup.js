@@ -206,6 +206,11 @@
 			}
 		}
 
+		function afterFail(){
+			form.removeClass('birthday-filled-in');
+			hideAffiliation();
+		}
+
 		function pf() {
 			clearTimeout(pftimer);
 			var m = num(month.attr('data-value'))-1,
@@ -218,7 +223,7 @@
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
 			if (bd) {
-				validate('birthdate', bd, afterSuccess);
+				validate('birthdate', bd, afterSuccess, afterFail);
 			}
 		}
 
@@ -560,6 +565,15 @@
 	}
 
 
+	function hideAffiliation(){
+		var sec = $('section.affiliations'),
+			owner = $('.affiliation');
+
+		sec.addClass('disabled');
+		owner.addClass('disabled');
+	}
+
+
 	function populateAffiliation(){
 		var sec = $('section.affiliations'),
 			owner = $('.affiliation');
@@ -643,7 +657,7 @@
 	}
 
 
-	function validate(fieldName, fieldValue, afterSuccess) {
+	function validate(fieldName, fieldValue, afterSuccess, afterFail) {
 		function success(data){
 			console.log('success', data);
 
@@ -671,6 +685,8 @@
 			var data = parseResponseText(response);
 
 			markFieldInvalidated(data);
+
+			if (afterFail){afterFail();}
 		}
 
 		//clone our current validation values and add our new value:
