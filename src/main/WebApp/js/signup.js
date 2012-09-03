@@ -212,40 +212,38 @@
 			hideAffiliation();
 		}
 
-		function isDateThere(){
+		function isDateValid(){
 			var m = num(month.attr('data-value'))-1,
-				d = day.val(),
-				y = year.val();
+				d = num(day.val()),
+				y = num(year.val());
+
+			function invalidate(){
+				//apply invalids:
+				p.removeClass('valid').addClass('invalid');
+				p.find('.invalid').html('That doesn\'t look right.');
+			}
 
 			//do i need to go further?
-			if (m === null || isNaN(m) || !d || !y || y.length < 4){return false;}
+			if (!d || !y || y < 1000){
+				return false;
+			}
 
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
-			if (bd) {
+			if (bd && !isNaN(bd.getTime()) && bd.getFullYear() === y && bd.getMonth() === m && bd.getDate() === d) {
 				return true;
 			}
-		}
 
-		function pf() {
-			clearTimeout(pftimer);
-			var m = num(month.attr('data-value'))-1,
-				d = day.val(),
-				y = year.val();
-
-			//do i need to go further?
-			if (m === null || isNaN(m) || !d || !y || y.length < 4){return;}
-
-			//otherwise, make a date:
-			bd = new Date(y<1000?NaN:y, m, d);
-			if (bd) {
-				validate('birthdate', bd, afterSuccess, afterFail);
-			}
+			invalidate();
+			return false;
 		}
 
 		function up(){
-			if (isDateThere()){
-				pf()
+			if (isDateValid()){
+				clearTimeout(pftimer);
+				if (bd) {
+					validate('birthdate', bd, afterSuccess, afterFail);
+				}
 			}
 		}
 
@@ -255,7 +253,7 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-		$('.month,[name=day],[name=year]').blur(pf).keyup(up);
+		$('.month,[name=day],[name=year]').blur(up).keyup(up);
 	}
 
 

@@ -75,8 +75,8 @@
 						<section class="needs-birthday">
 							<h4>Account Information</h4>
 							<div class="field-container">
-								<input type="text" name="first" size="10" placeholder="First Name" autocomplete="off"/><!--
-							 --><input type="text" name="last" size="10" placeholder="Last Name" autocomplete="off"/>
+								<input type="text" name="first" size="10" placeholder="First Name" autocomplete="off" title="Please enter your first name."/><!--
+							 --><input type="text" name="last" size="10" placeholder="Last Name" autocomplete="off" title="Please enter your last name."/>
 								<div class="line">
 									<span class="blank">Please enter your first and last name.</span>
 									<span class="invalid">Please enter your first and last name.</span>
@@ -85,7 +85,7 @@
 							</div>
 							<div class="field-container">
 								<input type="email" name="email" size="20"
-									   placeholder="Your Email" autocomplete="off"/>
+									   placeholder="Your Email" autocomplete="off" title="What&apos;s your email address?"/>
 								<div class="line">
 									<span class="blank">What&apos;s your email address?</span>
 									<span class="invalid">What&apos;s your email address?</span>
@@ -93,7 +93,7 @@
 								</div>
 							</div>
 							<div class="field-container">
-								<input type="email" name="email_verify" size="20" placeholder="Verify your email." autocomplete="off"/>
+								<input type="email" name="email_verify" size="20" placeholder="Confirm your email." autocomplete="off" title="Confirm your email."/>
 								<div class="line">
 									<span class="blank">Confirm your email.</span>
 									<span class="invalid">Oops. Emails don't match.</span>
@@ -101,7 +101,8 @@
 								</div>
 							</div>
 							<div class="field-container">
-								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"/>
+								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"
+									   title="We need your parent's permission to activate social features on your account."/>
 								<div class="line">
 									<span class="blank">We need your parent's permission to activate social features on your account.</span>
 									<span class="invalid">This is not a valid email address.</span>
@@ -109,7 +110,8 @@
 								</div>
 							</div>
 							<div class="field-container">
-								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"/>
+								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"
+										title="Username should not include your first or last name."/>
 								<div class="line">
 									<span class="blank">Username should not include your first or last name.</span>
 									<span class="invalid">This username is not available.</span>
@@ -118,7 +120,8 @@
 							</div>
 							<div class="field-container">
 								<input type="password" name="password" size="20"
-									   placeholder="Password" autocomplete="off"/>
+									   placeholder="Password" autocomplete="off"
+										title="6 characters, numbers and special characters help."/>
 								<div class="line">
 									<span class="blank">6 characters, numbers and special characters help.</span>
 									<span class="invalid">Password not acceptable</span>
@@ -127,7 +130,8 @@
 							</div>
 							<div class="field-container">
 								<input type="password" name="password_verify" size="20"
-									   placeholder="Verify Password" autocomplete="off"/>
+									   placeholder="Verify Password" autocomplete="off"
+										title="Confirm your password."/>
 								<div class="line">
 									<span class="blank">Confirm your password.</span>
 									<span class="invalid">Oops. Passwords do not match.</span>
@@ -135,9 +139,11 @@
 								</div>
 							</div>
 							<div class="field-container has-floats">
-								<input type="radio" id="participates_in_mathcounts_yes" name="participates_in_mathcounts" value="Yes"/>
+								<input type="radio" id="participates_in_mathcounts_yes" name="participates_in_mathcounts" value="Yes"
+										title="You currently participate in MATHCOUNTS in your school?"/>
 								<label for="participates_in_mathcounts_yes">Yes</label>
-								<input type="radio" id="participates_in_mathcounts_no" name="participates_in_mathcounts" value="No"/>
+								<input type="radio" id="participates_in_mathcounts_no" name="participates_in_mathcounts" value="No"
+									   title="You currently DO NOT participate in MATHCOUNTS in your school?"/>
 								<label for="participates_in_mathcounts_no">No</label>
 
 								<div class="line">
@@ -147,7 +153,7 @@
 								</div>
 							</div>
 							<div class="field-container">
-								<div class="selectbox" data-name="role">
+								<div class="selectbox" data-name="role" title="What is your current role with MATHCOUNTS?">
 									<ol class="selectbox role" data-value="ini" tabindex="1">
 										<li class="placeholder selected">Role</li>
 										<li data-value="Student">Student</li>
@@ -176,7 +182,7 @@
 						</section>
 						<section class="affiliations disabled">
 							<h4>Select a School Affiliation</h4>
-							<div class="field-container">
+							<div class="field-container" title="This will help us later to connect you with your classmates.">
 								<div class="affiliation">
 									<!-- dynamically build drop downs here-->
 								</div>
