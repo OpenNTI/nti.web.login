@@ -120,6 +120,21 @@ a.agree.disabled {
 	font-weight: 500;
 }
 
+.signup .why {
+	display: inline;
+	font-size: smaller;
+	margin-left: 20px;
+}
+
+.signup .why:hover .dialog{
+	display: block;
+	line-height: 2em;
+	top: 30px;
+	left: -90px;
+	white-space: normal;
+}
+
+.singup .why,
 .signin .forgot {
 	position: relative;
 }
@@ -130,6 +145,7 @@ a.agree.disabled {
 	font-size: 21px;
 }
 
+.signup .why .dialog p,
 .signin .forgot .dialog p {
 	font-size: 14px;
 	font-style: normal;
@@ -137,6 +153,7 @@ a.agree.disabled {
 	margin: 5px 0;
 }
 
+.signup .why .dialog,
 .signin .forgot .dialog {
 	display: none;
 	z-index: 9999;
@@ -147,17 +164,26 @@ a.agree.disabled {
 	left: -122px;
 }
 
+.signup .why .dialog .top,
 .signin .forgot .dialog .top {
 	width: 459px;
 	height: 18px;
 	background: url(../images/bubble_top.png) 0 0 no-repeat;
 }
+.signup .why .dialog .middle,
 .signin .forgot .dialog .middle{
 	width: 459px;
 	min-height: 0;
 	padding: 10px 0 10px 20px;
 	background: url(../images/bubble_middle.png) repeat-y;
 }
+
+
+.signup .why .dialog .middle{
+	padding: 10px 30px;
+}
+
+.signup .why .dialog .bottom,
 .signin .forgot .dialog .bottom {
 	width: 459px;
 	height: 6px;
@@ -411,12 +437,20 @@ a.avatar.selected::after{
 	background: url(../images/Green-Check.png) 0 0 no-repeat;
 }
 
+.signup .field-container .line {
+	white-space: nowrap;
+}
+
 .signup .disabled,
 .signup .field-container.invalid .line span.blank,
 .signup .field-container.valid .line span.blank,
 .signup .field-container .line span {
 	display: none;
 	white-space: nowrap;
+}
+
+.signup .field-container .line span.blank span.tooltip-span {
+	display: inline-block;
 }
 
 .signup .field-container .line span.blank,
