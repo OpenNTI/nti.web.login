@@ -124,6 +124,14 @@
 		if(!a){ delete h.Authorization; f = {}; }
 		if(!data) { delete h['Content-Type']; }
 
+		if (m === 'GET' && data){
+			delete data.password;
+			delete data.remember;
+			if(url.indexOf('username='+encodeURIComponent(data.username)) > -1) {
+				delete data.username;
+			}
+		}
+
 		var x = $.ajax({
 			xhrFields: f,
 			url: l,
