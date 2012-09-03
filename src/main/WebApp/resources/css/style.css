@@ -66,6 +66,7 @@ a.agree.disabled {
 	border-color: #d0d0d0;
 	background: rgba(184,184,184,0.5);
 	color: rgba(255,255,255,0.7);
+	display: block;
 }
 
 
