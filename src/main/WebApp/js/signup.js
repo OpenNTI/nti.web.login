@@ -122,6 +122,13 @@
 				mappedName = schemaToFieldMap[n] || n,
 				schemaVal = profileSchema[mappedName];
 
+			if(schemaVal && schemaVal.required) {
+				d.addClass('required');
+			}
+			else {
+				d.removeClass('required');
+			}
+
 			//special cases:
 			if (mappedName === 'Username' || mappedName === 'password') {
 				schemaVal = true;
