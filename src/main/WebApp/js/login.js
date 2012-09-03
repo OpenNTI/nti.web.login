@@ -356,13 +356,13 @@
 				headers: {Accept:'application/json'},
 				type: 'POST',
 				data: {email: val}
-			})
-			.done(function(data){
-				console.log('suc',arguments);
-			})
-			.fail(function(data){
-				console.log('fail',arguments);
 			});
+//			.done(function(data){
+//				console.log('suc',arguments);
+//			})
+//			.fail(function(data){
+//				console.log('fail',arguments);
+//			});
 
 			return false;
 		});
