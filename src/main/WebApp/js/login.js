@@ -391,7 +391,9 @@
 		$('#forgotit').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			$(this).parent().find('.dialog').show();
+			var d = $(this).parent().find('.dialog');
+			d.show();
+			d.find('input').blur(function(){d.hide();}).focus();
 			return false;
 		});
 
