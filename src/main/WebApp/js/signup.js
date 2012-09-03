@@ -14,6 +14,10 @@
 			'password_verify': 'password',
 			'email_verify': 'email'
 		};
+		fieldToSchemaMap = {
+			'birthdate': 'year',
+			'realname': 'first'
+		};
 
 
 	function num(s){return parseInt(s,10);}
@@ -170,30 +174,15 @@
 
 	function affiliationValidation(){
 		var selections = $('.affiliation').find('ol.selectbox'),
-			p = $(selections[0]).parents('.field-container'),
-			value = [],
-			aff;
+			value = [];
+
+		//put affiliation data in the correct order:
 		$.each(selections, function(i, s){
 			value.push($(s).attr('data-value'));
 		});
 		value.reverse();
 
-		function success(data){
-			p.removeClass('invalid valid');
-			p.addClass('valid');
-			validation['affiliation'] = aff;
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			p.addClass('invalid');
-		}
-
-		aff = value.join(',');
-		preflight({'affiliation': aff}, success, fail);
+		validate('affiliation',  value.join(','));
 	}
 
 
@@ -204,26 +193,14 @@
 
 	function birthdayValidation(){
 		var bd, pftimer;
-		function success(data){
-			profileSchema = data.ProfileSchema;
-			avatarURLChoices = data.AvatarURLChoices;
-			console.log('birthday validation success', data);
 
+		function afterSuccess(){
 			disableFields();
 			form.addClass('birthday-filled-in');
-			p.removeClass('invalid valid');
-			p.addClass('valid');
-			lockBirthday();
-
-			validation['birthdate'] = bd;
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			p.addClass('invalid');
+			if (profileSchema['contact_email']){
+				//assume coppa:
+				lockBirthday();
+			}
 		}
 
 		function pf() {
@@ -238,11 +215,11 @@
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
 			if (bd) {
-				preflight({birthdate: bd}, success, fail);
+				validate('birthdate', bd, afterSuccess);
 			}
 		}
 
-		function pftimer(){
+		function timer(){
 			clearTimeout(pftimer);
 			pftimer = setTimeout(pf, 2000);
 		}
@@ -253,100 +230,41 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-		$('.month,[name=day],[name=year]').blur(pf).keyup(pftimer);
+		$('.month,[name=day],[name=year]').blur(pf).keyup(timer);
 	}
 
 
 	function nameValidation(){
-		var rn;
-		function success(data){
-			p.removeClass('invalid valid');
-			p.addClass('valid');
-			validation['realname'] = rn;
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			p.addClass('invalid');
-		}
-
 		function pf() {
 			var f = firstname.val(),
-				l = lastname.val();
+				l = lastname.val(),
+				rn;
 
 			if (f && l) {
 				rn = f+' '+l;
-				preflight({realname: rn}, success, fail);
+				validate('realname', rn);
 			}
 		}
 
 		var firstname = $('[name=first]'),
-			lastname = $('[name=last]'),
-			p = firstname.parents('.field-container');
+			lastname = $('[name=last]');
 
 		firstname.blur(pf);
 		lastname.blur(pf);
 	}
 
 
-	function generalValidation(field, afterSuccess){
-		var m = $('input[name='+field+']'),
-			p = m.parents('.field-container');
-
-		function success(data){
-			p.removeClass('invalid valid');
-			p.addClass('valid');
-			validation[field] = m.val();
-			checkIt();
-			if (afterSuccess){afterSuccess(data);}
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			p.addClass('invalid');
-			console.log('validation fail', r.message, r);
-		}
-
+	function setupValidationListener(field, afterSuccess){
 		function pf() {
-			var packet = {};
-			packet[field] = m.val();
-			if(field !== 'Username' && validation.Username){
-				packet['Username'] = validation.Username;
-			}
-			if(validation.realname){
-				packet['realname'] = validation.realname;
-			}
-			preflight(packet, success, fail);
+			validate(field, m.val(), afterSuccess);
 		}
+
+		var m = $('input[name='+field+']');
 		m.blur(pf);
 	}
 
 
 	function emailValidation(){
-		function success(data){
-			p.removeClass('invalid valid');
-			v.removeClass('invalid valid');
-			p.addClass('valid');
-			v.addClass('valid');
-			validation['email'] = email.val();
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			v.removeClass('invalid valid');
-			p.addClass('invalid');
-			console.log('validation fail', r.message, r);
-		}
-
-
 		function pf(){
 			var e = email.val(),
 				veri = verify.val();
@@ -360,7 +278,7 @@
 				v.addClass('invalid');
 				return;
 			}
-			preflight({email: e}, success, fail);
+			validate('email', e);
 		}
 
 		var email = $('[name=email]'),
@@ -375,7 +293,7 @@
 
 
 	function usernameValidation(){
-		generalValidation('Username', function(){showAvatars();});
+		setupValidationListener('Username', function(){showAvatars();});
 	}
 
 
@@ -384,52 +302,19 @@
 			m = $('input[name='+field+']'),
 			p = m.parents('.field-container');
 
-		function success(data){
-			p.removeClass('invalid valid');
+		function afterSuccess(){
 			if(m[0].checked){p.find('.valid').text('Thanks, we will send you emails.');}
 			else {p.find('.valid').text('Okay, no emails for you.');}
-			p.addClass('valid');
-			validation[field] = m.val();
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			p.addClass('invalid');
-			console.log('validation fail', r.message, r);
 		}
 
 		function pf() {
-			var packet = {};
-			packet[field] = m.val();
-			preflight(packet, success, fail);
+			validate(field, m.val(), afterSuccess);
 		}
 		m.change(pf);
 	}
 
 
 	function passwordValidation(){
-		function success(data){
-			p.removeClass('invalid valid');
-			v.removeClass('invalid valid');
-			p.addClass('valid');
-			v.addClass('valid');
-			validation['password'] = ps.val();
-			checkIt();
-		}
-
-		function fail(data){
-			var r = parseResponseText(data);
-			p.find('.invalid').text(makeOneLine(r.message));
-			p.removeClass('invalid valid');
-			v.removeClass('invalid valid');
-			p.addClass('invalid');
-			console.log('validation fail', r.message, r);
-		}
-
-
 		function pf(){
 			var pass = ps.val(),
 				veri = verify.val();
@@ -443,7 +328,7 @@
 				v.addClass('invalid');
 				return;
 			}
-			preflight({password: pass}, success, fail);
+			validate('password', pass);
 		}
 
 		var ps = $('[name=password]'),
@@ -466,7 +351,6 @@
 		}).done(function(data){
 			url = getLink(data,'account.create');
 			preflighturl = getLink(data,'account.preflight.create');
-			validation.url = Boolean(url);
 		}).fail(function(){
 			console.error('failed to resolve service url...will retry in 5 seconds');
 			setTimeout(ping,5000);
@@ -667,6 +551,93 @@
 			result = result.substring(0, period+1);
 		}
 		return result;
+	}
+
+
+	function markFieldValidated(fieldName) {
+		//see if fieldname is mapped to anything for special circumstances:
+		fieldName = fieldToSchemaMap[fieldName] || fieldName;
+
+		//Get the fields we will need to manipulate:
+		var m = $('input[name='+fieldName+']'),
+			mv = $('input[name='+fieldName+'_verify]'),
+			p = m.parents('.field-container'),
+			pv = mv ? mv.parents('.field-container') : null;
+
+		if (!p.length){
+			//we didn't find anything, see if it's one of those special dynamic things:
+ 			m = $('.'+fieldName);
+			p = m.parents('.field-container');
+		}
+
+		p.removeClass('invalid valid');
+		p.addClass('valid');
+
+		//also mark verification fields if we see them:
+		if (pv.length){
+			pv.removeClass('invalid valid');
+			pv.addClass('valid');
+		}
+
+
+	}
+
+
+	function markFieldInvalidated(responseObject) {
+		//Get the fields we will need to manipulate:
+		var fieldName = responseObject.field,
+			m = $('input[name='+fieldName+']'),
+			mv = $('input[name='+fieldName+'_verify]'),
+			p = m.parents('.field-container'),
+			pv = mv ? mv.parents('.field-container') : null;
+
+		p.removeClass('invalid valid');
+		p.find('.invalid').text(makeOneLine(responseObject.message));
+		p.addClass('invalid');
+
+		if (pv){
+			pv.removeClass('invalid valid');
+		}
+	}
+
+
+	function validate(fieldName, fieldValue, afterSuccess) {
+		function success(data){
+			console.log('success', data);
+
+			//field value is validated, put it in the official spot:
+			validation[fieldName] = fieldValue;
+
+			//adjust our schema and avatar collection, why not:
+			profileSchema = data.ProfileSchema;
+			avatarURLChoices = data.AvatarURLChoices;
+
+			//Mark field verified as validated:
+			markFieldValidated(fieldName);
+
+			//call aftersuccess if there
+			if (afterSuccess){afterSuccess();}
+
+			//check to see if I should enable button:
+			checkIt();
+		}
+
+		function fail(response){
+			console.log('fail', arguments);
+
+			//pull the importiant data out of the response
+			var data = parseResponseText(response);
+
+			markFieldInvalidated(data);
+		}
+
+		//clone our current validation values and add our new value:
+		var packet = $.extend({}, validation);
+		packet[fieldName] = fieldValue;
+
+		//preflight:
+		console.log('im validating this', packet);
+		preflight(packet, success, fail);
 	}
 
 
