@@ -339,6 +339,25 @@
 				sub.attr('disabled',true);
 			}
 		});
+
+		$('#recover').submit(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+
+			$.ajax({
+				url: host+recoverNameUrl,
+				type: 'POST',
+				data: {email: $('#recover input').val()}
+			})
+			.done(function(data){
+				console.log('suc',arguments);
+			})
+			.fail(function(data){
+				console.log('fail',arguments);
+			});
+
+			return false;
+		});
 	}
 	
 

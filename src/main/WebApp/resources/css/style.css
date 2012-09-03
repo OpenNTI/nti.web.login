@@ -141,30 +141,30 @@ a.agree.disabled {
 	display: none;
 	z-index: 9999;
 	text-align: left;
-	width: 430px;
+	width: 459px;
 	position: absolute;
 	top: 20px;
-	left: -90px;
+	left: -122px;
 }
 
 .signin .forgot .dialog .top {
-	width: 430px;
+	width: 459px;
 	height: 18px;
 	background: url(../images/bubble_top.png) 0 0 no-repeat;
 }
 .signin .forgot .dialog .middle{
-	width: 430px;
+	width: 459px;
 	min-height: 0;
-	padding: 5px 15px 10px 15px;
+	padding: 10px 0 10px 20px;
 	background: url(../images/bubble_middle.png) repeat-y;
 }
 .signin .forgot .dialog .bottom {
-	width: 430px;
+	width: 459px;
 	height: 6px;
 	background: url(../images/bubble_bottom.png) 0 0 no-repeat;
 }
 
-.signin .forgot .dialog input{ width: 295px; }
+.signin .forgot .dialog input{ width: 320px; }
 .signin .forgot .dialog button {
 	margin: 0 0 0 10px;
 }
