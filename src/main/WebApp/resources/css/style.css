@@ -461,18 +461,18 @@ a.avatar.selected::after{
 }
 
 .signup .disabled,
-.signup .field-container.invalid .line span.blank,
-.signup .field-container.valid .line span.blank,
+.signup .field-container.invalid .line .blank,
+.signup .field-container.valid .line .blank,
 .signup .field-container .line span {
 	display: none;
 	white-space: nowrap;
 }
 
-.signup .field-container .line span.blank span.tooltip-span {
+.signup .field-container .line .blank span.tooltip-span {
 	display: inline-block;
 }
 
-.signup .field-container .line span.blank,
+.signup .field-container .line .blank,
 .signup .field-container.invalid .line span.invalid,
 .signup .field-container.valid .line span.valid { display: inline; }
 

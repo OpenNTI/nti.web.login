@@ -260,8 +260,8 @@
 
 
 	function participatesValidation(){
-		var yes = $('input[id=participates_in_mathcounts_yes]'),
-			no = $('input[id=participates_in_mathcounts_no]');
+		var yes = $('#participates_in_mathcounts_yes'),
+			no = $('#participates_in_mathcounts_no');
 
 		function pf_yes(){
 			validate('participates_in_mathcounts', true);
