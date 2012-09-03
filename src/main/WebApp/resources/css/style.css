@@ -126,6 +126,7 @@ a.agree.disabled {
 
 .signin .forgot .dialog h1{
 	color: #494949;
+	font-weight: 400;
 	font-size: 21px;
 }
 
@@ -144,7 +145,6 @@ a.agree.disabled {
 	position: absolute;
 	top: 20px;
 	left: -90px;
-	/*overflow: hidden;*/
 }
 
 .signin .forgot .dialog .top {

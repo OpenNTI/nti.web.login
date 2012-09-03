@@ -9,7 +9,9 @@
 		allowRel = {
 			//white list
 		},
-
+		recoverNameUrl,
+		recoverPassUrl,
+		resetPassUrl,
 		cookies = {},
 		rel = {},
 		noOp = function(){},
@@ -304,7 +306,7 @@
 	}
 	
 	
-	function maybeShowAccountCreation(){
+	function anonymousPing(){
 		$('#account-creation').hide();
 		$.ajax({
 			dataType: 'json',
@@ -312,6 +314,10 @@
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
+			recoverNameUrl = getLink(data,'logon.forgot.username');
+			recoverPassUrl = getLink(data,'logon.forgot.passcode');
+			resetPassUrl = getLink(data,'logon.reset.passcode');
+
 			if(getLink(data,'account.create')){
 				$('#account-creation').show();
 			}
@@ -323,7 +329,7 @@
 	
 
 	$(function(){
-		maybeShowAccountCreation();
+		anonymousPing();
 		var a, i, v;
 
 		message = document.getElementById('message');
