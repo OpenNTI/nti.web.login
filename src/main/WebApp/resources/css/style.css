@@ -124,6 +124,7 @@ a.agree.disabled {
 	display: inline;
 	font-size: smaller;
 	margin-left: 20px;
+	color: #3fb3f6;
 }
 
 .signup .why:hover .dialog{
