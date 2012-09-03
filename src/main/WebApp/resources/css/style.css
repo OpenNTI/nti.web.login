@@ -468,6 +468,10 @@ a.avatar.selected::after{
 	white-space: nowrap;
 }
 
+.signup .field-container.required input {
+
+}
+
 .signup .field-container .line .blank span.tooltip-span {
 	display: inline-block;
 }
@@ -516,6 +520,7 @@ a.avatar.selected::after{
 }
 
 .signin label{ display: none; }
+
 .signin label[for=remember], #remember,
 .signup label,
 .signup input[type=checkbox],
@@ -525,7 +530,7 @@ a.avatar.selected::after{
 	font-size: 1em;
 	width: auto;
 	height: auto;
-	margin: 18px 5px 10px 10px;
+	margin: 18px 5px 10px 5px;
 	padding: inherit;
 	float: left;
 	vertical-align: middle;
