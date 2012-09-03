@@ -363,7 +363,14 @@ iframe.agreement {
 .signup .field-container {
 	margin: 10px 0;
 	position: relative;
+	clear: both;
 }
+
+
+.signup .field-container.has-floats {
+	overflow: hidden;
+}
+
 
 a.avatar {
 	position: relative;
@@ -453,7 +460,9 @@ a.avatar.selected::after{
 }
 
 .signin label{ display: none; }
-.signin label[for=remember], #remember {
+.signin label[for=remember], #remember,
+.signup label,
+.signup input[type=checkbox]{
 	display: inline;
 	border: none;
 	font-size: 1em;
@@ -464,6 +473,13 @@ a.avatar.selected::after{
 	float: left;
 	vertical-align: middle;
 }
+
+
+.singup .field-container.has-floats label,
+.singup .field-container.has-floats line {
+	margin-top: 9px;
+}
+
 
 .signin #submit {
 /*	display: none;*/
