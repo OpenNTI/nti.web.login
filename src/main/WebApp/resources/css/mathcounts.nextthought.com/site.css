@@ -1,18 +1,22 @@
 .branding {
-	width: 830px;
-	padding-left: 500px;
+	width: 860px;
+	padding-left: 530px;
 	border-radius: 5px;
-	background: green;
+	background: url(mathcounts_promo.png) -30px center no-repeat;
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,0.35);
 }
 
 .signin .middle {
-	width: 830px;
+	width: 860px;
 }
-
+#account-creation {
+	border-radius: 0 0 3px 0;
+}
 .signin .container {
-	box-shadow: 0 0 10px #666;
+	border-radius: 0 3px 3px 0;
+	box-shadow: -4px 0 5px -3px rgba(0,0,0,0.3);
 }
 
 .signin .forgot {
-	margin-left: 500px;
+	margin-left: 530px;
 }
