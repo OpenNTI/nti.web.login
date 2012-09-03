@@ -1,0 +1,18 @@
+.branding {
+	width: 830px;
+	padding-left: 500px;
+	border-radius: 5px;
+	background: green;
+}
+
+.signin .middle {
+	width: 830px;
+}
+
+.signin .container {
+	box-shadow: 0 0 10px #666;
+}
+
+.signin .forgot {
+	margin-left: 500px;
+}

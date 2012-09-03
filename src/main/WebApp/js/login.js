@@ -6,17 +6,8 @@
 		username,
 		password,
 		remember,
-		pingTimeout,
-		hideRel = {
-			'logon.nti.password': true,
-			'logon.forgot.username': true,
-			'logon.continue': true,
-			'logon.google': true,
-			'logon.openid': true,
-			'logon.facebook': true,
-			'logon.logout': true,
-			'account.create': true,
-			'account.preflight.create': true
+		allowRel = {
+			//white list
 		},
 
 		cookies = {},
@@ -214,11 +205,13 @@
 
 
 			$('body').addClass(v.rel.replace(/\./g,'-'));
-			console.log(v.rel, hideRel[v.rel]);
-			if(hideRel[v.rel]!==true){
+			if(allowRel[v.rel]===true){
 				$('body').addClass('or');
 				addButton(v.rel);
 			}
+//			else {
+//				console.log('debug: ',v.rel);
+//			}
 		}
 	}
 
@@ -345,6 +338,13 @@
 		$(username).keyup(moveFocus);
 		$('oauth-login').click(clickHandler);
 		$('#login').submit(submitHandler);
+
+		$('#forgotit').click(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			$(this).parent().find('.dialog').show();
+			return false;
+		});
 
 		if(requestParameters.failed){ error(); }
 
