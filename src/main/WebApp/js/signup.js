@@ -287,7 +287,9 @@
 
 	function setupValidationListener(field, afterSuccess){
 		function pf() {
-			validate(field, m.val(), afterSuccess);
+			if (m.val()){
+				validate(field, m.val(), afterSuccess);
+			}
 		}
 
 		var m = $('input[name='+field+']'),
