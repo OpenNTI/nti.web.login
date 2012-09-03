@@ -260,14 +260,18 @@
 
 
 	function participatesValidation(){
-		var ol = $('ol.participates_in_mathcounts');
+		var yes = $('input[id=participates_in_mathcounts_yes]'),
+			no = $('input[id=participates_in_mathcounts_no]');
 
-		function pf(){
-			var val = ol.attr('data-value');
-			validate('participates_in_mathcounts', (val === 1));
+		function pf_yes(){
+			validate('participates_in_mathcounts', true);
+		}
+		function pf_no(){
+			validate('participates_in_mathcounts', false);
 		}
 
-		ol.change(pf);
+		yes.change(pf_yes);
+		no.change(pf_no);
 	}
 
 
