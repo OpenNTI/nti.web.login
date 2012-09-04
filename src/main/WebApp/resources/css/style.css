@@ -121,19 +121,22 @@ a.agree.disabled {
 	font-weight: 500;
 }
 
-.signup .why {
+.signup div.why {
 	display: inline;
-	font-size: smaller;
-	margin-left: 20px;
+	margin-left: 10px;
 	color: #3fb3f6;
 }
 
 .signup .why:hover .dialog{
 	display: block;
 	line-height: 2em;
-	top: 30px;
-	left: -90px;
+	top: -130px;
+	left: -10px;
 	white-space: normal;
+	font-size: 14px;
+	font-style: normal;
+	color: #757474;
+	margin: 5px 0;
 }
 
 .singup .why,
@@ -155,7 +158,16 @@ a.agree.disabled {
 	margin: 5px 0;
 }
 
-.signup .why .dialog,
+.signup .why .dialog {
+	display: none;
+	z-index: 9999;
+	text-align: left;
+	width: 459px;
+	position: absolute;
+	top: 20px;
+	left: -122px;
+}
+
 .signin .forgot .dialog {
 	display: none;
 	z-index: 9999;
@@ -166,26 +178,33 @@ a.agree.disabled {
 	left: -122px;
 }
 
-.signup .why .dialog .top,
+.signup .why .dialog .top{
+	background: url(../images/bubble2_top.png) 0 18px no-repeat;
+}
+
 .signin .forgot .dialog .top {
 	width: 459px;
 	height: 18px;
 	background: url(../images/bubble_top.png) 0 0 no-repeat;
 }
-.signup .why .dialog .middle,
+.signup .why .dialog .middle {
+	background: url(../images/bubble2_middle.png) repeat-y;
+	padding: 10px 30px;
+	width: 100%;
+}
+
 .signin .forgot .dialog .middle{
 	width: 459px;
+	padding-left: 20px;
 	min-height: 0;
-	padding: 10px 0 10px 20px;
 	background: url(../images/bubble_middle.png) repeat-y;
 }
 
 
-.signup .why .dialog .middle{
-	padding: 10px 30px;
+.signup .why .dialog .bottom {
+	background: url(../images/bubble2_bottom.png) 0 0 no-repeat;
 }
 
-.signup .why .dialog .bottom,
 .signin .forgot .dialog .bottom {
 	width: 459px;
 	height: 6px;
