@@ -142,6 +142,9 @@
 			}
 		});
 		populateAffiliation();
+
+		//show optional section
+		$('section.optionals').removeClass('disabled');
 	}
 
 

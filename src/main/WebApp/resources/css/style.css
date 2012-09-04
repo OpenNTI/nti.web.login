@@ -477,6 +477,13 @@ iframe.agreement {
 	overflow: hidden;
 }
 
+.signup section.optionals,
+.signup section.avatars,
+.signup section.affiliations,
+.signup section.agreements {
+	margin-top: 60px
+}
+
 
 a.avatar {
 	position: relative;
@@ -629,6 +636,11 @@ a.avatar.selected::after{
 
 .signup div.participates_in_mathcounts.line {
 	padding-top: 30px;
+}
+
+
+.signup div.opt_in_email_communication.line {
+	padding-top: 10px;
 }
 
 .signin #submit {
