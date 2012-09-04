@@ -251,7 +251,7 @@
 		function up(){
 			if (isDateValid()){
 				clearTimeout(pftimer);
-				if (bd) {
+				if (bd || validation.birthdate) {
 					validate('birthdate', bd, afterSuccess, afterFail);
 				}
 			}
@@ -301,7 +301,7 @@
 				l = lastname.val(),
 				rn;
 
-			if (f && l) {
+			if ((f && l) || validation.realname) {
 				rn = f+' '+l;
 				validate('realname', rn);
 			}
@@ -324,7 +324,8 @@
 
 	function setupValidationListener(field, afterSuccess){
 		function pf() {
-			if (m.val()){
+			//try to validate if theres a field value, or you have previously validated:
+			if (m.val() || validation[field]){
 				validate(field, m.val(), afterSuccess);
 			}
 		}
@@ -712,6 +713,9 @@
 
 		function fail(response){
 			console.log('fail', arguments);
+
+			//failure, remove the value from the validation field:
+			delete validation[fieldName];
 
 			//pull the importiant data out of the response
 			var data = parseResponseText(response);
