@@ -27,6 +27,55 @@ form {
 	position: relative;
 }
 
+.clear {
+	clear: both;
+}
+
+div[data-title].has-focus {position: relative;}
+
+/*input[placeholder]:focus::before,*/
+div.has-focus[data-title]::before {
+	display: block;
+
+	position: absolute;
+	top: -6px; left: 5px;
+	z-index: 999;
+
+	content: attr(data-title);
+	color: #ffffff;
+	background: #88bf24;
+	border: 1px solid #7ba624;
+	box-shadow: 2px 2px 5px 0 rgba(0,0,0,0.1);
+
+	padding: 1px 5px 1px 3px;
+	font-size: 11px;
+	font-style: italic;
+	font-weight: 500;
+
+	text-align: left;
+	text-shadow: 0 1px 0 #71a91a;
+	text-transform: uppercase;
+}
+
+/*input[placeholder]:focus::after,*/
+div.has-focus[data-title]::after {
+	content: url(../images/tooltip_pointer.png);
+	display: block;
+	position: absolute;
+
+	top: 7px;
+	left: 10px;
+	z-index: 9999;
+}
+
+.signup div.has-focus[data-title]::before{
+	top: -13px;
+}
+.signup div.has-focus[data-title]::after {
+	top: 0px;
+}
+
+
 .links,
 a:active,
 a:link,
@@ -410,6 +459,7 @@ iframe.agreement {
 	color: #757474;
 	background: #fbfbfb;
 	border: 1px solid #dcdcdc;
+	padding: 5px;
 	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
@@ -423,7 +473,7 @@ iframe.agreement {
 }
 
 
-.signup .field-container.has-floats {
+.field-container.has-floats {
 	overflow: hidden;
 }
 
@@ -512,7 +562,6 @@ a.avatar.selected::after{
 
 .signin .field-container {
 	margin: 0 20px;
-	overflow: hidden;
 	position: relative;
 }
 

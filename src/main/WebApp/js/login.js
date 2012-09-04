@@ -378,6 +378,13 @@
 	
 
 	$(function(){
+
+		$('input').focus(function(){
+			$(this).parent('div[data-title]').addClass('has-focus');
+		}).blur(function(){
+			$(this).parent('div[data-title]').removeClass('has-focus');
+		});
+
 		anonymousPing();
 		var a, i, v;
 
@@ -420,7 +427,6 @@
 			}
 
 		}
-
 
 		handleCache();
 	});

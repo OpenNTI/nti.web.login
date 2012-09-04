@@ -33,13 +33,13 @@
 									<form id="login" method="post">
 										<div id="message" class="message"></div>
 										<div>
-											<div class="field-container">
+											<div class="field-container" data-title="Username">
 												<label for="username">Username:</label>
 												<input id="username" name="username" type="text"
 													   placeholder="Username"/>
 											</div>
 
-											<div id="password-field" class="field-container">
+											<div id="password-field" class="field-container" data-title="Password">
 												<label for="password">Password:</label>
 												<input id="password" name="password" type="password"
 													   autocomplete="off"
@@ -51,6 +51,7 @@
 												<label for="remember">Remember me</label>
 
 												<button id="submit" type="submit" disabled>Sign in</button>
+												<div class="clear"></div>
 											</div>
 
 											<div id="oauth-login"></div>
@@ -75,7 +76,7 @@
 						<form id="recover" method="post">
 							<h1>That&apos;s okay...</h1>
 							<p>Enter your email and we&apos;ll send your username right away.</p>
-							<div><input type="email" size="20"><button id="send" type="submit" disabled>Submit</button></div>
+							<div data-title="email"><input type="email" size="20"><button id="send" type="submit" disabled>Submit</button></div>
 						</form>
 						</div>
 						<div class="bottom">&nbsp;</div>

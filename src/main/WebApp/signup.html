@@ -90,7 +90,7 @@
 						</section>
 						<section class="needs-birthday">
 							<h4>Account Information</h4>
-							<div class="field-container">
+							<div class="field-container"  data-title="Real name">
 								<input type="text" name="first" size="10" placeholder="First Name" autocomplete="off" title="Please enter your first name."/><!--
 							 --><input type="text" name="last" size="10" placeholder="Last Name" autocomplete="off" title="Please enter your last name."/>
 								<div class="line">
@@ -99,7 +99,7 @@
 									<span class="valid">Welcome to NextThought.</span>
 								</div>
 							</div>
-							<div class="field-container">
+							<div class="field-container"  data-title="email">
 								<input type="email" name="email" size="20"
 									   placeholder="Your Email" autocomplete="off" title="What&apos;s your email address?"/>
 								<div class="line">
@@ -108,7 +108,7 @@
 									<span class="valid">Thanks.</span>
 								</div>
 							</div>
-							<div class="field-container">
+							<div class="field-container"  data-title="Parent's email">
 								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"
 									   title="We need your parent's permission to activate social features on your account."/>
 								<div class="line">
@@ -117,7 +117,7 @@
 									<span class="valid">Thanks. We will send a consent form</span>
 								</div>
 							</div>
-							<div class="field-container">
+							<div class="field-container"  data-title="Username">
 								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"
 										title="Username should not include your first or last name."/>
 								<div class="line">
@@ -126,7 +126,7 @@
 									<span class="valid">This username is available.</span>
 								</div>
 							</div>
-							<div class="field-container">
+							<div class="field-container"  data-title="Password">
 								<input type="password" name="password" size="20"
 									   placeholder="Password" autocomplete="off"
 										title="6 characters, numbers and special characters help."/>
@@ -136,7 +136,7 @@
 									<span class="valid">Looking good.</span>
 								</div>
 							</div>
-							<div class="field-container">
+							<div class="field-container"   data-title="Password verify">
 								<input type="password" name="password_verify" size="20"
 									   placeholder="Verify Password" autocomplete="off"
 										title="Confirm your password."/>
@@ -196,7 +196,8 @@
 						</section>
 						<section class="affiliations disabled">
 							<h4>Select a School Affiliation</h4>
-							<div class="field-container" title="This will help us later to connect you with your classmates.">
+							<div class="field-container"
+								 data-title="This will help us later to connect you with your classmates.">
 								<div class="affiliation">
 									<!-- dynamically build drop downs here-->
 								</div>

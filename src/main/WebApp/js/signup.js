@@ -820,6 +820,12 @@
 		});
 
 		ping();
+
+		$('input').focus(function(){
+			$(this).parent('div[data-title]').addClass('has-focus');
+		}).blur(function(){
+			$(this).parent('div[data-title]').removeClass('has-focus');
+		});
 	});
 
 
