@@ -777,7 +777,8 @@
 
 
 	function mathcountsRoleHandler(){
-		var ol = $('ol.mathcounts-role'),
+		var choices = $('div.choice'),
+			cont = $('a.continue'),
 			form = $('form'),
 			bd = new Date(0); //earliest possible
 
@@ -791,11 +792,8 @@
 			hideAffiliation();
 		}
 
-		function roleChanged(){
-			//lets just hide the role selector now:
-			$('section.mathcounts-role').addClass('disabled');
-
-			var val = ol.attr('data-value');
+		function go(){
+			var val = $('div.choice.selected').attr('data-value');
 			validation.role = val;
 			if (val === 'Student') {
 				//show birthday next:
@@ -805,9 +803,20 @@
 				//non student selected, just validate a date:
 				validate('birthdate', bd, afterSuccess, afterFail);
 			}
+			$('section.mathcounts-role').addClass('disabled');
+			$('h1').removeClass('disabled');
 		}
 
-		ol.change(roleChanged);
+		function roleChanged(evt){
+			var choice = $(evt.currentTarget);
+
+			choices.removeClass('selected');
+			choice.addClass('selected');
+			cont.removeClass('disabled');
+		}
+
+		choices.click(roleChanged);
+		cont.click(go);
 	}
 
 	//onready event

@@ -96,9 +96,11 @@ a:hover{ text-decoration: underline; }
 }
 
 .signup a.privacy:hover,
-a.agree:hover{text-decoration: none;}
+a.agree:hover,
+a.continue:hover{text-decoration: none;}
 
-a.agree{
+a.agree,
+a.continue{
 	font-size: 14px;
 	font-style: italic;
 	font-weight: bold;
@@ -110,7 +112,8 @@ a.agree{
 	border: 1px solid #31a0e0;
 	padding: 15px 20px
 }
-a.agree.disabled {
+a.agree.disabled,
+a.continue.disabled{
 	cursor: default;
 	border-color: #d0d0d0;
 	background: rgba(184,184,184,0.5);
@@ -292,6 +295,7 @@ a.agree.disabled {
 .signin .content { padding: 20px 0 0 0; }
 .signup .content { text-align: left; padding: 0 0 100px 0; }
 
+h1.disabled {display:none;}
 h1 {
 	font-size: 36px;
 	font-style: italic;
@@ -651,6 +655,101 @@ a.avatar.selected::after{
 .logon-nti-password #submit {
 	display: block;
 }
+
+
+.signup section.mathcounts-role * {
+	position: relative;
+	overflow: hidden;
+	line-height: normal;
+	text-align: left;
+}
+
+.signup section.mathcounts-role h1 {
+	font-weight: 400;
+	font-size: 24px;
+	margin: 20px 0 5px 0;
+}
+
+.signup section.mathcounts-role p {
+	margin: 5px 0 5px 0;
+	font-size: 14px;
+	color: #494949;
+}
+
+.signup section.mathcounts-role {
+	margin: 120px 75px 0 75px;
+	border: 1px #e2e2e2 solid;
+	border-radius: 4px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.signup section.mathcounts-role.disabled {
+	display: none;
+}
+
+.signup section.mathcounts-role .header {
+	background: white;
+	border-bottom: 1px solid #e2e2e2;
+	border-radius: 3px 3px 0 0;
+	margin-bottom: 0;
+	padding: 0 0 100px 40px;
+}
+
+.signup section.mathcounts-role div.choices {
+	background: #fbfbfb;
+	border-radius: 0 0 3px 3px;
+	padding: 30px 20px 25px 20px;
+}
+
+.signup section.mathcounts-role div.choice {
+	display: block;
+	background: white;
+	padding-left: 30px;
+	border: 1px solid #e2e2e2;
+	border-bottom-width: 0;
+	line-height: 50px;
+	color: #494949;
+	font-size: 18px;
+	font-style: italic;
+}
+
+.signup section.mathcounts-role div.choice.selected {
+	border: 1px solid #3fb3f6;
+	border-left-width: 4px;
+}
+
+.signup section.mathcounts-role div.choice.selected::after {
+	background-position: -29px 0;
+}
+
+.signup section.mathcounts-role div.choice:hover {
+	border: 1px solid #c4c4c4;
+	border-left-width: 4px;
+}
+
+.signup section.mathcounts-role div.choice:hover::after {
+	background-position: 0 0;
+}
+
+.signup section.mathcounts-role div.choice.selected + div.choice,
+.signup section.mathcounts-role div.choice:hover + div.choice {
+	border-top-width: 0;
+}
+
+.signup section.mathcounts-role div.choice::after {
+	content: ' ';
+	background: url(../images/role_select_check_sprite.png) 1000px 1000px no-repeat;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 15px;
+	right: 15px;
+}
+
+.signup section.mathcounts-role div.choice.last {
+	border-bottom-width: 1px;
+}
+
 
 /*#password-field,*/
 #oauth-login {
