@@ -608,10 +608,22 @@ a.avatar.selected::after{
 
 .signin label{ display: none; }
 
-.signin label[for=remember], #remember,
-.signup label,
 .signup input[type=checkbox],
-.signup input[type=radio]{
+.signup input[type=radio],
+.signup label {
+	display: inline;
+	border: none;
+	font-size: 1em;
+	width: auto;
+	height: auto;
+	margin: 0 5px 5px 5px;
+	padding: inherit;
+	float: left;
+	vertical-align: middle;
+	color: #757474;
+}
+
+.signin label[for=remember], #remember {
 	display: inline;
 	border: none;
 	font-size: 1em;
