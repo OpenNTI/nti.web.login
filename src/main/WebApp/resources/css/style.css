@@ -130,7 +130,7 @@ a.agree.disabled {
 .signup .why:hover .dialog{
 	display: block;
 	line-height: 2em;
-	top: -130px;
+	top: -110px;
 	left: -10px;
 	white-space: normal;
 	font-size: 14px;
@@ -158,16 +158,7 @@ a.agree.disabled {
 	margin: 5px 0;
 }
 
-.signup .why .dialog {
-	display: none;
-	z-index: 9999;
-	text-align: left;
-	width: 459px;
-	position: absolute;
-	top: 20px;
-	left: -122px;
-}
-
+.signup .why .dialog,
 .signin .forgot .dialog {
 	display: none;
 	z-index: 9999;
@@ -179,7 +170,8 @@ a.agree.disabled {
 }
 
 .signup .why .dialog .top{
-	background: url(../images/bubble2_top.png) 0 18px no-repeat;
+	height: 10px;
+	background: url(../images/bubble2_top.png) 0 0 no-repeat;
 }
 
 .signin .forgot .dialog .top {
@@ -188,7 +180,7 @@ a.agree.disabled {
 	background: url(../images/bubble_top.png) 0 0 no-repeat;
 }
 .signup .why .dialog .middle {
-	background: url(../images/bubble2_middle.png) repeat-y;
+	background: url(../images/bubble2_middle.png) 0 0 repeat-y;
 	padding: 10px 30px;
 	width: 100%;
 }
