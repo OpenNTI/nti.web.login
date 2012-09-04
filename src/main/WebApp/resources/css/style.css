@@ -505,7 +505,6 @@ a.avatar.selected::after{
 	position: relative;
 }
 
-
 .signin input {
 	margin: 8px 0;
 	width: 285px;
@@ -537,12 +536,26 @@ a.avatar.selected::after{
 	color: #757474;
 }
 
+.signup .field-container .birthday.disabled
+.signup .field-container .mathcounts-role.disabled {
+	display: none;
+}
+
 
 .singup .field-container.has-floats label,
 .singup .field-container.has-floats line {
 	margin-top: 9px;
 }
 
+.signup div.participates_in_mathcounts.title {
+	width: 310px;
+	padding-top: 5px;
+	color: #757474;
+}
+
+.signup div.participates_in_mathcounts.line {
+	padding-top: 30px;
+}
 
 .signin #submit {
 /*	display: none;*/

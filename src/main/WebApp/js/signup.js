@@ -345,36 +345,7 @@
 
 
 	function emailValidation(){
-		function pf(){
-			var e = email.val(),
-				veri = verify.val();
-
-			p.removeClass('invalid');
-			v.removeClass('invalid');
-
-			if (!e || !veri){return;}
-			if (e !== veri){
-				v.removeClass('invalid valid');
-				v.addClass('invalid');
-				return;
-			}
-			validate('email', e);
-		}
-
-		var email = $('[name=email]'),
-			verify = $('[name=email_verify]'),
-			p = email.parents('.field-container'),
-			v = verify.parents('.field-container'),
-			pftimer;
-
-
-		function timer(){
-			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
-		}
-
-		email.blur(pf).keyup(timer);
-		verify.blur(pf).keyup(timer);
+		setupValidationListener('email');
 	}
 
 
@@ -450,6 +421,9 @@
 		}).done(function(data){
 			url = getLink(data,'account.create');
 			preflighturl = getLink(data,'account.preflight.create');
+
+			//find out if we need an initial mathcounts role choice:
+			installMathcountsChoice();
 		}).fail(function(){
 			console.error('failed to resolve service url...will retry in 5 seconds');
 			setTimeout(ping,5000);
@@ -692,6 +666,7 @@
 
 
 	function markFieldInvalidated(responseObject) {
+		if (!responseObject){return;}
 		//Get the fields we will need to manipulate:
 		var fieldName = fieldToSchemaMap[responseObject.field] || responseObject.field,
 			m = $('input[name='+fieldName+']'),
@@ -713,21 +688,23 @@
 		function success(data){
 			console.log('success', data);
 
-			//field value is validated, put it in the official spot:
-			validation[fieldName] = fieldValue;
-
 			//adjust our schema and avatar collection, why not:
 			profileSchema = data.ProfileSchema;
 			avatarURLChoices = data.AvatarURLChoices;
 
-			//Mark field verified as validated:
-			markFieldValidated(fieldName);
+			if (fieldName) {
+				//field value is validated, put it in the official spot:
+				validation[fieldName] = fieldValue;
+
+				//Mark field verified as validated:
+				markFieldValidated(fieldName);
+
+				//check to see if I should enable button:
+				checkIt();
+			}
 
 			//call aftersuccess if there
-			if (afterSuccess){afterSuccess();}
-
-			//check to see if I should enable button:
-			checkIt();
+			if (afterSuccess){afterSuccess(data);}
 		}
 
 		function fail(response){
@@ -738,18 +715,87 @@
 
 			markFieldInvalidated(data);
 
-			if (afterFail){afterFail();}
+			if (afterFail){afterFail(data);}
 		}
 
 		//clone our current validation values and add our new value:
 		var packet = $.extend({}, validation);
-		packet[fieldName] = fieldValue;
+		if(fieldName) {
+			packet[fieldName] = fieldValue;
+		}
 
 		//preflight:
 		console.log('im validating this', packet);
 		preflight(packet, success, fail);
 	}
 
+
+	function installMathcountsChoice(){
+		function makeSureRoleIsHidden(){
+			//role is hidden, birthday is shown:
+			$('section.mathcounts-role').addClass('disabled');
+			$('section.birthday').removeClass('disabled');
+		}
+
+		function showRole(){
+			//role is shown, birthday is hidden:
+			$('section.mathcounts-role').removeClass('disabled');
+			$('section.birthday').addClass('disabled');
+		}
+
+		function success(data){
+			if(data.ProfileSchema && data.ProfileSchema.role) {
+				console.log('Mathcounts role detected, showing role selection.');
+				showRole();
+				return;
+			}
+			makeSureRoleIsHidden();
+		}
+
+		function fail(){
+			//failure?  Assume hidden role:
+			makeSureRoleIsHidden();
+		}
+
+
+		//send empty packet just to get schema back:
+		validate(null, null, success, fail);
+	}
+
+
+	function mathcountsRoleHandler(){
+		var ol = $('ol.mathcounts-role'),
+			form = $('form'),
+			bd = new Date(0); //earliest possible
+
+		function afterSuccess(){
+			disableFields();
+			form.addClass('birthday-filled-in');
+		}
+
+		function afterFail(){
+			form.removeClass('birthday-filled-in');
+			hideAffiliation();
+		}
+
+		function roleChanged(){
+			//lets just hide the role selector now:
+			$('section.mathcounts-role').addClass('disabled');
+
+			var val = ol.attr('data-value');
+			validation.role = val;
+			if (val === 'Student') {
+				//show birthday next:
+				$('section.birthday').removeClass('disabled');
+			}
+			else {
+				//non student selected, just validate a date:
+				validate('birthdate', bd, afterSuccess, afterFail);
+			}
+		}
+
+		ol.change(roleChanged);
+	}
 
 	//onready event
 	$(function(){
@@ -764,6 +810,7 @@
 		optInValidation();
 		participatesValidation();
 		roleValidation();
+		mathcountsRoleHandler();
 
 		$('a.agree').click(makeIt);
 
