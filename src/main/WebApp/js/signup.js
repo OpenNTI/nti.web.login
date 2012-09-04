@@ -122,7 +122,7 @@
 				mappedName = schemaToFieldMap[n] || n,
 				schemaVal = profileSchema[mappedName];
 
-			if(schemaVal && (schemaVal.required || mappedName === 'birthdate')) {
+			if(schemaVal && (schemaVal.required || mappedName === 'birthdate' || mappedName === 'realname' || mappedName === 'password')) {
 				d.addClass('required');
 			}
 			else {
