@@ -348,6 +348,10 @@
 			}
 		});
 
+		$('.forgot .dialog').click(function(e){
+			e.stopPropagation();
+		});
+
 		$('#recover').submit(function(e){
 			var val = $('#recover input').val();
 			e.stopPropagation();
@@ -411,6 +415,8 @@
 			d.find('input').focus();
 			return false;
 		});
+
+		$('body').click(function(e){$(this).parent().find('.dialog').hide();});
 
 		if(requestParameters.failed){ error(); }
 
