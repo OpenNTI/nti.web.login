@@ -271,18 +271,14 @@
 
 
 	function participatesValidation(){
-		var yes = $('#participates_in_mathcounts_yes'),
-			no = $('#participates_in_mathcounts_no');
+		var yes = $('#participates_in_mathcounts');
 
-		function pf_yes(){
-			validate('participates_in_mathcounts', true);
-		}
-		function pf_no(){
-			validate('participates_in_mathcounts', false);
+
+		function f(e){
+			validate('participates_in_mathcounts', e.currentTarget.checked);
 		}
 
-		yes.change(pf_yes);
-		no.change(pf_no);
+		yes.change(f);
 	}
 
 
@@ -368,8 +364,6 @@
 			pftimer;
 
 		function afterSuccess(){
-			if(m[0].checked){p.find('.valid').text('Thanks, we will send you emails.');}
-			else {p.find('.valid').text('Okay, no emails for you.');}
 		}
 
 		function pf() {

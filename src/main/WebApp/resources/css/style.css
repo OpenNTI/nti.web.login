@@ -632,7 +632,7 @@ a.avatar.selected::after{
 
 .singup .field-container.has-floats label,
 .singup .field-container.has-floats line {
-	margin-top: 9px;
+	margin-top: 0;
 }
 
 .signup div.participates_in_mathcounts.title {

@@ -106,15 +106,6 @@
 									<span class="valid">Thanks.</span>
 								</div>
 							</div>
-							<div class="field-container"  data-title="Parent's email">
-								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"
-									   title="We need your parent's permission to activate social features on your account."/>
-								<div class="line">
-									<span class="blank">We need your parent's permission to activate social features on your account.</span>
-									<span class="invalid">This is not a valid email address.</span>
-									<span class="valid">Thanks. We will send a consent form</span>
-								</div>
-							</div>
 							<div class="field-container"  data-title="Username">
 								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"
 										title="Username should not include your first or last name."/>
@@ -147,26 +138,27 @@
 						</section>
 						<section class="optionals disabled">
 							<h4>Optional Information</h4>
-							<div class="field-container has-floats">
-								<div class="participates_in_mathcounts title">
-									Do you currently participate in MATHCOUNTS in your school?
+							<div class="field-container"  data-title="Parent's email">
+								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"
+									   title="We need your parent's permission to activate social features on your account."/>
+								<div class="line">
+									<span class="blank">We need your parent's permission to activate social features on your account.</span>
+									<span class="invalid">This is not a valid email address.</span>
+									<span class="valid">Thanks. We will send a consent form</span>
 								</div>
-								<input type="radio" id="participates_in_mathcounts_yes" name="participates_in_mathcounts" value="Yes"
-										title="You currently participate in MATHCOUNTS in your school?"/>
-								<label for="participates_in_mathcounts_yes">Yes</label>
-								<input type="radio" id="participates_in_mathcounts_no" name="participates_in_mathcounts" value="No"
-									   title="You currently DO NOT participate in MATHCOUNTS in your school?"/>
-								<label for="participates_in_mathcounts_no">No</label>
-
+							</div>
+							<div class="field-container has-floats">
+								<input type="checkbox" name="participates_in_mathcounts" id="participates_in_mathcounts"/>
+								<label for="participates_in_mathcounts">I participate in MATHCOUNTS in my school.</label>
 								<div class="participates_in_mathcounts line">
 									<span class="blank"></span>
+									<span class="valid"></span>
 									<span class="invalid"></span>
-									<span class="valid">Great.</span>
 								</div>
 							</div>
 							<div class="field-container has-floats">
 								<input type="checkbox" name="opt_in_email_communication" id="opt_in_email_communication"/>
-								<label for="opt_in_email_communication">Send me updates about NextThought</label>
+								<label for="opt_in_email_communication">Send me updates about NextThought.</label>
 								<div class="opt_in_email_communication line">
 									<span class="blank"></span>
 									<span class="valid"></span>
