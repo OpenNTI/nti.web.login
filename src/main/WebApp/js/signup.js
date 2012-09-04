@@ -180,6 +180,9 @@
 				return false;
 			});
 		});
+
+		//select avatar 1 by default
+		$('a.avatar').first().addClass('selected');
 	}
 
 
