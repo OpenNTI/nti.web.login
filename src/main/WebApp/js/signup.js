@@ -169,7 +169,7 @@
 		$.each(avatarURLChoices, function(index, u){
 			var s = $('<a class="avatar"><img/></a>');
 			fc.append(s);
-			s.find('img').attr('src', u.replace('http:', 'https:'));
+			s.find('img').attr('src', u.replace('www.gravatar.com','secure.gravatar.com').replace('http:','https:'));
 			s.click(function(e){
 				e.preventDefault();
 				e.stopPropagation();
