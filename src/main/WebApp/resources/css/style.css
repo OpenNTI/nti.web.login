@@ -529,8 +529,22 @@ a.avatar.selected::after{
 	white-space: nowrap;
 }
 
-.signup .field-container.required input {
+.signup .field-container.required {
+	border-left: 4px solid #757474;
+}
+.signup .field-container.required input{
+	border-left-width: 0;
+}
+.signup .field-container.required input[name=year]{
+	border-left-width: 1px;
+}
 
+.signup .field-container.required.valid {
+	border-left: 4px solid #89be3c;
+}
+
+.signup .field-container.required.invalid {
+	border-left: 4px solid red;
 }
 
 .signup .field-container .line .blank span.tooltip-span {
