@@ -60,8 +60,8 @@
 
 	function appendUrl(base,param) {
 
-		return base.indexOf(param) >= 0 
-			? base 
+		return base.indexOf(param) >= 0
+			? base
 			: (base + (base.indexOf('?') === -1 ? '?' : '&') + param);
 	}
 
@@ -312,8 +312,8 @@
 			//something bad?
 		}
 	}
-	
-	
+
+
 	function anonymousPing(){
 		$('#account-creation').hide();
 		$.ajax({
@@ -356,7 +356,7 @@
 			$('#recover').html('<h1>Thanks!</h1>');
 			setTimeout(function(){
 				$('.forgot .dialog').hide();
-			},5000);
+			},1000);
 
 			$.ajax({
 				url: host+recoverNameUrl,
@@ -375,7 +375,7 @@
 			return false;
 		});
 	}
-	
+
 
 	$(function(){
 
@@ -408,7 +408,7 @@
 			e.preventDefault();
 			var d = $(this).parent().find('.dialog');
 			d.show();
-			d.find('input').blur(function(){d.hide();}).focus();
+			d.find('input').focus();
 			return false;
 		});
 
