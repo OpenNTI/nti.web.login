@@ -505,12 +505,15 @@
 		var key, val, o;
 
 		for(key in profileSchema) {
-		    val = profileSchema[key];
-		    o = validation[key];
+			if(profileSchema.hasOwnProperty(key)){
+				val = profileSchema[key];
+				o = validation[key];
 
-			if(val.required && !o) {
-				$('a.agree').addClass('disabled');
-				return false;
+				if(val.required && !o) {
+					$('a.agree').addClass('disabled');
+					console.log('setting checkIt button to disabled, field ' + key + ' is required');
+					return false;
+				}
 			}
 		}
 
