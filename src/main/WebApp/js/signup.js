@@ -18,6 +18,8 @@
 			'birthdate': 'year',
 			'realname': 'first'
 		};
+		passwordVerified = false;
+		schoolList = [];
 
 
 	function num(s){return parseInt(s,10);}
@@ -141,7 +143,6 @@
 				d.addClass('disabled')
 			}
 		});
-		populateAffiliation();
 
 		//show optional section
 		$('section.optionals').removeClass('disabled');
@@ -190,16 +191,141 @@
 
 
 	function affiliationValidation(){
-		var selections = $('.affiliation').find('ol.selectbox'),
-			value = [];
+		var field = 'affiliation',
+			inp = $('input[name='+field+']'),
+			fc = inp.parents('.field-container'),
+			cont = fc.find('div.affiliation-dropdown-container'),
+			ol = cont.find('ol'),
+			me = this;
 
-		//put affiliation data in the correct order:
-		$.each(selections, function(i, s){
-			value.push($(s).attr('data-value'));
+		//load the data initially:
+		$.getJSON('js/school-data.json', function(data){
+			me.schoolList = data;
 		});
-		value.reverse();
 
-		validate('affiliation',  value.join(','));
+		function liClicked(e){
+			setVal(e.currentTarget.textContent);
+		}
+
+
+		function setVal(v){
+			ol.find('li').remove();
+			if (!v) {
+				//no selection, assume what is in the field
+				v = inp.val();
+			}
+			else {
+				inp.val(v);
+			}
+			validate(field, v);
+		}
+
+
+		function buildDropdown(possibleResults) {
+			var i, v, lastClass='', li, max = 20;
+
+			//remove oldies
+			ol.find('li').remove();
+			if (possibleResults && possibleResults.length) {
+				if (possibleResults.length < max){ max = possibleResults.length;}
+				for (i = 0; i < max; i++){
+					if (i === max-1){lastClass = ' last';}
+					v = possibleResults[i];
+					li = $('<li class="affiliation-choice'+lastClass+'">'+v+'</li>');
+					li.click(liClicked);
+					ol.append(li);
+				}
+			}
+		}
+
+
+		function getMatches(s) {
+			if (!s){return [];}
+			var i, results = [],
+				re = /[\-\[\]{}()*+?.,\\\^$|#\s]/g,
+				search = inp.val().replace(re, "\\$&"),
+				regex = new RegExp(search, 'i');
+
+			//check empty:
+			if(inp.val().length === 0){return [];}
+
+		    for (i=0; i < me.schoolList.length; i++) {
+		        if (regex.test(me.schoolList[i])) {
+		          	results.push(me.schoolList[i]);
+		    	}
+			}
+
+		   	return results;
+		}
+
+		function scroll(){
+			if (!ol.find('li.selected').length){return;}
+
+			var sel = ol.find('li.selected'),
+				selHeight = sel.height(),
+				contHeight = cont.height(),
+				scrollTop = cont.scrollTop(),
+				scrollBottom = contHeight + scrollTop,
+				selTop = sel.position().top + scrollTop,
+				selBottom = selTop + selHeight;
+
+			if (selTop < scrollTop){
+				scrollTop = selTop;
+			}
+			else if (selBottom > scrollBottom ){
+				scrollTop = selBottom - contHeight;
+			}
+			else {
+				return;
+			}
+			cont.scrollTop(scrollTop);
+		}
+
+		function scrollDown(){
+			var sel = ol.find('li.selected');
+
+			sel[0].scrollIntoView(false);
+		}
+
+		function up(event){
+			console.log(event.keyCode);
+			var currentlySelected = ol.find('li.selected');
+			ol.find('li').removeClass('selected');
+			if (event.keyCode === 40) {
+				//down
+				if (currentlySelected.length) {
+					currentlySelected.next().addClass('selected');
+				}
+				else {ol.find('li').first().addClass('selected');}
+				scroll();
+			}
+			else if (event.keyCode === 38) {
+				//up
+				if (currentlySelected.length){
+					currentlySelected.prev().addClass('selected');
+				}
+				scroll();
+			}
+			else if (event.keyCode === 13 || event.keyCode === 39) {
+				if (currentlySelected.length){
+					setVal(currentlySelected.text());
+				}
+				else{setVal();}
+			}
+			else {
+				var possibleResults = getMatches(inp.val());
+				buildDropdown(possibleResults);
+			}
+		}
+
+		function blur(){
+			setTimeout(function(){
+				ol.find('li').remove();
+			}, 400);
+		}
+
+		inp.keyup(up);
+	//	inp.blur(blur);
 	}
 
 
@@ -353,7 +479,25 @@
 
 
 	function usernameValidation(){
+		var u = $('input[name=Username]');
+		var e = $('input[name=email]'),
+			efc = e.parents('.field-container');
+
 		setupValidationListener('Username', function(){showAvatars();});
+
+		//some little logic to disable email when there's an @ in a username, since
+		//the server will take control of setting the email at that point.
+		function up(){
+			return; //this does nothing yet...
+			if (u.val().indexOf('@') > -1) {
+				efc.addClass('disabled');
+			}
+			else {
+				efc.removeClass('disabled');
+			}
+		}
+
+		u.keyup(up);
 	}
 
 
@@ -532,6 +676,10 @@
 				s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
 				setTimeout(function(){s.removeClass(att);},1300);
 			} else {
+				if (validation.Username && validation.Username.indexOf('@') > -1) {
+					console.log('username has an @, not passing email');
+					delete validation.email;
+				}
 				post(validation);
 			}
 		}
@@ -549,81 +697,6 @@
 			return JSON.parse(data.responseText);
 		}
 		return null;
-	}
-
-
-	function buildSelect(owner, level, obj) {
-		owner.parents('.field-container').removeClass('invalid valid');
-		owner.find('[data-level=' +level+']').remove();
-		owner.find('[data-level=' +(level+1)+']').remove();
-		owner.find('br').remove();
-
-		if (!obj){return;}
-
-		if(level === 2){
-			owner.append($('<br/>'));
-		}
-
-		var s = $('<div data-level="'+level+'" class="selectbox"></div>'),
-			ol = $('<ol class="selectbox" data-value="'+level+'" tabindex="1"></ol>'),
-			titles = ['State', 'City', 'School'],
-			key, option;
-
-		//Add the title
-		ol.append($('<li class="placeholder selected" data-value="'+titles[level]+'">'+titles[level]+'</li>'));
-
-
-		for (key in obj) {
-			if ($.isArray(obj)){key = obj[key];}
-			option = $('<li data-value="'+key+'">'+key+'</li>');
-			ol.append(option);
-		}
-		s.append(ol);
-		owner.append(s);
-
-		setupSelectBox(s);
-
-		//SETUP EVENTS:
-		ol.change(function(){
-			if (level < 2) {
-				buildSelect(owner, level + 1, obj[ol.attr('data-value')]);
-			}
-			else {
-				affiliationValidation();
-			}
-		});
-	}
-
-
-	function hideAffiliation(){
-		var sec = $('section.affiliations'),
-			owner = $('.affiliation');
-
-		sec.addClass('disabled');
-		owner.addClass('disabled');
-	}
-
-
-	function populateAffiliation(){
-		var sec = $('section.affiliations'),
-			owner = $('.affiliation');
-
-		if (!profileSchema || !profileSchema.affiliation){
-			//just make sure it's hidden:
-			sec.addClass('disabled');
-			return;
-		}
-
-		sec.removeClass('disabled');
-		owner.removeClass('disabled');
-
-		owner.parents('.field-container').removeClass('disabled');
-		owner.html('');
-		$.getJSON('js/school-data.js', function(data){
-			var key;
-			console.log('school data loaded', data);
-			buildSelect(owner, 0, data);
-		});
 	}
 
 
@@ -783,7 +856,7 @@
 
 		function afterFail(){
 			form.removeClass('birthday-filled-in');
-			hideAffiliation();
+			//hideAffiliation();
 		}
 
 		function go(){
@@ -827,6 +900,7 @@
 		participatesValidation();
 		roleValidation();
 		mathcountsRoleHandler();
+		affiliationValidation();
 
 		$('a.agree').click(makeIt);
 

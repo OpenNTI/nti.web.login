@@ -400,6 +400,18 @@ ol.selectbox {
 	top: -1px; left: -1px; right: -1px;
 }
 
+div.affiliation-dropdown-container {
+	position: absolute;
+	z-index: 1000;
+	background: white;
+	max-height: 200px;
+	overflow: auto;
+	border: 1px solid #dcdcdc;
+	border-left-width: 0;
+	border-right-width: 0;
+}
+
+ol.affiliation-dropdown li,
 ol.selectbox li {
 	padding: 0 15px;
 	color: #757474;
@@ -407,6 +419,28 @@ ol.selectbox li {
 	font-weight: 500;
 	list-style: none;
 	display: none;
+}
+
+ol.affiliation-dropdown {
+	padding-left: 0;
+	margin-top: -1px;
+}
+
+ol.affiliation-dropdown li {
+	display: block;
+	line-height: 40px;
+	border: 1px solid #dcdcdc;
+	border-bottom-width: 0;
+	width: 450px;
+}
+
+li.affiliation-choice.selected,
+ol.affiliation-dropdown li:hover {
+	background: #dcdcdc;
+}
+
+ol.affiliation-dropdown li.last {
+	border-bottom-width: 1px;
 }
 
 ol.selectbox li.placeholder {
@@ -483,7 +517,6 @@ iframe.agreement {
 
 .signup section.optionals,
 .signup section.avatars,
-.signup section.affiliations,
 .signup section.agreements {
 	margin-top: 60px
 }

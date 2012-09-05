@@ -22,6 +22,7 @@
 	<script type="text/javascript" src="js/signup.js"></script>
 </head>
 <body class="signup">
+		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
 		<div class="middle">
 			<div class="container">
 				<div class="header">
@@ -165,13 +166,12 @@
 									<span class="invalid"></span>
 								</div>
 							</div>
-						</section>
-						<section class="affiliations disabled">
-							<h4>Select a School Affiliation</h4>
+
+
+							<!--
 							<div class="field-container"
 								 data-title="This will help us later to connect you with your classmates.">
 								<div class="affiliation">
-									<!-- dynamically build drop downs here-->
 								</div>
 								<div class="line">
 									<span class="blank">This will help us later to connect you with your classmates.</span>
@@ -179,7 +179,24 @@
 									<span class="valid">Thanks.</span>
 								</div>
 							</div>
+							-->
+
+							<div class="field-container">
+								<input type="text" name="affiliation" size="20" placeholder="Your School" autocomplete="off"
+										title="This will help us later to connect you with your classmates."/>
+								<div class="affiliation-dropdown-container">
+									<ol class="affiliation-dropdown">
+										<!-- auto selection content here -->
+									</ol>
+								</div>
+								<div class="line">
+									<span class="blank"></span>
+									<span class="invalid"></span>
+									<span class="valid"></span>
+								</div>
+							</div>
 						</section>
+
 						<section class="avatars disabled">
 							<h4>Select Your Avatar</h4>
 							<div class="field-container">
