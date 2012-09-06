@@ -348,6 +348,7 @@
 
 		function afterFail(){
 			form.removeClass('birthday-filled-in');
+			$('section.optionals').addClass('disabled');
 		}
 
 		function isDateValid(){
@@ -359,6 +360,7 @@
 				//apply invalids:
 				p.removeClass('valid').addClass('invalid');
 				p.find('.invalid').html('That doesn\'t look right.');
+				afterFail();
 			}
 
 			//do i need to go further?
