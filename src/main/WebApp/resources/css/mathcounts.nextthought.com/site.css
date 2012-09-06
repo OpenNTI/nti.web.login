@@ -20,3 +20,10 @@
 .signin .forgot {
 	margin-left: 530px;
 }
+
+
+.signup .needs-birthday span.childrenpolicy,
+.signin .links span.childrenpolicy{
+	display: inline-table;
+	display: inline-block;
+}

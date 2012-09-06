@@ -87,6 +87,7 @@ a:visited
 a:hover{ text-decoration: underline; }
 
 .signin a.privacy { font-weight: bold; }
+.signup .childrenpolicy,
 .signup a.privacy {
 	color: #37b2f9;
 	font-size: 12px;
@@ -94,6 +95,14 @@ a:hover{ text-decoration: underline; }
 	display: inline-table;
 	display: inline-block;
 }
+
+.signin .childrenpolicy,
+.signup .childrenpolicy {
+	display: none;
+	margin: 0;
+	color: #b8b8b8;
+}
+
 
 .signup a.privacy:hover,
 a.agree:hover,
