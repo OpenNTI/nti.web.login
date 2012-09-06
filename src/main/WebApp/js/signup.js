@@ -348,7 +348,6 @@
 
 		function afterFail(){
 			form.removeClass('birthday-filled-in');
-			hideAffiliation();
 		}
 
 		function isDateValid(){
@@ -856,7 +855,6 @@
 
 		function afterFail(){
 			form.removeClass('birthday-filled-in');
-			//hideAffiliation();
 		}
 
 		function go(){
