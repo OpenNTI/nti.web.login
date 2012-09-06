@@ -288,7 +288,6 @@
 		}
 
 		function up(event){
-			console.log(event.keyCode);
 			var currentlySelected = ol.find('li.selected');
 			ol.find('li').removeClass('selected');
 			if (event.keyCode === 40) {
@@ -322,10 +321,11 @@
 			setTimeout(function(){
 				ol.find('li').remove();
 			}, 400);
+			validate(field, inp.val());
 		}
 
 		inp.keyup(up);
-	//	inp.blur(blur);
+		inp.blur(blur);
 	}
 
 
@@ -873,6 +873,7 @@
 			$('section.mathcounts-role').addClass('disabled');
 			$('h1').removeClass('disabled');
 			if (validation.role === 'Teacher') {
+				$('div.teacher-note').removeClass('disabled');
 				$('div.teacher-note').removeClass('disabled');
 			}
 		}
