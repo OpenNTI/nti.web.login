@@ -641,6 +641,10 @@ a.avatar.selected::after{
 
 .signin label{ display: none; }
 
+.signup div.teacher-note {
+	color: #757474;
+}
+
 .signup input[type=checkbox],
 .signup input[type=radio],
 .signup label {

@@ -872,6 +872,9 @@
 			}
 			$('section.mathcounts-role').addClass('disabled');
 			$('h1').removeClass('disabled');
+			if (validation.role === 'Teacher') {
+				$('div.teacher-note').removeClass('disabled');
+			}
 		}
 
 		function roleChanged(evt){
