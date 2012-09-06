@@ -641,7 +641,11 @@ a.avatar.selected::after{
 
 .signin label{ display: none; }
 
-.signup .field-container p,
+.signup .field-container.affiliation p {
+	color: #757474;
+	padding-top: 10px;
+}
+
 .signup div.teacher-note {
 	color: #757474;
 }
