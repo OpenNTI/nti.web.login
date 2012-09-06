@@ -402,7 +402,7 @@ ol.selectbox {
 
 div.affiliation-dropdown-container {
 	position: absolute;
-	z-index: 1000;
+	z-index: 2000;
 	background: white;
 	max-height: 200px;
 	overflow: auto;
@@ -641,6 +641,7 @@ a.avatar.selected::after{
 
 .signin label{ display: none; }
 
+.signup .field-container p,
 .signup div.teacher-note {
 	color: #757474;
 }
