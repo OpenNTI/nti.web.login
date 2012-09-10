@@ -1,5 +1,6 @@
 (function($){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        ghanaUser = /^(spmps|mise)\d{2}$/i,
 		emailLastValid,
 		originalMessage,
 		message,
@@ -81,8 +82,10 @@
 	}
 
 	function getAuth(){
+        var v = username.value,
+            u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
 		return {
-			username: username.value,
+			username: u,
 			password: password.value,
 			remember: remember.checked
 		};
