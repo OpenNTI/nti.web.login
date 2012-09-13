@@ -890,6 +890,44 @@
 		cont.click(go);
 	}
 
+
+	function generalAdditionalConfig(){
+		var form = $('form'), x = form.find('.birthday');
+		//Hidden by default
+		if(x.length > 0){ $(x).hide(); }
+
+		setTimeout(function(){
+			var pq, opts;
+
+			if(!profileSchema){ return; }
+
+			if(!profileSchema.role) {
+				//Set flag to get the account info
+				form.addClass('birthday-filled-in');
+
+				//Enable default option
+				pq = $('section.optionals');
+				opts = pq.find('.field-container');
+				opts.each(function(i){
+					var t = $(opts[i]),
+						inp = t.find('input'),
+						n = inp.attr('name'),
+						def = 'opt_in_email_communication';
+					if(n !== def) { t.addClass('disabled'); }
+				});
+
+				//show optional section
+				pq.removeClass('disabled');
+			}
+			else{
+				//* For MC, show birthday first.
+				//* FIXME: Right now, we're going to distinguish MC from everything
+				//*        else based on the presence of the 'role' field.
+				$(x).show();
+			}
+		}, 400);
+	}
+
 	//onready event
 	$(function(){
 		setupSelectBox();
@@ -905,6 +943,7 @@
 		roleValidation();
 		mathcountsRoleHandler();
 		affiliationValidation();
+		generalAdditionalConfig();
 
 		$('a.agree').click(makeIt);
 
