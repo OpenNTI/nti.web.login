@@ -865,6 +865,7 @@
 			if (val === 'Student') {
 				//show birthday next:
 				$('section.birthday').removeClass('disabled');
+				$('section.birthday').show();
 			}
 			else {
 				//non student selected, just validate a date:
@@ -894,11 +895,13 @@
 	function generalAdditionalConfig(){
 		var form = $('form'), x = form.find('.birthday');
 		//Hidden by default
-		if(x.length > 0){ $(x).hide(); }
+		if(x.length > 0){
+			$(x[0]).addClass('disabled');
+			$(x).hide();
+		}
 
 		setTimeout(function(){
 			var pq, opts;
-
 			if(!profileSchema){ return; }
 
 			if(!profileSchema.role) {
@@ -918,12 +921,6 @@
 
 				//show optional section
 				pq.removeClass('disabled');
-			}
-			else{
-				//* For MC, show birthday first.
-				//* FIXME: Right now, we're going to distinguish MC from everything
-				//*        else based on the presence of the 'role' field.
-				$(x).show();
 			}
 		}, 400);
 	}
