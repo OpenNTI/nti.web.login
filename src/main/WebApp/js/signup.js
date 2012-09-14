@@ -481,11 +481,14 @@
 				e = $('input[name=email]');
 			if( profileSchema && !profileSchema.role && e.val()){
 				u.val(e.val());
-				validate('Username', e.val());
+				validate('Username', e.val(), function(){}, function(data){
+					data.field = 'email';
+					markFieldInvalidated(data);
+				});
 			}
 		}
 
-		setupValidationListener('email', fn);
+		setupValidationListener('email', fn, fn);
 	}
 
 
@@ -567,6 +570,11 @@
 		verify.blur(pf).keyup(timer);
 	}
 
+	function couldNotConnectToServer(){
+		console.error('failed to resolve service url..');
+		$('.content').html('<h1>Sorry, unable to connect to the server, try again</h1>');
+	}
+
 
 	function ping(){
 		$.ajax({
@@ -581,8 +589,7 @@
 			//find out if we need an initial mathcounts role choice:
 			installMathcountsChoice();
 		}).fail(function(){
-			console.error('failed to resolve service url...will retry in 5 seconds');
-			setTimeout(ping,5000);
+			couldNotConnectToServer();
 		});
 	}
 
@@ -837,11 +844,13 @@
 				return;
 			}
 			makeSureRoleIsHidden();
+			generalAdditionalConfig();
 		}
 
 		function fail(){
 			//failure?  Assume hidden role:
 			makeSureRoleIsHidden();
+			couldNotConnectToServer();
 		}
 
 
@@ -899,41 +908,38 @@
 
 
 	function generalAdditionalConfig(){
-		var form = $('form'), x = form.find('.birthday');
+		var form = $('form'), x = form.find('.birthday'), pq, opts, fcu;
 		//Hidden by default
 		if(x.length > 0){
 			$(x[0]).addClass('disabled');
 			$(x).hide();
 		}
 
-		setTimeout(function(){
-			var pq, opts, fcu;
-			if(!profileSchema){ return; }
+		if(!profileSchema.role) {
+			//Set flag to get the account info
+			form.addClass('birthday-filled-in');
 
-			if(!profileSchema.role) {
-				//Set flag to get the account info
-				form.addClass('birthday-filled-in');
+			//Enable default option
+			pq = $('section.optionals');
+			opts = pq.find('.field-container');
+			opts.each(function(i){
+				var t = $(opts[i]),
+					inp = t.find('input'),
+					n = inp.attr('name'),
+					def = 'opt_in_email_communication';
+				if(n !== def) { t.addClass('disabled'); }
+			});
 
-				//Enable default option
-				pq = $('section.optionals');
-				opts = pq.find('.field-container');
-				opts.each(function(i){
-					var t = $(opts[i]),
-						inp = t.find('input'),
-						n = inp.attr('name'),
-						def = 'opt_in_email_communication';
-					if(n !== def) { t.addClass('disabled'); }
-				});
+			//show optional section
+			pq.removeClass('disabled');
 
-				//show optional section
-				pq.removeClass('disabled');
-			}
-			else{
-				//Username is shown for MC
-				fcu = $('input[name=Username]').parents('.field-container');
-				fcu.removeClass('disabled');
-			}
-		}, 400);
+			$('[data-title="email"] .blank')[0].innerHTML += ' This will be your username.';
+		}
+		else{
+			//Username is shown for MC
+			fcu = $('input[name=Username]').parents('.field-container');
+			fcu.removeClass('disabled');
+		}
 	}
 
 	//onready event
@@ -951,7 +957,6 @@
 		roleValidation();
 		mathcountsRoleHandler();
 		affiliationValidation();
-		generalAdditionalConfig();
 
 		$('a.agree').click(makeIt);
 
