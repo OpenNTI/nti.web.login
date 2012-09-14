@@ -124,24 +124,35 @@
 				mappedName = schemaToFieldMap[n] || n,
 				schemaVal = profileSchema[mappedName];
 
-			if(schemaVal && (schemaVal.required || mappedName === 'birthdate' || mappedName === 'realname' || mappedName === 'password')) {
-				d.addClass('required');
+			if(profileSchema.role) {
+				if(schemaVal && (schemaVal.required || mappedName === 'birthdate' || mappedName === 'realname' || mappedName === 'password')) {
+					d.addClass('required');
+				}
+				else {
+					d.removeClass('required');
+				}
+
+				//special cases:
+				if (mappedName === 'Username' || mappedName === 'password') {
+					schemaVal = true;
+				}
+
+				if (schemaVal){
+					d.removeClass('disabled');
+				}
+				else {
+					d.addClass('disabled')
+				}
 			}
 			else {
-				d.removeClass('required');
+				if(schemaVal && (schemaVal.required || mappedName === 'email' || mappedName === 'realname' || mappedName === 'password')) {
+					d.addClass('required');
+				}
+				else {
+					d.removeClass('required');
+				}
 			}
 
-			//special cases:
-			if (mappedName === 'Username' || mappedName === 'password') {
-				schemaVal = true;
-			}
-
-			if (schemaVal){
-				d.removeClass('disabled');
-			}
-			else {
-				d.addClass('disabled')
-			}
 		});
 
 		//show optional section
@@ -448,11 +459,11 @@
 	}
 
 
-	function setupValidationListener(field, afterSuccess){
+	function setupValidationListener(field, afterSuccess, afterFail){
 		function pf() {
 			//try to validate if theres a field value, or you have previously validated:
 			if (m.val() || validation[field]){
-				validate(field, m.val(), afterSuccess);
+				validate(field, m.val(), afterSuccess, afterFail);
 			}
 		}
 
@@ -481,7 +492,7 @@
 				e = $('input[name=email]');
 			if( profileSchema && !profileSchema.role && e.val()){
 				u.val(e.val());
-				validate('Username', e.val(), function(){}, function(data){
+				validate('Username', u.val(), function(){}, function(data){
 					data.field = 'email';
 					markFieldInvalidated(data);
 				});
@@ -668,12 +679,11 @@
 				val = profileSchema[key];
 				o = validation[key];
 
-				if(val.required && !o) {
-					if(key !== 'Username' || key=== 'Username' && profileSchema.role){
+				// FIXME: This is a HACK, since Email isn't required by site-policy but we're treating it as required in a general case.
+				if((val.required || (key === 'email' && !val.required && !profileSchema.role)) && !o) {
 						$('a.agree').addClass('disabled');
 						console.log('setting checkIt button to disabled, field ' + key + ' is required');
 						return false;
-					}
 				}
 			}
 		}
@@ -809,6 +819,9 @@
 
 			markFieldInvalidated(data);
 
+			//check to see if I should enable/disable button:
+			checkIt();
+
 			if (afterFail){afterFail(data);}
 		}
 
@@ -835,6 +848,7 @@
 			//role is shown, birthday is hidden:
 			$('section.mathcounts-role').removeClass('disabled');
 			$('section.birthday').addClass('disabled');
+			$('.content .createAccountTitle').addClass('disabled');
 		}
 
 		function success(data){
@@ -917,6 +931,7 @@
 
 		if(!profileSchema.role) {
 			//Set flag to get the account info
+			disableFields();
 			form.addClass('birthday-filled-in');
 
 			//Enable default option
