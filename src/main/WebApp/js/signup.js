@@ -475,7 +475,17 @@
 
 
 	function emailValidation(){
-		setupValidationListener('email');
+		var fn = function generalUsernameSet(){
+			//We want the username to be the same as the email for the general case.
+			var u = $('input[name=Username]'),
+				e = $('input[name=email]');
+			if( profileSchema && !profileSchema.role && e.val()){
+				u.val(e.val());
+				validate('Username', e.val());
+			}
+		}
+
+		setupValidationListener('email', fn);
 	}
 
 
@@ -652,17 +662,13 @@
 				o = validation[key];
 
 				if(val.required && !o) {
-					$('a.agree').addClass('disabled');
-					console.log('setting checkIt button to disabled, field ' + key + ' is required');
-					return false;
+					if(key !== 'Username' || key=== 'Username' && profileSchema.role){
+						$('a.agree').addClass('disabled');
+						console.log('setting checkIt button to disabled, field ' + key + ' is required');
+						return false;
+					}
 				}
 			}
-		}
-
-		//check some things we are sure about, just in case:
-		if (!validation.Username || !validation.password) {
-			$('a.agree').addClass('disabled');
-			return false;
 		}
 
 		$('a.agree').removeClass('disabled');
@@ -901,7 +907,7 @@
 		}
 
 		setTimeout(function(){
-			var pq, opts;
+			var pq, opts, fcu;
 			if(!profileSchema){ return; }
 
 			if(!profileSchema.role) {
@@ -921,6 +927,11 @@
 
 				//show optional section
 				pq.removeClass('disabled');
+			}
+			else{
+				//Username is shown for MC
+				fcu = $('input[name=Username]').parents('.field-container');
+				fcu.removeClass('disabled');
 			}
 		}, 400);
 	}
