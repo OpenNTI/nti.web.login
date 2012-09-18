@@ -177,13 +177,21 @@ a.continue.disabled{
 	/*
 	REMOVED FOR BETA STYLE
 	background: url(../images/logo-white.png) left center no-repeat;
-	*/
 	background: url(../images/nt_beta_logo_acct_create.png) left center no-repeat;
+	*/
+	position: relative;
 	height: 84px;
 	text-align: right;
 	line-height: 84px;
 	margin: 0 0 75px 0;
 }
+
+.signup .header img {
+	position: absolute;
+	left: -139px;
+	top: -25px;
+}
+
 
 .signup .header a {
 	color: #ffffff;
