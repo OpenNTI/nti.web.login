@@ -27,3 +27,7 @@
 	display: inline-table;
 	display: inline-block;
 }
+
+.tagline::after {
+	content: ' It\'s Free!'
+}

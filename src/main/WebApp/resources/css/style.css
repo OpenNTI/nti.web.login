@@ -164,8 +164,13 @@ a.continue.disabled{
 
 
 .signin .header {
+	/*
+	REMOVED FOR BETA STYLE
 	background: url(../images/logo.png) center 20px no-repeat;
 	height: 75px;
+	*/
+	background: url(../images/nt_logo_beta_login.png) 0 0 no-repeat;
+	height: 94px;
 }
 
 .signup .header {
@@ -300,8 +305,10 @@ a.continue.disabled{
 	color: red;
 }
 
-
+/*
+REMOVED FOR BETA STYLE
 .signin .content { padding: 20px 0 0 0; }
+*/
 .signup .content { text-align: left; padding: 0 0 100px 0; }
 
 h1.disabled {display:none;}
