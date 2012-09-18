@@ -486,20 +486,7 @@
 
 
 	function emailValidation(){
-		var fn = function generalUsernameSet(){
-			//We want the username to be the same as the email for the general case.
-			var u = $('input[name=Username]'),
-				e = $('input[name=email]');
-			if( profileSchema && !profileSchema.role && e.val()){
-				u.val(e.val());
-				validate('Username', u.val(), function(){}, function(data){
-					data.field = 'email';
-					markFieldInvalidated(data);
-				});
-			}
-		}
-
-		setupValidationListener('email', fn, fn);
+		setupValidationListener('email');
 	}
 
 
@@ -679,8 +666,7 @@
 				val = profileSchema[key];
 				o = validation[key];
 
-				// FIXME: This is a HACK, since Email isn't required by site-policy but we're treating it as required in a general case.
-				if((val.required || (key === 'email' && !val.required && !profileSchema.role)) && !o) {
+				if(val.required  && !o) {
 						$('a.agree').addClass('disabled');
 						console.log('setting checkIt button to disabled, field ' + key + ' is required');
 						return false;
@@ -922,7 +908,7 @@
 
 
 	function generalAdditionalConfig(){
-		var form = $('form'), x = form.find('.birthday'), pq, opts, fcu;
+		var form = $('form'), x = form.find('.birthday'), pq, opts;
 		//Hidden by default
 		if(x.length > 0){
 			$(x[0]).addClass('disabled');
@@ -947,13 +933,6 @@
 
 			//show optional section
 			pq.removeClass('disabled');
-
-			$('[data-title="email"] .blank')[0].innerHTML += ' This will be your username.';
-		}
-		else{
-			//Username is shown for MC
-			fcu = $('input[name=Username]').parents('.field-container');
-			fcu.removeClass('disabled');
 		}
 	}
 
