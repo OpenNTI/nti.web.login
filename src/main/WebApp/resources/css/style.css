@@ -174,7 +174,11 @@ a.continue.disabled{
 }
 
 .signup .header {
+	/*
+	REMOVED FOR BETA STYLE
 	background: url(../images/logo-white.png) left center no-repeat;
+	*/
+	background: url(../images/nt_beta_logo_acct_create.png) left center no-repeat;
 	height: 84px;
 	text-align: right;
 	line-height: 84px;
