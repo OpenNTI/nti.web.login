@@ -90,11 +90,11 @@
 				e.preventDefault();
 				return false;
 			}
-			
+
 			clearTimeout(t);
 			setTimeout(function(){el.change();},500);
 		}
-		
+
 		var t;
 		var e = $('input[data-type="number"]').keydown(f).keypress(f);
 
@@ -145,7 +145,11 @@
 				}
 			}
 			else {
-				if(schemaVal && (schemaVal.required || mappedName === 'email' || mappedName === 'realname' || mappedName === 'password')) {
+				if(schemaVal === undefined){
+					d.removeClass('required');
+					d.addClass('disabled');
+				}
+				else if(schemaVal && (schemaVal.required || mappedName === 'email' || mappedName === 'realname' || mappedName === 'password')) {
 					d.addClass('required');
 				}
 				else {
