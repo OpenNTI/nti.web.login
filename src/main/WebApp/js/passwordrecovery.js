@@ -27,7 +27,7 @@
             e.preventDefault();
 
             $.ajax({
-                url: host+resetPassUrl,
+                url: location.protocol+'//'+location.host + resetPassUrl,
                 dataType: 'json',
                 headers: {Accept:'application/json'},
                 type: 'POST',
