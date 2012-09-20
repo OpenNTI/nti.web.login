@@ -408,7 +408,15 @@
         $('#recoverpass').submit(function(e){
             var user = $('#recover-pass-username').val(),
                 email = $('#recover-pass-email').val(),
-                recoveryURL = window.location.protocol + '//' + window.location.host + window.location.pathname + 'passwordrecover.html';
+                pathname = window.location.pathname.replace('index.html', ''),
+                recoveryURL = window.location.protocol + '//' + window.location.host;
+
+            //ensure trailing slash exists on path
+            if (pathname.lastIndexOf('/') !== pathname.length - 1){
+                pathname += '/';
+            }
+            recoveryURL += (pathname + 'passwordrecover.html');
+
             e.stopPropagation();
             e.preventDefault();
 
