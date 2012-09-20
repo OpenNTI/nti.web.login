@@ -547,12 +547,31 @@
 			p.removeClass('invalid');
 			v.removeClass('invalid');
 
-			if (!pass || !veri){return;}
+			if (!pass){
+				p.removeClass('invalid valid');
+				p.addClass('invalid');
+			}
+
+			if (!veri){
+				v.removeClass('invalid valid');
+				v.addClass('invalid');
+			}
+
 			if (pass !== veri){
 				v.removeClass('invalid valid');
 				v.addClass('invalid');
+				checkIt();
 				return;
 			}
+
+			//TODO right now the server seems perfectly happy
+			//to allow empty passwords or passwords that are only
+			//whitespace.  Prevent that here
+			if(!pass.trim()){
+				checkIt();
+				return;
+			}
+
 			validate('password', pass);
 		}
 
@@ -565,7 +584,7 @@
 
 		function timer(){
 			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
+			pftimer = setTimeout(pf, 500);
 		}
 
 		ps.blur(pf).keyup(timer);
@@ -663,7 +682,9 @@
 
 
 	function checkIt(){
-		var key, val, o;
+		var key, val, o,
+		ps = $('[name=password]'),
+		verify = $('[name=password_verify]');
 
 		for(key in profileSchema) {
 			if(profileSchema.hasOwnProperty(key)){
@@ -676,6 +697,12 @@
 						return false;
 				}
 			}
+		}
+
+		if(!ps.val().trim() || ps.val() !== verify.val()){
+			$('a.agree').addClass('disabled');
+			console.log('setting checkIt button to disabled, field ' + key + ' is required');
+			return false;
 		}
 
 		$('a.agree').removeClass('disabled');
