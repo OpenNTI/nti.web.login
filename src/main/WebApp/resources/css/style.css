@@ -837,6 +837,9 @@ a.avatar.selected::after{
 	border-bottom-width: 1px;
 }
 
+.footer {
+	height: 20px;
+}
 
 /*#password-field,*/
 #oauth-login {

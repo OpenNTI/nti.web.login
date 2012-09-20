@@ -351,7 +351,7 @@
 			}
 		});
 
-		$('.forgot .dialog').click(function(e){
+		$('.forgot .dialog.username').click(function(e){
 			e.stopPropagation();
 		});
 
@@ -384,7 +384,59 @@
 	}
 
 
-	$(function(){
+    function setupPassRecovery(){
+        function enablePasswordRecoverySubmit(){
+            var user = $('#recover-pass-username').val(),
+                email = $('#recover-pass-email').val(),
+                sub = $('#recoverpass button');
+
+            if(emailRx.test(email) && user){
+                sub.removeAttr('disabled');
+            }
+            else {
+                sub.attr('disabled',true);
+            }
+        }
+
+        $('#recover-pass-username').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
+        $('#recover-pass-email').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
+
+        $('.forgot .dialog.password').click(function(e){
+            e.stopPropagation();
+        });
+
+        $('#recoverpass').submit(function(e){
+            var user = $('#recover-pass-username').val(),
+                email = $('#recover-pass-email').val(),
+                recoveryURL = window.location.protocol + '//' + window.location.host + window.location.pathname + 'passwordrecover.html';
+            e.stopPropagation();
+            e.preventDefault();
+
+            $('#recoverpass').html('<h1>Thanks!</h1>');
+            setTimeout(function(){
+                $('.forgot .dialog').hide();
+            },1000);
+
+            $.ajax({
+                url: host+recoverPassUrl,
+                dataType: 'json',
+                headers: {Accept:'application/json'},
+                type: 'POST',
+                data: {email: email, username: user, success:recoveryURL}
+            });
+//			.done(function(data){
+//				console.log('suc',arguments);
+//			})
+//			.fail(function(data){
+//				console.log('fail',arguments);
+//			});
+
+            return false;
+        });
+    }
+
+
+    $(function(){
 //
 //		$('input').focus(function(){
 //			$(this).parent('div[data-title]').addClass('has-focus');
@@ -405,6 +457,7 @@
 		originalMessage = message.innerHTML;
 
 		setupRecovery();
+        setupPassRecovery();
 
 		$(username).keyup(moveFocus);
 		$('oauth-login').click(clickHandler);
@@ -413,11 +466,22 @@
 		$('#forgotit').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			var d = $(this).parent().find('.dialog');
+            $(this).parent().find('.dialog').hide();
+			var d = $(this).parent().find('.dialog.username');
 			d.show();
 			d.find('input').focus();
 			return false;
 		});
+
+        $('#forgotpass').click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+            $(this).parent().find('.dialog').hide();
+            var d = $(this).parent().find('.dialog.password');
+            d.show();
+            d.find('input').focus();
+            return false;
+        });
 
 		$('body').click(function(e){$(this).parent().find('.dialog').hide();});
 
