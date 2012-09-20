@@ -5,7 +5,7 @@
         $('#account-creation').hide();
         $.ajax({
             dataType: 'json',
-            url:host+'/dataserver2/logon.ping',
+            url: location.protocol+'//'+location.host +'/dataserver2/logon.ping',
             headers: {Accept:'application/json'},
             type: 'GET'
         }).done(function(data){
