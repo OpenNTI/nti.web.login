@@ -487,7 +487,7 @@
             $(this).parent().find('.dialog').hide();
             var d = $(this).parent().find('.dialog.password');
             d.show();
-            d.find('input').focus();
+            d.find('#recover-pass-username').focus();
             return false;
         });
 
