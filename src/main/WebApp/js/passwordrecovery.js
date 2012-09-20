@@ -35,7 +35,7 @@
             })
                 .done(function(data){
 //                    console.log('suc',arguments);
-                    window.location.replace('index.html');
+                    window.location.replace('index.html?host=' + host + '&return=' + returnUrl );
                 })
                 .fail(function(data){
 //                    console.log('fail',arguments);
