@@ -38,7 +38,8 @@
                     window.location.replace('index.html?host=' + host + '&return=' + returnUrl );
                 })
                 .fail(function(data){
-//                    console.log('fail',arguments);
+                    var o = JSON.parse(data.responseText);
+                    $('#message').text(o.message || o.code);
                 });
 
             return false;
