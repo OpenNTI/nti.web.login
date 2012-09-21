@@ -415,7 +415,7 @@
             if (pathname.lastIndexOf('/') !== pathname.length - 1){
                 pathname += '/';
             }
-            recoveryURL += (pathname + 'passwordrecover.html?host=' + host + '&return=' returnUrl);
+            recoveryURL += (pathname + 'passwordrecover.html?host=' + host + '&return=' + returnUrl);
 
             e.stopPropagation();
             e.preventDefault();
