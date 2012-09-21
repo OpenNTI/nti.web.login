@@ -540,24 +540,18 @@
 
 
 	function passwordValidation(){
-		function pf(){
+		function pf(event){
 			var pass = ps.val(),
 				veri = verify.val();
 
 			p.removeClass('invalid');
-			v.removeClass('invalid');
 
 			if (!pass){
 				p.removeClass('invalid valid');
 				p.addClass('invalid');
 			}
 
-			if (!veri){
-				v.removeClass('invalid valid');
-				v.addClass('invalid');
-			}
-
-			if (pass !== veri){
+			if (pass !== veri && veri.trim()){
 				v.removeClass('invalid valid');
 				v.addClass('invalid');
 				checkIt();
@@ -572,7 +566,22 @@
 				return;
 			}
 
-			validate('password', pass);
+			function updateVerify(){
+				//FIXME We could just not mark verify fields by default
+				//The server doesn't tell us about them so it seems
+				//weird to do them there anyway.  thats a more global change
+				//than I am comfortable making right now so lets try this
+
+				v.removeClass('invalid valid');
+				if(!veri.trim()){
+					return;
+				}
+
+				v.addClass(pass !== veri ? 'invalid' : 'valid');
+				checkIt();
+			}
+
+			validate('password', pass, updateVerify, updateVerify);
 		}
 
 		var ps = $('[name=password]'),
@@ -582,9 +591,13 @@
 			pftimer;
 
 
-		function timer(){
+		function timer(event){
 			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 500);
+			if(event.type === 'keyup' && event.keyCode === 9 /*tab key*/){
+				return;
+			}
+
+			pftimer = setTimeout(pf(event), 500);
 		}
 
 		ps.blur(pf).keyup(timer);
