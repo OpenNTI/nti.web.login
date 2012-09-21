@@ -39,6 +39,8 @@
                 })
                 .fail(function(data){
                     var o = JSON.parse(data.responseText);
+                    $('#message').removeClass('green');
+                    $('#message').addClass('red');
                     $('#message').text(o.message || o.code);
                 });
 
