@@ -251,6 +251,10 @@ a.continue.disabled{
 	left: -122px;
 }
 
+.signin .forgot .dialog.password {
+	left: -40px;
+}
+
 .signup .why .dialog .top{
 	height: 10px;
 	background: url(../images/bubble2_top.png) 0 0 no-repeat;
