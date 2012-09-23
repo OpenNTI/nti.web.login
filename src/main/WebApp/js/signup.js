@@ -442,10 +442,12 @@
 				l = lastname.val(),
 				rn;
 
-			if ((f && l) || validation.realname) {
-				rn = f+' '+l;
-				validate('realname', rn);
-			}
+
+            if (validation.realname && (!f || !l)){validate('realname', '');}
+            else{
+                rn = f+' '+l;
+                validate('realname', rn);
+            }
 		}
 
 		var firstname = $('[name=first]'),
