@@ -141,7 +141,7 @@
 					d.removeClass('disabled');
 				}
 				else {
-					d.addClass('disabled')
+					d.addClass('disabled');
 				}
 			}
 			else {
