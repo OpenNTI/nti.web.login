@@ -142,9 +142,9 @@
 			headers: h,
 			data: data,
 			dataType: 'json'
-		}).fail(function(){
-			console.error('The request failed. Server up? CORS?\nURL: '+l);
-			if(back){ back.call(window, 0 ); }
+		}).fail(function(jqXHR, textStatus){
+			console.error('The request failed. Server up? CORS?\nURL: '+l, textStatus, jqXHR.status);
+			if(back){ back.call(window, jqXHR.status ); }
 		}).done(function(data){
 			if(back){ back.call(window, data || x.status ); }
 		});
@@ -234,7 +234,12 @@
 	}
 
 	function error(msg){
-		if(msg){emailLastValid = null;}
+		//TODO this isn't being relied on anywhere so far as I can tell.
+		// Furthermore I think the interaction between this and the ping
+		//timer may be what is triggering the strange page refresh issue that ken and greg complain about.
+		//I don't necessarily think removing this will fix it but the use of the timer seems like
+		//it could lead to issues
+		//if(msg){emailLastValid = null;} 
 		messageUser(msg||'Please try again, there was a problem logging in.','error');
 	}
 
@@ -258,8 +263,14 @@
 
 			call(url, getAuth(), function(o){
 				var t = typeof o;
+
 				if((t === 'number' && o !== 204 && o !== 1223) || (t === 'object' && !o.success) || !o){
-					return error();
+
+					var msg = null;
+					if(t === 'number' && o == 401){
+						msg = 'The username or password you entered is incorrect. Please try again.';
+					}
+					return error(msg);
 				}
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
 				redirect();
