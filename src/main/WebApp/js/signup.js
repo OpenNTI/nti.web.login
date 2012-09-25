@@ -254,20 +254,36 @@
 		}
 
 
+		//NOTE the approach here is to turn each term
+		//into a regex and loop over them basically anding
+		//the matches.  We could get fancy and build up
+		//a giant regex that handles all the possible permutations
+		//of the terms but its not clear that it would be more performant
+		//than just doing the straightforward thing
 		function getMatches(s) {
 			if (!s){return [];}
-			var i, results = [],
-				re = /[\-\[\]{}()*+?.,\\\^$|#\s]/g,
-				search = inp.val().replace(re, "\\$&"),
-				regex = new RegExp(search, 'i');
-
-			//check empty:
 			if(inp.val().length === 0){return [];}
+			var i, j, goodMatch, results = [],
+				escapeRe = /[\-\[\]{}()*+?.,\\\^$|#\s]/g,
+				terms = s.split(/\s/),
+				regexes = [];
+			
+			//Build up our regex from our terms
+			for(i=0; i < terms.length; i++){
+				regexes.push(new RegExp(terms[i].replace(escapeRe, "\\$&"), 'i'));
+			}
 
 		    for (i=0; i < me.schoolList.length; i++) {
-		        if (regex.test(me.schoolList[i])) {
-		          	results.push(me.schoolList[i]);
-		    	}
+				goodMatch = true;
+				for(j=0; j < regexes.length; j++){
+					if(!regexes[j].test(me.schoolList[i])){
+						goodMatch = false;
+						break;
+					}
+				}
+				if(goodMatch){
+					results.push(me.schoolList[i]);
+				}
 			}
 
 		   	return results;
