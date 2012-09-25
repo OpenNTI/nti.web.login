@@ -202,11 +202,6 @@
 		for(;i>=0; i--){
 			v = links[i];
 
-			if(v.rel === 'logon.continue' && cookies['continued']!=='1'){
-				setCookie('continued','1', new Date(new Date().getTime()+60000));//one minute from now
-				redirect();
-			}
-
 			rel[v.rel] = v.href;
 
 			if(/result/i.test(v.rel)){
