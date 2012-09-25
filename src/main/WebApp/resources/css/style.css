@@ -700,6 +700,10 @@ a.avatar.selected::after{
 	padding-top: 10px;
 }
 
+.signup .field-container.affiliation .line{
+	top: 43px;
+}
+
 .signup div.teacher-note {
 	color: #757474;
 }
