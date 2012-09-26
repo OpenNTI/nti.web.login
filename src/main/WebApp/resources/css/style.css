@@ -130,6 +130,19 @@ a.continue.disabled{
 	display: block;
 }
 
+a.continue.birthday {
+	float: none;
+	display: inline-table;
+	display: inline-block;
+	vertical-align: bottom;
+	height: 39px;
+	line-height: 39px;
+	padding: 0 20px;
+}
+
+.signup .field-container a+.line {
+	left: 400px;
+}
 
 .links {
 	padding: 0.5em;

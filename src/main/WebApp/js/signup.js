@@ -362,6 +362,7 @@
 
 	function lockBirthday(){
 		$('.month,[name=day],[name=year]').attr('disabled','true').removeAttr('tabindex');
+        $('a.continue.birthday').remove();
 	}
 
 
@@ -425,7 +426,7 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-		$('.month,[name=day],[name=year]').blur(up).keyup(up);
+        $('a.continue.birthday').click(up);
 	}
 
 
