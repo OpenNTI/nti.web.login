@@ -235,6 +235,28 @@ a.continue.birthday {
 	margin: 5px 0;
 }
 
+.signup .why.email {
+	display: none;
+	line-height: 39px;
+	vertical-align: middle;
+}
+.signup .why.email:hover .dialog {
+	top: -200px;
+	left: 0;
+}
+
+.signup .why .icon {
+	display: inline-table !important;
+	display: inline-block !important;
+	width: 20px;
+	height: 20px;
+	background: url(../images/spr_info_icons.png) -19px 0 no-repeat;
+}
+.signup .why .icon:hover {
+	background-position: 0 0;
+}
+
+
 .singup .why,
 .signin .forgot {
 	position: relative;

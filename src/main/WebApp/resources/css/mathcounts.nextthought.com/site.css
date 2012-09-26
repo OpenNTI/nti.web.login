@@ -28,6 +28,11 @@
 	display: inline-block;
 }
 
+
+.signup .why.email {
+	display: inline;
+}
+
 .tagline::after {
 	content: ' It\'s Free!'
 }
