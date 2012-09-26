@@ -371,10 +371,11 @@
 		function afterSuccess(){
 			disableFields();
 			form.addClass('birthday-filled-in');
-			if (profileSchema['contact_email']){
+			//if (profileSchema['contact_email']){
 				//assume coppa:
+                //aways lock once BD is picked. for now.
 				lockBirthday();
-			}
+			//}
 		}
 
 		function afterFail(){
@@ -809,8 +810,6 @@
 			pv.removeClass('invalid valid');
 			pv.addClass('valid');
 		}
-
-
 	}
 
 
