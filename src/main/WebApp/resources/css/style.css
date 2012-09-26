@@ -138,10 +138,11 @@ a.continue.birthday {
 	height: 39px;
 	line-height: 39px;
 	padding: 0 20px;
+	margin-left: 5px;
 }
 
 .signup .field-container a+.line {
-	left: 400px;
+	left: 420px;
 }
 
 .links {
