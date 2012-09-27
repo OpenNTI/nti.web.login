@@ -143,7 +143,7 @@
 			data: data,
 			dataType: 'json'
 		}).fail(function(jqXHR, textStatus){
-			console.error('The request failed. Server up? CORS?\nURL: '+l, textStatus, jqXHR.status);
+			//console.error('The request failed. Server up? CORS?\nURL: '+l, textStatus, jqXHR.status);
 			if(back){ back.call(window, jqXHR.status ); }
 		}).done(function(data){
 			if(back){ back.call(window, data || x.status ); }
