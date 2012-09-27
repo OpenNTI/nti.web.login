@@ -686,7 +686,7 @@
 	}
 
 
-	function preflight(data, success, fail){
+	function preflight(data, success, fail, always){
 
 	 	function defaultFail(){
 			console.log('preflight fail');
@@ -710,7 +710,7 @@
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'
-		}).fail(fail).done(success);
+		}).fail(fail).done(success).always(always);
 	}
 
 
@@ -920,7 +920,7 @@
 
 
 		//send empty packet just to get schema back:
-		validate(null, null, success, fail);
+		validate(null, null, success, fail, function(){alert('always ' + JSON.stringify(arguments));});
 	}
 
 
