@@ -900,6 +900,7 @@
 		}
 
 		function success(data){
+            alert('null validate success.');
 			if(data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
 			 	setTimeout(function(){
@@ -913,6 +914,7 @@
 		}
 
 		function fail(){
+            alert('null validate fail.');
 			//failure?  Assume hidden role:
 			makeSureRoleIsHidden();
 			couldNotConnectToServer();
