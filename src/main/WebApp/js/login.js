@@ -454,6 +454,13 @@
     }
 
 
+    if(!window.console){
+        window.console = {
+            log: function(){},
+            error: function(){}
+        };
+    }
+
     $(function(){
 		$('div.forgot').hide();
 		anonymousPing();
