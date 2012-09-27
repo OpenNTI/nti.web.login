@@ -722,6 +722,7 @@ a.avatar.selected::after{
 .signin .field-container {
 	margin: 0 20px;
 	position: relative;
+	padding-bottom: 10px;
 }
 
 .signin input {
@@ -931,7 +932,7 @@ a.avatar.selected::after{
 #oauth-login {
 	background: url(../images/or.png) 0 0 no-repeat;
 	padding: 25px 0 0 0;
-	margin: 20px 0 0 0;
+	margin: 0 0 20px 0;
 }
 
 
@@ -1050,7 +1051,7 @@ button.logon:last-of-type {
 
 
 #account-creation {
-	margin-top: 20px;
+	margin-top: 10px;
 	border-top: 1px solid #474747;
 	border-radius: 0 0 3px 3px;
 	padding: 10px 15px 13px 15px;

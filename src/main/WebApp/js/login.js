@@ -335,6 +335,10 @@
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
 
+			setupRecovery();
+			setupPassRecovery();
+
+			$('div.forgot').show();
 			if(getLink(data,'account.create')){
 				$('#account-creation').show();
 			}
@@ -451,13 +455,7 @@
 
 
     $(function(){
-//
-//		$('input').focus(function(){
-//			$(this).parent('div[data-title]').addClass('has-focus');
-//		}).blur(function(){
-//			$(this).parent('div[data-title]').removeClass('has-focus');
-//		});
-
+		$('div.forgot').hide();
 		anonymousPing();
 		var a, i, v;
 
@@ -469,9 +467,6 @@
 		setInterval(formValidation,1000);
 
 		originalMessage = message.innerHTML;
-
-		setupRecovery();
-        setupPassRecovery();
 
 		$(username).keyup(moveFocus);
 		$('oauth-login').click(clickHandler);
