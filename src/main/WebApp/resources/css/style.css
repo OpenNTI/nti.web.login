@@ -494,16 +494,16 @@ div.selectbox {
 	background: #ffffff url(../images/down-arrow.png) right 18px no-repeat;
 }
 
-div.selectbox[data-level="0"] {
+div.selectbox[data-level='0'] {
 	width: 70px;
 }
 
-div.selectbox[data-level="1"] {
+div.selectbox[data-level='1'] {
 	width: 226px;
 	border-left-width: 0;
 }
 
-div.selectbox[data-level="2"] {
+div.selectbox[data-level='2'] {
 	margin-top: 10px;
 	width: 296px;
 }
@@ -1102,7 +1102,9 @@ button.logon:last-of-type {
 	display: block;
 	height: 45px;
 	color: #ffffff;
-	font: 16px/45px "Open Sans";
+	font-size: 16px;
+	line-height: 45px;
+	font-family: 'Open Sans', sans-serif;
 	font-style: italic;
 	font-weight: 600;
 	vertical-align: middle;
