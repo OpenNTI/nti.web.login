@@ -489,16 +489,16 @@
 
 
 	function setupValidationListener(field, afterSuccess, afterFail){
+        var m = $('input[name='+field+']'),
+            pftimer;
+
 		function pf() {
+            clearTimeout(pftimer);
 			//try to validate if theres a field value, or you have previously validated:
 			if (m.val() || validation[field]){
 				validate(field, m.val(), afterSuccess, afterFail);
 			}
 		}
-
-		var m = $('input[name='+field+']'),
-			pftimer;
-
 
 		function timer(){
 			clearTimeout(pftimer);
