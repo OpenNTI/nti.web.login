@@ -706,7 +706,7 @@
 
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host+ preflighturl,
+			url: host + preflighturl,
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'
@@ -835,7 +835,6 @@
 
 	function validate(fieldName, fieldValue, afterSuccess, afterFail) {
 		function success(data){
-            alert('sucess in validate');
 			console.log('success', data);
 
 			//adjust our schema and avatar collection, why not:
@@ -859,7 +858,6 @@
 
 		function fail(response){
 			console.log('fail', arguments);
-            alert('fail in validate');
 
 			//failure, remove the value from the validation field:
 			delete validation[fieldName];
@@ -881,10 +879,10 @@
 			packet[fieldName] = fieldValue;
 		}
 
-		//preflight:
-		console.log('im validating this', packet);
 		preflight(packet, success, fail);
-	}
+        //preflight:
+        alert('im validating this' + JSON.stringify(packet) + ' to ' + preflighturl);
+    }
 
 
 	function installMathcountsChoice(){
@@ -902,7 +900,6 @@
 		}
 
 		function success(data){
-            alert('null validate success.');
 			if(data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
 			 	setTimeout(function(){
@@ -916,7 +913,6 @@
 		}
 
 		function fail(){
-            alert('null validate fail.');
 			//failure?  Assume hidden role:
 			makeSureRoleIsHidden();
 			couldNotConnectToServer();
