@@ -408,47 +408,62 @@ h4.birthday{
 	display: inline-block;
 }
 
-:not(#foo) input[type=radio],
-:not(#foo) input[type=checkbox] {
-	position: relative;
+:not(#foo) input[type=radio] + label,
+:not(#foo) input[type=checkbox] + label{
+	clear: none;
+	/* Make look clickable because they are */
+	cursor: pointer;
+	vertical-align: middle;
 }
 
-:not(#foo) input[type=radio]:focus::after,
-:not(#foo) input[type=checkbox]:focus::after {
+:not(#foo) input[type=radio],
+:not(#foo) input[type=checkbox] {
+	vertical-align: middle;
+    opacity: 0;
+    float: left;
+    width: 20px;
+	max-height: none;
+	min-height: 0;
+}
+
+:not(#foo) input[type=radio]:focus + label,
+:not(#foo) input[type=checkbox]:focus + label {
 	border: 1px dashed #b8b8b8;
 }
 
-:not(#foo) input[type=checkbox]::after,
-:not(#foo) input[type=radio]::after{
+:not(#foo) input[type=checkbox] + label::after,
+:not(#foo) input[type=radio] + label::after {
 	position: absolute;
+	display: block;
 	content: ' ';
+	overflow: hidden;
 	width: 20px;
 	height: 30px;
-	background: white url(../images/sprite.png) -65px -10px no-repeat;
+	background: #ffffff url(../images/sprite.png) -65px -10px no-repeat;
 	top: -5px;
-	left: -5px;
+	left: 5px;
 }
 
 
-:not(#foo) input[type=checkbox]:hover::after {
+:not(#foo) input[type=checkbox] + label:hover::after {
 	background-position: -65px -60px;
 }
 
-:not(#foo) input[type=checkbox]:checked::after,
-:not(#foo) input[type=checkbox]:checked:hover::after {
+:not(#foo) input[type=checkbox]:checked + label::after,
+:not(#foo) input[type=checkbox]:checked + label:hover::after {
 	background-position: -65px -110px
 }
 
-:not(#foo) input[type=radio]::after{
+:not(#foo) input[type=radio] + label::after{
 	background-position: -15px -10px;
 }
 
-:not(#foo) input[type=radio]:hover::after {
+:not(#foo) input[type=radio] + label:hover::after {
 	background-position: -15px -60px;
 }
 
-:not(#foo) input[type=radio]:checked::after,
-:not(#foo) input[type=radio]:checked:hover::after {
+:not(#foo) input[type=radio]:checked + label::after,
+:not(#foo) input[type=radio]:checked + label:hover::after {
 	background-position: -15px -110px
 }
 
@@ -773,13 +788,18 @@ a.avatar.selected::after{
 	display: inline;
 	border: none;
 	font-size: 1em;
+	margin-left: 5px;
 	width: auto;
 	height: auto;
-	margin: 18px 5px 10px 5px;
 	padding: inherit;
-	float: left;
-	vertical-align: middle;
 	color: #757474;
+}
+
+.signin .input-wrap {
+	margin: 18px 5px 10px 5px;
+	position: relative;
+	overflow: hidden;
+	float: left;
 }
 
 .signup .field-container .birthday.disabled
