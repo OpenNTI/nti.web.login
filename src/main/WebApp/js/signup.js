@@ -1001,6 +1001,14 @@
 		}
 	}
 
+
+	if(!window.console){
+		window.console = {
+			log: function(){},
+			error: function(){}
+		};
+	}
+
 	//onready event
 	$(function(){
 		setupSelectBox();
