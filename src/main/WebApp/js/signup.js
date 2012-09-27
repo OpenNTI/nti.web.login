@@ -222,6 +222,9 @@
 			setVal(e.currentTarget.textContent);
 		}
 
+		//Add click handler here, this is faster then finding the lis
+		//each time we build the list and capturing them
+		ol.on('click', 'li', liClicked);
 
 		function setVal(v){
 			ol.find('li').remove();
@@ -240,16 +243,18 @@
 			var i, v, lastClass='', li, max = 20;
 
 			//remove oldies
-			ol.find('li').remove();
+			ol.empty();
 			if (possibleResults && possibleResults.length) {
-				if (possibleResults.length < max){ max = possibleResults.length;}
+				//if (possibleResults.length < max){ max = possibleResults.length;}
+				max = possibleResults.length;
+				var strings = [];
+				var j = 0;
 				for (i = 0; i < max; i++){
 					if (i === max-1){lastClass = ' last';}
 					v = possibleResults[i];
-					li = $('<li class="affiliation-choice'+lastClass+'">'+v+'</li>');
-					li.click(liClicked);
-					ol.append(li);
+					strings[j++] = '<li class="affiliation-choice'+lastClass+'">'+v+'</li>';
 				}
+				ol.append(strings.join(''));
 			}
 		}
 
@@ -350,7 +355,7 @@
 
 		function blur(){
 			setTimeout(function(){
-				ol.find('li').remove();
+				ol.empty();
 			}, 400);
 			validate(field, inp.val());
 		}
