@@ -416,6 +416,12 @@ h4.birthday{
 	vertical-align: middle;
 }
 
+.ie :not(#foo) input[type=radio] + label,
+.ie :not(#foo) input[type=checkbox] + label{
+	/*in IE labels are 2px off*/
+	margin-top: 2px;
+}
+
 :not(#foo) input[type=radio],
 :not(#foo) input[type=checkbox] {
 	vertical-align: middle;

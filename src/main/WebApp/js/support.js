@@ -1,5 +1,14 @@
 $AppConfig = $AppConfig || {server:{}};
 
+/*
+CSS Browser Selector v0.4.0 (Nov 02, 2010)
+Rafael Lima (http://rafael.adm.br)
+http://rafael.adm.br/css_browser_selector
+License: http://creativecommons.org/licenses/by/2.5/
+Contributors: http://rafael.adm.br/css_browser_selector#contributors
+*/
+function css_browser_selector(u){var ua=u.toLowerCase(),is=function(t){return ua.indexOf(t)>-1},g='gecko',w='webkit',s='safari',o='opera',m='mobile',h=document.documentElement,b=[(!(/opera|webtv/i.test(ua))&&/msie\s(\d)/.test(ua))?('ie ie'+RegExp.$1):is('firefox/2')?g+' ff2':is('firefox/3.5')?g+' ff3 ff3_5':is('firefox/3.6')?g+' ff3 ff3_6':is('firefox/3')?g+' ff3':is('gecko/')?g:is('opera')?o+(/version\/(\d+)/.test(ua)?' '+o+RegExp.$1:(/opera(\s|\/)(\d+)/.test(ua)?' '+o+RegExp.$2:'')):is('konqueror')?'konqueror':is('blackberry')?m+' blackberry':is('android')?m+' android':is('chrome')?w+' chrome':is('iron')?w+' iron':is('applewebkit/')?w+' '+s+(/version\/(\d+)/.test(ua)?' '+s+RegExp.$1:''):is('mozilla/')?g:'',is('j2me')?m+' j2me':is('iphone')?m+' iphone':is('ipod')?m+' ipod':is('ipad')?m+' ipad':is('mac')?'mac':is('darwin')?'mac':is('webtv')?'webtv':is('win')?'win'+(is('windows nt 6.0')?' vista':''):is('freebsd')?'freebsd':(is('x11')||is('linux'))?'linux':'','js']; c = b.join(' '); h.className += ' '+c; return c;}; css_browser_selector(navigator.userAgent);
+
 /*! JSON v3.2.3 | http://bestiejs.github.com/json3 | Copyright 2012, Kit Cambridge | http://kit.mit-license.org */
 (function(){var e=void 0,i=!0,k=null,l={}.toString,m,n,o="function"===typeof define&&define.c,q="object"==typeof exports&&exports,r='{"A":[1,true,false,null,"\\u0000\\b\\n\\f\\r\\t"]}',t,u,x,y,z,C,D,E,F,G,H,I,J,K,O,P=new Date(-3509827334573292),Q,R,S;try{P=-109252==P.getUTCFullYear()&&0===P.getUTCMonth()&&1==P.getUTCDate()&&10==P.getUTCHours()&&37==P.getUTCMinutes()&&6==P.getUTCSeconds()&&708==P.getUTCMilliseconds()}catch(T){}
 P||(Q=Math.floor,R=[0,31,59,90,120,151,181,212,243,273,304,334],S=function(b,c){return R[c]+365*(b-1970)+Q((b-1969+(c=+(1<c)))/4)-Q((b-1901+c)/100)+Q((b-1601+c)/400)});o||q?(o&&define("json",q={}),"object"==typeof JSON&&JSON&&(q.stringify=JSON.stringify,q.parse=JSON.parse)):q=this.JSON||(this.JSON={});
