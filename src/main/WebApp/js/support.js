@@ -18,4 +18,11 @@ window.requestParameters = o;
 window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+location.host);
 window.returnUrl = o['return'] || $AppConfig.url || '/';
 })();
+
+if(!window.console){
+    window.console = {
+        log: function(){},
+        error: function(){}
+    };
+}
 function getLink(o, r){var l=(o||{}).Links||[],i=l.length-1;for(i;i>=0;i--){if(l[i].rel === r){l = l[i].href;return l;}}return null;}
