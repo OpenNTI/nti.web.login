@@ -835,6 +835,7 @@
 
 	function validate(fieldName, fieldValue, afterSuccess, afterFail) {
 		function success(data){
+            alert('sucess in validate');
 			console.log('success', data);
 
 			//adjust our schema and avatar collection, why not:
@@ -858,6 +859,7 @@
 
 		function fail(response){
 			console.log('fail', arguments);
+            alert('fail in validate');
 
 			//failure, remove the value from the validation field:
 			delete validation[fieldName];
