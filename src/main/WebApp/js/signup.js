@@ -902,7 +902,10 @@
 		function success(data){
 			if(data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
-				showRole();
+			 	setTimeout(function(){
+					 //console.log('Inside the timeout for rolepicker');
+					 showRole();
+				 }, 100);
 				return;
 			}
 			makeSureRoleIsHidden();
