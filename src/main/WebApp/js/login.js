@@ -82,7 +82,7 @@
 	}
 
 	function getAuth(){
-        var v = username.value,
+        var v = username.value.trim(),
             u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
 		return {
 			username: u,
