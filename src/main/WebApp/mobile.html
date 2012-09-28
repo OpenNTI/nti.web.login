@@ -8,21 +8,33 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Application Login">
 	<meta name="author" content="NextThought">
-	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'>
-    <link rel="stylesheet" href="resources/css/style.css" media="screen">
+	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+    <style type="text/css">
+    body {
+        margin: 1em 0;
+        padding: 0;
+        text-align: center;
+        font: 16px 'Open Sans',serif;
+    }
+    p { margin: 200px 0 0 0; text-align: left; }
+    .logo {
+        display: inline-block;
+        background: url(resources/images/biglogo.png) 0 0 no-repeat;
+        width: 255px;
+        height: 172px;
+    }
+
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+           .logo {
+               background-image: url(resources/images/biglogo@2x.png);
+               -webkit-background-size: 255px 172px;
+           }
+    }
+    </style>
 </head>
-<body class="signup">
-    <div class="middle">
-        <div class="container">
-            <div class="header">
-                <img src="resources/images/nt_beta_logo_acct_create.png" width="379" height="137"/>
-            </div>
-            <div class="content">
-            <h1>Hi!</h1>
-                <p>I see that you&apos;re using a mobile browser. We are currently still developing our mobile
-                    experience, in the meantime please use your desktop browser :)</p>
-            </div>
-        </div>
+<body>
+    <div class="logo">
+    <p>It looks like you&apos;re using a mobile browser. We don't yet support mobile devices, but our iPad app is coming soon! Please try again from your desktop browser.</p>
     </div>
 </body>
 </html>
