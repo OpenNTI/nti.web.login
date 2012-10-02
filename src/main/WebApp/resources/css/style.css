@@ -1211,3 +1211,31 @@ button.logon:last-of-type {
 		animation: none;
 	}
 }
+
+.notsupported.signin {
+	background: none !important;
+}
+
+.notsupported .middle{
+	width: 860px !important;
+}
+
+.notsupported .unsupported_message {
+	padding: 10px;
+	font-size: 31px;
+	color: #494949;
+}
+
+.notsupported .content, .notsupported a {
+	font-family: "Open Sans", sans-serif;
+	font-size: 18px !important;
+	font-weight: 300 !important;
+}
+
+.notsupported a:active, .notsupported a:link, .notsupported a:visited {
+	color: #3fb3f6;
+}
+
+.notsupported img {
+	padding-bottom: 20px;
+}
