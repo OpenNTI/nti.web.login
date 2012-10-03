@@ -588,6 +588,10 @@ ol.selectbox.open {
 	overflow-y: scroll;
 }
 
+#active-session-login.visible {
+	padding-bottom: 30px;
+}
+
 .signup *:focus {
 	outline: none;
 }

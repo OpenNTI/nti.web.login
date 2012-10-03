@@ -223,9 +223,9 @@
 		}
 	}
 
-	function addButton(rel){
-		$('<button type="button" name="'+rel+'" title="'+rel+'" class="'+rel.replace(/\./g,' ')+'">'+rel+'</button>')
-			.appendTo('#oauth-login');
+	function addButton(rel, optionalSelector){
+		return $('<button type="button" name="'+rel+'" title="'+rel+'" class="'+rel.replace(/\./g,' ')+'">'+rel+'</button>')
+			.appendTo(optionalSelector || '#oauth-login');
 	}
 
 	function error(msg){
@@ -335,6 +335,11 @@
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
 
+            if (getLink(data, 'logon.continue')){
+                setupContinue(getLink(data, 'logon.logout'));
+                return;
+            }
+
 			setupRecovery();
 			setupPassRecovery();
 
@@ -348,6 +353,18 @@
 		});
 	}
 
+
+    function setupContinue(logoutUrl){
+        addButton('Continue Session', '#active-session-login').click(redirect);
+        addButton('Logout', '#active-session-login').click(function(){
+            $.ajax({
+                url: logoutUrl + '?_dc=' + new Date().getTime()
+            })
+            .always(function(){location.reload();});
+        });
+        $('.field-container').hide();
+        $('#active-session-login').addClass('visible');
+    }
 
 
 	function setupRecovery(){
