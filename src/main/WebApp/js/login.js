@@ -82,7 +82,7 @@
 	}
 
 	function getAuth(){
-        var v = username.value.trim(),
+        var v = username.value.trim().toLowerCase(),
             u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
 		return {
 			username: u,
