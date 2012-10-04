@@ -355,15 +355,15 @@
 
 
     function setupContinue(logoutUrl){
-        addButton('Continue Session', '#active-session-login').click(redirect);
-        addButton('Logout', '#active-session-login').click(function(){
+        $('#active-session-login').addClass('visible').html('<div>You are currently logged in somewhere else. Would you like to logout?</div>');
+        addButton('No', '#active-session-login').click(redirect);
+        addButton('Yes', '#active-session-login').click(function(){
             $.ajax({
                 url: logoutUrl + '?_dc=' + new Date().getTime()
             })
             .always(function(){location.reload();});
         });
         $('.field-container').hide();
-        $('#active-session-login').addClass('visible');
     }
 
 

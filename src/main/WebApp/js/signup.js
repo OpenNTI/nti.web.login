@@ -635,7 +635,7 @@
 		$('.content').html('<h1>Sorry, unable to connect to the server, try again</h1>');
 	}
 
-	function backToLoginPage(msg){
+	function backToLoginPage(msg,buttonLabel,buttonTarget){
 		//naive attempt at preventing multi alert nastyness
 		if(backToLoginSingletonThing){
 			return;
@@ -651,8 +651,15 @@
 		//FIXME need to inform the user what is about to happen vefore we do it.
 		//dialog or something.  We should do better than native alert box
 		//TODO needs better wording
-		alert(msg || 'You must logout to create an account.');
-		onConfirmed();
+
+		$('.content').html([
+			'<h1>',(msg || 'You must logout to create an account.'),'</h1>',
+			'<div>',
+				'<button>',(buttonLabel||'Start Over'),'</button>',
+			'</div>'
+		].join(''));
+
+		$('button').click(onConfirmed);
 	}
 
 	function ping(){
