@@ -358,6 +358,7 @@
         $('#active-session-login').addClass('visible').html('<div>You are currently logged in somewhere else. Would you like to logout?</div>');
         addButton('No', '#active-session-login').click(redirect);
         addButton('Yes', '#active-session-login').click(function(){
+	        $.removeCookie('sidt');//trigger the other tabs to die
             $.ajax({
                 url: logoutUrl + '?_dc=' + new Date().getTime()
             })
