@@ -36,3 +36,8 @@
 .tagline::after {
 	content: ' It\'s Free!'
 }
+
+
+#active-session-login.visible {
+	padding-bottom: 180px;
+}
