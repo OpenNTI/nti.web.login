@@ -5,6 +5,7 @@
 		preflighturl,
 		profileSchema,
 		avatarURLChoices,
+	 	backToLoginSingletonThing = false,
 		schemaToFieldMap = {
 			'first': 'realname',
 			'last': 'realname',
@@ -634,6 +635,25 @@
 		$('.content').html('<h1>Sorry, unable to connect to the server, try again</h1>');
 	}
 
+	function backToLoginPage(msg){
+		//naive attempt at preventing multi alert nastyness
+		if(backToLoginSingletonThing){
+			return;
+		}
+		backToLoginSingletonThing = true;
+		//Oddly this seems like the easiest way to get back to the login app but maintain
+		//the query params we need
+		
+		function onConfirmed(){
+			window.location.replace(window.location.href.replace('signup.html', 'index.html'));
+		}
+
+		//FIXME need to inform the user what is about to happen vefore we do it.
+		//dialog or something.  We should do better than native alert box
+		//TODO needs better wording
+		alert(msg || 'You must logout to create an account.');
+		onConfirmed();
+	}
 
 	function ping(){
 		$.ajax({
@@ -642,8 +662,28 @@
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
+		    var cLink = getLink(data, 'logon.continue');
+
+			//If we got a continue link, we either didn't come from the login
+			//app or the user logged in after we presented the account creation link
+			//In that case send them back out and let the login handle the continue
+			if(cLink){
+				console.log('ping returned continue link.  Logged in elsewhere?', data);
+				backToLoginPage();
+			}
+
 			url = getLink(data,'account.create');
 			preflighturl = getLink(data,'account.preflight.create');
+
+			if(!url || !preflighturl){
+				//We didn't get a continue link but we don't have the creation links we need.
+				console.error('no account.create or account.preflight.create links returned.', data);
+				//FIXME what to do here.  We could just show the generic error, or we can redirect
+				//back to the login page.  That may actually get us logged in or back into a good state,
+				//but since getting here means we also don't have a continue link its not clear.  Seeems
+				//like this case should be one of those impossible edge cases.
+				backToLoginPage();
+			}
 
 			//find out if we need an initial mathcounts role choice:
 			installMathcountsChoice();
@@ -771,10 +811,18 @@
 	}
 
 
-	function parseResponseText(data) {
-		if (data && data.responseText) {
-			return JSON.parse(data.responseText);
+	function parseResponseText(response) {
+		if(/application\/json/i.test(response.getResponseHeader('Content-Type'))){
+			if (data && data.responseText) {
+				try{
+					return JSON.parse(data.responseText);
+				}
+				catch(e){
+					console.error('Bad json?', e);
+				}	
+			}
 		}
+		
 		return null;
 	}
 
@@ -864,6 +912,14 @@
 		function fail(response){
 			console.log('fail', arguments);
 
+			if(response.status === 403){
+				//We started getting 403s but we made it through the ping
+				//the user must have logged in in a nother tab or there is something
+				//screwy we don't know about
+							
+				backToLoginPage();
+			}
+
 			//failure, remove the value from the validation field:
 			delete validation[fieldName];
 
@@ -907,6 +963,8 @@
 		function success(data){
 			if(data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
+				//TODO: why are we doing this here...  Could this be playing into the blank
+				//screen issue
 			 	setTimeout(function(){
 					 //console.log('Inside the timeout for rolepicker');
 					 showRole();
@@ -1010,6 +1068,7 @@
 	if(!window.console){
 		window.console = {
 			log: function(){},
+		   warn: function(){},
 			error: function(){}
 		};
 	}
