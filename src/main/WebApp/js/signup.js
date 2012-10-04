@@ -687,7 +687,11 @@
 
 			//find out if we need an initial mathcounts role choice:
 			installMathcountsChoice();
-		}).fail(function(){
+		}).fail(function(response){
+			if(response.status === 403){
+				backToLoginPage();
+			}
+
 			couldNotConnectToServer();
 		});
 	}
