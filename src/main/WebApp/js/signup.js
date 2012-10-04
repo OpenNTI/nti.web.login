@@ -965,7 +965,7 @@
 		}
 
 		function success(data){
-			if(data.ProfileSchema && data.ProfileSchema.role) {
+			if(data && data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
 				showRole();
 				return;
