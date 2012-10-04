@@ -967,12 +967,7 @@
 		function success(data){
 			if(data.ProfileSchema && data.ProfileSchema.role) {
 				console.log('Mathcounts role detected, showing role selection.');
-				//TODO: why are we doing this here...  Could this be playing into the blank
-				//screen issue
-			 	setTimeout(function(){
-					 //console.log('Inside the timeout for rolepicker');
-					 showRole();
-				 }, 100);
+				showRole();
 				return;
 			}
 			makeSureRoleIsHidden();
