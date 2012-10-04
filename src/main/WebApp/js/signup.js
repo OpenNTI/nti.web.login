@@ -655,7 +655,7 @@
 		$('.content').html([
 			'<h1>',(msg || 'You must logout to create an account.'),'</h1>',
 			'<div>',
-				'<button>',(buttonLabel||'Start Over'),'</button>',
+				'<button>',(buttonLabel||'OK'),'</button>',
 			'</div>'
 		].join(''));
 
