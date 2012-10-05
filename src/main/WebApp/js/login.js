@@ -130,7 +130,7 @@
 		if (m === 'GET' && data){
 			delete data.password;
 			delete data.remember;
-			if(url.indexOf('username='+encodeURIComponent(data.username)) > -1) {
+			if(url.toLowerCase().indexOf('username='+encodeURIComponent(data.username)) > -1) {
 				delete data.username;
 			}
 		}
