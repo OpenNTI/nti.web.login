@@ -824,9 +824,9 @@
 
 	function parseResponseText(response) {
 		if(/application\/json/i.test(response.getResponseHeader('Content-Type'))){
-			if (data && data.responseText) {
+			if (response && response.responseText) {
 				try{
-					return JSON.parse(data.responseText);
+					return JSON.parse(response.responseText);
 				}
 				catch(e){
 					console.error('Bad json?', e);
