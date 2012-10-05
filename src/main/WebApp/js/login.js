@@ -129,10 +129,8 @@
 
 		if (m === 'GET' && data){
 			delete data.password;
-			delete data.remember;
-			if(url.toLowerCase().indexOf('username='+encodeURIComponent(data.username)) > -1) {
-				delete data.username;
-			}
+            delete data.remember;
+			delete data.username;
 		}
 
 		var x = $.ajax({
