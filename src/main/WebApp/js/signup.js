@@ -167,7 +167,8 @@
 
 	function showAvatars(){
 		var sec = $('section.avatars'),
-			fc = sec.find('.field-container');
+			fc = sec.find('.field-container'),
+            secureURL;
 
 		if (!avatarURLChoices || avatarURLChoices.length === 0) {
 			//just make sure it's hidden:
@@ -185,6 +186,10 @@
 		//now create spans with avatar images:
 		$.each(avatarURLChoices, function(index, u){
 			var s = $('<a class="avatar"><img/></a>');
+
+            //first one is selected by default:
+            if (index === 0){validation['avatarURL'] = u;}
+
 			fc.append(s);
 			s.find('img').attr('src', u.replace('www.gravatar.com','secure.gravatar.com').replace('http:','https:'));
 			s.click(function(e){
