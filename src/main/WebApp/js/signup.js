@@ -158,7 +158,13 @@
 				}
 			}
 
+            //regardless of role, whatever, ask for code
+            if (mappedName === 'invitation_codes') {
+                d.removeClass('disabled');
+            }
+
 		});
+
 
 		//show optional section
 		$('section.optionals').removeClass('disabled');
@@ -499,10 +505,20 @@
             pftimer;
 
 		function pf() {
+            var v = m.val();
             clearTimeout(pftimer);
+
+            //special case: if no inv code, make sure it's happy
+            if (!v && field === 'invitation_codes'){
+                $('input[name=invitation_codes]').parent('.field-container').removeClass('invalid');
+            }
+
 			//try to validate if theres a field value, or you have previously validated:
-			if (m.val() || validation[field]){
-				validate(field, m.val(), afterSuccess, afterFail);
+			if (v || validation[field]){
+                if(field === 'invitation_codes'){
+                    v= [v];
+                }
+				validate(field, v, afterSuccess, afterFail);
 			}
 		}
 
@@ -523,6 +539,11 @@
 	function emailValidation(){
 		setupValidationListener('email');
 	}
+
+
+    function invitationCodesValidation(){
+        setupValidationListener('invitation_codes');
+    }
 
 
 	function usernameValidation(){
@@ -547,8 +568,7 @@
 		u.keyup(up);
 	}
 
-
-	function optInValidation(){
+    function optInValidation(){
 		var field = 'opt_in_email_communication',
 			m = $('input[name='+field+']'),
 			p = m.parents('.field-container'),
@@ -778,7 +798,8 @@
 	function checkIt(){
 		var key, val, o,
 		ps = $('[name=password]'),
-		verify = $('[name=password_verify]');
+		verify = $('[name=password_verify]'),
+            icval;
 
 		for(key in profileSchema) {
 			if(profileSchema.hasOwnProperty(key)){
@@ -792,6 +813,14 @@
 				}
 			}
 		}
+
+        //special case: If there's a code, ad it has data, it needs to be in the validation:
+        icval = $('input[name=invitation_codes]').val();
+        if (icval && !validation['invitation_codes']) {
+            $('a.agree').addClass('disabled');
+            console.log('Cannot enable button, there is a code in the code input but it is not validated');
+            return false;
+        }
 
 		if(!ps.val().trim() || ps.val() !== verify.val()){
 			$('a.agree').addClass('disabled');
@@ -1067,7 +1096,7 @@
 					inp = t.find('input'),
 					n = inp.attr('name'),
 					def = 'opt_in_email_communication';
-				if(n !== def) { t.addClass('disabled'); }
+				if(n !== def && n!= 'invitation_codes') { t.addClass('disabled'); }
 			});
 
 			//show optional section
@@ -1091,6 +1120,7 @@
 		birthdayValidation();
 		nameValidation();
 		emailValidation();
+        invitationCodesValidation();
 		contactEmailValidation();
 		usernameValidation();
 		passwordValidation();
