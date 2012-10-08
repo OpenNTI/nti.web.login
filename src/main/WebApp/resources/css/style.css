@@ -945,16 +945,6 @@ a.avatar.selected::after{
 	font-style: italic;
 }
 
-.signup section.mathcounts-role div.choice.selected {
-	border: 1px solid #3fb3f6;
-	border-left-width: 4px;
-	padding-left: 27px;
-}
-
-.signup section.mathcounts-role div.choice.selected::after {
-	background-position: -29px 0;
-}
-
 .signup section.mathcounts-role div.choice:hover {
 	border: 1px solid #c4c4c4;
 	border-left-width: 4px;
@@ -963,6 +953,17 @@ a.avatar.selected::after{
 
 .signup section.mathcounts-role div.choice:hover::after {
 	background-position: 0 0;
+}
+
+
+.signup section.mathcounts-role div.choice.selected {
+	border: 1px solid #3fb3f6;
+	border-left-width: 4px;
+	padding-left: 27px;
+}
+
+.signup section.mathcounts-role div.choice.selected::after {
+	background-position: -29px 0;
 }
 
 .signup section.mathcounts-role div.choice.selected + div.choice,
