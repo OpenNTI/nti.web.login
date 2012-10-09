@@ -492,7 +492,7 @@
 		remember = document.getElementById('remember');
 
 
-	    $('#password,#username').keyup(formValidation);
+	    $('#password,#username').keyup(formValidation).change(formValidation);
 
 		originalMessage = message.innerHTML;
 
