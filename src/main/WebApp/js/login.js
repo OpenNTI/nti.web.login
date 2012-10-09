@@ -492,10 +492,7 @@
 		remember = document.getElementById('remember');
 
 
-	    $('#password,#username').keyup(function(){
-			clearTimeout(lastKey);
-		    lastKey = setTimeout(formValidation,450);
-	    });
+	    $('#password,#username').keyup(formValidation);
 
 		originalMessage = message.innerHTML;
 
