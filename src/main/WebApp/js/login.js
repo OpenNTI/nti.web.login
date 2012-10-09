@@ -15,6 +15,7 @@
 		resetPassUrl,
 		cookies = {},
 		rel = {},
+	 	pingHandshakeTimer,
 		noOp = function(){},
 		//for browsers that don't have the console object
 		console = window.console || {
@@ -30,26 +31,54 @@
 		$('body').removeClass('loading');
 	}
 
-	function formValidation(){
+	function updateSubmitButton(){
 		var validEmail = username.value.length>3;//(emailRx.test(username.value));
+		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
+	}
 
-		if(!validEmail){
-			clearForm();
-		}
+	function sendPingIfNecessary(){
+		clearTimeout(pingHandshakeTimer);
+		pingHandshakeTimer = setTimeout(ping, 500);
+	}
+
+	function formValidation(){
+		var validEmail = username.value.length>3;
 
 		if(validEmail && emailLastValid !== username.value){
+			resetForPingHandshake();
 			emailLastValid = username.value;
-			ping();
+			sendPingIfNecessary();
 		}
 
-		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
+		updateSubmitButton();
+	}
+
+	function moveFocus(e){
+		e = e || event;
+		if(e.keyCode === 13){
+			password.focus();
+			return stop(e);
+		}
+		return true;
+	}
+
+	function usernameChanged(e){
+		if(!moveFocus(e)){
+			return false;// handle enter key to move focus down which should trigger blur
+		}
+		return formValidation(e);
+	}
+
+	function resetForPingHandshake()
+	{
+		$('body').removeClass(function(i,c){return c.replace('signin','');});
+		$('#oauth-login button').remove();
+		rel = {};
 	}
 
 	function clearForm(){
 		messageUser();//reset the message
-		$('body').removeClass(function(i,c){return c.replace('signin','');});
-		$('#oauth-login button').remove();
-		rel = {};
+		resetForPingHandshake();
 	}
 
 	function stop(e){
@@ -196,7 +225,7 @@
 
 		var links = o.Links || [],
 			i = links.length-1,v;
-		clearForm();
+		//clearForm();
 		for(;i>=0; i--){
 			v = links[i];
 
@@ -219,6 +248,7 @@
 //				console.log('debug: ',v.rel);
 //			}
 		}
+		updateSubmitButton();
 	}
 
 	function addButton(rel, optionalSelector){
@@ -243,6 +273,9 @@
 	}
 
 	function loginWithRel(r,xhr){
+		if(!rel.hasOwnProperty(r)){
+			return;
+		}
 		mask();
 		message.innerHTML = '';
 		try{
@@ -288,14 +321,7 @@
 		}
 	}
 
-	function moveFocus(e){
-		e = e || event;
-		if(e.keyCode === 13){
-			password.focus();
-			return stop(e);
-		}
-		return true;
-	}
+	
 
 	function handleCache(){
 		try {
@@ -487,11 +513,13 @@
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
 
-		setInterval(formValidation,1000);
-
 		originalMessage = message.innerHTML;
 
-		$(username).keyup(moveFocus);
+		$(username).keyup(usernameChanged);
+		$(username).blur(formValidation);
+		$(password).keyup(formValidation);
+		$(password).blur(formValidation);
+
 		$('oauth-login').click(clickHandler);
 		$('#login').submit(submitHandler);
 
