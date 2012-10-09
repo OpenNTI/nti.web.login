@@ -39,6 +39,8 @@
 
 		if(validEmail && emailLastValid !== username.value){
 			emailLastValid = username.value;
+			console.log('pinging');
+			delete rel['logon.nti.password'];
 			ping();
 		}
 
@@ -155,7 +157,6 @@
 	}
 
 	function ping(){
-		delete rel['logon.nti.password'];
 		call('/dataserver2/logon.ping',null,pong);
 	}
 
@@ -221,6 +222,7 @@
 //				console.log('debug: ',v.rel);
 //			}
 		}
+		formValidation();
 	}
 
 	function addButton(rel, optionalSelector){
