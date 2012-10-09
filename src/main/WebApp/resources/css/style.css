@@ -528,6 +528,8 @@ div.affiliation-dropdown-container {
 	border-right-width: 0;
 }
 
+div.affiliation-dropdown-container::-webkit-scrollbar{ display: none; }
+
 ol.affiliation-dropdown li,
 ol.selectbox li {
 	padding: 0 15px;
