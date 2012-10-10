@@ -284,7 +284,7 @@
 				escapeRe = /[\-\[\]{}()*+?.,\\\^$|#\s]/g,
 				terms = s.split(/\s/),
 				regexes = [];
-			
+
 			//Build up our regex from our terms
 			for(i=0; i < terms.length; i++){
 				regexes.push(new RegExp(terms[i].replace(escapeRe, "\\$&"), 'i'));
@@ -578,7 +578,11 @@
 		}
 
 		function pf() {
-			validate(field, m.val(), afterSuccess);
+			var optIn = false;
+			if(m.length && m.length > 0){
+				optIn = m[0].checked
+			}
+			validate(field, optIn, afterSuccess);
 		}
 
 		function timer(){
@@ -668,7 +672,7 @@
 		backToLoginSingletonThing = true;
 		//Oddly this seems like the easiest way to get back to the login app but maintain
 		//the query params we need
-		
+
 		function onConfirmed(){
 			window.location.replace(window.location.href.replace('signup.html', 'index.html'));
 		}
@@ -864,10 +868,10 @@
 				}
 				catch(e){
 					console.error('Bad json?', e);
-				}	
+				}
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -961,7 +965,7 @@
 				//We started getting 403s but we made it through the ping
 				//the user must have logged in in a nother tab or there is something
 				//screwy we don't know about
-							
+
 				backToLoginPage();
 			}
 
