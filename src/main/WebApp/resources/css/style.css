@@ -236,11 +236,22 @@ a.continue.birthday {
 	margin: 5px 0;
 }
 
+.signup .why.groupcode {
+	line-height: 39px;
+	vertical-align: middle;
+}
+
 .signup .why.email {
 	display: none;
 	line-height: 39px;
 	vertical-align: middle;
 }
+.signup .why.groupcode:hover .dialog {
+	top: -115px;
+	left: 15px;
+
+}
+
 .signup .why.email:hover .dialog {
 	top: -200px;
 	left: 0;
