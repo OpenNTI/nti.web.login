@@ -15,6 +15,7 @@
 		resetPassUrl,
 		cookies = {},
 		rel = {},
+	 	pingHandshakeTimer,
 		noOp = function(){},
 		//for browsers that don't have the console object
 		console = window.console || {
@@ -30,28 +31,54 @@
 		$('body').removeClass('loading');
 	}
 
-	function formValidation(){
+	function updateSubmitButton(){
 		var validEmail = username.value.length>3;//(emailRx.test(username.value));
+		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
+	}
 
-		if(!validEmail){
-			clearForm();
-		}
+	function sendPingIfNecessary(){
+		clearTimeout(pingHandshakeTimer);
+		pingHandshakeTimer = setTimeout(ping, 500);
+	}
+
+	function formValidation(){
+		var validEmail = username.value.length>3;
 
 		if(validEmail && emailLastValid !== username.value){
+			resetForPingHandshake();
 			emailLastValid = username.value;
-			console.log('pinging');
-			delete rel['logon.nti.password'];
-			ping();
+			sendPingIfNecessary();
 		}
 
-		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
+		updateSubmitButton();
+	}
+
+	function moveFocus(e){
+		e = e || event;
+		if(e.keyCode === 13){
+			password.focus();
+			return stop(e);
+		}
+		return true;
+	}
+
+	function usernameChanged(e){
+		if(!moveFocus(e)){
+			return false;// handle enter key to move focus down which should trigger blur
+		}
+		return formValidation(e);
+	}
+
+	function resetForPingHandshake()
+	{
+		$('body').removeClass(function(i,c){return c.replace('signin','');});
+		$('#oauth-login button').remove();
+		rel = {};
 	}
 
 	function clearForm(){
 		messageUser();//reset the message
-		$('body').removeClass(function(i,c){return c.replace('signin','');});
-		$('#oauth-login button').remove();
-		rel = {};
+		resetForPingHandshake();
 	}
 
 	function stop(e){
@@ -198,7 +225,7 @@
 		var links = o.Links || [],
 			i = links.length-1,v;
 
-		clearForm();
+		//clearForm();
 
 		for(;i>=0; i--){
 			v = links[i];
@@ -222,7 +249,7 @@
 //				console.log('debug: ',v.rel);
 //			}
 		}
-		formValidation();
+		updateSubmitButton();
 	}
 
 	function addButton(rel, optionalSelector){
@@ -247,6 +274,9 @@
 	}
 
 	function loginWithRel(r,xhr){
+		if(!rel.hasOwnProperty(r)){
+			return;
+		}
 		mask();
 		message.innerHTML = '';
 		try{
@@ -290,15 +320,6 @@
 		if(t.is('button')){
 			loginWithRel(t.attr('name'),false);
 		}
-	}
-
-	function moveFocus(e){
-		e = e || event;
-		if(e.keyCode === 13){
-			password.focus();
-			return stop(e);
-		}
-		return true;
 	}
 
 	function handleCache(){
@@ -484,19 +505,18 @@
     $(function(){
 		$('div.forgot').hide();
 		anonymousPing();
-		var a, i, v, lastKey;
+		var a, i, v;
 
 		message = document.getElementById('message');
 		password = document.getElementById('password');
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
 
-
-	    $('#password,#username').keyup(formValidation).change(formValidation);
+	    $('#password').change(formValidation).keyup(formValidation);
+		$('#username').change(formValidation).keyup(usernameChanged);
 
 		originalMessage = message.innerHTML;
 
-		$(username).keyup(moveFocus);
 		$('oauth-login').click(clickHandler);
 		$('#login').submit(submitHandler);
 
@@ -532,8 +552,9 @@
 			cookies[v[0]] = v[1];
 			if(v[0]==='username'){
 				remember.checked = true;
-				username.value = decodeURIComponent(v[1]);
+				$(username).val(decodeURIComponent(v[1])).change();
 				username.focus();
+				
 			}
 
 		}
