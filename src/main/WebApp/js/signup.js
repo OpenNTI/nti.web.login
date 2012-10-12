@@ -472,23 +472,27 @@
 
 
 	function nameValidation(){
+        var firstname = $('[name=first]'),
+            lastname = $('[name=last]'),
+            pftimer;
+
 		function pf() {
+            clearTimeout(pftimer);
 			var f = firstname.val(),
 				l = lastname.val(),
 				rn;
 
-
-            if (validation.realname && (!f || !l)){validate('realname', '');}
+            if (validation.realname && (!f || !l)){
+                validate('realname', '');
+            }
+            else if (!validation.realname && (!f || !l)){
+                return;
+            }
             else{
                 rn = f+' '+l;
                 validate('realname', rn);
             }
 		}
-
-		var firstname = $('[name=first]'),
-			lastname = $('[name=last]'),
-			pftimer;
-
 
 		function timer(){
 			clearTimeout(pftimer);
@@ -596,17 +600,21 @@
 
 	function passwordValidation(){
 		function pf(event){
+            clearTimeout(pf);
 			var pass = ps.val(),
 				veri = verify.val();
 
 			p.removeClass('invalid');
 
-			if (!pass){
+            //check common upfront problems:
+            if (!validation.password && !pass && !veri){
+                p.removeClass('invalid valid');
+            }
+            else if (!pass){
 				p.removeClass('invalid valid');
 				p.addClass('invalid');
 			}
-
-			if (pass !== veri && veri.trim()){
+			else if (pass !== veri && veri.trim()){
 				v.removeClass('invalid valid');
 				v.addClass('invalid');
 				checkIt();
