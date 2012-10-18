@@ -20,7 +20,8 @@
 			'realname': 'first'
 		};
 		passwordVerified = false;
-		schoolList = [];
+		schoolList = [],
+	 	defaultKeyupTimerInterval = 750;
 
 
 	function num(s){return parseInt(s,10);}
@@ -93,7 +94,7 @@
 			}
 
 			clearTimeout(t);
-			setTimeout(function(){el.change();},500);
+			setTimeout(function(){el.change();}, defaultKeyupTimerInterval);
 		}
 
 		var t;
@@ -415,6 +416,7 @@
 
 			//do i need to go further?
 			if (!d || !y || y < 1000){
+				//FIXME some kind of messaging here
 				return false;
 			}
 
@@ -496,7 +498,7 @@
 
 		function timer(){
 			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
+			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
 
 		firstname.blur(pf).keyup(timer);
@@ -512,23 +514,15 @@
             var v = m.val();
             clearTimeout(pftimer);
 
-            //special case: if no inv code, make sure it's happy
-            if (!v && field === 'invitation_codes'){
-                $('input[name=invitation_codes]').parent('.field-container').removeClass('invalid');
-            }
-
 			//try to validate if theres a field value, or you have previously validated:
 			if (v || validation[field]){
-                if(field === 'invitation_codes'){
-                    v= [v];
-                }
 				validate(field, v, afterSuccess, afterFail);
 			}
 		}
 
 		function timer(){
 			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
+			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
 
 		m.blur(pf).keyup(timer);
@@ -546,7 +540,32 @@
 
 
     function invitationCodesValidation(){
-        setupValidationListener('invitation_codes');
+        var field = 'invitation_codes',
+			m = $('input[name='+field+']'),
+            pftimer;
+
+		function pf() {
+            var v = m.val();
+            clearTimeout(pftimer);
+
+            //special case: if no inv code, make sure it's happy
+            if (!v){
+                $('input[name='+field+']').parent('.field-container').removeClass('invalid');
+				delete validation[field];
+            }
+
+			//try to validate if theres a field value, or you have previously validated:
+			if (v || validation[field]){
+				validate(field, [v]);
+			}
+		}
+
+		function timer(){
+			clearTimeout(pftimer);
+			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
+		}
+
+		m.blur(pf).keyup(timer);
     }
 
 
@@ -591,7 +610,7 @@
 
 		function timer(){
 			clearTimeout(pftimer);
-			pftimer = setTimeout(pf, 2000);
+			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
 
 		m.change(pf).keyup(timer);
@@ -600,7 +619,7 @@
 
 	function passwordValidation(){
 		function pf(event){
-            clearTimeout(pf);
+            clearTimeout(pftimer);
 			var pass = ps.val(),
 				veri = verify.val();
 
@@ -616,7 +635,9 @@
 			}
 			else if (pass !== veri && veri.trim()){
 				v.removeClass('invalid valid');
-				v.addClass('invalid');
+				if(p.hasClass('valid')){
+					v.addClass('invalid');
+				}
 				checkIt();
 				return;
 			}
@@ -636,11 +657,11 @@
 				//than I am comfortable making right now so lets try this
 
 				v.removeClass('invalid valid');
-				if(!veri.trim()){
+				if(!veri.trim() || !p.hasClass('valid')){
 					return;
 				}
 
-				v.addClass(pass !== veri ? 'invalid' : 'valid');
+				v.addClass(pass !== veri  ? 'invalid' : 'valid');
 				checkIt();
 			}
 
@@ -660,7 +681,7 @@
 				return;
 			}
 
-			pftimer = setTimeout(pf(event), 500);
+			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
 
 		ps.blur(pf).keyup(timer);
@@ -807,11 +828,15 @@
 	}
 
 
-	function checkIt(){
+	function checkIt(successfulPing){
 		var key, val, o,
 		ps = $('[name=password]'),
 		verify = $('[name=password_verify]'),
             icval;
+
+		if(successfulPing !== undefined && !successfulPing){
+			return false;
+		}
 
 		for(key in profileSchema) {
 			if(profileSchema.hasOwnProperty(key)){
@@ -943,30 +968,40 @@
 	}
 
 
+/*
+ * Latest validation logic, this assumes sending all fields we have everytime, regardless of whether or not they were valid/invalid
+ * 
+ * * If you get any errors back, what you are showing as invalid can never decrease, it can only increase.
+ * * If you get a clean preflight, then clearly there should be no fields shown as invalid
+ * * If you get an error back, then the field(s) mentioned in the error must be marked as invalid, regardless of the field that triggered the preflight
+ * * If you are editing a field, and you get an error back for that field, then by all the previous rules, that field should be marked invalid
+ * * Fields are marked invalid anytime an error for that field is received. Fields are marked valid if: 
+ *   the preflight comes back clean or the field that triggered the preflight is not the field mentioned in the received error
+ */
+
 	function validate(fieldName, fieldValue, afterSuccess, afterFail) {
 		function success(data){
+			var key;
 			console.log('success', data);
 
 			//adjust our schema and avatar collection, why not:
 			profileSchema = data.ProfileSchema;
 			avatarURLChoices = data.AvatarURLChoices;
 
-			if (fieldName) {
-				//field value is validated, put it in the official spot:
-				validation[fieldName] = fieldValue;
-
-				//Mark field verified as validated:
-				markFieldValidated(fieldName);
-
-				//check to see if I should enable button:
-				checkIt();
+			markFieldValidated(fieldName);
+			for(key in profileSchema) {
+				if(profileSchema.hasOwnProperty(key) && validation.hasOwnProperty(key)){
+					markFieldValidated(key);
+				}
 			}
 
+			checkIt();
 			//call aftersuccess if there
 			if (afterSuccess){afterSuccess(data);}
 		}
 
 		function fail(response){
+			var fname, key;
 			console.log('fail', arguments);
 
 			if(response.status === 403){
@@ -977,29 +1012,27 @@
 				backToLoginPage();
 			}
 
-			//failure, remove the value from the validation field:
-			delete validation[fieldName];
-
 			//pull the importiant data out of the response
 			var data = parseResponseText(response);
-
 			markFieldInvalidated(data);
+			if(data){
+				if(data.field !== fieldName){
+					markFieldValidated(fieldName);
+				}
+			}
 
 			//check to see if I should enable/disable button:
-			checkIt();
+			checkIt(false);
 
 			if (afterFail){afterFail(data);}
 		}
 
-		//clone our current validation values and add our new value:
-		var packet = $.extend({}, validation);
-		if(fieldName) {
-			packet[fieldName] = fieldValue;
+		if(fieldName){
+			validation[fieldName] = fieldValue;
 		}
-
-		preflight(packet, success, fail);
+		preflight(validation, success, fail);
         //preflight:
-        console.log('im validating this' + JSON.stringify(packet) + ' to ' + preflighturl);
+        console.log('im validating this' + JSON.stringify(validation) + ' to ' + preflighturl);
     }
 
 
