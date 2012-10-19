@@ -550,14 +550,14 @@
 
             //special case: if no inv code, make sure it's happy
             if (!v){
-                $('input[name='+field+']').parent('.field-container').removeClass('invalid');
+                $('input[name='+field+']').parent('.field-container').removeClass('invalid').removeClass('valid');
 				delete validation[field];
+				checkIt();
+				return;
             }
 
 			//try to validate if theres a field value, or you have previously validated:
-			if (v || validation[field]){
-				validate(field, [v]);
-			}
+			validate(field, [v]);
 		}
 
 		function timer(){
@@ -834,7 +834,13 @@
 		verify = $('[name=password_verify]'),
             icval;
 
+		function disableButton(reason){
+			$('a.agree').addClass('disabled');
+			console.log(reason);
+		}
+
 		if(successfulPing !== undefined && !successfulPing){
+			disableButton('setting checkIt button to disabled because of an unsuccesful ping');
 			return false;
 		}
 
@@ -843,10 +849,19 @@
 				val = profileSchema[key];
 				o = validation[key];
 
-				if(val.required  && !o) {
-						$('a.agree').addClass('disabled');
-						console.log('setting checkIt button to disabled, field ' + key + ' is required');
+				if(val.required && !o || isFieldInvalid(key)) {
+						disableButton('setting checkIt button to disabled, field ' + key + ' is required');
 						return false;
+				}
+			}
+		}
+
+		//Also make sure any fields we are sending are valid
+		for(key in validation){
+			if(validation.hasOwnProperty(key)){
+				if(isFieldInvalid(key)){
+					disableButton('setting checkIt button to disabled, field ' + key + ' is not valid');
+					return false;
 				}
 			}
 		}
@@ -854,14 +869,12 @@
         //special case: If there's a code, ad it has data, it needs to be in the validation:
         icval = $('input[name=invitation_codes]').val();
         if (icval && !validation['invitation_codes']) {
-            $('a.agree').addClass('disabled');
-            console.log('Cannot enable button, there is a code in the code input but it is not validated');
+            disableButton('Cannot enable button, there is a code in the code input but it is not validated');
             return false;
         }
 
 		if(!ps.val().trim() || ps.val() !== verify.val()){
-			$('a.agree').addClass('disabled');
-			console.log('setting checkIt button to disabled, field ' + key + ' is required');
+			disableButton('setting checkIt button to disabled, field ' + key + ' is required');
 			return false;
 		}
 
@@ -919,6 +932,25 @@
 			result = result.substring(0, period+1);
 		}
 		return result;
+	}
+
+	function isFieldInvalid(fieldName){
+		//see if fieldname is mapped to anything for special circumstances:
+		fieldName = fieldToSchemaMap[fieldName] || fieldName;
+
+		//Get the fields we will need to manipulate:
+		var m = $('input[name='+fieldName+']'),
+			mv = $('input[name='+fieldName+'_verify]'),
+			p = m.parents('.field-container'),
+			pv = mv ? mv.parents('.field-container') : null;
+
+		//if the field itself doesn't have the valid class it is invalid
+		if(p.hasClass('invalid')){
+			return true;
+		}
+
+		//Ok the field is valid, if it has a verify field require it be valid also
+		return pv && pv.length > 0 && pv.hasClass('invalid');
 	}
 
 
