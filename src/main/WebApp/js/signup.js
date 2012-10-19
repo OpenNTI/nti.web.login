@@ -1028,10 +1028,6 @@
 		}
 
 		if(fieldName){
-			if(validation[fieldName] === fieldValue){
-				console.log('Skipping validation because nothing has changed');
-				return;
-			}
 			validation[fieldName] = fieldValue;
 		}
 		preflight(validation, success, fail);
