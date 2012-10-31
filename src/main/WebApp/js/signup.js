@@ -548,6 +548,10 @@
             var v = m.val();
             clearTimeout(pftimer);
 
+			if(v){
+				v = v.trim();
+			}
+
             //special case: if no inv code, make sure it's happy
             if (!v){
                 $('input[name='+field+']').parent('.field-container').removeClass('invalid').removeClass('valid');
@@ -1002,12 +1006,12 @@
 
 /*
  * Latest validation logic, this assumes sending all fields we have everytime, regardless of whether or not they were valid/invalid
- * 
+ *
  * * If you get any errors back, what you are showing as invalid can never decrease, it can only increase.
  * * If you get a clean preflight, then clearly there should be no fields shown as invalid
  * * If you get an error back, then the field(s) mentioned in the error must be marked as invalid, regardless of the field that triggered the preflight
  * * If you are editing a field, and you get an error back for that field, then by all the previous rules, that field should be marked invalid
- * * Fields are marked invalid anytime an error for that field is received. Fields are marked valid if: 
+ * * Fields are marked invalid anytime an error for that field is received. Fields are marked valid if:
  *   the preflight comes back clean or the field that triggered the preflight is not the field mentioned in the received error
  */
 
