@@ -414,12 +414,6 @@
 				afterFail();
 			}
 
-			//do i need to go further?
-			if (!d || !y || y < 1000){
-				//FIXME some kind of messaging here
-				return false;
-			}
-
 			//otherwise, make a date:
 			bd = new Date(y<1000?NaN:y, m, d);
 			if (bd && !isNaN(bd.getTime()) && bd.getFullYear() === y && bd.getMonth() === m && bd.getDate() === d) {
