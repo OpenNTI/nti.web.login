@@ -1219,6 +1219,8 @@
 		}).blur(function(){
 			$(this).parent('div[data-title]').removeClass('has-focus');
 		});
+		
+		$('input,textarea').placeholder();
 	});
 
 
