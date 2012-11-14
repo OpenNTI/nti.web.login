@@ -503,7 +503,7 @@
     }
 
     $(function(){
-		$('input,textarea').placeholder();
+		// $('input,textarea').placeholder();
 		$('div.forgot').hide();
 		anonymousPing();
 		var a, i, v;
