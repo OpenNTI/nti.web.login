@@ -503,7 +503,6 @@
     }
 
     $(function(){
-		// $('input,textarea').placeholder();
 		$('div.forgot').hide();
 		anonymousPing();
 		var a, i, v;
@@ -561,5 +560,6 @@
 		}
 
 		handleCache();
+		$('input,textarea').placeholder();
 	});
 }(jQuery));
