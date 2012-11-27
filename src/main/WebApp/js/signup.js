@@ -612,6 +612,10 @@
 		}
 
 		m.change(pf).keyup(timer);
+		//Make sure we send along the default value
+		if(m[0].checked){
+			validation[field] = true;
+		}
 	}
 
 
@@ -1219,7 +1223,7 @@
 		}).blur(function(){
 			$(this).parent('div[data-title]').removeClass('has-focus');
 		});
-		
+
 		$('input,textarea').placeholder();
 	});
 
