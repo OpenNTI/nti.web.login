@@ -122,9 +122,17 @@
 			var d = $(dom),
 				inp = d.find('input'),
 				oth = d.find('div[data-name]'),
-				n = inp.attr('name') || oth.attr('data-name'),
-				mappedName = schemaToFieldMap[n] || n,
-				schemaVal = profileSchema[mappedName];
+				n, mappedName, schemaVal;
+
+
+            if(inp.is('[type=password]')){
+                inp = d.find('input:not(.placeholder)');
+            }
+
+            n = inp.attr('name') || oth.attr('data-name');
+            mappedName = schemaToFieldMap[n] || n;
+            schemaVal = profileSchema[mappedName];
+
 
 			if(profileSchema.role) {
 				if(schemaVal && (schemaVal.required || mappedName === 'birthdate' || mappedName === 'realname' || mappedName === 'password')) {
