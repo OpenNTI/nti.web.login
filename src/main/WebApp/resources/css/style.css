@@ -1,6 +1,7 @@
+
 ::-webkit-input-placeholder { font-style: italic; font-weight: 500; color: #b8b8b8; }
-:-moz-placeholder { font-style: italic; color: #b8b8b8; font-weight: 500; }
-.placeholder { font-style: italic; color: #b8b8b8; font-weight: 500; }
+.signup input:-moz-placeholder { font-style: italic; color: #b8b8b8; font-weight: 500; }
+.signup input .placeholder { font-style: italic; color: #b8b8b8; font-weight: 500; }
 
 * {
 	-moz-box-sizing: border-box;
@@ -1069,7 +1070,6 @@ button[disabled]{
 	color: #adadad;
 	text-shadow: none;
 }
-
 
 button{
 	vertical-align: middle;
