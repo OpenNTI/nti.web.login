@@ -870,7 +870,7 @@
 		for(key in validation){
 			if(validation.hasOwnProperty(key)){
 				if(isFieldInvalid(key)){
-					disableButton('setting checkIt button to disabled, field ' + key + ' is not valid');
+					disableButton('setting checkIt button to disabled because sent field ' + key + ' is not valid');
 					return false;
 				}
 			}
@@ -884,7 +884,7 @@
         }
 
 		if(!ps.val().trim() || ps.val() !== verify.val()){
-			disableButton('setting checkIt button to disabled, field ' + key + ' is required');
+			disableButton('setting checkIt button to disabled because password fields are empty or do not match');
 			return false;
 		}
 
