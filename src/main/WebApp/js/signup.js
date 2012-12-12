@@ -167,11 +167,6 @@
 				}
 			}
 
-            //regardless of role, whatever, ask for code
-            if (mappedName === 'invitation_codes') {
-                d.removeClass('disabled');
-            }
-
 		});
 
 
@@ -1131,6 +1126,11 @@
 
 		function go(){
 			var val = $('div.choice.selected').attr('data-value');
+
+			if(!val){
+				return;
+			}
+
 			validation.role = val;
 			if (val === 'Student') {
 				//show birthday next:
