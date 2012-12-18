@@ -122,6 +122,7 @@ a.continue{
 	border: 1px solid #31a0e0;
 	padding: 15px 20px
 }
+a.agree.busy,
 a.agree.disabled,
 a.continue.disabled{
 	cursor: default;
@@ -129,6 +130,11 @@ a.continue.disabled{
 	background: rgba(184,184,184,0.5);
 	color: rgba(255,255,255,0.7);
 	display: block;
+}
+
+a.agree.busy {
+	background: rgba(184,184,184,0.5) url(../images/busy.gif) center no-repeat;
+	color: rgba(184,184,184,0);
 }
 
 a.continue.birthday {

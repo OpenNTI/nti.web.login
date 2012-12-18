@@ -768,6 +768,9 @@
 
 
 	function post(data){
+		if($('a.agree').hasClass('busy')){ return; }
+		$('a.agree').addClass('busy');
+		
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
 			url: host+ url,
@@ -775,6 +778,7 @@
 			dataType: 'json',
 			type: 'POST'
 		}).fail(function(){
+			$('a.agree').removeClass('busy');
 			var j;
 			try{
 				j = JSON.parse(x.responseText);
@@ -890,20 +894,22 @@
 
 	function makeIt(e){
 		var s,att='shakeit';
-		try {
-			if(!checkIt()){
-				s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
-				setTimeout(function(){s.removeClass(att);},1300);
-			} else {
-				if (validation.Username && validation.Username.indexOf('@') > -1) {
-					console.log('username has an @, not passing email');
-					delete validation.email;
+		if(!$('a.agree').hasClass('busy')){
+			try {
+				if(!checkIt()){
+					s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
+					setTimeout(function(){s.removeClass(att);},1300);
+				} else {
+					if (validation.Username && validation.Username.indexOf('@') > -1) {
+						console.log('username has an @, not passing email');
+						delete validation.email;
+					}
+					post(validation);
 				}
-				post(validation);
 			}
-		}
-		catch(er){
-			console.log('whoops...'+er.message);
+			catch(er){
+				console.log('whoops...'+er.message);
+			}
 		}
 		e.preventDefault();
 		e.stopPropagation();
