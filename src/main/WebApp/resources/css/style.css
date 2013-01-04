@@ -770,7 +770,9 @@ a.avatar.selected::after{
 .signup .field-container.required input[name=last]{
 	border-left-width: 1px;
 }
-
+.signup .field-container.required input[name=email]:invalid{
+	box-shadow: none; /*Keep FF from marking the email field red*/
+}
 .signup .field-container.required.valid {
 	border-left: 4px solid #89be3c;
 }
