@@ -429,9 +429,12 @@ h4.birthday{
 :not(#foo) input[type=radio] + label,
 :not(#foo) input[type=checkbox] + label{
 	clear: none;
+	display: block;
+	margin-left: 25px;
 	/* Make look clickable because they are */
 	cursor: pointer;
 	vertical-align: middle;
+	position: relative;
 }
 
 .ie :not(#foo) input[type=radio] + label,
@@ -446,8 +449,7 @@ h4.birthday{
     opacity: 0;
     float: left;
     width: 20px;
-	max-height: none;
-	min-height: 0;
+	height: 15px;
 }
 
 :not(#foo) input[type=radio]:focus + label,
@@ -465,7 +467,7 @@ h4.birthday{
 	height: 30px;
 	background: #ffffff url(../images/sprite.png) -65px -10px no-repeat;
 	top: -5px;
-	left: 5px;
+	left: -25px;
 }
 
 
@@ -843,16 +845,11 @@ a.avatar.selected::after{
 }
 
 .signup input[type=checkbox],
-.signup input[type=radio],
-.signup label {
+.signup input[type=radio] {
 	display: inline;
 	border: none;
 	font-size: 1em;
-	width: auto;
-	height: auto;
-	margin: 0 5px 5px 5px;
 	padding: inherit;
-	float: left;
 	vertical-align: middle;
 	color: #757474;
 }

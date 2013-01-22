@@ -638,7 +638,8 @@
 				p.removeClass('invalid valid');
 				p.addClass('invalid');
 			}
-			else if (pass !== veri && veri.trim()){
+			
+			if (veri.trim() && pass !== veri){
 				v.removeClass('invalid valid');
 				if(p.hasClass('valid')){
 					v.addClass('invalid');
@@ -665,7 +666,6 @@
 				if(!veri.trim() || !p.hasClass('valid')){
 					return;
 				}
-
 				v.addClass(pass !== veri  ? 'invalid' : 'valid');
 				checkIt();
 			}
@@ -985,7 +985,7 @@
 		p.addClass('valid');
 
 		//also mark verification fields if we see them:
-		if (pv.length){
+		if (pv.length && mv.val() === m.val()){
 			pv.removeClass('invalid valid');
 			pv.addClass('valid');
 		}
