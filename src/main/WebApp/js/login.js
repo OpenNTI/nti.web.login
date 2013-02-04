@@ -198,7 +198,7 @@
 		}
 
 		if(!link){
-			error(o===0?'Server communication failure, please try again later.':false);
+			error(typeof(o)==='number'?'Server communication failure, please try again later.':false);
 			return;
 		}
 
@@ -354,6 +354,7 @@
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
+			messageUser();//reset the error message if there was one.
 			recoverNameUrl = getLink(data,'logon.forgot.username');
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
