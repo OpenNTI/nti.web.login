@@ -1,6 +1,6 @@
 (function($){
 	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        ghanaUser = /^(spmps|mise)\d{2}$/i,
+		ghanaUser = /^(spmps|mise)\d{2}$/i,
 		emailLastValid,
 		originalMessage,
 		message,
@@ -15,7 +15,7 @@
 		resetPassUrl,
 		cookies = {},
 		rel = {},
-	 	pingHandshakeTimer,
+		pingHandshakeTimer,
 		noOp = function(){},
 		//for browsers that don't have the console object
 		console = window.console || {
@@ -111,8 +111,8 @@
 	}
 
 	function getAuth(){
-        var v = username.value.trim().toLowerCase(),
-            u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
+		var v = username.value.trim().toLowerCase(),
+			u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
 		return {
 			username: u,
 			password: password.value,
@@ -158,7 +158,7 @@
 
 		if (m === 'GET' && data){
 			delete data.password;
-            delete data.remember;
+			delete data.remember;
 			delete data.username;
 		}
 
@@ -359,10 +359,10 @@
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
 
-            if (getLink(data, 'logon.continue')){
-                setupContinue(getLink(data, 'logon.logout'));
-                return;
-            }
+			if (getLink(data, 'logon.continue')){
+				setupContinue(getLink(data, 'logon.logout'));
+				return;
+			}
 
 			setupRecovery();
 			setupPassRecovery();
@@ -378,18 +378,18 @@
 	}
 
 
-    function setupContinue(logoutUrl){
-        $('#active-session-login').addClass('visible').html('<div>You are currently logged in somewhere else. Would you like to logout?</div>');
-        addButton('No', '#active-session-login').click(redirect);
-        addButton('Yes', '#active-session-login').click(function(){
-	        $.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
-            $.ajax({
-                url: logoutUrl + '?_dc=' + new Date().getTime()
-            })
-            .always(function(){location.reload();});
-        });
-        $('.field-container').hide();
-    }
+	function setupContinue(logoutUrl){
+		$('#active-session-login').addClass('visible').html('<div>You are currently logged in somewhere else. Would you like to logout?</div>');
+		addButton('No', '#active-session-login').click(redirect);
+		addButton('Yes', '#active-session-login').click(function(){
+			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
+			$.ajax({
+				url: logoutUrl + '?_dc=' + new Date().getTime()
+			})
+			.always(function(){location.reload();});
+		});
+		$('.field-container').hide();
+	}
 
 
 	function setupRecovery(){
@@ -436,54 +436,54 @@
 	}
 
 
-    function setupPassRecovery(){
-        function enablePasswordRecoverySubmit(){
-            var user = $('#recover-pass-username').val(),
-                email = $('#recover-pass-email').val(),
-                sub = $('#recoverpass button');
+	function setupPassRecovery(){
+		function enablePasswordRecoverySubmit(){
+			var user = $('#recover-pass-username').val(),
+				email = $('#recover-pass-email').val(),
+				sub = $('#recoverpass button');
 
-            if(emailRx.test(email) && user){
-                sub.removeAttr('disabled');
-            }
-            else {
-                sub.attr('disabled',true);
-            }
-        }
+			if(emailRx.test(email) && user){
+				sub.removeAttr('disabled');
+			}
+			else {
+				sub.attr('disabled',true);
+			}
+		}
 
-        $('#recover-pass-username').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
-        $('#recover-pass-email').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
+		$('#recover-pass-username').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
+		$('#recover-pass-email').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
 
-        $('.forgot .dialog.password').click(function(e){
-            e.stopPropagation();
-        });
+		$('.forgot .dialog.password').click(function(e){
+			e.stopPropagation();
+		});
 
-        $('#recoverpass').submit(function(e){
-            var user = $('#recover-pass-username').val(),
-                email = $('#recover-pass-email').val(),
-                pathname = window.location.pathname.replace('index.html', ''),
-                recoveryURL = window.location.protocol + '//' + window.location.host;
+		$('#recoverpass').submit(function(e){
+			var user = $('#recover-pass-username').val(),
+				email = $('#recover-pass-email').val(),
+				pathname = window.location.pathname.replace('index.html', ''),
+				recoveryURL = window.location.protocol + '//' + window.location.host;
 
-            //ensure trailing slash exists on path
-            if (pathname.lastIndexOf('/') !== pathname.length - 1){
-                pathname += '/';
-            }
-            recoveryURL += (pathname + 'passwordrecover.html?host=' + host + '&return=' + returnUrl);
+			//ensure trailing slash exists on path
+			if (pathname.lastIndexOf('/') !== pathname.length - 1){
+				pathname += '/';
+			}
+			recoveryURL += (pathname + 'passwordrecover.html?host=' + host + '&return=' + returnUrl);
 
-            e.stopPropagation();
-            e.preventDefault();
+			e.stopPropagation();
+			e.preventDefault();
 
-            $('#recoverpass').html('<h1>Thanks!</h1>');
-            setTimeout(function(){
-                $('.forgot .dialog').hide();
-            },1000);
+			$('#recoverpass').html('<h1>Thanks!</h1>');
+			setTimeout(function(){
+				$('.forgot .dialog').hide();
+			},1000);
 
-            $.ajax({
-                url: host+recoverPassUrl,
-                dataType: 'json',
-                headers: {Accept:'application/json'},
-                type: 'POST',
-                data: {email: email, username: user, success:recoveryURL}
-            });
+			$.ajax({
+				url: host+recoverPassUrl,
+				dataType: 'json',
+				headers: {Accept:'application/json'},
+				type: 'POST',
+				data: {email: email, username: user, success:recoveryURL}
+			});
 //			.done(function(data){
 //				console.log('suc',arguments);
 //			})
@@ -491,19 +491,19 @@
 //				console.log('fail',arguments);
 //			});
 
-            return false;
-        });
-    }
+			return false;
+		});
+	}
 
 
-    if(!window.console){
-        window.console = {
-            log: function(){},
-            error: function(){}
-        };
-    }
+	if(!window.console){
+		window.console = {
+			log: function(){},
+			error: function(){}
+		};
+	}
 
-    $(function(){
+	$(function(){
 		$('div.forgot').hide();
 		anonymousPing();
 		var a, i, v;
@@ -513,7 +513,7 @@
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
 
-	    $('#password').change(formValidation).keyup(formValidation);
+		$('#password').change(formValidation).keyup(formValidation);
 		$('#username').change(formValidation).keyup(usernameChanged);
 
 		originalMessage = message.innerHTML;
@@ -524,22 +524,22 @@
 		$('#forgotit').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-            $(this).parent().find('.dialog').hide();
+			$(this).parent().find('.dialog').hide();
 			var d = $(this).parent().find('.dialog.username');
 			d.show();
 			d.find('input').focus();
 			return false;
 		});
 
-        $('#forgotpass').click(function(e){
-            e.stopPropagation();
-            e.preventDefault();
-            $(this).parent().find('.dialog').hide();
-            var d = $(this).parent().find('.dialog.password');
-            d.show();
-            d.find('#recover-pass-username').focus();
-            return false;
-        });
+		$('#forgotpass').click(function(e){
+			e.stopPropagation();
+			e.preventDefault();
+			$(this).parent().find('.dialog').hide();
+			var d = $(this).parent().find('.dialog.password');
+			d.show();
+			d.find('#recover-pass-username').focus();
+			return false;
+		});
 
 		$('body').click(function(e){$(this).parent().find('.dialog').hide();});
 
