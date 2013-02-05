@@ -134,7 +134,7 @@
             schemaVal = profileSchema[mappedName];
 
 
-			if(profileSchema.role) {
+			if(shouldShowRollSelector(profileSchema)) {
 				if(schemaVal && (schemaVal.required || mappedName === 'birthdate' || mappedName === 'realname' || mappedName === 'password')) {
 					d.addClass('required');
 				}
@@ -638,7 +638,7 @@
 				p.removeClass('invalid valid');
 				p.addClass('invalid');
 			}
-			
+
 			if (veri.trim() && pass !== veri){
 				v.removeClass('invalid valid');
 				if(p.hasClass('valid')){
@@ -770,7 +770,7 @@
 	function post(data){
 		if($('a.agree').hasClass('busy')){ return; }
 		$('a.agree').addClass('busy');
-		
+
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
 			url: host+ url,
@@ -1079,6 +1079,12 @@
     }
 
 
+	function shouldShowRollSelector(schema){
+		var role = schema.role;
+		return role.choices && role.choices.length > 0;
+	}
+
+
 	function installMathcountsChoice(){
 		function makeSureRoleIsHidden(){
 			//role is hidden, birthday is shown:
@@ -1094,7 +1100,8 @@
 		}
 
 		function success(data){
-			if(data && data.ProfileSchema && data.ProfileSchema.role) {
+			var schema = ((data || {}).ProfileSchema  || {});
+			if(shouldShowRollSelector(schema)) {
 				console.log('Mathcounts role detected, showing role selection.');
 				showRole();
 				return;
@@ -1176,7 +1183,7 @@
 			$(x).hide();
 		}
 
-		if(!profileSchema.role) {
+		if( !shouldShowRollSelector(profileSchema) ) {
 			//Set flag to get the account info
 			disableFields();
 			form.addClass('birthday-filled-in');
