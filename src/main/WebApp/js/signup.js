@@ -1080,7 +1080,7 @@
 
 
 	function shouldShowRollSelector(schema){
-		var role = schema.role;
+		var role = schema.role || {};
 		return role.choices && role.choices.length > 0;
 	}
 
