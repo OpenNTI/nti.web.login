@@ -189,8 +189,7 @@
 
 	function pong(o){
 		var auth = getAuth(),
-			link = getLink(o,'logon.handshake'),
-			nextMonth = new Date(new Date().getTime()+(1000*60*60*24*31)); //31 days;
+			link = getLink(o,'logon.handshake');
 
 		if(o.offline){
 			offline();
@@ -202,11 +201,6 @@
 			return;
 		}
 
-		//clear it everytime... just incase they change their mind about 'remember me'
-		setCookie('username','null',new Date(1));
-
-		//reset it.
-		setCookie('username',username.value,auth.remember?nextMonth:null);
 
 		call(link,auth,handshake);
 	}
@@ -311,6 +305,15 @@
 	}
 
 	function submitHandler(e){
+		var nextMonth = new Date(new Date().getTime() + 1000*60*60*24*31);// 31 days
+		//check if remember me is checked
+		if($('#remember').is(':checked')){
+			//if its checked set remember-me-username cookie
+			setCookie('remember-me-username',username.value,nextMonth);
+		}else{
+			//if not clear remember-me-username cookie
+			setCookie('remember-me-username','null',new Date(1));
+		}
 		loginWithRel('logon.nti.password',true);
 		return stop(e||event);
 	}
@@ -551,7 +554,7 @@
 		for(i=0;i<a.length;i++){
 			v = a[i].split('=');
 			cookies[v[0]] = v[1];
-			if(v[0]==='username'){
+			if(v[0]==='remember-me-username'){
 				remember.checked = true;
 				$(username).val(decodeURIComponent(v[1])).change();
 				username.focus();
