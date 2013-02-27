@@ -24,6 +24,10 @@ html,body {
 body.signin { background: #f4f4f4 url(../images/circles_tile.png); }
 body.signup { background: #ffffff url(../images/header-bg.png) 0 0 repeat-x; }
 
+.ie9 body.signin.dialog-shown{
+	margin-bottom: 12em;
+}
+
 form {
 	position: relative;
 }

@@ -145,7 +145,7 @@
 			p = data? data.password : undefined,
 			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
 			m = forceMethod? forceMethod : data? 'POST':'GET',
-			l = host+url,// + "?dc="+(new Date().getTime()),
+			l = host+url,/* + "?dc="+(new Date().getTime()),*/
 			f = { withCredentials: true },
 			h = {
 				Accept:'application/json',
@@ -257,7 +257,7 @@
 		//timer may be what is triggering the strange page refresh issue that ken and greg complain about.
 		//I don't necessarily think removing this will fix it but the use of the timer seems like
 		//it could lead to issues
-		//if(msg){emailLastValid = null;} 
+		//if(msg){emailLastValid = null;}
 		messageUser(msg||'Please try again, there was a problem logging in.','error');
 	}
 
@@ -417,7 +417,7 @@
 
 			$('#recover').html('<h1>Thanks!</h1>');
 			setTimeout(function(){
-				$('.forgot .dialog').hide();
+				hideDialog($('.forgot .dialog'));
 			},1000);
 
 			$.ajax({
@@ -477,7 +477,7 @@
 
 			$('#recoverpass').html('<h1>Thanks!</h1>');
 			setTimeout(function(){
-				$('.forgot .dialog').hide();
+				hideDialog($('.forgot .dialog'));
 			},1000);
 
 			$.ajax({
@@ -499,12 +499,18 @@
 	}
 
 
+	function hideDialog(dialog){
+		$('body').removeClass('dialog-shown');
+		dialog.hide();
+	};
+
 	if(!window.console){
 		window.console = {
 			log: function(){},
 			error: function(){}
 		};
 	}
+
 
 	$(function(){
 		$('div.forgot').hide();
@@ -527,8 +533,9 @@
 		$('#forgotit').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			$(this).parent().find('.dialog').hide();
+			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.username');
+			$('body').addClass('dialog-shown');
 			d.show();
 			d.find('input').focus();
 			return false;
@@ -537,14 +544,15 @@
 		$('#forgotpass').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			$(this).parent().find('.dialog').hide();
+			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.password');
+			$('body').addClass('dialog-shown');
 			d.show();
 			d.find('#recover-pass-username').focus();
 			return false;
 		});
 
-		$('body').click(function(e){$(this).parent().find('.dialog').hide();});
+		$('body').click(function(e){hideDialog($(this).parent().find('.dialog'));});
 
 		if(requestParameters.failed){ error(); }
 
@@ -558,7 +566,7 @@
 				remember.checked = true;
 				$(username).val(decodeURIComponent(v[1])).change();
 				username.focus();
-				
+
 			}
 
 		}
