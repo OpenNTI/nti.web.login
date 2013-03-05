@@ -553,7 +553,7 @@
             if (!v){
                 $('input[name='+field+']').parent('.field-container').removeClass('invalid').removeClass('valid');
 				delete validation[field];
-				checkIt();
+                validate();
 				return;
             }
 
