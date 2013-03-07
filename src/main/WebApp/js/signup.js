@@ -621,77 +621,92 @@
 		}
 	}
 
+    function passwordValidation() {
+        function pfPassword(event) {
+            var passwordValue = passwordElement.val(),
+                verifyPasswordValue = verifyPasswordElement.val();
 
-	function passwordValidation(){
-		function pf(event){
-            clearTimeout(pftimer);
-			var pass = ps.val(),
-				veri = verify.val();
-
-			p.removeClass('invalid');
-
-            //check common upfront problems:
-            if (!validation.password && !pass && !veri){
-                p.removeClass('invalid valid');
+            if (!validation.password && !passwordValue) {
+                passwordParent.removeClass('invalid valid');
+                checkIt();
+                return;
             }
-            else if (!pass){
-				p.removeClass('invalid valid');
-				p.addClass('invalid');
-			}
+            else if (!passwordValue) {
+                passwordParent.removeClass('invalid valid');
+                verifyPasswordParent.removeClass('invalid valid');
+                checkIt();
+                return;
+            }
+            else if (!passwordValue.trim()) {
+                passwordParent.removeClass('invalid valid');
+                verifyPasswordParent.removeClass('invalid valid');
+                checkIt();
+                return;
+            }
 
-			if (veri.trim() && pass !== veri){
-				v.removeClass('invalid valid');
-				if(p.hasClass('valid')){
-					v.addClass('invalid');
-				}
-				checkIt();
-				return;
-			}
-
-			//TODO right now the server seems perfectly happy
-			//to allow empty passwords or passwords that are only
-			//whitespace.  Prevent that here
-			if(!pass.trim()){
-				checkIt();
-				return;
-			}
-
-			function updateVerify(){
+            function updateVerify(){
 				//FIXME We could just not mark verify fields by default
 				//The server doesn't tell us about them so it seems
 				//weird to do them there anyway.  thats a more global change
 				//than I am comfortable making right now so lets try this
 
-				v.removeClass('invalid valid');
-				if(!veri.trim() || !p.hasClass('valid')){
+				verifyPasswordParent.removeClass('invalid valid');
+				if(!verifyPasswordValue.trim() || !passwordParent.hasClass('valid')){
 					return;
 				}
-				v.addClass(pass !== veri  ? 'invalid' : 'valid');
+				verifyPasswordParent.addClass(passwordValue !== verifyPasswordValue  ? 'invalid' : 'valid');
 				checkIt();
 			}
 
-			validate('password', pass, updateVerify, updateVerify);
-		}
+            validate('password', passwordValue, updateVerify, updateVerify);
+        }
 
-		var ps = $('[name=password]'),
-			verify = $('[name=password_verify]'),
-			p = ps.parents('.field-container'),
-			v = verify.parents('.field-container'),
-			pftimer;
+        function pfVerify(event) {
+            var pass = passwordElement.val(),
+                veri = verifyPasswordElement.val();
 
+            if (!veri || !pass) {
+                verifyPasswordParent.removeClass('invalid valid');
+            }
+            else if (!passwordParent.hasClass('valid')) {
+                verifyPasswordParent.removeClass('invalid valid');
+            }
+            else if (!veri.trim() || !pass.trim()) {
+                verifyPasswordParent.removeClass("invalid valid")
+            }
+            else if (pass !== veri) {
+                verifyPasswordParent.removeClass('invalid valid');
+                verifyPasswordParent.addClass('invalid');
+            }
+            else {
+                verifyPasswordParent.removeClass('invalid valid');
+                verifyPasswordParent.addClass('valid');
+            }
 
-		function timer(event){
-			clearTimeout(pftimer);
-			if(event.type === 'keyup' && event.keyCode === 9 /*tab key*/){
-				return;
-			}
+            checkIt();
+        }
 
-			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
-		}
+        var passwordElement = $('[name=password]'),
+            verifyPasswordElement = $('[name=password_verify]'),
+            passwordParent = passwordElement.parents('.field-container'),
+            verifyPasswordParent = verifyPasswordElement.parents('.field-container'),
+            pfTimerPassword,
+            pfTimerVerify;
 
-		ps.blur(pf).keyup(timer);
-		verify.blur(pf).keyup(timer);
-	}
+        function timer(event) {
+            clearTimeout(pfTimerPassword);
+            clearTimeout(pfTimerVerify);
+            if (event.type === 'keyup' && event.keyCode === 9 /* tab key */) {
+                return;
+            }
+
+            pfTimerPassword = setTimeout(pfPassword, defaultKeyupTimerInterval);
+            pfTimerVerify = setTimeout(pfVerify, defaultKeyupTimerInterval);
+        }
+
+        passwordElement.blur(pfPassword).keyup(timer);
+        verifyPasswordElement.blur(pfVerify).keyup(timer);
+    }
 
 	function couldNotConnectToServer(){
 		console.error('failed to resolve service url..');
