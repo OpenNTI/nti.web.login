@@ -664,24 +664,15 @@
             var pass = passwordElement.val(),
                 veri = verifyPasswordElement.val();
 
+            verifyPasswordParent.removeClass('invalid valid');
+
             // makes sure password and verify both have values and the password is valid
-            if (!veri || !pass || !veri.trim() || !pass.trim() || !passwordParent.hasClass('valid')) {
-                verifyPasswordParent.removeClass('invalid valid');
+            if (veri && pass && veri.trim() && pass.trim() && passwordParent.hasClass('valid')) {
+                verifyPasswordParent.addClass(pass !== veri ? 'invalid' : 'valid');
+                if (passwordParent.hasClass('valid')) {
+                    checkIt();
+                }
             }
-
-            // checks if the password and verify fields are different
-            else if (pass !== veri) {
-                verifyPasswordParent.removeClass('invalid valid');
-                verifyPasswordParent.addClass('invalid');
-            }
-
-            // otherwise, mark the verify field valid
-            else {
-                verifyPasswordParent.removeClass('invalid valid');
-                verifyPasswordParent.addClass('valid');
-            }
-
-            checkIt();
         }
 
         var passwordElement = $('[name=password]'),
