@@ -669,9 +669,7 @@
             // makes sure password and verify both have values and the password is valid
             if (veri && pass && veri.trim() && pass.trim() && passwordParent.hasClass('valid')) {
                 verifyPasswordParent.addClass(pass !== veri ? 'invalid' : 'valid');
-                if (passwordParent.hasClass('valid')) {
-                    checkIt();
-                }
+                checkIt();
             }
         }
 
