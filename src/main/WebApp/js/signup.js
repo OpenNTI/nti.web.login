@@ -841,6 +841,24 @@
 		}).fail(fail).done(success);
 	}
 
+	function markFieldInvalidated(responseObject) {
+		if (!responseObject){return;}
+		//Get the fields we will need to manipulate:
+		var fieldName = fieldToSchemaMap[responseObject.field] || responseObject.field,
+			m = $('input[name='+fieldName+']'),
+			mv = $('input[name='+fieldName+'_verify]'),
+			p = m.parents('.field-container'),
+			pv = mv ? mv.parents('.field-container') : null;
+
+		p.removeClass('invalid valid');
+		p.find('.invalid').text(makeOneLine(responseObject.message));
+		p.addClass('invalid');
+
+		if (pv){
+			pv.removeClass('invalid valid');
+		}
+	}
+
 
 	function checkIt(successfulPing){
 		var key, val, o,
@@ -857,6 +875,12 @@
 			disableButton('setting checkIt button to disabled because of an unsuccesful ping');
 			return false;
 		}
+		//check that the password is not all white space
+        if(!ps.val().trim() && ps.val().length > 0){
+        	markFieldInvalidated({field:'password',message:'The password must not be all whitespace.'});
+        	disableButton('The password is all whitespace');
+        	return false;
+        }
 
 		for(key in profileSchema) {
 			if(profileSchema.hasOwnProperty(key)){
@@ -887,6 +911,7 @@
             return false;
         }
 
+        
 		if(!ps.val().trim() || ps.val() !== verify.val()){
 			disableButton('setting checkIt button to disabled because password fields are empty or do not match');
 			return false;
@@ -995,26 +1020,6 @@
 			pv.addClass('valid');
 		}
 	}
-
-
-	function markFieldInvalidated(responseObject) {
-		if (!responseObject){return;}
-		//Get the fields we will need to manipulate:
-		var fieldName = fieldToSchemaMap[responseObject.field] || responseObject.field,
-			m = $('input[name='+fieldName+']'),
-			mv = $('input[name='+fieldName+'_verify]'),
-			p = m.parents('.field-container'),
-			pv = mv ? mv.parents('.field-container') : null;
-
-		p.removeClass('invalid valid');
-		p.find('.invalid').text(makeOneLine(responseObject.message));
-		p.addClass('invalid');
-
-		if (pv){
-			pv.removeClass('invalid valid');
-		}
-	}
-
 
 /*
  * Latest validation logic, this assumes sending all fields we have everytime, regardless of whether or not they were valid/invalid
