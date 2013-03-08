@@ -622,28 +622,27 @@
 	}
 
     function passwordValidation() {
+        // our password validation logic
         function pfPassword(event) {
             var passwordValue = passwordElement.val(),
                 verifyPasswordValue = verifyPasswordElement.val();
 
+            // checks to make sure the password has been sent to the server
             if (!validation.password && !passwordValue) {
                 passwordParent.removeClass('invalid valid');
                 checkIt();
                 return;
             }
-            else if (!passwordValue) {
-                passwordParent.removeClass('invalid valid');
-                verifyPasswordParent.removeClass('invalid valid');
-                checkIt();
-                return;
-            }
-            else if (!passwordValue.trim()) {
+
+            // checks to make sure the password has a value
+            if (!passwordValue || !passwordValue.trim()) {
                 passwordParent.removeClass('invalid valid');
                 verifyPasswordParent.removeClass('invalid valid');
                 checkIt();
                 return;
             }
 
+            // updates the verify function based on the state of the password
             function updateVerify(){
 				//FIXME We could just not mark verify fields by default
 				//The server doesn't tell us about them so it seems
@@ -665,19 +664,18 @@
             var pass = passwordElement.val(),
                 veri = verifyPasswordElement.val();
 
-            if (!veri || !pass) {
+            // makes sure password and verify both have values and the password is valid
+            if (!veri || !pass || !veri.trim() || !pass.trim() || !passwordParent.hasClass('valid')) {
                 verifyPasswordParent.removeClass('invalid valid');
             }
-            else if (!passwordParent.hasClass('valid')) {
-                verifyPasswordParent.removeClass('invalid valid');
-            }
-            else if (!veri.trim() || !pass.trim()) {
-                verifyPasswordParent.removeClass("invalid valid")
-            }
+
+            // checks if the password and verify fields are different
             else if (pass !== veri) {
                 verifyPasswordParent.removeClass('invalid valid');
                 verifyPasswordParent.addClass('invalid');
             }
+
+            // otherwise, mark the verify field valid
             else {
                 verifyPasswordParent.removeClass('invalid valid');
                 verifyPasswordParent.addClass('valid');
@@ -690,22 +688,25 @@
             verifyPasswordElement = $('[name=password_verify]'),
             passwordParent = passwordElement.parents('.field-container'),
             verifyPasswordParent = verifyPasswordElement.parents('.field-container'),
-            pfTimerPassword,
-            pfTimerVerify;
+            timers = {};
 
-        function timer(event) {
-            clearTimeout(pfTimerPassword);
-            clearTimeout(pfTimerVerify);
-            if (event.type === 'keyup' && event.keyCode === 9 /* tab key */) {
-                return;
-            }
+        // checks to make sure the user isnt entering text before checking the fields
+        function createKeyupHandler(fn, timerID) {
 
-            pfTimerPassword = setTimeout(pfPassword, defaultKeyupTimerInterval);
-            pfTimerVerify = setTimeout(pfVerify, defaultKeyupTimerInterval);
+            var handler = function(event) {
+                var pfTimer = timers[timerID];
+                clearTimeout(pfTimer);
+                if (event.type === 'keyup' && event.keyCode === 9 /* tab key */) {
+                    return;
+                }
+
+                timers[timerID] = setTimeout(fn, defaultKeyupTimerInterval);
+            };
+            return handler;
         }
 
-        passwordElement.blur(pfPassword).keyup(timer);
-        verifyPasswordElement.blur(pfVerify).keyup(timer);
+        passwordElement.blur(pfPassword).keyup(createKeyupHandler(pfPassword, 'password'));
+        verifyPasswordElement.blur(pfVerify).keyup(createKeyupHandler(pfVerify, 'verify'));
     }
 
 	function couldNotConnectToServer(){
