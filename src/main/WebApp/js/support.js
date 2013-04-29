@@ -107,9 +107,16 @@ window.requestParameters = o;
 window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+location.host);
 window.returnUrl = o['return'] || $AppConfig.url || '/';
 })();
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
-	location.replace('mobile.html');
+
+//Browser detect and reject only if we aren't from our ipad app (which we detect by custom
+//UA string)
+if(!/NextThoughtApp/i.test(navigator.userAgent)){
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
+		location.replace('mobile.html');
+	}
+	if (/Opera/i.test(navigator.userAgent) || !Modernizr.backgroundsize || !Modernizr.borderradius || !Modernizr.boxshadow || !Modernizr.canvas || !Modernizr.canvastext || !Modernizr.draganddrop || !Modernizr.fontface || !Modernizr.generatedcontent || !Modernizr.localstorage || !Modernizr.opacity || !Modernizr.rgba || !Modernizr.sessionstorage){
+		location.replace('unsupported.html');
+	}
 }
-if (/Opera/i.test(navigator.userAgent) || !Modernizr.backgroundsize || !Modernizr.borderradius || !Modernizr.boxshadow || !Modernizr.canvas || !Modernizr.canvastext || !Modernizr.draganddrop || !Modernizr.fontface || !Modernizr.generatedcontent || !Modernizr.localstorage || !Modernizr.opacity || !Modernizr.rgba || !Modernizr.sessionstorage){
-    location.replace('unsupported.html');
-}
+
