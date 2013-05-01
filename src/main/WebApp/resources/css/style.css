@@ -1120,7 +1120,7 @@ button:active {
 }
 
 
-button.logon.openid,
+button.logon.openid { text-indent: 0; }
 button.logon.google { background: #ffffff url(../images/oauth/google_button.png) -2px -2px no-repeat; }
 button.logon.facebook { background: #ffffff url(../images/oauth/facebook_button.png) -2px -2px no-repeat; }
 button.logon.twitter {}

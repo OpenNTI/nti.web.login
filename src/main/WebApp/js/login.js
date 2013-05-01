@@ -9,6 +9,7 @@
 		remember,
 		allowRel = {
 			//white list
+			"logon.openid": true
 		},
 		recoverNameUrl,
 		recoverPassUrl,
@@ -237,7 +238,7 @@
 			$('body').addClass(v.rel.replace(/\./g,'-'));
 			if(allowRel[v.rel]===true){
 				$('body').addClass('or');
-				addButton(v.rel);
+				addButton(v);
 			}
 //			else {
 //				console.log('debug: ',v.rel);
@@ -247,7 +248,15 @@
 	}
 
 	function addButton(rel, optionalSelector){
-		return $('<button type="button" name="'+rel+'" title="'+rel+'" class="'+rel.replace(/\./g,' ')+'">'+rel+'</button>')
+		var title;
+		if( typeof rel === "object" ){
+			title = rel.title;
+			rel = rel.rel;
+		}else{
+			title = rel;
+		}
+
+		return $('<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>')
 			.appendTo(optionalSelector || '#oauth-login');
 	}
 
@@ -527,7 +536,7 @@
 
 		originalMessage = message.innerHTML;
 
-		$('oauth-login').click(clickHandler);
+		$('#oauth-login').click(clickHandler);
 		$('#login').submit(submitHandler);
 
 		$('#forgotit').click(function(e){
