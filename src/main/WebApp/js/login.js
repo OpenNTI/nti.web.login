@@ -511,7 +511,7 @@
 	function hideDialog(dialog){
 		$('body').removeClass('dialog-shown');
 		dialog.hide();
-	};
+	}
 
 	if(!window.console){
 		window.console = {
@@ -520,11 +520,41 @@
 		};
 	}
 
+	function parseQueryString(qStr){
+		if(!qStr || qStr === ''){return null;}
+		var r = {}, parts = qStr.split('&'), i, kv;
+
+		for(i in parts){
+			if(parts.hasOwnProperty(i)){
+				kv = parts[i];
+				kv = kv.split('=');
+				r[kv[0]]=kv[1];
+			}
+		}
+		return r;
+	}
+
+	function handleQueryParams(){
+		var q = location.href.split('?')[1], isUsernameSet;
+		if(q){
+			q = parseQueryString(q);
+			if(q && q['username']){
+				$(username).val(decodeURIComponent(q['username'])).change();
+				username.focus();
+				isUsernameSet = true;
+			}
+			if(q && q['error']){
+				setTimeout(function(){ error(decodeURIComponent(q['error'])) }, 10);
+			}
+		}
+		return isUsernameSet;
+
+	}
 
 	$(function(){
 		$('div.forgot').hide();
 		anonymousPing();
-		var a, i, v;
+		var a, i, v, isUsernameSet;
 
 		message = document.getElementById('message');
 		password = document.getElementById('password');
@@ -567,17 +597,20 @@
 
 		$('#account-creation a').attr('href',function(i,at){ return at + location.search; });
 
-		a = document.cookie.split(/;\s*/g);
-		for(i=0;i<a.length;i++){
-			v = a[i].split('=');
-			cookies[v[0]] = v[1];
-			if(v[0]==='remember-me-username'){
-				remember.checked = true;
-				$(username).val(decodeURIComponent(v[1])).change();
-				username.focus();
+		//if the username param is set on the url, get it and don't bother checking the cookie.
+		isUsernameSet = handleQueryParams();
 
+		if(!isUsernameSet){
+			a = document.cookie.split(/;\s*/g);
+			for(i=0;i<a.length;i++){
+				v = a[i].split('=');
+				cookies[v[0]] = v[1];
+				if(v[0]==='remember-me-username'){
+					remember.checked = true;
+					$(username).val(decodeURIComponent(v[1])).change();
+					username.focus();
+				}
 			}
-
 		}
 
 		handleCache();
