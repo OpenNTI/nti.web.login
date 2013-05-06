@@ -267,7 +267,7 @@
 		//I don't necessarily think removing this will fix it but the use of the timer seems like
 		//it could lead to issues
 		//if(msg){emailLastValid = null;}
-		messageUser(msg||'Please try again, there was a problem logging in.','error');
+		messageUser(msg||'There was a problem logging in. Please try again.','error');
 	}
 
 	function messageUser(msg,cls){
