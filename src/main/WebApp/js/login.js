@@ -6,6 +6,7 @@
 		message,
 		username,
 		password,
+		showErrorOnReady,
 		remember,
 		allowRel = {
 			//white list
@@ -210,6 +211,11 @@
 		if(typeof o === 'number' || !o){
 			error();
 			return;
+		}
+
+		if(showErrorOnReady && $.isFunction(showErrorOnReady)){
+			showErrorOnReady.call();
+			showErrorOnReady = null;
 		}
 
 		if(o.offline){
@@ -544,7 +550,7 @@
 				isUsernameSet = true;
 			}
 			if(q && q['error']){
-				setTimeout(function(){ error(decodeURIComponent(q['error'])) }, 10);
+				showErrorOnReady = function(){ error(decodeURIComponent(q['error'])); };
 			}
 		}
 		return isUsernameSet;
