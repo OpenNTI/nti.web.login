@@ -109,8 +109,10 @@ window.returnUrl = o['return'] || $AppConfig.url || '/';
 })();
 
 //Browser detect and reject only if we aren't from our ipad app (which we detect by custom
-//UA string)
-if(!/NextThoughtApp/i.test(navigator.userAgent)){
+//UA string).  We also allow a config option so we can play with the app in mobile safari
+var maybeGate = !(/NextThoughtApp/i.test(navigator.userAgent) || $AppConfig.allowIPad === true);
+
+if( maybeGate ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
 		location.replace('mobile.html');
