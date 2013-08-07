@@ -110,12 +110,18 @@ window.returnUrl = o['return'] || $AppConfig.url || '/';
 
 //Browser detect and reject only if we aren't from our ipad app (which we detect by custom
 //UA string).  We also allow a config option so we can play with the app in mobile safari
-var maybeGate = !(/NextThoughtApp/i.test(navigator.userAgent) || $AppConfig.allowIPad === true);
 
-if( maybeGate ){
+//If we aren't our ipad app (which we know we support) we need to check a view things
+if( !(/NextThoughtApp/i.test(navigator.userAgent)) ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
-		location.replace('mobile.html');
+
+		//If the config is set to allow ipad in and the userAgent is an ipad don't redirect
+		//else you go to mobile
+		alert(navigator.userAgent+' '+$AppConfig.allowIPad);
+		if(!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent)){
+			location.replace('mobile.html');
+		}
 	}
 	if (/Opera/i.test(navigator.userAgent) || !Modernizr.backgroundsize || !Modernizr.borderradius || !Modernizr.boxshadow || !Modernizr.canvas || !Modernizr.canvastext || !Modernizr.draganddrop || !Modernizr.fontface || !Modernizr.generatedcontent || !Modernizr.localstorage || !Modernizr.opacity || !Modernizr.rgba || !Modernizr.sessionstorage){
 		location.replace('unsupported.html');
