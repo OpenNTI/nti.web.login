@@ -12,6 +12,7 @@
 			//white list
 			"logon.openid": true
 		},
+		submitButtonRels = ['logon.nti.password', 'logon.ldap.ou'],
 		recoverNameUrl,
 		recoverPassUrl,
 		resetPassUrl,
@@ -34,8 +35,18 @@
 	}
 
 	function updateSubmitButton(){
-		var validEmail = username.value.length>3;//(emailRx.test(username.value));
-		$('#submit').prop("disabled", (!validEmail) || !password.value || !rel['logon.nti.password']);
+		var validEmail = username.value.length> 3,//(emailRx.test(username.value))
+			disabled = !validEmail || !password.value, i, hasOneRel = false;
+		if(!disabled){
+			for(i=0; i<submitButtonRels.length; i++){
+				if(rel[submitButtonRels[i]]){
+					hasOneRel = true;
+					break;
+				}
+			}
+			disabled = !hasOneRel;
+		}
+		$('#submit').prop("disabled", disabled);
 	}
 
 	function sendPingIfNecessary(){
@@ -230,7 +241,9 @@
 
 		for(;i>=0; i--){
 			v = links[i];
-
+			//TODO capture the link's method here so we do the correct action.
+			//the ds is doing some funkiness for us right now so that we can do a
+			//get to logon.ldap.ou
 			rel[v.rel] = v.href;
 
 			if(/result/i.test(v.rel)){
@@ -329,7 +342,7 @@
 			//if not clear remember-me-username cookie
 			setCookie('remember-me-username','null',new Date(1));
 		}
-		loginWithRel('logon.nti.password',true);
+		loginWithRel(rel['logon.ldap.ou'] ? 'logon.ldap.ou' : 'logon.nti.password',true);
 		return stop(e||event);
 	}
 
