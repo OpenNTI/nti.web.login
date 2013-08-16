@@ -3,6 +3,7 @@
 	var validation = {},
 		url,
 		preflighturl,
+		handshakeurl,
 		profileSchema,
 		avatarURLChoices,
 	 	backToLoginSingletonThing = false,
@@ -749,6 +750,7 @@
 
 			url = getLink(data,'account.create');
 			preflighturl = getLink(data,'account.preflight.create');
+			handshakeurl = getLink(data, 'logon.handshake');
 
 			if(!url || !preflighturl){
 				//We didn't get a continue link but we don't have the creation links we need.
@@ -804,12 +806,61 @@
 				alert('We\'re sorry, but there was an unforeseen issue...\n\n'+x.responseText.split(/\n{3}/)[1]);
 			}
 		}).done(function(data){
-			if(data && data.Class === 'User'){
+
+			function redirect(){
 				window.location.replace(returnUrl);
+				return;
+			}
+
+			if(data && data.Class === 'User'){
+				maybeDeleteTOS(handshakeurl, data, redirect, this);
 				return;
 			}
 			console.log(data);
 			alert('hmm... o_O that wasn\'t expected...');
+		});
+	}
+
+
+	function maybeDeleteTOS(url, user, callback, scope){
+		if(!url){
+			callback.call(scope);
+			return;
+		}
+		var link,
+			x = $.ajax({
+			headers: {Accept:'application/json'},
+			url: host+handshakeurl,
+			data: {username: user.Username},
+			dataType: 'json',
+			type: 'POST'
+		}).fail(function(){
+				callback.call(scope);
+		}).done(function(data){
+			if(data && data.Links){
+				link = getLink(data, 'content.initial_tos_page');
+				deleteTOS(link, callback, scope);
+			}
+		});
+	}
+
+
+	function deleteTOS(url, cb, scope){
+		if(!url){
+			cb.call(scope);
+			return;
+		}
+
+		var x = $.ajax({
+			headers: {Accept:'application/json'},
+			url: host+url,
+			dataType: 'json',
+			type: 'DELETE'
+		}).fail(function(){
+			cp.call(scope);
+		}).done(function(data){
+			console.log('TOS successfully cleared');
+			cb.call(scope);
 		});
 	}
 
