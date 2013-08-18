@@ -106,6 +106,10 @@ for(i=0;i<a.length;i++){v = a[i].split('=');o[decodeURIComponent(v[0])]=decodeUR
 window.requestParameters = o;
 window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+location.host);
 window.returnUrl = o['return'] || $AppConfig.url || '/';
+if(history.replaceState){
+	document.write("<base href='http://" + document.location.host + location.pathname+"' />");
+	history.replaceState({},null,document.referrer||'/');
+}
 })();
 
 //Browser detect and reject only if we aren't from our ipad app (which we detect by custom
