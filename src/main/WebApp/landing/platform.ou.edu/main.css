@@ -9,6 +9,15 @@
 
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
 
+
+#CLC3403 img {background: #DDD url('images/courses/CLC3403.png') no-repeat center center; }
+#CHEM1315 img {background: #DDD url('images/courses/CHEM1315.png') no-repeat center center; }
+#METR2603 img {background: #DDD url('images/courses/METR2603.png') no-repeat center center; }
+#IAS2003 img {background: #DDD url('images/courses/IAS2003.png') no-repeat center center; }
+#PHIL1203 img {background: #DDD url('images/courses/PHIL1203.png') no-repeat center center; }
+#SOC3123 img {background: #DDD url('images/courses/SOC3123.png') no-repeat center center; }
+
+
 #main *,
 #main {
 	font: normal normal 14px/28px 'Open Sans', Arial, Helvetica, sans-serif;	
@@ -67,6 +76,7 @@
 	
 .grid-item {
 	position: relative;
+	overflow: hidden;
 	width: 227px;
 	height: 257px;
 	float: left;
@@ -110,6 +120,10 @@
 
 .spacer {
 	margin-right: 250px;
+}
+
+#main .spacer .content ~ .content {
+	padding-top: 0;
 }
 
 #main .support-widget {
