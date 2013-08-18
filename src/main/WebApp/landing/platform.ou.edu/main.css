@@ -3,6 +3,11 @@
 	height: 577px;
 	background: #ccc;
 }
+#video iframe {
+	margin: 0 auto;
+}
+
+#feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
 
 #main *,
 #main {
