@@ -1293,10 +1293,10 @@
 
 		$('a.agree').click(makeIt);
 
-		$('#signin').attr('href',function(i,at){
+		/*$('#signin').attr('href',function(i,at){
 			var r = at + location.search;
 			return (r !== at) ? r : document.referrer;
-		});
+		});*/
 
 		ping();
 
