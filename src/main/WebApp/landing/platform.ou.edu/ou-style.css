@@ -150,7 +150,8 @@ a.tip:hover span::before {
 }
 
 #main .wrapper {
-
+	box-shadow: 0 0 5px black;
+	background: #fff;
 }
 
 /* FOOTER
@@ -304,9 +305,10 @@ a.ou-btn:hover {
 	margin-top: 1em;
 	font-size: 100%;
 	line-height: 0;
-	float: left;
-	display: block;
-	clear: both;
+	display: inline-table;
+	display: inline-block;
+	
+
 }
 a.ou-btn1:hover {
 	text-decoration: none;
