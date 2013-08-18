@@ -1,0 +1,97 @@
+#video {
+	width: 1024px;
+	height: 577px;
+	background: #ccc;
+}
+
+#main *,
+#main {
+	font: normal normal 14px/28px 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #494949;
+	
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#main .content {
+	padding: 70px 50px 80px;
+}
+
+#main h1,
+#main h3 {
+	font: normal 300 2em 'Open Sans', Arial, Helvetica, sans-serif;
+	margin-right: -1em;
+}
+
+#main h1 {color: #494949; margin-bottom: 0.5em;}
+#main h3 {color: #3fb3f6;}
+
+
+.grid,
+.columns {
+	position: relative;
+	overflow: hidden;
+	margin-top: -5px;
+	margin-left: -5px;
+	padding-top: 5px;
+	padding-left: 5px;
+}
+
+.columns {margin: 2em 0 4em 50px;}
+
+.columns.three > div {
+	width: 32%;
+	float:left;
+
+	padding-right: 50px;
+}
+
+
+.gradient-bg{
+	background: #f3f3f3;
+}
+	
+	
+.grid-item {
+	position: relative;
+	width: 227px;
+	height: 257px;
+	float: left;
+	margin: 0 4px 4px 0;
+	box-shadow: 0 0 2px rgba(0,0,0,0.1);
+	border: 1px solid #f0f0f0;
+}
+
+.grid-item img {
+	border: 0;
+	width: 227px;
+	height: 172px;
+}
+
+.grid-item .meta {
+	background: #fff;
+	position: absolute;
+	bottom: 0;
+	left: 0; right: 0;
+	height: 85px;
+	padding: 10px;
+}
+
+#main .grid-item .meta .course-code,
+#main .grid-item .meta .course-prof {
+	font: normal bold 10px/10px 'Open Sans', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #b8b8b8;
+}
+#main .grid-item .meta .course-name {
+	font: normal normal 16px/18px 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	color: #75747;
+}
+
+#main .grid-item .meta .course-prof{
+	color: #3fb3f6;
+}

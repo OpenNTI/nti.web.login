@@ -150,7 +150,7 @@ a.tip:hover span::before {
 }
 
 #main .wrapper {
-	margin:0;
+
 }
 
 /* FOOTER
@@ -293,7 +293,7 @@ a.ou-btn:hover {
 	background: linear-gradient(#25cbff, #0076ce);
 }
 
-a.ou-btn1 {
+#main a.ou-btn1 {
 	background-color: #298AC4;
 	color: #FFFFFF;
 	top: auto;
@@ -304,7 +304,7 @@ a.ou-btn1 {
 	margin-top: 1em;
 	font-size: 100%;
 	line-height: 0;
-	float: right;
+	float: left;
 	display: block;
 	clear: both;
 }
