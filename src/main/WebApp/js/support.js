@@ -107,7 +107,7 @@ window.requestParameters = o;
 window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+location.host);
 window.returnUrl = o['return'] || $AppConfig.url || '/';
 if(history.replaceState){
-	document.write("<base href='http://" + document.location.host + location.pathname+"' />");
+	document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
 	history.replaceState({},null,document.referrer||'/');
 }
 })();
