@@ -1,6 +1,6 @@
 $AppConfig = {
-	url: 'http://dev/WebApp',
+	url: '',
 	server: {
-		host: 'http://localhost'
+		host: ''
 	}
 };
