@@ -26,14 +26,14 @@
 </head>
 <body class="signin">
 <div class="links">
-		<a href="http://nextthought.com" title="About NextThought" target="_new">About</a> &middot;
-		<a href="mailto:support@nextthought.com" title="Contact Support">Help</a> &middot;
+		<a href="http://nextthought.com" title="About NextThought" target="_new" tabindex="9">About</a> &middot;
+		<a href="mailto:support@nextthought.com" title="Contact Support" tabindex="10">Help</a> &middot;
 		<a href="https://docs.google.com/document/pub?id=1rM40we-bbPNvq8xivEKhkoLE7wmIETmO4kerCYmtISM"
-		   target="_new" title="NextThought Terms of Service and User Agreements">Terms</a> &middot;
+		   target="_new" title="NextThought Terms of Service and User Agreements" tabindex="11">Terms</a> &middot;
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 		<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM"
 		   target="_new" title="Learn about your privacy and NextThought"
-		   class="privacy">Privacy</a>
+		   class="privacy" tabindex="12">Privacy</a>
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 		<span class="childrenpolicy">&middot;
 		<a href="https://docs.google.com/document/pub?id=1kNo6hwwKwWdhq7jzczAysUWhnsP9RfckIet11pWPW6k"
@@ -45,7 +45,7 @@
 		<div class="wrapper-inner">
 			<div class="middle zoomin main">
 				<div class="branding">
-					<div class="container main">
+					<div class="container main" role="form" aria-label="Login form">
 						<div class="header"></div>
 						<div class="content">
 							<section id="nt-login">
@@ -53,34 +53,35 @@
 										<div id="message" class="message"></div>
 										<div>
 											<div class="field-container" data-title="Username">
-												<label for="username">Username:</label>
+												<!--<label for="username">Username:</label>-->
 												<input id="username" name="username" type="text"
 													   placeholder="Username"
-											  autocorrect="off" autocapitalize="off" auto/>
+											  autocorrect="off" autocapitalize="off" tabindex="1" aria-label="Username" auto/>
 											</div>
 
 											<div id="password-field" class="field-container" data-title="Password">
-												<label for="password">Password:</label>
+												<!--<label for="password">Password:</label>-->
 												<input id="password" name="password" type="password"
 													   autocomplete="off"
-													   placeholder="Password"/>
+													   placeholder="Password"
+													   tabindex="2" aria-label="Password"/>
 											</div>
 
 											<div class="field-container">
                                                 <span class="input-wrap">
-												<input id="remember" name="remember" type="checkbox"/>
+												<input id="remember" name="remember" type="checkbox" tabindex="3"/>
 												<label for="remember">Remember me</label>
                                                 </span>
 
-												<button id="submit" type="submit" disabled>Sign in</button>
+												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
 												<div class="clear"></div>
 											</div>
 
 											<div id="oauth-login"></div>
 											<div id="active-session-login"></div>
 
-											<div id="account-creation">
-												<a href="signup.html">Create an Account.<span class="tagline"></span></a>
+											<div id="account-creation" >
+												<a href="signup.html" role="button" aria-label="Account creation" tabindex="5">Create an Account.<span class="tagline"></span></a>
 											</div>
 
 											<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
@@ -91,28 +92,31 @@
 					</div>
 				</div>
 				<div class="forgot">
-					I forgot my <a href="#" id="forgotit">username</a> or
-					<a href="#" id="forgotpass">password.</a>
-					<div class="dialog username">
+					I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
+					<a href="#" id="forgotpass" tabindex="8">password</a>.
+					<div class="dialog username" role="dialog" aria-label="Forgot username form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
-						<form id="recover" method="post">
-							<h1>That&#39;s okay...</h1>
-							<p>Enter your email and we&#39;ll send your username.</p>
-							<div data-title="email"><input type="email" placeholder="email" size="20"><button id="send" type="submit" disabled>Submit</button></div>
-						</form>
+							<form id="recover" method="post">
+								<h1>That&#39;s okay...</h1>
+								<p>Enter your email and we&#39;ll send your username.</p>
+								<div data-title="email">
+									<input type="email" placeholder="email" size="20" aria-label="Enter email">
+									<button id="send" type="submit" aria-label="Submit to retrieve username" disabled>Submit</button>
+								</div>
+							</form>
 						</div>
 						<div class="bottom">&nbsp;</div>
 					</div>
-					<div class="dialog password">
+					<div class="dialog password" role="dialog" aria-label="Forgot password form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
 							<form id="recoverpass" method="post">
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your username and email, and we&#39;ll help you reset it.</p>
 								<div data-title="username and email">
-									<input id="recover-pass-username" type="text" placeholder="username" size="20">
-									<input id="recover-pass-email" type="email" placeholder="email" size="20">
+									<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
+									<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
 									<button id="send-recover-pass" type="submit" disabled>Submit</button>
 								</div>
 							</form>
