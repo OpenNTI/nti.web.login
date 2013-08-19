@@ -3,8 +3,10 @@
 <!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
 <html lang="en">
 <head>
-	<base href="/login/landing/platform.ou.edu/">
-	
+	<script type="text/javascript"><!--
+	document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
+	//-->
+	</script>
 	<title>The University of Oklahoma</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +24,6 @@
 	if(history.replaceState){ history.replaceState({},null,'/'); }
 	//-->
 	</script>
-	
 	
 	<!-- This is the stylesheet is OU specific style -->
 	<link rel="stylesheet" type="text/css" href="ou-style.css" />
