@@ -27,8 +27,8 @@
 		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
 		<div class="middle">
 			<div class="container">
-				<div class="header">
-					<img src="resources/images/nt_beta_logo_acct_create.png" width="379" height="137"/>
+				<div class="header" role="banner">
+					<img src="resources/images/nt_beta_logo_acct_create.png" width="379" height="137" alt="next thought logo"/>
 					<a id="signin" href="index.html">Have an account? Sign in.</a>
 				</div>
 				<div class="content">
@@ -95,21 +95,21 @@
 						</section>
 						<section class="needs-birthday">
 							<h4>Account Information</h4>
-							<div class="field-container"  data-title="Name">
-								<input type="text" name="first" size="10" placeholder="First Name" autocomplete="off" title="Please enter your first name."/><!--
-							 --><input type="text" name="last" size="10" placeholder="Last Name" autocomplete="off" title="Please enter your last name."/>
+							<div class="field-container"  data-title="Name" role="presentation">
+								<input type="text" name="first" size="10" placeholder="First Name" autocomplete="off" title="Please enter your first name." tabindex="1"/><!--
+							 --><input type="text" name="last" size="10" placeholder="Last Name" autocomplete="off" title="Please enter your last name." tabindex="2"/>
 								<div class="line">
-									<span class="blank">Please enter your first and last name.</span>
+									<span class="blank" aria-hidden="true">Please enter your first and last name.</span>
 									<span class="invalid">Please enter your first and last name.</span>
 									<span class="valid">Welcome to NextThought.</span>
 								</div>
 							</div>
-							<div class="field-container"  data-title="email">
+							<div class="field-container"  data-title="email" role="presentation">
 								<input type="email" name="email" size="20"
-									   placeholder="Your Email" autocomplete="off" title="What&#39;s your email address?"/>
-								<div class="line">
+									   placeholder="Your Email" autocomplete="off" aria-label="Please enter your email address." title="Please enter your email address." tabindex="3"/>
+								<div class="line" aria-hidden="true">
 									<span class="blank">
-										What&#39;s your email address?
+										<span class="blank" >What&#39;s your email address?</span>
 										<div class="why email">
 											<div class="icon">&nbsp;</div>
 											<div class="dialog">
@@ -127,21 +127,23 @@
 									<span class="valid">Thanks.</span>
 								</div>
 							</div>
-							<div class="field-container"  data-title="Username">
-								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"
-										title="Username should not include your first or last name."/>
+							<div class="field-container"  data-title="Username" role="presentation">
+								<input type="text" name="Username" size="20" placeholder="Username" autocomplete="off"										
+										title="This is what you will use to log in." tabindex="4"
+										aria-label="Please enter a unique user name. This is what you will use to log in."/>
 								<div class="line">
-									<span class="blank">This is what you will use to log in.</span>
+									<span class="blank" aria-hidden="true">This is what you will use to log in.</span>
 									<span class="invalid">This username is not available.</span>
 									<span class="valid">This username is available.</span>
 								</div>
 							</div>
-							<div class="field-container"  data-title="Password">
+							<div class="field-container"  data-title="Password" role="presentation">
 								<input type="password" name="password" size="20"
 									   placeholder="Password" autocomplete="off"
-										title="Use at least six characters. Numbers and special characters help."/>
+										title="Use at least six characters. Numbers and special characters help." tabindex="5"
+										aria-label="Please enter a password."/>
 								<div class="line">
-									<span class="blank">
+									<span class="blank" aria-hidden="true">
 										Use at least six characters. Numbers and special characters help.
 									</span>
 									<span class="invalid">Password not acceptable.</span>
@@ -149,21 +151,22 @@
 								</div>
 
 							</div>
-							<div class="field-container"   data-title="Password verify">
+							<div class="field-container" data-title="Password verify" role="presentation">
 								<input type="password" name="password_verify" size="20"
 									   placeholder="Verify Password" autocomplete="off"
-										title="Confirm your password."/>
+										title="Confirm your password." tabindex="6"
+										aria-label="Please confirm your password."/>
 								<div class="line">
-									<span class="blank">Confirm your password.</span>
+									<span class="blank" aria-hidden="true">Confirm your password.</span>
 									<span class="invalid">Oops. Passwords do not match.</span>
 									<span class="valid">Got it.</span>
 								</div>
 							</div>
-							<div class="field-container"  data-title="Parent's email">
+							<div class="field-container"  data-title="Parent's email" role="presentation">
 								<input type="email" name="contact_email" size="20" placeholder="Parent's Email" autocomplete="off"
-									   title="We need your parent's permission to activate social features on your account."/>
+									   title="We need your parent's permission to activate social features on your account." tabindex="7"/>
 								<div class="line">
-									<span class="blank">We need your parent's permission to activate social features on your account.</span>
+									<span class="blank" aria-hidden="true">We need your parent's permission to activate social features on your account.</span>
 									<span class="invalid">This is not a valid email address.</span>
 									<span class="valid">Thanks. We will send a consent form.</span>
 								</div>
@@ -172,7 +175,7 @@
 						<section class="optionals disabled">
 							<h4>Optional Information</h4>
 							<div class="field-container has-floats">
-								<input type="checkbox" name="participates_in_mathcounts" id="participates_in_mathcounts"/>
+								<input type="checkbox" name="participates_in_mathcounts" id="participates_in_mathcounts" tabindex="8"/>
 								<label for="participates_in_mathcounts">I participate in MATHCOUNTS in my school.</label>
 								<div class="participates_in_mathcounts line">
 									<span class="blank"></span>
@@ -180,9 +183,9 @@
 									<span class="invalid"></span>
 								</div>
 							</div>
-							<div class="field-container has-floats">
-								<input type="checkbox" name="opt_in_email_communication" id="opt_in_email_communication" checked/>
-								<label for="opt_in_email_communication">Send me updates about NextThought.</label>
+							<div class="field-container has-floats" role="presentation">
+								<input type="checkbox" name="opt_in_email_communication" id="opt_in_email_communication" aria-label="Send me updates about NextThought" checked tabindex="9"/>
+								<label for="opt_in_email_communication" aria-hidden="true">Send me updates about NextThought.</label>
 								<div class="opt_in_email_communication line">
 									<span class="blank"></span>
 									<span class="valid"></span>
@@ -192,7 +195,7 @@
 							<div class="field-container affiliation">
 								<p>What school do you attend?</p>
 								<input type="text" name="affiliation" size="20" placeholder="Your School" autocomplete="off"
-										title="What school do you attend?"/>
+										title="What school do you attend?" tabindex="10"/>
 								<div class="affiliation-dropdown-container">
 									<ol class="affiliation-dropdown">
 										<!-- auto selection content here -->
@@ -204,10 +207,10 @@
 									<span class="valid">School, City, State</span>
 								</div>
 							</div>
-							<div class="field-container invitation-codes"  data-title="Group Code">
+							<div class="field-container invitation-codes"  data-title="Group Code" role="presentation">
 								<input type="text" name="invitation_codes" size="20" placeholder="Group Code" autocomplete="off"
-									   title="Please enter your group code."/>
-								<div class="line">
+									   title="Please enter your group code." tabindex="11"/>
+								<div class="line" aria-hidden="true">
 									<span class="blank">
 										Please enter your group code.
 										<div class="why groupcode">
@@ -241,9 +244,10 @@
 							<iframe src="https://docs.google.com/document/pub?id=1rM40we-bbPNvq8xivEKhkoLE7wmIETmO4kerCYmtISM&embedded=true" class="agreement" seamless width="100%"
 									height="190"></iframe>
 						</section>
-						<section class="needs-birthday">
-							<a href="#" class="agree disabled">I agree. Create my account!</a>
-							<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM" target="_new" class="privacy">View Our Privacy Policy</a>
+						<section class="needs-birthday" role="presentation">
+							<a href="#" class="agree" role="button" tabindex="13" disabled>I agree. Create my account!</a>
+							<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM" 
+								target="_blank" class="privacy" tabindex="12">View Our Privacy Policy</a>
 							<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 							<span class="childrenpolicy">and <a href="https://docs.google.com/document/pub?id=1kNo6hwwKwWdhq7jzczAysUWhnsP9RfckIet11pWPW6k" target="_new" class="privacy">Children&#39;s Privacy Policy</a></span>
 
