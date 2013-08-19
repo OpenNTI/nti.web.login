@@ -1,10 +1,24 @@
 #video {
+	position: relative;
 	width: 1024px;
 	height: 577px;
 	background: #ccc;
 }
+
 #video iframe {
 	margin: 0 auto;
+}
+
+#video div{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	background: black;
+	background: rgba(0,0,0,0.8);
+	color: #757575;
+	font: normal 300 28px 'Open Sans', Arial, Helvetica, sans-serif;
+	padding: 0.3em 35px;
 }
 
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
