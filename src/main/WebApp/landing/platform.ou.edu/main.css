@@ -3,6 +3,7 @@
 	width: 1024px;
 	height: 577px;
 	background: #ccc;
+	margin-top: 9em;
 }
 
 #video iframe {
@@ -11,19 +12,19 @@
 
 #video > div{
 	position: absolute;
-	bottom: 0;
+	top: -6em;
 	left: 0;
 	right: 0;
 	background: black;
-	background: rgba(0,0,0,0.8);
+	background: rgba(0,0,0,0.89);
 	color: #b8b8b8;
 	font: normal 600 12px 'Open Sans', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	padding: 1em 35px 2em;
+	padding: 1em 35px;
 }
 #video div div {
 	font-family: 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
-	font-size: 40px;
+	font-size: 30px;
 	font-weight: 700;
 	color: #fff;
 	margin-top: 0.1em;
