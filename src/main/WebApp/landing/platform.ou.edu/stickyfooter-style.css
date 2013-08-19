@@ -19,7 +19,7 @@ html, body { height: 100%; }
 
 #main {
 	overflow:auto;
-	padding-bottom: 16em; /* must be same height as the footer + wrapper padding */
+	margin-bottom: 16em; /* must be same height as the footer + wrapper padding */
 }  
 
 #footer {
