@@ -9,16 +9,24 @@
 	margin: 0 auto;
 }
 
-#video div{
+#video > div{
 	position: absolute;
-	top: 0;
+	bottom: 0;
 	left: 0;
 	right: 0;
 	background: black;
 	background: rgba(0,0,0,0.8);
-	color: #757575;
-	font: normal 300 28px 'Open Sans', Arial, Helvetica, sans-serif;
-	padding: 0.3em 35px;
+	color: #b8b8b8;
+	font: normal 600 12px 'Open Sans', Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	padding: 1em 35px 2em;
+}
+#video div div {
+	font-family: 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 40px;
+	font-weight: 700;
+	color: #fff;
+	margin-top: 0.1em;
 }
 
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
@@ -123,7 +131,7 @@
 #main .grid-item .meta .course-name {
 	font: normal normal 16px/18px 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
-	color: #75747;
+	color: #757474;
 	display: block;
 	margin-bottom: 10px;
 }
