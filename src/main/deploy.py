@@ -55,7 +55,11 @@ def main():
 	args = parser.parse_args()
 
 	_updateHtml('WebApp/index.html',args.analytics_key)
+	_updateHtml('WebApp/mobile.html',args.analytics_key)
+	_updateHtml('WebApp/passwordrecover.html',args.analytics_key)
 	_updateHtml('WebApp/signup.html',args.analytics_key)
+	_updateHtml('WebApp/unsupported.html',args.analytics_key)
+	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key)
 
 if __name__ == '__main__':
         main()
