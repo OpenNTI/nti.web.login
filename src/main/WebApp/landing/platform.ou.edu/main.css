@@ -1,34 +1,15 @@
 #video {
 	position: relative;
 	width: 1024px;
-	height: 577px;
+/*	height: 577px;*/
+	height: 606px;
 	background: #ccc;
-	margin-top: 9em;
 }
 
 #video iframe {
 	margin: 0 auto;
 }
 
-#video > div{
-	position: absolute;
-	top: -6em;
-	left: 0;
-	right: 0;
-	background: black;
-	background: rgba(0,0,0,0.89);
-	color: #b8b8b8;
-	font: normal 600 12px 'Open Sans', Arial, Helvetica, sans-serif;
-	text-transform: uppercase;
-	padding: 1em 35px;
-}
-#video div div {
-	font-family: 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
-	font-size: 30px;
-	font-weight: 700;
-	color: #fff;
-	margin-top: 0.1em;
-}
 
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
 
