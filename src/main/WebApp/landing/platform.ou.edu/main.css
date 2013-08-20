@@ -52,6 +52,7 @@
 #main h1 {color: #494949; margin-bottom: 0.5em;}
 #main h3 {color: #3fb3f6;}
 
+#main .columns h3 { font-family:'Open Sans Condensed'; font-weight: 300; }
 
 .grid,
 .columns {
@@ -111,7 +112,7 @@
 	color: #b8b8b8;
 }
 #main .grid-item .meta .course-name {
-	font: normal normal 16px/18px 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
+	font: normal 700 16px/18px 'Open Sans Condensed', 'Open Sans', Arial, Helvetica, sans-serif;
 	text-transform: uppercase;
 	color: #757474;
 	display: block;
