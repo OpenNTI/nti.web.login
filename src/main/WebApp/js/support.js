@@ -108,8 +108,8 @@ window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+locatio
 window.returnUrl = o['return'] || $AppConfig.url || '/';
 if(history.replaceState){
 	window.ourPath = location.pathname;
-	document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
-	history.replaceState({},null,document.referrer||'/');
+	// document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
+	// history.replaceState({},null,document.referrer||'/');
 }
 })();
 
