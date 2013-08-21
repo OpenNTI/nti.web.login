@@ -390,17 +390,40 @@
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
 
-			if (getLink(data, 'logon.continue')){
-				setupContinue(getLink(data, 'logon.logout'));
-				return;
+			
+			function finishAnonymous(){
+				setupRecovery();
+				setupPassRecovery();
+
+				$('div.forgot').show();
+				if(getLink(data,'account.create')){
+					$('#account-creation').show();
+				}
 			}
 
-			setupRecovery();
-			setupPassRecovery();
 
-			$('div.forgot').show();
-			if(getLink(data,'account.create')){
-				$('#account-creation').show();
+			if (getLink(data, 'logon.continue')){
+				$.ajax({
+					url: host+getLink(data,'logon.handshake'),
+					dataType: 'json',
+					headers: {Accept:'application/json'},
+					type: 'POST',
+					data: {username: cookies['username']}
+				}).done(function(dataHS){
+					if(getLink(dataHS,'logon.continue')){	
+						setupContinue(getLink(dataHS, 'logon.logout'))
+					}
+					else {
+						finishAnonymous();
+					}
+				}).fail(function(){
+					var url = host+getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
+					console.log('Forcing a logout due to handshake failure');
+					location.replace(url);;
+				});
+			}
+			else {
+				finishAnonymous();
 			}
 		}).fail(function(){
 			console.error('failed to resolve service...will retry in 5 seconds');
@@ -415,7 +438,7 @@
 		addButton('Yes', '#active-session-login').click(function(){
 			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
 			$.ajax({
-				url: logoutUrl + '?_dc=' + new Date().getTime()
+				url: host + logoutUrl + '?_dc=' + new Date().getTime()
 			})
 			.always(function(){location.reload();});
 		});
