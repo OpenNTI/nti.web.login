@@ -1293,6 +1293,9 @@
 
 		$('a.agree').click(makeIt);
 
+		$('.callout .primary').html(getString('signup:callout_primary'));
+		$('.callout .message').html(getString('signup:callout_message'));
+
 		/*$('#signin').attr('href',function(i,at){
 			var r = at + location.search;
 			return (r !== at) ? r : document.referrer;

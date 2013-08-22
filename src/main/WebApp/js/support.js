@@ -113,6 +113,9 @@ if(history.replaceState){
 }
 })();
 
+
+function getString(k, d){return (window.NTIStrings || {})[k] || d || k || '';}
+
 //Browser detect and reject only if we aren't from our ipad app (which we detect by custom
 //UA string).  We also allow a config option so we can play with the app in mobile safari
 

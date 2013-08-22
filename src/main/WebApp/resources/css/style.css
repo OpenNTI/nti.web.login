@@ -24,6 +24,48 @@ html,body {
 body.signin { background: #f4f4f4 url(../images/circles_tile.png); }
 body.signup { background: #ffffff url(../images/header-bg.png) 0 0 repeat-x; }
 
+body.signup .callout{
+	display: none;
+	border: 1px solid #8BD4FF;
+	margin-left: 3px;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	background-color: #FAFDFF;
+	color: #757474;
+	border-left-style: solid;
+	border-left-color: #8bd4ff;
+	border-left-width: 0.3em;
+	text-align: left;
+	margin-bottom: 40px;
+}
+
+body.signup .callout .message{
+	margin: 0px;
+	text-align: left;
+	color: #494949;
+	font-size: 14px;
+	font-weight: normal;
+}
+
+body.signup .callout .message a:active,
+body.signup .callout .message a:link,
+body.signup .callout .message a:visited{
+	display: block;
+	padding-top: 6px;
+	font-weight: 600;
+	text-decoration: none; font-size: 14px; color: #3fb3f6;
+}
+
+body.signup .callout .primary{
+	text-transform: uppercase;
+	font-size: 10px;
+	font-weight: bold;
+	color: #B8B8B8;
+}
+
+
 .ie9 body.signin.dialog-shown{
 	margin-bottom: 12em;
 }

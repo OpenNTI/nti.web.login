@@ -26,3 +26,7 @@
 #active-session-login.visible {
 	padding-bottom: 180px;
 }
+
+body.signup .callout{
+	display: block;
+}
