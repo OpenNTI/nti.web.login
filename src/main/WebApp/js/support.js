@@ -124,9 +124,10 @@ if( !(/NextThoughtApp/i.test(navigator.userAgent)) ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
 
-		//If the config is set to allow ipad in and the userAgent is an ipad don't redirect
+		//If the config is set to allow ipad or android in and the userAgent is that same device don't redirect
 		//else you go to mobile
-		if(!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent)){
+		if((!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent))
+            && (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))){
 			location.replace('mobile.html');
 		}
 	}
