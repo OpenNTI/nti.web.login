@@ -29,10 +29,18 @@
 	}
 
 	function showError(errorText){
-		 $('#message').removeClass('green');
-         $('#message').addClass('red');
-         $('#message').text(errorText);
+		 $('#message').removeClass('green')
+		 		.addClass('red')
+				.text(errorText);
 	}
+	
+	
+	function showSuccess(text){
+		 $('#message').removeClass('red')
+		 		.addClass('green')
+				.html(text);
+	}
+	
 
     function anonymousPing(){
         $('#account-creation').hide();
@@ -70,8 +78,22 @@
                 data: {username: username, id: id, password: pass1}
             })
                 .done(function(data){
-//                    console.log('suc',arguments);
-                    window.location.replace('index.html?host=' + host + '&return=' + returnUrl );
+					var n = 5,
+						link = 'index.html?host=' + host + '&return=' + returnUrl,
+						impatient = '<a style="float:right; display:block;" href="'+link+'">Login &#9658;</a>';
+
+					function countdown() {
+						var wait = '<p>'+impatient+'Redirecting to login in... '+n+'</p>';
+						
+						showSuccess('Password reset successfull.'+wait);
+						n--;
+						if(n <= 0){
+							window.location.replace(link);
+						}
+					}
+
+					setInterval(countdown,1000);					
+					countdown();
                 })
                 .fail(function(data){
                     var o = parseResponseText(data);
