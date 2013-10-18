@@ -1,0 +1,33 @@
+{
+	"availableCourses":[{
+		"id": "CLC3403",
+		"name": "CLC 3403",
+		"title": "Law and Justice",
+		"instructor": "Kyle Harper"
+	},{
+		"id":"CHEM1315",
+		"name":"CHEM 1315",
+		"title":"General Chemistry",
+		"instructor": "Mark Morvant"
+	},{
+		"id":"METR2603",
+		"name":"METR 2603",
+		"title":"Severe and Unusual Weather",
+		"instructor": "Susan E Postawko"
+	},{
+		"id":"IAS2003",
+		"name":"IAS 2003",
+		"title":"Understanding the Global Community",
+		"instructor": "Suzette Grillot"
+	},{
+		"id":"PHIL1203",
+		"name":"PHIL 1203",
+		"title":"Philosophy and Human Destiny, East and West",
+		"instructor": "Neal Judisch"
+	},{
+		"id":"SOC3123",
+		"name":"SOC 3123",
+		"title":"Social Statistics",
+		"instructor": "B. Mitch Peck"
+	}]
+}

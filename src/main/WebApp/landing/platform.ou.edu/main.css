@@ -1,25 +1,13 @@
-#video {
-	position: relative;
-	width: 1024px;
-/*	height: 577px;*/
-	height: 606px;
-	background: #ccc;
-}
-
-#video iframe {
-	margin: 0 auto;
-}
-
 
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
 
+.mast { position: relative; }
 
-#CLC3403 img {background: #DDD url('images/courses/CLC3403.png') no-repeat center center; }
-#CHEM1315 img {background: #DDD url('images/courses/CHEM1315.png') no-repeat center center; }
-#METR2603 img {background: #DDD url('images/courses/METR2603.png') no-repeat center center; }
-#IAS2003 img {background: #DDD url('images/courses/IAS2003.png') no-repeat center center; }
-#PHIL1203 img {background: #DDD url('images/courses/PHIL1203.png') no-repeat center center; }
-#SOC3123 img {background: #DDD url('images/courses/SOC3123.png') no-repeat center center; }
+#video {
+	position: absolute;
+	top: 65px;
+	right: 50px;
+}
 
 
 #main *,
@@ -123,74 +111,4 @@
 	color: #3fb3f6;
 }
 
-.spacer {
-	margin-right: 250px;
-}
 
-#main .spacer .content ~ .content {
-	padding-top: 0;
-}
-
-#main .support-widget {
-	background-color: #ededed;
-	padding: 1em;
-	margin: 5em 35px 0 0;
-	float: right;
-	width: 195px;
-}
-#main .support-widget *{
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;	
-}
-
-#main .support-widget img {
-	height: auto;
-	max-width: 100%;
-	vertical-align: middle;
-	border: 0;
-	-ms-interpolation-mode: bicubic;
-}
-
-#main .support-widget .textimage {
-	overflow: auto;
-	border-bottom: 1px dotted #666;
-	padding: 0.75em 0;
-	margin: 0;
-}
-
-#main .support-widget a:active {
-	color: #298AC4 !important;
-	outline: none;
-}
-
-#main .support-widget a:hover {
-	color: #298AC4 !important;
-	text-decoration: underline;
-}
-
-#main .support-widget a:hover {
-	color: #005580 !important;
-	text-decoration: underline;
-}
-
-#main .support-widget a:hover, 
-#main .support-widget a:active {
-	outline: 0;
-}
-
-#main .support-widget .textimage:last-child {
-	border-bottom: none;
-}
-
-#main .support-widget .textimage  img {
-	border: none;
-	margin: 0 1em 0 0;
-}
-#main .support-widget h1 {
-	padding: 9px 0;
-	margin: 0 0 0 0;
-	color: #660000;
-	font-size: 18px;
-	font-weight: bold;
-	line-height: normal;
-}
