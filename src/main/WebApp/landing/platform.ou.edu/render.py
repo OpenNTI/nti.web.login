@@ -4,13 +4,13 @@ import os
 import jinja2
 import json 
 
-data = json.load(open('data.json'))
-
+datafile = os.path.join(os.path.dirname(__file__), 'data.json')
+outfile = os.path.join(os.path.dirname(__file__), 'index.html')
+data = json.load(open(datafile))
 jinja_environment = jinja2.Environment(loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 
 def write_index(contents):
-	outfile = "index.html"
 	with open( outfile, 'wb' ) as file:
 		file.write(contents)
 
