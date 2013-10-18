@@ -89,9 +89,25 @@
 			
 			
 			<div class="content gradient-bg">
-				<h1>Available Courses <span>(Fall 2013)</span></h1>
+				<h1>Available Courses <span>({{availableCoursesWhen}})</span></h1>
 				<div class="grid">
 					{% for course in availableCourses %}					  
+  					<div class="grid-item" id="{{course.id}}">	
+  						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image" 
+							title="" style="background: #DDD url('images/courses/{{course.id}}.png') no-repeat center center;">
+  						<div class="meta">
+  							<div class="course-code">{{course.name}}</div>
+  							<div class="course-name">{{course.title}}</div>
+  							<div class="course-prof">By {{course.instructor}}</div>
+  						</div>
+  					</div>
+					{% endfor %}
+				</div>
+				
+				
+				<h1>Upcoming Courses <span>({{upcomingCoursesWhen}})</span></h1>
+				<div class="grid">
+					{% for course in upcomingCourses %}					  
   					<div class="grid-item" id="{{course.id}}">	
   						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image" 
 							title="" style="background: #DDD url('images/courses/{{course.id}}.png') no-repeat center center;">

@@ -1,4 +1,5 @@
 {
+	"availableCoursesWhen":"Fall 2013",
 	"availableCourses":[{
 		"id": "CLC3403",
 		"name": "CLC 3403",
@@ -29,5 +30,13 @@
 		"name":"SOC 3123",
 		"title":"Social Statistics",
 		"instructor": "B. Mitch Peck"
+	}],
+	
+	"upcomingCoursesWhen":"Spring 2013",
+	"upcomingCourses":[{
+		"id": "CLC3403",
+		"name": "CLC 3403",
+		"title": "Law and Justice",
+		"instructor": "Kyle Harper"
 	}]
 }
