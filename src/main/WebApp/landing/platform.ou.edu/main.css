@@ -1,4 +1,6 @@
-
+a.ou-btn {
+	font-size: 1.4em;
+}
 #feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
 
 .mast { position: relative; }
@@ -28,20 +30,49 @@
 }
 
 #main .content {
-	padding: 70px 35px 80px;
+	padding: 70px 35px 5px;
 }
 
+#main .content.tech {
+	padding-bottom: 20px;
+}
+
+#main .content.tech ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#main .content.tech ul li {
+	font: normal 300 1.2em 'Open Sans', Arial, Helvetica, sans-serif;
+	display: inline-table;
+	display: inline-block;
+}
+
+#main .content.tech ul li a,
+#main .content.tech ul li a:link,
+#main .content.tech ul li a:visited,
+#main .content.tech ul li a:active,
+#main .content.tech ul li a:hover {
+	font: normal 300 1em 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #3fb3f6;
+}
+
+
 #main h1,
+#main h1 span,
 #main h3 {
 	font: normal 300 2em 'Open Sans', Arial, Helvetica, sans-serif;
 	margin-right: -1em;
 }
+#main h1 span {font-size: 1em;color: #b8b8b8;}
 
 #main h1 {color: #494949; margin-bottom: 0.5em;}
 #main h3 {color: #3fb3f6;}
 
 #main .columns h3 { font-family:'Open Sans Condensed'; font-weight: 300; }
 
+#main .content.tech ul,
 .grid,
 .columns {
 	position: relative;
@@ -50,6 +81,8 @@
 	margin-left: -5px;
 	padding-top: 5px;
 	padding-left: 5px;
+	
+	margin-bottom: 50px;
 }
 
 .columns {margin: 2em 0 4em 35px;}
@@ -66,14 +99,16 @@
 	background: #f3f3f3;
 }
 	
-	
+#main .content.tech ul li,
 .grid-item {
 	position: relative;
 	overflow: hidden;
 	width: 234px;
-	height: 257px;
-	float: left;
 	margin: 0 4px 4px 0;
+	float: left;
+}
+.grid-item {
+	height: 257px;
 	box-shadow: 0 0 2px rgba(0,0,0,0.1);
 	border: 1px solid #f0f0f0;
 }

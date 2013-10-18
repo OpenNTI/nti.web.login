@@ -270,8 +270,9 @@ a.tip:hover span::before {
 
 #header .code {
 /*	margin-top: -45px;*/
-	margin-top: 80px;
-	margin-right: 35px;
+/*	margin-top: 80px;
+	margin-right: 35px;*/
+	margin: 50px;
 	float: right;
 }
 
