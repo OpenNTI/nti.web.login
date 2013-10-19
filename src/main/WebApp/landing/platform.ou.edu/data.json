@@ -34,7 +34,8 @@
 
 	"upcomingCoursesWhen":"Spring 2014",
 	"upcomingCourses":[{
-		"id": "CLC3403",
+		"detailAnchor": "#CLC3403-detail",
+		"id": "CLC3403",  
 		"name": "CLC 3403",
 		"title": "Law and Justice",
 		"instructor": "Kyle Harper"
