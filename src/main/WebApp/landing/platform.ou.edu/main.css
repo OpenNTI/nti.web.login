@@ -1,14 +1,18 @@
 a.ou-btn {
 	font-size: 1.4em;
 }
-#feature-img { background: #DDD url('images/ou_landing_feature_image.jpg') no-repeat center center; }
+#feature-img { background: #DDD url('images/janux_feature.png') no-repeat center center; }
 
 .mast { position: relative; }
 
 #video {
 	position: absolute;
-	top: 65px;
-	right: 50px;
+	top: 75px;
+	left: 518px;
+}
+
+#video > :first-child  {
+	box-shadow: 0 0 3px 1px black;
 }
 
 
