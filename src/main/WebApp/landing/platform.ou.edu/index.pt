@@ -88,39 +88,30 @@
 			</div>
 
 
-			<div class="content gradient-bg">
-				<h1>Available
-				Courses <span tal:content="string: (${options/availableCoursesWhen})">(Fall 2013)</span></h1>
-				<div class="grid">
-					<div class="grid-item" id="XXX1234"
-						 tal:repeat="course options/availableCourses"
-						 tal:attributes="id course/id">
+			<div class="content gradient-bg"
+				 tal:define="grid load:./_macros.pt">
+				<h1>Available Courses <span tal:content="string: (${options/availableCoursesWhen})">(Fall 2013)</span></h1>
+				<div class="grid"
+					 tal:define="the_courses options/availableCourses"
+					 metal:use-macro="grid/macros/course-grid">
+					<div class="grid-item" id="XXX1234">
 						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image"
-							title="" style="background: #DDD url('images/courses/${course/id}.png') no-repeat center center;">
+							 title="" style="background: #DDD url('images/courses/${course/id}.png') no-repeat center center;" />
 						<div class="meta">
-							<div class="course-code" tal:content="course/name">CLC 3403</div>
-							<div class="course-name" tal:content="course/title">Law And Justice</div>
-							<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
+							<div class="course-code">CLC 3403</div>
+							<div class="course-name">Law And Justice</div>
+							<div class="course-prof">By Kyle Harper</div>
 						</div>
 					</div>
 				</div>
 
 
 				<h1>Upcoming Courses <span tal:content="string:(${options/upcomingCoursesWhen})">(Spring 2014)</span></h1>
-				<div class="grid">
-					<!--! TODO: This is exactly like the previous block; can use a macro -->
-					<div class="grid-item" id="XXX1234"
-						 tal:repeat="course options/upcomingCourses"
-						 tal:attributes="id course/id">
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image"
-							title="" style="background: #DDD url('images/courses/${course/id}.png') no-repeat center center;">
-						<div class="meta">
-							<div class="course-code" tal:content="course/name">CLC 3403</div>
-							<div class="course-name" tal:content="course/title">Law And Justice</div>
-							<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
-						</div>
-					</div>
+				<div class="grid"
+					 tal:define="the_courses options/upcomingCourses"
+					 metal:use-macro="grid/macros/course-grid">
 				</div>
+
 			</div>
 
 
