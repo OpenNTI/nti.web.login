@@ -1,9 +1,9 @@
 $(function(){
 	
 	function showPage(){
+		$('body').scrollTop(0)
 		var view = location.hash.substr(1),
 			base = $('#wrapper-all,#footer');
-		console.log(view);
 
 		$('.subpage').hide().removeClass('hidden');
 		if(view){
