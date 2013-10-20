@@ -188,7 +188,7 @@ div.subpage .course-header {
 	position: relative;
 	top: -70px;
 	height: 42px;
-	background: rgba(0,0,0,0.02);
+	background: none;
 	margin-bottom: -50px;
 }
 div.subpage > .course-header::after{display:none;}
@@ -210,7 +210,7 @@ div.subpage close {
 	float: right;
 	display: inline-block;
 	background-color: #000;
-	background-color: rgba(0,0,0,0.2);
+	background-color: rgba(0,0,0,0.9);
 	background-positoin: center center;
 	background-repeat: no-repeat;
 	width: 40px;
@@ -220,7 +220,10 @@ div.subpage close {
 }
 div.subpage next:hover,
 div.subpage previous:hover,
-div.subpage close:hover {opacity:1;}
+div.subpage close:hover {
+	background-color: rgba(0,0,0,0.2);
+	opacity:1;
+}
 
 div.subpage close {
 	background-image: url(images/ico_close.png);
@@ -240,6 +243,10 @@ div.subpage .course-introduction {
 div.subpage .promovideo {
 	min-xheight: 466px;
 	background: #ccc;
+}
+
+iframe[src~="kaltura"] {
+	margin: 0 0 -5px 0;
 }
 	
 div.subpage .course-title {

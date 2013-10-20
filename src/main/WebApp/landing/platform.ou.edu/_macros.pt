@@ -34,7 +34,8 @@
 			</div>
 			<div class="course-introduction">
 				<div class="promovideo">
-					<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/16401392/partner_id/1500101?autoembed=true&entry_id=/${course/kalturaVideo}&playerId=kaltura_player_1377036702&cache_st=1377036702&width=920&height=544&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest"></script>
+					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/15491291/partner_id/1500101?iframeembed=true&playerId=kaltura_player_1382238726&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="544" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" seamless="1"></iframe>
+					<!-- <script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/16401392/partner_id/1500101?autoembed=true&entry_id=/${course/kalturaVideo}&playerId=kaltura_player_1377036702&cache_st=1377036702&width=920&height=544&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest"></script> -->
 				</div>
 				<div class="course-title" tal:content="course/title">Introduction to Water</div>
 			</div>
@@ -49,8 +50,10 @@
 					<div class="field-row">
 						<div class="course-field-cell">
 							<div class="label">Prerequisites</div>
-							<p tal:repeat="prereq course/prerequisites"
-								tal:content="prereq/title">There are no prerequisites for this course.</p>
+							<metal:block tal:switch="not:course/prerequisites">
+							<p tal:case="False" tal:repeat="prereq course/prerequisites" tal:content="prereq/title"></p>
+							<p tal:case="True">There are no prerequisites for this course.</p>
+							</metal:block>
 						</div>
 						<div class="course-field-cell credit">
 							<div class="label">Credit Hours</div>
@@ -80,7 +83,7 @@
 							</div>
 							<div class="course-field-cell thirds">
 								<div class="label">Day &amp; Time</div>
-								<p><span>M/W/F</span><span>4:30 pm - 5:20 pm</span></p>
+								<p><span tal:content="course/schedule/days | nothing">M/W/F</span><span tal:content="course/schedule/times | nothing">4:30 pm - 5:20 pm</span></p>
 							</div>
 						</div>
 					</div>
