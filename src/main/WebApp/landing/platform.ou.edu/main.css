@@ -260,8 +260,8 @@ div.subpage .promovideo {
 	background: #ccc;
 }
 
-iframe[src~="kaltura"] {
-	margin: 0 0 -5px 0;
+iframe {
+	margin: 0 0 -5px 0 !important;
 }
 	
 div.subpage .course-title {
@@ -476,6 +476,13 @@ div.subpage .course-techsupport li {
 	-ms-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
 	backface-visibility: hidden;
+	
+	 -webkit-transform: translateZ(0);
+ 	 -moz-transform: translateZ(0);
+ 	 -ms-transform: translateZ(0);
+ 	 -o-transform: translateZ(0);
+	 transform: translateZ(0);
+	
 	
 	-webkit-animation-duration: 1s;
 /*	-webkit-animation-delay: .2s;*/
