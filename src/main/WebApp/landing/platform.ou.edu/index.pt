@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
 	<script type="text/javascript"><!--
-	//document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
+	document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
 	//-->
 	</script>
 	<title>The University of Oklahoma</title>
