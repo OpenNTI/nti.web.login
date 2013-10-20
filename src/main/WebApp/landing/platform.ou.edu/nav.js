@@ -24,7 +24,7 @@ $(function(){
 	}
 	
 	function showPage(){
-		$('body').scrollTop(0)
+		$(window).scrollTop(0);
 		var view = location.hash.substr(1),
 			base = $('#wrapper-all,#footer'),
 			direction, current, next;
