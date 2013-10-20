@@ -1,0 +1,40 @@
+{
+	"ntiid": "tag:nextthought.com,2011-10:OU-HTML-CHEM4970_Chemistry_of_Beer.course_info",
+	"id": "CHEM 4970-001",
+	"school": "Chemistry and Biochemistry",
+	"video": "kaltura://1500101/0_bxfatwxs/",
+	"title": "Chemistry of Beer",
+	"credit": [
+		{
+			"hours":1,
+			"enrollment": {
+				"label":"Enroll with Ozone.",
+				"url":"http://ozone.ou.edu/"
+			}
+		}
+	],
+	"startDate": "2014-01-15T05:00:00+00:00",
+	"duration": "16 Weeks",
+	"schedule": {
+	},
+	"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes.  During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.",
+	"prerequisites": [
+		{
+			"id":"",
+			"title":"Senior standing or instructor permission"
+		},
+		{
+			"id":"",
+			"title":"Students should have a basic knowledge of general and organic chemistry."
+		}
+	],
+	"instructors": [
+		{
+			"defaultphoto":"images/Morvant.png",
+			"username":"morv1234",
+			"name":"Mark Morvant, PhD",
+			"title": "Professor, Department of Chemistry"
+		}
+		
+	]
+}
