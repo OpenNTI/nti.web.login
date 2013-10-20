@@ -50,14 +50,11 @@
 					"url":"http://ozone.ou.edu/"
 				}
 			},
-		"startDate": "2014-01-15T05:00:00+00:00",
+		"startDate": "Jan 15, 2014",
 		"duration": "16 Weeks",
 		"schedule": {
-			"days": ["T", "R"],
-			"times": [
-				"15:00:00-05:00",
-				"16:15:00-05:00"
-			]
+			"days": "T/R",
+			"times": "2:00 pm - 3:15 pm"
 		},
 		"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
 		"prerequisites": [],
@@ -79,6 +76,7 @@
 		"detailAnchor":"#ANTH4970-detail",
 		"id": "ANTH4970",
 		"name": "ANTH 4970-995",
+		"schoolLabel": "Foobar",
 		"school": "Anthropology",
 		"kalturaVideo": "0_tnfknlac",
 		"instructor":"Cecil Lewis",
@@ -91,7 +89,7 @@
 					"url":"http://ozone.ou.edu/"
 				}
 			},
-		"startDate": "2014-01-15T05:00:00+00:00",
+		"startDate": "Jan 15, 2014",
 		"duration": "16 Weeks",
 		"schedule": {
 		},
@@ -99,7 +97,7 @@
 		"prerequisites": [],
 		"instructors": [
 			{
-				"defaultphoto":"images/Lewis.png",
+				"defaultphoto":"Lewis.png",
 				"username":"lewi1234",
 				"name":"Cecil Lewis, PhD",
 				"title": "Associate Professor of of Anthropology"
@@ -123,7 +121,7 @@
 					"url":"http://ozone.ou.edu/"
 				}
 			},
-		"startDate": "2014-01-15T05:00:00+00:00",
+		"startDate": "Jan 15, 2014",
 		"duration": "16 Weeks",
 		"schedule": {
 		},
