@@ -34,7 +34,7 @@
 
 	"upcomingCoursesWhen":"Spring 2014",
 	"upcomingCourses":[{
-		"detailAnchor":"ANTH1613-detail",
+		"detailAnchor":"#ANTH1613-detail",
 		"id": "ANTH1613",
 		"name": "ANTH 1613-001",
 		"school": "Anthropology",
@@ -76,7 +76,7 @@
 			}
 		]
 	},{
-		"detailAnchor":"ANTH4970-detail",
+		"detailAnchor":"#ANTH4970-detail",
 		"id": "ANTH4970",
 		"name": "ANTH 4970-995",
 		"school": "Anthropology",
