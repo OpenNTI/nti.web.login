@@ -58,7 +58,7 @@
 						<div class="course-field-cell credit">
 							<div class="label">Credit Hours</div>
 							<p><span tal:content="course/credit/hours">1</span> credit hour available for OU students.</p>
-							<a href="http://ozone.ou.edu/">Enroll on Ozone.</a>
+							<a href="http://ozone.ou.edu/" target="_blank">Enroll on Ozone.</a>
 						</div>
 					</div>
 					<div class="field-row">
@@ -107,9 +107,9 @@
 				<div class="course-faq">
 					<div class="label">Frequently Asked Questions</div>
 					<h4>Will I get credit for taking an Open Course?</h4>
-					<p>Credit is currently not offered for Open Course. Currently University of Oklahoma students may receive college credit for these courses by <a href="#">enrolling for the courses with Ozone.</a></p>
+					<p>Credit is currently not offered for Open Course. Currently University of Oklahoma students may receive college credit for these courses by <a href="http://ozone.ou.edu" target="_blank">enrolling for the courses with Ozone.</a></p>
 					<h4>What if I'm the smartest person in the class?</h4>
-					<p>You still won't get credit. <a href="http://ozone.ou.edu/">Enroll for the courses with Ozone to receive credit.</a></p>
+					<p>You still won't get credit. <a href="http://ozone.ou.edu/" target="_blank">Enroll for the courses with Ozone to receive credit.</a></p>
 					<h4>If I enrolled for the course through Ozone, do I still have to attend class?</h4>
 					<p>Yes, regular university attendance policies apply for OU courses unless marked "Online Only".</p>
 				</div>
@@ -120,9 +120,9 @@
 					 <div class="label">Tech Support</div>
 					 <ul>
 						 <li>(405) 325-HELP</li>
-						 <li><a href="#">Submit Request</a></li>
+						 <li><a href="http://www.ou.edu/content/ouit/help/ticket.html" target="_blank">Submit Request</a></li>
 						 <li><a href="mailto:platformhelp@ou.edu">platformhelp@ou.edu</a></li>
-						 <li><a href="#">Service Centers</a></li>
+						 <li><a href="http://www.ou.edu/content/ouit/help/personal.html" target="_blank">Service Centers</a></li>
 					 </ul>
 				 </div>
 			</div>
