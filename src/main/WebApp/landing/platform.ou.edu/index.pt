@@ -16,6 +16,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" type="text/css" href="../../resources/fonts/fonts.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 
 	<!-- This is the stylesheet is OU specific style -->
@@ -31,7 +32,7 @@
 	<link rel="stylesheet" type="text/css" href="main.css" />
 </head>
 
-<body>
+<body tal:define="courses load:./_macros.pt">
 <div id="wrapper-all"><div class="wrapper" id="container">
 	<div class="globalheader">
 	 <div class="wrapper">
@@ -84,13 +85,12 @@
 			</div>
 
 
-			<div class="content gradient-bg"
-				 tal:define="grid load:./_macros.pt">
+			<div class="content gradient-bg">
 				<h1>Available Courses <span tal:content="string: (${options/availableCoursesWhen})">(Fall 2013)</span></h1>
 				<div class="grid"
 					 tal:define="the_courses options/availableCourses"
-					 metal:use-macro="grid/macros/course-grid">
-					<div class="grid-item" id="XXX1234">
+					 metal:use-macro="courses/macros/course-grid">
+					<a class="grid-item" id="XXX1234">
 						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image"
 							 title="" style="background: #DDD url('images/courses/${course/id}.png') no-repeat center center;" />
 						<div class="meta">
@@ -98,14 +98,14 @@
 							<div class="course-name">Law And Justice</div>
 							<div class="course-prof">By Kyle Harper</div>
 						</div>
-					</div>
+					</a>
 				</div>
 
 
 				<h1>Upcoming Courses <span tal:content="string:(${options/upcomingCoursesWhen})">(Spring 2014)</span></h1>
 				<div class="grid"
 					 tal:define="the_courses options/upcomingCourses"
-					 metal:use-macro="grid/macros/course-grid">
+					 metal:use-macro="courses/macros/course-grid">
 				</div>
 
 			</div>
@@ -170,6 +170,11 @@
 		</div>
 	</div>
 </div>
+
+<div tal:define="the_courses options/upcomingCourses"
+	metal:use-macro="courses/macros/course-details"></div>
+
+	<script type="text/javascript" src="nav.js"></script>
 <!--[analytics code here]-->
 </body>
 </html>
