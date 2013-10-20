@@ -5,13 +5,14 @@ $(function(){
 		var c = $(this),
 			pr = c.next(),
 			p = c.parent();
-
-		if (!pr.length) {
-			c.appendTo(p);
-		} else {
-			c.insertBefore(pr);
-		}
-
+		
+		setTimeout(function(){
+			if (!pr.length) {
+				c.appendTo(p);
+			} else {
+				c.insertBefore(pr);
+			}
+		},1250);
 	}
 	
 	function delayedRemove(jQ,name,hide){
@@ -29,7 +30,7 @@ $(function(){
 			base = $('#wrapper-all,#footer'),
 			direction, current, next;
 
-		$('.subpage:visible iframe').each(stopVideosHack);
+		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
 
 		if(view){
