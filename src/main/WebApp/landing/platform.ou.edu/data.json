@@ -1,544 +1,544 @@
 {
 	"availableCourses": [
 		{
-			"id": "CLC3403", 
-			"instructor": "Kyle Harper", 
-			"name": "CLC 3403", 
+			"id": "CLC3403",
+			"instructor": "Kyle Harper",
+			"name": "CLC 3403",
 			"title": "Law and Justice"
-		}, 
+		},
 		{
-			"id": "CHEM1315", 
-			"instructor": "Mark Morvant", 
-			"name": "CHEM 1315", 
+			"id": "CHEM1315",
+			"instructor": "Mark Morvant",
+			"name": "CHEM 1315",
 			"title": "General Chemistry"
-		}, 
+		},
 		{
-			"id": "METR2603", 
-			"instructor": "Susan E Postawko", 
-			"name": "METR 2603", 
+			"id": "METR2603",
+			"instructor": "Susan E. Postawko",
+			"name": "METR 2603",
 			"title": "Severe and Unusual Weather"
-		}, 
+		},
 		{
-			"id": "IAS2003", 
-			"instructor": "Suzette Grillot", 
-			"name": "IAS 2003", 
+			"id": "IAS2003",
+			"instructor": "Suzette Grillot",
+			"name": "IAS 2003",
 			"title": "Understanding the Global Community"
-		}, 
+		},
 		{
-			"id": "PHIL1203", 
-			"instructor": "Neal Judisch", 
-			"name": "PHIL 1203", 
+			"id": "PHIL1203",
+			"instructor": "Neal Judisch",
+			"name": "PHIL 1203",
 			"title": "Philosophy and Human Destiny, East and West"
-		}, 
+		},
 		{
-			"id": "SOC3123", 
-			"instructor": "B. Mitch Peck", 
-			"name": "SOC 3123", 
+			"id": "SOC3123",
+			"instructor": "B. Mitch Peck",
+			"name": "SOC 3123",
 			"title": "Social Statistics"
 		}
-	], 
-	"availableCoursesWhen": "Fall 2013", 
+	],
+	"availableCoursesWhen": "Fall 2013",
 	"upcomingCourses": [
 		{
 			"credit": {
 				"enrollment": {
-					"label": "Enroll with Ozone.", 
+					"label": "Enroll with Ozone.",
 					"url": "http://ozone.ou.edu/"
-				}, 
+				},
 				"hours": 3
-			}, 
-			"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.", 
-			"detailAnchor": "#ANTH1613-detail", 
-			"duration": "16 Weeks", 
-			"id": "ANTH1613", 
-			"instructor": "Dan Swan &amp; Joshua Nelson", 
+			},
+			"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
+			"detailAnchor": "#ANTH1613-detail",
+			"duration": "16 Weeks",
+			"id": "ANTH1613",
+			"instructor": "Dan Swan & Joshua Nelson",
 			"instructors": [
 				{
-					"defaultphoto": "Swan.png", 
-					"name": "Dan Swan, PhD", 
-					"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History", 
+					"defaultphoto": "Swan.png",
+					"name": "Dan Swan, PhD",
+					"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History",
 					"username": "swan1234"
-				}, 
+				},
 				{
-					"defaultphoto": "Nelson.png", 
-					"name": "Joshua Nelson, PhD", 
-					"title": "Assistant Professor of English", 
+					"defaultphoto": "Nelson.png",
+					"name": "Joshua Nelson, PhD",
+					"title": "Assistant Professor of English",
 					"username": "nels1234"
 				}
-			], 
-			"kalturaVideo": "0_2ri5g355", 
-			"name": "ANTH 1613-001", 
-			"prerequisites": [], 
+			],
+			"kalturaVideo": "0_2ri5g355",
+			"name": "ANTH 1613-001",
+			"prerequisites": [],
 			"schedule": {
-				"days": "T/R", 
+				"days": "T/R",
 				"times": "2:00 pm - 3:15 pm"
-			}, 
-			"school": "Anthropology", 
-			"startDate": "January 13, 2014", 
-			"title": "Native Peoples of Oklahoma", 
+			},
+			"school": "Anthropology",
+			"startDate": "January 13, 2014",
+			"title": "Native Peoples of Oklahoma",
 			"video": "kaltura://1500101/0_2ri5g355/"
-		}, 
+		},
 		{
 			"credit": {
 				"enrollment": {
-					"label": "Enroll with Ozone.", 
+					"label": "Enroll with Ozone.",
 					"url": "http://ozone.ou.edu/"
-				}, 
+				},
 				"hours": 1
-			}, 
-			"description": "This course will describe the pattern of human genetic variation within and between populations, and to provide an explanation for how this pattern emerged. Nothing about this explanation makes sense except in light of evolution. In essence, this is an introductory Human Genetics class. The first half of the course provides an introduction to genetics evolution theory concepts.  The second half of the course places greater emphasis on the origins of the current pattern of human genetic diversity. This includes the evolution of disease associated genetic variation.", 
-			"detailAnchor": "#ANTH4970-detail", 
-			"duration": "16 Weeks", 
-			"id": "ANTH4970", 
-			"instructor": "Cecil Lewis", 
+			},
+			"description": "This course will describe the pattern of human genetic variation within and between populations, and to provide an explanation for how this pattern emerged. Nothing about this explanation makes sense except in light of evolution. In essence, this is an introductory Human Genetics class. The first half of the course provides an introduction to genetics evolution theory concepts.  The second half of the course places greater emphasis on the origins of the current pattern of human genetic diversity. This includes the evolution of disease associated genetic variation.",
+			"detailAnchor": "#ANTH4970-detail",
+			"duration": "16 Weeks",
+			"id": "ANTH4970",
+			"instructor": "Cecil Lewis",
 			"instructors": [
 				{
-					"defaultphoto": "Lewis.png", 
-					"name": "Cecil Lewis, PhD", 
-					"title": "Associate Professor of of Anthropology", 
+					"defaultphoto": "Lewis.png",
+					"name": "Cecil Lewis, PhD",
+					"title": "Associate Professor of of Anthropology",
 					"username": "lewi1234"
 				}
-			], 
-			"kalturaVideo": "0_tnfknlac", 
-			"name": "ANTH 4970-995", 
+			],
+			"kalturaVideo": "0_tnfknlac",
+			"name": "ANTH 4970-995",
 			"prerequisites": [
 				{
-					"id": "", 
-					"title": "Senior standing or instructor permission"
-				} 
-			], 
-			"schedule": {
-				"days": "Fully Online"
-			}, 
-			"school": "Anthropology", 
-			"startDate": "January 13, 2014", 
-			"title": "Practical Importance of Human Evolution"
-		}, 
-		{
-			"credit": {
-					"enrollment": {
-						"label": "Enroll with Ozone.", 
-						"url": "http://ozone.ou.edu/"
-					}, 
-					"hours": 1
-				},
-				"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.", 
-			"detailAnchor": "#CHEM4970-detail", 
-			"duration": "16 Weeks", 
-			"id": "CHEM4970", 
-			"instructor": "Mark Morvant", 
-			"instructors": [
-				{
-					"defaultphoto": "Morvant.png", 
-					"name": "Mark Morvant, PhD", 
-					"title": "Professor, Department of Chemistry", 
-					"username": "morv1234"
-				}
-			], 
-			"kalturaVideo": "0_bxfatwxs", 
-			"name": "CHEM 4970-001", 
-			"prerequisites": [
-				{
-					"id": "", 
-					"title": "Senior standing or instructor permission"
-				} 
-			], 
-			"schedule": {
-				"days": "Fully Online"
-			}, 
-			"school": "Chemistry and Biochemistry", 
-			"startDate": "January 13, 2014", 
-			"title": "Chemistry of Beer", 
-			"video": "kaltura://1500101/0_bxfatwxs/"
-		}, 
-		{
-			"credit": {
-				"enrollment": {
-					"label": "Enroll with Ozone.", 
-					"url": "http://ozone.ou.edu/"
-				}, 
-				"hours": 1
-			}, 
-			"description": "This course is an interdisciplinary study of the methods of human deception detection from the perspectives of law enforcement, national security and intelligence analysis, criminal justice, psychology, sociology, and communication. &nbsp;How to accurately determine when someone is lying is a multi-disciplinary problem and requires a variety of technological and data analytic solutions. Our primary goal will be to comprehend a representative picture of the traditional and contemporary theory regarding the intersection of communication, cognition, and emotion in deception detection. This is a fully online course that will require interaction in the digital platform with the Professor and other students.", 
-			"detailAnchor": "#COMM4970-detail", 
-			"duration": "16 Weeks", 
-			"id": "COMM4970", 
-			"instructor": "Norah Dunbar", 
-			"instructors": [
-				{
-					"defaultphoto": "Dunbar.png", 
-					"name": "Norah Dunbar, PhD", 
-					"title": "Associate Professor, Department of Communication", 
-					"username": "dunb1234"
-				}
-			], 
-			"kalturaVideo": "0_9f8ist32", 
-			"name": "COMM 4970", 
-			"prerequisites": [
-				{
-					"id": "", 
+					"id": "",
 					"title": "Senior standing or instructor permission"
 				}
-			], 
-			"schedule": {
-				"days": "Fully Online"
-			},  
-			"school": "Communication", 
-			"startDate": "January 13, 2014", 
-			"title": "Understanding and Detecting Deception", 
-			"video": "kaltura://1500101/0_9f8ist32/"
-		}, 
-		{
-			"credit": {
-				"enrollment": {
-					"label": "Enroll with Ozone.", 
-					"url": "http://ozone.ou.edu/"
-				}, 
-				"hours": 1
-			}, 
-			"description": "This course is intended for people who have no experience in computer science but would like to learn more about how computers work and how they can control them. It is designed to introduce learners to the power and elegance of computational thinking. You will learn basic computational principles and will have the opportunity to put them into practice. Computers and technology are driving phenomenal change in this world. This course will give you the power to help drive that change.", 
-			"detailAnchor": "#CS1300-detail", 
-			"duration": "16 Weeks", 
-			"id": "CS1300", 
-			"instructor": "Amy McGovern", 
-			"instructors": [
-				{
-					"defaultphoto": "McGovern.png", 
-					"name": "Amy McGovern, PhD", 
-					"title": "Associate Professor, School of Computer Science", 
-					"username": "mcgo1234"
-				}
-			], 
-			"kalturaVideo": "0_m5kjoas1", 
-			"name": "CS 1300", 
-			"prerequisites": [
-				{
-					"id": "", 
-					"title": "There are no prerequisites for this course."
-				}, 
-				{
-					"id": "", 
-					"title": "No prior programming experience is assumed."
-				}
-			], 
+			],
 			"schedule": {
 				"days": "Fully Online"
 			},
-			"school": "Computer Science", 
-			"startDate": "January 13, 2014", 
-			"title": "Power and Elegance of Computational Thinking", 
-			"video": "kaltura://1500101/0_m5kjoas1/"
-		}, 
+			"school": "Anthropology",
+			"startDate": "January 13, 2014",
+			"title": "Practical Importance of Human Evolution"
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
-					"hours": 3
+					},
+					"hours": 1
 				},
-				"description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a.) analyze a problem, and identify and define the computing requirements appropriate to its solution b.) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c.) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).", 
-			"detailAnchor": "#CS1323-detail", 
-			"duration": "16 Weeks", 
-			"id": "CS1323", 
-			"instructor": "Deborah Trytten", 
+				"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+			"detailAnchor": "#CHEM4970-detail",
+			"duration": "16 Weeks",
+			"id": "CHEM4970",
+			"instructor": "Mark Morvant",
 			"instructors": [
 				{
-					"defaultphoto": "Trytten.png", 
-					"name": "Deborah Trytten, PhD", 
-					"title": "Associate Professor, School of Computer Science", 
+					"defaultphoto": "Morvant.png",
+					"name": "Mark Morvant, PhD",
+					"title": "Professor, Department of Chemistry",
+					"username": "morv1234"
+				}
+			],
+			"kalturaVideo": "0_bxfatwxs",
+			"name": "CHEM 4970-001",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Fully Online"
+			},
+			"school": "Chemistry and Biochemistry",
+			"startDate": "January 13, 2014",
+			"title": "Chemistry of Beer",
+			"video": "kaltura://1500101/0_bxfatwxs/"
+		},
+		{
+			"credit": {
+				"enrollment": {
+					"label": "Enroll with Ozone.",
+					"url": "http://ozone.ou.edu/"
+				},
+				"hours": 1
+			},
+			"description": "This course is an interdisciplinary study of the methods of human deception detection from the perspectives of law enforcement, national security and intelligence analysis, criminal justice, psychology, sociology, and communication. &nbsp;How to accurately determine when someone is lying is a multi-disciplinary problem and requires a variety of technological and data analytic solutions. Our primary goal will be to comprehend a representative picture of the traditional and contemporary theory regarding the intersection of communication, cognition, and emotion in deception detection. This is a fully online course that will require interaction in the digital platform with the Professor and other students.",
+			"detailAnchor": "#COMM4970-detail",
+			"duration": "16 Weeks",
+			"id": "COMM4970",
+			"instructor": "Norah Dunbar",
+			"instructors": [
+				{
+					"defaultphoto": "Dunbar.png",
+					"name": "Norah Dunbar, PhD",
+					"title": "Associate Professor, Department of Communication",
+					"username": "dunb1234"
+				}
+			],
+			"kalturaVideo": "0_9f8ist32",
+			"name": "COMM 4970-995",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Fully Online"
+			},
+			"school": "Communication",
+			"startDate": "January 13, 2014",
+			"title": "Understanding and Detecting Deception",
+			"video": "kaltura://1500101/0_9f8ist32/"
+		},
+		{
+			"credit": {
+				"enrollment": {
+					"label": "Enroll with Ozone.",
+					"url": "http://ozone.ou.edu/"
+				},
+				"hours": 1
+			},
+			"description": "This course is intended for people who have no experience in computer science but would like to learn more about how computers work and how they can control them. It is designed to introduce learners to the power and elegance of computational thinking. You will learn basic computational principles and will have the opportunity to put them into practice. Computers and technology are driving phenomenal change in this world. This course will give you the power to help drive that change.",
+			"detailAnchor": "#CS1300-detail",
+			"duration": "16 Weeks",
+			"id": "CS1300",
+			"instructor": "Amy McGovern",
+			"instructors": [
+				{
+					"defaultphoto": "McGovern.png",
+					"name": "Amy McGovern, PhD",
+					"title": "Associate Professor, School of Computer Science",
+					"username": "mcgo1234"
+				}
+			],
+			"kalturaVideo": "0_m5kjoas1",
+			"name": "CS 1300",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "There are no prerequisites for this course."
+				},
+				{
+					"id": "",
+					"title": "No prior programming experience is assumed."
+				}
+			],
+			"schedule": {
+				"days": "Fully Online"
+			},
+			"school": "Computer Science",
+			"startDate": "January 13, 2014",
+			"title": "Power and Elegance of Computational Thinking",
+			"video": "kaltura://1500101/0_m5kjoas1/"
+		},
+		{
+			"credit": {
+					"enrollment": {
+						"label": "Enroll with Ozone.",
+						"url": "http://ozone.ou.edu/"
+					},
+					"hours": 3
+				},
+				"description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a.) analyze a problem, and identify and define the computing requirements appropriate to its solution b.) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c.) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
+			"detailAnchor": "#CS1323-detail",
+			"duration": "16 Weeks",
+			"id": "CS1323",
+			"instructor": "Deborah Trytten",
+			"instructors": [
+				{
+					"defaultphoto": "Trytten.png",
+					"name": "Deborah Trytten, PhD",
+					"title": "Associate Professor, School of Computer Science",
 					"username": "tryt1234"
 				}
-			], 
-			"kalturaVideo": "0_aqksto2u", 
-			"name": "CS 1323-010", 
+			],
+			"kalturaVideo": "0_aqksto2u",
+			"name": "CS 1323-010",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "No prior programming experience is assumed."
-				}, 
+				},
 				{
-					"id": "", 
+					"id": "",
 					"title": "MATH 1523 or concurrent enrollment"
-				}, 
+				},
 				{
-					"id": "", 
+					"id": "",
 					"title": "placement into MATH 1743 or MATH 1823 or higher"
 				}
-			], 
+			],
 			"schedule": {
-				"days": "M/W/F", 
+				"days": "M/W/F",
 				"times": "1:30 pm - 2:20 pm"
-			}, 
-			"school": "Computer Science", 
-			"startDate": "January 13, 2014", 
-			"title": "Introduction to Computer Programming", 
+			},
+			"school": "Computer Science",
+			"startDate": "January 13, 2014",
+			"title": "Introduction to Computer Programming",
 			"video": "kaltura://1500101/0_aqksto2u/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 3
 				},
-				"description": "This course focuses on the organization and administration of adult and higher education from legislative, legal, structural-functional, power, political, bureaucratic, and social perspectives. Topics covered include: governance, central office organization, administrative position analysis, faculty organization, faculty participation in policy formation and decision making, academic freedom, goals analysis, budgetary policies and methods, and decision strategies in handling a representative set of administrative problems presented in a variety of formats.", 
-			"detailAnchor": "#EDAH5023-detail", 
-			"duration": "16 Weeks", 
-			"id": "EDAH5023", 
-			"instructor": "Stephanie Blackmon", 
+				"description": "This course focuses on the organization and administration of adult and higher education from legislative, legal, structural-functional, power, political, bureaucratic, and social perspectives. Topics covered include: governance, central office organization, administrative position analysis, faculty organization, faculty participation in policy formation and decision making, academic freedom, goals analysis, budgetary policies and methods, and decision strategies in handling a representative set of administrative problems presented in a variety of formats.",
+			"detailAnchor": "#EDAH5023-detail",
+			"duration": "16 Weeks",
+			"id": "EDAH5023",
+			"instructor": "Stephanie Blackmon",
 			"instructors": [
 				{
-					"defaultphoto": "Blackmon.png", 
-					"name": "Stephanie Blackmon, PhD", 
-					"title": "Assistant Professor, Adult & Higher Education", 
+					"defaultphoto": "Blackmon.png",
+					"name": "Stephanie Blackmon, PhD",
+					"title": "Assistant Professor, Adult & Higher Education",
 					"username": "blac1234"
 				}
-			], 
-			"kalturaVideo": "0_3usiqhgr", 
-			"name": "EDAH 5023-902", 
+			],
+			"kalturaVideo": "0_3usiqhgr",
+			"name": "EDAH 5023-902",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "Graduate Standing"
 				}
-			], 
+			],
 			"schedule": {
-				"days": "M", 
+				"days": "M",
 				"times": "7:15 pm - 9:55 pm"
-			}, 
-			"school": "Educational Leadership and Policy Studies", 
-			"startDate": "January 13, 2014", 
-			"title": "Administration of Adult and Higher Education", 
+			},
+			"school": "Educational Leadership and Policy Studies",
+			"startDate": "January 13, 2014",
+			"title": "Administration of Adult and Higher Education",
 			"video": "kaltura://1500101/0_3usiqhgr/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 1
 				},
-			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u201cWater Technologies for Emerging Regions\u201d). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.", 
-			"detailAnchor": "#ENGR1510-detail", 
-			"duration": "16 Weeks", 
-			"id": "ENGR1510", 
-			"instructor": "David Sabtini &amp; Jim Chamberlain", 
+			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u201cWater Technologies for Emerging Regions\u201d). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
+			"detailAnchor": "#ENGR1510-detail",
+			"duration": "16 Weeks",
+			"id": "ENGR1510",
+			"instructor": "David Sabtini & Jim Chamberlain",
 			"instructors": [
 				{
-					"defaultphoto": "Sabatini.png", 
-					"name": "David Sabatini, PhD", 
-					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineer & Environmental Science", 
+					"defaultphoto": "Sabatini.png",
+					"name": "David Sabatini, PhD",
+					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineer & Environmental Science",
 					"username": "saba1234"
-				}, 
+				},
 				{
-					"defaultphoto": "Chamberlain.png", 
-					"name": "Jim Chamberlain, PhD", 
-					"title": "OU WaTER Center Staff Researcher", 
+					"defaultphoto": "Chamberlain.png",
+					"name": "Jim Chamberlain, PhD",
+					"title": "OU WaTER Center Staff Researcher",
 					"username": "cham1234"
 				}
-			], 
-			"kalturaVideo": "0_6d00mec6", 
-			"name": "ENGR 1510-901", 
-			"prerequisites": [], 
+			],
+			"kalturaVideo": "0_6d00mec6",
+			"name": "ENGR 1510-901",
+			"prerequisites": [],
 			"schedule": {
-				"days": "W", 
+				"days": "W",
 				"times": "4:30 pm - 5:20 pm"
-			}, 
-			"school": "Civil Engineering and Environmental Sceince", 
-			"startDate": "January 13, 2014", 
-			"title": "Introduction to Water", 
+			},
+			"school": "Civil Engineering and Environmental Sceince",
+			"startDate": "January 13, 2014",
+			"title": "Introduction to Water",
 			"video": "kaltura://1500101/0_6d00mec6/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 1
 				},
-				"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up to date policies and new directions in sustainable development of oil and gas resources.", 
-			"detailAnchor": "#GEOG3890-detail", 
-			"duration": "16 Weeks", 
-			"id": "GEOG3890", 
-			"instructor": "Bob Puls", 
+				"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up to date policies and new directions in sustainable development of oil and gas resources.",
+			"detailAnchor": "#GEOG3890-detail",
+			"duration": "16 Weeks",
+			"id": "GEOG3890",
+			"instructor": "Bob Puls",
 			"instructors": [
 				{
-					"defaultphoto": "Puls.png", 
-					"name": "Bob Puls, PhD", 
-					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey", 
+					"defaultphoto": "Puls.png",
+					"name": "Bob Puls, PhD",
+					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey",
 					"username": "puls1234"
 				}
-			], 
-			"kalturaVideo": "0_i3etssfy", 
-			"name": "GEOG 3890-995", 
+			],
+			"kalturaVideo": "0_i3etssfy",
+			"name": "GEOG 3890-995",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "Junior standing or instructor permission"
-				} 
-			], 
+				}
+			],
 			"schedule": {
 				"days": "Fully Online"
-			}, 
-			"school": "Geology", 
-			"startDate": "January 13, 2014", 
-			"title": "Hydraulic Fracturing and Water Resources", 
+			},
+			"school": "Geology",
+			"startDate": "January 13, 2014",
+			"title": "Hydraulic Fracturing and Water Resources",
 			"video": "kaltura://1500101/0_i3etssfy/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 3
 				},
-			"description": "This course is an introduction to the basic principles of geology and is a general education course for science and engineering majors.  It serves both as an introduction for those planning to continue in geology and as a comprehensive overview of geology for students in other fields. This course will also emphasize the social, economic, and political implications of geology processes.  Students will complete this course using online resources and activities as well as in class activities.", 
-			"detailAnchor": "#GEOL1114-detail", 
-			"duration": "16 Weeks", 
-			"id": "GEOL1114", 
-			"instructor": "R. Douglas Elmore", 
+			"description": "This course is an introduction to the basic principles of geology and is a general education course for science and engineering majors.  It serves both as an introduction for those planning to continue in geology and as a comprehensive overview of geology for students in other fields. This course will also emphasize the social, economic, and political implications of geology processes.  Students will complete this course using online resources and activities as well as in class activities.",
+			"detailAnchor": "#GEOL1114-detail",
+			"duration": "16 Weeks",
+			"id": "GEOL1114",
+			"instructor": "R. Douglas Elmore",
 			"instructors": [
 				{
-					"defaultphoto": "Elmore.png", 
-					"name": "R. Douglas Elmore, PhD", 
-					"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost", 
+					"defaultphoto": "Elmore.png",
+					"name": "R. Douglas Elmore, PhD",
+					"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost",
 					"username": "elmo1234"
 				}
-			], 
-			"kalturaVideo": "0_jmp4h8fw", 
-			"name": "GEOL 1114-050", 
+			],
+			"kalturaVideo": "0_jmp4h8fw",
+			"name": "GEOL 1114-050",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "equivalent knowledge of high school chemistry, algebra and trigonometry"
 				}
-			], 
+			],
 			"schedule": {
-				"days": "M/W", 
+				"days": "M/W",
 				"times": "10:30 am - 11:45 am"
-			}, 
-			"school": "ConocoPhillips School of Geology and Geophysics", 
-			"startDate": "January 13, 2014", 
-			"title": "Physical Geology for Science and Engineering Majors", 
+			},
+			"school": "ConocoPhillips School of Geology and Geophysics",
+			"startDate": "January 13, 2014",
+			"title": "Physical Geology for Science and Engineering Majors",
 			"video": "kaltura://1500101/0_jmp4h8fw/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 3
 				},
-				"description": "In this course we will trace the development of science in diverse cultural contexts from antiquity to early modern times. We will explore the growth and interaction of a wide variety of subject areas in science, including astronomy, biology, chemistry, geology, meteorology, mathematics, medicine and technology. We will seek to understand how scientific discoveries and methods were rooted in specific geographical, artistic, literary, philosophical, religious and political traditions. We will ponder how they were transmitted across cultures as diverse as the ancient empires of Mesopotamia, Greece and Rome, the civilizations of India, China, and the Islamic Middle East, as well as in medieval and Renaissance Europe. The connections we identify between science and culture in pre-modern eras will throw light upon the nature of science and society today.", 
-			"detailAnchor": "#HSCI3013-detail", 
-			"duration": "16 Weeks", 
-			"id": "HSCI3013", 
-			"instructor": "Kerry Magruder", 
+				"description": "In this course we will trace the development of science in diverse cultural contexts from antiquity to early modern times. We will explore the growth and interaction of a wide variety of subject areas in science, including astronomy, biology, chemistry, geology, meteorology, mathematics, medicine and technology. We will seek to understand how scientific discoveries and methods were rooted in specific geographical, artistic, literary, philosophical, religious and political traditions. We will ponder how they were transmitted across cultures as diverse as the ancient empires of Mesopotamia, Greece and Rome, the civilizations of India, China, and the Islamic Middle East, as well as in medieval and Renaissance Europe. The connections we identify between science and culture in pre-modern eras will throw light upon the nature of science and society today.",
+			"detailAnchor": "#HSCI3013-detail",
+			"duration": "16 Weeks",
+			"id": "HSCI3013",
+			"instructor": "Kerry Magruder",
 			"instructors": [
 				{
-					"defaultphoto": "Magruder.png", 
-					"name": "Kerry Magruder, PhD", 
-					"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections ", 
+					"defaultphoto": "Magruder.png",
+					"name": "Kerry Magruder, PhD",
+					"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections ",
 					"username": "magr1234"
 				}
-			], 
-			"kalturaVideo": "0_75znedfu", 
-			"name": "HSCI 3013-995", 
+			],
+			"kalturaVideo": "0_75znedfu",
+			"name": "HSCI 3013-995",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "junior standing, or completion of one History of Science lower-division course, or permission of instructor"
 				}
-			], 
+			],
 			"schedule": {
 				"days": "Fully Online"
-			}, 
-			"school": "History of Science", 
-			"startDate": "January 13, 2014", 
-			"title": "History of Science to the Age of Newton", 
+			},
+			"school": "History of Science",
+			"startDate": "January 13, 2014",
+			"title": "History of Science to the Age of Newton",
 			"video": "kaltura://1500101/0_75znedfu/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 3
 				},
-				"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.", 
-			"detailAnchor": "#PSC4283-detail", 
-			"duration": "16 Weeks", 
-			"id": "PSC4283", 
-			"instructor": "Justin Wert", 
+				"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
+			"detailAnchor": "#PSC4283-detail",
+			"duration": "16 Weeks",
+			"id": "PSC4283",
+			"instructor": "Justin Wert",
 			"instructors": [
 				{
-					"defaultphoto": "Wert.png", 
-					"name": "Justin Wert, PhD", 
-					"title": "Associate Professor of Political Science", 
+					"defaultphoto": "Wert.png",
+					"name": "Justin Wert, PhD",
+					"title": "Associate Professor of Political Science",
 					"username": "elmo1234"
 				}
-			], 
-			"kalturaVideo": "0_459iw3fc", 
-			"name": "P SC 4283-001", 
+			],
+			"kalturaVideo": "0_459iw3fc",
+			"name": "P SC 4283-001",
 			"prerequisites": [
 				{
-					"id": "", 
+					"id": "",
 					"title": "P SC 1113"
-				}, 
+				},
 				{
-					"id": "", 
+					"id": "",
 					"title": "permission of instructor."
 				}
-			], 
+			],
 			"schedule": {
 				"days": "M/W",
 				"times": "3:00 pm - 4:15 pm"
-			}, 
-			"school": "Poltical Science", 
-			"startDate": "January 13, 2014", 
-			"title": "Civil Rights and Civil Liberties", 
+			},
+			"school": "Poltical Science",
+			"startDate": "January 13, 2014",
+			"title": "Civil Rights and Civil Liberties",
 			"video": "kaltura://1500101/0_459iw3fc/"
-		}, 
+		},
 		{
 			"credit": {
 					"enrollment": {
-						"label": "Enroll with Ozone.", 
+						"label": "Enroll with Ozone.",
 						"url": "http://ozone.ou.edu/"
-					}, 
+					},
 					"hours": 3
 				},
-				"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of somo of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.", 
-			"detailAnchor": "#SOC1113-detail", 
-			"duration": "16 Weeks", 
-			"id": "SOC1113", 
-			"instructor": "Kelly Damphousse", 
+				"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of somo of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
+			"detailAnchor": "#SOC1113-detail",
+			"duration": "16 Weeks",
+			"id": "SOC1113",
+			"instructor": "Kelly Damphousse",
 			"instructors": [
 				{
-					"defaultphoto": "Damphousse.png", 
-					"name": "Kelly Damphousse, PhD", 
-					"title": "Interim Dean, College of Arts and Sciences", 
+					"defaultphoto": "Damphousse.png",
+					"name": "Kelly Damphousse, PhD",
+					"title": "Interim Dean, College of Arts and Sciences",
 					"username": "damp1234"
 				}
-			], 
-			"kalturaVideo": "0_4ol5o04l", 
-			"name": "SOC 1113-001", 
-			"prerequisites": [], 
+			],
+			"kalturaVideo": "0_4ol5o04l",
+			"name": "SOC 1113-001",
+			"prerequisites": [],
 			"schedule": {
-				"days": "T", 
+				"days": "T",
 				"times": "10:30 am - 11:45 am"
-			}, 
-			"school": "Sociology", 
-			"startDate": "January 13, 2014", 
-			"title": "Introduction to Sociology", 
+			},
+			"school": "Sociology",
+			"startDate": "January 13, 2014",
+			"title": "Introduction to Sociology",
 			"video": "kaltura://1500101/0_4ol5o04l/"
 		}
-	], 
+	],
 	"upcomingCoursesWhen": "January 2014"
 }
