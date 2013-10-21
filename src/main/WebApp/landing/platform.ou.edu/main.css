@@ -180,7 +180,8 @@ div.subpage > * {
 	color: #494949;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 }
-div.subpage > *::after {
+
+.pointer-events div.subpage > *::after {
 	content: '';
 	position: absolute;
 	pointer-events: none;
