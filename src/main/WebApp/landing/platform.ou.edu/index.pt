@@ -140,33 +140,33 @@
 			<img alt="OU" src="images/footerlogo.png">
 		</div>
 		<div class="footerColumn address">
-			<a href="http://www.ou.edu/">The University of Oklahoma</a><br/>
+			<a href="http://www.ou.edu/" target="_blank">The University of Oklahoma</a><br/>
 			660 Parrington Oval,<br/>
 			Norman, OK 73019-0390<br/>
 			(405) 325-0311
 		</div>
 		<div class="footerColumn links">
 			<ul>
-				<li><a href="http://www.ou.edu/publicaffairs/WebPolicies/accessstatement.html">Accessibility</a></li>
-				<li><a href="http://www.ou.edu/green/">Sustainability</a></li>
-				<li><a href="http://ouhsc.edu/hipaa/">HIPPA</a></li>
-				<li><a href="http://www.hr.ou.edu/employment/">OU Job Search</a></li>
+				<li><a href="http://www.ou.edu/publicaffairs/WebPolicies/accessstatement.html" target="_blank">Accessibility</a></li>
+				<li><a href="http://www.ou.edu/green/" target="_blank">Sustainability</a></li>
+				<li><a href="http://ouhsc.edu/hipaa/" target="_blank">HIPPA</a></li>
+				<li><a href="http://www.hr.ou.edu/employment/" target="_blank">OU Job Search</a></li>
 			</ul>
 		</div>
 		<div class="footerColumn links">
 			<ul>
-				<li><a href="http://www.hr.ou.edu/web/landing/policy.html">Policies</a></li>
-				<li><a href="http://www.hr.ou.edu/web/landing/legalnotices.html">Legal Notices</a></li>
-				<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html">Copyright</a></li>
+				<li><a href="http://www.hr.ou.edu/web/landing/policy.html" target="_blank">Policies</a></li>
+				<li><a href="http://www.hr.ou.edu/web/landing/legalnotices.html" target="_blank">Legal Notices</a></li>
+				<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html" target="_blank">Copyright</a></li>
 			</ul>
 		</div>
 		<!--! <div class="footerColumn social">
 			<h3>Social Links</h3>
 			<ul>
-				<li><a href="http://www.facebook.com/#" class="facebook">facebook</a></li>
-				<li><a href="http://www.twitter.com/#" class="twitter">twitter</a></li>
-				<li><a href="http://www.youtube.com/#" class="youtube">youtube</a></li>
-				<li><a href="http://www.ou.edu/web/socialmediadirectory.html" class="more">more</a></li>
+				<li><a href="http://www.facebook.com/#" class="facebook" target="_blank">facebook</a></li>
+				<li><a href="http://www.twitter.com/#" class="twitter" target="_blank">twitter</a></li>
+				<li><a href="http://www.youtube.com/#" class="youtube" target="_blank">youtube</a></li>
+				<li><a href="http://www.ou.edu/web/socialmediadirectory.html" class="more" target="_blank">more</a></li>
 			</ul>
 		</div> -->
 		<div class="notes">
