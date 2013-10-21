@@ -56,10 +56,10 @@ $(function(){
 	}
 	
 	$('.subpage controls next').click(function(){
-		location.hash = $(this).parents('.subpage').next().attr('id') || '';
+		location.hash = $(this).parents('.subpage').next().attr('id') || $('.subpage').first().attr('id') || '';
 	});
 	$('.subpage controls previous').click(function(){
-		location.hash = $(this).parents('.subpage').prev().attr('id') || '';
+		location.hash = $(this).parents('.subpage').prev().attr('id') || $('.subpage').last().attr('id') || '';
 	});
 	$('.subpage controls close').click(function(){ location.hash=''; });
 	
