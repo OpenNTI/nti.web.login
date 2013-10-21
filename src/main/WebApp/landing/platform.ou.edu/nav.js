@@ -1,9 +1,14 @@
 $(function(){
 	$('html').removeClass('no-js');
-	
-	var uaHack = navigator.userAgent.match(/MSIE\ (\d+)\.\d+/);
+
+	var ua = navigator.userAgent;
+	var uaHack = ua.match(/MSIE\ (\d+)\.\d+/);
 	if(!uaHack || parseInt(uaHack[1],10) > 10){
 		$('html').addClass('pointer-events');
+	}
+	
+	if(/gecko/i.test(ua) && !/MSIE/.test(ua)){
+		$('html').removeClass('hwaccel');
 	}
 	
 	

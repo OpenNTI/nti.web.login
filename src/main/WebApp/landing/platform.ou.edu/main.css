@@ -10,7 +10,7 @@ a.ou-btn {
 
 #video {
 	overflow: hidden;
-	height: 606px;
+/*	height: 606px;*/
 }
 
 #video > :first-child  {
@@ -277,7 +277,7 @@ div.subpage .course-introduction::before {
 
 div.subpage .promovideo {
 	background: #ccc;
-	max-height: 530px;
+/*	max-height: 530px;*/
 	overflow: hidden;
 }
 
@@ -500,7 +500,7 @@ div.subpage .course-techsupport li {
 
 /*animation*/
 
-.subpage {
+.hwaccel .subpage {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
@@ -512,8 +512,9 @@ div.subpage .course-techsupport li {
  	 -ms-transform: translateZ(0);
  	 -o-transform: translateZ(0);
 	 transform: translateZ(0);
-	
-	
+ }
+ 
+.transitions .subpage {	
 	-webkit-animation-duration: .5s;
 /*	-webkit-animation-delay: .2s;*/
 	-webkit-animation-timing-function: ease-in-out;
@@ -653,14 +654,14 @@ div.subpage .course-techsupport li {
 @-o-keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
 @keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
 
-.slideInLeft {
+.transitions .slideInLeft {
 	-webkit-animation-name: fadeIn;
 	-moz-animation-name: fadeIn;
 	-o-animation-name: fadeIn;
 	animation-name: fadeIn;
 }
 
-.slideInRight {
+.transitions .slideInRight {
 	-webkit-animation-name: fadeIn;
 	-moz-animation-name: fadeIn;
 	-o-animation-name: fadeIn;
@@ -668,21 +669,21 @@ div.subpage .course-techsupport li {
 }
 
 
-.slideOutLeft {
+.transitions .slideOutLeft {
 	-webkit-animation-name: fadeOut;
 	-moz-animation-name: fadeOut;
 	-o-animation-name: fadeOut;
 	animation-name: fadeOut;
 }
 
-.slideOutRight {
+.transitions .slideOutRight {
 	-webkit-animation-name: fadeOut;
 	-moz-animation-name: fadeOut;
 	-o-animation-name: fadeOut;
 	animation-name: fadeOut;
 }
 
-.slideOutDown {
+.transitions .slideOutDown {
 	-webkit-animation-name: fadeOut;
 	-moz-animation-name: fadeOut;
 	-o-animation-name: fadeOut;
