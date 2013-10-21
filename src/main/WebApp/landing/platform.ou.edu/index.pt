@@ -131,7 +131,7 @@
 		</div>
 	</div>
 	<div id="about" class="hidden">
-		<div id="about_content">
+		<div id="about_content" class="wrapper">
 			<h3>About Janux</h3>
 			<p>
 				Janux, a new interactive learning
