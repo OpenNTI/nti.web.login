@@ -75,7 +75,7 @@
 							<p  tal:content="course/title">Introduction to Water</p>
 						</div>
 						<div class="course-field-cell">
-							<div class="label" tal:content="course/schoolLabel | default">School</div>
+							<div class="label" tal:content="course/schoolLabel | default">Department/School</div>
 							<p tal:content="course/school">Civil Engineering</p>
 						</div>
 					</div>

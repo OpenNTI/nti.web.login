@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
-<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
+<!--! <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
+<!--! <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
 <html lang="en">
 <head>
 	<script type="text/javascript"><!--
@@ -124,8 +124,8 @@
 
 		</div>
 	</div>
-</div> <!-- close #container -->
-</div> <!-- close #wrapper-all -->
+</div> <!--! close #container -->
+</div> <!--! close #wrapper-all -->
 
 <div id="footer">
 	<div class="wrapper">
@@ -154,7 +154,7 @@
 				<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html">Copyright</a></li>
 			</ul>
 		</div>
-		<!-- <div class="footerColumn social">
+		<!--! <div class="footerColumn social">
 			<h3>Social Links</h3>
 			<ul>
 				<li><a href="http://www.facebook.com/#" class="facebook">facebook</a></li>
