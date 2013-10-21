@@ -9,7 +9,7 @@ body {
 	line-height: 1.65em;
 	color:#444;
 	font-size: 75%;
-	
+
 	background-color: #252525;
 	background-image: url(images/bg_black.gif);
 	background-repeat: repeat;
@@ -66,7 +66,7 @@ img {
 .globalheader ul li a.home,
 .globalheader ul li a.search,
 .globalheader ul li a.social {
-    display:block; 
+    display:block;
     height:30px;
     width:30px;
 }
@@ -94,11 +94,11 @@ img {
 a.tip { position:relative; }
 a.tip span { display: none; }
 /* the span will display just on :hover state */
-a.tip:hover span { 
+a.tip:hover span {
     position:absolute;
     z-index:25;
-    top:135%; 
-    left:-3.75em;  
+    top:135%;
+    left:-3.75em;
     width:8em;
     display:block;
     margin:0;
@@ -125,7 +125,7 @@ a.tip:hover span::before {
     left:0;
     height:9px;
     position:absolute;
- 
+
 }
 
 /* HEADER
@@ -156,7 +156,7 @@ a.tip:hover span::before {
 /* BODY
 ----------------------------------------- */
 
-.wrapper { 
+.wrapper {
 	margin:0 auto; /* center the content */
 /*	width:980px;*/
 	width:1024px;
@@ -257,7 +257,7 @@ a.tip:hover span::before {
 #footer .social ul a.more { background-position: 0 -368px; }
 #footer .social ul a.more:hover { background-position: -46px -368px; }
 
-#footer .notes { 
+#footer .notes {
     clear: both;
     display: block;
 	border-top:1px solid #666;
@@ -315,7 +315,8 @@ a.ou-btn:hover {
 	background: linear-gradient(#25cbff, #0076ce);
 }
 
-#main a.ou-btn1 {
+#main a.ou-btn1,
+.subpage a.ou-btn1 {
 	background-color: #298AC4;
 	color: #FFFFFF;
 	top: auto;
@@ -328,9 +329,12 @@ a.ou-btn:hover {
 	line-height: 0;
 	display: inline-table;
 	display: inline-block;
-	
-
 }
+
+.subpage a.ou-btn1:visited{
+	color: #FFFFFF !important;
+}
+
 a.ou-btn1:hover {
 	text-decoration: none;
 	background-color: #1d648e;
