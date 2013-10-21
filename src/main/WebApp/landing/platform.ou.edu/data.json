@@ -237,7 +237,7 @@
 					},
 					"hours": 3
 				},
-				"description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a.) analyze a problem, and identify and define the computing requirements appropriate to its solution b.) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c.) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
+				"description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
 			"detailAnchor": "#CS1323-detail",
 			"duration": "16 Weeks",
 			"id": "CS1323",
