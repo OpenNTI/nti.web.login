@@ -108,7 +108,7 @@
 				} 
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			}, 
 			"school": "Anthropology", 
 			"startDate": "January 13, 2014", 
@@ -144,7 +144,7 @@
 				} 
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			}, 
 			"school": "Chemistry and Biochemistry", 
 			"startDate": "January 13, 2014", 
@@ -181,7 +181,7 @@
 				}
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			},  
 			"school": "Communication", 
 			"startDate": "January 13, 2014", 
@@ -222,7 +222,7 @@
 				}
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			},
 			"school": "Computer Science", 
 			"startDate": "January 13, 2014", 
@@ -382,7 +382,7 @@
 				} 
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			}, 
 			"school": "Geology", 
 			"startDate": "January 13, 2014", 
@@ -457,7 +457,7 @@
 				}
 			], 
 			"schedule": {
-				"days": "Fully Online",
+				"days": "Fully Online"
 			}, 
 			"school": "History of Science", 
 			"startDate": "January 13, 2014", 
