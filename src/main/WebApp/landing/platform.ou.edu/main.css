@@ -4,12 +4,14 @@
 a.ou-btn {
 	font-size: 1.4em;
 }
-/*#feature-img { background: #DDD url('images/janux_feature.png') no-repeat center center; }*/
+#feature-img { background: #DDD url('images/janux_feature.png') no-repeat center center; }
 
 .mast { position: relative; }
 
 #video {
-	overflow: hidden;
+	position: absolute;
+	top: 75px;
+	left: 518px
 /*	height: 606px;*/
 }
 
@@ -278,6 +280,7 @@ div.subpage .course-introduction::before {
 
 div.subpage .promovideo {
 	background: #ccc;
+	min-xheight: 466px;
 /*	max-height: 530px;*/
 	overflow: hidden;
 }
