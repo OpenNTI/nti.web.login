@@ -303,11 +303,20 @@ div.subpage .course-open-course-note p {
 	color: #747475;
 }
 
+div.subpage .course-details h3,
 div.subpage .course-open-course-note h3 {
 	font-style: normal;
 	font-weight: 300;
 	font-size: 22px;
 	line-height: 35px;
+}
+
+div.subpage .course-details {
+	overflow: hidden;
+}
+
+div.subpage .course-details h3 {
+	margin: 20px;
 }
 
 div.subpage .course-open-course-note blockquote {
