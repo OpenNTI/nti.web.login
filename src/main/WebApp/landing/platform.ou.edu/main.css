@@ -612,40 +612,51 @@ div.subpage .course-techsupport li {
 	100% { transform: translateX(0); }
 }
 
+
+@-webkit-keyframes fadeIn { 0% {opacity: 0;} 100% {opacity: 1;} }
+@-moz-keyframes fadeIn { 0% {opacity: 0;} 100% {opacity: 1;} }
+@-o-keyframes fadeIn { 0% {opacity: 0;} 100% {opacity: 1;} }
+@keyframes fadeIn { 0% {opacity: 0;} 100% {opacity: 1;} }
+
+@-webkit-keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
+@-moz-keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
+@-o-keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
+@keyframes fadeOut { 0% {opacity: 1;} 100% {opacity: 0;} }
+
 .slideInLeft {
-	-webkit-animation-name: slideInLeft;
-	-moz-animation-name: slideInLeft;
-	-o-animation-name: slideInLeft;
-	animation-name: slideInLeft;
+	-webkit-animation-name: fadeIn;
+	-moz-animation-name: fadeIn;
+	-o-animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 .slideInRight {
-	-webkit-animation-name: slideInRight;
-	-moz-animation-name: slideInRight;
-	-o-animation-name: slideInRight;
-	animation-name: slideInRight;
+	-webkit-animation-name: fadeIn;
+	-moz-animation-name: fadeIn;
+	-o-animation-name: fadeIn;
+	animation-name: fadeIn;
 }
 
 
 .slideOutLeft {
-	-webkit-animation-name: slideOutLeft;
-	-moz-animation-name: slideOutLeft;
-	-o-animation-name: slideOutLeft;
-	animation-name: slideOutLeft;
+	-webkit-animation-name: fadeOut;
+	-moz-animation-name: fadeOut;
+	-o-animation-name: fadeOut;
+	animation-name: fadeOut;
 }
 
 .slideOutRight {
-	-webkit-animation-name: slideOutRight;
-	-moz-animation-name: slideOutRight;
-	-o-animation-name: slideOutRight;
-	animation-name: slideOutRight;
+	-webkit-animation-name: fadeOut;
+	-moz-animation-name: fadeOut;
+	-o-animation-name: fadeOut;
+	animation-name: fadeOut;
 }
 
 .slideOutDown {
-	-webkit-animation-name: slideOutDown;
-	-moz-animation-name: slideOutDown;
-	-o-animation-name: slideOutDown;
-	animation-name: slideOutDown;
+	-webkit-animation-name: fadeOut;
+	-moz-animation-name: fadeOut;
+	-o-animation-name: fadeOut;
+	animation-name: fadeOut;
 	
 	-webkit-animation-timing-function: ease;
 	-moz-animation-timing-function: ease;
