@@ -500,7 +500,7 @@ div.subpage .course-techsupport li {
 
 /*animation*/
 
-.hwaccel .subpage {
+/*.hwaccel .subpage {
 	-webkit-backface-visibility: hidden;
 	-moz-backface-visibility: hidden;
 	-ms-backface-visibility: hidden;
@@ -512,7 +512,7 @@ div.subpage .course-techsupport li {
  	 -ms-transform: translateZ(0);
  	 -o-transform: translateZ(0);
 	 transform: translateZ(0);
- }
+ }*/
  
 .transitions .subpage {	
 	-webkit-animation-duration: .5s;
