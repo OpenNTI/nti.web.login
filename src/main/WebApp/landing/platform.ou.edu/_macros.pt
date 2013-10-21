@@ -45,7 +45,7 @@
 					<h3>Open courses are free to anyone, anywhere.</h3>
 					<p>Get complete access to interact with all course content, including lectures, course materials, quizzes, and discussions once class is in session.</p>
 					<blockquote>Open courses are not eligible for college credit.</blockquote>
-				  <a class="ou-btn1" href="/login/">Sign Up Now</a>
+				  <a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
 				</div>
 			</div>
 			<div class="course-details">
