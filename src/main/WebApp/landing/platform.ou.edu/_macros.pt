@@ -43,7 +43,7 @@
 				<div class="course-description" tal:content="course/description">This course is an introductory course on the significante of water in our world. The title of thie course makes reference to (1) water as a global and local natrual resource (Water), (2) water as a chemical compound with important properties and characteristics (H2O), and (3) the science and the technology of bringing clean water to peoples in need (WaTER, an acronym for "Water Technologies for Emerging Regions"). The course is designed to generate awareness of water's beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and the inequalities in access to clean water. It will also introduce the students to the need to consider both techologcial options and cultural context in determining sustainable solutions to water problems.</div>
 				<div class="course-open-course-note">
 					<h3>Open courses are free to anyone, anywhere.</h3>
-					<p>Get complete access to interact with all course content including the lectures, course materials, quizzes, and discussions once class is in session.</p>
+					<p>Get complete access to interact with all course content, including lectures, course materials, quizzes, and discussions once class is in session.</p>
 					<blockquote>Open courses are not eligible for college credit.</blockquote>
 				</div>
 				<div class="course-fields">
@@ -57,7 +57,12 @@
 						</div>
 						<div class="course-field-cell credit">
 							<div class="label">Credit Hours</div>
-							<p><span tal:content="course/credit/hours">1</span> credit hour available for OU students.</p>
+							<p><span tal:content="course/credit/hours">1</span> credit 
+								<metal:block tal:switch="python:course['credit']['hours'] == 1">
+									<span tal:case="False">hours</span>
+									<span tal:case="True">hour</span>
+								</metal:block>
+								available for OU students</p>
 							<a href="http://ozone.ou.edu/" target="_blank">Enroll on Ozone.</a>
 						</div>
 					</div>
