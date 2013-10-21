@@ -502,15 +502,15 @@ div.subpage .course-techsupport li {
 }
 
 #about {
-	position: absolute;
-	top: 180px; left: 0; right: 0; bottom: 0;
+
+/*	top: 180px; left: 0; right: 0; bottom: 0;*/
 
 	margin: 0;
 	padding-left: 0;
 	padding-right: 0;
 	padding-top: 0;
 	padding-bottom: 0;
-	margin-bottom: 10px;
+	margin-bottom: 16em;
 }
 
 #about_content {

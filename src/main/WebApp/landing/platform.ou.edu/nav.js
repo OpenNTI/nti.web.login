@@ -40,8 +40,13 @@ $(function(){
 
 
 	function handleChange(){
-		$("html, body").animate({ scrollTop: 0 }, 600);
-		setTimeout(showPage,600);
+		var view = location.hash.substr(1);
+		if(view && $('.subpage#'+view).length) {
+			$("html, body").animate({ scrollTop: 0 }, 600);
+			setTimeout(showPage,600);
+		} else {
+			showPage();
+		}
 	}
 
 
@@ -52,6 +57,8 @@ $(function(){
 			direction, current, next;
 		var showMainHack = $('#main'),
 		    showAboutHack = $('#about');
+			
+		$('a#about_btn').html('About').attr('href','#about');
 
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
@@ -68,6 +75,7 @@ $(function(){
 			showMainHack.hide();
 			showAboutHack.show();
 			showAboutHack.removeClass('hidden');
+			$('a#about_btn').html('Home').attr('href','#');
 			return;
 		}
 
