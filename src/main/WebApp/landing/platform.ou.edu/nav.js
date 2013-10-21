@@ -19,7 +19,7 @@ $(function(){
 			} else {
 				c.insertBefore(pr);
 			}
-		},1250);
+		},750);
 	}
 	
 	function delayedRemove(jQ,name,hide){
@@ -28,11 +28,18 @@ $(function(){
 			if(hide){
 				jQ.hide();
 			}
-		},1200);
+		},700);
 	}
 	
+	
+	function handleChange(){
+		$("html, body").animate({ scrollTop: 0 }, 600);
+		setTimeout(showPage,600);
+	}
+	
+	
 	function showPage(){
-		$(window).scrollTop(0);
+		// $(window).scrollTop(0);
 		var view = location.hash.substr(1),
 			base = $('#wrapper-all,#footer'),
 			direction, current, next;
@@ -70,6 +77,6 @@ $(function(){
 	});
 	$('.subpage controls close').click(function(){ location.hash=''; });
 	
-	window.onhashchange = showPage;
+	window.onhashchange = handleChange;
 	showPage();
 });
