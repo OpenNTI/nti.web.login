@@ -10,7 +10,7 @@ a.ou-btn {
 
 #video {
 	overflow: hidden;
-	height: 575px;
+	height: 606px;
 }
 
 #video > :first-child  {
@@ -277,7 +277,7 @@ div.subpage .course-introduction::before {
 
 div.subpage .promovideo {
 	background: #ccc;
-	max-height: 491px;
+	max-height: 530px;
 	overflow: hidden;
 }
 
