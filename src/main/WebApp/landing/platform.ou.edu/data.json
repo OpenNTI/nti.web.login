@@ -101,8 +101,15 @@
 			], 
 			"kalturaVideo": "0_tnfknlac", 
 			"name": "ANTH 4970-995", 
-			"prerequisites": [], 
-			"schedule": {}, 
+			"prerequisites": [
+				{
+					"id": "", 
+					"title": "Senior standing or instructor permission"
+				} 
+			], 
+			"schedule": {
+				"days": "Fully Online",
+			}, 
 			"school": "Anthropology", 
 			"startDate": "January 13, 2014", 
 			"title": "Practical Importance of Human Evolution"
@@ -115,7 +122,7 @@
 					}, 
 					"hours": 1
 				},
-				"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.", 
+				"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.", 
 			"detailAnchor": "#CHEM4970-detail", 
 			"duration": "16 Weeks", 
 			"id": "CHEM4970", 
@@ -134,13 +141,11 @@
 				{
 					"id": "", 
 					"title": "Senior standing or instructor permission"
-				}, 
-				{
-					"id": "", 
-					"title": "Students should have a basic knowledge of general and organic chemistry."
-				}
+				} 
 			], 
-			"schedule": {}, 
+			"schedule": {
+				"days": "Fully Online",
+			}, 
 			"school": "Chemistry and Biochemistry", 
 			"startDate": "January 13, 2014", 
 			"title": "Chemistry of Beer", 
@@ -175,7 +180,9 @@
 					"title": "Senior standing or instructor permission"
 				}
 			], 
-			"schedule": {}, 
+			"schedule": {
+				"days": "Fully Online",
+			},  
 			"school": "Communication", 
 			"startDate": "January 13, 2014", 
 			"title": "Understanding and Detecting Deception", 
@@ -207,13 +214,16 @@
 			"prerequisites": [
 				{
 					"id": "", 
+					"title": "There are no prerequisites for this course."
+				}, 
+				{
+					"id": "", 
 					"title": "No prior programming experience is assumed."
 				}
 			], 
 			"schedule": {
-				"days": "M/W/F", 
-				"times": "4:30 pm - 5:20 pm"
-			}, 
+				"days": "Fully Online",
+			},
 			"school": "Computer Science", 
 			"startDate": "January 13, 2014", 
 			"title": "Power and Elegance of Computational Thinking", 
@@ -248,12 +258,12 @@
 					"title": "No prior programming experience is assumed."
 				}, 
 				{
-					"id": "MATH 1523", 
-					"title": ""
+					"id": "", 
+					"title": "MATH 1523 or concurrent enrollment"
 				}, 
 				{
-					"id": "MATH 1743 or MATH 1823 or higher", 
-					"title": "concurrent enrollment, or placement into"
+					"id": "", 
+					"title": "placement into MATH 1743 or MATH 1823 or higher"
 				}
 			], 
 			"schedule": {
@@ -291,7 +301,7 @@
 			"prerequisites": [
 				{
 					"id": "", 
-					"title": "Education Course and Grad Education Course and Graduate level Course and Norman Grad Div Crse"
+					"title": "Graduate Standing"
 				}
 			], 
 			"schedule": {
@@ -365,9 +375,16 @@
 			], 
 			"kalturaVideo": "0_i3etssfy", 
 			"name": "GEOG 3890-995", 
-			"prerequisites": [], 
-			"schedule": {}, 
-			"school": "ConocoPhillips School of Geology and Geophysics", 
+			"prerequisites": [
+				{
+					"id": "", 
+					"title": "Junior standing or instructor permission"
+				} 
+			], 
+			"schedule": {
+				"days": "Fully Online",
+			}, 
+			"school": "Geology", 
 			"startDate": "January 13, 2014", 
 			"title": "Hydraulic Fracturing and Water Resources", 
 			"video": "kaltura://1500101/0_i3etssfy/"
@@ -439,7 +456,9 @@
 					"title": "junior standing, or completion of one History of Science lower-division course, or permission of instructor"
 				}
 			], 
-			"schedule": {}, 
+			"schedule": {
+				"days": "Fully Online",
+			}, 
 			"school": "History of Science", 
 			"startDate": "January 13, 2014", 
 			"title": "History of Science to the Age of Newton", 
@@ -470,8 +489,8 @@
 			"name": "P SC 4283-001", 
 			"prerequisites": [
 				{
-					"id": "P SC113 1113", 
-					"title": ""
+					"id": "", 
+					"title": "P SC 1113"
 				}, 
 				{
 					"id": "", 
