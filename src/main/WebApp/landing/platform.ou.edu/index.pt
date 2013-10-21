@@ -60,9 +60,9 @@
 	<div id="main">
 		<div class="wrapper">
 
-			<div class="mast"><img id="feature-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Image of NextThought Interface" title="NextThought" width="1024" height="391">
+			<div class="mast">
 				<div id="video">
-					<iframe width="455" height="256" src="//www.youtube.com/embed/1pPxExNSRtM?rel=0&html5=1&hd=1&showinfo=0&modestbranding=1&origin=platform.ou.edu" frameborder="0" allowfullscreen></iframe>
+<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20593352/partner_id/1500101?autoembed=true&entry_id=0_nmii7y4j&playerId=kaltura_player_1377036702_0_nmii7y4j&cache_st=1377036702&width=1024&height=606"></script>
 				</div>
 
 			</div>
