@@ -35,7 +35,7 @@
 			<div class="course-introduction">
 				<div class="promovideo">
 					<!-- <iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/15491291/partner_id/1500101?iframeembed=true&playerId=kaltura_player_1382238726&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="544" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe> -->
-					<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/16401392/partner_id/1500101?autoembed=true&entry_id=${course/kalturaVideo}&playerId=kaltura_player_1377036702_${course/kalturaVideo}&cache_st=1377036702&width=920&height=521&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest"></script>
+					<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/16401392/partner_id/1500101?autoembed=true&entry_id=${course/kalturaVideo}&playerId=kaltura_player_1377036702_${course/kalturaVideo}&cache_st=1377036702&width=920&height=544&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest"></script>
 				</div>
 				<div class="course-title" tal:content="course/title">Introduction to Water</div>
 			</div>
