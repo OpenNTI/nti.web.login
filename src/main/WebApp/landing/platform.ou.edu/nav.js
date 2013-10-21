@@ -55,7 +55,6 @@ $(function(){
 
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
-
 		if( view && view === 'about' ) {
 			direction = true;
 

@@ -503,18 +503,40 @@ div.subpage .course-techsupport li {
 	top: 180px; left: 0; right: 0; bottom: 0;
 
 	margin: 0;
-	padding: 0 0 0 0;
+	padding-left: 0;
+	padding-right: 0;
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 10px;
+}
 
+#about_content {
 }
 
 #about > * {
 	background: #444;
 	width: 920px;
 	position: relative;
-	margin: 0 auto 5px;
 	color: #494949;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	margin: 0 auto 5px;
+}
 
+#about h3 {
+	font-size: 28px;
+	padding-top: 30px;
+	margin-right: 35px;
+	margin-left: 30px;
+
+}
+
+#about p {
+	font-size: 14px;
+	line-height: 28px;
+	color: #494949;
+	padding-left: 30px;
+	margin-right: 35px;
+	text-align: justified;
 }
 
 #about #about_content {
