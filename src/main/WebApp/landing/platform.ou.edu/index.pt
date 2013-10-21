@@ -173,6 +173,56 @@
 <div tal:define="the_courses options/upcomingCourses"
 	metal:use-macro="courses/macros/course-details"></div>
 
+<div id="about" class="hidden">
+	<div class="course-header">
+		<controls>
+			<close></close>
+		</controls>
+	</div>
+	<div id="about_content">
+		<h3>About Janux</h3>
+		<p>
+			Janux, a new interactive learning
+			community created in partnership between The University of
+			Oklahoma and technology leader NextThought, connects learners
+			and teachers through high-quality OU courses. Janux is the
+			first of its kind in OpenCourseWare, combining multimedia-rich
+			content with interactive social tools and a broader learning
+			community to create an unparalleled learning environment.
+		</p>
+
+		<h3>About The University of Oklahoma</h3>
+		<p>
+			The University of Oklahoma is a doctoral degree-granting
+			research university serving the educational, cultural,
+			economic and health-care needs of the state, region and
+			nation. With a rich tradition of academic excellence and a
+			culture of creativity, OU is driving innovation through
+			the One University digital initiative. OU enrolls more
+			than 31,000 students, has more than 2,600 full-time
+			faculty members, and has 20 colleges offering 165 majors
+			at the baccalaureate level, 157 majors at the master’s
+			level, 80 majors at the doctoral level, 29 majors at the
+			doctoral professional level, and 28 graduate certificates.
+			The university’s annual operating budget is $1.7 billion.
+		</p>
+
+		<h3>About NextThought</h3>
+		<p>
+			NextThought is a technology company that offers an
+			integrated approach to education. NextThought's platform
+			enables rich social interaction inside courseware and
+			educational materials, including videos, assessment, and
+			text. The company also provides video production and
+			content development services. Founded in 2011, NextThought
+			works with a number of leading universities and
+			professional education organizations around the world.
+		</p>
+	</div>
+</div>
+
+
+
 	<script type="text/javascript" src="nav.js"></script>
 <!--[analytics code here]-->
 </body>

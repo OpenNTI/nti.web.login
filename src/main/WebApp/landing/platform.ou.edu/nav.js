@@ -13,6 +13,7 @@ $(function(){
 	}
 
 
+
 	function stopVideosHack(){
 
 		var c = $(this),
@@ -49,13 +50,13 @@ $(function(){
 		var view = location.hash.substr(1),
 			base = $('#wrapper-all,#footer'),
 			direction, current, next;
+		var showMainHack = $('#main'),
+		    showAboutHack = $('#about');
 
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
 
 		if( view && view === 'about' ) {
-			hack_base = $('#main')
-			base = hack_base;
 			direction = true;
 
 			inDir = direction ? 'Right':'Left';
@@ -63,12 +64,11 @@ $(function(){
 
 
 			delayedRemove( $('.subpage:visible').addClass('slideOut'+outDir), 'shown slideOut'+outDir, true);
-
 			base.find(':not(.subpage) * iframe').each(stopVideosHack);
-			base = $('#main');
-			delayedRemove( base, '', true );
-			delayedRemove( $('#'+view).addClass('shown slideIn'+inDir).show(),'slideIn'+inDir);
 
+			showMainHack.hide();
+			showAboutHack.show();
+			showAboutHack.removeClass('hidden');
 			return;
 		}
 
@@ -94,11 +94,10 @@ $(function(){
 
 		delayedRemove( $('.subpage:visible').addClass('slideOutDown'), 'slideOutDown shown', true);
 
+		showAboutHack.hide();
+		showMainHack.show();
 		base.show();
-		if( hack_base !== undefined ) {
-			hack_base.show();
-			delete hack_base;
-		}
+
 
 		// $('#main, #about').hide();
 		// $('#'+view||'main').show();

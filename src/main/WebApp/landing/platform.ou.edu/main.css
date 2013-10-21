@@ -68,7 +68,7 @@ a.ou-btn {
 #main h1,
 #main h1 span,
 #main h4,
-#main h3 {
+#main h3, #about h3 {
 	font: normal 300 2em 'Open Sans', Arial, Helvetica, sans-serif;
 	margin-right: -1em;
 }
@@ -76,10 +76,11 @@ a.ou-btn {
 
 #main h4,
 #main h1 {color: #494949; margin-bottom: 0.5em;}
-#main h3 {color: #3fb3f6;}
+#main h3, #about h3 {color: #3fb3f6;}
 
 #main .columns h4,
-#main .columns h3 { color: #494949; }
+#main .columns h3,
+#about h3 { color: #494949; }
 
 #main .columns h4 {
 	font-size: 1em;
@@ -232,7 +233,7 @@ div.subpage next {
 
 div.subpage next,
 div.subpage previous,
-div.subpage close {
+div.subpage close, #about close {
 	float: right;
 	display: inline-block;
 	background-color: #000;
@@ -294,7 +295,7 @@ div.subpage .course-title {
 }
 
 
-div.subpage .course-description {
+div.subpage .course-description, #about p {
 	padding: 15px 20px 50px;
 	font-size: 14px;
 	font-weight: 300;
@@ -497,13 +498,29 @@ div.subpage .course-techsupport li {
 	margin: 5px 0;
 }
 
-div.subpage#about {
-	top: 180px;
+#about {
+	position: absolute;
+	top: 180px; left: 0; right: 0; bottom: 0;
+
+	margin: 0;
+	padding: 0 0 0 0;
+
 }
 
-div#about_content {
-	text-align: left;
+#about > * {
+	background: #444;
 	width: 920px;
+	position: relative;
+	margin: 0 auto 5px;
+	color: #494949;
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+
+}
+
+#about #about_content {
+	text-align: left;
+	width: 1024px;
+	height: 100%;
 	background: white;
 }
 
