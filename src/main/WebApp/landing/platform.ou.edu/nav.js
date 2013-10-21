@@ -7,18 +7,18 @@ $(function(){
 	if(!uaHack || parseInt(uaHack[1],10) > 10){
 		$('html').addClass('pointer-events');
 	}
-	
+
 	if(/gecko/i.test(ua) && !/MSIE/.test(ua)){
 		$('html').removeClass('hwaccel');
 	}
-	
-	
+
+
 	function stopVideosHack(){
 
 		var c = $(this),
 			pr = c.next(),
 			p = c.parent();
-		
+
 		setTimeout(function(){
 			if (!pr.length) {
 				c.appendTo(p);
@@ -27,7 +27,7 @@ $(function(){
 			}
 		},750);
 	}
-	
+
 	function delayedRemove(jQ,name,hide){
 		setTimeout(function(){
 			jQ.removeClass(name);
@@ -36,14 +36,14 @@ $(function(){
 			}
 		},700);
 	}
-	
-	
+
+
 	function handleChange(){
 		$("html, body").animate({ scrollTop: 0 }, 600);
 		setTimeout(showPage,600);
 	}
-	
-	
+
+
 	function showPage(){
 		// $(window).scrollTop(0);
 		var view = location.hash.substr(1),
@@ -53,32 +53,57 @@ $(function(){
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
 
-		if(view && $('.subpage#'+view).length){
+		if( view && view === 'about' ) {
+			hack_base = $('#main')
+			base = hack_base;
+			direction = true;
+
+			inDir = direction ? 'Right':'Left';
+			outDir = !direction ? 'Right':'Left';
+
+
+			delayedRemove( $('.subpage:visible').addClass('slideOut'+outDir), 'shown slideOut'+outDir, true);
+
+			base.find(':not(.subpage) * iframe').each(stopVideosHack);
+			base = $('#main');
+			delayedRemove( base, '', true );
+			delayedRemove( $('#'+view).addClass('shown slideIn'+inDir).show(),'slideIn'+inDir);
+
+			return;
+		}
+
+
+		if(view && $('.subpage#'+view).length) {
 			next = $('#'+view).index();
 			direction = (next - current) > 0;
 
 			inDir = direction ? 'Right':'Left';
 			outDir = !direction ? 'Right':'Left';
 
-			
-			
+
+
 			delayedRemove( $('.subpage:visible').addClass('slideOut'+outDir), 'shown slideOut'+outDir, true);
 
 			base.find(':not(.subpage) * iframe').each(stopVideosHack);
 
-			delayedRemove( base, '', true );			
+			delayedRemove( base, '', true );
 			delayedRemove( $('#'+view).addClass('shown slideIn'+inDir).show(),'slideIn'+inDir);
 			return;
 		}
-		
+
+
 		delayedRemove( $('.subpage:visible').addClass('slideOutDown'), 'slideOutDown shown', true);
-		
+
 		base.show();
-		
+		if( hack_base !== undefined ) {
+			hack_base.show();
+			delete hack_base;
+		}
+
 		// $('#main, #about').hide();
 		// $('#'+view||'main').show();
 	}
-	
+
 	$('.subpage controls next').click(function(){
 		location.hash = $(this).parents('.subpage').next().attr('id') || $('.subpage').first().attr('id') || '';
 	});
@@ -86,7 +111,7 @@ $(function(){
 		location.hash = $(this).parents('.subpage').prev().attr('id') || $('.subpage').last().attr('id') || '';
 	});
 	$('.subpage controls close').click(function(){ location.hash=''; });
-	
+
 	window.onhashchange = handleChange;
 	showPage();
 });

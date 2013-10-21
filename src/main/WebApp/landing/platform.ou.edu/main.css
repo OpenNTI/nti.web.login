@@ -20,7 +20,7 @@ a.ou-btn {
 
 #main *,
 #main {
-	font: normal normal 14px/28px 'Open Sans', Arial, Helvetica, sans-serif;	
+	font: normal normal 14px/28px 'Open Sans', Arial, Helvetica, sans-serif;
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	-o-box-sizing: border-box;
@@ -96,7 +96,7 @@ a.ou-btn {
 	margin-left: -5px;
 	padding-top: 5px;
 	padding-left: 5px;
-	
+
 	margin-bottom: 50px;
 }
 
@@ -112,7 +112,7 @@ a.ou-btn {
 	padding: 0 35px;
 }
 
-	
+
 .columns.three > div {
 	width: 33%;
 	float:left;
@@ -124,7 +124,7 @@ a.ou-btn {
 .gradient-bg{
 	background: #f3f3f3;
 }
-	
+
 #main .content.tech ul li,
 .grid-item {
 	position: relative;
@@ -284,7 +284,7 @@ div.subpage .promovideo {
 iframe {
 	margin: 0 0 -5px 0 !important;
 }
-	
+
 div.subpage .course-title {
 	background: black;
 	color: #fff;
@@ -296,13 +296,13 @@ div.subpage .course-title {
 
 div.subpage .course-description {
 	padding: 15px 20px 50px;
-	font-size: 14px; 
+	font-size: 14px;
 	font-weight: 300;
 	line-height: 2em;
 }
 div.subpage .course-faq {
 	padding: 15px 20px 30px;
-	font-size: 14px; 
+	font-size: 14px;
 	line-height: 1.75em;
 }
 div.subpage .course-faq .label {
@@ -350,8 +350,8 @@ div.subpage .course-open-course-note blockquote {
 
 div.subpage .course-open-course-note blockquote::before {
 	content:"\00bb";
-	font-style: italic; 
-	font-weight: 500; 
+	font-style: italic;
+	font-weight: 500;
 	font-size: 19px;
 	color: #f2713e;
 	margin-right: 0.4em;
@@ -367,7 +367,7 @@ div.subpage .label {
 div.subpage .course-fields {
 	padding: 0 20px;
 }
-	
+
 div.subpage .field-row {
 	overflow: hidden;
 	position: relative;
@@ -388,7 +388,7 @@ div.subpage .course-field-cell.credit p {
 	font-weight: 600;
 	font-size: 16px;
 }
-	
+
 div.subpage .course-field-cell {
 	display: inline-table;
 	display: inline-block;
@@ -497,6 +497,16 @@ div.subpage .course-techsupport li {
 	margin: 5px 0;
 }
 
+div.subpage#about {
+	top: 180px;
+}
+
+div#about_content {
+	text-align: left;
+	width: 920px;
+	background: white;
+}
+
 
 /*animation*/
 
@@ -506,35 +516,35 @@ div.subpage .course-techsupport li {
 	-ms-backface-visibility: hidden;
 	-o-backface-visibility: hidden;
 	backface-visibility: hidden;
-	
+
 	 -webkit-transform: translateZ(0);
  	 -moz-transform: translateZ(0);
  	 -ms-transform: translateZ(0);
  	 -o-transform: translateZ(0);
 	 transform: translateZ(0);
  }*/
- 
-.transitions .subpage {	
+
+.transitions .subpage {
 	-webkit-animation-duration: .5s;
 /*	-webkit-animation-delay: .2s;*/
 	-webkit-animation-timing-function: ease-in-out;
 	-webkit-animation-fill-mode: both;
-	
+
 	-moz-animation-duration: .5s;
 /*	-moz-animation-delay: .2s;*/
 	-moz-animation-timing-function: ease-in-out;
 	-moz-animation-fill-mode: both;
-	
+
 	-ms-animation-duration: .5s;
 /*	-ms-animation-delay: .2s;*/
 	-ms-animation-timing-function: ease-in-out;
 	-ms-animation-fill-mode: both;
-	
+
 	-o-animation-duration: .5s;
 /*	-o-animation-delay: .2s;*/
 	-o-animation-timing-function: ease-in-out;
 	-o-animation-fill-mode: both;
-	
+
 	animation-duration: .5s;
 /*	animation-delay: .2s;*/
 	animation-timing-function: ease-in-out;
@@ -580,7 +590,7 @@ div.subpage .course-techsupport li {
 	0% { transform: translateX(0); }
 	100% { opacity: 0; transform: translateX(2000px); }
 }
-	
+
 @-webkit-keyframes slideOutDown {
 	0% { -webkit-transform: translateY(0); }
 	100% { opacity: 0; -webkit-transform: translateY(2000px); }
@@ -688,7 +698,7 @@ div.subpage .course-techsupport li {
 	-moz-animation-name: fadeOut;
 	-o-animation-name: fadeOut;
 	animation-name: fadeOut;
-	
+
 	-webkit-animation-timing-function: ease;
 	-moz-animation-timing-function: ease;
 	-o-animation-timing-function: ease;
