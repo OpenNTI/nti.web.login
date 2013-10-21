@@ -53,7 +53,7 @@ $(function(){
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
 
-		if(view){
+		if(view && $('.subpage#'+view).length){
 			next = $('#'+view).index();
 			direction = (next - current) > 0;
 
@@ -72,7 +72,11 @@ $(function(){
 		}
 		
 		delayedRemove( $('.subpage:visible').addClass('slideOutDown'), 'slideOutDown shown', true);
+		
 		base.show();
+		
+		// $('#main, #about').hide();
+		// $('#'+view||'main').show();
 	}
 	
 	$('.subpage controls next').click(function(){

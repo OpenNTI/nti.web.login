@@ -50,6 +50,7 @@
 		<div class="wrapper">
 			<div class="code">
 				<ul class="quick-links">
+					<li><a class="ou-btn" href="#about">About</a></li>
 					<li><a class="ou-btn" href="/login/">Log In or Create an Account</a></li>
 				</ul>
 			</div>
@@ -57,6 +58,12 @@
 		</div>
 	</div>
 
+	<div id="about" class="hidden">
+		
+		about
+		
+	</div>
+	
 	<div id="main">
 		<div class="wrapper">
 
