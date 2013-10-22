@@ -1,6 +1,6 @@
 $(function(){
-	$('html').removeClass('no-js');
 	$('head base').remove();
+	$('.courses').appendTo('body');
 
 	var ua = navigator.userAgent;
 	var uaHack = ua.match(/MSIE\ (\d+)\.\d+/);

@@ -1,4 +1,5 @@
 .hidden { display: none; visibility: hidden; }
+.no-js .hidden { display: block; visibility: visible; }
 .shown { visibility: visible; }
 
 a.ou-btn {
@@ -19,6 +20,14 @@ a.ou-btn {
 	box-shadow: 0 0 3px 1px black;
 }
 
+
+.no-js #about,
+.no-js #main { margin-bottom: 5px; }
+.no-js .courses{
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 16em;
+}
 
 #main *,
 #main {
@@ -180,6 +189,8 @@ a.ou-btn {
 
 /*custom tags*/
 next, previous, close, controls {	display: block; }
+.no-js next, .no-js previous, .no-js close, .no-js controls { display: none !important; }
+#container .courses { background: #fff; }
 
 div.subpage {
 	position: absolute;
@@ -192,6 +203,12 @@ div.subpage {
 	background-repeat: no-repeat;
 	background-size: 100% 100%; /*fallback for no cover support*/
 	background-size: cover;
+}
+.no-js div.subpage {
+	position: relative !important;
+	overflow: hidden;
+	margin: 0 auto;
+	padding-bottom: 5px;
 }
 
 div.subpage > * {
@@ -212,6 +229,7 @@ div.subpage > * {
 	box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
 	z-index: 2;
 }
+
 
 div.subpage .course-header {
 	position: relative;
@@ -459,7 +477,7 @@ div.subpage .course-faq h4{
 	font-weight: 600;
 	color: #494949;
 }
-
+.no-js div.subpage .course-techsupport {display: none;}
 div.subpage .course-techsupport {
 	position: relative;
 	overflow: hidden;
