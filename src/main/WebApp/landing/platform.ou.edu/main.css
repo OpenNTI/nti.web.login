@@ -26,7 +26,7 @@ a.ou-btn {
 .no-js .courses{
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 16em;
+	padding-bottom: 16em;
 }
 
 #main *,
@@ -520,23 +520,13 @@ div.subpage .course-techsupport li {
 }
 
 #about {
-
-/*	top: 180px; left: 0; right: 0; bottom: 0;*/
-
+	background: #fff;
 	margin: 0;
-	padding-left: 0;
-	padding-right: 0;
-	padding-top: 0;
-	padding-bottom: 0;
-	margin-bottom: 16em;
+	padding: 0 0 16em 0;
 }
 
-#about_content {
-}
 
 #about > * {
-	background: #444;
-	width: 920px;
 	position: relative;
 	color: #494949;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -561,9 +551,6 @@ div.subpage .course-techsupport li {
 }
 
 #about #about_content {
-	text-align: left;
-	width: 1024px;
-	height: 100%;
 	background: white;
 }
 
