@@ -203,6 +203,7 @@ div.subpage {
 	background-repeat: no-repeat;
 	background-size: 100% 100%; /*fallback for no cover support*/
 	background-size: cover;
+	-webkit-overflow-scrolling: touch;
 }
 .no-js div.subpage {
 	position: relative !important;
