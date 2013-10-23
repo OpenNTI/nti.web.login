@@ -179,13 +179,13 @@
 			<h3>About The University of Oklahoma</h3>
 			<p itemscope itemtype="http://schema.org/Organization">
 				The <a href="http://ou.edu" title="University of
-				Oklahoma" itemprop="url">University of Oklahoma</a> is a doctoral
+				Oklahoma" target="_blank" itemprop="url">University of Oklahoma</a> is a doctoral
 				degree-granting research university serving the
 				educational, cultural, economic and health-care needs
 				of the state, region and nation. With a rich tradition
 				of academic excellence and a culture of creativity, OU
 				is driving innovation through
-				the <a href="http://ou.edu/oneuniversity" title="One
+				the <a href="http://ou.edu/oneuniversity" target="_blank" title="One
 				University">One University digital initiative.</a> OU
 				enrolls more than 31,000 students, has more than 2,600
 				full-time faculty members, and has 20 colleges
