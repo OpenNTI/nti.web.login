@@ -21,7 +21,10 @@
 
 	<div class="courses" metal:define-macro="course-details">
 
-		<div id="XXX1234-detail" class="subpage hidden" style="background-image: url('images/courses/${course/id}/bg.png');"
+		<div id="XXX1234-detail" class="subpage hidden"
+			 style="background-image: url('images/courses/${course/id}/bg.png');"
+			 itemscope
+			 itemtype="http://schema.org/EducationEvent"
 			 tal:repeat="course the_courses"
 			 tal:attributes="id string:${course/id}-detail">
 			<div class="course-header">
@@ -37,10 +40,29 @@
 					<!--! <iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/15491291/partner_id/1500101?iframeembed=true&playerId=kaltura_player_1382238726&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="544" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe> -->
 					<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20593632/partner_id/1500101?autoembed=true&entry_id=${course/kalturaVideo}&playerId=kaltura_player_1377036702_${course/kalturaVideo}&width=920&height=548"></script>
 				</div>
-				<div class="course-title" tal:content="course/title">Introduction to Water</div>
+				<div class="course-title" tal:content="course/title" itemprop="name">Introduction to Water</div>
 			</div>
 			<div class="details">
-				<div class="course-description" tal:content="course/description">This course is an introductory course on the significante of water in our world. The title of thie course makes reference to (1) water as a global and local natrual resource (Water), (2) water as a chemical compound with important properties and characteristics (H2O), and (3) the science and the technology of bringing clean water to peoples in need (WaTER, an acronym for "Water Technologies for Emerging Regions"). The course is designed to generate awareness of water's beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and the inequalities in access to clean water. It will also introduce the students to the need to consider both techologcial options and cultural context in determining sustainable solutions to water problems.</div>
+				<div class="course-description" tal:content="course/description" itemprop="description">
+					This course is an introductory course on the
+					significante of water in our world. The title of
+					thie course makes reference to (1) water as a
+					global and local natrual resource (Water), (2)
+					water as a chemical compound with important
+					properties and characteristics (H2O), and (3) the
+					science and the technology of bringing clean water
+					to peoples in need (WaTER, an acronym for "Water
+					Technologies for Emerging Regions"). The course is
+					designed to generate awareness of water's
+					beneficial uses as well as the challenges
+					associated with water quality, degradation,
+					scarcity, over-abundance (flooding), and the
+					inequalities in access to clean water. It will
+					also introduce the students to the need to
+					consider both techologcial options and cultural
+					context in determining sustainable solutions to
+					water problems.
+				</div>
 				<div class="course-open-course-note">
 					<h3>Open courses are free to anyone, anywhere.</h3>
 					<p>Get complete access to interact with all course content, including lectures, course materials, quizzes, and discussions once class is in session.</p>
@@ -83,12 +105,12 @@
 					<div class="field-row">
 						<div class="course-field-cell">
 							<div class="label">Start Date</div>
-							<p tal:content="course/startDate">Jan 15, 2014</p>
+							<p tal:content="course/startDate" itemprop="startDate">Jan 15, 2014</p> <!--! TODO: This needs to be ISO8601 -->
 						</div>
 						<div class="course-field-cell">
 							<div class="course-field-cell third">
 								<div class="label">Duration</div>
-								<p tal:content="course/duration">18 Weeks</p>
+								<p tal:content="course/duration" itemprop="duration">18 Weeks</p> <!--! TODO: This needs to be ISO8601 -->
 							</div>
 							<div class="course-field-cell thirds">
 								<div class="label">Day &amp; Time</div>
@@ -99,16 +121,21 @@
 				</div>
 			</div>
 			<div class="course-instructors">
-				<div class="instructor" tal:repeat="instructor course/instructors">
+				<div class="instructor"
+					 itemscope
+					 itemprop="performer"
+					 itemtype="http://schema.org/Person"
+					 tal:repeat="instructor course/instructors">
 					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-							alt="David Sabatini, PhD, PE"
-							title=""
-							style="background: #DDD url('images/courses/${course/id}/${instructor/defaultphoto}') no-repeat center center;"
-							tal:attributes="alt instructor/name; title instructor/name" />
+						 alt="David Sabatini, PhD, PE"
+						 title=""
+						 style="background: #DDD url('images/courses/${course/id}/${instructor/defaultphoto}') no-repeat center center;"
+						 itemprop="image"
+						 tal:attributes="alt instructor/name; title instructor/name" />
 					 <div class="wrap">
 						 <div class="label">Course Instructor</div>
-						 <div class="name" tal:content="instructor/name">David Sabatini, PhD, PE</div>
-						 <div class="title" tal:content="instructor/title">David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering &amp; Environmental Science</div>
+						 <div class="name" tal:content="instructor/name" itemprop="name">David Sabatini, PhD, PE</div>
+						 <div class="title" tal:content="instructor/title" itemprop="jobtitle">David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering &amp; Environmental Science</div>
 					 </div>
 				</div>
 			</div>
