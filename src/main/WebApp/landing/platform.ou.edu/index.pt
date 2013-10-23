@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<!--! <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
-<!--! <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
-<html lang="en" class="no-js transitions hwaccel">
-<head>
+<html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#">
+<head
+	 tal:define="page_title string:JANUX | The University of Oklahoma; description string:JANUX is The University of Oklahoma's online interactive learning community.">
 	<script type="text/javascript"><!--
 	document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
 	//-->
 	</script>
-	<title>JANUX | The University of Oklahoma</title>
+	<title tal:content="page_title">JANUX | The University of Oklahoma</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="OU Landing">
+	<meta name="description" content="JANUX | The University of Oklahoma"
+		  tal:attributes="content description" />
 	<meta name="author" content="NextThought">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="viewport" content="width=1024">
@@ -31,6 +31,37 @@
 	</style>
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="main.css" />
+
+	<!--! Facebook OpenGraph metadata: http://opengraphprotocol.org -->
+	<meta property="og:title" content="title"
+		  tal:attributes="content page_title" />
+	<meta property="og:type" content="website" />
+	<meta property="og:site_name" content="title"
+		  tal:attributes="content page_title" />
+	<meta property="og:description" content="JANUX"
+		  tal:attributes="content description" />
+	<meta property="og:image" content="http://d2ixlfeu83tci.cloudfront.net/images/ou_janux_email_tag_2.png" />
+	<meta property="og:image:width" content="470" />
+	<meta property="og:image:height" content="94" />
+	<meta property="og:video" content="http://www.youtube.com/watch?v=9bsV-BKjOCA&feature=youtu.be" />
+
+	<!--!
+	The twitter metadata. Twitter will parse FB OpenGraph if present,
+	but some clients may not, and the twitter metadata is simpler,
+	if braindead.
+	https://dev.twitter.com/docs/cards
+	-->
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@nextthought" />
+	<meta name="twitter:creator" content="@nextthought" />
+	<meta name="twitter:title" content="Title"
+		  tal:attributes="content page_title" />
+	<meta name="twitter:description" content="description"
+		  tal:attributes="content description" />
+	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/ou_janux_email_tag_2.png" />
+	<!--! Twitter is strict about their images, when this changes to not be the same as FB
+	we will need to add twitter:image:width and twitter:image:height -->
+
 </head>
 
 <body tal:define="courses load:./_macros.pt">
@@ -175,14 +206,14 @@
 			</p>
 		</div>
 	</div>
-	
-	
-	
-	
+
+
+
+
 	<div tal:define="the_courses options/upcomingCourses"
 		metal:use-macro="courses/macros/course-details"></div>
-	
-	
+
+
 </div> <!--! close #container -->
 </div> <!--! close #wrapper-all -->
 
