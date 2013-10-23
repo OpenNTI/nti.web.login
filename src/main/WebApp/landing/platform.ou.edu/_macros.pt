@@ -126,10 +126,10 @@
 					 itemprop="performer"
 					 itemtype="http://schema.org/Person"
 					 tal:repeat="instructor course/instructors">
-					<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+					<img src="images/courses/${course/id}/${instructor/defaultphoto}"
 						 alt="David Sabatini, PhD, PE"
 						 title=""
-						 style="background: #DDD url('images/courses/${course/id}/${instructor/defaultphoto}') no-repeat center center;"
+						 style="background: #DDD no-repeat center center;"
 						 itemprop="image"
 						 tal:attributes="alt instructor/name; title instructor/name" />
 					 <div class="wrap">
