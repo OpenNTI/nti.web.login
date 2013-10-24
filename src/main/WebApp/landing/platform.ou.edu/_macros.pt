@@ -5,10 +5,12 @@
 	<div class="grid" metal:define-macro="course-grid">
 
 		<a class="grid-item" id="XXX1234" href="#XXX1234-detail"
-			 tal:repeat="course the_courses"
-			 tal:attributes="id course/id; href course/detailAnchor | nothing">
-			<img src="images/courses/${course/id}/card.png" alt="Course Image"
-				 title="" style="background: #DDD;"/>
+		   tal:repeat="course the_courses"
+		   tal:attributes="id course/id; href course/detailAnchor | nothing">
+			<img src="images/courses/${course/id}/card.png"
+				 alt="Course Image"
+				 title=""
+				 style="background: #DDD;"/>
 			<div class="meta">
 				<div class="course-code" tal:content="course/name">CLC 3403</div>
 				<div class="course-name" tal:content="course/title">Law And Justice</div>
@@ -27,6 +29,16 @@
 			 itemtype="http://schema.org/EducationEvent"
 			 tal:repeat="course the_courses"
 			 tal:attributes="id string:${course/id}-detail">
+			<!--! Metadata markup, not for display -->
+			<a class="hidden" style="display: none"
+			   itemprop="url"
+			   href="#XXX123-detail" tal:attributes="href course/detailAnchor | nothing">
+				<img src="images/courses/${course/id}/card.png"
+					 itemprop="image"
+					 alt="Course Image"
+					 title=""
+					 style="background: #DDD;"/>
+			</a>
 			<div class="course-header">
 				<controls>
 					<close></close>
