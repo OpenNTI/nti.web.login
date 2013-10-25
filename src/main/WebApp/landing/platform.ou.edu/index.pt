@@ -41,9 +41,11 @@
 		  tal:attributes="content page_title" />
 	<meta property="og:description" content="JANUX"
 		  tal:attributes="content description" />
-	<meta property="og:image" content="http://d2ixlfeu83tci.cloudfront.net/images/ou_janux_email_tag_2.png" />
-	<meta property="og:image:width" content="470" />
-	<meta property="og:image:height" content="94" />
+	<meta property="og:image" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
+	<meta property="og:image:url" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta property="og:image:width" content="367" />
+	<meta property="og:image:height" content="700" />
 	<meta property="og:video" content="http://www.youtube.com/watch?v=9bsV-BKjOCA&feature=youtu.be" />
 
 	<!--!
@@ -59,9 +61,9 @@
 		  tal:attributes="content page_title" />
 	<meta name="twitter:description" content="description"
 		  tal:attributes="content description" />
-	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/ou_janux_email_tag_2.png" />
-	<!--! Twitter is strict about their images, when this changes to not be the same as FB
-	we will need to add twitter:image:width and twitter:image:height -->
+	<meta name="twitter:image:src" content="//d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg" />
+	<meta name="twitter:image:height" content="700" />
+	<meta name="twitter:image:width" content="700" />
 
 </head>
 
@@ -174,6 +176,8 @@
 				first of its kind in OpenCourseWare, combining multimedia-rich
 				content with interactive social tools and a broader learning
 				community to create an unparalleled learning environment.
+				<img itemprop="image" style="display:none" class="hidden"
+					 src="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
 			</p>
 
 			<h3>About The University of Oklahoma</h3>
