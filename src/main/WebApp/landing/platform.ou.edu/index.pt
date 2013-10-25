@@ -46,7 +46,10 @@
 	<meta property="og:image:type" content="image/jpeg" />
 	<meta property="og:image:width" content="367" />
 	<meta property="og:image:height" content="700" />
-	<meta property="og:video" content="http://www.youtube.com/watch?v=9bsV-BKjOCA&feature=youtu.be" />
+	<meta property="og:video" content="http://www.youtube.com/v/9bsV-BKjOCA?version=3&amp;autohide=1">
+	<meta property="og:video:type" content="application/x-shockwave-flash">
+	<meta property="og:video:width" content="1440">
+	<meta property="og:video:height" content="1080">
 
 	<!--!
 	The twitter metadata. Twitter will parse FB OpenGraph if present,
