@@ -56,6 +56,7 @@
 	but some clients may not, and the twitter metadata is simpler,
 	if braindead.
 	https://dev.twitter.com/docs/cards
+	Test at https://dev.twitter.com/docs/cards/validation/validator
 	-->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nextthought" />
@@ -64,7 +65,7 @@
 		  tal:attributes="content page_title" />
 	<meta name="twitter:description" content="description"
 		  tal:attributes="content description" />
-	<meta name="twitter:image:src" content="//d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg" />
+	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg" />
 	<meta name="twitter:image:height" content="700" />
 	<meta name="twitter:image:width" content="700" />
 
