@@ -2,11 +2,11 @@
 <html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#">
 <head
 	 tal:define="page_title string:JANUX | The University of Oklahoma; description string:Janux is The University of Oklahoma's online interactive learning community.">
-<!--! This isn't needed now that we're rewritting the path in haproxy
+<!--
 	<script type="text/javascript">
 		document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
 	</script>
--->
+//-->
 	<title tal:content="page_title">JANUX | The University of Oklahoma</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
