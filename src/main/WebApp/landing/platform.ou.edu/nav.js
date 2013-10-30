@@ -3,8 +3,9 @@ $(function(){
 	$('.courses').appendTo('body');
 	$('a[href^="#"]').each(function(){
 		var a = $(this),
-			href = location+a.attr('href');
-			a.attr('href', href);
+			href = a.attr('href'),
+			base = href.split('#')[0];
+			a.attr('href', href.replace(base,location));
 	});
 
 	var ua = navigator.userAgent;
