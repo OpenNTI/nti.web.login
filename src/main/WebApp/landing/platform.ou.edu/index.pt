@@ -3,7 +3,9 @@
 <head
 	 tal:define="page_title string:JANUX | The University of Oklahoma; description string:Janux is The University of Oklahoma's online interactive learning community.">
 	<script type="text/javascript">
+	if(location.protocol!=="file:" && !/landing\/platform\.ou\.edu/.test(location.pathname)){
 		document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
+	}
 	</script>
 	<title tal:content="page_title">JANUX | The University of Oklahoma</title>
 	<meta charset="utf-8">
