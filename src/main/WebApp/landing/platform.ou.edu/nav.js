@@ -1,6 +1,11 @@
 $(function(){
-	$('head base').remove();
+	// $('head base').remove(); //don't remove, IE can't handel it.
 	$('.courses').appendTo('body');
+	$('a[href^="#"]').each(function(){
+		var a = $(this),
+			href = location+a.attr('href');
+			a.attr('href', href);
+	});
 
 	var ua = navigator.userAgent;
 	var uaHack = ua.match(/MSIE\ (\d+)\.\d+/);
