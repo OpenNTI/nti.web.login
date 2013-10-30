@@ -1,11 +1,13 @@
 $(function(){
+	var locationBase = (location+'').split('#')[0];
+	
 	// $('head base').remove(); //don't remove, IE can't handel it.
 	$('.courses').appendTo('body');
 	$('a[href^="#"]').each(function(){
 		var a = $(this),
 			href = a.attr('href'),
 			base = href.split('#')[0];
-			a.attr('href', href.replace(base,(location+'').split('#')[0]));
+			a.attr('href', href.replace(base,locationBase));
 	});
 
 	var ua = navigator.userAgent;
@@ -64,7 +66,7 @@ $(function(){
 		var showMainHack = $('#main'),
 		    showAboutHack = $('#about');
 			
-		$('a#about_btn').html('About').attr('href','#about');
+		$('a#about_btn').html('About').attr('href',locationBase+'#about');
 
 		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
 		current = $('.subpage:visible').index();
@@ -81,7 +83,7 @@ $(function(){
 			showMainHack.hide();
 			showAboutHack.show();
 			showAboutHack.removeClass('hidden');
-			$('a#about_btn').html('Home').attr('href','#');
+			$('a#about_btn').html('Home').attr('href',locationBase+'#');
 			return;
 		}
 
