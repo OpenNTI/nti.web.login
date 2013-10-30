@@ -5,7 +5,7 @@ $(function(){
 		var a = $(this),
 			href = a.attr('href'),
 			base = href.split('#')[0];
-			a.attr('href', href.replace(base,location));
+			a.attr('href', href.replace(base,(location+'').split('#')[0]));
 	});
 
 	var ua = navigator.userAgent;
