@@ -20,6 +20,12 @@ a.ou-btn {
 	box-shadow: 0 0 3px 1px black;
 }
 
+img.kWidgetCentered {
+	max-width: none;
+	max-height: none;
+	width: auto;
+	height: 100%;
+}
 
 .no-js #about,
 .no-js #main { margin-bottom: 5px; }

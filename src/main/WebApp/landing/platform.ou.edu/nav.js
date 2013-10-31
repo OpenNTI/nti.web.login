@@ -22,19 +22,11 @@ $(function(){
 
 
 
-	function stopVideosHack(){
-
-		var c = $(this),
-			pr = c.next(),
-			p = c.parent();
-
-		setTimeout(function(){
-			if (!pr.length) {
-				c.appendTo(p);
-			} else {
-				c.insertBefore(pr);
-			}
-		},750);
+	function stopVideos(){
+		var player = $(this).is('object') ? this : $(this).parent('div.kWidgetIframeContainer')[0];
+		if (player.sendNotification) { 
+			player.sendNotification('doPause');
+		}
 	}
 
 	function delayedRemove(jQ,name,hide){
@@ -49,7 +41,7 @@ $(function(){
 
 	function handleChange(){
 		var view = location.hash.substr(1);
-		if(view && $('.subpage#'+view).length) {
+		if(view && $('.subpage#'+view).length && $("html, body").scrollTop() !== 0) {
 			$("html, body").animate({ scrollTop: 0 }, 600);
 			setTimeout(showPage,600);
 		} else {
@@ -68,8 +60,11 @@ $(function(){
 			
 		$('a#about_btn').html('About').attr('href',locationBase+'#about');
 
-		$('.subpage:visible iframe, .subpage:visible object').each(stopVideosHack);
+		$('iframe[id^=kaltura_player]:visible, object[id^=kaltura_player]:visible').each(stopVideos);
+		
 		current = $('.subpage:visible').index();
+
+		
 		if( view && view === 'about' ) {
 			direction = true;
 
@@ -78,7 +73,8 @@ $(function(){
 
 
 			delayedRemove( $('.subpage:visible').addClass('slideOut'+outDir), 'shown slideOut'+outDir, true);
-			base.find(':not(.subpage) * iframe').each(stopVideosHack);
+		
+
 
 			showMainHack.hide();
 			showAboutHack.show();
@@ -96,10 +92,8 @@ $(function(){
 			outDir = !direction ? 'Right':'Left';
 
 
-
 			delayedRemove( $('.subpage:visible').addClass('slideOut'+outDir), 'shown slideOut'+outDir, true);
 
-			base.find(':not(.subpage) * iframe').each(stopVideosHack);
 
 			delayedRemove( base, '', true );
 			delayedRemove( $('#'+view).addClass('shown slideIn'+inDir).show(),'slideIn'+inDir);
@@ -112,7 +106,6 @@ $(function(){
 		showAboutHack.hide();
 		showMainHack.show();
 		base.show();
-
 
 		// $('#main, #about').hide();
 		// $('#'+view||'main').show();
