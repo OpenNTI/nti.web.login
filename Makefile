@@ -4,4 +4,4 @@ render: clean
 	$(NTI_BIN)nti_zpt_render --json $(DIR)/data.json $(DIR)/index.pt $(DIR)/index.html
 	
 clean:
-	rm -rf $(DIR)/index.html
+	rm -f $(DIR)/index.html
