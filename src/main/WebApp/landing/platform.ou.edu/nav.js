@@ -52,6 +52,7 @@ $(function(){
 
 	function showPage(){
 		// $(window).scrollTop(0);
+		$("html, body").scrollTop(0);
 		var view = location.hash.substr(1),
 			base = $('#wrapper-all,#footer'),
 			direction, current, next;
