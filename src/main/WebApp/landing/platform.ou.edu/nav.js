@@ -8,11 +8,18 @@ $(function(){
 	else if(/gecko/i.test(ua) && !/MSIE/.test(ua)){
 		$('html').removeClass('hwaccel');
 	}
-
-	$('.subpage controls next,.subpage controls previous').click(function(){
-
-		alert($(this).attr('data-ref'));
-
-	});
-	$('.subpage controls close').click(function(){ location.href = './'; });
+	
+	function fixOldLinks(){
+		var hashToPageMap = (location.hash||'').substr(1).toLowerCase();
+		if (hashToPageMap){
+			$('a[data-old]').each(function(){
+				if (this.getAttribute('data-old').toLowerCase()==hashToPageMap) {
+					window.location.replace(this.getAttribute('href'));
+				}
+			});
+		}
+	}
+	
+	window.onhashchange = fixOldLinks;
+	fixOldLinks();
 });

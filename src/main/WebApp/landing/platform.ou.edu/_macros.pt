@@ -7,7 +7,7 @@
 		<a class="grid-item" id="XXX1234" href="XXX1234.html"
 			tal:define="anchorPage course/detailAnchor | python:None;
 						anchor python:'course.%s.html' % course['id'].lower() if anchorPage else None"
-			tal:attributes="id course/id; href anchor | nothing">
+			tal:attributes="id course/id; href anchor | nothing; data-old course/detailAnchor | nothing">
 			<img src="images/courses/${course/id}/card.png"
 				 alt="Course Image"
 				 title=""
