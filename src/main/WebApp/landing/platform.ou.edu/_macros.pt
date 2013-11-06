@@ -6,7 +6,7 @@
 
 		<a class="grid-item" id="XXX1234" href="XXX1234-detail.html"
 		   tal:repeat="course the_courses"
-		   tal:attributes="id course/id; href string:${course/detailAnchor}.html">
+		   tal:attributes="id course/id; href string:${course/id}.html">
 			<img src="images/courses/${course/id}/card.png"
 				 alt="Course Image"
 				 title=""
