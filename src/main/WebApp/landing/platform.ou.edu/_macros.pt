@@ -42,14 +42,14 @@
 					 style="background: #DDD;"/>
 			</a>
 			<div class="course-header"
-				tal:define="indexn python:repeat.course.index + 1;
-							indexp python:repeat.course.index - 1;
-							next_index python:0 if repeat.course.end else indexn;
-							prev_index python:repeat.course.length - 1 if repeat.course.start else indexp">
+				tal:define="indexn python:options['repeat'].course.index + 1;
+							indexp python:options['repeat'].course.index - 1;
+							next_index python:0 if options['repeat'].course.end else indexn;
+							prev_index python:options['repeat'].course.length - 1 if options['repeat'].course.start else indexp">
 				<controls>
 					<close></close>
-					<next data-ref="" tal:attributes="data-ref python:the_courses[next_index]['id']"></next>
-					<previous data-ref="" tal:attributes="data-ref python:the_courses[prev_index]['id']"></previous>
+					<next data-ref="" tal:attributes="data-ref python:options['upcomingCourses'][next_index]['id']"></next>
+					<previous data-ref="" tal:attributes="data-ref python:options['upcomingCourses'][prev_index]['id']"></previous>
 				</controls>
 				<img src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community"/>
 			</div>
