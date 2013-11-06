@@ -201,11 +201,10 @@
 
 		</div>
 	</div>
-	
+
 </div> <!--! close #container -->
 </div> <!--! close #wrapper-all -->
-
-	<div id="footer">
+	<div id="footer" metal:use-macro="courses/macros/footer">
 		<div class="wrapper">
 
 			<div class="footerColumn logo">
@@ -247,6 +246,6 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="nav.js"></script>
-<!--[analytics code here]-->
+	<script metal:use-macro="courses/macros/analytics"></script>
 </body>
 </html>

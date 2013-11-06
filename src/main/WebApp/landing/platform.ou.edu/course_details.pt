@@ -1,10 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#">
-<head
-	 tal:define="page_title string:JANUX | The University of Oklahoma;
-	 description string:Janux is The University of Oklahoma's online
-	 interactive learning community.">
-	<!--! The title and description need to be pulled from the data -->
+<html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#"
+	 tal:define="course options/course;
+				 upcomingCourses python:[course];
+				 page_title string: ${course/title} | JANUX;
+				 description course/description" >
+<!--!
+Expected variables:
+	options/course The incoming course data
+-->
+<head>
 	<script type="text/javascript">
 	if(location.protocol!=="file:" && !/landing\/platform\.ou\.edu/.test(location.pathname)){
 		document.write('<base href="'+location.protocol+'//'+location.host+'/login/landing/platform.ou.edu/" />');
@@ -46,19 +50,19 @@
 	<link rel="stylesheet" type="text/css" href="main.css" />
 
 	<!--! Facebook OpenGraph metadata: http://opengraphprotocol.org
-	MUST BE UPDATED
+	-->
 	<meta property="og:title" content="title"
 		  tal:attributes="content page_title" />
 	<meta property="og:type" content="website" />
-	<meta property="og:site_name" content="title"
-		  tal:attributes="content page_title" />
+	<meta property="og:site_name" content="JANUX" />
 	<meta property="og:description" content="JANUX"
 		  tal:attributes="content description" />
-	<meta property="og:image" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
-	<meta property="og:image:url" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="367" />
-	<meta property="og:image:height" content="700" />
+	<meta property="og:image" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg"
+		  tal:attributes="content string:images/courses/${course/id}/card.png" />
+	<meta property="og:image:url" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg"
+		  tal:attributes="content string:images/courses/${course/id}/card.png" />
+	<!--! FIXME: Is there any way to ref a kaltura video? -->
+	<!--!
 	<meta property="og:video" content="http://www.youtube.com/v/9bsV-BKjOCA?version=3&amp;autohide=1">
 	<meta property="og:video:type" content="application/x-shockwave-flash">
 	<meta property="og:video:width" content="1440">
@@ -70,7 +74,7 @@
 	if braindead.
 	https://dev.twitter.com/docs/cards
 	Test at https://dev.twitter.com/docs/cards/validation/validator
-
+	-->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nextthought" />
 	<meta name="twitter:creator" content="@nextthought" />
@@ -78,18 +82,17 @@
 		  tal:attributes="content page_title" />
 	<meta name="twitter:description" content="description"
 		  tal:attributes="content description" />
-	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg" />
-	<meta name="twitter:image:height" content="700" />
-	<meta name="twitter:image:width" content="700" />
-	-->
+	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg"
+		  tal:attributes="content string:images/courses/${course/id}/card.png" />
 </head>
 
 <body tal:define="courses load:./_macros.pt">
 
-	<div tal:define="the_courses options/upcomingCourses"
-			 metal:use-macro="courses/macros/course-details"></div>
+	<div tal:define="the_courses upcomingCourses"
+		 metal:use-macro="courses/macros/course-details"></div>
 
 	<script type="text/javascript" src="nav.js"></script>
-	<!--[analytics code here]-->
+	<div metal:use-macro="courses/macros/footer"></div>
+	<script metal:use-macro="courses/macros/analytics"></script>
 </body>
 </html>

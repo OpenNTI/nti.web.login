@@ -18,7 +18,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript">$('html').removeClass('no-js');</script>
-	
+
 	<!-- This is the stylesheet is OU specific style -->
 	<link rel="stylesheet" type="text/css" href="ou-style.css" />
 	<!-- This is the stylesheet that makes the footer stick. -->
@@ -31,7 +31,7 @@
 	<![endif]-->
 	<link rel="stylesheet" type="text/css" href="main.css" />
 
-	
+
 	<meta property="og:title" content="About JANUX | The University of Oklahoma" />
 	<meta property="og:type" content="website" />
 	<meta property="og:site_name" content="JANUX | The University of Oklahoma" />
@@ -46,7 +46,7 @@
 	<meta property="og:video:width" content="1440">
 	<meta property="og:video:height" content="1080">
 
-	
+
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:site" content="@nextthought" />
 	<meta name="twitter:creator" content="@nextthought" />
@@ -132,8 +132,8 @@
 			</p>
 		</div>
 	</div>
-</div> 
-</div> 
+</div>
+</div>
 
 	<div id="footer">
 		<div class="wrapper">
@@ -162,13 +162,21 @@
 					<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html" target="_blank">Copyright</a></li>
 				</ul>
 			</div>
-			
+
 			<div class="notes">
 				Updated 08/19/2013 by The University of Oklahoma: <a href="mailto:janux@ou.edu">janux@ou.edu</a>
 			</div>
 		</div>
 	</div>
 	<script type="text/javascript" src="nav.js"></script>
-<!--[analytics code here]-->
+    <script type="text/javascript" metal:define-macro="analytics">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-25900586-2', 'ou.edu');
+ga('send', 'pageview');
+    </script>
 </body>
 </html>
