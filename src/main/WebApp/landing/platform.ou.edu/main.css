@@ -27,9 +27,9 @@ img.kWidgetCentered {
 	height: 100%;
 }
 
-.no-js #about,
+
 .no-js #main { margin-bottom: 5px; }
-.no-js .courses{
+.courses{
 	position: relative;
 	overflow: hidden;
 	padding-bottom: 16em;
@@ -199,23 +199,16 @@ next, previous, close, controls {	display: block; }
 #container .courses { background: #fff; }
 
 div.subpage {
-	position: absolute;
-	overflow: auto;
-	top: 0; left: 0; right: 0; bottom: 0;
-	margin: 0;
+	margin: 0 auto;
 	padding: 100px 0 0 0;
 	background: #ccc; /*see gaps*/
 	background-position: center center;
 	background-repeat: no-repeat;
 	background-size: 100% 100%; /*fallback for no cover support*/
 	background-size: cover;
-	-webkit-overflow-scrolling: touch;
-}
-.no-js div.subpage {
 	position: relative !important;
 	overflow: hidden;
-	margin: 0 auto;
-	padding-bottom: 5px;
+
 }
 
 div.subpage > * {
