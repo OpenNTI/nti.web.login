@@ -194,8 +194,7 @@ img.kWidgetCentered {
 /*course detail view*/
 
 /*custom tags*/
-next, previous, close, controls {	display: block; }
-.no-js next, .no-js previous, .no-js close, .no-js controls { display: none !important; }
+next, previous, close, controls, controls * {	display: block; }
 #container .courses { background: #fff; }
 
 div.subpage {
@@ -247,13 +246,18 @@ div.subpage controls {
 	right: 0;
 }
 
-div.subpage next {
+div.subpage next,
+div.subpage a.next, {
 	margin: 0 2px;
 }
 
 div.subpage next,
 div.subpage previous,
-div.subpage close, #about close {
+div.subpage close, 
+div.subpage a.next,
+div.subpage a.previous,
+div.subpage a.close, 
+#about close {
 	float: right;
 	display: inline-block;
 	background-color: #000;
@@ -264,21 +268,29 @@ div.subpage close, #about close {
 	height: 40px;
 	cursor: pointer;
 	opacity: 0.3;
+	text-indent: -40px;/*hide the text in the tag*/
+	overflow: hidden;
 }
 div.subpage next:hover,
 div.subpage previous:hover,
-div.subpage close:hover {
+div.subpage close:hover,
+div.subpage a.next:hover,
+div.subpage a.previous:hover,
+div.subpage a.close:hover {
 	background-color: rgba(0,0,0,0.2);
 	opacity:1;
 }
 
-div.subpage close {
+div.subpage close,
+div.subpage a.close {
 	background-image: url(images/ico_close.png);
 }
-div.subpage previous {
+div.subpage previous,
+div.subpage a.previous {
 	background-image: url(images/ico_arrow_back.png);
 }
-div.subpage next {
+div.subpage next,
+div.subpage a.next {
 	background-image: url(images/ico_arrow_forward.png);
 }
 
