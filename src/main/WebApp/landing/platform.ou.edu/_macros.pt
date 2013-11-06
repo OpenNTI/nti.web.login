@@ -40,10 +40,10 @@
 					 style="background: #DDD;"/>
 			</a>
 			<div class="course-header"
-				tal:define="indexn index+1;
-							indexb index-1;
-							next_index python:indexn >= length ? 0 : indexn;
-							prev_index python:indexp<0 ? length-1 : indexp">
+				tal:define="indexn python:repeat.course.index + 1;
+							indexp python:repeat.course.index - 1;
+							next_index python:0 if repeat.course.end else indexn;
+							prev_index python:repeat.course.length - 1 if repeat.course.start else indexp">
 				<controls>
 					<close></close>
 					<next data-ref="" tal:attributes="data-ref python:the_courses[next_index]['detailAnchor']"></next>
