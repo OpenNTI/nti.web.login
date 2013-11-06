@@ -9,11 +9,10 @@ $(function(){
 		$('html').removeClass('hwaccel');
 	}
 
-	$('.subpage controls next').click(function(){
+	$('.subpage controls next,.subpage controls previous').click(function(){
+
+		alert($(this).attr('data-ref'));
 
 	});
-	$('.subpage controls previous').click(function(){
-
-	});
-	$('.subpage controls close').click(function(){ location.href('./'); });
+	$('.subpage controls close').click(function(){ location.href = './'; });
 });

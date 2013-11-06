@@ -48,8 +48,8 @@
 							prev_index python:repeat.course.length - 1 if repeat.course.start else indexp">
 				<controls>
 					<close></close>
-					<next data-ref="" tal:attributes="data-ref python:the_courses[next_index]['detailAnchor']"></next>
-					<previous data-ref="" tal:attributes="data-ref python:the_courses[prev_index]['detailAnchor']"></previous>
+					<next data-ref="" tal:attributes="data-ref python:the_courses[next_index]['id']"></next>
+					<previous data-ref="" tal:attributes="data-ref python:the_courses[prev_index]['id']"></previous>
 				</controls>
 				<img src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community"/>
 			</div>
