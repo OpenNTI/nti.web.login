@@ -27,15 +27,6 @@ Expected variables:
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript">$('html').removeClass('no-js');</script>
-	<script src="//cdnapisec.kaltura.com/html5/html5lib/v1.8.9/mwEmbedLoader.php"></script>
-	<script type="text/javascript">
-		// mw.setConfig('KalturaSupport.LeadWithHTML5', true);
-		mw.setConfig('Kaltura.UseAppleAdaptive', true);
-		mw.setConfig('EmbedPlayer.WebKitAllowAirplay', true);
-		mw.setConfig('EmbedPlayer.RewriteSelector', false);
-		mw.setConfig('EmbedPlayer.forceMobileHTML5', true);
-		mw.setConfig('EmbedPlayer.EnableIpadNativeFullscreen', true);
-	</script>
 
 	<!-- This is the stylesheet is OU specific style -->
 	<link rel="stylesheet" type="text/css" href="ou-style.css" />
