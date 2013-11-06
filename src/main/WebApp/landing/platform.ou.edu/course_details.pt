@@ -85,57 +85,11 @@
 </head>
 
 <body tal:define="courses load:./_macros.pt">
-<div id="wrapper-all"><div class="wrapper" id="container">
 
 	<div tal:define="the_courses options/upcomingCourses"
-		 metal:use-macro="courses/macros/course-details"></div>
+			 metal:use-macro="courses/macros/course-details"></div>
 
-
-</div> <!--! close #container -->
-</div> <!--! close #wrapper-all -->
-
-	<div id="footer"> <!--! Footer can be a macro -->
-		<div class="wrapper">
-
-			<div class="footerColumn logo">
-				<img alt="OU" src="images/footerlogo.png">
-			</div>
-			<div class="footerColumn address">
-				<a href="http://www.ou.edu/" target="_blank">The University of Oklahoma</a><br/>
-				660 Parrington Oval,<br/>
-				Norman, OK 73019-0390<br/>
-				(405) 325-0311
-			</div>
-			<div class="footerColumn links">
-				<ul>
-					<li><a href="http://www.ou.edu/publicaffairs/WebPolicies/accessstatement.html" target="_blank">Accessibility</a></li>
-					<li><a href="http://www.ou.edu/green/" target="_blank">Sustainability</a></li>
-					<li><a href="http://ouhsc.edu/hipaa/" target="_blank">HIPPA</a></li>
-					<li><a href="http://www.hr.ou.edu/employment/" target="_blank">OU Job Search</a></li>
-				</ul>
-			</div>
-			<div class="footerColumn links">
-				<ul>
-					<li><a href="https://www.ou.edu/content/web/landing/policy.html" target="_blank">Policies</a></li>
-					<li><a href="https://www.ou.edu/content/web/landing/legalnotices.html" target="_blank">Legal Notices</a></li>
-					<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html" target="_blank">Copyright</a></li>
-				</ul>
-			</div>
-			<!--! <div class="footerColumn social">
-				<h3>Social Links</h3>
-				<ul>
-					<li><a href="http://www.facebook.com/#" class="facebook" target="_blank">facebook</a></li>
-					<li><a href="http://www.twitter.com/#" class="twitter" target="_blank">twitter</a></li>
-					<li><a href="http://www.youtube.com/#" class="youtube" target="_blank">youtube</a></li>
-					<li><a href="http://www.ou.edu/web/socialmediadirectory.html" class="more" target="_blank">more</a></li>
-				</ul>
-			</div> -->
-			<div class="notes">
-				Updated 08/19/2013 by The University of Oklahoma: <a href="mailto:janux@ou.edu">janux@ou.edu</a>
-			</div>
-		</div>
-	</div>
 	<script type="text/javascript" src="nav.js"></script>
-<!--[analytics code here]-->
+	<!--[analytics code here]-->
 </body>
 </html>

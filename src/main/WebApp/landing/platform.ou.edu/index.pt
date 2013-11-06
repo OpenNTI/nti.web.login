@@ -98,7 +98,7 @@
 		<div class="wrapper">
 			<div class="code">
 				<ul class="quick-links">
-					<li><a class="ou-btn" href="#about" id="about_btn">About</a></li>
+					<li><a class="ou-btn" href="about.html" id="about_btn">About</a></li>
 					<li><a class="ou-btn" href="/login/">Log In or Create an Account</a></li>
 				</ul>
 			</div>
@@ -115,6 +115,7 @@
 			  alt="Image of NextThought Interface" title="NextThought"
 			  width="1024" height="388" />
 				<div id="video">
+					<!--!
 					<div id="kaltura_player_promo" style="width: 455px; height: 295px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
 					<script>
 					kWidget.embed({
@@ -135,10 +136,10 @@
 						},
 						entry_id: "0_nmii7y4j"
 					});
-					</script>
+					</script> -->
 				  <!--! <iframe width="455" height="256" src="//www.youtube.com/embed/9bsV-BKjOCA?rel=0&html5=1&hd=1&showinfo=0&modestbranding=1&origin=platform.ou.edu" frameborder="0" allowfullscreen></iframe>-->
 				  <!--! <iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?iframeembed=true&entry_id=0_nmii7y4j&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest&flashvars[externalInterfaceDisabled]=false" width="455" height="295" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe> -->
-				  <!--! <script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?autoembed=true&entry_id=0_nmii7y4j&playerId=kaltura_player_1377036702_0_nmii7y4j&cache_st=1377036702&width=455&height=295"></script> -->
+				  <script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?autoembed=true&entry_id=0_nmii7y4j&playerId=kaltura_player_1377036702_0_nmii7y4j&cache_st=1377036702&width=455&height=295"></script>
 				</div>
 
 			</div>
@@ -200,64 +201,7 @@
 
 		</div>
 	</div>
-	<div id="about" class="hidden">
-		<div id="about_content" class="wrapper">
-			<h3>About Janux</h3>
-			<p itemscope itemtype="http://schema.org/SoftwareApplication">
-				<span itemprop="name">Janux</span>, a new interactive learning
-				community created in partnership between The University of
-				Oklahoma and technology leader NextThought, connects learners
-				and teachers through high-quality OU courses. Janux is the
-				first of its kind in OpenCourseWare, combining multimedia-rich
-				content with interactive social tools and a broader learning
-				community to create an unparalleled learning environment.
-				<img itemprop="image" style="display:none" class="hidden"
-					 src="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg" />
-			</p>
-
-			<h3>About The University of Oklahoma</h3>
-			<p itemscope itemtype="http://schema.org/Organization">
-				The <a href="http://ou.edu" title="University of
-				Oklahoma" target="_blank" itemprop="url">University of Oklahoma</a> is a doctoral
-				degree-granting research university serving the
-				educational, cultural, economic and health-care needs
-				of the state, region and nation. With a rich tradition
-				of academic excellence and a culture of creativity, OU
-				is driving innovation through
-				the <a href="http://ou.edu/oneuniversity" target="_blank" title="One
-				University">One University digital initiative.</a> OU
-				enrolls more than 31,000 students, has more than 2,600
-				full-time faculty members, and has 20 colleges
-				offering 165 majors at the baccalaureate level, 157
-				majors at the master’s level, 80 majors at the
-				doctoral level, 29 majors at the doctoral professional
-				level, and 28 graduate certificates. The university’s
-				annual operating budget is $1.7 billion.
-			</p>
-
-			<h3>About NextThought</h3>
-			<p itemscope itemtype="http://schema.org/Organization">
-				<a href="http://nextthought.com" title="NextThought"
-				itemprop="url">NextThought</a> is a technology company
-				that offers an integrated approach to education.
-				NextThought's platform enables rich social interaction
-				inside courseware and educational materials, including
-				videos, assessment, and text. The company also
-				provides video production and content development
-				services. Founded in 2011, NextThought works with a
-				number of leading universities and professional
-				education organizations around the world.
-			</p>
-		</div>
-	</div>
-
-
-
-
-	<div tal:define="the_courses options/upcomingCourses"
-		metal:use-macro="courses/macros/course-details"></div>
-
-
+	
 </div> <!--! close #container -->
 </div> <!--! close #wrapper-all -->
 
