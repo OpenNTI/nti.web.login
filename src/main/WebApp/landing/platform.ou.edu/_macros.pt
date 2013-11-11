@@ -34,7 +34,10 @@
 			<!--! Metadata markup, not for display -->
 			<a class="hidden" style="display: none"
 			   itemprop="url"
-			   href="#XXX123-detail" tal:attributes="href course/detailAnchor | nothing">
+			   href="#XXX123-detail"
+			   tal:define="anchorPage course/detailAnchor | python:None;
+						   anchor python:'course.%s.html' % course['id'].lower() if anchorPage else None"
+			   tal:attributes="href anchor | nothing">
 				<img src="images/courses/${course/id}/card.png"
 					 itemprop="image"
 					 alt="Course Image"
