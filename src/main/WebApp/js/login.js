@@ -150,7 +150,28 @@
 	}
 
 	function redirect(){
-		location.replace(returnUrl);
+		function doReplace() { location.replace(returnUrl); }
+		
+		function doPost() {
+			//this will cause browsers to dump the url in the reql tests...breaking the cached redirect
+			$.post({url: returnUrl}).always(doReplace);
+		}
+		
+		//detect cached 302 (It shouldn't be possible, but damn browsers *caugh*Safari*caugh*...)
+		$.ajax({
+			type: 'HEAD',
+			url: returnUrl
+		})
+		.fail(doPost)
+		.done(function (body,s,req) {
+			if (!req.getResponseHeader('X-NTI-WebApp')){
+				doPost();
+			} else {
+				doReplace();
+			}
+		});
+
+
 	}
 
 	function call(url,data,back,forceMethod){
