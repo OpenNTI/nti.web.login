@@ -628,15 +628,9 @@
             var passwordValue = passwordElement.val(),
                 verifyPasswordValue = verifyPasswordElement.val();
 
-            // checks to make sure the password has been sent to the server
-            if (!validation.password && !passwordValue) {
-                passwordParent.removeClass('invalid valid');
-                checkIt();
-                return;
-            }
-
             // checks to make sure the password has a value
             if (!passwordValue || !passwordValue.trim()) {
+				delete validation.password;
                 passwordParent.removeClass('invalid valid');
                 verifyPasswordParent.removeClass('invalid valid');
                 checkIt();
