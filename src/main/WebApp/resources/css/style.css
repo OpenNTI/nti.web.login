@@ -722,15 +722,29 @@ ol.selectbox.open {
 .signup input[size='10']{ width: 143px; margin: 0 10px 0 0; }
 .signup input[size='20']{ width: 296px; }
 
-
+.safari.mobile div.agreement,
 iframe.agreement {
 	color: #757474;
 	background: #fbfbfb;
 	border: 1px solid #dcdcdc;
 	padding: 5px;
+}
+
+.safari.mobile iframe.agreement{
+	border-width: 0;
+	padding: 0;
+}
+
+html:not(.safari.mobile) iframe.agreement{
 	-webkit-transform: translate3d(0, 0, 0);
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
+}
+
+.safari.mobile div.agreement {
+	overflow:auto;
+	-webkit-overflow-scrolling:touch;
+	height: 190px; 
 }
 
 
