@@ -744,7 +744,7 @@ html:not(.safari.mobile) iframe.agreement{
 .safari.mobile div.agreement {
 	overflow:auto;
 	-webkit-overflow-scrolling:touch;
-	height: 190px; 
+	height: 190px;
 }
 
 
@@ -954,7 +954,8 @@ a.avatar.selected::after{
 }
 
 
-.signup div.opt_in_email_communication.line {
+.signup div.opt_in_email_communication.line,
+.signup div.interested_in_credit.line {
 	padding-top: 10px;
 }
 

@@ -6,7 +6,7 @@
 		handshakeurl,
 		profileSchema,
 		avatarURLChoices,
-	 	backToLoginSingletonThing = false,
+		backToLoginSingletonThing = false,
 		schemaToFieldMap = {
 			'first': 'realname',
 			'last': 'realname',
@@ -22,7 +22,7 @@
 		};
 		passwordVerified = false;
 		schoolList = [],
-	 	defaultKeyupTimerInterval = 750;
+		defaultKeyupTimerInterval = 750;
 
 
 	function num(s){return parseInt(s,10);}
@@ -126,13 +126,13 @@
 				n, mappedName, schemaVal;
 
 
-            if(inp.is('[type=password]')){
-                inp = d.find('input:not(.placeholder)');
-            }
+			if(inp.is('[type=password]')){
+				inp = d.find('input:not(.placeholder)');
+			}
 
-            n = inp.attr('name') || oth.attr('data-name');
-            mappedName = schemaToFieldMap[n] || n;
-            schemaVal = profileSchema[mappedName];
+			n = inp.attr('name') || oth.attr('data-name');
+			mappedName = schemaToFieldMap[n] || n;
+			schemaVal = profileSchema[mappedName];
 
 
 			if(shouldShowRollSelector(profileSchema)) {
@@ -179,7 +179,7 @@
 	function showAvatars(){
 		var sec = $('section.avatars'),
 			fc = sec.find('.field-container'),
-            secureURL;
+			secureURL;
 
 		if (!avatarURLChoices || avatarURLChoices.length === 0) {
 			//just make sure it's hidden:
@@ -198,8 +198,8 @@
 		$.each(avatarURLChoices, function(index, u){
 			var s = $('<a class="avatar"><img/></a>');
 
-            //first one is selected by default:
-            if (index === 0){validation['avatarURL'] = u;}
+			//first one is selected by default:
+			if (index === 0){validation['avatarURL'] = u;}
 
 			fc.append(s);
 			s.find('img').attr('src', u.replace('www.gravatar.com','secure.gravatar.com').replace('http:','https:'));
@@ -278,7 +278,7 @@
 
 		//NOTE the approach here is to turn each term
 		//into a regex and loop over them basically anding
-		//the matches.  We could get fancy and build up
+		//the matches.	We could get fancy and build up
 		//a giant regex that handles all the possible permutations
 		//of the terms but its not clear that it would be more performant
 		//than just doing the straightforward thing
@@ -295,7 +295,7 @@
 				regexes.push(new RegExp(terms[i].replace(escapeRe, "\\$&"), 'i'));
 			}
 
-		    for (i=0; i < me.schoolList.length; i++) {
+			for (i=0; i < me.schoolList.length; i++) {
 				goodMatch = true;
 				for(j=0; j < regexes.length; j++){
 					if(!regexes[j].test(me.schoolList[i])){
@@ -308,7 +308,7 @@
 				}
 			}
 
-		   	return results;
+			return results;
 		}
 
 		function scroll(){
@@ -384,7 +384,7 @@
 
 	function lockBirthday(){
 		$('.month,[name=day],[name=year]').attr('disabled','true').removeAttr('tabindex');
-        $('a.continue.birthday').remove();
+		$('a.continue.birthday').remove();
 	}
 
 
@@ -396,7 +396,7 @@
 			form.addClass('birthday-filled-in');
 			//if (profileSchema['contact_email']){
 				//assume coppa:
-                //aways lock once BD is picked. for now.
+				//aways lock once BD is picked. for now.
 				lockBirthday();
 			//}
 		}
@@ -443,7 +443,7 @@
 			p = month.parents('.field-container'),
 			form = $('form');
 
-        $('a.continue.birthday').click(up);
+		$('a.continue.birthday').click(up);
 	}
 
 
@@ -472,26 +472,26 @@
 
 
 	function nameValidation(){
-        var firstname = $('[name=first]'),
-            lastname = $('[name=last]'),
-            pftimer;
+		var firstname = $('[name=first]'),
+			lastname = $('[name=last]'),
+			pftimer;
 
 		function pf() {
-            clearTimeout(pftimer);
+			clearTimeout(pftimer);
 			var f = firstname.val(),
 				l = lastname.val(),
 				rn;
 
-            if (validation.realname && (!f || !l)){
-                validate('realname', '');
-            }
-            else if (!validation.realname && (!f || !l)){
-                return;
-            }
-            else{
-                rn = f+' '+l;
-                validate('realname', rn);
-            }
+			if (validation.realname && (!f || !l)){
+				validate('realname', '');
+			}
+			else if (!validation.realname && (!f || !l)){
+				return;
+			}
+			else{
+				rn = f+' '+l;
+				validate('realname', rn);
+			}
 		}
 
 		function timer(){
@@ -505,12 +505,12 @@
 
 
 	function setupValidationListener(field, afterSuccess, afterFail){
-        var m = $('input[name='+field+']'),
-            pftimer;
+		var m = $('input[name='+field+']'),
+			pftimer;
 
 		function pf() {
-            var v = m.val();
-            clearTimeout(pftimer);
+			var v = m.val();
+			clearTimeout(pftimer);
 
 			//try to validate if theres a field value, or you have previously validated:
 			if (v || validation[field]){
@@ -537,26 +537,26 @@
 	}
 
 
-    function invitationCodesValidation(){
-        var field = 'invitation_codes',
+	function invitationCodesValidation(){
+		var field = 'invitation_codes',
 			m = $('input[name='+field+']'),
-            pftimer;
+			pftimer;
 
 		function pf() {
-            var v = m.val();
-            clearTimeout(pftimer);
+			var v = m.val();
+			clearTimeout(pftimer);
 
 			if(v){
 				v = v.trim();
 			}
 
-            //special case: if no inv code, make sure it's happy
-            if (!v){
-                $('input[name='+field+']').parent('.field-container').removeClass('invalid').removeClass('valid');
+			//special case: if no inv code, make sure it's happy
+			if (!v){
+				$('input[name='+field+']').parent('.field-container').removeClass('invalid').removeClass('valid');
 				delete validation[field];
-                validate();
+				validate();
 				return;
-            }
+			}
 
 			//try to validate if theres a field value, or you have previously validated:
 			validate(field, [v]);
@@ -568,7 +568,7 @@
 		}
 
 		m.blur(pf).keyup(timer);
-    }
+	}
 
 
 	function usernameValidation(){
@@ -593,8 +593,8 @@
 		u.keyup(up);
 	}
 
-    function optInValidation(){
-		var field = 'opt_in_email_communication',
+	function boolValidation(field){
+		var
 			m = $('input[name='+field+']'),
 			p = m.parents('.field-container'),
 			pftimer;
@@ -605,7 +605,7 @@
 		function pf() {
 			var optIn = false;
 			if(m.length && m.length > 0){
-				optIn = m[0].checked
+				optIn = m[0].checked;
 			}
 			validate(field, optIn, afterSuccess);
 		}
@@ -622,23 +622,23 @@
 		}
 	}
 
-    function passwordValidation() {
-        // our password validation logic
-        function pfPassword(event) {
-            var passwordValue = passwordElement.val(),
-                verifyPasswordValue = verifyPasswordElement.val();
+	function passwordValidation() {
+		// our password validation logic
+		function pfPassword(event) {
+			var passwordValue = passwordElement.val(),
+				verifyPasswordValue = verifyPasswordElement.val();
 
-            // checks to make sure the password has a value
-            if (!passwordValue || !passwordValue.trim()) {
+			// checks to make sure the password has a value
+			if (!passwordValue || !passwordValue.trim()) {
 				delete validation.password;
-                passwordParent.removeClass('invalid valid');
-                verifyPasswordParent.removeClass('invalid valid');
-                checkIt();
-                return;
-            }
+				passwordParent.removeClass('invalid valid');
+				verifyPasswordParent.removeClass('invalid valid');
+				checkIt();
+				return;
+			}
 
-            // updates the verify function based on the state of the password
-            function updateVerify(){
+			// updates the verify function based on the state of the password
+			function updateVerify(){
 				//FIXME We could just not mark verify fields by default
 				//The server doesn't tell us about them so it seems
 				//weird to do them there anyway.  thats a more global change
@@ -648,50 +648,50 @@
 				if(!verifyPasswordValue.trim() || !passwordParent.hasClass('valid')){
 					return;
 				}
-				verifyPasswordParent.addClass(passwordValue !== verifyPasswordValue  ? 'invalid' : 'valid');
+				verifyPasswordParent.addClass(passwordValue !== verifyPasswordValue	 ? 'invalid' : 'valid');
 				checkIt();
 			}
 
-            validate('password', passwordValue, updateVerify, updateVerify);
-        }
+			validate('password', passwordValue, updateVerify, updateVerify);
+		}
 
-        function pfVerify(event) {
-            var pass = passwordElement.val(),
-                veri = verifyPasswordElement.val();
+		function pfVerify(event) {
+			var pass = passwordElement.val(),
+				veri = verifyPasswordElement.val();
 
-            verifyPasswordParent.removeClass('invalid valid');
+			verifyPasswordParent.removeClass('invalid valid');
 
-            // makes sure password and verify both have values and the password is valid
-            if (veri && pass && veri.trim() && pass.trim() && passwordParent.hasClass('valid')) {
-                verifyPasswordParent.addClass(pass !== veri ? 'invalid' : 'valid');
-                checkIt();
-            }
-        }
+			// makes sure password and verify both have values and the password is valid
+			if (veri && pass && veri.trim() && pass.trim() && passwordParent.hasClass('valid')) {
+				verifyPasswordParent.addClass(pass !== veri ? 'invalid' : 'valid');
+				checkIt();
+			}
+		}
 
-        var passwordElement = $('[name=password]'),
-            verifyPasswordElement = $('[name=password_verify]'),
-            passwordParent = passwordElement.parents('.field-container'),
-            verifyPasswordParent = verifyPasswordElement.parents('.field-container'),
-            timers = {};
+		var passwordElement = $('[name=password]'),
+			verifyPasswordElement = $('[name=password_verify]'),
+			passwordParent = passwordElement.parents('.field-container'),
+			verifyPasswordParent = verifyPasswordElement.parents('.field-container'),
+			timers = {};
 
-        // checks to make sure the user isnt entering text before checking the fields
-        function createKeyupHandler(fn, timerID) {
+		// checks to make sure the user isnt entering text before checking the fields
+		function createKeyupHandler(fn, timerID) {
 
-            var handler = function(event) {
-                var pfTimer = timers[timerID];
-                clearTimeout(pfTimer);
-                if (event.type === 'keyup' && event.keyCode === 9 /* tab key */) {
-                    return;
-                }
+			var handler = function(event) {
+				var pfTimer = timers[timerID];
+				clearTimeout(pfTimer);
+				if (event.type === 'keyup' && event.keyCode === 9 /* tab key */) {
+					return;
+				}
 
-                timers[timerID] = setTimeout(fn, defaultKeyupTimerInterval);
-            };
-            return handler;
-        }
+				timers[timerID] = setTimeout(fn, defaultKeyupTimerInterval);
+			};
+			return handler;
+		}
 
-        passwordElement.blur(pfPassword).keyup(createKeyupHandler(pfPassword, 'password'));
-        verifyPasswordElement.blur(pfVerify).keyup(createKeyupHandler(pfVerify, 'verify'));
-    }
+		passwordElement.blur(pfPassword).keyup(createKeyupHandler(pfPassword, 'password'));
+		verifyPasswordElement.blur(pfVerify).keyup(createKeyupHandler(pfVerify, 'verify'));
+	}
 
 	function couldNotConnectToServer(){
 		console.error('failed to resolve service url..');
@@ -712,7 +712,7 @@
 		}
 
 		//FIXME need to inform the user what is about to happen vefore we do it.
-		//dialog or something.  We should do better than native alert box
+		//dialog or something.	We should do better than native alert box
 		//TODO needs better wording
 
 		$('.content').html([
@@ -732,7 +732,7 @@
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
-		    var cLink = getLink(data, 'logon.continue');
+			var cLink = getLink(data, 'logon.continue');
 
 			//If we got a continue link, we either didn't come from the login
 			//app or the user logged in after we presented the account creation link
@@ -861,7 +861,7 @@
 
 	function preflight(data, success, fail){
 
-	 	function defaultFail(){
+		function defaultFail(){
 			console.log('preflight fail');
 		}
 
@@ -909,7 +909,7 @@
 		var key, val, o,
 		ps = $('[name=password]'),
 		verify = $('[name=password_verify]'),
-            icval;
+			icval;
 
 		function disableButton(reason){
 			$('a.agree').addClass('disabled');
@@ -921,11 +921,11 @@
 			return false;
 		}
 		//check that the password is not all white space
-        if(!ps.val().trim() && ps.val().length > 0){
-        	markFieldInvalidated({field:'password',message:'The password must not be all whitespace.'});
-        	disableButton('The password is all whitespace');
-        	return false;
-        }
+		if(!ps.val().trim() && ps.val().length > 0){
+			markFieldInvalidated({field:'password',message:'The password must not be all whitespace.'});
+			disableButton('The password is all whitespace');
+			return false;
+		}
 
 		for(key in profileSchema) {
 			if(profileSchema.hasOwnProperty(key)){
@@ -949,14 +949,14 @@
 			}
 		}
 
-        //special case: If there's a code, ad it has data, it needs to be in the validation:
-        icval = $('input[name=invitation_codes]').val();
-        if (icval && !validation['invitation_codes']) {
-            disableButton('Cannot enable button, there is a code in the code input but it is not validated');
-            return false;
-        }
+		//special case: If there's a code, ad it has data, it needs to be in the validation:
+		icval = $('input[name=invitation_codes]').val();
+		if (icval && !validation['invitation_codes']) {
+			disableButton('Cannot enable button, there is a code in the code input but it is not validated');
+			return false;
+		}
 
-        
+
 		if(!ps.val().trim() || ps.val() !== verify.val()){
 			disableButton('setting checkIt button to disabled because password fields are empty or do not match');
 			return false;
@@ -1052,7 +1052,7 @@
 
 		if (!p.length){
 			//we didn't find anything, see if it's one of those special dynamic things:
- 			m = $('.'+fieldName);
+			m = $('.'+fieldName);
 			p = m.parents('.field-container');
 		}
 
@@ -1074,7 +1074,7 @@
  * * If you get an error back, then the field(s) mentioned in the error must be marked as invalid, regardless of the field that triggered the preflight
  * * If you are editing a field, and you get an error back for that field, then by all the previous rules, that field should be marked invalid
  * * Fields are marked invalid anytime an error for that field is received. Fields are marked valid if:
- *   the preflight comes back clean or the field that triggered the preflight is not the field mentioned in the received error
+ *	 the preflight comes back clean or the field that triggered the preflight is not the field mentioned in the received error
  */
 
 	function validate(fieldName, fieldValue, afterSuccess, afterFail) {
@@ -1129,9 +1129,9 @@
 			validation[fieldName] = fieldValue;
 		}
 		preflight(validation, success, fail);
-        //preflight:
-        console.log('im validating this' + JSON.stringify(validation) + ' to ' + preflighturl);
-    }
+		//preflight:
+		console.log('im validating this' + JSON.stringify(validation) + ' to ' + preflighturl);
+	}
 
 
 	function shouldShowRollSelector(schema){
@@ -1166,7 +1166,7 @@
 		}
 
 		function fail(){
-			//failure?  Assume hidden role:
+			//failure?	Assume hidden role:
 			makeSureRoleIsHidden();
 			couldNotConnectToServer();
 		}
@@ -1244,6 +1244,7 @@
 			form.addClass('birthday-filled-in');
 
 			//Enable default option
+			// NOTE: We have a hardcoded list of things to enable here
 			pq = $('section.optionals');
 			opts = pq.find('.field-container');
 			opts.each(function(i){
@@ -1251,7 +1252,9 @@
 					inp = t.find('input'),
 					n = inp.attr('name'),
 					def = 'opt_in_email_communication';
-				if(n !== def && n!= 'invitation_codes') { t.addClass('disabled'); }
+				if(n !== def && n != 'invitation_code' && n != 'interested_in_credit') {
+					t.addClass('disabled');
+				}
 			});
 
 			//show optional section
@@ -1275,11 +1278,12 @@
 		birthdayValidation();
 		nameValidation();
 		emailValidation();
-        invitationCodesValidation();
+		invitationCodesValidation();
 		contactEmailValidation();
 		usernameValidation();
 		passwordValidation();
-		optInValidation();
+		boolValidation('opt_in_email_communication');
+		boolValidation('interested_in_credit');
 		participatesValidation();
 		roleValidation();
 		mathcountsRoleHandler();
