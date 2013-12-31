@@ -5,22 +5,16 @@
 from __future__ import print_function, unicode_literals
 
 import argparse
-import httplib
-import json
 import os
-import subprocess
-import sys
 import time
-import urllib2 as urllib
 
 BUILDTIME = time.strftime('%Y%m%d%H%M%S')
 
 def _updateHtml( html_file, analytics_key ):
-	contents = ''
-	with open( html_file, 'rb' ) as file:
-		contents = file.read()
+	with open( html_file, 'rb' ) as f:
+		contents = f.read()
 
-        analytics = """
+	analytics = """
         <script type="text/javascript">
 	        var _gaq = _gaq || [];
                 _gaq.push(['_setAccount', '%s']);
@@ -30,7 +24,7 @@ def _updateHtml( html_file, analytics_key ):
 	                var ga = document.createElement('script');
                         ga.type = 'text/javascript';
                         ga.async = true;
-                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + 
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
                                 '.google-analytics.com/ga.js';
                         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
                 })();
@@ -45,8 +39,18 @@ def _updateHtml( html_file, analytics_key ):
 
 	_t = os.path.splitext(html_file)
 	outfile = _t[0] + '-mod' + _t[1]
-	with open( outfile, 'wb' ) as file:
-		file.write(contents)
+
+	# If the original file is newer than our copy, or our copy
+	# doesn't exist, then replace the original file and also
+	# touch our copy to keep a record of when we did so
+	if not os.path.isfile(outfile) or os.stat(html_file).st_mtime > os.stat(outfile).st_mtime:
+
+		with open( outfile, 'wb' ) as f:
+			f.write(contents)
+
+		with open(html_file, 'wb') as f:
+			f.write(contents)
+
 
 def main():
 	parser = argparse.ArgumentParser()
