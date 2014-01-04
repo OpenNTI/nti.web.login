@@ -38,17 +38,17 @@ def _updateHtml( html_file, analytics_key ):
 		contents = contents.replace('<!--[analytics code here]-->', '')
 
 	_t = os.path.splitext(html_file)
-	outfile = _t[0] + '-mod' + _t[1]
+	# Drop the trailing .in suffix if it exists. For all
+	# template files checked in, it must exist; for generated
+	# files, it must not.
+	outfile = html_file[:-3] if html_file.endswith('.in') else html_file
 
-	# If the original file is newer than our copy, or our copy
-	# doesn't exist, then replace the original file and also
-	# touch our copy to keep a record of when we did so
-	if not os.path.isfile(outfile) or os.stat(html_file).st_mtime > os.stat(outfile).st_mtime:
+	# If the original file is at least as new as our copy (at least because
+	# it may be the same file), or our copy
+	# doesn't exist, then write our copy
+	if not os.path.isfile(outfile) or os.stat(html_file).st_mtime >= os.stat(outfile).st_mtime:
 
 		with open( outfile, 'wb' ) as f:
-			f.write(contents)
-
-		with open(html_file, 'wb') as f:
 			f.write(contents)
 
 
@@ -58,11 +58,11 @@ def main():
 
 	args = parser.parse_args()
 
-	_updateHtml('WebApp/index.html',args.analytics_key)
-	_updateHtml('WebApp/mobile.html',args.analytics_key)
-	_updateHtml('WebApp/passwordrecover.html',args.analytics_key)
-	_updateHtml('WebApp/signup.html',args.analytics_key)
-	_updateHtml('WebApp/unsupported.html',args.analytics_key)
+	_updateHtml('WebApp/index.html.in',args.analytics_key)
+	_updateHtml('WebApp/mobile.html.in',args.analytics_key)
+	_updateHtml('WebApp/passwordrecover.html.in',args.analytics_key)
+	_updateHtml('WebApp/signup.html.in',args.analytics_key)
+	_updateHtml('WebApp/unsupported.html.in',args.analytics_key)
 	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key)
 
 if __name__ == '__main__':
