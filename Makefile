@@ -4,16 +4,16 @@ all: render
 
 render: $(DIR)/index.html courses
 
-clean: cleanindex cleancourses
+#clean: cleanindex cleancourses
 #	mv $(DIR)/about.html $(DIR)/about.html.keep
 # 	rm -f $(DIR)/*.html
 # 	mv $(DIR)/about.html.keep $(DIR)/about.html
 
-cleanindex:
-	rm -f $(DIR)/index.html
+#cleanindex:
+#	rm -f $(DIR)/index.html
 
-cleancourses:
-	rm -f $(DIR)/course*.html
+#cleancourses:
+#	rm -f $(DIR)/course*.html
 
 $(DIR)/index.html: $(DIR)/data.json $(DIR)/index.pt
 	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json $(DIR)/index.pt $(DIR)/index.html
