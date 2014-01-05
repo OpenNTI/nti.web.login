@@ -7,9 +7,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Application Login">
 	<meta name="author" content="NextThought">
-	<link rel="stylesheet" type="text/css" href="resources/fonts/fonts.css?v=%time%">
-	<link rel="stylesheet" href="resources/css/style.css?v=%time%" media="screen"/>
-	<link rel="stylesheet" href="resources/css/site.css?v=%time%" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="resources/fonts/fonts.css?v=20140105155243">
+	<link rel="stylesheet" href="resources/css/style.css?v=20140105155243" media="screen"/>
+	<link rel="stylesheet" href="resources/css/site.css?v=20140105155243" media="screen"/>
 
 	<!--[if gte IE 9]>
 	<style type="text/css">
@@ -19,9 +19,9 @@
 	</style>
 	<![endif]-->
 
-    <script type="text/javascript" src="defaults.js?v=%time%"></script>
-	<script type="text/javascript" src="js/support.js?v=%time%"></script>
-	<script type="text/javascript" src="js/login.js?v=%time%"></script>
+    <script type="text/javascript" src="defaults.js?v=20140105155243"></script>
+	<script type="text/javascript" src="js/support.js?v=20140105155243"></script>
+	<script type="text/javascript" src="js/login.js?v=20140105155243"></script>
 </head>
 <body class="signin">
 <div class="links">
@@ -127,6 +127,16 @@
 		</div>
 	</div>
 
-	<!--[analytics code here]-->
+	
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-22943650-3', 'nextthought.com');
+ga('send', 'pageview');
+</script>
+
 </body>
 </html>

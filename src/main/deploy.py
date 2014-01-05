@@ -14,22 +14,21 @@ def _updateHtml( html_file, analytics_key ):
 	with open( html_file, 'rb' ) as f:
 		contents = f.read()
 
+	analytics_domain = 'nextthought.com'
+	if ',' in analytics_key:
+		analytics_key, analytics_domain = analytics_key.split(',')
+
 	analytics = """
-        <script type="text/javascript">
-	        var _gaq = _gaq || [];
-                _gaq.push(['_setAccount', '%s']);
-                _gaq.push(['_setDomainName', 'nextthought.com']);
-                _gaq.push(['_trackPageview']);
-                (function() {
-	                var ga = document.createElement('script');
-                        ga.type = 'text/javascript';
-                        ga.async = true;
-                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
-                                '.google-analytics.com/ga.js';
-                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                })();
-        </script>
-""" % (analytics_key, )
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', '%s', '%s');
+ga('send', 'pageview');
+</script>
+""" % (analytics_key, analytics_domain)
 
 	contents = contents.replace('%time%', BUILDTIME)
 	if analytics_key:
@@ -54,7 +53,7 @@ def _updateHtml( html_file, analytics_key ):
 
 def main():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-a', '--google-analytics', dest='analytics_key', action='store', default=None, help="Key value used with Google Analytics.  If no value is specified, then the index-minify.html will not contain Google Analytics code.")
+	parser.add_argument('-a', '--google-analytics', dest='analytics_key', action='store', default=None, help="Key value used with Google Analytics.	 If no value is specified, then the index-minify.html will not contain Google Analytics code.")
 
 	args = parser.parse_args()
 
@@ -66,4 +65,4 @@ def main():
 	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key)
 
 if __name__ == '__main__':
-        main()
+		main()
