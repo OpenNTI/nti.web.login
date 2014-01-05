@@ -44,11 +44,13 @@ ga('send', 'pageview');
 
 	# If the original file is at least as new as our copy (at least because
 	# it may be the same file), or our copy
-	# doesn't exist, then write our copy
+	# doesn't exist, then write our copy...but only do this if the destination
+	# is not a symlink, because in dev environments it tends to be
+	# a symlink to the .in file itself
 	if not os.path.isfile(outfile) or os.stat(html_file).st_mtime >= os.stat(outfile).st_mtime:
-
-		with open( outfile, 'wb' ) as f:
-			f.write(contents)
+		if not os.path.islink(outfile):
+			with open( outfile, 'wb' ) as f:
+				f.write(contents)
 
 
 def main():

@@ -8,8 +8,8 @@
 	<meta name="description" content="Platform Account Signup">
 	<meta name="author" content="NextThought">
 	<link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,700italic,400italic|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'>
-	<link rel="stylesheet" href="resources/css/style.css?v=20140105155243" media="screen">
-	<link rel="stylesheet" href="resources/css/site.css?v=20140105155243" media="screen">
+	<link rel="stylesheet" href="resources/css/style.css?v=%time%" media="screen">
+	<link rel="stylesheet" href="resources/css/site.css?v=%time%" media="screen">
 
     <!--[if gte IE 9]>
 	<style type="text/css">
@@ -19,11 +19,11 @@
 	</style>
 	<![endif]-->
 
-	<script type="text/javascript" src="defaults.js?v=20140105155243"></script>
-	<script type="text/javascript" src="js/support.js?v=20140105155243"></script>
-	<script type="text/javascript" src="js/signup.js?v=20140105155243"></script>
-	<script type="text/javascript" src="resources/strings/strings.js?v=20140105155243"></script>
-	<script type="text/javascript" src="resources/strings/site.js?v=20140105155243"></script>
+	<script type="text/javascript" src="defaults.js?v=%time%"></script>
+	<script type="text/javascript" src="js/support.js?v=%time%"></script>
+	<script type="text/javascript" src="js/signup.js?v=%time%"></script>
+	<script type="text/javascript" src="resources/strings/strings.js?v=%time%"></script>
+	<script type="text/javascript" src="resources/strings/site.js?v=%time%"></script>
 </head>
 <body class="signup">
 		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
@@ -271,16 +271,6 @@
 				</div>
 			</div>
 		</div>
-		
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-22943650-3', 'nextthought.com');
-ga('send', 'pageview');
-</script>
-
+		<!--[analytics code here]-->
 </body>
 </html>
