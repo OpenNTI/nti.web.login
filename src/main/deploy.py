@@ -55,7 +55,7 @@ ga('send', 'pageview');
 
 def main():
 	parser = argparse.ArgumentParser()
-	parser.add_argument('-a', '--google-analytics', dest='analytics_key', action='store', default=None, help="Key value used with Google Analytics.	 If no value is specified, then the index-minify.html will not contain Google Analytics code.")
+	parser.add_argument('-a', '--google-analytics', dest='analytics_key', action='store', default='', help="Key value used with Google Analytics.	 If no value is specified, then the index-minify.html will not contain Google Analytics code.")
 
 	args = parser.parse_args()
 
