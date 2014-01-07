@@ -1273,42 +1273,47 @@
 
 	//onready event
 	$(function(){
-		setupSelectBox();
-		setupNumberFields();
-		birthdayValidation();
-		nameValidation();
-		emailValidation();
-		invitationCodesValidation();
-		contactEmailValidation();
-		usernameValidation();
-		passwordValidation();
-		boolValidation('opt_in_email_communication');
-		boolValidation('interested_in_credit');
-		participatesValidation();
-		roleValidation();
-		mathcountsRoleHandler();
-		affiliationValidation();
+		  setupSelectBox();
+		  setupNumberFields();
+		  birthdayValidation();
+		  nameValidation();
+		  emailValidation();
+		  invitationCodesValidation();
+		  contactEmailValidation();
+		  usernameValidation();
+		  passwordValidation();
+		  boolValidation('opt_in_email_communication');
+		  boolValidation('interested_in_credit');
+		  participatesValidation();
+		  roleValidation();
+		  mathcountsRoleHandler();
+		  affiliationValidation();
 
-		$('a.agree').click(makeIt);
+		  // Ensure we preserve the query params on all
+		  // links...the iPad depends on it
+		  $('#signin').attr('href',function(i,at){ return at + location.search; });
 
-		$('.callout .primary').html(getString('signup:callout_primary'));
-		$('.callout .message').html(getString('signup:callout_message'));
+
+		  $('a.agree').click(makeIt);
+
+		  $('.callout .primary').html(getString('signup:callout_primary'));
+		  $('.callout .message').html(getString('signup:callout_message'));
 
 		/*$('#signin').attr('href',function(i,at){
 			var r = at + location.search;
 			return (r !== at) ? r : document.referrer;
 		});*/
 
-		ping();
+		  ping();
 
-		$('input').focus(function(){
-			$(this).parent('div[data-title]').addClass('has-focus');
-		}).blur(function(){
-			$(this).parent('div[data-title]').removeClass('has-focus');
-		});
+		  $('input').focus(function(){
+							   $(this).parent('div[data-title]').addClass('has-focus');
+						   }).blur(function(){
+									   $(this).parent('div[data-title]').removeClass('has-focus');
+								   });
 
-		$('input,textarea').placeholder();
-	});
+		  $('input,textarea').placeholder();
+	  });
 
 
 })(jQuery);
