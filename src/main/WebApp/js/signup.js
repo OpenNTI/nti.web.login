@@ -876,6 +876,18 @@
 
 		if (!success){success = defaultSuccess;}
 		if (!fail){fail = defaultFail;}
+		
+		function failFilter(response) {
+			var expected = {
+				200: 1, //ok
+				409: 1, //conflict
+				422: 1 //bad data
+			}
+			fail.apply(this, arguments);
+			if (response && !expected[response.status]) {
+				couldNotConnectToServer();
+			}
+		}
 
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
@@ -883,7 +895,7 @@
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'
-		}).fail(fail).done(success);
+		}).fail(failFilter).done(success);
 	}
 
 	function markFieldInvalidated(responseObject) {
