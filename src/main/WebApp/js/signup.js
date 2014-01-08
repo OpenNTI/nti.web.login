@@ -968,8 +968,9 @@
 
 
 	function makeIt(e){
-		var s,att='shakeit';
-		if(!$('a.agree').hasClass('busy')){
+		var s,att='shakeit',
+			a = $('a.agree');
+		if(!a.hasClass('busy') && !a.hasClass('disabled')){
 			try {
 				if(!checkIt()){
 					s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
