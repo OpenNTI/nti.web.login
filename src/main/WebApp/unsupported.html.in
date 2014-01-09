@@ -60,7 +60,7 @@
 
             <div id="logo"><img src="resources/images/logoWithNoText.png"/></div>
             <div class="unsupported_message">It looks like you&#39;re using a browser that we don&#39;t support.</div>
-            <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari 5.0+</a>, <a href="http://www.getfirefox.com">Firefox 5.0+</a>, or <a href="http://www.microsoft.com/ie">Internet Explorer 9+</a>.
+            <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari 5.0+</a>, <a href="http://www.getfirefox.com">Firefox 5.0+</a>, or <a href="http://www.microsoft.com/ie">Internet Explorer 9+</a><br/>with JavaScript <strong><u>enabled</u></strong>.
             </div>
         </div>
     </div>
