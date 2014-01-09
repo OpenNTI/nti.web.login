@@ -8,9 +8,12 @@ import argparse
 import os
 import time
 
+import glob
+import itertools
+
 BUILDTIME = time.strftime('%Y%m%d%H%M%S')
 
-def _updateHtml( html_file, analytics_key ):
+def _updateHtml( html_file, analytics_key, dep_mod_time ):
 	with open( html_file, 'rb' ) as f:
 		contents = f.read()
 
@@ -47,7 +50,9 @@ ga('send', 'pageview');
 	# doesn't exist, then write our copy...but only do this if the destination
 	# is not a symlink, because in dev environments it tends to be
 	# a symlink to the .in file itself
-	if not os.path.isfile(outfile) or os.stat(html_file).st_mtime >= os.stat(outfile).st_mtime:
+	outfile_mod_time = -1 if not os.path.isfile(outfile) else os.stat(outfile).st_mtime
+	dep_mod_time = max(os.stat(html_file).st_mtime, dep_mod_time)
+	if dep_mod_time >= outfile_mod_time:
 		if not os.path.islink(outfile):
 			with open( outfile, 'wb' ) as f:
 				f.write(contents)
@@ -59,12 +64,21 @@ def main():
 
 	args = parser.parse_args()
 
-	_updateHtml('WebApp/index.html.in',args.analytics_key)
-	_updateHtml('WebApp/mobile.html.in',args.analytics_key)
-	_updateHtml('WebApp/passwordrecover.html.in',args.analytics_key)
-	_updateHtml('WebApp/signup.html.in',args.analytics_key)
-	_updateHtml('WebApp/unsupported.html.in',args.analytics_key)
-	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key)
+	# Find the most recent modification date of our dependencies.
+	# If our output files are older than that, we rebuild
+	# even if the templated didn't change
+	dep_mod_date = 0
+	for path in itertools.chain(glob.iglob('WebApp/js/*.js'),
+								glob.iglob('WebApp/resources/css/*.css')):
+		dep_mod_date = max(dep_mod_date,
+						   os.stat(path).st_mtime)
+
+	_updateHtml('WebApp/index.html.in',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/mobile.html.in',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/passwordrecover.html.in',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/signup.html.in',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/unsupported.html.in',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, dep_mod_date)
 
 if __name__ == '__main__':
 		main()
