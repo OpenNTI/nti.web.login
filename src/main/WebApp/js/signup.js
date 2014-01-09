@@ -728,7 +728,7 @@
 	function ping(){
 		$.ajax({
 			dataType: 'json',
-			url:''/dataserver2/logon.ping',
+			url:'/dataserver2/logon.ping',
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
