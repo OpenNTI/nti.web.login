@@ -161,7 +161,7 @@
 			p = data? data.password : undefined,
 			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
 			m = forceMethod? forceMethod : data? 'POST':'GET',
-			l = host+url,/* + "?dc="+(new Date().getTime()),*/
+			l = url,/* + "?dc="+(new Date().getTime()),*/
 			f = { withCredentials: true },
 			h = {
 				Accept:'application/json',
@@ -309,7 +309,7 @@
 
 			if(!xhr){
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
-				location.replace(host+url);
+				location.replace(url);
 				return;
 			}
 
@@ -384,7 +384,7 @@
 		$('#account-creation').hide();
 		$.ajax({
 			dataType: 'json',
-			url:host+'/dataserver2/logon.ping',
+			url:'/dataserver2/logon.ping',
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
@@ -407,7 +407,7 @@
 
 			if (getLink(data, 'logon.continue')){
 				$.ajax({
-					url: host+getLink(data,'logon.handshake'),
+					url: getLink(data,'logon.handshake'),
 					dataType: 'json',
 					headers: {Accept:'application/json'},
 					type: 'POST',
@@ -420,7 +420,7 @@
 						finishAnonymous();
 					}
 				}).fail(function(){
-					var url = host+getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
+					var url = getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
 					console.log('Forcing a logout due to handshake failure');
 					location.replace(url);;
 				});
@@ -441,7 +441,7 @@
 		addButton('Yes', '#active-session-login').click(function(){
 			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
 			$.ajax({
-				url: host + logoutUrl + '?_dc=' + new Date().getTime()
+				url: logoutUrl + '?_dc=' + new Date().getTime()
 			})
 			.always(function(){location.reload();});
 		});
@@ -475,7 +475,7 @@
 			},1000);
 
 			$.ajax({
-				url: host+recoverNameUrl,
+				url: recoverNameUrl,
 				dataType: 'json',
 				headers: {Accept:'application/json'},
 				type: 'POST',
@@ -524,7 +524,7 @@
 			if (pathname.lastIndexOf('/') !== pathname.length - 1){
 				pathname += '/';
 			}
-			recoveryURL += (pathname + 'passwordrecover.html?host=' + host + '&return=' + returnUrl);
+			recoveryURL += (pathname + 'passwordrecover.html?return=' + returnUrl);
 
 			e.stopPropagation();
 			e.preventDefault();
@@ -535,7 +535,7 @@
 			},1000);
 
 			$.ajax({
-				url: host+recoverPassUrl,
+				url: recoverPassUrl,
 				dataType: 'json',
 				headers: {Accept:'application/json'},
 				type: 'POST',

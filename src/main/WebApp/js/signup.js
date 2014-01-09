@@ -728,7 +728,7 @@
 	function ping(){
 		$.ajax({
 			dataType: 'json',
-			url:host+'/dataserver2/logon.ping',
+			url:''/dataserver2/logon.ping',
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
@@ -774,7 +774,7 @@
 
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host+ url,
+			url: url,
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'
@@ -824,7 +824,7 @@
 		var link,
 			x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host+handshakeurl,
+			url: handshakeurl,
 			data: {username: user.Username},
 			dataType: 'json',
 			type: 'POST'
@@ -847,7 +847,7 @@
 
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host+url,
+			url: url,
 			dataType: 'json',
 			type: 'DELETE'
 		}).fail(function(){
@@ -891,7 +891,7 @@
 
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
-			url: host + preflighturl,
+			url: preflighturl,
 			data: JSON.stringify(data),
 			dataType: 'json',
 			type: 'POST'

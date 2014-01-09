@@ -106,7 +106,6 @@ function getLink(o, r){var l=(o||{}).Links||[],i=l.length-1;for(i;i>=0;i--){if(l
 var i,v,o={},a=location.search.replace('?','').split("&");
 for(i=0;i<a.length;i++){v = a[i].split('=');o[decodeURIComponent(v[0])]=decodeURIComponent(v[1]);}
 window.requestParameters = o;
-window.host = o.host || $AppConfig.server.host ||(location.protocol+'//'+location.host);
 window.returnUrl = o['return'] || $AppConfig.url || '/';
 if(history.replaceState){
 	window.ourPath = location.pathname;
