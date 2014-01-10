@@ -11,6 +11,8 @@ import time
 import glob
 import itertools
 
+import gzip
+
 BUILDTIME = time.strftime('%Y%m%d%H%M%S')
 
 def _updateHtml( html_file, analytics_key, dep_mod_time ):
@@ -56,6 +58,27 @@ ga('send', 'pageview');
 		if not os.path.islink(outfile):
 			with open( outfile, 'wb' ) as f:
 				f.write(contents)
+			# Write a .gz version for nginx http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html
+			out_time = os.stat(outfile).st_mtime
+			with open( outfile + '.gz', 'wb' ) as f:
+				gf = gzip.GzipFile( outfile, 'wb', 9, f, out_time)
+				gf.write(contents)
+			os.utime(outfile + '.gz', (out_time, out_time))
+
+def gzip_files(file_paths):
+	"Compress files that are known to exist"
+	# Write a .gz version for nginx http://nginx.org/en/docs/http/ngx_http_gzip_static_module.html
+	for path in file_paths:
+		gz_path = path + '.gz'
+		path_mod_time = os.stat(path).st_mtime
+		if not os.path.isfile(gz_path) or os.stat(gz_path).st_mtime < path_mod_time:
+			with open(path, 'rb') as f:
+				contents = f.read()
+			with open( gz_path, 'wb' ) as f:
+				gf = gzip.GzipFile( path, 'wb', 9, f, path_mod_time)
+				gf.write(contents)
+			os.utime(gz_path, (path_mod_time, path_mod_time))
+
 
 
 def main():
@@ -79,6 +102,11 @@ def main():
 	_updateHtml('WebApp/signup.html.in',args.analytics_key, dep_mod_date)
 	_updateHtml('WebApp/unsupported.html.in',args.analytics_key, dep_mod_date)
 	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, dep_mod_date)
+
+	gzip_files(glob.iglob('WebApp/js/*.js'))
+	gzip_files(glob.iglob('WebApp/resources/css/*.css'))
+	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.html'))
+	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.css'))
 
 if __name__ == '__main__':
 		main()
