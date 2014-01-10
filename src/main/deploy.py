@@ -63,6 +63,7 @@ ga('send', 'pageview');
 			with open( outfile + '.gz', 'wb' ) as f:
 				gf = gzip.GzipFile( outfile, 'wb', 9, f, out_time)
 				gf.write(contents)
+				gf.close()
 			os.utime(outfile + '.gz', (out_time, out_time))
 
 def gzip_files(file_paths):
@@ -77,6 +78,7 @@ def gzip_files(file_paths):
 			with open( gz_path, 'wb' ) as f:
 				gf = gzip.GzipFile( path, 'wb', 9, f, path_mod_time)
 				gf.write(contents)
+				gf.close()
 			os.utime(gz_path, (path_mod_time, path_mod_time))
 
 
