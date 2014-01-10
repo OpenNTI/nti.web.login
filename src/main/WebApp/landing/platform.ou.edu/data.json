@@ -1,5 +1,5 @@
 {
-	"availableCourses": [
+	"archivedCourses": [
 		{
 			"id": "CLC3403",
 			"instructor": "Kyle Harper",
@@ -37,8 +37,9 @@
 			"title": "Social Statistics"
 		}
 	],
-	"availableCoursesWhen": "Fall 2013",
-	"upcomingCourses": [
+	"archivedCoursesWhen": "Fall 2013",
+	"availableCoursesWhen": "Spring 2014",
+	"availableCourses": [
 		{
 			"credit": {
 				"enrollment": {

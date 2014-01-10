@@ -253,10 +253,10 @@ div.subpage a.next, {
 
 div.subpage next,
 div.subpage previous,
-div.subpage close, 
+div.subpage close,
 div.subpage a.next,
 div.subpage a.previous,
-div.subpage a.close, 
+div.subpage a.close,
 #about close {
 	float: right;
 	display: inline-block;
@@ -300,7 +300,7 @@ div.subpage .course-introduction {
 }
 
 div.subpage .course-introduction::before {
-	content: url(images/january-2014-banner.png);
+/*	content: url(images/january-2014-banner.png); */
 	position: absolute;
 	pointer-events: none;
 	background: none;

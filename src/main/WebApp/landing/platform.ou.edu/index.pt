@@ -15,7 +15,7 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript">$('html').removeClass('no-js');</script>
-	
+
 	<!-- This is the stylesheet is OU specific style -->
 	<link rel="stylesheet" type="text/css" href="ou-style.css" />
 	<!-- This is the stylesheet that makes the footer stick. -->
@@ -148,15 +148,15 @@
 
 
 			<div class="content gradient-bg">
-				<h1>Upcoming Courses <span tal:content="string:(${options/upcomingCoursesWhen})">(Spring 2014)</span></h1>
+				<h1>Current Courses <span tal:content="string:(${options/availableCoursesWhen})">(Spring 2014)</span></h1>
 				<div class="grid"
-					 tal:define="the_courses options/upcomingCourses"
+					 tal:define="the_courses options/availableCourses"
 					 metal:use-macro="courses/macros/course-grid">
 				</div>
 
-				<h1>Current Courses <span tal:content="string: (${options/availableCoursesWhen})">(Fall 2013)</span></h1>
+				<h1>Archived Courses <span tal:content="string: (${options/archivedCoursesWhen})">(Fall 2013)</span></h1>
 				<div class="grid"
-					 tal:define="the_courses options/availableCourses"
+					 tal:define="the_courses options/archivedCourses"
 					 metal:use-macro="courses/macros/course-grid">
 					<a class="grid-item" id="XXX1234">
 						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image"
