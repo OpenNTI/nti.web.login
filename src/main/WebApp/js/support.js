@@ -132,22 +132,65 @@ if( !(/NextThoughtApp/i.test(navigator.userAgent)) ){
 			location.replace('mobile.html');
 		}
 	}
-	if (/Opera/i.test(navigator.userAgent) 
-	|| !Modernizr.backgroundsize 
-	|| !Modernizr.borderradius 
-	|| !Modernizr.boxshadow 
-	|| !Modernizr.canvas 
-	|| !Modernizr.canvastext 
-	|| !Modernizr.draganddrop 
+	if (/Opera/i.test(navigator.userAgent)
+	|| !Modernizr.backgroundsize
+	|| !Modernizr.borderradius
+	|| !Modernizr.boxshadow
+	|| !Modernizr.canvas
+	|| !Modernizr.canvastext
+	|| !Modernizr.draganddrop
 	|| !Modernizr.fontface
 	|| !Modernizr.history
-	|| !Modernizr.postmessage 
-	|| !Modernizr.generatedcontent 
-	|| !Modernizr.localstorage 
+	|| !Modernizr.postmessage
+	|| !Modernizr.generatedcontent
+	|| !Modernizr.localstorage
 	|| !Modernizr.opacity
-	|| !Modernizr.rgba 
+	|| !Modernizr.rgba
 	|| !Modernizr.sessionstorage) {
 		location.replace('unsupported.html');
 	}
 }
 
+//These functions are used by the pad app to cleanup styles and work
+//around an apparent bug when table layouts are used
+
+function NTIAppAddOrSetViewportContent(content)
+{
+	var head = jQuery('head');
+	var viewport = jQuery('head meta[name=viewport]');
+
+	if(!viewport.length){
+		head.append('<meta name="viewport"/>');
+		viewport = jQuery('head meta[name=viewport]');
+	}
+
+	viewport.attr('content', content);
+}
+
+function NTIAppFixUpStyles()
+{
+	jQuery('head').append('<style type=\"text/css\">\\n .signin .wrapper, .signin .wrapper-inner { display: block; }\n'+
+	'html, body {height: auto; overflow: hidden;}\n'+
+	'.links {position: fixed;}\n'+
+	'.signin .branding,\n'+
+	'.signin .middle.main {\n'+
+    'width: 760px;\n'+
+	'}\n'+
+	'.signin .branding {\n'+
+	'padding-left: 430px;\n'+
+	'}\n'+
+	'\n'+
+	'.signin .forgot {\n'+
+	'margin-left: 430px;\n'+
+	'}\n'+
+	'\n'+
+	'@media screen and (orientation:portrait) { .signin .wrapper { margin-top: 240px; }}\n'+
+	'@media screen and (orientation:landscape) { .signin .wrapper { margin-top: 120px; }}</style>');
+}
+
+function NTIAppIsLoginForm(){
+	if(jQuery('body.signin').length){
+		return 'true';
+	}
+	return '';
+}
