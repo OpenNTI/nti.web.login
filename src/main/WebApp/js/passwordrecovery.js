@@ -79,7 +79,7 @@
             })
                 .done(function(data){
 					var n = 5,
-						link = 'index.html?host=' + host + '&return=' + returnUrl,
+						link = 'index.html?return=' + returnUrl,
 						impatient = '<a style="float:right; display:block;" href="'+link+'">Login &#9658;</a>';
 
 					function countdown() {
