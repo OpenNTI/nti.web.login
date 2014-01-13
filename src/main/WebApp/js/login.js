@@ -422,7 +422,7 @@
 				}).fail(function(){
 					var url = getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
 					console.log('Forcing a logout due to handshake failure');
-					location.replace(url);;
+					location.replace(url);
 				});
 			}
 			else {
