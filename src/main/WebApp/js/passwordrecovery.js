@@ -26,6 +26,11 @@
 		//unlike the login page the user must click a link to get here so we shouldn't
 		//end up in a redirect loop.
 		//window.location.replace('/');
+		
+		var url = getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
+		if (url) {
+			location.replace(url);
+		}
 	}
 
 	function showError(errorText){
