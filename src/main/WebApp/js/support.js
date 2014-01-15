@@ -117,6 +117,13 @@ if(history.replaceState){
 
 function getString(k, d){return (window.NTIStrings || {})[k] || d || k || '';}
 
+function iOSversion() {
+	if (/iP(hone|od|ad)/.test(navigator.platform)) {
+		var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+		return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+	}
+}
+
 //Browser detect and reject only if we aren't from our ipad app (which we detect by custom
 //UA string).  We also allow a config option so we can play with the app in mobile safari
 
@@ -125,12 +132,18 @@ if( !(/NextThoughtApp/i.test(navigator.userAgent)) ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
 
+		if(iOSversion() && $AppConfig.allowIPad) {
+			$AppConfig.allowIPad = iOSversion()[0] >= 6;
+		}
+
 		//If the config is set to allow ipad or android in and the userAgent is that same device don't redirect
 		//else you go to mobile
-		if((!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent))
-            && (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))){
+		if( (!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent))
+        &&  (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))) {
 			location.replace('mobile.html');
 		}
+		
+		
 	}
 	if (/Opera/i.test(navigator.userAgent)
 	|| !Modernizr.backgroundsize
