@@ -145,6 +145,7 @@ if( !(/NextThoughtApp|PhantomJS/i.test(navigator.userAgent)) ){
 		
 		
 	}
+
 	if (/Opera/i.test(navigator.userAgent)
 	|| !Modernizr.backgroundsize
 	|| !Modernizr.borderradius
@@ -156,10 +157,10 @@ if( !(/NextThoughtApp|PhantomJS/i.test(navigator.userAgent)) ){
 	|| !Modernizr.history
 	|| !Modernizr.postmessage
 	|| !Modernizr.generatedcontent
-	|| !Modernizr.localstorage
+	//|| !Modernizr.localstorage || !Modernizr.sessionstorage
 	|| !Modernizr.opacity
 	|| !Modernizr.rgba
-	|| !Modernizr.sessionstorage) {
+	) {
 		location.replace('unsupported.html');
 	}
 }
