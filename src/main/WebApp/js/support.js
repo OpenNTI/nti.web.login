@@ -128,7 +128,7 @@ function iOSversion() {
 //UA string).  We also allow a config option so we can play with the app in mobile safari
 
 //If we aren't our ipad app (which we know we support) we need to check a view things
-if( !(/NextThoughtApp/i.test(navigator.userAgent)) ){
+if( !(/NextThoughtApp|PhantomJS/i.test(navigator.userAgent)) ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
 
