@@ -15,7 +15,7 @@ import gzip
 
 BUILDTIME = time.strftime('%Y%m%d%H%M%S')
 
-def _updateHtml( html_file, analytics_key, dep_mod_time ):
+def _updateHtml( html_file, analytics_key, itunes_id, dep_mod_time ):
 	with open( html_file, 'rb' ) as f:
 		contents = f.read()
 
@@ -40,6 +40,12 @@ ga('send', 'pageview');
 		contents = contents.replace('<!--[analytics code here]-->', analytics)
 	else:
 		contents = contents.replace('<!--[analytics code here]-->', '')
+
+	if itunes_id:
+		contents = contents.replace( '<!--[itunes banner here]-->',
+									 '<meta name="apple-itunes-app" content="app-id=%s" />' % itunes_id)
+	else:
+		contents = contents.replace( '<!--[itunes banner here]-->', '' )
 
 	_t = os.path.splitext(html_file)
 	# Drop the trailing .in suffix if it exists. For all
@@ -86,7 +92,7 @@ def gzip_files(file_paths):
 def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-a', '--google-analytics', dest='analytics_key', action='store', default='', help="Key value used with Google Analytics.	 If no value is specified, then the index-minify.html will not contain Google Analytics code.")
-
+	parser.add_argument('--itunes', dest='itunes', action='store', default=None, help="The iTunes AppID to advertise")
 	args = parser.parse_args()
 
 	# Find the most recent modification date of our dependencies.
@@ -98,12 +104,12 @@ def main():
 		dep_mod_date = max(dep_mod_date,
 						   os.stat(path).st_mtime)
 
-	_updateHtml('WebApp/index.html.in',args.analytics_key, dep_mod_date)
-	_updateHtml('WebApp/mobile.html.in',args.analytics_key, dep_mod_date)
-	_updateHtml('WebApp/passwordrecover.html.in',args.analytics_key, dep_mod_date)
-	_updateHtml('WebApp/signup.html.in',args.analytics_key, dep_mod_date)
-	_updateHtml('WebApp/unsupported.html.in',args.analytics_key, dep_mod_date)
-	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, dep_mod_date)
+	_updateHtml('WebApp/index.html.in',args.analytics_key, args.itunes, dep_mod_date)
+	_updateHtml('WebApp/mobile.html.in',args.analytics_key, args.itunes, dep_mod_date)
+	_updateHtml('WebApp/passwordrecover.html.in', args.analytics_key, args.itunes, dep_mod_date)
+	_updateHtml('WebApp/signup.html.in',args.analytics_key, args.itunes, dep_mod_date)
+	_updateHtml('WebApp/unsupported.html.in',args.analytics_key, args.itunes, dep_mod_date)
+	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, args.itunes, dep_mod_date)
 
 	gzip_files(glob.iglob('WebApp/js/*.js'))
 	gzip_files(glob.iglob('WebApp/resources/css/*.css'))

@@ -3,8 +3,9 @@
 <head
 	 tal:define="page_title string:JANUX | The University of Oklahoma; description string:Janux is The University of Oklahoma's online interactive learning community.">
 	<title tal:content="page_title">JANUX | The University of Oklahoma</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8" />
+	<meta name="apple-itunes-app" content="app-id=795983686" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="description" content="JANUX | The University of Oklahoma"
 		  tal:attributes="content description" />
 	<meta name="author" content="NextThought">
@@ -178,7 +179,7 @@
 				<h1>Janux FAQ</h1>
 				<a class="ou-btn1" href="faq.html">Browse Frequently Asked Questions</a>
 				<br><br><br>
-				
+
 				<h1>Tech Support</h1>
 				<ul>
 					<li>(405) 325-HELP</li>
