@@ -16,11 +16,11 @@ body {
 }
 *:empty { margin:0; padding:0; }
 p:empty { display:none; }
-a { color:#298AC4; outline: none; text-decoration:none; }
+a { color:#298AC4; text-decoration:none; }
 a:hover { color:#298AC4; text-decoration:underline; }
 a:active { color:#298AC4; outline: none; }
-:focus, a:focus { -moz-outline-style: none; outline:none;}
-:link:focus, :visited:focus { -moz-outline: none; ouline:none; }
+/*:focus, a:focus { -moz-outline-style: none; outline:none;}
+:link:focus, :visited:focus { -moz-outline: none; ouline:none; }*/
 img {
     outline:none;
     border:none;
