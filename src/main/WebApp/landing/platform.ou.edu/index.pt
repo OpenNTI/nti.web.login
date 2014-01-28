@@ -72,9 +72,9 @@
 	<div class="globalheader">
 	 <div class="wrapper">
 		<ul>
-			<li><a class="tip home" href="http://www.ou.edu/web.html" alt="OU Home link"><span>OU Homepage</span></a></li>
-			<li><a class="tip search" href="http://www.ou.edu/content/ousearch.html" alt="OU Search link"><span>Search OU</span></a></li>
-			<li><a class="tip social" href="http://www.ou.edu/web/socialmediadirectory.html" alt="OU Social Media link"><span>OU Social Media</span></a></li>
+			<li><a class="tip home" href="http://www.ou.edu/web.html" alt="OU Home link" tabindex="1"><span>OU Homepage</span></a></li>
+			<li><a class="tip search" href="http://www.ou.edu/content/ousearch.html" alt="OU Search link" tabindex="1"><span>Search OU</span></a></li>
+			<li><a class="tip social" href="http://www.ou.edu/web/socialmediadirectory.html" alt="OU Social Media link" tabindex="1"><span>OU Social Media</span></a></li>
 			<li class="wordmark">The University of Oklahoma</li>
 		</ul>
 		<div style="clear:both;"></div>
@@ -85,11 +85,11 @@
 		<div class="wrapper">
 			<div class="code">
 				<ul class="quick-links">
-					<li><a class="ou-btn" href="about.html" data-old="about">About</a></li>
-					<li><a class="ou-btn" href="/login/">Log In or Create an Account</a></li>
+					<li><a class="ou-btn" href="about.html" data-old="about" role="button" tabindex="2">About</a></li>
+					<li><a class="ou-btn" href="/login/" role="button" tabindex="2">Log In or Create an Account</a></li>
 				</ul>
 			</div>
-			<a class="logo" href="#"><img src="images/ou_janux_logo.png" /></a>
+			<a class="logo" href="#" tabindex="-1"><img src="images/ou_janux_logo.png" alt="Logo"/></a>
 		</div>
 	</div>
 
@@ -111,15 +111,15 @@
 				<div>
 					<h4>1. Experience the Open Version for Free</h4>
 					<div>Open to the public, in a not-for-credit environment, students have full access to content and platform social learning features. No prerequisites, no grades, just learning for the sake of learning.</div>
-					<a class="ou-btn1" href="/login/">Sign Up Now</a>
+					<a class="ou-btn1" href="/login/" role="button" tabindex="3">Sign Up Now</a>
 				</div>
 
 				<div>
 					<h4>2. Earn Credit from the University of Oklahoma</h4>
 					<div>OU students can <a href="http://ozone.ou.edu"
-					target="_blank">enroll on oZone</a> to earn credit.  Some courses are fully online, others are face-to-face.  Non-OU students interested in credit can learn more about becoming a <a href="http://www.ou.edu/admissions/nondegree/" target="_blank">Special Student</a>.</div>
+					target="_blank" tabindex="3">enroll on oZone</a> to earn credit.  Some courses are fully online, others are face-to-face.  Non-OU students interested in credit can learn more about becoming a <a href="http://www.ou.edu/admissions/nondegree/" target="_blank" tabindex="3">Special Student</a>.</div>
 					<a class="ou-btn1" href="http://ozone.ou.edu"
-					target="_blank">Go to oZone</a>
+					target="_blank" role="button" tabindex="3" role="button">Go to oZone</a>
 				</div>
 			</div>
 
