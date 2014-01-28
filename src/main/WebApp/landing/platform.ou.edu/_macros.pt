@@ -60,31 +60,6 @@
 			</div>
 			<div class="course-introduction">
 				<div class="promovideo">
-					<!--!
-						<div id="kaltura_player_${course/kalturaVideo}" style="width: 920px; height: 548px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
-					<script>
-					kWidget.thumbEmbed({
-						targetId: "kaltura_player_${course/kalturaVideo}",
-						wid: "_1500101",
-						uiconf_id: 20809652,
-						flashvars: {
-							externalInterfaceDisabled: false,
-							akamaiHD: {
-								loadingPolicy: "preInitialize",
-								asyncInit: "true"
-							},
-							twoPhaseManifest: "true",
-							streamerType: "hdnetworkmanifest"
-						},
-						params: {
-							wmode: 'transparent'
-						},
-						entry_id: "${course/kalturaVideo}"
-					});
-					</script>
-						-->
-					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?iframeembed=true&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="548" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
-					<!--!<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?autoembed=true&entry_id=${course/kalturaVideo}&playerId=kaltura_player_1377036702_${course/kalturaVideo}&width=920&height=548"></script>-->
 					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?iframeembed=true&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="548" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" alt="Video" tabindex="-1"></iframe>
 				</div>
 				<div class="course-title" tal:content="course/title" itemprop="name">Introduction to Water</div>

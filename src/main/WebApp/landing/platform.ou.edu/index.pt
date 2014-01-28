@@ -102,31 +102,6 @@
 			  alt="Image of NextThought Interface" title="NextThought"
 			  width="1024" height="388" />
 				<div id="video">
-					<!--!
-					<div id="kaltura_player_promo" style="width: 455px; height: 295px;" itemprop="video" itemscope itemtype="http://schema.org/VideoObject"></div>
-					<script>
-					kWidget.embed({
-						targetId: "kaltura_player_promo",
-						wid: "_1500101",
-						uiconf_id: 20809651,
-						flashvars: {
-							externalInterfaceDisabled: false,
-							akamaiHD: {
-								loadingPolicy: "preInitialize",
-								asyncInit: "true"
-							},
-							twoPhaseManifest: "true",
-							streamerType: "hdnetworkmanifest"
-						},
-						params: {
-							wmode: 'transparent'
-						},
-						entry_id: "0_nmii7y4j"
-					});
-					</script> -->
-				  <!--! <iframe width="455" height="256" src="//www.youtube.com/embed/9bsV-BKjOCA?rel=0&html5=1&hd=1&showinfo=0&modestbranding=1&origin=platform.ou.edu" frameborder="0" allowfullscreen></iframe>-->
-				  <iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?iframeembed=true&entry_id=0_nmii7y4j&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest&flashvars[externalInterfaceDisabled]=false" width="455" height="295" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0"></iframe>
-				  <!--!<script src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?autoembed=true&entry_id=0_nmii7y4j&playerId=kaltura_player_1377036702_0_nmii7y4j&cache_st=1377036702&width=455&height=295"></script>-->
 				  <iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809651/partner_id/1500101?iframeembed=true&entry_id=0_nmii7y4j&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest&flashvars[externalInterfaceDisabled]=false" width="455" height="295" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" tabindex="-1" alt="Video"></iframe>
 				</div>
 
