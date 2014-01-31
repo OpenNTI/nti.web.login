@@ -294,8 +294,19 @@
 
 	function messageUser(msg,cls){
 		unmask();
-		if(cls) { $('body').addClass(cls); }
-		message.innerHTML = msg || originalMessage;
+		$(username).removeAttr("aria-invalid");
+		$(password).removeAttr("aria-invalid");
+
+		if(cls){
+			$('body').addClass(cls);
+			$(message).html(msg).after(function(){
+				$(username).attr({"aria-describedby": "message", "aria-invalid": "true"});
+				$(password).attr({"aria-describedby": "message", "aria-invalid": "true"});
+			});
+		}
+		else{
+			message.innerHTML = msg || originalMessage;
+		}
 	}
 
 	function loginWithRel(r,xhr){
