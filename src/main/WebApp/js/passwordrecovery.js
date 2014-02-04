@@ -1,13 +1,13 @@
-(function($){
-    var resetPassUrl;
+(function($) {
+	var resetPassUrl;
 
 	function parseResponseText(response) {
-		if(/application\/json/i.test(response.getResponseHeader('Content-Type'))){
+		if (/application\/json/i.test(response.getResponseHeader('Content-Type'))) {
 			if (response && response.responseText) {
-				try{
+				try {
 					return JSON.parse(response.responseText);
 				}
-				catch(e){
+				catch (e) {
 					console.error('Bad json?', e);
 				}
 			}
@@ -16,7 +16,7 @@
 		return null;
 	}
 
-	function handleNoResetLink(data){
+	function handleNoResetLink(data) {
 		//Hmm, weve seen a case were from a password reset link.  It happens if you hit the
 		//reset link while logged in as another user.  What to do here? Send to login page which
 		//will take you into the app if you actually are logged in?
@@ -26,119 +26,119 @@
 		//unlike the login page the user must click a link to get here so we shouldn't
 		//end up in a redirect loop.
 		//window.location.replace('/');
-		
-		var url = getLink(data, 'logon.logout')+'?_cd+'+ (new Date()).getTime()+'&success='+encodeURIComponent(location.toString());
+
+		var url = getLink(data, 'logon.logout') + '?_cd+' + (new Date()).getTime() + '&success=' + encodeURIComponent(location.toString());
 		if (url) {
 			location.replace(url);
 		}
 	}
 
-	function showError(errorText){
+	function showError(errorText) {
 		 $('#message').removeClass('green')
-		 		.addClass('red')
+				.addClass('red')
 				.text(errorText);
 	}
-	
-	
-	function showSuccess(text){
+
+
+	function showSuccess(text) {
 		 $('#message').removeClass('red')
-		 		.addClass('green')
+				.addClass('green')
 				.html(text);
 	}
-	
 
-    function anonymousPing(){
-        $('#account-creation').hide();
-        $.ajax({
-            dataType: 'json',
-            url: location.protocol+'//'+location.host +'/dataserver2/logon.ping',
-            headers: {Accept:'application/json'},
-            type: 'GET'
-        }).done(function(data){
-            resetPassUrl = getLink(data,'logon.reset.passcode');
-			if(!resetPassUrl){
+
+	function anonymousPing() {
+		$('#account-creation').hide();
+		$.ajax({
+			dataType: 'json',
+			url: location.protocol + '//' + location.host + '/dataserver2/logon.ping',
+			headers: {Accept: 'application/json'},
+			type: 'GET'
+		}).done(function(data) {
+			resetPassUrl = getLink(data, 'logon.reset.passcode');
+			if (!resetPassUrl) {
 				handleNoResetLink(data);
 			}
-        }).fail(function(){
-            console.error('failed to resolve service...will retry in 5 seconds');
-            setTimeout(anonymousPing,5000);
-        });
-    }
+		}).fail(function() {
+			console.error('failed to resolve service...will retry in 5 seconds');
+			setTimeout(anonymousPing, 5000);
+		});
+	}
 
-    function setupForm(){
-        $('#recover').submit(function(e){
-            var pass1 = $('#password').val(),
-                pass2 = $('#password-verify').val(),
-                username = window.requestParameters['username'],
-                id = window.requestParameters['id'];
+	function setupForm() {
+		$('#recover').submit(function(e) {
+			var pass1 = $('#password').val(),
+				pass2 = $('#password-verify').val(),
+				username = window.requestParameters['username'],
+				id = window.requestParameters['id'];
 
-            e.stopPropagation();
-            e.preventDefault();
+			e.stopPropagation();
+			e.preventDefault();
 
-            $.ajax({
-                url: location.protocol+'//'+location.host + resetPassUrl,
-                dataType: 'json',
-                headers: {Accept:'application/json'},
-                type: 'POST',
-                data: {username: username, id: id, password: pass1}
-            })
-                .done(function(data){
+			$.ajax({
+				url: location.protocol + '//' + location.host + resetPassUrl,
+				dataType: 'json',
+				headers: {Accept: 'application/json'},
+				type: 'POST',
+				data: {username: username, id: id, password: pass1}
+			})
+				.done(function(data) {
 					var n = 5,
 						link = 'index.html?return=' + returnUrl,
-						impatient = '<a style="float:right; display:block;" href="'+link+'">Login &#9658;</a>';
+						impatient = '<a style="float:right; display:block;" href="' + link + '">Login &#9658;</a>';
 
 					function countdown() {
-						var wait = '<p>'+impatient+'Redirecting to login in... '+n+'</p>';
-						
-						showSuccess('Password reset successfull.'+wait);
+						var wait = '<p>' + impatient + 'Redirecting to login in... ' + n + '</p>';
+
+						showSuccess('Password reset successful.' + wait);
 						n--;
-						if(n <= 0){
+						if (n <= 0) {
 							window.location.replace(link);
 						}
 					}
 
-					setInterval(countdown,1000);					
+					setInterval(countdown, 1000);
 					countdown();
-                })
-                .fail(function(data){
-                    var o = parseResponseText(data);
-					if(!o){
+				})
+				.fail(function(data) {
+					var o = parseResponseText(data);
+					if (!o) {
 						o = {};
 						console.warn('An unknown error occurred when requesting reset', data);
-						o.message = 'An unknown error occurred resetting your password.'
+						o.message = 'An unknown error occurred resetting your password.';
 					}
-                    showError(o.message || o.code);
-                });
+					showError(o.message || o.code);
+				});
 
-            return false;
-        });
+			return false;
+		});
 
-    }
-
-
-    function enableSubmit() {
-        var pass1 = $('#password').val(),
-            pass2 = $('#password-verify').val(),
-            hasRequiredInputs = false;
-
-        hasRequiredInputs = (window.requestParameters['username'] && window.requestParameters['id']);
-
-        if (hasRequiredInputs && pass1 && pass2 && pass1 === pass2) {
-            $('#submit').removeAttr('disabled');
-        }
-        else {
-            $('#submit').attr('disabled', true);
-        }
-
-    }
+	}
 
 
-    $(function(){
-        //get data from server that we will need and setup any forms and listeners:
-        anonymousPing();
-        setupForm();
+	function enableSubmit() {
+		var pass1 = $('#password').val(),
+			pass2 = $('#password-verify').val(),
+			hasRequiredInputs = false;
 
-        $('#password').blur(enableSubmit).keyup(enableSubmit);
-        $('#password-verify').blur(enableSubmit).keyup(enableSubmit);
-    });
+		hasRequiredInputs = (window.requestParameters['username'] && window.requestParameters['id']);
+
+		if (hasRequiredInputs && pass1 && pass2 && pass1 === pass2) {
+			$('#submit').removeAttr('disabled');
+		}
+		else {
+			$('#submit').attr('disabled', true);
+		}
+
+	}
+
+
+	$(function() {
+		//get data from server that we will need and setup any forms and listeners:
+		anonymousPing();
+		setupForm();
+
+		$('#password').blur(enableSubmit).keyup(enableSubmit);
+		$('#password-verify').blur(enableSubmit).keyup(enableSubmit);
+	});
 }(jQuery));
