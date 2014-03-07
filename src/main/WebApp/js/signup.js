@@ -824,6 +824,7 @@
 		var link,
 			x = $.ajax({
 			headers: {Accept:'application/json'},
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 			url: handshakeurl,
 			data: {username: user.Username},
 			dataType: 'json',
