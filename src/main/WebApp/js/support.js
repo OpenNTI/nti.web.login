@@ -104,17 +104,23 @@ if(!t||!C){if(!(m={}.hasOwnProperty))m=function(b){var c={},a;if((c.__proto__=k,
 
 //our helpers
 function getLink(o, r){var l=(o||{}).Links||[],i=l.length-1;for(i;i>=0;i--){if(l[i].rel === r){l = l[i].href;return l;}}return null;}
-(function(){
-var i,v,o={},a=location.search.replace('?','').split("&");
-for(i=0;i<a.length;i++){v = a[i].split('=');o[decodeURIComponent(v[0])]=decodeURIComponent(v[1]);}
-window.requestParameters = o;
-window.returnUrl = o['return'] || $AppConfig.url || '/';
-if(history.replaceState){
-	window.ourPath = location.pathname;
-	// document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
-	// history.replaceState({},null,document.referrer||'/');
-}
-})();
+(function() {
+	 var i,
+	 	 v,
+	 	 requestParameters = {},
+	 	 queryParamStrings = window.location.search.replace('?','').split("&");
+	 for( i = 0; i < queryParamStrings.length; i++) {
+		 v = queryParamStrings[i].split('=');
+		 requestParameters[decodeURIComponent(v[0])] = decodeURIComponent(v[1]);
+	 }
+	 window.requestParameters = requestParameters;
+	 window.returnUrl = requestParameters['return'] || $AppConfig.url || '/';
+	 if(history.replaceState){
+		 window.ourPath = location.pathname;
+		 // document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
+		 // history.replaceState({},null,document.referrer||'/');
+	 }
+ })();
 
 
 function getString(k, d){return (window.NTIStrings || {})[k] || d || k || '';}
@@ -144,8 +150,8 @@ if( !(/NextThought|PhantomJS/i.test(navigator.userAgent)) ){
         &&  (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))) {
 			location.replace('mobile.html');
 		}
-		
-		
+
+
 	}
 
 	if (/Opera/i.test(navigator.userAgent)
