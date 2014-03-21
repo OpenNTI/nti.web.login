@@ -488,16 +488,11 @@
 			$.ajax({
 				url: recoverNameUrl,
 				dataType: 'json',
+				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				headers: {Accept:'application/json'},
 				type: 'POST',
 				data: {email: val}
 			});
-//			.done(function(data){
-//				console.log('suc',arguments);
-//			})
-//			.fail(function(data){
-//				console.log('fail',arguments);
-//			});
 
 			return false;
 		});
@@ -547,17 +542,12 @@
 
 			$.ajax({
 				url: recoverPassUrl,
+				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				dataType: 'json',
 				headers: {Accept:'application/json'},
 				type: 'POST',
 				data: {email: email, username: user, success:recoveryURL}
 			});
-//			.done(function(data){
-//				console.log('suc',arguments);
-//			})
-//			.fail(function(data){
-//				console.log('fail',arguments);
-//			});
 
 			return false;
 		});
