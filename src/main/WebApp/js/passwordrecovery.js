@@ -79,6 +79,7 @@
 				url: location.protocol + '//' + location.host + resetPassUrl,
 				dataType: 'json',
 				headers: {Accept: 'application/json'},
+				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 				type: 'POST',
 				data: {username: username, id: id, password: pass1}
 			})
