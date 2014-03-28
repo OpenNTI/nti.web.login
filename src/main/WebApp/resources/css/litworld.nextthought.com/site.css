@@ -9,6 +9,7 @@
 .signin .middle.main {
 	width: 860px;
 }
+
 #account-creation {
 	border-radius: 0 0 3px 0;
 }
@@ -20,8 +21,6 @@
 .signin .forgot {
 	margin-left: 530px;
 }
-
-
 
 #active-session-login.visible {
 	padding-bottom: 180px;
