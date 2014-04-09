@@ -1,5 +1,5 @@
 $AppConfig = {
-	url: '',
+	url: '/loginsuccess',
 	allowIPad: true,
 	server: {
 		host: ''
