@@ -113,6 +113,9 @@ def main():
 
 	gzip_files(glob.iglob('WebApp/js/*.js'))
 	gzip_files(glob.iglob('WebApp/resources/css/*.css'))
+	gzip_files(glob.iglob('WebApp/resources/fonts/*.css'))
+	# TTFs compress well, most other font formats do not
+	gzip_files(glob.iglob('WebApp/resources/fonts/*/*.ttf'))
 	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.html'))
 	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.css'))
 
