@@ -34,7 +34,7 @@
 </head>
 <body>
     <div class="logo">
-    <p>It looks like you&#39;re using a mobile browser. We don't yet support mobile devices, but our iPad app is coming soon! Please try again from your desktop browser.</p>
+    <p>It appears that you&#39;re using a mobile browser that we don't support. Please try again from your desktop browser. Thank you.</p>
     </div>
 	<!--[analytics code here]-->
 </body>
