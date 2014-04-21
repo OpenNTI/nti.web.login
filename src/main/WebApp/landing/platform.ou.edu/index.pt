@@ -125,7 +125,7 @@
 
 
 			<div class="content gradient-bg">
-				<h1>Current Courses <span tal:content="string:(${options/availableCoursesWhen})">(Spring 2014)</span></h1>
+				<h1>Current and Upcoming Courses <span tal:content="string:(${options/availableCoursesWhen})">(Spring and Summer 2014)</span></h1>
 				<div class="grid"
 					 tal:define="the_courses options/availableCourses"
 					 metal:use-macro="courses/macros/course-grid">
