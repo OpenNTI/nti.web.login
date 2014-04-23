@@ -37,6 +37,7 @@
         {
             "id": "MGT2013",
         	"name": "MGT 2013-995",
+            "detailAnchor": "MGT2013-detail",
         	"school": "Price College of Business (Division of Management and Entrepreneurship)",
         	"kalturaVideo": "0_gckztn5o",
         	"title": "Introduction to Management",
