@@ -10,7 +10,8 @@
 		remember,
 		allowRel = {
 			//white list
-			"logon.openid": true
+			"logon.openid": true,
+            "logon.linkedin.oauth1": true
 		},
 		submitButtonRels = ['logon.nti.password', 'logon.ldap.ou'],
 		recoverNameUrl,

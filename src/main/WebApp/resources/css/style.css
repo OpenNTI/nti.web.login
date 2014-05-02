@@ -661,6 +661,7 @@ ol.selectbox.open {
 }
 
 #active-session-login {
+    position: relative;
 	text-align: right;
 	margin: 10px 20px;
 }
@@ -1085,7 +1086,11 @@ a.avatar.selected::after{
 #oauth-login {
 	background: url(../images/or.png) 0 0 no-repeat;
 	padding: 25px 0 0 0;
-	margin: 0 0 20px 0;
+	margin: 0;
+}
+
+#oauth-login button:last-of-type {
+    margin-bottom: 15px;
 }
 
 
@@ -1178,6 +1183,7 @@ button:active {
 
 
 button.logon.openid { text-indent: 0; }
+button.logon.linkedin.oauth1 { background: #ffffff url(../images/oauth/linkedin_button.png) -2px -2px no-repeat; }
 button.logon.google { background: #ffffff url(../images/oauth/google_button.png) -2px -2px no-repeat; }
 button.logon.facebook { background: #ffffff url(../images/oauth/facebook_button.png) -2px -2px no-repeat; }
 button.logon.twitter {}
