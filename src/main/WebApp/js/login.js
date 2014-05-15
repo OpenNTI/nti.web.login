@@ -283,6 +283,11 @@
 		}else{
 			title = rel;
 		}
+    
+    if ($('button[name="' + rel + '"]').length > 0) {
+      return;
+    }
+    //do not allow duplicates.
 
 		return $('<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>')
 			.appendTo(optionalSelector || '#oauth-login');
