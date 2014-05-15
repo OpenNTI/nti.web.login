@@ -238,8 +238,13 @@
 			return;
 		}
 
-		var links = o.Links || [],
-			i = links.length-1,v;
+		addOAuthButtons(o.Links || [], true);
+		updateSubmitButton();
+	}
+  
+  
+  function addOAuthButtons(links, callResults) {
+		var i = links.length-1,v;
 
 		//clearForm();
 
@@ -250,7 +255,7 @@
 			//get to logon.ldap.ou
 			rel[v.rel] = v.href;
 
-			if(/result/i.test(v.rel)){
+			if(callResults && /result/i.test(v.rel)){
 				console.log(v.rel, getLink(o,v.rel));
 				call(getLink(o,v.rel),getAuth(),function(){
 					console.log('What?',arguments);
@@ -267,8 +272,8 @@
 //				console.log('debug: ',v.rel);
 //			}
 		}
-		updateSubmitButton();
-	}
+  }
+  
 
 	function addButton(rel, optionalSelector){
 		var title;
@@ -404,6 +409,8 @@
 			recoverNameUrl = getLink(data,'logon.forgot.username');
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
+      
+      addOAuthButtons(data.Links || []);
 
 			
 			function finishAnonymous(){
