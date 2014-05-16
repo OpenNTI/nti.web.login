@@ -83,8 +83,7 @@
 		return formValidation(e);
 	}
 
-	function resetForPingHandshake()
-	{
+	function resetForPingHandshake() {
 		$('body').removeClass(function(i,c){return c.replace('signin','');});
 		$('#oauth-login button').remove();
 		rel = {};
@@ -243,36 +242,38 @@
 	}
   
   
-  function addOAuthButtons(links, callResults) {
-		var i = links.length-1,v;
+	function addOAuthButtons(links, callResults) {
+		var i = links.length - 1,
+			v;
 
 		//clearForm();
 
-		for(;i>=0; i--){
+		for (; i >= 0; i--) {
 			v = links[i];
 			//TODO capture the link's method here so we do the correct action.
 			//the ds is doing some funkiness for us right now so that we can do a
 			//get to logon.ldap.ou
 			rel[v.rel] = v.href;
 
-			if(callResults && /result/i.test(v.rel)){
-				console.log(v.rel, getLink(o,v.rel));
-				call(getLink(o,v.rel),getAuth(),function(){
-					console.log('What?',arguments);
+			if (callResults && /result/i.test(v.rel)) {
+				console.log(v.rel, getLink(o, v.rel));
+				call(getLink(o, v.rel), getAuth(), function() {
+					console.log('What?', arguments);
 				});
 			}
 
 
-			$('body').addClass(v.rel.replace(/\./g,'-'));
-			if(allowRel[v.rel]===true){
+			$('body').addClass(v.rel.replace(/\./g, '-'));
+			if (allowRel[v.rel] === true) {
 				$('body').addClass('or');
 				addButton(v);
 			}
-//			else {
-//				console.log('debug: ',v.rel);
-//			}
+			//else {
+			//	console.log('debug: ',v.rel);
+			//}
 		}
-  }
+	}
+
   
 
 	function addButton(rel, optionalSelector){
@@ -609,6 +610,16 @@
 		return isUsernameSet;
 
 	}
+	
+	function buffer(fn, b) {
+		var i;
+		return function(e) {
+			clearTimeout(i);
+			i = setTimeout(function(){
+				fn(e);
+			}, b);
+		};		
+	}
 
 	$(function(){
 		$('div.forgot').hide();
@@ -620,8 +631,8 @@
 		username = document.getElementById('username');
 		remember = document.getElementById('remember');
 
-		$('#password').change(formValidation).keyup(formValidation);
-		$('#username').change(formValidation).keyup(usernameChanged);
+		$('#password').change(formValidation).keyup(buffer(formValidation, 350));
+		$('#username').change(formValidation).keyup(buffer(usernameChanged, 350));
 
 		originalMessage = message.innerHTML;
 
