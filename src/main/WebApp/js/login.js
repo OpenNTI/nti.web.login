@@ -58,8 +58,7 @@
 	function formValidation(){
 		var validEmail = username.value.length>3;
 
-		if(validEmail && emailLastValid !== username.value){
-			resetForPingHandshake();
+		if(validEmail && emailLastValid !== username.value) {
 			emailLastValid = username.value;
 			sendPingIfNecessary();
 		}
@@ -222,6 +221,7 @@
 	}
 
 	function handshake(o){
+		resetForPingHandshake();
 		if(typeof o === 'number' || !o){
 			error();
 			return;
