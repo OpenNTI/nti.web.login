@@ -45,7 +45,7 @@
 		</span>
 		<div class="languages">
 			English &middot;
-			<a href="lang/ru/" title="Switch to Russian" tabindex="14">Russian</a>
+			<a href="lang/ru/" title="перейти на русский" tabindex="14">русский</a>
 		</div>
 	</div>
 	<div class="wrapper spotlight">
