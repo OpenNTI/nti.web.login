@@ -6,14 +6,15 @@
 		<meta http-equiv="refresh" content="0;url=unsupported.html">
 	</noscript>
 	<title>NextThought Login</title>
-	<link rel="shortcut icon" href="resources/favicon.ico">
+	<link rel="shortcut icon" href="../../resources/favicon.ico">
 	<!--[itunes banner here]-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Application Login">
 	<meta name="author" content="NextThought">
-	<link rel="stylesheet" type="text/css" href="resources/fonts/fonts.css?v=%time%">
-	<link rel="stylesheet" type="text/css" href="resources/css/style.css?v=%time%" media="screen"/>
-	<link rel="stylesheet" type="text/css" href="resources/css/site.css?v=%time%" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="../../resources/fonts/fonts.css?v=%time%">
+	<link rel="stylesheet" href="../../resources/css/style.css?v=%time%" media="screen"/>
+	<link rel="stylesheet" href="../../resources/css/site.css?v=%time%" media="screen"/>
+	<!--[If we need language specific styles... include them here.]-->
 
 	<!--[if gte IE 9]>
 	<style type="text/css">
@@ -23,20 +24,21 @@
 	</style>
 	<![endif]-->
 
-    <script type="text/javascript" src="defaults.js?v=%time%"></script>
-	<script type="text/javascript" src="js/support.js?v=%time%"></script>
-	<script type="text/javascript" src="js/login.js?v=%time%"></script>
+    <script type="text/javascript" src="../../defaults.js?v=%time%"></script>
+	<script type="text/javascript" src="../../js/support.js?v=%time%"></script>
+	<script type="text/javascript" src="../../js/login.js?v=%time%"></script>
 </head>
 <body class="signin">
 	<div class="links">
-		<a href="http://nextthought.com" title="About NextThought" target="_blank" tabindex="9">About</a> &middot;
-		<a href="mailto:support@nextthought.com" title="Contact Support" target="_blank" tabindex="10">Help</a> &middot;
+		<a href="http://nextthought.com" title="About NextThought" target="_blank" tabindex="9">информация</a> &middot;
+		<a href="mailto:support@nextthought.com" title="Contact Support" target="_blank" tabindex="10">помощь</a> &middot;
 		<a href="https://docs.google.com/document/pub?id=1rM40we-bbPNvq8xivEKhkoLE7wmIETmO4kerCYmtISM"
-		   target="_blank" title="NextThought Terms of Service and User Agreements" tabindex="11">Terms</a> &middot;
+		   target="_blank" title="NextThought Terms of Service and User Agreements" tabindex="11">условия</a> &middot;
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 		<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM"
 		   target="_blank" title="Learn about your privacy and NextThought"
-		   class="privacy" tabindex="12">Privacy</a>
+		   class="privacy" tabindex="12">конфиденциальность</a>
+
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 		<span class="childrenpolicy">&middot;
 			<a href="https://docs.google.com/document/pub?id=1kNo6hwwKwWdhq7jzczAysUWhnsP9RfckIet11pWPW6k"
@@ -44,8 +46,8 @@
 				   class="privacy">Children&#39;s Privacy</a>
 		</span>
 		<div class="languages">
-			English &middot;
-			<a href="lang/ru/" title="Switch to Russian" tabindex="14">Russian</a>
+			<a href="../../" title="Switch to English" tabindex="14">English</a> &middot;
+			Russian
 		</div>
 	</div>
 	<div class="wrapper spotlight">
@@ -59,28 +61,28 @@
 									<form id="login" method="post">
 										<div id="message" class="message"></div>
 										<div>
-											<div class="field-container" data-title="Username">
-												<!--<label for="username">Username:</label>-->
+											<div class="field-container" data-title="имя пользователя">
+												<!--<label for="username">имя пользователя:</label>-->
 												<input id="username" name="username" type="text"
-													   placeholder="Username"
-											  autocorrect="off" autocapitalize="off" tabindex="1" aria-label="Username" auto/>
+													   placeholder="имя пользователя"
+											  autocorrect="off" autocapitalize="off" tabindex="1" aria-label="имя пользователя" auto/>
 											</div>
 
-											<div id="password-field" class="field-container" data-title="Password">
-												<!--<label for="password">Password:</label>-->
+											<div id="password-field" class="field-container" data-title="пароль">
+												<!--<label for="password">пароль:</label>-->
 												<input id="password" name="password" type="password"
 													   autocomplete="off"
-													   placeholder="Password"
-													   tabindex="2" aria-label="Password"/>
+													   placeholder="пароль"
+													   tabindex="2" aria-label="пароль"/>
 											</div>
 
 											<div class="field-container">
                                                 <span class="input-wrap">
 												<input id="remember" name="remember" type="checkbox" tabindex="3"/>
-												<label for="remember">Remember me</label>
+												<label for="remember">запомнить меня</label>
                                                 </span>
 
-												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
+												<button id="submit" type="submit" tabindex="4" disabled>войти</button>
 												<div class="clear"></div>
 											</div>
 
@@ -88,7 +90,7 @@
 											<div id="active-session-login"></div>
 
 											<div id="account-creation" >
-												<a href="signup.html" role="button" aria-label="Account creation" tabindex="5">Create an Account.<span class="tagline"></span></a>
+												<a href="signup.html" role="button" aria-label="создать" tabindex="5">создать<span class="tagline"></span></a>
 											</div>
 
 											<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
@@ -99,8 +101,7 @@
 					</div>
 				</div>
 				<div class="forgot">
-					I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
-					<a href="#" id="forgotpass" tabindex="8">password</a>.
+					я не помню <a href="#" id="forgotit" tabindex="7">имя пользователя</a> или <a href="#" id="forgotpass" tabindex="8">пароль</a>
 					<div class="dialog username" role="dialog" aria-label="Forgot username form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">

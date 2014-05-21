@@ -6,13 +6,13 @@
 		<meta http-equiv="refresh" content="0;url=unsupported.html">
 	</noscript>
 	<title>NextThought Signup</title>
-	<link rel="shortcut icon" href="resources/favicon.ico">
+	<link rel="shortcut icon" href="../../resources/favicon.ico">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Platform Account Signup">
 	<meta name="author" content="NextThought">
-	<link rel="stylesheet" type="text/css" href="resources/fonts/fonts.css?v=%time%" media="screen">
-	<link rel="stylesheet" type="text/css" href="resources/css/style.css?v=%time%" media="screen">
-	<link rel="stylesheet" type="text/css" href="resources/css/site.css?v=%time%" media="screen">
+	<link rel="stylesheet" type="text/css" href="../../resources/fonts/fonts.css?v=%time%">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/style.css?v=%time%" media="screen">
+	<link rel="stylesheet" type="text/css" href="../../resources/css/site.css?v=%time%" media="screen">
 
     <!--[if gte IE 9]>
 	<style type="text/css">
@@ -22,11 +22,11 @@
 	</style>
 	<![endif]-->
 
-	<script type="text/javascript" src="defaults.js?v=%time%"></script>
-	<script type="text/javascript" src="js/support.js?v=%time%"></script>
-	<script type="text/javascript" src="js/signup.js?v=%time%"></script>
-	<script type="text/javascript" src="resources/strings/strings.js?v=%time%"></script>
-	<script type="text/javascript" src="resources/strings/site.js?v=%time%"></script>
+	<script type="text/javascript" src="../../defaults.js?v=%time%"></script>
+	<script type="text/javascript" src="../../js/support.js?v=%time%"></script>
+	<script type="text/javascript" src="../../js/signup.js?v=%time%"></script>
+	<script type="text/javascript" src="../../resources/strings/strings.js?v=%time%"></script>
+	<script type="text/javascript" src="../../resources/strings/site.js?v=%time%"></script>
 </head>
 <body class="signup">
 		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
