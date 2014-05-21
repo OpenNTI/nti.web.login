@@ -123,7 +123,7 @@
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your username and email, and we&#39;ll help you reset it.</p>
 								<div data-title="username and email">
-									<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
+									<input id="recover-pass-username" type="text" placeholder="имя пользователя" size="20" aria-label="имя пользователяe">
 									<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
 									<button id="send-recover-pass" type="submit" disabled>Submit</button>
 								</div>
