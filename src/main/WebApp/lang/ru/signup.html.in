@@ -33,7 +33,7 @@
 		<div class="middle">
 			<div class="container">
 				<div class="header" role="banner">
-					<img src="resources/images/nt_logo_acct_create.png" width="379" height="137" alt="next thought logo"/>
+					<img src="../../resources/images/nt_logo_acct_create.png" width="379" height="137" alt="next thought logo"/>
 					<a id="signin" href="index.html">Have an account? Sign in.</a>
 				</div>
 				<div class="callout">
