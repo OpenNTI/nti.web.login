@@ -1,8 +1,10 @@
-(function($){
-	var emailRx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+(function ($) {
+	var emailRx = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
 		ghanaUser = /^(spmps|mise)\d{2}$/i,
 		emailLastValid,
 		originalMessage,
+		activeLanguage,
+		languageRegEx = /lang\/([a-z\-_]+)/i,
 		message,
 		username,
 		password,
@@ -24,16 +26,15 @@
 		//for browsers that don't have the console object
 		console = window.console || {
 			error:function(){ window.alert.apply(window,arguments); },
-			log: function(){ noOp.apply(this,arguments); }	//shutup the interpreter warnings about wrong arg-count
+			log: function(){ noOp.apply(this,arguments); }
 		};
 
-	function mask(){
-		$('body').addClass('loading');
-	}
 
-	function unmask(){
-		$('body').removeClass('loading');
-	}
+	function mask(){ $('body').addClass('loading'); }
+
+
+	function unmask(){ $('body').removeClass('loading'); }
+
 
 	function updateSubmitButton(){
 		var validEmail = username.value.length> 3,//(emailRx.test(username.value))
@@ -50,10 +51,12 @@
 		$('#submit').prop("disabled", disabled);
 	}
 
+
 	function sendPingIfNecessary(){
 		clearTimeout(pingHandshakeTimer);
 		pingHandshakeTimer = setTimeout(ping, 500);
 	}
+
 
 	function formValidation(){
 		var validEmail = username.value.length>3;
@@ -66,6 +69,7 @@
 		updateSubmitButton();
 	}
 
+
 	function moveFocus(e){
 		e = e || event;
 		if(e.keyCode === 13){
@@ -75,6 +79,7 @@
 		return true;
 	}
 
+
 	function usernameChanged(e){
 		if(!moveFocus(e)){
 			return false;// handle enter key to move focus down which should trigger blur
@@ -82,16 +87,19 @@
 		return formValidation(e);
 	}
 
+
 	function resetForPingHandshake() {
 		$('body').removeClass(function(i,c){return c.replace('signin','');});
 		$('#oauth-login button').remove();
 		rel = {};
 	}
 
+
 	function clearForm(){
 		messageUser();//reset the message
 		resetForPingHandshake();
 	}
+
 
 	function stop(e){
 		e.cancelBubble = true;
@@ -100,12 +108,11 @@
 		return false;
 	}
 
-	function appendUrl(base,param) {
 
-		return base.indexOf(param) >= 0
-			? base
-			: (base + (base.indexOf('?') === -1 ? '?' : '&') + param);
+	function appendUrl(base,param) {
+		return base.indexOf(param) >= 0 ? base : (base + (base.indexOf('?') === -1 ? '?' : '&') + param);
 	}
+
 
 	function toPost(o){
 		var k, t,string = [];
@@ -122,6 +129,7 @@
 		return string.join('&');
 	}
 
+
 	function getAuth(){
 		var v = username.value.trim().toLowerCase(),
 			u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
@@ -131,6 +139,7 @@
 			remember: remember.checked
 		};
 	}
+
 
 	function getRedirects(xhr){
 		if(xhr){
@@ -143,17 +152,23 @@
 		};
 	}
 
+
 	function setCookie(name,value,exp){
 		document.cookie=name+"="+encodeURIComponent(value) +
 						(exp?('; expires='+exp.toGMTString()) : '') + '; path=/';
 	}
 
+
 	function redirect(){
 		var a = document.createElement('a');
 		a.setAttribute('href', returnUrl); //normalize uri
 		a.search = (a.search ? a.search+'&' : '?') + '_u=42'; //add search string arg
+
+		applyLanguage();
+
 		location.replace(a.href);
 	}
+
 
 	function call(url,data,back,forceMethod){
 		var u = data? data.username : undefined,
@@ -192,15 +207,18 @@
 		});
 	}
 
+
 	function offline(){
 		messageUser('You are offline.','offline');
 		mask();
 		document.getElementById('mask-msg').innerHTML = "";
 	}
 
+
 	function ping(){
 		call('/dataserver2/logon.ping',null,pong);
 	}
+
 
 	function pong(o){
 		var auth = getAuth(),
@@ -219,6 +237,7 @@
 
 		call(link,auth,handshake);
 	}
+
 
 	function handshake(o){
 		resetForPingHandshake();
@@ -240,13 +259,16 @@
 		addOAuthButtons(o.Links || [], true);
 		updateSubmitButton();
 	}
-  
-  
+
+
 	function addOAuthButtons(links, callResults) {
 		var i = links.length - 1,
 			v;
 
 		//clearForm();
+		function log() {
+			console.log('What?', arguments);
+		}
 
 		for (; i >= 0; i--) {
 			v = links[i];
@@ -257,9 +279,7 @@
 
 			if (callResults && /result/i.test(v.rel)) {
 				console.log(v.rel, getLink(o, v.rel));
-				call(getLink(o, v.rel), getAuth(), function() {
-					console.log('What?', arguments);
-				});
+				call(getLink(o, v.rel), getAuth(), log);
 			}
 
 
@@ -274,7 +294,6 @@
 		}
 	}
 
-  
 
 	function addButton(rel, optionalSelector){
 		var title;
@@ -284,15 +303,16 @@
 		}else{
 			title = rel;
 		}
-    
-    if ($('button[name="' + rel + '"]').length > 0) {
-      return;
-    }
-    //do not allow duplicates.
+
+	    if ($('button[name="' + rel + '"]').length > 0) {
+	      return;
+	    }
+	    //do not allow duplicates.
 
 		return $('<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>')
 			.appendTo(optionalSelector || '#oauth-login');
 	}
+
 
 	function error(msg){
 		//TODO this isn't being relied on anywhere so far as I can tell.
@@ -303,6 +323,7 @@
 		//if(msg){emailLastValid = null;}
 		messageUser(msg||'There was a problem logging in. Please try again.','error');
 	}
+
 
 	function messageUser(msg,cls){
 		unmask();
@@ -321,6 +342,7 @@
 		}
 	}
 
+
 	function loginWithRel(r,xhr){
 		if(!rel.hasOwnProperty(r)){
 			return;
@@ -332,6 +354,7 @@
 
 			if(!xhr){
 				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				applyLanguage();
 				location.replace(url);
 				return;
 			}
@@ -358,6 +381,7 @@
 		}
 	}
 
+
 	function submitHandler(e){
 		var nextMonth = new Date(new Date().getTime() + 1000*60*60*24*31);// 31 days
 		//check if remember me is checked
@@ -372,12 +396,14 @@
 		return stop(e||event);
 	}
 
+
 	function clickHandler(e){
 		var t = $(e.target);
 		if(t.is('button')){
 			loginWithRel(t.attr('name'),false);
 		}
 	}
+
 
 	function handleCache(){
 		try {
@@ -391,7 +417,7 @@
 						ac.swapCache();
 						location.reload();
 					}
-					catch(e){/*sigh*/}
+					catch(er){/*sigh*/}
 				} else {
 					// Manifest didn't changed. Nothing new to serve.
 				}
@@ -415,10 +441,10 @@
 			recoverNameUrl = getLink(data,'logon.forgot.username');
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
-      
+
       addOAuthButtons(data.Links || []);
 
-			
+
 			function finishAnonymous(){
 				setupRecovery();
 				setupPassRecovery();
@@ -436,10 +462,10 @@
 					dataType: 'json',
 					headers: {Accept:'application/json'},
 					type: 'POST',
-					data: {username: cookies['username']}
+					data: {username: cookies.username}
 				}).done(function(dataHS){
-					if(getLink(dataHS,'logon.continue')){	
-						setupContinue(getLink(dataHS, 'logon.logout'))
+					if(getLink(dataHS,'logon.continue')){
+						setupContinue(getLink(dataHS, 'logon.logout'));
 					}
 					else {
 						finishAnonymous();
@@ -573,12 +599,6 @@
 		dialog.hide();
 	}
 
-	if(!window.console){
-		window.console = {
-			log: function(){},
-			error: function(){}
-		};
-	}
 
 	function parseQueryString(qStr){
 		if(!qStr || qStr === ''){return null;}
@@ -594,23 +614,55 @@
 		return r;
 	}
 
+
 	function handleQueryParams(){
 		var q = location.href.split('?')[1], isUsernameSet;
 		if(q){
 			q = parseQueryString(q);
-			if(q && q['username']){
-				$(username).val(decodeURIComponent(q['username'])).change();
+			if(q && q.username){
+				$(username).val(decodeURIComponent(q.username)).change();
 				username.focus();
 				isUsernameSet = true;
 			}
-			if(q && q['error']){
-				showErrorOnReady = function(){ error(decodeURIComponent(q['error'])); };
+			if(q && q.error){
+				showErrorOnReady = function(){ error(decodeURIComponent(q.error)); };
 			}
 		}
 		return isUsernameSet;
-
 	}
-	
+
+
+	function applyLanguage() {
+		var ln = activeLanguage || '',
+		//if there is no value for activeLanguage, we will set a date in the past to "expire" the cookie.
+			remove = activeLanguage ? null : new Date(0);
+
+		setCookie('I18N_LANGUAGE', ln, remove);
+		setCookie('_LOCALE_', ln, remove);
+	}
+
+
+	function clearLanguage() {
+		activeLanguage = null;
+		applyLanguage();
+	}
+
+
+	function setLanguage() {
+		var pref = $.cookie('I18N_LANGUAGE'),
+			lang = languageRegEx.exec(location.pathname) || ['lang/en'];
+		//I've made the default not define a 'en' at index 1 of the resulting lang array. We will use this to handle the default.
+		activeLanguage = lang[1];
+
+		$('div.languages a').click(clearLanguage);
+
+		//This might be controversial... easily removed if it causes problems.
+		if (pref && pref !== activeLanguage) {
+			location.replace(location.pathname.replace(/\/.+?\.html$/,'/') + 'lang/' + pref);
+		}
+	}
+
+
 	function buffer(fn, b) {
 		var i;
 		return function(e) {
@@ -618,7 +670,7 @@
 			i = setTimeout(function(){
 				fn(e);
 			}, b);
-		};		
+		};
 	}
 
 	$(function(){
@@ -685,5 +737,8 @@
 
 		handleCache();
 		$('input,textarea').placeholder();
+
+		setLanguage();
 	});
+
 }(jQuery));
