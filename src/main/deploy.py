@@ -18,6 +18,8 @@ BUILDTIME = time.strftime('%Y%m%d%H%M%S')
 def _updateHtml( html_file, analytics_key, itunes_id, dep_mod_time ):
 	with open( html_file, 'rb' ) as f:
 		contents = f.read()
+		# bytes to unicode string
+		contents = contents.decode('utf-8')
 
 	analytics_domain = 'nextthought.com'
 	if ',' in analytics_key:
@@ -61,6 +63,8 @@ ga('send', 'pageview');
 	outfile_mod_time = -1 if not os.path.isfile(outfile) else os.stat(outfile).st_mtime
 	dep_mod_time = max(os.stat(html_file).st_mtime, dep_mod_time)
 	if dep_mod_time >= outfile_mod_time:
+		# unicode string back to bytes
+		contents = contents.encode("utf-8")
 		if not os.path.islink(outfile):
 			with open( outfile, 'wb' ) as f:
 				f.write(contents)
@@ -104,11 +108,10 @@ def main():
 		dep_mod_date = max(dep_mod_date,
 						   os.stat(path).st_mtime)
 
-	_updateHtml('WebApp/index.html.in',args.analytics_key, args.itunes, dep_mod_date)
-	_updateHtml('WebApp/mobile.html.in',args.analytics_key, args.itunes, dep_mod_date)
-	_updateHtml('WebApp/passwordrecover.html.in', args.analytics_key, args.itunes, dep_mod_date)
-	_updateHtml('WebApp/signup.html.in',args.analytics_key, args.itunes, dep_mod_date)
-	_updateHtml('WebApp/unsupported.html.in',args.analytics_key, args.itunes, dep_mod_date)
+	for path in itertools.chain(glob.iglob('WebApp/*.html.in'),
+								glob.iglob('WebApp/lang/*/*.html.in')):
+		_updateHtml(path,args.analytics_key, args.itunes, dep_mod_date)
+
 	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, args.itunes, dep_mod_date)
 
 	gzip_files(glob.iglob('WebApp/js/*.js'))
