@@ -414,7 +414,7 @@
 			function invalidate(){
 				//apply invalids:
 				p.removeClass('valid').addClass('invalid');
-				p.find('.invalid').html('That doesn\'t look right.');
+				p.find('.invalid').html(getString('That doesn\'t look right.'));
 				afterFail();
 			}
 
@@ -695,7 +695,7 @@
 
 	function couldNotConnectToServer(){
 		console.error('failed to resolve service url..');
-		$('.content').html('<h1>Sorry, unable to connect to the server, try again</h1>');
+		$('.content').html('<h1>' + getString('Sorry, unable to connect to the server, try again') + '</h1>');
 	}
 
 	function backToLoginPage(msg,buttonLabel,buttonTarget){
@@ -716,9 +716,9 @@
 		//TODO needs better wording
 
 		$('.content').html([
-			'<h1>',(msg || 'You must logout to create an account.'),'</h1>',
+			'<h1>',(msg || getString('You must logout to create an account.')),'</h1>',
 			'<div>',
-				'<button>',(buttonLabel||'OK'),'</button>',
+				'<button>',(buttonLabel||getString('OK')),'</button>',
 			'</div>'
 		].join(''));
 
@@ -797,7 +797,7 @@
 						.html(j.message);
 			}
 			catch(e){
-				alert('We\'re sorry, but there was an unforeseen issue...\n\n'+x.responseText.split(/\n{3}/)[1]);
+				alert(getString('We\'re sorry, but there was an unforeseen issue...') + '\n\n' + x.responseText.split(/\n{3}/)[1]);
 			}
 		}).done(function(data){
 
@@ -811,7 +811,7 @@
 				return;
 			}
 			console.log(data);
-			alert('hmm... o_O that wasn\'t expected...');
+			alert(getString('hmm... o_O that wasn\'t expected...'));
 		});
 	}
 
@@ -877,7 +877,7 @@
 
 		if (!success){success = defaultSuccess;}
 		if (!fail){fail = defaultFail;}
-		
+
 		function failFilter(response) {
 			var expected = {
 				200: 1, //ok
@@ -935,7 +935,7 @@
 		}
 		//check that the password is not all white space
 		if(!ps.val().trim() && ps.val().length > 0){
-			markFieldInvalidated({field:'password',message:'The password must not be all whitespace.'});
+			markFieldInvalidated({field:'password',message:getString('The password must not be all whitespace.')});
 			disableButton('The password is all whitespace');
 			return false;
 		}

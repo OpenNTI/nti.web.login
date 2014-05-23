@@ -27,7 +27,7 @@
 		console = window.console || {
 			error:function(){ window.alert.apply(window,arguments); },
 			log: function(){ noOp.apply(this,arguments); }
-		};
+	};
 
 
 	function mask(){ $('body').addClass('loading'); }
@@ -209,7 +209,7 @@
 
 
 	function offline(){
-		messageUser('You are offline.','offline');
+		messageUser(getString('You are offline.'),'offline');
 		mask();
 		document.getElementById('mask-msg').innerHTML = "";
 	}
@@ -230,7 +230,8 @@
 		}
 
 		if(!link){
-			error(typeof(o)==='number'?'Server communication failure, please try again later.':false);
+			error(typeof(o)==='number' ?
+				getString('Server communication failure, please try again later.') : false);
 			return;
 		}
 
@@ -321,7 +322,7 @@
 		//I don't necessarily think removing this will fix it but the use of the timer seems like
 		//it could lead to issues
 		//if(msg){emailLastValid = null;}
-		messageUser(msg||'There was a problem logging in. Please try again.','error');
+		messageUser(msg|| getString('There was a problem logging in. Please try again.'), 'error');
 	}
 
 
@@ -353,7 +354,7 @@
 			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
 
 			if(!xhr){
-				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				document.getElementById('mask-msg').innerHTML = getString('Redirecting...');
 				applyLanguage();
 				location.replace(url);
 				return;
@@ -366,11 +367,11 @@
 
 					var msg = null;
 					if(t === 'number' && o == 401){
-						msg = 'The username or password you entered is incorrect. Please try again.';
+						msg = getString('The username or password you entered is incorrect. Please try again.');
 					}
 					return error(msg);
 				}
-				document.getElementById('mask-msg').innerHTML = "Redirecting...";
+				document.getElementById('mask-msg').innerHTML = getString('Redirecting...');
 				redirect();
 			}, 'GET');
 
@@ -487,9 +488,12 @@
 
 
 	function setupContinue(logoutUrl){
-		$('#active-session-login').addClass('visible').html('<div>You are currently logged in somewhere else. Would you like to logout?</div>');
-		addButton('No', '#active-session-login').click(redirect);
-		addButton('Yes', '#active-session-login').click(function(){
+		$('#active-session-login').addClass('visible').html(
+			'<div>' +
+				getString('You are currently logged in somewhere else. Would you like to logout?') +
+			'</div>');
+		addButton(getString('No'), '#active-session-login').click(redirect);
+		addButton(getString('Yes'), '#active-session-login').click(function(){
 			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
 			$.ajax({
 				url: logoutUrl + '?_dc=' + new Date().getTime()
@@ -520,7 +524,7 @@
 			e.stopPropagation();
 			e.preventDefault();
 
-			$('#recover').html('<h1>Thanks!</h1>');
+			$('#recover').html('<h1>' + getString('Thanks!') + '</h1>');
 			setTimeout(function(){
 				hideDialog($('.forgot .dialog'));
 			},1000);
@@ -575,7 +579,7 @@
 			e.stopPropagation();
 			e.preventDefault();
 
-			$('#recoverpass').html('<h1>Thanks!</h1>');
+			$('#recoverpass').html('<h1>' + getString('Thanks!') + '</h1>');
 			setTimeout(function(){
 				hideDialog($('.forgot .dialog'));
 			},1000);

@@ -122,6 +122,16 @@ function getLink(o, r){var l=(o||{}).Links||[],i=l.length-1;for(i;i>=0;i--){if(l
 	 }
  })();
 
+function applyIf(o, c) {
+    o = o || {};
+    for (var k in c) {
+        if (c.hasOwnProperty(k) && !o.hasOwnProperty(k)) {
+            o[k] = c[k];
+        }
+    }
+
+    return o;
+}
 
 function getString(k, d){return (window.NTIStrings || {})[k] || d || k || '';}
 

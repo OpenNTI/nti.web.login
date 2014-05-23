@@ -26,6 +26,22 @@
 
     <script type="text/javascript" src="../../defaults.js?v=%time%"></script>
 	<script type="text/javascript" src="../../js/support.js?v=%time%"></script>
+
+	<script type="text/javascript">
+		window.NTIStrings = applyIf(window.NTIStrings, {
+			'You are offline.': '',
+			'Server communication failure, please try again later.': '',
+			'There was a problem logging in. Please try again.': '',
+			'Redirecting...': '',
+
+			'The username or password you entered is incorrect. Please try again.': '',
+			'You are currently logged in somewhere else. Would you like to logout?': '',
+			'No': '',
+			'Yes': '',
+
+			'Thanks!': '',
+		});
+	</script>
 	<script type="text/javascript" src="../../js/login.js?v=%time%"></script>
 </head>
 <body class="signin">

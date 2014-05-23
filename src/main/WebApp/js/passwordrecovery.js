@@ -1,5 +1,6 @@
 (function($) {
-	var resetPassUrl;
+	var resetPassUrl,
+		defaultMessage = '...';
 
 	function parseResponseText(response) {
 		if (/application\/json/i.test(response.getResponseHeader('Content-Type'))) {
@@ -43,7 +44,7 @@
 	function showSuccess(text) {
 		 $('#message').removeClass('red')
 				.addClass('green')
-				.html(text);
+				.html(text || defaultMessage);
 	}
 
 
@@ -69,8 +70,8 @@
 		$('#recover').submit(function(e) {
 			var pass1 = $('#password').val(),
 				pass2 = $('#password-verify').val(),
-				username = window.requestParameters['username'],
-				id = window.requestParameters['id'];
+				username = window.requestParameters.username,
+				id = window.requestParameters.id;
 
 			e.stopPropagation();
 			e.preventDefault();
@@ -86,12 +87,12 @@
 				.done(function(data) {
 					var n = 5,
 						link = 'index.html?return=' + returnUrl,
-						impatient = '<a style="float:right; display:block;" href="' + link + '">Login &#9658;</a>';
+						impatient = '<a style="float:right; display:block;" href="' + link + '">' + getString('Login &#9658;') + '</a>';
 
 					function countdown() {
-						var wait = '<p>' + impatient + 'Redirecting to login in... ' + n + '</p>';
+						var wait = '<p>' + impatient + getString('Redirecting to login in... ') + n + '</p>';
 
-						showSuccess('Password reset successful.' + wait);
+						showSuccess(getString('Password reset successful.') + wait);
 						n--;
 						if (n <= 0) {
 							window.location.replace(link);
@@ -106,7 +107,7 @@
 					if (!o) {
 						o = {};
 						console.warn('An unknown error occurred when requesting reset', data);
-						o.message = 'An unknown error occurred resetting your password.';
+						o.message = getString('An unknown error occurred resetting your password.');
 					}
 					showError(o.message || o.code);
 				});
@@ -122,24 +123,57 @@
 			pass2 = $('#password-verify').val(),
 			hasRequiredInputs = false;
 
-		hasRequiredInputs = (window.requestParameters['username'] && window.requestParameters['id']);
-
-		if (hasRequiredInputs && pass1 && pass2 && pass1 === pass2) {
-			$('#submit').removeAttr('disabled');
+		hasRequiredInputs = (window.requestParameters.username && window.requestParameters.id);
+		if(!hasRequiredInputs) {
+			//throw 'NoData';
 		}
-		else {
+
+		if (!pass1 || !pass2 || pass1 !== pass2) {
 			$('#submit').attr('disabled', true);
+
+			return false;
 		}
 
+		$('#submit').removeAttr('disabled');
+		return true;
 	}
 
+
+	function verifyPassword() {
+		var valid = enableSubmit(),
+			pass1 = $('#password').val(),
+			pass2 = $('#password-verify').val();
+
+		if (pass1 && pass1 !== pass2) {
+			showError(getString('Passwords must match.'));
+		} else {
+			showSuccess();
+		}
+	}
+
+
+	function buffer(fn, b) {
+		var i;
+		return function(e) {
+			clearTimeout(i);
+			i = setTimeout(function(){
+				fn(e);
+			}, b);
+		};
+	}
 
 	$(function() {
 		//get data from server that we will need and setup any forms and listeners:
 		anonymousPing();
 		setupForm();
 
+		defaultMessage = $('#message').html();
+
+		var v = buffer(verifyPassword, 250);
+
 		$('#password').blur(enableSubmit).keyup(enableSubmit);
-		$('#password-verify').blur(enableSubmit).keyup(enableSubmit);
+		$('#password-verify')
+			.blur(v)
+			.keyup(v);
 	});
 }(jQuery));
