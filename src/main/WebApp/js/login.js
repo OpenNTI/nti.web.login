@@ -3,8 +3,6 @@
 		ghanaUser = /^(spmps|mise)\d{2}$/i,
 		emailLastValid,
 		originalMessage,
-		activeLanguage,
-		languageRegEx = /lang\/([a-z\-_]+)/i,
 		message,
 		username,
 		password,
@@ -150,12 +148,6 @@
 			success: returnUrl,
 			failure: appendUrl(location.href, "failed=true")
 		};
-	}
-
-
-	function setCookie(name,value,exp){
-		document.cookie=name+"="+encodeURIComponent(value) +
-						(exp?('; expires='+exp.toGMTString()) : '') + '; path=/';
 	}
 
 
@@ -633,37 +625,6 @@
 			}
 		}
 		return isUsernameSet;
-	}
-
-
-	function applyLanguage() {
-		var ln = activeLanguage || '',
-		//if there is no value for activeLanguage, we will set a date in the past to "expire" the cookie.
-			remove = activeLanguage ? null : new Date(0);
-
-		setCookie('I18N_LANGUAGE', ln, remove);
-		setCookie('_LOCALE_', ln, remove);
-	}
-
-
-	function clearLanguage() {
-		activeLanguage = null;
-		applyLanguage();
-	}
-
-
-	function setLanguage() {
-		var pref = $.cookie('I18N_LANGUAGE'),
-			lang = languageRegEx.exec(location.pathname) || ['lang/en'];
-		//I've made the default not define a 'en' at index 1 of the resulting lang array. We will use this to handle the default.
-		activeLanguage = lang[1];
-
-		$('div.languages a').click(clearLanguage);
-
-		//This might be controversial... easily removed if it causes problems.
-		if (pref && pref !== activeLanguage) {
-			location.replace(location.pathname.replace(/\/.+?\.html$/,'/') + 'lang/' + pref);
-		}
 	}
 
 
