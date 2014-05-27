@@ -228,10 +228,15 @@
 			fc = inp.parents('.field-container'),
 			cont = fc.find('div.affiliation-dropdown-container'),
 			ol = cont.find('ol'),
-			me = this;
+			me = this,
+			path = document.createElement('A');
+
+		path.href = $('script[src*="support.js?v="]')[0].src;
+		path = path.pathname.split('/').slice(0, -1);
+		path.push('school-data.json');
 
 		//load the data initially:
-		$.getJSON('js/school-data.json', function(data){
+		$.getJSON(path.join('/'), function(data){
 			me.schoolList = data;
 		});
 
@@ -892,14 +897,14 @@
 		}
 
 		if (preflighturl) {
-		var x = $.ajax({
-			headers: {Accept:'application/json'},
-			url: preflighturl,
-			data: JSON.stringify(data),
-			dataType: 'json',
-			type: 'POST'
-		}).fail(failFilter).done(success);
-	}
+			var x = $.ajax({
+				headers: {Accept:'application/json'},
+				url: preflighturl,
+				data: JSON.stringify(data),
+				dataType: 'json',
+				type: 'POST'
+			}).fail(failFilter).done(success);
+		}
 	}
 
 	function markFieldInvalidated(responseObject) {
@@ -1329,7 +1334,7 @@
 									   $(this).parent('div[data-title]').removeClass('has-focus');
 								   });
 
-		  $('input,textarea').placeholder();
+		$('input,textarea').placeholder();
 
 		setLanguage();
 	  });
