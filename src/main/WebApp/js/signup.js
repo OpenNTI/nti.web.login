@@ -884,13 +884,14 @@
 				200: 1, //ok
 				409: 1, //conflict
 				422: 1 //bad data
-			}
+			};
 			fail.apply(this, arguments);
 			if (response && !expected[response.status]) {
 				couldNotConnectToServer();
 			}
 		}
 
+		if (preflighturl) {
 		var x = $.ajax({
 			headers: {Accept:'application/json'},
 			url: preflighturl,
@@ -898,6 +899,7 @@
 			dataType: 'json',
 			type: 'POST'
 		}).fail(failFilter).done(success);
+	}
 	}
 
 	function markFieldInvalidated(responseObject) {
