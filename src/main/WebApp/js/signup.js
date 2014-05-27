@@ -802,6 +802,7 @@
 		}).done(function(data){
 
 			function redirect(){
+				applyLanguage();
 				window.location.replace(returnUrl);
 				return;
 			}
@@ -1327,6 +1328,8 @@
 								   });
 
 		  $('input,textarea').placeholder();
+
+		setLanguage();
 	  });
 
 
