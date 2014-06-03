@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#"
 	 tal:define="course options/course;
+	             id course/id;
+                 path python: id.upper().replace('-ARCHIVED','');
 				 upcomingCourses python:[course];
 				 page_title string: ${course/title} | JANUX;
 				 description course/description" >
@@ -44,9 +46,9 @@ Expected variables:
 	<meta property="og:description" content="JANUX"
 		  tal:attributes="content description" />
 	<meta property="og:image" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg"
-		  tal:attributes="content string:images/courses/${course/id}/card.png" />
+		  tal:attributes="content string:images/courses/${path}/card.png" />
 	<meta property="og:image:url" content="//d2ixlfeu83tci.cloudfront.net/images/janux_facebook.jpg"
-		  tal:attributes="content string:images/courses/${course/id}/card.png" />
+		  tal:attributes="content string:images/courses/${path}/card.png" />
 	<!--! FIXME: Is there any way to ref a kaltura video? -->
 	<!--!
 	<meta property="og:video" content="http://www.youtube.com/v/9bsV-BKjOCA?version=3&amp;autohide=1">
@@ -69,7 +71,7 @@ Expected variables:
 	<meta name="twitter:description" content="description"
 		  tal:attributes="content description" />
 	<meta name="twitter:image:src" content="http://d2ixlfeu83tci.cloudfront.net/images/janux_twitter.jpg"
-		  tal:attributes="content string:images/courses/${course/id}/card.png" />
+		  tal:attributes="content string:images/courses/${path}/card.png" />
 </head>
 
 <body tal:define="courses load:./_macros.pt">

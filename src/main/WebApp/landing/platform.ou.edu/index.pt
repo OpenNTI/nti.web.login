@@ -135,15 +135,6 @@
 				<div class="grid"
 					 tal:define="the_courses options/archivedCourses"
 					 metal:use-macro="courses/macros/course-grid">
-					<a class="grid-item" id="XXX1234">
-						<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Course Image"
-							 title="" style="background: #DDD url('images/courses/${course/id}.png') no-repeat center center;" />
-						<div class="meta">
-							<div class="course-code">CLC 3403</div>
-							<div class="course-name">Law And Justice</div>
-							<div class="course-prof">By Kyle Harper</div>
-						</div>
-					</a>
 				</div>
 
 			</div>

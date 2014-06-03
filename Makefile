@@ -22,4 +22,5 @@ courses: $(DIR)/courses.time
 
 $(DIR)/courses.time: $(DIR)/data.json $(DIR)/course_details.pt
 	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on availableCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
+	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on archivedCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
 	@ touch $(DIR)/courses.time

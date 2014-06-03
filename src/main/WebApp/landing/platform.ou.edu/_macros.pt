@@ -5,10 +5,12 @@
 	<div class="grid" metal:define-macro="course-grid">
 		<tal:block	tal:repeat="course the_courses">
 		<a class="grid-item" id="XXX1234" href="XXX1234.html" tabindex="5"
-			tal:define="anchorPage course/detailAnchor | python:None;
+		    tal:define="id course/id;
+                        path python: id.upper().replace('-ARCHIVED','');
+			            anchorPage course/detailAnchor | python:None;
 						anchor python:'course.%s.html' % course['id'].lower() if anchorPage else None"
 			tal:attributes="id course/id; href anchor | nothing; data-old course/detailAnchor | nothing">
-			<img src="images/courses/${course/id}/card.png"
+			<img src="images/courses/${path}/card.png"
 				 alt="Course Image"
 				 title=""
 				 style="background: #DDD;"/>
@@ -26,11 +28,13 @@
 	<div class="courses" metal:define-macro="course-details">
 
 		<div id="XXX1234-detail" class="subpage"
-			 style="background-image: url('images/courses/${course/id}/bg.png');"
-			 itemscope
-			 itemtype="http://schema.org/EducationEvent"
-			 tal:repeat="course the_courses"
-			 tal:attributes="id string:${course/id}-detail">
+		    tal:define="id course/id;
+                        path python: id.upper().replace('-ARCHIVED','')"
+			style="background-image: url('images/courses/${path}/bg.png');"
+			itemscope
+			itemtype="http://schema.org/EducationEvent"
+			tal:repeat="course the_courses"
+			tal:attributes="id string:${course/id}-detail">
 			<!--! Metadata markup, not for display -->
 			<a class="hidden" style="display: none"
 			   itemprop="url"
@@ -38,19 +42,21 @@
 			   tal:define="anchorPage course/detailAnchor | python:None;
 						   anchor python:'course.%s.html' % course['id'].lower() if anchorPage else None"
 			   tal:attributes="href anchor | nothing">
-				<img src="images/courses/${course/id}/card.png"
+				<img src="images/courses/${path}/card.png"
 					 itemprop="image"
 					 alt="Course Image"
 					 title=""
 					 style="background: #DDD;"/>
 			</a>
 			<div class="course-header"
-				tal:define="indexn python:options['repeat'].course.index + 1;
+				tal:define="notArchived python: id.lower().find('archived') == -1;
+				            courseList python:options['availableCourses'] if notArchived else options['archivedCourses'];
+				            indexn python:options['repeat'].course.index + 1;
 							indexp python:options['repeat'].course.index - 1;
 							next_index python:0 if options['repeat'].course.end else indexn;
 							prev_index python:options['repeat'].course.length - 1 if options['repeat'].course.start else indexp;
-							next_id python:options['availableCourses'][next_index]['id'].lower();
-							prev_id python:options['availableCourses'][prev_index]['id'].lower()">
+							next_id python:courseList[next_index]['id'].lower();
+							prev_id python:courseList[prev_index]['id'].lower()">
 				<controls>
 					<a href="./" class="close" title="Home" role="button" tabindex="0">x</a>
 					<a href="" class="next" title="Next" tal:attributes="href string:course.${next_id}.html" role="button" tabindex="0">&gt;</a>
@@ -148,7 +154,7 @@
 					 itemprop="performer"
 					 itemtype="http://schema.org/Person"
 					 tal:repeat="instructor course/instructors">
-					<img src="images/courses/${course/id}/${instructor/defaultphoto}"
+					<img src="images/courses/${path}/${instructor/defaultphoto}"
 						 alt="David Sabatini, PhD, PE"
 						 title=""
 						 style="background: #DDD no-repeat center center;"

@@ -1,116 +1,505 @@
 {
+    "archivedCoursesWhen": "Spring 2014",
 	"archivedCourses": [
 		{
-			"id": "ANTH1613",
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
+			"detailAnchor": "archived-ANTH1613-detail",
+			"duration": "16 Weeks",
+			"id": "ANTH1613-archived",
 			"instructor": "Dan Swan & Joshua Nelson",
+			"instructors": [
+				{
+					"defaultphoto": "Swan.png",
+					"name": "Dan Swan, PhD",
+					"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
+				},
+				{
+					"defaultphoto": "Nelson.png",
+					"name": "Joshua Nelson, PhD",
+					"title": "Assistant Professor of English"
+				}
+			],
+			"kalturaVideo": "0_2ri5g355",
 			"name": "ANTH 1613-001",
-			"title": "Native Peoples of Oklahoma"
+			"prerequisites": [],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Anthropology",
+			"startDate": "January 13, 2014",
+			"title": "Native Peoples of Oklahoma",
+			"video": "kaltura://1500101/0_2ri5g355/"
 		},
 		{
-			"id": "ANTH4970",
+			"credit": {
+				"hours": 1
+			},
+			"description": "In this course, we'll discuss the topic of why human evolution is important to study and understand. This fully online course does not expect you to have any prior background in biological science, but a few foundational concepts in biology will be introduced early on in the course. During this course you will participate in online activities, watch online videos and custom animations, and interact with your peers in collaborative settings.",
+			"detailAnchor": "archived-ANTH4970-detail",
+			"duration": "16 Weeks",
+			"id": "ANTH4970-archived",
 			"instructor": "Cecil Lewis",
+			"instructors": [
+				{
+					"defaultphoto": "Lewis.png",
+					"name": "Cecil Lewis, PhD",
+					"title": "Associate Professor of of Anthropology"
+				}
+			],
+			"kalturaVideo": "0_tnfknlac",
 			"name": "ANTH 4970-995",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Anthropology",
+			"startDate": "January 13, 2014",
 			"title": "Practical Importance of Human Evolution"
 		},
 		{
-			"id": "CHEM4970",
+			"credit": { "hours": 1 },
+			"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+			"detailAnchor": "archived-CHEM4970-detail",
+			"duration": "16 Weeks",
+			"id": "CHEM4970-archived",
 			"instructor": "Mark Morvant",
+			"instructors": [
+				{
+					"defaultphoto": "Morvant.png",
+					"name": "Mark Morvant, PhD",
+					"title": "Professor, Department of Chemistry and Biochemistry"
+				}
+			],
+			"kalturaVideo": "0_bxfatwxs",
 			"name": "CHEM 4970",
-			"title": "Chemistry of Beer"
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Chemistry and Biochemistry",
+			"startDate": "January 13, 2014",
+			"title": "Chemistry of Beer",
+			"video": "kaltura://1500101/0_bxfatwxs/"
 		},
 		{
-			"id": "COMM4970",
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course is an interdisciplinary study of the methods of human deception detection from the perspectives of law enforcement, national security and intelligence analysis, criminal justice, psychology, sociology, and communication. How to accurately determine when someone is lying is a multi-disciplinary problem and requires a variety of technological and data analytic solutions. Our primary goal will be to comprehend a representative picture of the traditional and contemporary theory regarding the intersection of communication, cognition, and emotion in deception detection. This is a fully online course that will require interaction in the digital platform with the Professor and other students.",
+			"detailAnchor": "archived-COMM4970-detail",
+			"duration": "16 Weeks",
+			"id": "COMM4970-archived",
 			"instructor": "Norah Dunbar",
+			"instructors": [
+				{
+					"defaultphoto": "Dunbar.png",
+					"name": "Norah Dunbar, PhD",
+					"title": "Associate Professor, Department of Communication"
+				}
+			],
+			"kalturaVideo": "0_9f8ist32",
 			"name": "COMM 4970-995",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Communication",
+			"startDate": "January 13, 2014",
 			"title": "Understanding and Detecting Deception"
 		},
 		{
-			"id": "CS1300",
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course is intended for people who have no experience in computer science but would like to learn more about how computers work and how they can control them. It is designed to introduce learners to the power and elegance of computational thinking. You will learn basic computational principles and will have the opportunity to put them into practice. Computers and technology are driving phenomenal change in this world. This course will give you the power to help drive that change.",
+			"detailAnchor": "archived-CS1300-detail",
+			"duration": "16 Weeks",
+			"id": "CS1300-archived",
 			"instructor": "Amy McGovern",
+			"instructors": [
+				{
+					"defaultphoto": "McGovern.png",
+					"name": "Amy McGovern, PhD",
+					"title": "Associate Professor, School of Computer Science"
+				}
+			],
+			"kalturaVideo": "0_m5kjoas1",
 			"name": "CS 1300",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "There are no prerequisites for this course."
+				},
+				{
+					"id": "",
+					"title": "No prior programming experience is assumed."
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Computer Science",
+			"startDate": "January 13, 2014",
 			"title": "Power and Elegance of Computational Thinking"
 		},
 		{
-			"id": "CS1323",
-			"instructor": "Deborah Trytten",
-			"name": "CS 1323",
-			"title": "Introduction to Computer Programming"
-		},
-		{
-			"id": "EDAH5023",
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course focuses on the organization and administration of adult and higher education from legislative, legal, structural-functional, power, political, bureaucratic, and social perspectives. Topics covered include: governance, central office organization, administrative position analysis, faculty organization, faculty participation in policy formation and decision making, academic freedom, goals analysis, budgetary policies and methods, and decision strategies in handling a representative set of administrative problems presented in a variety of formats.",
+			"detailAnchor": "archived-EDAH5023-detail",
+			"duration": "16 Weeks",
+			"id": "EDAH5023-archived",
 			"instructor": "Stephanie Blackmon",
+			"instructors": [
+				{
+					"defaultphoto": "Blackmon.png",
+					"name": "Stephanie Blackmon, PhD",
+					"title": "Assistant Professor, Department of Educational Leadership and Policy Studies"
+				}
+			],
+			"kalturaVideo": "0_3usiqhgr",
 			"name": "EDAH 5023-902",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Graduate Standing"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Educational Leadership and Policy Studies",
+			"startDate": "January 13, 2014",
 			"title": "Administration of Adult and Higher Education"
 		},
 		{
-			"id": "ENGR1510",
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u201cWater Technologies for Emerging Regions\u201d). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
+			"detailAnchor": "archived-ENGR1510-detail",
+			"duration": "16 Weeks",
+			"id": "ENGR1510-archived",
 			"instructor": "David Sabatini & Jim Chamberlain",
+			"instructors": [
+				{
+					"defaultphoto": "Sabatini.png",
+					"name": "David Sabatini, PhD",
+					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
+				},
+				{
+					"defaultphoto": "Chamberlain.png",
+					"name": "Jim Chamberlain, PhD",
+					"title": "OU WaTER Center Staff Researcher"
+				}
+			],
+			"kalturaVideo": "0_6d00mec6",
 			"name": "ENGR 1510-901",
+			"prerequisites": [],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Civil Engineering and Environmental Sceince",
+			"startDate": "January 13, 2014",
 			"title": "Introduction to Water"
 		},
 		{
-			"id": "GEOG3890",
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up to date policies and new directions in sustainable development of oil and gas resources.",
+			"detailAnchor": "archived-GEOG3890-detail",
+			"duration": "16 Weeks",
+			"id": "GEOG3890-archived",
 			"instructor": "Bob Puls",
+			"instructors": [
+				{
+					"defaultphoto": "Puls.png",
+					"name": "Bob Puls, PhD",
+					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
+				}
+			],
+			"kalturaVideo": "0_i3etssfy",
 			"name": "GEOG 3890-995",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Junior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Department of Geography",
+			"startDate": "January 13, 2014",
 			"title": "Hydraulic Fracturing and Water Resources"
 		},
 		{
-			"id": "GEOL1114",
+			"credit": {
+				"hours": 4
+			},
+			"description": "This course is an introduction to the basic principles of geology and is a general education course for science and engineering majors.  It serves both as an introduction for those planning to continue in geology and as a comprehensive overview of geology for students in other fields. This course will also emphasize the social, economic, and political implications of geology processes.  Students will complete this course using online resources and activities as well as in class activities.",
+			"detailAnchor": "archived-GEOL1114-detail",
+			"duration": "16 Weeks",
+			"id": "GEOL1114-archived",
 			"instructor": "R. Douglas Elmore",
+			"instructors": [
+				{
+					"defaultphoto": "Elmore.png",
+					"name": "R. Douglas Elmore, PhD",
+					"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost"
+				}
+			],
+			"kalturaVideo": "0_jmp4h8fw",
 			"name": "GEOL 1114-050",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "equivalent knowledge of high school chemistry, algebra and trigonometry"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "ConocoPhillips School of Geology and Geophysics",
+			"startDate": "January 13, 2014",
 			"title": "Physical Geology for Science and Engineering Majors"
 		},
 		{
-			"id": "HSCI3013",
+			"credit": {
+				"hours": 3
+			},
+			"description": "In this course we will trace the development of science in diverse cultural contexts from antiquity to early modern times. We will explore the growth and interaction of a wide variety of subject areas in science, including astronomy, biology, chemistry, geology, meteorology, mathematics, medicine and technology. We will seek to understand how scientific discoveries and methods were rooted in specific geographical, artistic, literary, philosophical, religious and political traditions. We will ponder how they were transmitted across cultures as diverse as the ancient empires of Mesopotamia, Greece and Rome, the civilizations of India, China, and the Islamic Middle East, as well as in medieval and Renaissance Europe. The connections we identify between science and culture in pre-modern eras will throw light upon the nature of science and society today.",
+			"detailAnchor": "archived-HSCI3013-detail",
+			"duration": "16 Weeks",
+			"id": "HSCI3013-archived",
 			"instructor": "Kerry Magruder",
+			"instructors": [
+				{
+					"defaultphoto": "Magruder.png",
+					"name": "Kerry Magruder, PhD",
+					"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections "
+				}
+			],
+			"kalturaVideo": "0_75znedfu",
 			"name": "HSCI 3013-995",
-			"title": "History of Science to the Age of Newton"
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "junior standing, or completion of one History of Science lower-division course, or permission of instructor"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "History of Science",
+			"startDate": "January 13, 2014",
+			"title": "History of Science to the Age of Newton",
+			"video": "kaltura://1500101/0_75znedfu/"
 		},
 		{
-			"id": "PSC4283",
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
+			"detailAnchor": "archived-PSC4283-detail",
+			"duration": "16 Weeks",
+			"id": "PSC4283-archived",
 			"instructor": "Justin Wert",
+			"instructors": [
+				{
+					"defaultphoto": "Wert.png",
+					"name": "Justin Wert, PhD",
+					"title": "Associate Professor of Political Science"
+				}
+			],
+			"kalturaVideo": "0_459iw3fc",
 			"name": "P SC 4283-001",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "P SC 1113"
+				},
+				{
+					"id": "",
+					"title": "permission of instructor."
+				}
+			],
+			"schedule": {
+				"days": "Archivred"
+			},
+			"school": "Poltical Science",
+			"startDate": "January 13, 2014",
 			"title": "Civil Rights and Civil Liberties"
 		},
 		{
-			"id": "SOC1113",
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
+			"detailAnchor": "archived-SOC1113-detail",
+			"duration": "16 Weeks",
+			"id": "SOC1113-archived",
 			"instructor": "Kelly Damphousse",
+			"instructors": [
+				{
+					"defaultphoto": "Damphousse.png",
+					"name": "Kelly Damphousse, PhD",
+					"title": "Interim Dean, College of Arts and Sciences"
+				}
+			],
+			"kalturaVideo": "0_4ol5o04l",
 			"name": "SOC 1113-001",
+			"prerequisites": [],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Sociology",
+			"startDate": "January 13, 2014",
 			"title": "Introduction to Sociology"
 		},
 		{
-			"id": "CLC3403",
-			"instructor": "Kyle Harper",
+			"id": "CLC3403-archived",
 			"name": "CLC 3403",
-			"title": "Law and Justice"
+			"title": "Law and Justice",
+			"instructor": "Kyle Harper",
+			"detailAnchor": "archived-CLC3403-detail",
+			"kalturaVideo": "0_ovoe696p",
+			"credit": { "hours": 0 },
+			"startDate": "August 8, 2013",
+			"duration": "16 Weeks",
+			"school": "Department of Classics and Letters at the University of Oklahoma",
+			"description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Harper.png",
+					"name":"Kyle Harper, PhD",
+					"title": "Associate Professor, Classics and Letters"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			}
 		},
 		{
-			"id": "CHEM1315",
+			"id": "CHEM1315-archived",
 			"instructor": "Mark Morvant",
 			"name": "CHEM 1315",
-			"title": "General Chemistry"
+			"title": "General Chemistry",
+			"detailAnchor": "archived-CHEM1315-detail",
+			"kalturaVideo": "0_fshjxfwo",
+			"credit": { "hours": 0 },
+			"startDate": "August 8, 2013",
+			"duration": "16 Weeks",
+			"school": "Department of Chemistry and Biochemistry at the University of Oklahoma",
+			"description": "Studying general chemistry gives you a basic understanding of how the universe works at an atomic level. Everything you see, touch, or feel is made up of elements. This course begins with the basic concepts of chemistry such as atoms, molecules, ions, how to express measure quantities through scientific notation, and the periodic table. The course then progresses to energy, atomic and molecular structure, the properties of gases, liquids, solid, and solutions, and an introduction to organic chemistry.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Morvant.png",
+					"name":"Mark Morvant, PhD",
+					"title": "Professor, Department of Chemistry"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			}
 		},
 		{
-			"id": "IAS2003",
+			"id": "IAS2003-archived",
 			"instructor": "Suzette Grillot",
 			"name": "IAS 2003",
-			"title": "Understanding the Global Community"
+			"title": "Understanding the Global Community",
+			"detailAnchor": "archived-IAS2003-detail",
+			"kalturaVideo": "0_va21i9cw",
+			"credit": { "hours": 0 },
+			"startDate": "August 8, 2013",
+			"duration": "16 Weeks",
+			"school": "Department of International and Area Studies at the University of Oklahoma",
+			"description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Grillot.png",
+					"name":"Suzette Grillot, PhD",
+					"title": "Dean, College of International Studies"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			}
 		},
 		{
-			"id": "PHIL1203",
+			"id": "PHIL1203-archived",
 			"instructor": "Neal Judisch",
 			"name": "PHIL 1203",
-			"title": "Philosophy and Human Destiny, East and West"
+			"title": "Philosophy and Human Destiny, East and West",
+			"detailAnchor": "archived-PHIL1203-detail",
+			"kalturaVideo": "0_ldltmibn",
+			"credit": { "hours": 0 },
+			"startDate": "August 8, 2013",
+			"duration": "16 Weeks",
+			"school": "Department of Philosophy at the University of Oklahoma",
+			"description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Judisch.png",
+					"name": "Neal Judisch, PhD",
+					"title": "Assistant Professor, Philosophy"
+				}
+			],
+			"schedule": {
+				"days": "Archived"
+			}
 		},
 		{
-			"id": "SOC3123",
+			"id": "SOC3123-archived",
 			"instructor": "B. Mitch Peck",
 			"name": "SOC 3123",
-			"title": "Social Statistics"
+			"title": "Social Statistics",
+			"detailAnchor": "archived-SOC3123-detail",
+			"school": "Department of Sociology at the University of Oklahoma",
+			"kalturaVideo": "0_win9lpf8",
+			"credit": { "hours": 3 },
+			"startDate": "August 8, 2013",
+			"duration": "16 Weeks",
+			"description": "This course is an undergraduate-level introduction to social statistics. The central focus is descriptive, bivariate, and inferential statistics as they are used in social sciences to analyze survey data. Students will be introduced to how statistics are calculated. The class will focus on (1) understanding the intuitive meaning behind a variety of common social statistics, (2) calculating these statistics by hand with commonly-available spreadsheet software, and (3) practical application of statistical procedures.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Peck.png",
+					"name": "B. Mitch Peck, PhD",
+					"title": "Associate Professor"
+				}
+			],
+			"schedule": {
+				"days": "Archive"
+			}
 		}
 	],
-	"archivedCoursesWhen": "Spring 2014",
-	"availableCoursesWhen": "Summer 2014",
+
+    "availableCoursesWhen": "Summer 2014",
 	"availableCourses": [
         {
             "id": "MGT2013",
@@ -144,5 +533,6 @@
 			}
         }
 	],
+
 	"upcomingCoursesWhen": "Summer 2014"
 }
