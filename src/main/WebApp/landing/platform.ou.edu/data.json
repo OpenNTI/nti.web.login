@@ -1,5 +1,5 @@
 {
-    "archivedCoursesWhen": "Spring 2014",
+    "archivedCoursesWhen": "Spring 2014 & Fall 2013",
 	"archivedCourses": [
 		{
 			"credit": {
@@ -499,7 +499,7 @@
 		}
 	],
 
-    "availableCoursesWhen": "Summer 2014",
+    "availableCoursesWhen": "Summer & Fall 2014",
 	"availableCourses": [
         {
             "id": "MGT2013",
@@ -522,7 +522,6 @@
         	"instructors": [
         		{
         			"defaultphoto":"Short.png",
-        			"username":"shor1234",
         			"name":"Jeremy Short",
         			"title": "Rath Chair of Strategic Management at the Price College of Business"
         		}
@@ -531,6 +530,28 @@
 			"schedule": {
 				"days": "Fully Online"
 			}
+        },
+        {
+            "id": "UCOL1002",
+            "name": "UCOL 1002",
+            "detailAnchor": "UCOL1002-detail",
+            "term" : "F2014",
+            "school": "University College/Freshman Programs at the University of Oklahoma",
+            "kalturaVideo": "0_j8mgxw4a",
+            "title": "Gateway to College Learning",
+            "credit": { "hours":2 },
+            "startDate": "August 18, 2014",
+            "duration": "16 Weeks",
+            "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
+            "prerequisites": [],
+            "instructor": "Lillian Miller",
+            "instructors": [
+                {
+                    "defaultphoto":"Miller.png",
+                    "name":"Lillian Miller",
+                    "title": "Director of Freshman Programs, University of Oklahoma"
+                }
+            ]
         }
 	],
 
