@@ -453,6 +453,7 @@
 				$.ajax({
 					url: getLink(data,'logon.handshake'),
 					dataType: 'json',
+					contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
 					headers: {Accept:'application/json'},
 					type: 'POST',
 					data: {username: cookies.username}
