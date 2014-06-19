@@ -235,6 +235,9 @@
 		path = path.pathname.split('/').slice(0, -1);
 		path.push('school-data.json');
 
+		//make sure the path becomes absolute
+		if (path[0] !== '') { path.unshift(''); }
+
 		//load the data initially:
 		$.getJSON(path.join('/'), function(data){
 			me.schoolList = data;
