@@ -52,9 +52,8 @@
 					 style="background: #DDD;"/>
 			</a>
 			<div class="course-header"
-				tal:define="notArchived python: id.lower().find('archived') == -1;
-				            courseList python:options['currentCourses'] if notArchived else options['archivedCourses'];
-				            indexn python:options['repeat'].course.index + 1;
+				tal:define="courseList python:options['courseList'];
+                            indexn python:options['repeat'].course.index + 1;
 							indexp python:options['repeat'].course.index - 1;
 							next_index python:0 if options['repeat'].course.end else indexn;
 							prev_index python:options['repeat'].course.length - 1 if options['repeat'].course.start else indexp;
