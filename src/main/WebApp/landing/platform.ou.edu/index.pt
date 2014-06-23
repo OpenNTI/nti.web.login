@@ -124,17 +124,33 @@
 			</div>
 
 
-			<div class="content gradient-bg">
-				<h1>Current and Upcoming Courses <span tal:content="string:(${options/availableCoursesWhen})">(Spring and Summer 2014)</span></h1>
-				<div class="grid"
-					 tal:define="the_courses options/availableCourses"
-					 metal:use-macro="courses/macros/course-grid">
+			<div class="content gradient-bg tabbed-grids">
+
+
+				<div>
+					<div class="tabs">
+						<a href="#upcoming" class="active" data-type="upcoming" tal:content="string:(${options/upcomingCoursesLabel})">Upcoming</a>
+						<a href="#current" data-type="current" tal:content="string:(${options/currentCoursesLabel})">Current</a>
+						<a href="#archived" data-type="archived" tal:content="string:(${options/archivedCoursesLabel})">Archived</a>
+					</div>
+					<h1>Available Courses</h1>
 				</div>
 
-				<h1>Archived Courses <span tal:content="string: (${options/archivedCoursesWhen})">(Fall 2013)</span></h1>
 				<div class="grid"
-					 tal:define="the_courses options/archivedCourses"
-					 metal:use-macro="courses/macros/course-grid">
+				 	tal:define="type string:upcoming;
+								the_courses options/upcomingCourses;
+								cls string:grid active"
+					metal:use-macro="courses/macros/course-grid">
+				</div>
+				<div class="grid"
+					tal:define="type string:current;
+								the_courses options/currentCourses"
+					metal:use-macro="courses/macros/course-grid">
+				</div>
+				<div class="grid"
+					tal:define="type string:archived;
+								the_courses options/archivedCourses"
+					metal:use-macro="courses/macros/course-grid">
 				</div>
 
 			</div>

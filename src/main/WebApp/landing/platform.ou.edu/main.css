@@ -148,6 +148,50 @@ img.kWidgetCentered {
 	background: #f3f3f3;
 }
 
+
+.tabbed-grids .tabs {
+	position: relative;
+	overflow: hidden;
+	float: right;
+	height: 37px;
+	border-radius: 3px;
+	white-space: nowrap;
+	background: #fff;
+	box-shadow: inset 0px -2px 0 -1px #d6d6d6
+}
+
+.tabbed-grids .tabs a {
+	display: inline-block;
+	white-space: nowrap;
+	float: left;
+	font-size: 0.9em !important;
+	line-height: 37px !important;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #757474;
+	border-width: 0 1px 0 1px;
+	border-style: solid;
+	border-color: #e0e0e0;
+}
+
+.tabbed-grids .tabs a:last-of-type,
+.tabbed-grids .tabs a:first-of-type {
+	border-width: 0;
+}
+
+.tabbed-grids .tabs a.active {
+	box-shadow: 0 0 0 0 #308cc2;
+	background: #308cc2;
+	border-color: #308cc2;
+	color: #fff;
+	font-weight: 600 !important;
+}
+
+
+.tabbed-grids .grid{ display: none; }
+.tabbed-grids .grid.active { display: block; }
+
+
 #main .content.tech ul li,
 .grid-item {
 	position: relative;

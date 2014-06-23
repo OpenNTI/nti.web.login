@@ -2,7 +2,10 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal">
 
-	<div class="grid" metal:define-macro="course-grid">
+	<div class="grid"
+        tal:attributes="class cls | string:grid;
+                        data-type type | nothing"
+        metal:define-macro="course-grid">
 		<tal:block	tal:repeat="course the_courses">
 		<a class="grid-item" id="XXX1234" href="XXX1234.html" tabindex="5"
 		    tal:define="id course/id;
@@ -50,7 +53,7 @@
 			</a>
 			<div class="course-header"
 				tal:define="notArchived python: id.lower().find('archived') == -1;
-				            courseList python:options['availableCourses'] if notArchived else options['archivedCourses'];
+				            courseList python:options['currentCourses'] if notArchived else options['archivedCourses'];
 				            indexn python:options['repeat'].course.index + 1;
 							indexp python:options['repeat'].course.index - 1;
 							next_index python:0 if options['repeat'].course.end else indexn;

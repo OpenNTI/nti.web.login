@@ -21,6 +21,7 @@ $(DIR)/index.html: $(DIR)/data.json $(DIR)/index.pt
 courses: $(DIR)/courses.time
 
 $(DIR)/courses.time: $(DIR)/data.json $(DIR)/course_details.pt
-	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on availableCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
+	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on currentCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
+	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on upcomingCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
 	$(NTI_BIN)nti_zpt_render --data $(DIR)/data.json --repeat-on archivedCourses --repeat-on-name course --repeat-filename-specific-path id $(DIR)/course_details.pt $(DIR)/course.html
 	@ touch $(DIR)/courses.time
