@@ -129,9 +129,9 @@
 
 				<div>
 					<div class="tabs">
-						<a href="#upcoming" class="active" data-type="upcoming" tal:content="string:(${options/upcomingCoursesLabel})">Upcoming</a>
-						<a href="#current" data-type="current" tal:content="string:(${options/currentCoursesLabel})">Current</a>
-						<a href="#archived" data-type="archived" tal:content="string:(${options/archivedCoursesLabel})">Archived</a>
+						<a href="#upcoming" class="active" data-type="upcoming" tal:content="options/upcomingCoursesLabel">Upcoming</a>
+						<a href="#current" data-type="current" tal:content="options/currentCoursesLabel">Current</a>
+						<a href="#archived" data-type="archived" tal:content="options/archivedCoursesLabel">Archived</a>
 					</div>
 					<h1>Available Courses</h1>
 				</div>
