@@ -536,7 +536,7 @@
 		}
 	],
 
-    "currentCoursesLabel": "Summer 2014",
+    "currentCoursesLabel": "Current - Summer 2014",
 	"currentCourses": [
         {
             "id": "MGT2013",
@@ -570,7 +570,7 @@
         }
 	],
 
-	"upcomingCoursesLabel": "Fall 2014",
+	"upcomingCoursesLabel": "Upcoming - Fall 2014",
     "upcomingCourses": [
         {
             "id": "UCOL1002",
