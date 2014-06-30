@@ -65,36 +65,6 @@
 			"title": "Practical Importance of Human Evolution"
 		},
 		{
-			"credit": { "hours": 1 },
-			"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
-			"detailAnchor": "archived-CHEM4970-detail",
-			"duration": "16 Weeks",
-			"id": "CHEM4970-archived",
-			"instructor": "Mark Morvant",
-			"instructors": [
-				{
-					"defaultphoto": "Morvant.png",
-					"name": "Mark Morvant, PhD",
-					"title": "Professor, Department of Chemistry and Biochemistry"
-				}
-			],
-			"kalturaVideo": "0_bxfatwxs",
-			"name": "CHEM 4970",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Senior standing or instructor permission"
-				}
-			],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Chemistry and Biochemistry",
-			"startDate": "January 13, 2014",
-			"title": "Chemistry of Beer",
-			"video": "kaltura://1500101/0_bxfatwxs/"
-		},
-		{
 			"credit": {
 				"hours": 1
 			},
@@ -450,6 +420,36 @@
 
 	"upcomingCoursesLabel": "Upcoming - Fall 2014",
     "upcomingCourses": [
+		{
+			"credit": { "hours": 1 },
+			"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+			"detailAnchor": "CHEM4970-detail",
+			"duration": "16 Weeks",
+			"id": "CHEM4970",
+			"instructor": "Mark Morvant",
+			"instructors": [
+				{
+					"defaultphoto": "Morvant.png",
+					"name": "Mark Morvant, PhD",
+					"title": "Professor, Department of Chemistry and Biochemistry"
+				}
+			],
+			"kalturaVideo": "0_bxfatwxs",
+			"name": "CHEM 4970",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Senior standing or instructor permission"
+				}
+			],
+			"schedule": {
+				"days": ""
+			},
+			"school": "Chemistry and Biochemistry",
+            "startDate": "August 18, 2014",
+			"title": "Chemistry of Beer"
+		},
+		
         {
             "id": "UCOL1002",
             "name": "UCOL 1002",
@@ -472,6 +472,61 @@
                 }
             ]
         },
+		
+		{
+			"id": "CHEM1315",
+			"instructor": "Mark Morvant",
+			"name": "CHEM 1315",
+			"title": "General Chemistry",
+			"detailAnchor": "CHEM1315-detail",
+			"kalturaVideo": "0_fshjxfwo",
+			"credit": { "hours": 0 },
+			"startDate": "August 18, 2014",
+			"duration": "16 Weeks",
+			"school": "Department of Chemistry and Biochemistry at the University of Oklahoma",
+			"description": "Studying general chemistry gives you a basic understanding of how the universe works at an atomic level. Everything you see, touch, or feel is made up of elements. This course begins with the basic concepts of chemistry such as atoms, molecules, ions, how to express measure quantities through scientific notation, and the periodic table. The course then progresses to energy, atomic and molecular structure, the properties of gases, liquids, solid, and solutions, and an introduction to organic chemistry.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Morvant.png",
+					"name":"Mark Morvant, PhD",
+					"title": "Professor, Department of Chemistry"
+				}
+			],
+			"schedule": {
+				"days": ""
+			}
+		},
+		
+		
+		{
+			"id": "BIOL2124",
+            "detailAnchor": "BIOL2124-detail",
+			"name": "BIOL 2124",
+			"term" : "F2014",
+			"school": "Department of Biology, University of Oklahoma",
+			"kalturaVideo": "0_gpczmps5",
+			"title": "Human Physiology",
+			"credit": { "hours":4 },
+            "startDate": "August 18, 2014",
+			"duration": "16 Weeks",
+			"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
+			"prerequisites": [
+				{
+					"id":"",
+					"title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
+				}
+			],
+			"instructor": "Heather R. Ketchum; Ph. D",
+			"instructors": [
+				{
+					"defaultphoto":"Ketchum.png",
+					"name":"Heather R. Ketchum; Ph. D",
+					"title": "Associate Professor, Biology"
+				}
+			]
+		},
+		
 		{
 			"credit": {
 				"hours": 3
@@ -522,54 +577,7 @@
 				"days": ""
 			}
 		},
-		{
-			"id": "CHEM1315",
-			"instructor": "Mark Morvant",
-			"name": "CHEM 1315",
-			"title": "General Chemistry",
-			"detailAnchor": "CHEM1315-detail",
-			"kalturaVideo": "0_fshjxfwo",
-			"credit": { "hours": 0 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of Chemistry and Biochemistry at the University of Oklahoma",
-			"description": "Studying general chemistry gives you a basic understanding of how the universe works at an atomic level. Everything you see, touch, or feel is made up of elements. This course begins with the basic concepts of chemistry such as atoms, molecules, ions, how to express measure quantities through scientific notation, and the periodic table. The course then progresses to energy, atomic and molecular structure, the properties of gases, liquids, solid, and solutions, and an introduction to organic chemistry.",
-			"prerequisites": [],
-			"instructors": [
-				{
-					"defaultphoto":"Morvant.png",
-					"name":"Mark Morvant, PhD",
-					"title": "Professor, Department of Chemistry"
-				}
-			],
-			"schedule": {
-				"days": ""
-			}
-		},
-		{
-			"id": "IAS2003",
-			"instructor": "Suzette Grillot",
-			"name": "IAS 2003",
-			"title": "Understanding the Global Community",
-			"detailAnchor": "IAS2003-detail",
-			"kalturaVideo": "0_va21i9cw",
-			"credit": { "hours": 0 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of International and Area Studies at the University of Oklahoma",
-			"description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
-			"prerequisites": [],
-			"instructors": [
-				{
-					"defaultphoto":"Grillot.png",
-					"name":"Suzette Grillot, PhD",
-					"title": "Dean, College of International Studies"
-				}
-			],
-			"schedule": {
-				"days": ""
-			}
-		},
+		
 		{
 			"id": "PHIL1203",
 			"instructor": "Neal Judisch",
@@ -588,6 +596,32 @@
 					"defaultphoto":"Judisch.png",
 					"name": "Neal Judisch, PhD",
 					"title": "Assistant Professor, Philosophy"
+				}
+			],
+			"schedule": {
+				"days": ""
+			}
+		},
+		
+		
+		{
+			"id": "IAS2003",
+			"instructor": "Suzette Grillot",
+			"name": "IAS 2003",
+			"title": "Understanding the Global Community",
+			"detailAnchor": "IAS2003-detail",
+			"kalturaVideo": "0_va21i9cw",
+			"credit": { "hours": 0 },
+			"startDate": "August 18, 2014",
+			"duration": "16 Weeks",
+			"school": "Department of International and Area Studies at the University of Oklahoma",
+			"description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
+			"prerequisites": [],
+			"instructors": [
+				{
+					"defaultphoto":"Grillot.png",
+					"name":"Suzette Grillot, PhD",
+					"title": "Dean, College of International Studies"
 				}
 			],
 			"schedule": {
