@@ -459,7 +459,7 @@
             "duration": "16 Weeks",
             "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
             "prerequisites": [],
-            "instructor": "Lillian Miller, MEd",
+            "instructor": "Lillian Miller",
 			"schedule": { "days": "Varies" },
             "instructors": [
                 {
@@ -514,7 +514,7 @@
 					"title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
 				}
 			],
-			"instructor": "Heather R. Ketchum, PhD",
+			"instructor": "Heather R. Ketchum",
 			"instructors": [
 				{
 					"defaultphoto":"Ketchum.png",
