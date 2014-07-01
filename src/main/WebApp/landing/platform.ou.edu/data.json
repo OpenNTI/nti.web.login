@@ -439,7 +439,7 @@
 			],
 			"schedule": { 
 				"days": "M",
-				"times": "2:30pm - 3:30pm" 
+				"times": "2:30pm - 3:20pm" 
 			},
 			"school": "Chemistry and Biochemistry",
             "startDate": "August 18, 2014",
@@ -459,12 +459,12 @@
             "duration": "16 Weeks",
             "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
             "prerequisites": [],
-            "instructor": "Lillian Miller",
+            "instructor": "Lillian Miller, MEd",
 			"schedule": { "days": "Varies" },
             "instructors": [
                 {
                     "defaultphoto":"Miller.png",
-                    "name":"Lillian Miller",
+                    "name":"Lillian Miller, MEd",
                     "title": "Director of Freshman Programs, University of Oklahoma"
                 }
             ]
@@ -514,11 +514,11 @@
 					"title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
 				}
 			],
-			"instructor": "Heather R. Ketchum",
+			"instructor": "Heather R. Ketchum, PhD",
 			"instructors": [
 				{
 					"defaultphoto":"Ketchum.png",
-					"name":"Heather R. Ketchum",
+					"name":"Heather R. Ketchum, PhD",
 					"title": "Associate Professor, Biology"
 				}
 			],
@@ -541,7 +541,7 @@
 				{
 					"defaultphoto": "Damphousse.png",
 					"name": "Kelly Damphousse, PhD",
-					"title": "Interim Dean, College of Arts and Sciences"
+					"title": "Dean, College of Arts and Sciences"
 				}
 			],
 			"kalturaVideo": "0_4ol5o04l",
@@ -572,7 +572,7 @@
 				{
 					"defaultphoto":"Harper.png",
 					"name":"Kyle Harper, PhD",
-					"title": "Associate Professor, Classics and Letters"
+					"title": "Professor, Classics and Letters"
 				}
 			],
 			"schedule": {
@@ -585,7 +585,7 @@
 			"id": "PHIL1203",
 			"instructor": "Neal Judisch",
 			"name": "PHIL 1203-001",
-			"title": "Philosophy and Human Destiny, East and West",
+			"title": "Philosophy and Human Destiny",
 			"detailAnchor": "PHIL1203-detail",
 			"kalturaVideo": "0_ldltmibn",
 			"credit": { "hours": 3 },
