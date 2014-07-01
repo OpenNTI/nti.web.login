@@ -323,7 +323,7 @@
 			"title": "History of Science to the Age of Newton",
 			"video": "kaltura://1500101/0_75znedfu/"
 		},
-		
+
         {
             "id": "MGT2013",
         	"name": "MGT 2013-995",
@@ -348,7 +348,7 @@
 				"days": "Archived"
 			}
         },
-		
+
 		{
 			"credit": {
 				"hours": 3
@@ -437,15 +437,15 @@
 					"title": "Senior standing or instructor permission"
 				}
 			],
-			"schedule": { 
+			"schedule": {
 				"days": "M",
-				"times": "2:30pm - 3:20pm" 
+				"times": "2:30pm - 3:20pm"
 			},
 			"school": "Chemistry and Biochemistry",
             "startDate": "August 18, 2014",
 			"title": "Chemistry of Beer"
 		},
-		
+
         {
             "id": "UCOL1002",
             "name": "UCOL 1002",
@@ -469,7 +469,7 @@
                 }
             ]
         },
-		
+
 		{
 			"id": "CHEM1315",
 			"instructor": "Mark Morvant",
@@ -494,8 +494,8 @@
 				"days": "Varies"
 			}
 		},
-		
-		
+
+
 		{
 			"id": "BIOL2124",
             "detailAnchor": "BIOL2124-detail",
@@ -527,7 +527,7 @@
 				"times": "11:30am - 12:20pm"
 			}
 		},
-		
+
 		{
 			"credit": {
 				"hours": 3
@@ -561,7 +561,7 @@
 			"title": "Law and Justice",
 			"instructor": "Kyle Harper",
 			"detailAnchor": "CLC3403-detail",
-			"kalturaVideo": "0_ovoe696p",
+			"kalturaVideo": "0_wanue4j9",
 			"credit": { "hours": 3 },
 			"startDate": "August 18, 2014",
 			"duration": "16 Weeks",
@@ -580,7 +580,7 @@
 				"times": "1:30pm - 2:45pm"
 			}
 		},
-		
+
 		{
 			"id": "PHIL1203",
 			"instructor": "Neal Judisch",
@@ -602,12 +602,12 @@
 				}
 			],
 			"schedule": {
-				"days": "TR", 
+				"days": "TR",
 				"times": "12:00pm - 1:15pm"
 			}
 		},
-		
-		
+
+
 		{
 			"id": "IAS2003",
 			"instructor": "Suzette Grillot",
