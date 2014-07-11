@@ -13,10 +13,10 @@
 			"logon.openid": true,
             "logon.linkedin.oauth1": true
 		},
-		submitButtonRels = ['logon.nti.password', 'logon.ldap.ou'],
 		recoverNameUrl,
 		recoverPassUrl,
 		resetPassUrl,
+		submitButtonRel,
 		cookies = {},
 		rel = {},
 		pingHandshakeTimer,
@@ -38,19 +38,14 @@
 		var validEmail = username.value.length> 3,//(emailRx.test(username.value))
 			disabled = !validEmail || !password.value, i, hasOneRel = false;
 		if(!disabled){
-			for(i=0; i<submitButtonRels.length; i++){
-				if(rel[submitButtonRels[i]]){
-					hasOneRel = true;
-					break;
-				}
-			}
-			disabled = !hasOneRel;
+			disabled = !rel[submitButtonRel];
 		}
 		$('#submit').prop("disabled", disabled);
 	}
 
 
 	function sendPingIfNecessary(){
+		rel = {};
 		clearTimeout(pingHandshakeTimer);
 		pingHandshakeTimer = setTimeout(ping, 500);
 	}
@@ -82,7 +77,7 @@
 		if(!moveFocus(e)){
 			return false;// handle enter key to move focus down which should trigger blur
 		}
-		return formValidation(e);
+		return formValidation();
 	}
 
 
@@ -207,7 +202,7 @@
 	}
 
 
-	function ping(){
+	function ping() {
 		call('/dataserver2/logon.ping',null,pong);
 	}
 
@@ -285,6 +280,8 @@
 			//	console.log('debug: ',v.rel);
 			//}
 		}
+
+		submitButtonRel = rel['logon.ldap.ou'] ? 'logon.ldap.ou' : 'logon.nti.password';
 	}
 
 
@@ -385,7 +382,7 @@
 			//if not clear remember-me-username cookie
 			setCookie('remember-me-username','null',new Date(1));
 		}
-		loginWithRel(rel['logon.ldap.ou'] ? 'logon.ldap.ou' : 'logon.nti.password',true);
+		loginWithRel(submitButtonRel,true);
 		return stop(e||event);
 	}
 
@@ -650,7 +647,7 @@
 		remember = document.getElementById('remember');
 
 		$('#password').change(formValidation).keyup(buffer(formValidation, 350));
-		$('#username').change(formValidation).keyup(buffer(usernameChanged, 350));
+		$('#username').change(formValidation).keyup(usernameChanged);
 
 		originalMessage = message.innerHTML;
 
