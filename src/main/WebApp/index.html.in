@@ -29,8 +29,8 @@
 </head>
 <body class="signin">
 	<div class="links">
-		<a href="http://nextthought.com" title="About NextThought" target="_blank" tabindex="9">About</a> &middot;
-		<a href="mailto:support@nextthought.com" title="Contact Support" target="_blank" tabindex="10">Help</a> &middot;
+		<a href="http://nextthought.com" id="about" title="About" target="_blank" tabindex="9">About</a> &middot;
+		<a href="mailto:support@nextthought.com" id="help" title="Contact Support" target="_blank" tabindex="10">Help</a> &middot;
 		<a href="https://docs.google.com/document/pub?id=1rM40we-bbPNvq8xivEKhkoLE7wmIETmO4kerCYmtISM"
 		   target="_blank" title="NextThought Terms of Service and User Agreements" tabindex="11">Terms</a> &middot;
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
