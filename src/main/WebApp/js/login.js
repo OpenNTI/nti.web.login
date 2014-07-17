@@ -13,6 +13,7 @@
 			"logon.openid": true,
             "logon.linkedin.oauth1": true
 		},
+		aboutURL, supportURL,
 		recoverNameUrl,
 		recoverPassUrl,
 		resetPassUrl,
@@ -432,7 +433,17 @@
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
 
-      addOAuthButtons(data.Links || []);
+
+		    addOAuthButtons(data.Links || []);
+
+
+
+
+			aboutURL = getLink(data, 'about-page');
+			supportURL = getLink(data, 'support-email');
+
+			if (aboutURL) { $('#about').attr('href', aboutURL); }
+			if (supportURL) { $('#help').attr('href', supportURL); }
 
 
 			function finishAnonymous(){
