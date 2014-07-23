@@ -861,7 +861,7 @@
 			dataType: 'json',
 			type: 'DELETE'
 		}).fail(function(){
-			cp.call(scope);
+			cb.call(scope);
 		}).done(function(data){
 			console.log('TOS successfully cleared');
 			cb.call(scope);
