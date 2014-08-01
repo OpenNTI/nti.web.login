@@ -119,7 +119,7 @@
 									<span tal:case="True">hour</span>
 								</metal:block>
 							</p>
-							<a href="http://ozone.ou.edu/" target="_blank">OU Students Enroll on Ozone.</a>
+							<a href="http://ozone.ou.edu/" target="_blank">OU Students Enroll on Ozone</a>
 
 
                             <p tal:condition="course/enrollmentURL | nothing">
