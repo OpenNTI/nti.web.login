@@ -123,7 +123,7 @@
 
 
                             <p tal:condition="course/enrollmentURL | nothing">
-                                <a href="/app/" tal:attributes="href course/enrollmentURL">Non-OU Students Enrollment</a>
+                                <a href="/app/" tal:attributes="href course/enrollmentURL">Non-OU Student Enrollment</a>
                             </p>
 
 						</div>
