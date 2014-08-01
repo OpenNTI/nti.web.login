@@ -118,8 +118,14 @@
 									<span tal:case="False">hours</span>
 									<span tal:case="True">hour</span>
 								</metal:block>
-								available for OU students</p>
-							<a href="http://ozone.ou.edu/" target="_blank">Enroll on Ozone.</a>
+							</p>
+							<a href="http://ozone.ou.edu/" target="_blank">OU Students Enroll on Ozone.</a>
+
+
+                            <p tal:condition="course/enrollmentURL | nothing">
+                                <a href="/app/" tal:attributes="href course/enrollmentURL">Non-OU Students Enroll for Credit</a>
+                            </p>
+
 						</div>
 					</div>
 					<div class="field-row">
