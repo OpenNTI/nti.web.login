@@ -1,0 +1,27 @@
+.branding {
+	width: 860px;
+	padding-left: 530px;
+	border-radius: 5px;
+	background: url(morgan-wiley_promo.png) -30px center no-repeat;
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,0.35);
+}
+
+.signin .middle.main {
+	width: 860px;
+}
+
+#account-creation {
+	border-radius: 0 0 3px 0;
+}
+.signin .container.main {
+	border-radius: 0 3px 3px 0;
+	box-shadow: -4px 0 5px -3px rgba(0,0,0,0.3);
+}
+
+.signin .forgot {
+	margin-left: 530px;
+}
+
+#active-session-login.visible {
+	padding-bottom: 180px;
+}
