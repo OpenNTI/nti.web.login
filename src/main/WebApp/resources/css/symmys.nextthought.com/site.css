@@ -1,0 +1,18 @@
+.header {
+	background: none !important;
+	height: 20px !important;
+}
+
+
+
+.signup .header img[src] {
+	width: 0;
+}
+
+.signup .header::before {
+	content: 'SYMMY\01A7';
+	font-size: 30px;
+	font-family: Times New Roman;
+	color: white;
+	float: left;
+}
