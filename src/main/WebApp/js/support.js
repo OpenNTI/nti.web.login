@@ -105,21 +105,30 @@ if(!t||!C){if(!(m={}.hasOwnProperty))m=function(b){var c={},a;if((c.__proto__=k,
 //our helpers
 function getLink(o, r){var l=(o||{}).Links||[],i=l.length-1;for(i;i>=0;i--){if(l[i].rel === r){l = l[i].href;return l;}}return null;}
 (function() {
-	 var i,
-	 	 v,
-	 	 requestParameters = {},
-	 	 queryParamStrings = window.location.search.replace('?','').split("&");
-	 for( i = 0; i < queryParamStrings.length; i++) {
-		 v = queryParamStrings[i].split('=');
-		 requestParameters[decodeURIComponent(v[0])] = decodeURIComponent(v[1]);
-	 }
-	 window.requestParameters = requestParameters;
-	 window.returnUrl = requestParameters['return'] || $AppConfig.url || '/';
-	 if(history.replaceState){
-		 window.ourPath = location.pathname;
-		 // document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
-		 // history.replaceState({},null,document.referrer||'/');
-	 }
+	var i,
+		v,
+		title = document.getElementsByTagName('title')[0],
+		requestParameters = {},
+		queryParamStrings = window.location.search.replace('?','').split("&");
+	for( i = 0; i < queryParamStrings.length; i++) {
+		v = queryParamStrings[i].split('=');
+		requestParameters[decodeURIComponent(v[0])] = decodeURIComponent(v[1]);
+	}
+
+	window.requestParameters = requestParameters;
+	window.returnUrl = requestParameters['return'] || $AppConfig.url || '/';
+	if(history.replaceState){
+		window.ourPath = location.pathname;
+		// document.write("<base href='"+location.protocol+"//"+location.host+location.pathname+"' />");
+		// history.replaceState({},null,document.referrer||'/');
+	}
+
+
+	if(title && title.getAttribute('data-value')) {
+		document.title = getString('application.title-bar-prefix') +
+			': ' +
+			title.getAttribute('data-value');
+	}
  })();
 
 function applyIf(o, c) {

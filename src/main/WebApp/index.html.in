@@ -5,7 +5,7 @@
 	<noscript>
 		<meta http-equiv="refresh" content="0;url=unsupported.html">
 	</noscript>
-	<title>NextThought Login</title>
+	<title data-value="Login">Loading...</title>
 	<link rel="shortcut icon" href="resources/favicon.ico">
 	<!--[itunes banner here]-->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
