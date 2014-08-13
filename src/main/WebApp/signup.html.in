@@ -23,10 +23,10 @@
 	<![endif]-->
 
 	<script type="text/javascript" src="defaults.js?v=%time%"></script>
-	<script type="text/javascript" src="js/support.js?v=%time%"></script>
-	<script type="text/javascript" src="js/signup.js?v=%time%"></script>
 	<script type="text/javascript" src="resources/strings/strings.js?v=%time%"></script>
 	<script type="text/javascript" src="resources/strings/site.js?v=%time%"></script>
+	<script type="text/javascript" src="js/support.js?v=%time%"></script>
+	<script type="text/javascript" src="js/signup.js?v=%time%"></script>
 </head>
 <body class="signup">
 		<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
