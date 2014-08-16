@@ -797,7 +797,7 @@
 					j.field = 'first';
 				}
 
-				$('[name='+ j.field.toLowerCase()+']')
+				$('[name='+ j.field+']')
 						.parents('.field-container')
 						.removeClass('valid')
 						.addClass('invalid')
@@ -997,7 +997,7 @@
 		if(!a.hasClass('busy') && !a.hasClass('disabled')){
 			try {
 				if(!checkIt()){
-					s = $('.field-container:not(.valid):visible').removeClass(att).addClass(att);
+					s = $('.field-container.required:not(.valid):visible').removeClass(att).addClass(att);
 					setTimeout(function(){s.removeClass(att);},1300);
 				} else {
 					if (validation.Username && validation.Username.indexOf('@') > -1) {
