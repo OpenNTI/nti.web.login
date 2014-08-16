@@ -1000,10 +1000,6 @@
 					s = $('.field-container.required:not(.valid):visible').removeClass(att).addClass(att);
 					setTimeout(function(){s.removeClass(att);},1300);
 				} else {
-					if (validation.Username && validation.Username.indexOf('@') > -1) {
-						console.log('username has an @, not passing email');
-						delete validation.email;
-					}
 					post(validation);
 				}
 			}
