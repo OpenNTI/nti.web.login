@@ -374,7 +374,7 @@
 		}
 	],
 
-    "currentCoursesLabel": "",
+    "currentCoursesLabel": "Current - Fall 2014",
 	"currentCourses": [
         {
             "credit": { "hours": 1 },
@@ -638,6 +638,6 @@
         }
     ],
 
-	"upcomingCoursesLabel": "Upcoming - Fall 2014",
+	"upcomingCoursesLabel": "",
     "upcomingCourses": []
 }
