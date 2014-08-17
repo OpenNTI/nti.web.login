@@ -375,41 +375,37 @@
 	],
 
     "currentCoursesLabel": "",
-	"currentCourses": [],
-
-	"upcomingCoursesLabel": "Upcoming - Fall 2014",
-    "upcomingCourses": [
-		{
-			"credit": { "hours": 1 },
-			"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
-			"detailAnchor": "CHEM4970-detail",
-			"duration": "8 Weeks",
-			"id": "CHEM4970",
-			"instructor": "Mark Morvant",
-			"instructors": [
-				{
-					"defaultphoto": "Morvant.png",
-					"name": "Mark Morvant, PhD",
-					"title": "Professor, Department of Chemistry and Biochemistry"
-				}
-			],
-			"kalturaVideo": "0_bxfatwxs",
-			"name": "CHEM 4970-001",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Senior standing or instructor permission"
-				}
-			],
-			"schedule": {
-				"days": "M",
-				"times": "2:30pm - 3:20pm"
-			},
-			"school": "Chemistry and Biochemistry",
+	"currentCourses": [
+        {
+            "credit": { "hours": 1 },
+            "description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+            "detailAnchor": "CHEM4970-detail",
+            "duration": "8 Weeks",
+            "id": "CHEM4970",
+            "instructor": "Mark Morvant",
+            "instructors": [
+                {
+                    "defaultphoto": "Morvant.png",
+                    "name": "Mark Morvant, PhD",
+                    "title": "Professor, Department of Chemistry and Biochemistry"
+                }
+            ],
+            "kalturaVideo": "0_bxfatwxs",
+            "name": "CHEM 4970-001",
+            "prerequisites": [
+                {
+                    "id": "",
+                    "title": "Senior standing or instructor permission"
+                }
+            ],
+            "schedule": {
+                "days": "M",
+                "times": "2:30pm - 3:20pm"
+            },
+            "school": "Chemistry and Biochemistry",
             "startDate": "August 18, 2014",
-			"title": "Chemistry of Beer"
-		},
-
+            "title": "Chemistry of Beer"
+        },
         {
             "credit": { "hours": 3 },
             "description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
@@ -463,7 +459,7 @@
             "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
             "prerequisites": [],
             "instructor": "Lillian Miller",
-			"schedule": { "days": "Varies" },
+            "schedule": { "days": "Varies" },
             "instructors": [
                 {
                     "defaultphoto":"Miller.png",
@@ -473,171 +469,175 @@
             ]
         },
 
-		{
-			"id": "CHEM1315",
-			"instructor": "Mark Morvant",
-			"name": "CHEM 1315",
-			"title": "General Chemistry",
-			"detailAnchor": "CHEM1315-detail",
-			"kalturaVideo": "0_fshjxfwo",
-			"credit": { "hours": 5 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of Chemistry and Biochemistry at the University of Oklahoma",
-			"description": "Studying general chemistry gives you a basic understanding of how the universe works at an atomic level. Everything you see, touch, or feel is made up of elements. This course begins with the basic concepts of chemistry such as atoms, molecules, ions, how to express measured quantities through scientific notation, and the periodic table. The course then progresses to energy, atomic and molecular structure, the properties of gases, liquids, solids, and solutions, and an introduction to organic chemistry.",
-			"prerequisites": [],
-			"instructors": [
-				{
-					"defaultphoto":"Morvant.png",
-					"name":"Mark Morvant, PhD",
-					"title": "Professor, Department of Chemistry"
-				}
-			],
-			"schedule": {
-				"days": "Varies"
-			}
-		},
-
-
-		{
-			"id": "BIOL2124",
-            "detailAnchor": "BIOL2124-detail",
-			"name": "BIOL 2124-010",
-			"term" : "F2014",
-			"school": "Department of Biology, University of Oklahoma",
-			"kalturaVideo": "0_gpczmps5",
-			"title": "Human Physiology",
-			"credit": { "hours":4 },
+        {
+            "id": "CHEM1315",
+            "instructor": "Mark Morvant",
+            "name": "CHEM 1315",
+            "title": "General Chemistry",
+            "detailAnchor": "CHEM1315-detail",
+            "kalturaVideo": "0_fshjxfwo",
+            "credit": { "hours": 5 },
             "startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
-			"prerequisites": [
-				{
-					"id":"",
-					"title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
-				}
-			],
-			"instructor": "Heather R. Ketchum",
-			"instructors": [
-				{
-					"defaultphoto":"Ketchum.png",
-					"name":"Heather R. Ketchum, PhD",
-					"title": "Associate Professor, Biology"
-				}
-			],
-			"schedule": {
-				"days": "MWF",
-				"times": "11:30am - 12:20pm"
-			}
-		},
-
-		{
-			"credit": {
-				"hours": 3
-			},
-			"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
-			"detailAnchor": "SOC1113-detail",
-			"duration": "16 Weeks",
-			"id": "SOC1113",
-			"instructor": "Kelly Damphousse",
-			"instructors": [
-				{
-					"defaultphoto": "Damphousse.png",
-					"name": "Kelly Damphousse, PhD",
-					"title": "Dean, College of Arts and Sciences"
-				}
-			],
-			"kalturaVideo": "0_4ol5o04l",
-			"name": "SOC 1113-001",
-			"prerequisites": [],
-			"schedule": {
-				"days": "T",
-				"times": "10:30am - 11:45am"
-			},
-			"school": "Sociology",
-			"startDate": "August 18, 2014",
-			"title": "Introduction to Sociology"
-		},
-		{
-			"id": "CLC3403",
-			"name": "CLC 3403-001",
-			"title": "Law and Justice",
-			"instructor": "Kyle Harper",
-			"detailAnchor": "CLC3403-detail",
-			"kalturaVideo": "0_wanue4j9",
-			"credit": { "hours": 3 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of Classics and Letters at the University of Oklahoma",
-			"description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
-			"prerequisites": [{
-				"id": "",
-				"title": "Junior standing or instructor permission"
-			}],
-			"instructors": [
-				{
-					"defaultphoto":"Harper.png",
-					"name":"Kyle Harper, PhD",
-					"title": "Professor, Classics and Letters"
-				}
-			],
-			"schedule": {
-				"days": "MW",
-				"times": "1:30pm - 2:45pm"
-			}
-		},
-
-		{
-			"id": "PHIL1203",
-			"instructor": "Neal Judisch",
-			"name": "PHIL 1203-001",
-			"title": "Philosophy and Human Destiny",
-			"detailAnchor": "PHIL1203-detail",
-			"kalturaVideo": "0_ldltmibn",
-			"credit": { "hours": 3 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of Philosophy at the University of Oklahoma",
-			"description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
-			"prerequisites": [],
-			"instructors": [
-				{
-					"defaultphoto":"Judisch.png",
-					"name": "Neal Judisch, PhD",
-					"title": "Assistant Professor, Philosophy"
-				}
-			],
-			"schedule": {
-				"days": "TR",
-				"times": "12:00pm - 1:15pm"
-			}
-		},
+            "duration": "16 Weeks",
+            "school": "Department of Chemistry and Biochemistry at the University of Oklahoma",
+            "description": "Studying general chemistry gives you a basic understanding of how the universe works at an atomic level. Everything you see, touch, or feel is made up of elements. This course begins with the basic concepts of chemistry such as atoms, molecules, ions, how to express measured quantities through scientific notation, and the periodic table. The course then progresses to energy, atomic and molecular structure, the properties of gases, liquids, solids, and solutions, and an introduction to organic chemistry.",
+            "prerequisites": [],
+            "instructors": [
+                {
+                    "defaultphoto":"Morvant.png",
+                    "name":"Mark Morvant, PhD",
+                    "title": "Professor, Department of Chemistry"
+                }
+            ],
+            "schedule": {
+                "days": "Varies"
+            }
+        },
 
 
-		{
-			"id": "IAS2003",
-			"instructor": "Suzette Grillot",
-			"name": "IAS 2003-010",
-			"title": "Understanding the Global Community",
-			"detailAnchor": "IAS2003-detail",
-			"kalturaVideo": "0_va21i9cw",
-			"credit": { "hours": 3 },
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of International and Area Studies at the University of Oklahoma",
-			"description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
-			"prerequisites": [],
-			"instructors": [
-				{
-					"defaultphoto":"Grillot.png",
-					"name":"Suzette Grillot, PhD",
-					"title": "Dean, College of International Studies"
-				}
-			],
-			"schedule": {
-				"days": "MW",
-				"times": "10:30am - 11:20am"
-			}
-		}
-    ]
+        {
+            "id": "BIOL2124",
+            "detailAnchor": "BIOL2124-detail",
+            "name": "BIOL 2124-010",
+            "term" : "F2014",
+            "school": "Department of Biology, University of Oklahoma",
+            "kalturaVideo": "0_gpczmps5",
+            "title": "Human Physiology",
+            "credit": { "hours":4 },
+            "startDate": "August 18, 2014",
+            "duration": "16 Weeks",
+            "description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
+            "prerequisites": [
+                {
+                    "id":"",
+                    "title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
+                }
+            ],
+            "instructor": "Heather R. Ketchum",
+            "instructors": [
+                {
+                    "defaultphoto":"Ketchum.png",
+                    "name":"Heather R. Ketchum, PhD",
+                    "title": "Associate Professor, Biology"
+                }
+            ],
+            "schedule": {
+                "days": "MWF",
+                "times": "11:30am - 12:20pm"
+            }
+        },
+
+        {
+            "credit": {
+                "hours": 3
+            },
+            "description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
+            "detailAnchor": "SOC1113-detail",
+            "duration": "16 Weeks",
+            "id": "SOC1113",
+            "instructor": "Kelly Damphousse",
+            "instructors": [
+                {
+                    "defaultphoto": "Damphousse.png",
+                    "name": "Kelly Damphousse, PhD",
+                    "title": "Dean, College of Arts and Sciences"
+                }
+            ],
+            "kalturaVideo": "0_4ol5o04l",
+            "name": "SOC 1113-001",
+            "prerequisites": [],
+            "schedule": {
+                "days": "T",
+                "times": "10:30am - 11:45am"
+            },
+            "school": "Sociology",
+            "startDate": "August 18, 2014",
+            "title": "Introduction to Sociology"
+        },
+
+
+        {
+            "id": "CLC3403",
+            "name": "CLC 3403-001",
+            "title": "Law and Justice",
+            "instructor": "Kyle Harper",
+            "detailAnchor": "CLC3403-detail",
+            "kalturaVideo": "0_wanue4j9",
+            "credit": { "hours": 3 },
+            "startDate": "August 18, 2014",
+            "duration": "16 Weeks",
+            "school": "Department of Classics and Letters at the University of Oklahoma",
+            "description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
+            "prerequisites": [{
+                "id": "",
+                "title": "Junior standing or instructor permission"
+            }],
+            "instructors": [
+                {
+                    "defaultphoto":"Harper.png",
+                    "name":"Kyle Harper, PhD",
+                    "title": "Professor, Classics and Letters"
+                }
+            ],
+            "schedule": {
+                "days": "MW",
+                "times": "1:30pm - 2:45pm"
+            }
+        },
+
+        {
+            "id": "PHIL1203",
+            "instructor": "Neal Judisch",
+            "name": "PHIL 1203-001",
+            "title": "Philosophy and Human Destiny",
+            "detailAnchor": "PHIL1203-detail",
+            "kalturaVideo": "0_ldltmibn",
+            "credit": { "hours": 3 },
+            "startDate": "August 18, 2014",
+            "duration": "16 Weeks",
+            "school": "Department of Philosophy at the University of Oklahoma",
+            "description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
+            "prerequisites": [],
+            "instructors": [
+                {
+                    "defaultphoto":"Judisch.png",
+                    "name": "Neal Judisch, PhD",
+                    "title": "Assistant Professor, Philosophy"
+                }
+            ],
+            "schedule": {
+                "days": "TR",
+                "times": "12:00pm - 1:15pm"
+            }
+        },
+
+        {
+            "id": "IAS2003",
+            "instructor": "Suzette Grillot",
+            "name": "IAS 2003-010",
+            "title": "Understanding the Global Community",
+            "detailAnchor": "IAS2003-detail",
+            "kalturaVideo": "0_va21i9cw",
+            "credit": { "hours": 3 },
+            "startDate": "August 18, 2014",
+            "duration": "16 Weeks",
+            "school": "Department of International and Area Studies at the University of Oklahoma",
+            "description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
+            "prerequisites": [],
+            "instructors": [
+                {
+                    "defaultphoto":"Grillot.png",
+                    "name":"Suzette Grillot, PhD",
+                    "title": "Dean, College of International Studies"
+                }
+            ],
+            "schedule": {
+                "days": "MW",
+                "times": "10:30am - 11:20am"
+            }
+        }
+    ],
+
+	"upcomingCoursesLabel": "Upcoming - Fall 2014",
+    "upcomingCourses": []
 }
