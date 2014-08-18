@@ -606,7 +606,7 @@
                 }
             ],
             "schedule": {
-                "days": "TR",
+                "days": "MWF",
                 "times": "12:00pm - 1:15pm"
             }
         },
