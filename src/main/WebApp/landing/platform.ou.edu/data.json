@@ -632,7 +632,7 @@
                 }
             ],
             "schedule": {
-                "days": "MW",
+                "days": "MWF",
                 "times": "10:30am - 11:20am"
             }
         }
