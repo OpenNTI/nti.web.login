@@ -59,7 +59,7 @@
 					<div class="teacher-note disabled">
 						<span>We're developing tools to let you manage your team's progress. Stay tuned for updates.</span>
 					</div>
-					<form>
+					<form action="#" onsubmit="return false;">
 						<section class="birthday disabled">
 							<h4 class="birthday">When is your birthday?</h4>
 							<div class="why">

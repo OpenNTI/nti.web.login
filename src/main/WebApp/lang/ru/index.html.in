@@ -76,7 +76,7 @@
 						<div class="header"></div>
 						<div class="content">
 							<section id="nt-login">
-									<form id="login" method="post">
+									<form id="login" method="post" action="#" onsubmit="return false;">
 										<div id="message" class="message"></div>
 										<div>
 											<div class="field-container" data-title="имя пользователя">
@@ -123,7 +123,7 @@
 					<div class="dialog username" role="dialog" aria-label="Forgot username form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
-							<form id="recover" method="post">
+							<form id="recover" method="post" action="#" onsubmit="return false;">
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your email and we&#39;ll send your username.</p>
 								<div data-title="email">
@@ -137,7 +137,7 @@
 					<div class="dialog password" role="dialog" aria-label="Forgot password form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
-							<form id="recoverpass" method="post">
+							<form id="recoverpass" method="post" action="#" onsubmit="return false;">
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your username and email, and we&#39;ll help you reset it.</p>
 								<div data-title="username and email">
