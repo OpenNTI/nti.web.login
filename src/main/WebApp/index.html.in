@@ -49,6 +49,7 @@
 			English &middot;
 			<a href="lang/ru/" title="перейти на русский" tabindex="14">русский</a>
 		</div>
+		&middot; <a href="#" id="accessibility" data-off-text="Enable High Contrast Mode" data-on-text="Disable High Contrast Mode">Enable High Contrast Mode</a>
 	</div>
 	<div class="wrapper spotlight">
 		<div class="wrapper-inner">

@@ -647,6 +647,41 @@
 		};
 	}
 
+
+	function toggleAccessibility(el) {
+		var onText = el && el.getAttribute('data-on-text'),
+			offText = el && el.getAttribute('data-off-text'),
+			cookieName = 'use-accessibility-mode',
+			cookieVal = $.cookie(cookieName);
+
+		//if no el is passed clear the cookie
+		if (!el) {
+			setCookie(cookieName, null, new Date(1));
+			return;
+		}
+
+		if (cookieVal === 'true') {
+			el.innerText = offText;
+			setCookie(cookieName, 'false');
+		} else if (!cookieVal || cookieVal === 'false') {
+			el.innerText = onText;
+			setCookie(cookieName, 'true');
+		}
+	}
+
+	function initAccessibility(el) {
+		var onText = el && el.getAttribute('data-on-text'),
+			offText = el && el.getAttribute('data-off-text'),
+			cookieName = 'use-accessibility-mode',
+			cookieVal = $.cookie(cookieName);
+
+		if (cookieVal === 'true') {
+			el.innerText = onText;
+		} else {
+			el.innerText = offText;
+		}
+	}
+
 	$(function(){
 		$('div.forgot').hide();
 		anonymousPing();
@@ -686,6 +721,12 @@
 			d.find('#recover-pass-username').focus();
 			return false;
 		});
+
+		$('#accessibility').click(function(e) {
+			toggleAccessibility(this);
+		});
+
+		initAccessibility($('#accessibility')[0]);
 
 		$('body').click(function(e){hideDialog($(this).parent().find('.dialog'));});
 
