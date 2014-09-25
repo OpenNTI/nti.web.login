@@ -404,7 +404,8 @@
             },
             "school": "Chemistry and Biochemistry",
             "startDate": "August 18, 2014",
-            "title": "Chemistry of Beer"
+            "title": "Chemistry of Beer",
+            "enrollmentURL": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTRfQ0hFTV80OTcwX1N1Ykluc3RhbmNlc18yMDA"
         },
         {
             "credit": { "hours": 3 },
@@ -441,8 +442,7 @@
             },
             "school": "Computer Science",
             "startDate": "August 18, 2014",
-            "title": "Introduction to Computer Programming",
-            "enrollmentURL": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTRfQ1NfMTMyMw"
+            "title": "Introduction to Computer Programming"
         },
 
         {
