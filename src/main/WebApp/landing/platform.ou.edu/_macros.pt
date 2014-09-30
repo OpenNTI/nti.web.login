@@ -72,7 +72,9 @@
 				</div>
 				<div class="course-title" tal:content="course/title" itemprop="name">Introduction to Water</div>
 			</div>
-			<div class="details">
+			<div class="details"
+				 tal:define="notOpen course/notOpen | nothing;
+				 			 availableForCredit course/availableForCredit | nothing;">
 				<div class="course-description" tal:content="course/description" itemprop="description">
 					This course is an introductory course on the
 					significante of water in our world. The title of
@@ -93,11 +95,17 @@
 					context in determining sustainable solutions to
 					water problems.
 				</div>
-				<div class="course-open-course-note">
+				<div tal:condition="not:notOpen" tal:attributes="class python: 'course-open-course-note half' if availableForCredit else 'course-open-course-note'">
 					<h3>Open courses are free to anyone, anywhere.</h3>
 					<p>Get complete access to interact with all course content, including lectures, course materials, quizzes, and discussions once class is in session.</p>
 					<blockquote>Open courses are not eligible for college credit.</blockquote>
-				  <a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
+				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
+				</div>
+				<div tal:condition="availableForCredit" tal:attributes="class python: 'course-open-course-note half' if not notOpen else 'course-open-course-note'">
+					<h3>Earn credit from the University of Oklahoma.</h3>
+					<p>Enroll in the course, join the community, and earn transcripted credit from OU.</p>
+					<blockquote>This option is available through October 15 to non-OU students only.</blockquote>
+				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
 				</div>
 			</div>
 			<div class="course-details">
