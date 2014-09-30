@@ -65,6 +65,36 @@
 			"title": "Practical Importance of Human Evolution"
 		},
 		{
+            "credit": { "hours": 1 },
+            "description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+            "detailAnchor": "CHEM4970-detail",
+            "duration": "8 Weeks",
+            "id": "CHEM4970-100",
+            "instructor": "Mark Morvant",
+            "instructors": [
+                {
+                    "defaultphoto": "Morvant.png",
+                    "name": "Mark Morvant, PhD",
+                    "title": "Professor, Department of Chemistry and Biochemistry"
+                }
+            ],
+            "kalturaVideo": "0_bxfatwxs",
+            "name": "CHEM 4970-100",
+            "prerequisites": [
+                {
+                    "id": "",
+                    "title": "Senior standing or instructor permission"
+                }
+            ],
+            "schedule": {
+                "days": "M",
+                "times": "2:30pm - 3:20pm"
+            },
+            "school": "Chemistry and Biochemistry",
+            "startDate": "August 18, 2014",
+            "title": "Chemistry of Beer"
+        },
+		{
 			"credit": {
 				"hours": 1
 			},
@@ -381,7 +411,7 @@
             "description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
             "detailAnchor": "CHEM4970-detail",
             "duration": "8 Weeks",
-            "id": "CHEM4970",
+            "id": "CHEM4970-200",
             "instructor": "Mark Morvant",
             "instructors": [
                 {
@@ -391,7 +421,7 @@
                 }
             ],
             "kalturaVideo": "0_bxfatwxs",
-            "name": "CHEM 4970-100",
+            "name": "CHEM 4970-200",
             "prerequisites": [
                 {
                     "id": "",
@@ -403,7 +433,7 @@
                 "times": "2:30pm - 3:20pm"
             },
             "school": "Chemistry and Biochemistry",
-            "startDate": "August 18, 2014",
+            "startDate": "October 13, 2014",
             "title": "Chemistry of Beer",
             "enrollmentURL": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTRfQ0hFTV80OTcwX1N1Ykluc3RhbmNlc18yMDA"
         },
