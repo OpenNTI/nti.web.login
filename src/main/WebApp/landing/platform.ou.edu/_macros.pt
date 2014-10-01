@@ -128,12 +128,6 @@
 								</metal:block>
 							</p>
 							<a href="http://ozone.ou.edu/" target="_blank">OU Students Enroll on Ozone</a>
-
-
-                            <p tal:condition="course/enrollmentURL | nothing">
-                                <a href="/app/" tal:attributes="href course/enrollmentURL">Non-OU Student Enrollment</a>
-                            </p>
-
 						</div>
 					</div>
 					<div class="field-row">
