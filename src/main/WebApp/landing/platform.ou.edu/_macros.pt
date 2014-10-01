@@ -105,7 +105,7 @@
 					<h3>Earn credit from the University of Oklahoma.</h3>
 					<p>Enroll in the course, join the community, and earn transcripted credit from OU.</p>
 					<blockquote>This option is available through October 15 to non-OU students only.</blockquote>
-				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
+				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" tal:attributes="href course/enrollmentURL">Sign Up Now</a>
 				</div>
 			</div>
 			<div class="course-details">
