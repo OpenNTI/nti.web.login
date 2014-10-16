@@ -38,6 +38,10 @@
         img {
         	padding-bottom: 1em;
         }
+
+		.mobile {
+			margin: 2em;
+		}
     </style>
 
     <!--[if lte IE 6]>
@@ -56,18 +60,24 @@
 </head>
 <body>
     <div class="middle">
-        <div class="content">
+        <div class="content" id="content">
 
             <div id="logo"><img src="resources/images/logoWithNoText.png"/></div>
             <div class="unsupported_message">It looks like you&#39;re using a browser that we don&#39;t support.</div>
             <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari 5.1+</a>, <a
 href="http://www.getfirefox.com">Firefox 24+</a>, or <a href="http://www.microsoft.com/ie">Internet Explorer 10+</a><br/>with JavaScript <strong><u>enabled</u></strong>.
             </div>
+
         </div>
     </div>
-	<script type="text/javascript"><!--
-	if(document.referrer && history.replaceState){ history.replaceState({},null,document.referrer); }
-	//-->
+	<script type="text/javascript">
+
+	var c = document.getElementById("content");
+	c.innerHTML += '<div class="mobile">You can try your luck on our <a href="/mobile/">mobile site</a></div>';
+
+	if(document.referrer && history.replaceState){
+		history.replaceState({},null,document.referrer);
+	}
 	</script>
 	<!--[analytics code here]-->
 </body>
