@@ -64,8 +64,8 @@ Expected variables:
 	Test at https://dev.twitter.com/docs/cards/validation/validator
 	-->
 	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="@nextthought" />
-	<meta name="twitter:creator" content="@nextthought" />
+	<meta name="twitter:site" content="@UofOklahoma" />
+	<meta name="twitter:creator" content="@UofOklahoma" />
 	<meta name="twitter:title" content="Title"
 		  tal:attributes="content page_title" />
 	<meta name="twitter:description" content="description"
