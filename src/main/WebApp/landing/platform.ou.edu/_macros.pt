@@ -11,7 +11,9 @@
 		    tal:define="id course/id;
                         path python: id.upper().replace('-ARCHIVED','');
 			            anchorPage course/detailAnchor | python:None;
-						anchor python:'course.%s.html' % course['id'].lower() if anchorPage else None"
+                        anchorUrl course/url | python:None;
+						anchorInternal python:'course.%s.html' % course['id'].lower() if anchorPage else None;
+                        anchor python:anchorUrl if anchorUrl else anchorInternal"
 			tal:attributes="id course/id; href anchor | nothing; data-old course/detailAnchor | nothing">
 			<img src="images/courses/${path}/card.png"
 				 alt="Course Image"
