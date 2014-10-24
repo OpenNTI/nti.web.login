@@ -107,15 +107,21 @@
 
 			</div>
 			<div class="columns two">
-				<h3>Take Janux courses in two formats.</h3>
+				<h3>Janux courses for all</h3>
 				<div>
-					<h4>1. Experience the Open Version for Free</h4>
-					<div>Open to the public, in a not-for-credit environment, students have full access to content and platform social learning features. No prerequisites, no grades, just learning for the sake of learning.</div>
-					<a class="ou-btn1" href="/login/" role="button" tabindex="3">Sign Up Now</a>
+					<h4>1. Premium Public Course</h4>
+					<div>In a partnership between OU and HISTORY<sup>&reg;</sup> Channel, United States: 1865 to The Present is the most exciting history course available for lifelong learners.</div>
+					<a class="ou-btn1" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM" role="button" tabindex="3">Sign Up Now ($250)</a>
+
+					<br/><br/>
+
+					<h4>2. Experience Free Open Courses On Janux</h4>
+					<div>Open to the public, in a not-for-credit environment, students have full access to content and social learning features. No prerequisites, no grades, just learning for the sake of learning.</div>
+					<a class="ou-btn1" href="/login/" role="button" tabindex="3">Sign Up Now for Free</a>
 				</div>
 
 				<div>
-					<h4>2. Earn Credit from the University of Oklahoma</h4>
+					<h4>1. Courses for Credit</h4>
 					<div>OU students can <a href="http://ozone.ou.edu"
 					target="_blank" tabindex="3">enroll on oZone</a> to earn credit.  Some courses are fully online, others are face-to-face.</div>
 					<a class="ou-btn1" href="http://ozone.ou.edu"
@@ -123,9 +129,9 @@
 
 					<br/><br/>
 
-					<div>Chemistry of Beer is also available for credit to non-OU students for a rate of $199. Course starts October 13.</div>
-					<a class="ou-btn1" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTRfQ0hFTV80OTcwXzIwMF9TdWJJbnN0YW5jZXNfMjAw"
-					 role="button" tabindex="3" role="button">Enroll for Credit</a>
+<div>HISTORY<sup>&reg;</sup> Channel Presents: United States 1865 to the Present (3 credit hours) from The University of Oklahoma is available to anyone in the world for credit.</div>
+					<a class="ou-btn1" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM"
+					 role="button" tabindex="3" role="button">Sign Up Now ($500)</a>
 				</div>
 			</div>
 
