@@ -39,17 +39,19 @@
 		<a href="https://docs.google.com/document/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM"
 		   target="_blank" title="Learn about your privacy and NextThought"
 		   class="privacy" tabindex="12">Privacy</a>
+
 		<!-- COPPA requires the privacy link to standout and be different than ordinary links. -->
 		<span class="childrenpolicy">&middot;
 			<a href="https://docs.google.com/document/pub?id=1kNo6hwwKwWdhq7jzczAysUWhnsP9RfckIet11pWPW6k"
 				   target="_blank" title="Learn about your child&#39;s privacy and NextThought"
 				   class="privacy">Children&#39;s Privacy</a>
 		</span>
+		&middot; <a href="/mobile/" id="mobile">Mobile</a>
+		&middot; <a href="#" id="accessibility" data-off-text="Enable High Contrast Mode" data-on-text="Disable High Contrast Mode">Enable High Contrast Mode</a>
 		<div class="languages">
 			English &middot;
 			<a href="lang/ru/" title="перейти на русский" tabindex="14">русский</a>
 		</div>
-		&middot; <a href="#" id="accessibility" data-off-text="Enable High Contrast Mode" data-on-text="Disable High Contrast Mode">Enable High Contrast Mode</a>
 	</div>
 	<div class="wrapper spotlight">
 		<div class="wrapper-inner">

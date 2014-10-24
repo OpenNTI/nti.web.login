@@ -63,6 +63,8 @@
 				   target="_blank" title="Learn about your child&#39;s privacy and NextThought"
 				   class="privacy">Children&#39;s Privacy</a>
 		</span>
+		&middot; <a href="/mobile/" id="mobile">Mobile</a>
+		&middot; <a href="#" id="accessibility" data-off-text="Enable High Contrast Mode" data-on-text="Disable High Contrast Mode">Enable High Contrast Mode</a>
 		<div class="languages">
 			<a href="../../" title="Switch to English" tabindex="14">English</a> &middot;
 			Russian
