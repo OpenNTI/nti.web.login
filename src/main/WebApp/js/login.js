@@ -661,10 +661,10 @@
 		}
 
 		if (cookieVal === 'true') {
-			el.innerText = offText;
+			$(el).html(offText);
 			setCookie(cookieName, 'false');
 		} else if (!cookieVal || cookieVal === 'false') {
-			el.innerText = onText;
+			$(el).html(onText);
 			setCookie(cookieName, 'true');
 		}
 	}
@@ -676,9 +676,9 @@
 			cookieVal = $.cookie(cookieName);
 
 		if (cookieVal === 'true') {
-			el.innerText = onText;
+			$(el).html(onText);
 		} else {
-			el.innerText = offText;
+			$(el).html(offText);
 		}
 	}
 
