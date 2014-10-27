@@ -75,7 +75,7 @@ Expected variables:
 </head>
 
 <body tal:define="courses load:./_macros.pt">
-
+	<img height="1" width="1" style="border-style:none;" alt="" src="//insight.adsrvr.org/track/evnt/?adv=wlk6kxt&ct=0:bmw2ca8s&fmt=3"/>
 	<div tal:define="the_courses upcomingCourses"
 		 metal:use-macro="courses/macros/course-details"></div>
 
