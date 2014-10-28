@@ -112,7 +112,7 @@
 				<div>
 					<h4>Premium Public Course</h4>
 					<div>Offered through a partnership between OU and HISTORY<sup>&reg;</sup> Channel, the course United States, 1865 to The Present is the most exciting history course available for lifelong learners.</div>
-					<a class="ou-btn1" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM" role="button" tabindex="3">Sign Up Now ($250)</a>
+					<a class="ou-btn1 track" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM" role="button" tabindex="3">Sign Up Now ($250)</a>
 
 					<br/><br/>
 
@@ -131,7 +131,7 @@
 					<br/><br/>
 
 <div>HISTORY<sup>&reg;</sup> Channel Presents: United States, 1865 to the Present Brought to You by the University of Oklahoma is available to anyone in the world for credit.</div>
-					<a class="ou-btn1" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM"
+					<a class="ou-btn1 track" href="/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNV9MU1REXzExNTM"
 					 role="button" tabindex="3" role="button">Sign Up Now ($500)</a>
 				</div>
 			</div>
@@ -235,5 +235,26 @@
 	</div>
 	<script type="text/javascript" src="nav.js"></script>
 	<script metal:use-macro="courses/macros/analytics"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var conversion = '//insight.adsrvr.org/track/conv/?adv=wlk6kxt&ct=0:tiw55lll&fmt=3'
+
+			$('a.track').click(function(event) {
+                event.stopPropagation();
+                event.preventDefault();
+                var href = this.href;
+
+                function go() {
+                    location.href = href;
+                }
+
+                var img = new Image();
+                img.onerror = go;
+                img.onload = go;
+                img.src = conversion;
+    		});
+		})
+	</script>
 </body>
 </html>
