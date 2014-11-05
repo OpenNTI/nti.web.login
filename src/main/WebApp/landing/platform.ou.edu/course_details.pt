@@ -5,7 +5,7 @@
 				 upcomingCourses python:[course];
 				 page_title string: ${course/title} | JANUX;
 				 description course/description"
-	tal:condition="not:course/url">
+	tal:condition="not:course/url | nothing">
 <!DOCTYPE html>
 
 <!--!
