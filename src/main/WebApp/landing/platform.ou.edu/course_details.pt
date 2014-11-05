@@ -1,11 +1,13 @@
-<!DOCTYPE html>
 <html lang="en" class="no-js transitions hwaccel" prefix="og http://ogp.me/ns#"
 	 tal:define="course options/course;
 	             id course/id;
                  path python: id.upper().replace('-ARCHIVED','');
 				 upcomingCourses python:[course];
 				 page_title string: ${course/title} | JANUX;
-				 description course/description" >
+				 description course/description"
+	tal:condition="not:course/url">
+<!DOCTYPE html>
+
 <!--!
 Expected variables:
 	options/course The incoming course data
