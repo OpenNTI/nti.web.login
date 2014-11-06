@@ -13,12 +13,12 @@
 			"instructors": [
 				{
 					"defaultphoto": "Swan.png",
-					"name": "Dan Swan, PhD",
+					"name": "Dan Swan, Ph.D.",
 					"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
 				},
 				{
 					"defaultphoto": "Nelson.png",
-					"name": "Joshua Nelson, PhD",
+					"name": "Joshua Nelson, Ph.D.",
 					"title": "Assistant Professor of English"
 				}
 			],
@@ -45,8 +45,8 @@
 			"instructors": [
 				{
 					"defaultphoto": "Lewis.png",
-					"name": "Cecil Lewis, PhD",
-					"title": "Associate Professor of of Anthropology"
+					"name": "Cecil Lewis, Ph.D.",
+					"title": "Associate Professor of Anthropology"
 				}
 			],
 			"kalturaVideo": "0_tnfknlac",
@@ -74,7 +74,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Morvant.png",
-                    "name": "Mark Morvant, PhD",
+                    "name": "Mark Morvant, Ph.D.",
                     "title": "Professor, Department of Chemistry and Biochemistry"
                 }
             ],
@@ -106,7 +106,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Dunbar.png",
-					"name": "Norah Dunbar, PhD",
+					"name": "Norah Dunbar, Ph.D.",
 					"title": "Associate Professor, Department of Communication"
 				}
 			],
@@ -137,7 +137,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "McGovern.png",
-					"name": "Amy McGovern, PhD",
+					"name": "Amy McGovern, Ph.D.",
 					"title": "Associate Professor, School of Computer Science"
 				}
 			],
@@ -173,7 +173,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Blackmon.png",
-					"name": "Stephanie Blackmon, PhD",
+					"name": "Stephanie Blackmon, Ph.D.",
 					"title": "Assistant Professor, Department of Educational Leadership and Policy Studies"
 				}
 			],
@@ -204,12 +204,12 @@
 			"instructors": [
 				{
 					"defaultphoto": "Sabatini.png",
-					"name": "David Sabatini, PhD",
+					"name": "David Sabatini, Ph.D.",
 					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
 				},
 				{
 					"defaultphoto": "Chamberlain.png",
-					"name": "Jim Chamberlain, PhD",
+					"name": "Jim Chamberlain, Ph.D.",
 					"title": "OU WaTER Center Staff Researcher"
 				}
 			],
@@ -227,7 +227,7 @@
 			"credit": {
 				"hours": 1
 			},
-			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up to date policies and new directions in sustainable development of oil and gas resources.",
+			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up-to-date policies and new directions in sustainable development of oil and gas resources.",
 			"detailAnchor": "GEOG3890-detail",
 			"duration": "16 Weeks",
 			"id": "GEOG3890",
@@ -235,7 +235,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Puls.png",
-					"name": "Bob Puls, PhD",
+					"name": "Bob Puls, Ph.D.",
 					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
 				}
 			],
@@ -266,7 +266,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Elmore.png",
-					"name": "R. Douglas Elmore, PhD",
+					"name": "R. Douglas Elmore, Ph.D.",
 					"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost"
 				}
 			],
@@ -297,7 +297,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Magruder.png",
-					"name": "Kerry Magruder, PhD",
+					"name": "Kerry Magruder, Ph.D.",
 					"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections "
 				}
 			],
@@ -355,7 +355,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Wert.png",
-					"name": "Justin Wert, PhD",
+					"name": "Justin Wert, Ph.D.",
 					"title": "Associate Professor of Political Science"
 				}
 			],
@@ -394,7 +394,7 @@
 			"instructors": [
 				{
 					"defaultphoto":"Peck.png",
-					"name": "B. Mitch Peck, PhD",
+					"name": "B. Mitch Peck, Ph.D.",
 					"title": "Associate Professor"
 				}
 			],
@@ -416,7 +416,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Morvant.png",
-                    "name": "Mark Morvant, PhD",
+                    "name": "Mark Morvant, Ph.D.",
                     "title": "Professor, Department of Chemistry and Biochemistry"
                 }
             ],
@@ -448,7 +448,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Trytten.png",
-                    "name": "Deborah Trytten, PhD",
+                    "name": "Deborah Trytten, Ph.D.",
                     "title": "Associate Professor, School of Computer Science"
                 }
             ],
@@ -516,7 +516,7 @@
             "instructors": [
                 {
                     "defaultphoto":"Morvant.png",
-                    "name":"Mark Morvant, PhD",
+                    "name":"Mark Morvant, Ph.D.",
                     "title": "Professor, Department of Chemistry"
                 }
             ],
@@ -548,7 +548,7 @@
             "instructors": [
                 {
                     "defaultphoto":"Ketchum.png",
-                    "name":"Heather R. Ketchum, PhD",
+                    "name":"Heather R. Ketchum, Ph.D.",
                     "title": "Associate Professor, Biology"
                 }
             ],
@@ -570,7 +570,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Damphousse.png",
-                    "name": "Kelly Damphousse, PhD",
+                    "name": "Kelly Damphousse, Ph.D.",
                     "title": "Dean, College of Arts and Sciences"
                 }
             ],
@@ -606,7 +606,7 @@
             "instructors": [
                 {
                     "defaultphoto":"Harper.png",
-                    "name":"Kyle Harper, PhD",
+                    "name":"Kyle Harper, Ph.D.",
                     "title": "Professor, Classics and Letters"
                 }
             ],
@@ -632,7 +632,7 @@
             "instructors": [
                 {
                     "defaultphoto":"Judisch.png",
-                    "name": "Neal Judisch, PhD",
+                    "name": "Neal Judisch, Ph.D.",
                     "title": "Assistant Professor, Philosophy"
                 }
             ],
@@ -658,7 +658,7 @@
             "instructors": [
                 {
                     "defaultphoto":"Grillot.png",
-                    "name":"Suzette Grillot, PhD",
+                    "name":"Suzette Grillot, Ph.D.",
                     "title": "Dean, College of International Studies"
                 }
             ],
@@ -701,12 +701,12 @@
 			"instructors": [
 				{
 					"defaultphoto": "Sabatini.png",
-					"name": "David Sabatini, PhD",
+					"name": "David Sabatini, Ph.D.",
 					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
 				},
 				{
 					"defaultphoto": "Chamberlain.png",
-					"name": "Jim Chamberlain, PhD",
+					"name": "Jim Chamberlain, Ph.D.",
 					"title": "OU WaTER Center Staff Researcher"
 				}
 			],
@@ -725,7 +725,7 @@
 			"credit": {
 				"hours": 1
 			},
-			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up to date policies and new directions in sustainable development of oil and gas resources.",
+			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up-to-date policies and new directions in sustainable development of oil and gas resources.",
 			"detailAnchor": "GEOG3890-Spring2015-detail",
 			"duration": "16 Weeks",
 			"id": "GEOG3890-Spring2015",
@@ -733,7 +733,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Puls.png",
-					"name": "Bob Puls, PhD",
+					"name": "Bob Puls, Ph.D.",
 					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
 				}
 			],
@@ -764,8 +764,8 @@
 			"instructors": [
 				{
 					"defaultphoto": "Lewis.png",
-					"name": "Cecil Lewis, PhD",
-					"title": "Associate Professor of of Anthropology"
+					"name": "Cecil Lewis, Ph.D.",
+					"title": "Associate Professor of Anthropology"
 				}
 			],
 			"kalturaVideo": "0_tnfknlac",
@@ -795,7 +795,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "Wert.png",
-					"name": "Justin Wert, PhD",
+					"name": "Justin Wert, Ph.D.",
 					"title": "Associates Second Century Presidential Professor & Associate Professor of Political Science"
 				}
 			],
@@ -827,7 +827,7 @@
 			"instructors": [
 				{
 					"defaultphoto": "McGovern.png",
-					"name": "Amy McGovern, PhD",
+					"name": "Amy McGovern, Ph.D.",
 					"title": "Associate Professor, School of Computer Science"
 				}
 			],
@@ -856,7 +856,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Trytten.png",
-                    "name": "Deborah Trytten, PhD",
+                    "name": "Deborah Trytten, Ph.D.",
                     "title": "Associate Professor, School of Computer Science"
                 }
             ],
@@ -877,7 +877,7 @@
                 }
             ],
             "schedule": {
-                "days": "Fully Online"
+                "days": "Varies"
             },
             "school": "School of Computer Science at the University of Oklahoma",
             "startDate": "January 12, 2015",
@@ -895,7 +895,7 @@
             "instructors": [
                 {
                     "defaultphoto": "Damphousse.png",
-                    "name": "Kelly Damphousse, PhD",
+                    "name": "Kelly Damphousse, Ph.D.",
                     "title": "Dean, College of Arts and Sciences"
                 }
             ],
