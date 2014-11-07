@@ -909,6 +909,38 @@
             "school": "Department of Sociology at the University of Oklahoma",
             "startDate": "January 12, 2015",
             "title": "Introduction to Sociology"
-        }
+        },
+        {
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course focuses on the organization and administration of adult and higher education from legislative, legal, structural-functional, power, political, bureaucratic, and social perspectives. Topics covered include: governance, central office organization, administrative position analysis, faculty organization, faculty participation in policy formation and decision making, academic freedom, goals analysis, budgetary policies and methods, and decision strategies in handling a representative set of administrative problems presented in a variety of formats.",
+			"detailAnchor": "EDAH5023-Spring2015-detail",
+			"duration": "16 Weeks",
+			"id": "EDAH5023-Spring2015",
+			"instructor": "Stephanie Blackmon",
+			"instructors": [
+				{
+					"defaultphoto": "Blackmon.png",
+					"name": "Stephanie Blackmon, Ph.D.",
+					"title": "Assistant Professor, Department of Educational Leadership and Policy Studies"
+				}
+			],
+			"kalturaVideo": "0_3usiqhgr",
+			"name": "EDAH 5023-902",
+			"prerequisites": [
+				{
+					"id": "",
+					"title": "Graduate Standing"
+				}
+			],
+			"schedule": {
+				"days": "M",
+				"times": "7:15pm - 9:55pm"
+			},
+			"school": "Department of Educational Leadership and Policy Studies at the University of Oklahoma",
+			"startDate": "January 12, 2015",
+			"title": "Administration of Adult and Higher Education"
+		}
     ]
 }
