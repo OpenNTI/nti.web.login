@@ -18,7 +18,11 @@
 			<img src="images/courses/${path}/card.png"
 				 alt="Course Image"
 				 title=""
-				 style="background: #DDD;"/>
+				 style="background: #DDD;"
+			/>
+			<div tal:condition="course/startTag | nothing">
+				<div class="start-date" tal:content="course/startTag"></div>
+			</div>
 			<div class="meta">
 				<div class="course-code" tal:content="course/name">CLC 3403</div>
 				<div class="course-name" tal:content="course/title">Law And Justice</div>

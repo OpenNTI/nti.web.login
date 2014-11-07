@@ -673,6 +673,7 @@
     "upcomingCourses": [
     	{
             "id": "LSTD1153",
+            "startTag": "January 12",
             "instructor": "Steve Gillon",
             "name": "LSTD 1153",
             "title": "A History of the United States",
@@ -693,6 +694,7 @@
 			"credit": {
 				"hours": 1
 			},
+			"startTag": "January 12",
 			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u0022Water Technologies for Emerging Regions\u0022). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
 			"detailAnchor": "ENGR1510-Spring2015-detail",
 			"duration": "16 Weeks",
@@ -725,6 +727,7 @@
 			"credit": {
 				"hours": 1
 			},
+			"startTag": "January 12",
 			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up-to-date policies and new directions in sustainable development of oil and gas resources.",
 			"detailAnchor": "GEOG3890-Spring2015-detail",
 			"duration": "16 Weeks",
@@ -756,6 +759,7 @@
 			"credit": {
 				"hours": 1
 			},
+			"startTag": "January 12",
 			"description": "In this course, we’ll discuss the topic of why human evolution is important to study and understand. This fully online course does not expect you to have any prior background in biological science, but a few foundational concepts in biology will be introduced early on in the course. During this course you will participate in online activities, watch online videos and custom animations, and interact with your peers in collaborative settings.",
 			"detailAnchor": "ANTH4970-Spring2015-detail",
 			"duration": "16 Weeks",
@@ -787,6 +791,7 @@
 			"credit": {
 				"hours": 3
 			},
+			"startTag": "January 12",
 			"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
 			"detailAnchor": "PSC4283-Spring2015-detail",
 			"duration": "16 Weeks",
@@ -819,6 +824,7 @@
 			"credit": {
 				"hours": 3
 			},
+			"startTag": "January 12",
 			"description": "This course is intended for people who have no experience in computer science but would like to learn more about how computers work and how they can control them. It is designed to introduce learners to the power and elegance of computational thinking. You will learn basic computational principles and will have the opportunity to put them into practice. Computers and technology are driving phenomenal change in this world. This course will give you the power to help drive that change. No prior programming experience is assumed.",
 			"detailAnchor": "CS1303-Spring2015-detail",
 			"duration": "16 Weeks",
@@ -848,6 +854,7 @@
 		},
 		{
             "credit": { "hours": 3 },
+            "startTag": "January 12",
             "description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API). No prior programming experience is assumed.",
             "detailAnchor": "CS1323-Spring2015-detail",
             "duration": "16 Weeks",
@@ -887,6 +894,7 @@
             "credit": {
                 "hours": 3
             },
+            "startTag": "January 12",
             "description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthroplogy, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
             "detailAnchor": "SOC1113-Spring2015-detail",
             "duration": "16 Weeks",
@@ -914,6 +922,7 @@
 			"credit": {
 				"hours": 3
 			},
+			"startTag": "January 12",
 			"description": "This course focuses on the organization and administration of adult and higher education from legislative, legal, structural-functional, power, political, bureaucratic, and social perspectives. Topics covered include: governance, central office organization, administrative position analysis, faculty organization, faculty participation in policy formation and decision making, academic freedom, goals analysis, budgetary policies and methods, and decision strategies in handling a representative set of administrative problems presented in a variety of formats.",
 			"detailAnchor": "EDAH5023-Spring2015-detail",
 			"duration": "16 Weeks",

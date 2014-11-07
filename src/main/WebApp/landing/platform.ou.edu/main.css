@@ -222,6 +222,38 @@ img.kWidgetCentered {
 	padding: 10px;
 }
 
+.grid-item .start-date {
+	position: absolute;
+	right: 0;
+	top: 10px;
+	z-index: 3;
+	background-color: #3fb3f6;
+	background-color: rgba(63,179,246, 0.9);
+	color: white;
+	font-size: 0.7em !important;
+	font-weight: 600 !important;
+	line-height: 2.4em !important;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	/* -webkit-font-smoothing: antialiased; */
+	padding: 0 10px;
+	-webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.45);
+	-moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.45);
+	box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.2);
+}
+
+.grid-item .start-date::before {
+	content: '';
+	position: absolute;
+	left: -5px;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 0 5px 24px 0;
+	border-color: transparent #3fb3f6 transparent transparent;
+	border-color: transparent rgba(63,179,246, 0.9) transparent transparent;
+}
+
 #main .grid-item .meta .course-code,
 #main .grid-item .meta .course-prof {
 	font: normal bold 10px/10px 'Open Sans', Arial, Helvetica, sans-serif;
