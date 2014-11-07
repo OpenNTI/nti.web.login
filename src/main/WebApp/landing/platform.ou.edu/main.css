@@ -228,7 +228,7 @@ img.kWidgetCentered {
 	top: 10px;
 	z-index: 3;
 	background-color: #3fb3f6;
-	background-color: rgba(63,179,246, 0.9);
+	background-color: rgba(63,179,246, 0.95);
 	color: white;
 	font-size: 0.7em !important;
 	font-weight: 600 !important;
@@ -251,7 +251,7 @@ img.kWidgetCentered {
 	border-style: solid;
 	border-width: 0 5px 24px 0;
 	border-color: transparent #3fb3f6 transparent transparent;
-	border-color: transparent rgba(63,179,246, 0.9) transparent transparent;
+	border-color: transparent rgba(63,179,246, 0.95) transparent transparent;
 }
 
 #main .grid-item .meta .course-code,
