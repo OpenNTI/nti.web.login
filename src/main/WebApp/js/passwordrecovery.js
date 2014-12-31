@@ -75,6 +75,7 @@
 
 			e.stopPropagation();
 			e.preventDefault();
+            $("#message").addClass('submitted');
 
 			$.ajax({
 				url: location.protocol + '//' + location.host + resetPassUrl,
@@ -128,6 +129,11 @@
 			//throw 'NoData';
 		}
 
+        // Clear submission flag.
+        if($("#message").hasClass("submitted")){
+            $("#message").removeClass("submitted");
+        }
+
 		if (!pass1 || !pass2 || pass1 !== pass2) {
 			$('#submit').attr('disabled', true);
 
@@ -140,6 +146,11 @@
 
 
 	function verifyPassword() {
+        // NOTE: we only do this password validation prior to submission.
+        if($("#message").hasClass("submitted")){
+            return;
+        }
+
 		var valid = enableSubmit(),
 			pass1 = $('#password').val(),
 			pass2 = $('#password-verify').val();
