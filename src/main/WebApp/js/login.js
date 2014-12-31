@@ -252,7 +252,7 @@
 
 	function addOAuthButtons(links, callResults) {
 		var i = links.length - 1,
-			v;
+			v, submitRelPrefs = ['logon.ldap.ou', 'logon.ldap.okstate', 'logon.nti.password'];
 
 		//clearForm();
 		function log() {
@@ -282,7 +282,12 @@
 			//}
 		}
 
-		submitButtonRel = rel['logon.ldap.ou'] ? 'logon.ldap.ou' : 'logon.nti.password';
+		for (i = 0; i < submitRelPrefs.length; i++) {
+			if (rel[submitRelPrefs[i]]) {
+				submitButtonRel = submitRelPrefs[i];
+				break;
+			}
+		}
 	}
 
 
