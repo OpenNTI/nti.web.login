@@ -142,7 +142,7 @@
 
 				<div>
 					<div class="tabs">
-						<a tal:condition="options/upcomingCoursesLabel" href="#upcoming" data-type="upcoming" tal:content="options/upcomingCoursesLabel">Upcoming</a>
+						<!--<a tal:condition="options/upcomingCoursesLabel" href="#upcoming" data-type="upcoming" tal:content="options/upcomingCoursesLabel">Upcoming</a>-->
 						<a tal:condition="options/currentCoursesLabel" href="#current" class="active" data-type="current" tal:content="options/currentCoursesLabel" />
 						<a tal:condition="options/archivedCoursesLabel" href="#archived" data-type="archived" tal:content="options/archivedCoursesLabel">Archived</a>
 					</div>
