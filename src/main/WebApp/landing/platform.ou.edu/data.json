@@ -34,37 +34,6 @@
 			"video": "kaltura://1500101/0_2ri5g355/"
 		},
 		{
-			"credit": {
-				"hours": 1
-			},
-			"description": "In this course, we'll discuss the topic of why human evolution is important to study and understand. This fully online course does not expect you to have any prior background in biological science, but a few foundational concepts in biology will be introduced early on in the course. During this course you will participate in online activities, watch online videos and custom animations, and interact with your peers in collaborative settings.",
-			"detailAnchor": "ANTH4970-detail",
-			"duration": "16 Weeks",
-			"id": "ANTH4970",
-			"instructor": "Cecil Lewis",
-			"instructors": [
-				{
-					"defaultphoto": "Lewis.png",
-					"name": "Cecil Lewis, Ph.D.",
-					"title": "Associate Professor of Anthropology"
-				}
-			],
-			"kalturaVideo": "0_tnfknlac",
-			"name": "ANTH 4970-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Senior standing or instructor permission"
-				}
-			],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Anthropology",
-			"startDate": "January 13, 2014",
-			"title": "Practical Importance of Human Evolution"
-		},
-		{
             "id": "BIOL2124",
             "detailAnchor": "BIOL2124-detail",
             "name": "BIOL 2124-010",
@@ -181,41 +150,7 @@
 			"startDate": "January 13, 2014",
 			"title": "Understanding and Detecting Deception"
 		},
-		{
-			"credit": {
-				"hours": 1
-			},
-			"description": "This course is intended for people who have no experience in computer science but would like to learn more about how computers work and how they can control them. It is designed to introduce learners to the power and elegance of computational thinking. You will learn basic computational principles and will have the opportunity to put them into practice. Computers and technology are driving phenomenal change in this world. This course will give you the power to help drive that change.",
-			"detailAnchor": "CS1300-detail",
-			"duration": "16 Weeks",
-			"id": "CS1300",
-			"instructor": "Amy McGovern",
-			"instructors": [
-				{
-					"defaultphoto": "McGovern.png",
-					"name": "Amy McGovern, Ph.D.",
-					"title": "Associate Professor, School of Computer Science"
-				}
-			],
-			"kalturaVideo": "0_m5kjoas1",
-			"name": "CS 1300",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "There are no prerequisites for this course."
-				},
-				{
-					"id": "",
-					"title": "No prior programming experience is assumed."
-				}
-			],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Computer Science",
-			"startDate": "January 13, 2014",
-			"title": "Power and Elegance of Computational Thinking"
-		},
+
 {
             "credit": { "hours": 3 },
             "description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
@@ -283,68 +218,6 @@
 			"school": "Educational Leadership and Policy Studies",
 			"startDate": "January 13, 2014",
 			"title": "Administration of Adult and Higher Education"
-		},
-		{
-			"credit": {
-				"hours": 1
-			},
-			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u201cWater Technologies for Emerging Regions\u201d). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
-			"detailAnchor": "ENGR1510-detail",
-			"duration": "16 Weeks",
-			"id": "ENGR1510",
-			"instructor": "David Sabatini & Jim Chamberlain",
-			"instructors": [
-				{
-					"defaultphoto": "Sabatini.png",
-					"name": "David Sabatini, Ph.D.",
-					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
-				},
-				{
-					"defaultphoto": "Chamberlain.png",
-					"name": "Jim Chamberlain, Ph.D.",
-					"title": "OU WaTER Center Staff Researcher"
-				}
-			],
-			"kalturaVideo": "0_6d00mec6",
-			"name": "ENGR 1510-901",
-			"prerequisites": [],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Civil Engineering and Environmental Sceince",
-			"startDate": "January 13, 2014",
-			"title": "Introduction to Water"
-		},
-		{
-			"credit": {
-				"hours": 1
-			},
-			"description": "This course will provide information on the science of Hydraulic Fracturing, a key process used to extract oil and gas resources, and its relationship with water resources. The purpose of this course is to provide a balanced and comprehensive understanding of the background, processes, and regulations related to Hydraulic Fracturing, its reliance on water and the protections used to safeguard water resources.  Students taking this course will gain a fuller understanding of the role hydraulic fracturing plays in the production of oil and gas in the U.S. and particularly in Oklahoma. The course will expose students to industry experts, academic experts and people who regulate oil and gas operations. During this online course students will have the opportunity to review up-to-date policies and new directions in sustainable development of oil and gas resources.",
-			"detailAnchor": "GEOG3890-detail",
-			"duration": "16 Weeks",
-			"id": "GEOG3890",
-			"instructor": "Bob Puls",
-			"instructors": [
-				{
-					"defaultphoto": "Puls.png",
-					"name": "Bob Puls, Ph.D.",
-					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
-				}
-			],
-			"kalturaVideo": "0_i3etssfy",
-			"name": "GEOG 3890-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Junior standing or instructor permission"
-				}
-			],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Department of Geography",
-			"startDate": "January 13, 2014",
-			"title": "Hydraulic Fracturing and Water Resources"
 		},
 		{
 			"credit": {
@@ -482,91 +355,6 @@
             "schedule": {
                 "days": "Archived"
             }
-        },
-
-		{
-			"credit": {
-				"hours": 3
-			},
-			"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
-			"detailAnchor": "PSC4283-detail",
-			"duration": "16 Weeks",
-			"id": "PSC4283",
-			"instructor": "Justin Wert",
-			"instructors": [
-				{
-					"defaultphoto": "Wert.png",
-					"name": "Justin Wert, Ph.D.",
-					"title": "Associate Professor of Political Science"
-				}
-			],
-			"kalturaVideo": "0_459iw3fc",
-			"name": "P SC 4283-001",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "P SC 1113"
-				},
-				{
-					"id": "",
-					"title": "permission of instructor."
-				}
-			],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Poltical Science",
-			"startDate": "January 13, 2014",
-			"title": "Civil Rights and Civil Liberties"
-		},
-		{
-            "credit": {
-                "hours": 3
-            },
-            "description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthropology, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
-            "detailAnchor": "SOC1113-detail",
-            "duration": "16 Weeks",
-            "id": "SOC1113",
-            "instructor": "Kelly Damphousse",
-            "instructors": [
-                {
-                    "defaultphoto": "Damphousse.png",
-                    "name": "Kelly Damphousse, Ph.D.",
-                    "title": "Dean, College of Arts and Sciences"
-                }
-            ],
-            "kalturaVideo": "0_4ol5o04l",
-            "name": "SOC 1113-001",
-            "prerequisites": [],
-            "schedule": {
-                "days": "Archived"
-            },
-            "school": "Sociology",
-            "startDate": "August 18, 2014",
-            "title": "Introduction to Sociology"
-        },
-		{
-            "id": "UCOL1002",
-            "name": "UCOL 1002",
-            "detailAnchor": "UCOL1002-detail",
-            "term" : "F2014",
-            "school": "University College/Freshman Programs at the University of Oklahoma",
-            "kalturaVideo": "0_j8mgxw4a",
-            "title": "Gateway to College Learning",
-            "credit": { "hours":2 },
-            "startDate": "August 18, 2014",
-            "duration": "16 Weeks",
-            "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
-            "prerequisites": [],
-            "instructor": "Lillian Miller",
-            "schedule": { "days": "Archived" },
-            "instructors": [
-                {
-                    "defaultphoto":"Miller.png",
-                    "name":"Lillian Miller, MEd",
-                    "title": "Director of Freshman Programs, University of Oklahoma"
-                }
-            ]
         }
 	],
 
