@@ -329,6 +329,16 @@ a.continue.birthday {
 	position: relative;
 }
 
+.signin .forgot .dialog .message {
+	text-align: left;
+	margin-left: 0;
+}
+
+.signin .forgot .dialog form.submitted {
+	height: 0;
+	visibility: hidden;
+}
+
 .signin .forgot .dialog h1{
 	color: #494949;
 	font-weight: 400;

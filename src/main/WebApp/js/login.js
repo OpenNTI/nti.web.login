@@ -530,7 +530,12 @@
 			e.stopPropagation();
 			e.preventDefault();
 
-			$('#recover').html('<h1>' + getString('Thanks!') + '</h1>');
+			$('.forgot .dialog.username .message').html('<h1>' + getString('Thanks!') + '</h1>');
+			$('#recover').addClass('submitted');
+			$('#recover input').each(function() {
+				$(this).val('');
+			});
+
 			setTimeout(function(){
 				hideDialog($('.forgot .dialog'));
 			},1000);
@@ -567,6 +572,8 @@
 		$('#recover-pass-email').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
 
 		$('.forgot .dialog.password').click(function(e){
+			$('.forgot .dialog.password .message').html('');
+			$('#recoverpass').removeClass('submitted');
 			e.stopPropagation();
 		});
 
@@ -585,7 +592,12 @@
 			e.stopPropagation();
 			e.preventDefault();
 
-			$('#recoverpass').html('<h1>' + getString('Thanks!') + '</h1>');
+			$('.forgot .dialog.password .message').html('<h1>' + getString('Thanks!') + '</h1>');
+			$('#recoverpass').addClass('submitted');
+			$('#recoverpass input').each(function() {
+				$(this).val('');
+			});
+
 			setTimeout(function(){
 				hideDialog($('.forgot .dialog'));
 			},1000);
@@ -710,6 +722,8 @@
 			e.preventDefault();
 			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.username');
+			d.find('div.message').html('');
+			d.find('form').removeClass('submitted');
 			$('body').addClass('dialog-shown');
 			d.show();
 			d.find('input').focus();
@@ -721,6 +735,8 @@
 			e.preventDefault();
 			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.password');
+			d.find('div.message').html('');
+			d.find('form').removeClass('submitted');
 			$('body').addClass('dialog-shown');
 			d.show();
 			d.find('#recover-pass-username').focus();

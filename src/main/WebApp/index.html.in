@@ -109,6 +109,7 @@
 					<div class="dialog username" role="dialog" aria-label="Forgot username form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
+							<div class="message"></div>
 							<form id="recover" method="post" action="#" onsubmit="return false;">
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your email and we&#39;ll send your username.</p>
@@ -123,6 +124,7 @@
 					<div class="dialog password" role="dialog" aria-label="Forgot password form">
 						<div class="top">&nbsp;</div>
 						<div class="middle">
+							<div class="message"></div>
 							<form id="recoverpass" method="post" action="#" onsubmit="return false;">
 								<h1>That&#39;s okay...</h1>
 								<p>Enter your username and email, and we&#39;ll help you reset it.</p>
