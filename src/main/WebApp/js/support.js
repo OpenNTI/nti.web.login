@@ -206,7 +206,7 @@ if( !(/NextThought|PhantomJS/i.test(navigator.userAgent)) ){
 		//else you go to mobile
 		if( (!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent))
         &&  (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))) {
-			location.replace('/mobile/');
+			location.replace('/mobile/'+ (location.search ? ('?'+location.search) : ''));
 		}
 
 
