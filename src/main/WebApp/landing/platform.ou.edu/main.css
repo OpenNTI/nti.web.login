@@ -272,7 +272,7 @@ img.kWidgetCentered {
 }
 
 #about-janux {
-	padding: 3em;
+	padding: 35px;
 }
 
 #about-janux h2 {
@@ -294,7 +294,7 @@ img.kWidgetCentered {
 
 #feature .course {
 	background-color: #f0ede5;
-	padding: 2em 0 2em 2em;
+	padding: 2em 0 2em 35px;
 	overflow: hidden;
 	width: 744px;
 	float: left;
