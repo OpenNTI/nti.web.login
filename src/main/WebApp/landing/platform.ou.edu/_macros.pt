@@ -101,17 +101,12 @@
 					context in determining sustainable solutions to
 					water problems.
 				</div>
-				<div tal:condition="not:notOpen" tal:attributes="class python: 'course-open-course-note half' if availableForCredit else 'course-open-course-note'">
-					<h3>Open courses are free to anyone, anywhere.</h3>
-					<p>Get complete access to interact with all course content, including lectures, course materials, quizzes, and discussions once class is in session.</p>
-					<blockquote>Open courses are not eligible for college credit.</blockquote>
-				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" href="/login/">Sign Up Now</a>
-				</div>
-				<div tal:condition="availableForCredit" tal:attributes="class python: 'course-open-course-note half' if not notOpen else 'course-open-course-note'">
-					<h3>Earn credit from the University of Oklahoma.</h3>
-					<p>Enroll in the course, join the community, and earn transcripted credit from OU.</p>
-					<blockquote>This option is available through October 15 to <br> non-OU students.</blockquote>
-				  	<a class="ou-btn" style="margin-bottom: 0; margin-top:1.5em;" tal:attributes="href course/enrollmentURL">Sign Up Now</a>
+				<div tal:condition="course/EnrollmentOptions | nothing" class="enrollment-options">
+				    <div class="enrollment-option" tal:repeat="enrollmentOption course/EnrollmentOptions" tal:attributes="class python: 'full' if (repeat.enrollmentOption.end and repeat.enrollmentOption.even) else 'half' ">
+					<h3 tal:content="enrollmentOption/Heading">For Students</h3>
+					<p tal:content="enrollmentOption/SubText" tal:condition="enrollmentOption/SubText">Best for ou students.</p>
+				  	<a class="cta" tal:condition="enrollmentOption/CTAUrl" tal:attributes="href enrollmentOption/CTAUrl" tal:content="enrollmentOption/CTAText">Sign Up Now</a>
+				    </div>
 				</div>
 			</div>
 			<div class="course-details">
