@@ -160,13 +160,13 @@
 
 				<div class="grid"
 				 	tal:define="type string:upcoming;
-								the_courses options/upcomingCourses"
+								the_courses options/upcomingCourses;
+								cls string:grid active"
 					metal:use-macro="courses/macros/course-grid">
 				</div>
 				<div class="grid"
 					tal:define="type string:current;
-								the_courses options/currentCourses;
-								cls string:grid active"
+								the_courses options/currentCourse"s
 					metal:use-macro="courses/macros/course-grid">
 				</div>
 				<div class="grid"
