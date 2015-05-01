@@ -520,25 +520,6 @@
 
 	"upcomingCoursesLabel": "Upcoming",
     "upcomingCourses": [
-    	{
-            "id": "LSTD1153",
-            "instructor": "Steve Gillon",
-            "name": "LSTD 1153",
-            "title": "A History of the United States",
-            "url": "//historychannel.ou.edu/",
-            "kalturaVideo": "",
-            "credit": { "hours": 3 },
-            "startDate": "",
-            "startTag": "3 Sessions",
-            "duration": "",
-            "school": "",
-            "description": "",
-            "prerequisites": [],
-            "instructors": [
-            ],
-            "schedule": {
-            }
-        },
         {
             "id": "MGT2013",
         	"name": "MGT 2013-995",
