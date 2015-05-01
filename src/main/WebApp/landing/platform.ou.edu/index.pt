@@ -166,7 +166,7 @@
 				</div>
 				<div class="grid"
 					tal:define="type string:current;
-								the_courses options/currentCourse"s
+								the_courses options/currentCourses"
 					metal:use-macro="courses/macros/course-grid">
 				</div>
 				<div class="grid"
