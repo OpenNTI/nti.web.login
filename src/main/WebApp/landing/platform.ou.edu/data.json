@@ -34,36 +34,6 @@
 			"video": "kaltura://1500101/0_2ri5g355/"
 		},
 		{
-            "id": "BIOL2124",
-            "detailAnchor": "BIOL2124-detail",
-            "name": "BIOL 2124-010",
-            "term" : "F2014",
-            "school": "Department of Biology, University of Oklahoma",
-            "kalturaVideo": "0_gpczmps5",
-            "title": "Human Physiology",
-            "credit": { "hours":4 },
-            "startDate": "August 18, 2014",
-            "duration": "16 Weeks",
-            "description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
-            "prerequisites": [
-                {
-                    "id":"",
-                    "title":"Introduction to Biology or Zoology and one semester of Chemistry or Physics"
-                }
-            ],
-            "instructor": "Heather R. Ketchum",
-            "instructors": [
-                {
-                    "defaultphoto":"Ketchum.png",
-                    "name":"Heather R. Ketchum, Ph.D.",
-                    "title": "Associate Professor, Biology"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            }
-        },
-		{
             "credit": { "hours": 1 },
             "description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
             "detailAnchor": "CHEM4970-detail",
@@ -307,31 +277,6 @@
                 "days": "Archived"
             }
         },
-
-        {
-            "id": "MGT2013",
-        	"name": "MGT 2013-995",
-            "detailAnchor": "MGT2013-detail",
-        	"school": "Price College of Business (Division of Management and Entrepreneurship)",
-        	"kalturaVideo": "0_gckztn5o",
-        	"title": "Introduction to Management",
-        	"credit": { "hours":3 },
-        	"startDate": "June 9, 2014",
-        	"duration": "4 Weeks",
-        	"description": "Introduction to Management is a course that provides knowledge of interest to individuals of all ages and backgrounds who wish to learn more about managing careers, individuals, organizational situations, decisions, and relationships. The course features a graphic novel that chronicles the tales of Atlas Black as he works to fund his college expenses, start a new business, and act as a fledgling entrepreneur, along the way illustrating key concepts from principles of management. Recent studies conducted at OU find graphic novels are associated with superior student recall compared to traditional textbooks alone. The content of the course will use innovative delivery material including online lectures, a traditional textbook, and a graphic novel textbook, as well as a specific emphasis on businesses in the state of Oklahoma.",
-            "instructor": "Jeremy Short",
-        	"instructors": [
-        		{
-        			"defaultphoto":"Short.png",
-        			"name":"Jeremy Short",
-        			"title": "Rath Chair of Strategic Management at the Price College of Business"
-        		}
-        	],
-            "prerequisites": [],
-			"schedule": {
-				"days": "Archived"
-			}
-        },
         {
             "id": "PHIL1203",
             "instructor": "Neal Judisch",
@@ -360,24 +305,6 @@
 
     "currentCoursesLabel": "Current - Spring 2015",
 	"currentCourses": [
-	{
-            "id": "LSTD1153",
-            "instructor": "Steve Gillon",
-            "name": "LSTD 1153",
-            "title": "A History of the United States",
-            "url": "//historychannel.ou.edu/",
-            "kalturaVideo": "",
-            "credit": { "hours": 3 },
-            "startDate": "",
-            "duration": "",
-            "school": "",
-            "description": "",
-            "prerequisites": [],
-            "instructors": [
-            ],
-            "schedule": {
-            }
-        },
         {
 			"credit": {
 				"hours": 1
@@ -619,5 +546,135 @@
     ],
 
 	"upcomingCoursesLabel": "Upcoming",
-    "upcomingCourses": []
+    "upcomingCourses": [
+    	{
+            "id": "LSTD1153",
+            "instructor": "Steve Gillon",
+            "name": "LSTD 1153",
+            "title": "A History of the United States",
+            "url": "//historychannel.ou.edu/",
+            "kalturaVideo": "",
+            "credit": { "hours": 3 },
+            "startDate": "",
+            "duration": "",
+            "school": "",
+            "description": "",
+            "prerequisites": [],
+            "instructors": [
+            ],
+            "schedule": {
+            }
+        },
+        {
+            "id": "MGT2013",
+        	"name": "MGT 2013-995",
+            "detailAnchor": "MGT2013-detail",
+        	"school": "Price College of Business (Division of Management and Entrepreneurship)",
+        	"kalturaVideo": "0_gckztn5o",
+        	"title": "Introduction to Management",
+        	"credit": { "hours":3 },
+        	"startDate": "June 8, 2015",
+        	"duration": "4 Weeks",
+        	"description": "Introduction to Management is a course that provides knowledge of interest to individuals of all ages and backgrounds who wish to learn more about managing careers, individuals, organizational situations, decisions, and relationships. The course features a graphic novel that chronicles the tales of Atlas Black as he works to fund his college expenses, start a new business, and act as a fledgling entrepreneur, along the way illustrating key concepts from principles of management. Recent studies conducted at OU find graphic novels are associated with superior student recall compared to traditional textbooks alone. The content of the course will use innovative delivery material including online lectures, a traditional textbook, and a graphic novel textbook, as well as a specific emphasis on businesses in the state of Oklahoma.",
+            "instructor": "Jeremy Short",
+        	"instructors": [
+        		{
+        			"defaultphoto":"Short.png",
+        			"name":"Jeremy Short",
+        			"title": "Rath Chair of Strategic Management at the Price College of Business"
+        		}
+        	],
+            "prerequisites": [],
+			"schedule": {
+				"days": "Fully Online"
+			}
+        },
+        {
+        	"id": "BIOL2124",
+        	"name": "BIOL 2124",
+        	"detailAnchor": "BIOL2124-detail",
+        	"school": "Department of Biology, University of Oklahoma",
+        	"kalturaVideo": "0_gpczmps5",
+        	"title": "Human Physiology",
+        	"credit": { "hours": 4 },
+        	"startDate": "June 29, 2015",
+        	"duration": "7 Weeks",
+        	"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
+        	"instructor": "Heather R. Ketchum, Ph.D.",
+        	"instructors": [
+        		{
+        			"defaultphoto": "Ketchum.png",
+        			"name": "Heather R. Ketchum, Ph.D.",
+        			"title": "Associate Professor, Biology"
+        		}
+        	],
+        	"prerequisites": [
+        		{
+	        		"id": "",
+					"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
+        		}
+        	],
+        	"schedule": {
+        		"days": "MTWRF",
+        		"times": "10:30am - 12:05pm"
+        	}
+        },
+        {
+        	"id": "ISE5013",
+        	"name": "ISE 5013",
+        	"detailAnchor": "ISE50130-detail",
+        	"school": "School of Industrial and Systems Engineering",
+        	"kalturaVideo": "0_ezhh2gi2",
+        	"title": "Fundamentals of Engineering Statistical Analysis",
+        	"credit": { "hours": 3},
+        	"startDate": "June 8, 2015",
+        	"duration": "8 Weeks",
+        	"description": "This course provides fundamental concepts in probability and statistical inference, with application to engineering contexts. Probability topics include counting methods, discrete and continuous random variables, and their associated distributions. Statistical inference topics include sampling distributions, point estimation, confidence intervals and hypothesis testing for single- and two-sample experiments, nonparametric statistics, and goodness-of-fit testing. Excel will be used to demonstrate how to solve some class examples, and you'll be expected to use Excel to solve some homework problems. The statistical software package R will be introduced to address very basic statistics problems. Course prerequisites include calculus (differentiation and integration).",
+        	"instructor": "Jeremy Short",
+        	"instructors": [
+        		{
+        			"defaultphoto": "Barker.png",
+        			"name": "Kash Barker",
+        			"title": "Assistant Professor"
+        		}
+        	],
+        	"prerequisites": [
+        		{
+        			"id": "",
+					"title": "Knowledge of calculus, particularly how to perform derivatives and integrals (and understand their meaning)"
+        		}
+        	],
+        	"schedule":{
+        		"days": "Fully Online"
+        	}
+        },
+        {
+            "id": "CLC3403",
+            "name": "CLC 3403-001",
+            "title": "Law and Justice",
+            "instructor": "Kyle Harper",
+            "detailAnchor": "CLC3403-detail",
+            "kalturaVideo": "0_wanue4j9",
+            "credit": { "hours": 3 },
+            "startDate": "August 24, 2015",
+            "duration": "16 Weeks",
+            "school": "Department of Classics and Letters at the University of Oklahoma",
+            "description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
+            "prerequisites": [{
+                "id": "",
+                "title": "Junior standing or instructor permission"
+            }],
+            "instructors": [
+                {
+                    "defaultphoto":"Harper.png",
+                    "name":"Kyle Harper, Ph.D.",
+                    "title": "Professor, Classics and Letters"
+                }
+            ],
+            "schedule": {
+                "days": "MW",
+                "times": "1:30pm-2:45pm"
+            }
+        }
+    ]
 }
