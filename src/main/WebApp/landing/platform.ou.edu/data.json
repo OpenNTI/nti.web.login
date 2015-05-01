@@ -62,33 +62,6 @@
             "startDate": "August 18, 2014",
             "title": "Chemistry of Beer"
         },
-         {
-            "id": "CLC3403",
-            "name": "CLC 3403-001",
-            "title": "Law and Justice",
-            "instructor": "Kyle Harper",
-            "detailAnchor": "CLC3403-detail",
-            "kalturaVideo": "0_wanue4j9",
-            "credit": { "hours": 3 },
-            "startDate": "August 18, 2014",
-            "duration": "16 Weeks",
-            "school": "Department of Classics and Letters at the University of Oklahoma",
-            "description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
-            "prerequisites": [{
-                "id": "",
-                "title": "Junior standing or instructor permission"
-            }],
-            "instructors": [
-                {
-                    "defaultphoto":"Harper.png",
-                    "name":"Kyle Harper, Ph.D.",
-                    "title": "Professor, Classics and Letters"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            }
-        },
 		{
 			"credit": {
 				"hours": 1
