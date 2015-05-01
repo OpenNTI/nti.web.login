@@ -272,6 +272,111 @@ img.kWidgetCentered {
 	color: #3fb3f6;
 }
 
+#about-janux {
+	padding: 3em;
+}
+
+#about-janux h2 {
+	color: #494949;
+	font-size: 1.875rem;
+	font-weight: 300;
+	margin-bottom: 0.3em;
+}
+
+#about-janux p {
+	font-size: 1.125rem;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+}
+
+#feature {
+	overflow: hidden;
+}
+
+#feature .course {
+	background-color: #f0ede5;
+	padding: 2em 0 2em 2em;
+	overflow: hidden;
+	width: 744px;
+	float: left;
+	box-shadow: inset -1px 0 0 0 #e6e2d6, inset 0 1px 0 #e6e2d6, inset 0 -1px 0 0 #e6e2d6;
+}
+
+#feature .course img {
+	width: 235px;
+	float: left;
+}
+
+#feature .course .meta {
+	float: left;
+	width: 460px;
+	padding-left: 1em;
+}
+
+#feature .course .meta span {
+	text-transform: uppercase;
+	font-size: 0.625rem;
+	font-weight: 700;
+	line-height: 0.5em;
+	color: #962022;
+}
+
+#feature .course .meta h4 {
+	color: #786f56;
+	font-size: 1.875rem;
+	line-height: 0.5em;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+}
+
+#feature .course .meta p {
+	font-weight: 300;
+	font-size: 0.95rem;
+}
+
+#feature .enrollment-options {
+	background-color: #f5f4ef;
+	float: left;
+	width: 280px;
+	box-shadow: inset 0 1px 0 #e6e2d6, inset 0 -1px 0 #e6e2d6;
+}
+
+#feature .enrollment-options .option {
+	padding: 1em 3em;
+	height: 114px;
+	text-align: center;
+}
+
+#feature .enrollment-options .option.first {
+	box-shadow: inset 0 -1px 0 #e6e2d6;
+}
+
+#feature .enrollment-options .option .price .current {
+	font-size: 2rem;
+	line-height: 2rem;
+	font-weight: 600;
+	display: inline-block;
+	color: #358bc1;
+}
+
+#feature .enrollment-options .option .price .old {
+	line-height: 2rem;
+	font-size: 1.125rem;
+	text-decoration: line-through;
+	display: inline-block;
+	vertical-align: top;
+	color: #b8b8b8;
+}
+
+#feature .enrollment-options .option h5 {
+	line-height: 1.5em;
+	color: #786f56;
+	font-weight: 600;
+	font-size: 0.875rem;
+	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+} 
+
 /*course detail view*/
 
 /*custom tags*/
