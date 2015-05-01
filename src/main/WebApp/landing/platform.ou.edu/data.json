@@ -560,7 +560,21 @@
             "prerequisites": [],
 			"schedule": {
 				"days": "Fully Online"
-			}
+			},
+        	"EnrollmentOptions" : [
+                {
+                    "Heading": "For Students",
+                    "SubText": "Best for students at OU",
+                    "CTAText": "Enroll on oZone",
+                    "CTAUrl": "https://ozone.ou.edu"
+                },
+                {
+                    "Heading": "Free Open Course",
+                    "SubText": "Free to anyone without requirements, tests, or credit",
+                    "CTAText": "Sign Up Now",
+                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9NR1RfMjAxMw"
+                }
+            ]
         },
         {
         	"id": "BIOL2124",
@@ -590,7 +604,21 @@
         	"schedule": {
         		"days": "MTWRF",
         		"times": "10:30am - 12:05pm"
-        	}
+        	},
+        	"EnrollmentOptions" : [
+                {
+                    "Heading": "For Students",
+                    "SubText": "Best for students at OU",
+                    "CTAText": "Enroll on oZone",
+                    "CTAUrl": "https://ozone.ou.edu"
+                },
+                {
+                    "Heading": "Free Open Course",
+                    "SubText": "Free to anyone without requirements, tests, or credit",
+                    "CTAText": "Sign Up Now",
+                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9CSU9MXzIxMjQ"
+                }
+            ]
         },
         {
         	"id": "ISE5013",
@@ -619,7 +647,21 @@
         	],
         	"schedule":{
         		"days": "Fully Online"
-        	}
+        	},
+        	"EnrollmentOptions" : [
+                {
+                    "Heading": "For Students",
+                    "SubText": "Best for students at OU",
+                    "CTAText": "Enroll on oZone",
+                    "CTAUrl": "https://ozone.ou.edu"
+                },
+                {
+                    "Heading": "Free Open Course",
+                    "SubText": "Free to anyone without requirements, tests, or credit",
+                    "CTAText": "Sign Up Now",
+                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9JU0VfNTAxMw"
+                }
+            ]
         },
         {
             "id": "CLC3403",
@@ -647,7 +689,21 @@
             "schedule": {
                 "days": "MW",
                 "times": "1:30pm-2:45pm"
-            }
+            },
+            "EnrollmentOptions" : [
+                {
+                    "Heading": "For Students",
+                    "SubText": "Best for students at OU",
+                    "CTAText": "Enroll on oZone",
+                    "CTAUrl": "https://ozone.ou.edu"
+                },
+                {
+                    "Heading": "Free Open Course",
+                    "SubText": "Free to anyone without requirements, tests, or credit",
+                    "CTAText": "Sign Up Now",
+                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQ0xDXzM0MDM"
+                }
+            ]
         }
     ]
-}
+} 
