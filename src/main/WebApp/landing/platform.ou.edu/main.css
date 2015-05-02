@@ -591,7 +591,10 @@ div.subpage .enrollment-option p {
 	font-size: 1rem;
 }
 
-div.subpage .enrollment-option a, div.subpage .enrollment-option a:link{
+div.subpage .enrollment-option a,
+div.subpage .enrollment-option a:link,
+div.subpage .enrollment-option a:visited,
+div.subpage .enrollment-option a:active {
 	display: inline-block;
 	background-color: #3fb3f6;
 	line-height: 45px;
