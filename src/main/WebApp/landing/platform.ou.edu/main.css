@@ -657,8 +657,9 @@ div.subpage .course-field-cell p {
 }
 
 div.subpage .course-field-cell.credit a,
-div.subpage .course-field-cell.credit p {
-	font-weight: 600;
+div.subpage .course-field-cell.credit p,
+div.subpage .course-field-cell.credit p span {
+	font-weight: 400;
 	font-size: 16px;
 }
 
