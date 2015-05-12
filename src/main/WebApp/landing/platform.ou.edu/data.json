@@ -690,6 +690,45 @@
                     "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQ0xDXzM0MDM"
                 }
             ]
+        },
+        {
+        	"id": "EIPT5970",
+        	"name": "EIPT 5970",
+        	"title": "Grant Writing for Teachers",
+        	"instructor": "Theresa Cullen",
+        	"detailAnchor": "EIPT5970-detail",
+        	"kalturaVideo": "0_j2vx2rrj",
+        	"credit": { "hours": 1 },
+        	"startDate": "June 29, 2015",
+        	"startTag": "June 29",
+        	"duration": "7 Weeks",
+        	"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
+        	"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
+        	"prerequisites": [],
+        	"instructors": [
+        		{
+        			"defaultphoto": "Cullen.png",
+        			"name": "Theresa Cullen",
+        			"title": "Associate Professor"
+        		}
+        	],
+        	"schedule": {
+        		"days": "Fully Online"
+        	},
+        	"EnrollmentOptions": [
+        		{
+        			"Heading": "For Students",
+        			"SubText": "Best for students at OU",
+        			"CTAText": "Enroll on oZone",
+        			"CTAUrl": "https://ozone.ou.edu"
+        		},
+        		{
+        			"Heading": "Free Open Course",
+        			"SubText": "Free to anyone without requirements, tests, or credit",
+        			"CTAText": "Sign Up Now",
+        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9FSVBUXzU5NzA"
+        		}
+        	]
         }
     ]
 } 
