@@ -560,6 +560,50 @@
             ]
         },
         {
+        	"id": "ISE5013",
+        	"name": "ISE 5013",
+        	"detailAnchor": "ISE50130-detail",
+        	"school": "School of Industrial and Systems Engineering",
+        	"kalturaVideo": "0_ezhh2gi2",
+        	"title": "Fundamentals of Engineering Statistical Analysis",
+        	"credit": { "hours": 3},
+        	"startDate": "June 8, 2015",
+        	"startTag": "June 8",
+        	"duration": "8 Weeks",
+        	"description": "This course provides fundamental concepts in probability and statistical inference, with application to engineering contexts. Probability topics include counting methods, discrete and continuous random variables, and their associated distributions. Statistical inference topics include sampling distributions, point estimation, confidence intervals and hypothesis testing for single- and two-sample experiments, nonparametric statistics, and goodness-of-fit testing. Excel will be used to demonstrate how to solve some class examples, and you'll be expected to use Excel to solve some homework problems. The statistical software package R will be introduced to address very basic statistics problems. Course prerequisites include calculus (differentiation and integration).",
+        	"instructor": "Kash Barker",
+        	"instructors": [
+        		{
+        			"defaultphoto": "Barker.png",
+        			"name": "Kash Barker",
+        			"title": "Assistant Professor"
+        		}
+        	],
+        	"prerequisites": [
+        		{
+        			"id": "",
+					"title": "Knowledge of calculus, particularly how to perform derivatives and integrals (and understand their meaning)"
+        		}
+        	],
+        	"schedule":{
+        		"days": "Fully Online"
+        	},
+        	"EnrollmentOptions" : [
+                {
+                    "Heading": "For Students",
+                    "SubText": "Best for students at OU",
+                    "CTAText": "Enroll on oZone",
+                    "CTAUrl": "https://ozone.ou.edu"
+                },
+                {
+                    "Heading": "Free Open Course",
+                    "SubText": "Free to anyone without requirements, tests, or credit",
+                    "CTAText": "Sign Up Now",
+                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9JU0VfNTAxMw"
+                }
+            ]
+        },
+        {
         	"id": "BIOL2124",
         	"name": "BIOL 2124",
         	"detailAnchor": "BIOL2124-detail",
@@ -605,48 +649,43 @@
             ]
         },
         {
-        	"id": "ISE5013",
-        	"name": "ISE 5013",
-        	"detailAnchor": "ISE50130-detail",
-        	"school": "School of Industrial and Systems Engineering",
-        	"kalturaVideo": "0_ezhh2gi2",
-        	"title": "Fundamentals of Engineering Statistical Analysis",
-        	"credit": { "hours": 3},
-        	"startDate": "June 8, 2015",
-        	"startTag": "June 8",
-        	"duration": "8 Weeks",
-        	"description": "This course provides fundamental concepts in probability and statistical inference, with application to engineering contexts. Probability topics include counting methods, discrete and continuous random variables, and their associated distributions. Statistical inference topics include sampling distributions, point estimation, confidence intervals and hypothesis testing for single- and two-sample experiments, nonparametric statistics, and goodness-of-fit testing. Excel will be used to demonstrate how to solve some class examples, and you'll be expected to use Excel to solve some homework problems. The statistical software package R will be introduced to address very basic statistics problems. Course prerequisites include calculus (differentiation and integration).",
-        	"instructor": "Kash Barker",
+        	"id": "EIPT5970",
+        	"name": "EIPT 5970",
+        	"title": "Grant Writing for Teachers",
+        	"instructor": "Theresa Cullen",
+        	"detailAnchor": "EIPT5970-detail",
+        	"kalturaVideo": "0_j2vx2rrj",
+        	"credit": { "hours": 1 },
+        	"startDate": "June 29, 2015",
+        	"startTag": "June 29",
+        	"duration": "7 Weeks",
+        	"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
+        	"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
+        	"prerequisites": [],
         	"instructors": [
         		{
-        			"defaultphoto": "Barker.png",
-        			"name": "Kash Barker",
-        			"title": "Assistant Professor"
+        			"defaultphoto": "Cullen.png",
+        			"name": "Theresa Cullen",
+        			"title": "Associate Professor"
         		}
         	],
-        	"prerequisites": [
-        		{
-        			"id": "",
-					"title": "Knowledge of calculus, particularly how to perform derivatives and integrals (and understand their meaning)"
-        		}
-        	],
-        	"schedule":{
+        	"schedule": {
         		"days": "Fully Online"
         	},
-        	"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9JU0VfNTAxMw"
-                }
-            ]
+        	"EnrollmentOptions": [
+        		{
+        			"Heading": "For Students",
+        			"SubText": "Best for students at OU",
+        			"CTAText": "Enroll on oZone",
+        			"CTAUrl": "https://ozone.ou.edu"
+        		},
+        		{
+        			"Heading": "Free Open Course",
+        			"SubText": "Free to anyone without requirements, tests, or credit",
+        			"CTAText": "Sign Up Now",
+        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9FSVBUXzU5NzA"
+        		}
+        	]
         },
         {
             "id": "CLC3403",
@@ -692,24 +731,69 @@
             ]
         },
         {
-        	"id": "EIPT5970",
-        	"name": "EIPT 5970",
-        	"title": "Grant Writing for Teachers",
-        	"instructor": "Theresa Cullen",
-        	"detailAnchor": "EIPT5970-detail",
-        	"kalturaVideo": "0_j2vx2rrj",
-        	"credit": { "hours": 1 },
-        	"startDate": "June 29, 2015",
-        	"startTag": "June 29",
-        	"duration": "7 Weeks",
-        	"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
-        	"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
+        	"id": "PHIL3263",
+        	"name": "PHIL 3263",
+        	"title": "Virtue Ethics",
+        	"instructor": "Linda Zagzebski",
+        	"detailAnchor": "PHIL3263-detail",
+        	"kalturaVideo": "0_cokgrcxz",
+        	"credit": {"hours": 3},
+        	"startDate": "August 24, 2015",
+        	"startTag": "August 24",
+        	"duration": "16 Weeks",
+        	"school": "Department of Philosophy",
+        	"description": "This course will begin with an overview of the history of virtue ethics from the ancient Greeks to the present day, covering the historical zenith of virtue ethics through the Middle Ages, the fall of virtue concepts in the early modern period, and the rebirth of virtue ethics in the later 20th century. We will discuss a number of executive, moral, intellectual, and civic virtues and their related vices, and will address some of the fundamental philosophical questions that arise in the study of virtue ethics: What is a virtue? How is virtue related to a life that is good for the individual and good for the community? Can virtue be taught? Can virtue be measured? Are we suspicious of virtue? What are the grounds for critique of some of the traditional virtues?",
         	"prerequisites": [],
         	"instructors": [
         		{
-        			"defaultphoto": "Cullen.png",
-        			"name": "Theresa Cullen",
-        			"title": "Associate Professor"
+        			"defaultphoto": "Zagzebski.png",
+        			"name": "Linda Zagzebski",
+        			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
+        		}
+        	],
+        	"schedule": {
+        		"days": "TR",
+        		"times": "3:00pm-4:15pm"
+        	},
+        	"EnrollmentOptions": [
+        		{
+        			"Heading": "For Students",
+        			"SubText": "Best for students at OU",
+        			"CTAText": "Enroll on oZone",
+        			"CTAUrl": "https://ozone.ou.edu"
+        		},
+        		{
+        			"Heading": "Free Open Course",
+        			"SubText": "Free to anyone without requirements, tests, or credit",
+        			"CTAText": "Sign Up Now",
+        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
+        		}
+        	]
+        },
+        {
+        	"id": "ECON2843-030",
+        	"name": "ECON 2843-030",
+        	"title": "Elementary Business Statistics",
+        	"instructor": "Dr. Alexander Holmes",
+        	"detailAnchor": "ECON2843-030-detail",
+        	"kalturaVideo": "0_knq8z59f",
+        	"credit": {"hours": 3},
+        	"startDate": "August 24, 2015",
+        	"startTag": "August 24",
+        	"duration": "16 Weeks",
+        	"school": "Department of Economics, University of Oklahoma",
+        	"description": "Elementary Business Statistics is the first level statistics class required for all Business and Economics majors and can be used to satisfy the statistics requirement in other departments if you are enrolled as a for-credit OU-student. It is designed as an introductory course to statistics theory and methodology. The foundation of statistical inference is first developed through coverage of descriptive statistics and then close coverage of probability theory and probability density functions: specifically the binomial, Poisson, geometric, and normal distributions. The leap from probability theory to actual inferential statistics by way of the Central Limit Theory is accomplished with the use of a gaming model in which students actively participate to solve a constrained goals a constrained goal that requires an understanding of the link between the Central Limit Theorem and the sample size. Confidence internals and Hypothesis testing follow with careful development of both the theory and philosophy of the hypothesis test. Specific hypotheses are covered including test for means, proportions, differences in mean and differences in proportions, and for variances. Finally correlations and regression are covered in detail. The foundation OLS model is developed and students will be able to propose and test various hypotheses concerning a causal relationship assumed to be linear. For credit Oklahoma University students will have the opportunity to interact with face2face teaching assistants once per week in regularly scheduled lab classes.",
+        	"prerequisites": [
+        		{
+        			"id": "",
+					"title": "Grade of C or better in Mathematics 1503 or 1743 or 1823"
+        		}
+        	],
+        	"instructors": [
+        		{
+        			"defaultphoto": "Holmes.png",
+        			"name": "Dr. Alexander Holmes",
+        			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
         		}
         	],
         	"schedule": {
@@ -726,7 +810,7 @@
         			"Heading": "Free Open Course",
         			"SubText": "Free to anyone without requirements, tests, or credit",
         			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9FSVBUXzU5NzA"
+        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfRUNPTl8yODQz"
         		}
         	]
         }
