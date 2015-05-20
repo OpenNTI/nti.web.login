@@ -731,46 +731,6 @@
             ]
         },
         {
-        	"id": "PHIL3263",
-        	"name": "PHIL 3263",
-        	"title": "Virtue Ethics",
-        	"instructor": "Linda Zagzebski",
-        	"detailAnchor": "PHIL3263-detail",
-        	"kalturaVideo": "0_cokgrcxz",
-        	"credit": {"hours": 3},
-        	"startDate": "August 24, 2015",
-        	"startTag": "August 24",
-        	"duration": "16 Weeks",
-        	"school": "Department of Philosophy",
-        	"description": "This course will begin with an overview of the history of virtue ethics from the ancient Greeks to the present day, covering the historical zenith of virtue ethics through the Middle Ages, the fall of virtue concepts in the early modern period, and the rebirth of virtue ethics in the later 20th century. We will discuss a number of executive, moral, intellectual, and civic virtues and their related vices, and will address some of the fundamental philosophical questions that arise in the study of virtue ethics: What is a virtue? How is virtue related to a life that is good for the individual and good for the community? Can virtue be taught? Can virtue be measured? Are we suspicious of virtue? What are the grounds for critique of some of the traditional virtues?",
-        	"prerequisites": [],
-        	"instructors": [
-        		{
-        			"defaultphoto": "Zagzebski.png",
-        			"name": "Linda Zagzebski",
-        			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
-        		}
-        	],
-        	"schedule": {
-        		"days": "TR",
-        		"times": "3:00pm-4:15pm"
-        	},
-        	"EnrollmentOptions": [
-        		{
-        			"Heading": "For Students",
-        			"SubText": "Best for students at OU",
-        			"CTAText": "Enroll on oZone",
-        			"CTAUrl": "https://ozone.ou.edu"
-        		},
-        		{
-        			"Heading": "Free Open Course",
-        			"SubText": "Free to anyone without requirements, tests, or credit",
-        			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
-        		}
-        	]
-        },
-        {
         	"id": "ECON2843-030",
         	"name": "ECON 2843-030",
         	"title": "Elementary Business Statistics",
@@ -811,6 +771,48 @@
         			"SubText": "Free to anyone without requirements, tests, or credit",
         			"CTAText": "Sign Up Now",
         			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfRUNPTl8yODQz"
+        		}
+        	]
+        }
+    ],
+    "notVisible": [
+    	{
+        	"id": "PHIL3263",
+        	"name": "PHIL 3263",
+        	"title": "Virtue Ethics",
+        	"instructor": "Linda Zagzebski",
+        	"detailAnchor": "PHIL3263-detail",
+        	"kalturaVideo": "0_cokgrcxz",
+        	"credit": {"hours": 3},
+        	"startDate": "August 24, 2015",
+        	"startTag": "August 24",
+        	"duration": "16 Weeks",
+        	"school": "Department of Philosophy",
+        	"description": "This course will begin with an overview of the history of virtue ethics from the ancient Greeks to the present day, covering the historical zenith of virtue ethics through the Middle Ages, the fall of virtue concepts in the early modern period, and the rebirth of virtue ethics in the later 20th century. We will discuss a number of executive, moral, intellectual, and civic virtues and their related vices, and will address some of the fundamental philosophical questions that arise in the study of virtue ethics: What is a virtue? How is virtue related to a life that is good for the individual and good for the community? Can virtue be taught? Can virtue be measured? Are we suspicious of virtue? What are the grounds for critique of some of the traditional virtues?",
+        	"prerequisites": [],
+        	"instructors": [
+        		{
+        			"defaultphoto": "Zagzebski.png",
+        			"name": "Linda Zagzebski",
+        			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
+        		}
+        	],
+        	"schedule": {
+        		"days": "TR",
+        		"times": "3:00pm-4:15pm"
+        	},
+        	"EnrollmentOptions": [
+        		{
+        			"Heading": "For Students",
+        			"SubText": "Best for students at OU",
+        			"CTAText": "Enroll on oZone",
+        			"CTAUrl": "https://ozone.ou.edu"
+        		},
+        		{
+        			"Heading": "Free Open Course",
+        			"SubText": "Free to anyone without requirements, tests, or credit",
+        			"CTAText": "Sign Up Now",
+        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
         		}
         	]
         }
