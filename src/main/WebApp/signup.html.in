@@ -202,8 +202,8 @@
 								</div>
 							</div>
 							<div class="field-container has-floats" role="presentation">
-								<input type="checkbox" name="interested_in_credit" id="interested_in_credit" aria-label="I might be interested in credit" tabindex="10"/>
-								<label for="interested_in_credit" aria-hidden="true">I might be interested in college credit.</label>
+								<input type="checkbox" name="interested_in_credit" id="interested_in_credit" aria-label="I might be interested in courses that offer college credit" tabindex="10"/>
+								<label for="interested_in_credit" aria-hidden="true">I might be interested in courses that offer college credit.</label>
 								<div class="interested_in_credit line">
 									<span class="blank"></span>
 									<span class="valid"></span>
