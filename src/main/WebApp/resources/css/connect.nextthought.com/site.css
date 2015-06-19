@@ -25,7 +25,17 @@ body.signin {
 		margin-left: 530px;
 }
 
+.signin .forgot a {
+  color: #4BBDFF;
+}
 
+a:link, .signin .forgot, a#about {
+  color: #FFFFFF;
+}
+
+.spotlight{
+	background: none;
+}
 
 #active-session-login.visible {
 	padding-bottom: 180px;
@@ -34,4 +44,3 @@ body.signin {
 body.signup .callout{
 		display: block;
 }
-
