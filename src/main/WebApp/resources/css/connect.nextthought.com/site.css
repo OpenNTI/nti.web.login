@@ -1,13 +1,15 @@
 .branding {
-		width: 860px;
-			padding-left: 530px;
-				border-radius: 5px;
-					background: url("connect_promo.jpg") -30px center no-repeat;
-						box-shadow: 0 2px 7px 0 rgba(0,0,0,0.35);
+	width: 860px;
+	padding-left: 530px;
+	border-radius: 5px;
+	background: url("connect_promo.jpg") -30px center no-repeat;
+	box-shadow: 0 2px 7px 0 rgba(0,0,0,0.35);
 }
 
 body.signin {
 	  background: #f4f4f4 url("connect_background.png");
+		background-repeat: no-repeat;
+		background-size: cover;
 }
 
 .signin .middle.main {
