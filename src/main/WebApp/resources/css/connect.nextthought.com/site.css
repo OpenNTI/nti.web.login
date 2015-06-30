@@ -44,5 +44,5 @@ a:link, .signin .forgot, a#about {
 }
 
 body.signup .callout{
-		display: block;
+		display: none;
 }
