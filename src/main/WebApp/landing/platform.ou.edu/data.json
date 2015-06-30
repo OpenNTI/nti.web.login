@@ -777,6 +777,23 @@
         			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
         		}
         	]
+        },
+        {
+        	"id": "EDMA4970",
+        	"name": "EDMA 4970",
+        	"title": "Competition Mathematics for Middle School",
+        	"instructor": "Stacy Reeder",
+        	"kalturaVideo": "",
+        	"url": "https://mathcounts.ou.edu",
+        	"credit": {"hours": 1},
+        	"startDate": "October 5, 2015",
+        	"startTag": "October 5",
+        	"duration": "16 Weeks",
+        	"school": "Jeannine Rainbolt College of Education",
+        	"description": "For those who are new to competition math or those who are looking to take their current math teams to the next level, Competition Math for Middle School will give you the tools you need to become a more effective math team coach.  This course provides content developed by the Art of Problem Solving on how to prepare students for the most common types of questions seen on middle school math competitions, as well as insights and strategies from experienced MATHCOUNTS coaches on how to build successful math team programs. Best of all, course participants will engage with their classmates to build a peer network of fellow math coaches and help each other achieve long-term success.",
+        	"prerequisites": [],
+        	"instructors": [],
+        	"schedule": {}
         }
     ],
     "notVisible": [
