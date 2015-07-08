@@ -66,7 +66,7 @@
 
             <div id="logo"><img src="resources/images/logoWithNoText.png"/></div>
             <div class="unsupported_message">It looks like you&#39;re using a browser that we don&#39;t support.</div>
-            <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari 5.1+</a>, <a
+            <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari 6.0</a>, <a
 href="http://www.getfirefox.com">Firefox 24+</a>, or <a href="http://www.microsoft.com/ie">Internet Explorer 10+</a><br/>with JavaScript <strong><u>enabled</u></strong>.
             </div>
 
@@ -75,7 +75,7 @@ href="http://www.getfirefox.com">Firefox 24+</a>, or <a href="http://www.microso
 	<script type="text/javascript">
 
 	var c = document.getElementById("content");
-	c.innerHTML += '<div class="mobile">You can try your luck on our <a href="/mobile/">mobile site</a></div>';
+	c.innerHTML += '<div class="mobile">Try our <a href="/mobile/">mobile site</a></div>';
 
 	if(document.referrer && history.replaceState){
 		history.replaceState({},null,document.referrer);
