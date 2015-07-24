@@ -11,7 +11,8 @@
 		allowRel = {
 			//white list
 			"logon.openid": true,
-            "logon.linkedin.oauth1": true
+            "logon.linkedin.oauth1": true,
+            "logon.google": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
@@ -292,7 +293,8 @@
 
 
 	function addButton(rel, optionalSelector){
-		var title;
+		var title,
+			button;
 		if( typeof rel === "object" ){
 			title = rel.title;
 			rel = rel.rel;
@@ -300,12 +302,18 @@
 			title = rel;
 		}
 
+		 //do not allow duplicates.
 	    if ($('button[name="' + rel + '"]').length > 0) {
 	      return;
 	    }
-	    //do not allow duplicates.
 
-		return $('<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>')
+	    if (title) {
+	    	button = '<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>';
+	    } else {
+	    	button = '<button type="button" name="'+rel+'" class="'+rel.replace(/\./g,' ')+'"></button>';
+	    }
+
+		return $(button)
 			.appendTo(optionalSelector || '#oauth-login');
 	}
 

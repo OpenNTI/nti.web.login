@@ -1210,6 +1210,7 @@ button.logon {
 	box-shadow: none;
 	color: #ffffff;
 	text-shadow: none;
+	cursor: pointer;
 }
 /*button.logon:hover { background-position: 0 -30px; }*/
 /*button.logon:active { background-position: 0 -60px; }*/
