@@ -499,50 +499,6 @@
             ]
         },
         {
-        	"id": "BIOL2124",
-        	"name": "BIOL 2124",
-        	"detailAnchor": "BIOL2124-detail",
-        	"school": "Department of Biology, University of Oklahoma",
-        	"kalturaVideo": "0_gpczmps5",
-        	"title": "Human Physiology",
-        	"credit": { "hours": 4 },
-        	"startDate": "June 29, 2015",
-        	"duration": "7 Weeks",
-        	"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
-        	"instructor": "Heather R. Ketchum, Ph.D.",
-        	"instructors": [
-        		{
-        			"defaultphoto": "Ketchum.png",
-        			"name": "Heather R. Ketchum, Ph.D.",
-        			"title": "Associate Professor, Biology"
-        		}
-        	],
-        	"prerequisites": [
-        		{
-	        		"id": "",
-					"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
-        		}
-        	],
-        	"schedule": {
-        		"days": "MTWRF",
-        		"times": "10:30am - 12:05pm"
-        	},
-        	"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9CSU9MXzIxMjQ"
-                }
-            ]
-        },
-        {
         	"id": "EIPT5970",
         	"name": "EIPT 5970",
         	"title": "Grant Writing for Teachers",
