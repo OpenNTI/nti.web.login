@@ -507,8 +507,8 @@
 			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
 
-		firstname.blur(pf).keyup(timer);
-		lastname.blur(pf).keyup(timer);
+		firstname.blur(pf).change(pf).keyup(timer);
+		lastname.blur(pf).change(pf).keyup(timer);
 	}
 
 
@@ -530,8 +530,12 @@
 			clearTimeout(pftimer);
 			pftimer = setTimeout(pf, defaultKeyupTimerInterval);
 		}
+		if(field == 'email'){
+			m.blur(pf).change(pf).keyup(timer);
+		}else{
+			m.blur(pf).keyup(timer);
+		}
 
-		m.blur(pf).keyup(timer);
 	}
 
 
