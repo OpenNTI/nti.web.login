@@ -1,7 +1,6 @@
 {
-    "archivedCoursesLabel": "Archived Courses",
-	"archivedCourses": [
-	{
+	"archivedCoursesLabel": "Archived Courses",
+	"archivedCourses": [{
 			"credit": {
 				"hours": 1
 			},
@@ -10,58 +9,50 @@
 			"duration": "16 Weeks",
 			"id": "ANTH4970-Spring2015",
 			"instructor": "Cecil Lewis",
-			"instructors": [
-				{
-					"defaultphoto": "Lewis.png",
-					"name": "Cecil Lewis, Ph.D.",
-					"title": "Associate Professor of Anthropology"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Lewis.png",
+				"name": "Cecil Lewis, Ph.D.",
+				"title": "Associate Professor of Anthropology"
+			}],
 			"kalturaVideo": "0_tnfknlac",
 			"name": "ANTH 4970-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Senior standing or instructor permission"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "Senior standing or instructor permission"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "Department of Anthropology at the University of Oklahoma",
 			"startDate": "January 12, 2015",
 			"title": "Practical Importance of Human Evolution"
-		},
-		{
-            "credit": { "hours": 1 },
-            "description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
-            "detailAnchor": "CHEM4970-detail",
-            "duration": "8 Weeks",
-            "id": "CHEM4970-100",
-            "instructor": "Mark Morvant",
-            "instructors": [
-                {
-                    "defaultphoto": "Morvant.png",
-                    "name": "Mark Morvant, Ph.D.",
-                    "title": "Professor, Department of Chemistry and Biochemistry"
-                }
-            ],
-            "kalturaVideo": "0_bxfatwxs",
-            "name": "CHEM 4970-100",
-            "prerequisites": [
-                {
-                    "id": "",
-                    "title": "Senior standing or instructor permission"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            },
-            "school": "Chemistry and Biochemistry",
-            "startDate": "August 18, 2014",
-            "title": "Chemistry of Beer"
-        },
-        {
+		}, {
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course covers the process of brewing from grain to final bottle product and the chemical and biochemical process involved in each step. Students will be required to utilize previous knowledge in General and Organic chemistry to understand: analytical techniques in brewing, chemistry of the ingredients and products, and the molecules involved in the biochemical processes. During the course, students will also learn the similarities and differences between beer styles, home and commercial brewing processes, and analytical techniques.  There is a great deal of Biochemistry and Organic Chemistry involved in the malting, mashing and fermentation process and understanding the chemistry behind the flavor, aroma, and color of beer.  Students should have a basic knowledge of general and organic chemistry.",
+			"detailAnchor": "CHEM4970-detail",
+			"duration": "8 Weeks",
+			"id": "CHEM4970-100",
+			"instructor": "Mark Morvant",
+			"instructors": [{
+				"defaultphoto": "Morvant.png",
+				"name": "Mark Morvant, Ph.D.",
+				"title": "Professor, Department of Chemistry and Biochemistry"
+			}],
+			"kalturaVideo": "0_bxfatwxs",
+			"name": "CHEM 4970-100",
+			"prerequisites": [{
+				"id": "",
+				"title": "Senior standing or instructor permission"
+			}],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Chemistry and Biochemistry",
+			"startDate": "August 18, 2014",
+			"title": "Chemistry of Beer"
+		}, {
 			"credit": {
 				"hours": 1
 			},
@@ -70,29 +61,24 @@
 			"duration": "16 Weeks",
 			"id": "COMM4970",
 			"instructor": "Norah Dunbar",
-			"instructors": [
-				{
-					"defaultphoto": "Dunbar.png",
-					"name": "Norah Dunbar, Ph.D.",
-					"title": "Associate Professor, Department of Communication"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Dunbar.png",
+				"name": "Norah Dunbar, Ph.D.",
+				"title": "Associate Professor, Department of Communication"
+			}],
 			"kalturaVideo": "0_9f8ist32",
 			"name": "COMM 4970-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Senior standing or instructor permission"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "Senior standing or instructor permission"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "Communication",
 			"startDate": "January 13, 2014",
 			"title": "Understanding and Detecting Deception"
-		},
-	{
+		}, {
 			"credit": {
 				"hours": 3
 			},
@@ -101,66 +87,56 @@
 			"duration": "16 Weeks",
 			"id": "CS1303-Spring2015",
 			"instructor": "Amy McGovern",
-			"instructors": [
-				{
-					"defaultphoto": "McGovern.png",
-					"name": "Amy McGovern, Ph.D.",
-					"title": "Associate Professor, School of Computer Science"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "McGovern.png",
+				"name": "Amy McGovern, Ph.D.",
+				"title": "Associate Professor, School of Computer Science"
+			}],
 			"kalturaVideo": "0_m5kjoas1",
 			"name": "CS 1303-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "There are no prerequisites for this course."
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "There are no prerequisites for this course."
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "School of Computer Science at the University of Oklahoma",
 			"startDate": "January 12, 2015",
 			"title": "Power and Elegance of Computational Thinking"
-		},
-		{
-            "credit": { "hours": 3 },
-            "description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
-            "detailAnchor": "CS1323-detail",
-            "duration": "16 Weeks",
-            "id": "CS1323",
-            "instructor": "Deborah Trytten",
-            "instructors": [
-                {
-                    "defaultphoto": "Trytten.png",
-                    "name": "Deborah Trytten, Ph.D.",
-                    "title": "Associate Professor, School of Computer Science"
-                }
-            ],
-            "kalturaVideo": "0_aqksto2u",
-            "name": "CS 1323",
-            "prerequisites": [
-                {
-                    "id": "",
-                    "title": "No prior programming experience is assumed."
-                },
-                {
-                    "id": "",
-                    "title": "MATH 1523 or concurrent enrollment,"
-                },
-                {
-                    "id": "",
-                    "title": "or placement into MATH 1743 or MATH 1823 or higher"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            },
-            "school": "Computer Science",
-            "startDate": "August 18, 2014",
-            "title": "Introduction to Computer Programming"
-        },
-				{
+		}, {
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course is designed as an introduction to computer programming using Java. Students will learn how to a) analyze a problem, and identify and define the computing requirements appropriate to its solution b) design, implement, and evaluate a computer-based system, process, component, or program to meet desired needs, and c) apply design and development principles in the construction of software systems of varying complexity. Topics include Computers, programs, Java, input and output, identifiers, variables, assignment statements, constants, memory diagrams, primitive data types, conditional statements, repetition, methods, parameters, arguments, return values, one dimensional arrays, objects, classes, and classes from the Java Application Programmers Interface (API).",
+			"detailAnchor": "CS1323-detail",
+			"duration": "16 Weeks",
+			"id": "CS1323",
+			"instructor": "Deborah Trytten",
+			"instructors": [{
+				"defaultphoto": "Trytten.png",
+				"name": "Deborah Trytten, Ph.D.",
+				"title": "Associate Professor, School of Computer Science"
+			}],
+			"kalturaVideo": "0_aqksto2u",
+			"name": "CS 1323",
+			"prerequisites": [{
+				"id": "",
+				"title": "No prior programming experience is assumed."
+			}, {
+				"id": "",
+				"title": "MATH 1523 or concurrent enrollment,"
+			}, {
+				"id": "",
+				"title": "or placement into MATH 1743 or MATH 1823 or higher"
+			}],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Computer Science",
+			"startDate": "August 18, 2014",
+			"title": "Introduction to Computer Programming"
+		}, {
 			"credit": {
 				"hours": 3
 			},
@@ -169,29 +145,24 @@
 			"duration": "16 Weeks",
 			"id": "EDAH5023",
 			"instructor": "Stephanie Blackmon",
-			"instructors": [
-				{
-					"defaultphoto": "Blackmon.png",
-					"name": "Stephanie Blackmon, Ph.D.",
-					"title": "Assistant Professor, Department of Educational Leadership and Policy Studies"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Blackmon.png",
+				"name": "Stephanie Blackmon, Ph.D.",
+				"title": "Assistant Professor, Department of Educational Leadership and Policy Studies"
+			}],
 			"kalturaVideo": "0_3usiqhgr",
 			"name": "EDAH 5023-902",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Graduate Standing"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "Graduate Standing"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "Educational Leadership and Policy Studies",
 			"startDate": "January 13, 2014",
 			"title": "Administration of Adult and Higher Education"
-		},
-	   {
+		}, {
 			"credit": {
 				"hours": 1
 			},
@@ -200,18 +171,15 @@
 			"duration": "16 Weeks",
 			"id": "ENGR1510-Spring2015",
 			"instructor": "David Sabatini & Jim Chamberlain",
-			"instructors": [
-				{
-					"defaultphoto": "Sabatini.png",
-					"name": "David Sabatini, Ph.D.",
-					"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
-				},
-				{
-					"defaultphoto": "Chamberlain.png",
-					"name": "Jim Chamberlain, Ph.D.",
-					"title": "OU WaTER Center Staff Researcher"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Sabatini.png",
+				"name": "David Sabatini, Ph.D.",
+				"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
+			}, {
+				"defaultphoto": "Chamberlain.png",
+				"name": "Jim Chamberlain, Ph.D.",
+				"title": "OU WaTER Center Staff Researcher"
+			}],
 			"kalturaVideo": "0_6d00mec6",
 			"name": "ENGR 1510-901",
 			"prerequisites": [],
@@ -221,8 +189,7 @@
 			"school": "School of Civil Engineering and Environmental Sceince at the University of Oklahoma",
 			"startDate": "January 12, 2015",
 			"title": "Introduction to Water"
-		},
-		{
+		}, {
 			"credit": {
 				"hours": 4
 			},
@@ -231,29 +198,24 @@
 			"duration": "16 Weeks",
 			"id": "GEOL1114",
 			"instructor": "R. Douglas Elmore",
-			"instructors": [
-				{
-					"defaultphoto": "Elmore.png",
-					"name": "R. Douglas Elmore, Ph.D.",
-					"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Elmore.png",
+				"name": "R. Douglas Elmore, Ph.D.",
+				"title": "Director and Eberly Professor, ConocoPhillips School of Geology and Geophysics, and Associate Provost"
+			}],
 			"kalturaVideo": "0_jmp4h8fw",
 			"name": "GEOL 1114-050",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "equivalent knowledge of high school chemistry, algebra and trigonometry"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "equivalent knowledge of high school chemistry, algebra and trigonometry"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "ConocoPhillips School of Geology and Geophysics",
 			"startDate": "January 13, 2014",
 			"title": "Physical Geology for Science and Engineering Majors"
-		},
-		{
+		}, {
 			"credit": {
 				"hours": 1
 			},
@@ -262,29 +224,24 @@
 			"duration": "16 Weeks",
 			"id": "GEOG3890-Spring2015",
 			"instructor": "Bob Puls",
-			"instructors": [
-				{
-					"defaultphoto": "Puls.png",
-					"name": "Bob Puls, Ph.D.",
-					"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Puls.png",
+				"name": "Bob Puls, Ph.D.",
+				"title": "Associate Professor, College of Atmospheric and Geographic Sciences and Director of the Oklahoma Water Survey"
+			}],
 			"kalturaVideo": "0_i3etssfy",
 			"name": "GEOG 3890-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "Junior standing or instructor permission"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "Junior standing or instructor permission"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
 			"school": "Department of Geography and Environmental Sustainability at the University of Oklahoma",
 			"startDate": "January 12, 2015",
 			"title": "Hydraulic Fracturing and Water Resources"
-		},
-		{
+		}, {
 			"credit": {
 				"hours": 3
 			},
@@ -293,21 +250,17 @@
 			"duration": "16 Weeks",
 			"id": "HSCI3013",
 			"instructor": "Kerry Magruder",
-			"instructors": [
-				{
-					"defaultphoto": "Magruder.png",
-					"name": "Kerry Magruder, Ph.D.",
-					"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections "
-				}
-			],
+			"instructors": [{
+				"defaultphoto": "Magruder.png",
+				"name": "Kerry Magruder, Ph.D.",
+				"title": "Associate Professor, Department of the History of Science and Curator and John H. and Drusa B. Cable Chair of the History of Science Collections "
+			}],
 			"kalturaVideo": "0_75znedfu",
 			"name": "HSCI 3013-995",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "junior standing, or completion of one History of Science lower-division course, or permission of instructor"
-				}
-			],
+			"prerequisites": [{
+				"id": "",
+				"title": "junior standing, or completion of one History of Science lower-division course, or permission of instructor"
+			}],
 			"schedule": {
 				"days": "Archived"
 			},
@@ -315,517 +268,423 @@
 			"startDate": "January 13, 2014",
 			"title": "History of Science to the Age of Newton",
 			"video": "kaltura://1500101/0_75znedfu/"
-		},
-		
-		{
-            "id": "IAS2003",
-            "instructor": "Suzette Grillot",
-            "name": "IAS 2003-010",
-            "title": "Understanding the Global Community",
-            "detailAnchor": "IAS2003-detail",
-            "kalturaVideo": "0_va21i9cw",
-            "credit": { "hours": 3 },
-            "startDate": "August 18, 2014",
-            "duration": "16 Weeks",
-            "school": "Department of International and Area Studies at the University of Oklahoma",
-            "description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
-            "prerequisites": [],
-            "instructors": [
-                {
-                    "defaultphoto":"Grillot.png",
-                    "name":"Suzette Grillot, Ph.D.",
-                    "title": "Dean, College of International Studies"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            }
-        },
-        {
-            "id": "PHIL1203",
-            "instructor": "Neal Judisch",
-            "name": "PHIL 1203-001",
-            "title": "Philosophy and Human Destiny",
-            "detailAnchor": "PHIL1203-detail",
-            "kalturaVideo": "0_ldltmibn",
-            "credit": { "hours": 3 },
-            "startDate": "August 18, 2014",
-            "duration": "16 Weeks",
-            "school": "Department of Philosophy at the University of Oklahoma",
-            "description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
-            "prerequisites": [],
-            "instructors": [
-                {
-                    "defaultphoto":"Judisch.png",
-                    "name": "Neal Judisch, Ph.D.",
-                    "title": "Assistant Professor, Philosophy"
-                }
-            ],
-            "schedule": {
-                "days": "Archived"
-            }
-        },
-        {
-            "credit": {
-                "hours": 3
-            },
-            "description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthropology, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
-            "detailAnchor": "SOC1113-Spring2015-detail",
-            "duration": "16 Weeks",
-            "id": "SOC1113-Spring2015",
-            "instructor": "Kelly Damphousse",
-            "instructors": [
-                {
-                    "defaultphoto": "Damphousse.png",
-                    "name": "Kelly Damphousse, Ph.D.",
-                    "title": "Dean, College of Arts and Sciences"
-                }
-            ],
-            "kalturaVideo": "0_4ol5o04l",
-            "name": "SOC 1113-001",
-            "prerequisites": [],
-            "schedule": {
-				"days": "Archived"
-			},
-            "school": "Department of Sociology at the University of Oklahoma",
-            "startDate": "January 12, 2015",
-            "title": "Introduction to Sociology"
-        },
-         {
-            "id": "UCOL1002",
-            "name": "UCOL 1002",
-            "detailAnchor": "UCOL1002-detail",
-            "school": "University College/Freshman Programs at the University of Oklahoma",
-            "kalturaVideo": "0_j8mgxw4a",
-            "title": "Gateway to College Learning",
-            "credit": { "hours":2 },
-            "startDate": "January 12, 2015",
-            "duration": "16 Weeks",
-            "description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
-            "prerequisites": [],
-            "instructor": "Lillian Miller",
-            "schedule": { "days": "Varies" },
-            "instructors": [
-                {
-                    "defaultphoto":"Miller.png",
-                    "name":"Lillian Miller, M.Ed",
-                    "title": "Director of Freshman Programs, University of Oklahoma"
-                }
-            ]
-        }
-	],
-
-    "currentCoursesLabel": "Current - Summer 2015",
-	"currentCourses": [
-	{
-        	"id": "ISE5013",
-        	"name": "ISE 5013",
-        	"detailAnchor": "ISE50130-detail",
-        	"school": "School of Industrial and Systems Engineering",
-        	"kalturaVideo": "0_ezhh2gi2",
-        	"title": "Fundamentals of Engineering Statistical Analysis",
-        	"credit": { "hours": 3},
-        	"startDate": "June 8, 2015",
-        	"duration": "8 Weeks",
-        	"description": "This course provides fundamental concepts in probability and statistical inference, with application to engineering contexts. Probability topics include counting methods, discrete and continuous random variables, and their associated distributions. Statistical inference topics include sampling distributions, point estimation, confidence intervals and hypothesis testing for single- and two-sample experiments, nonparametric statistics, and goodness-of-fit testing. Excel will be used to demonstrate how to solve some class examples, and you'll be expected to use Excel to solve some homework problems. The statistical software package R will be introduced to address very basic statistics problems. Course prerequisites include calculus (differentiation and integration).",
-        	"instructor": "Kash Barker",
-        	"instructors": [
-        		{
-        			"defaultphoto": "Barker.png",
-        			"name": "Kash Barker",
-        			"title": "Assistant Professor"
-        		}
-        	],
-        	"prerequisites": [
-        		{
-        			"id": "",
-					"title": "Knowledge of calculus, particularly how to perform derivatives and integrals (and understand their meaning)"
-        		}
-        	],
-        	"schedule":{
-        		"days": "Fully Online"
-        	},
-        	"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9JU0VfNTAxMw"
-                }
-            ]
-        },
-	{
-            "id": "MGT2013",
-        	"name": "MGT 2013-995",
-            "detailAnchor": "MGT2013-detail",
-        	"school": "Price College of Business (Division of Management and Entrepreneurship)",
-        	"kalturaVideo": "0_gckztn5o",
-        	"title": "Introduction to Management",
-        	"credit": { "hours":3 },
-        	"startDate": "June 8, 2015",
-        	"duration": "4 Weeks",
-        	"description": "Introduction to Management is a course that provides knowledge of interest to individuals of all ages and backgrounds who wish to learn more about managing careers, individuals, organizational situations, decisions, and relationships. The course features a graphic novel that chronicles the tales of Atlas Black as he works to fund his college expenses, start a new business, and act as a fledgling entrepreneur, along the way illustrating key concepts from principles of management. Recent studies conducted at OU find graphic novels are associated with superior student recall compared to traditional textbooks alone. The content of the course will use innovative delivery material including online lectures, a traditional textbook, and a graphic novel textbook, as well as a specific emphasis on businesses in the state of Oklahoma.",
-            "instructor": "Jeremy Short",
-        	"instructors": [
-        		{
-        			"defaultphoto":"Short.png",
-        			"name":"Jeremy Short",
-        			"title": "Rath Chair of Strategic Management at the Price College of Business"
-        		}
-        	],
-            "prerequisites": [],
-			"schedule": {
-				"days": "Fully Online"
-			},
-        	"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9NR1RfMjAxMw"
-                }
-            ]
-        },
-        {
-        	"id": "EIPT5970",
-        	"name": "EIPT 5970",
-        	"title": "Grant Writing for Teachers",
-        	"instructor": "Theresa Cullen",
-        	"detailAnchor": "EIPT5970-detail",
-        	"kalturaVideo": "0_j2vx2rrj",
-        	"credit": { "hours": 1 },
-        	"startDate": "June 29, 2015",
-        	"duration": "7 Weeks",
-        	"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
-        	"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
-        	"prerequisites": [],
-        	"instructors": [
-        		{
-        			"defaultphoto": "Cullen.png",
-        			"name": "Theresa Cullen",
-        			"title": "Associate Professor"
-        		}
-        	],
-        	"schedule": {
-        		"days": "Fully Online"
-        	},
-        	"EnrollmentOptions": [
-        		{
-        			"Heading": "For Students",
-        			"SubText": "Best for students at OU",
-        			"CTAText": "Enroll on oZone",
-        			"CTAUrl": "https://ozone.ou.edu"
-        		},
-        		{
-        			"Heading": "Free Open Course",
-        			"SubText": "Free to anyone without requirements, tests, or credit",
-        			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3VtbWVyMjAxNV9FSVBUXzU5NzA"
-        		}
-        	]
-        }
-    ],
-
-	"upcomingCoursesLabel": "Upcoming",
-    "upcomingCourses": [
-    		{
+		}, {
+			"id": "IAS2003",
+			"instructor": "Suzette Grillot",
+			"name": "IAS 2003-010",
+			"title": "Understanding the Global Community",
+			"detailAnchor": "IAS2003-detail",
+			"kalturaVideo": "0_va21i9cw",
 			"credit": {
 				"hours": 3
 			},
-			"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
-			"detailAnchor": "ANTH1613-detail",
+			"startDate": "August 18, 2014",
 			"duration": "16 Weeks",
-			"id": "ANTH1613",
-			"instructor": "Dan Swan & Joshua Nelson",
-			"instructors": [
-				{
-					"defaultphoto": "Swan.png",
-					"name": "Dan Swan, Ph.D.",
-					"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
-				},
-				{
-					"defaultphoto": "Nelson.png",
-					"name": "Joshua Nelson, Ph.D.",
-					"title": "Assistant Professor of English"
-				}
-			],
-			"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQU5USF8xNjEz"
-                }
-            ],
-			"kalturaVideo": "0_2ri5g355",
-			"name": "ANTH 1613-001",
+			"school": "Department of International and Area Studies at the University of Oklahoma",
+			"description": "The common acceptance of globalization in today's world demonstrates the importance of understanding what happens in the global community. This course, therefore, introduces students to key concepts and principles relevant in international studies. We will explore and analyze global actors, trends, issues, challenges and concerns, as well as their interactions and the resulting implications. Moreover, we will examine and debate various critical international issues and explore a range of theoretical approaches that help us understand relations within and among the global community.",
+			"prerequisites": [],
+			"instructors": [{
+				"defaultphoto": "Grillot.png",
+				"name": "Suzette Grillot, Ph.D.",
+				"title": "Dean, College of International Studies"
+			}],
+			"schedule": {
+				"days": "Archived"
+			}
+		}, {
+			"id": "PHIL1203",
+			"instructor": "Neal Judisch",
+			"name": "PHIL 1203-001",
+			"title": "Philosophy and Human Destiny",
+			"detailAnchor": "PHIL1203-detail",
+			"kalturaVideo": "0_ldltmibn",
+			"credit": {
+				"hours": 3
+			},
+			"startDate": "August 18, 2014",
+			"duration": "16 Weeks",
+			"school": "Department of Philosophy at the University of Oklahoma",
+			"description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
+			"prerequisites": [],
+			"instructors": [{
+				"defaultphoto": "Judisch.png",
+				"name": "Neal Judisch, Ph.D.",
+				"title": "Assistant Professor, Philosophy"
+			}],
+			"schedule": {
+				"days": "Archived"
+			}
+		}, {
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthropology, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
+			"detailAnchor": "SOC1113-Spring2015-detail",
+			"duration": "16 Weeks",
+			"id": "SOC1113-Spring2015",
+			"instructor": "Kelly Damphousse",
+			"instructors": [{
+				"defaultphoto": "Damphousse.png",
+				"name": "Kelly Damphousse, Ph.D.",
+				"title": "Dean, College of Arts and Sciences"
+			}],
+			"kalturaVideo": "0_4ol5o04l",
+			"name": "SOC 1113-001",
 			"prerequisites": [],
 			"schedule": {
-        		"days": "MW",
-        		"times": "10:00am - 11:15pm"
-        	},
-			"school": "Department of Anthropology",
-			"startDate": "August 24, 2015",
-			"startTag": "August 24",
-			"title": "Native Peoples of Oklahoma",
-			"video": "kaltura://1500101/0_2ri5g355/"
-		},
-		{
-        	"id": "BIOL2124",
-        	"name": "BIOL 2124",
-        	"detailAnchor": "BIOL2124-detail",
-        	"school": "Department of Biology, University of Oklahoma",
-        	"kalturaVideo": "0_gpczmps5",
-        	"title": "Human Physiology",
-        	"credit": { "hours": 4 },
-        	"startDate": "August 24, 2015",
-        	"startTag": "August 24",
-        	"duration": "16 Weeks",
-        	"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
-        	"instructor": "Heather R. Ketchum, Ph.D.",
-        	"instructors": [
-        		{
-        			"defaultphoto": "Ketchum.png",
-        			"name": "Heather R. Ketchum, Ph.D.",
-        			"title": "Associate Professor, Biology"
-        		}
-        	],
-        	"prerequisites": [
-        		{
-	        		"id": "",
-					"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
-        		}
-        	],
-        	"schedule": {
-        		"days": "MWF",
-        		"times": "11:30am - 12:20pm"
-        	},
-        	"EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQklPTF8yMTI0"
-                }
-            ]
-        },
-        {
-            "id": "CLC3403",
-            "name": "CLC 3403-001",
-            "title": "Law and Justice",
-            "instructor": "Kyle Harper",
-            "detailAnchor": "CLC3403-detail",
-            "kalturaVideo": "0_wanue4j9",
-            "credit": { "hours": 3 },
-            "startDate": "August 24, 2015",
-            "startTag": "August 24",
-            "duration": "16 Weeks",
-            "school": "Department of Classics and Letters at the University of Oklahoma",
-            "description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
-            "prerequisites": [{
-                "id": "",
-                "title": "Junior standing or instructor permission"
-            }],
-            "instructors": [
-                {
-                    "defaultphoto":"Harper.png",
-                    "name":"Kyle Harper, Ph.D.",
-                    "title": "Professor, Classics and Letters"
-                }
-            ],
-            "schedule": {
-                "days": "MW",
-                "times": "1:30pm-2:45pm"
-            },
-            "EnrollmentOptions" : [
-                {
-                    "Heading": "For Students",
-                    "SubText": "Best for students at OU",
-                    "CTAText": "Enroll on oZone",
-                    "CTAUrl": "https://ozone.ou.edu"
-                },
-                {
-                    "Heading": "Free Open Course",
-                    "SubText": "Free to anyone without requirements, tests, or credit",
-                    "CTAText": "Sign Up Now",
-                    "CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQ0xDXzM0MDM"
-                }
-            ]
-        },
-        {
-        	"id": "ECON2843-030",
-        	"name": "ECON 2843-030",
-        	"title": "Elementary Business Statistics",
-        	"instructor": "Dr. Alexander Holmes",
-        	"detailAnchor": "ECON2843-030-detail",
-        	"kalturaVideo": "0_knq8z59f",
-        	"credit": {"hours": 3},
-        	"startDate": "August 24, 2015",
-        	"startTag": "August 24",
-        	"duration": "16 Weeks",
-        	"school": "Department of Economics, University of Oklahoma",
-        	"description": "Elementary Business Statistics is the first level statistics class required for all Business and Economics majors and can be used to satisfy the statistics requirement in other departments if you are enrolled as a for-credit OU-student. It is designed as an introductory course to statistics theory and methodology. The foundation of statistical inference is first developed through coverage of descriptive statistics and then close coverage of probability theory and probability density functions: specifically the binomial, Poisson, geometric, and normal distributions. The leap from probability theory to actual inferential statistics by way of the Central Limit Theory is accomplished with the use of a gaming model in which students actively participate to solve a constrained goals a constrained goal that requires an understanding of the link between the Central Limit Theorem and the sample size. Confidence internals and Hypothesis testing follow with careful development of both the theory and philosophy of the hypothesis test. Specific hypotheses are covered including test for means, proportions, differences in mean and differences in proportions, and for variances. Finally correlations and regression are covered in detail. The foundation OLS model is developed and students will be able to propose and test various hypotheses concerning a causal relationship assumed to be linear. For credit Oklahoma University students will have the opportunity to interact with face2face teaching assistants once per week in regularly scheduled lab classes.",
-        	"prerequisites": [
-        		{
-        			"id": "",
-					"title": "Grade of C or better in Mathematics 1503 or 1743 or 1823"
-        		}
-        	],
-        	"instructors": [
-        		{
-        			"defaultphoto": "Holmes.png",
-        			"name": "Dr. Alexander Holmes",
-        			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
-        		}
-        	],
-        	"schedule": {
-        		"days": "Fully Online"
-        	},
-        	"EnrollmentOptions": [
-        		{
-        			"Heading": "For Students",
-        			"SubText": "Best for students at OU",
-        			"CTAText": "Enroll on oZone",
-        			"CTAUrl": "https://ozone.ou.edu"
-        		},
-        		{
-        			"Heading": "Free Open Course",
-        			"SubText": "Free to anyone without requirements, tests, or credit",
-        			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfRUNPTl8yODQz"
-        		}
-        	]
-        },
-        {
-        	"id": "PHIL3263",
-        	"name": "PHIL 3263",
-        	"title": "Virtue Ethics",
-        	"instructor": "Linda Zagzebski",
-        	"detailAnchor": "PHIL3263-detail",
-        	"kalturaVideo": "0_cokgrcxz",
-        	"credit": {"hours": 3},
-        	"startDate": "August 24, 2015",
-        	"startTag": "August 24",
-        	"duration": "16 Weeks",
-        	"school": "Department of Philosophy",
-        	"description": "This course will begin with an overview of the history of virtue ethics from the ancient Greeks to the present day, covering the historical zenith of virtue ethics through the Middle Ages, the fall of virtue concepts in the early modern period, and the rebirth of virtue ethics in the later 20th century. We will discuss a number of executive, moral, intellectual, and civic virtues and their related vices, and will address some of the fundamental philosophical questions that arise in the study of virtue ethics: What is a virtue? How is virtue related to a life that is good for the individual and good for the community? Can virtue be taught? Can virtue be measured? Are we suspicious of virtue? What are the grounds for critique of some of the traditional virtues?",
-        	"prerequisites": [],
-        	"instructors": [
-        		{
-        			"defaultphoto": "Zagzebski.png",
-        			"name": "Linda Zagzebski",
-        			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
-        		}
-        	],
-        	"schedule": {
-        		"days": "TR",
-        		"times": "12:00pm-1:15pm"
-        	},
-        	"EnrollmentOptions": [
-        		{
-        			"Heading": "For Students",
-        			"SubText": "Best for students at OU",
-        			"CTAText": "Enroll on oZone",
-        			"CTAUrl": "https://ozone.ou.edu"
-        		},
-        		{
-        			"Heading": "Free Open Course",
-        			"SubText": "Free to anyone without requirements, tests, or credit",
-        			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
-        		}
-        	]
-        },
-        {
-			"credit": {
-				"hours": 3
+				"days": "Archived"
 			},
-			"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
-			"detailAnchor": "PSC4283-detail",
+			"school": "Department of Sociology at the University of Oklahoma",
+			"startDate": "January 12, 2015",
+			"title": "Introduction to Sociology"
+		}, {
+			"id": "UCOL1002",
+			"name": "UCOL 1002",
+			"detailAnchor": "UCOL1002-detail",
+			"school": "University College/Freshman Programs at the University of Oklahoma",
+			"kalturaVideo": "0_j8mgxw4a",
+			"title": "Gateway to College Learning",
+			"credit": {
+				"hours": 2
+			},
+			"startDate": "January 12, 2015",
 			"duration": "16 Weeks",
-			"id": "P-SC-4283-001",
-			"instructor": "Justin Wert",
-			"instructors": [
-				{
-					"defaultphoto": "Wert.png",
-					"name": "Justin Wert, Ph.D.",
-					"title": "Associates Second Century Presidential Professor & Associate Professor of Political Science"
-				}
-			],
-			"kalturaVideo": "0_459iw3fc",
-			"name": "P SC 4283-001",
-			"prerequisites": [
-				{
-					"id": "",
-					"title": "P SC 1113 or permission of instructor"
-				}
-			],
+			"description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
+			"prerequisites": [],
+			"instructor": "Lillian Miller",
 			"schedule": {
-        		"days": "MW",
-        		"times": "3:00pm-4:15pm"
-        	},
-        	"EnrollmentOptions": [
-        		{
-        			"Heading": "For Students",
-        			"SubText": "Best for students at OU",
-        			"CTAText": "Enroll on oZone",
-        			"CTAUrl": "https://ozone.ou.edu"
-        		},
-        		{
-        			"Heading": "Free Open Course",
-        			"SubText": "Free to anyone without requirements, tests, or credit",
-        			"CTAText": "Sign Up Now",
-        			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUFNDXzQyODM"
-        		}
-        	],
-			"school": "Department of Poltical Science at the University of Oklahoma",
-			"startDate": "August 24, 2015",
-			"startTag": "August 24",
-			"title": "Civil Rights and Civil Liberties"
+				"days": "Varies"
+			},
+			"instructors": [{
+				"defaultphoto": "Miller.png",
+				"name": "Lillian Miller, M.Ed",
+				"title": "Director of Freshman Programs, University of Oklahoma"
+			}]
+		}, {
+    		"id": "ISE5013",
+    		"name": "ISE 5013",
+    		"detailAnchor": "ISE50130-detail",
+    		"school": "School of Industrial and Systems Engineering",
+    		"kalturaVideo": "0_ezhh2gi2",
+    		"title": "Fundamentals of Engineering Statistical Analysis",
+    		"credit": {
+    			"hours": 3
+    		},
+    		"startDate": "June 8, 2015",
+    		"duration": "8 Weeks",
+    		"description": "This course provides fundamental concepts in probability and statistical inference, with application to engineering contexts. Probability topics include counting methods, discrete and continuous random variables, and their associated distributions. Statistical inference topics include sampling distributions, point estimation, confidence intervals and hypothesis testing for single- and two-sample experiments, nonparametric statistics, and goodness-of-fit testing. Excel will be used to demonstrate how to solve some class examples, and you'll be expected to use Excel to solve some homework problems. The statistical software package R will be introduced to address very basic statistics problems. Course prerequisites include calculus (differentiation and integration).",
+    		"instructor": "Kash Barker",
+    		"instructors": [{
+    			"defaultphoto": "Barker.png",
+    			"name": "Kash Barker",
+    			"title": "Assistant Professor"
+    		}],
+    		"prerequisites": [{
+    			"id": "",
+    			"title": "Knowledge of calculus, particularly how to perform derivatives and integrals (and understand their meaning)"
+    		}],
+    		"schedule": {
+    			"days": "Fully Online"
+    		}
+    	}, {
+    		"id": "MGT2013",
+    		"name": "MGT 2013-995",
+    		"detailAnchor": "MGT2013-detail",
+    		"school": "Price College of Business (Division of Management and Entrepreneurship)",
+    		"kalturaVideo": "0_gckztn5o",
+    		"title": "Introduction to Management",
+    		"credit": {
+    			"hours": 3
+    		},
+    		"startDate": "June 8, 2015",
+    		"duration": "4 Weeks",
+    		"description": "Introduction to Management is a course that provides knowledge of interest to individuals of all ages and backgrounds who wish to learn more about managing careers, individuals, organizational situations, decisions, and relationships. The course features a graphic novel that chronicles the tales of Atlas Black as he works to fund his college expenses, start a new business, and act as a fledgling entrepreneur, along the way illustrating key concepts from principles of management. Recent studies conducted at OU find graphic novels are associated with superior student recall compared to traditional textbooks alone. The content of the course will use innovative delivery material including online lectures, a traditional textbook, and a graphic novel textbook, as well as a specific emphasis on businesses in the state of Oklahoma.",
+    		"instructor": "Jeremy Short",
+    		"instructors": [{
+    			"defaultphoto": "Short.png",
+    			"name": "Jeremy Short",
+    			"title": "Rath Chair of Strategic Management at the Price College of Business"
+    		}],
+    		"prerequisites": [],
+    		"schedule": {
+    			"days": "Fully Online"
+    		}
+    	}, {
+    		"id": "EIPT5970",
+    		"name": "EIPT 5970",
+    		"title": "Grant Writing for Teachers",
+    		"instructor": "Theresa Cullen",
+    		"detailAnchor": "EIPT5970-detail",
+    		"kalturaVideo": "0_j2vx2rrj",
+    		"credit": {
+    			"hours": 1
+    		},
+    		"startDate": "June 29, 2015",
+    		"duration": "7 Weeks",
+    		"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
+    		"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
+    		"prerequisites": [],
+    		"instructors": [{
+    			"defaultphoto": "Cullen.png",
+    			"name": "Theresa Cullen",
+    			"title": "Associate Professor"
+    		}],
+    		"schedule": {
+    			"days": "Fully Online"
+    		}
+    	}
+	],
+
+	"currentCoursesLabel": "Current - Fall 2015",
+	"currentCourses": [{
+		"credit": {
+			"hours": 3
 		},
-        {
-        	"id": "EDMA4970",
-        	"name": "EDMA 4970",
-        	"title": "Competition Mathematics for Middle School",
-        	"instructor": "Stacy Reeder",
-        	"kalturaVideo": "",
-        	"url": "https://mathcounts.ou.edu",
-        	"credit": {"hours": 1},
-        	"startDate": "October 5, 2015",
-        	"startTag": "October 5",
-        	"duration": "16 Weeks",
-        	"school": "Jeannine Rainbolt College of Education",
-        	"description": "For those who are new to competition math or those who are looking to take their current math teams to the next level, Competition Math for Middle School will give you the tools you need to become a more effective math team coach.  This course provides content developed by the Art of Problem Solving on how to prepare students for the most common types of questions seen on middle school math competitions, as well as insights and strategies from experienced MATHCOUNTS coaches on how to build successful math team programs. Best of all, course participants will engage with their classmates to build a peer network of fellow math coaches and help each other achieve long-term success.",
-        	"prerequisites": [],
-        	"instructors": [],
-        	"schedule": {}
-        }
-    ],
-    "notVisible": [
-    	
-    ]
-} 
+		"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
+		"detailAnchor": "ANTH1613-detail",
+		"duration": "16 Weeks",
+		"id": "ANTH1613",
+		"instructor": "Dan Swan & Joshua Nelson",
+		"instructors": [{
+			"defaultphoto": "Swan.png",
+			"name": "Dan Swan, Ph.D.",
+			"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
+		}, {
+			"defaultphoto": "Nelson.png",
+			"name": "Joshua Nelson, Ph.D.",
+			"title": "Assistant Professor of English"
+		}],
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQU5USF8xNjEz"
+		}],
+		"kalturaVideo": "0_2ri5g355",
+		"name": "ANTH 1613-001",
+		"prerequisites": [],
+		"schedule": {
+			"days": "MW",
+			"times": "10:00am - 11:15pm"
+		},
+		"school": "Department of Anthropology",
+		"startDate": "August 24, 2015",
+		"title": "Native Peoples of Oklahoma",
+		"video": "kaltura://1500101/0_2ri5g355/"
+	}, {
+		"id": "BIOL2124",
+		"name": "BIOL 2124",
+		"detailAnchor": "BIOL2124-detail",
+		"school": "Department of Biology, University of Oklahoma",
+		"kalturaVideo": "0_gpczmps5",
+		"title": "Human Physiology",
+		"credit": {
+			"hours": 4
+		},
+		"startDate": "August 24, 2015",
+		"duration": "16 Weeks",
+		"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
+		"instructor": "Heather R. Ketchum, Ph.D.",
+		"instructors": [{
+			"defaultphoto": "Ketchum.png",
+			"name": "Heather R. Ketchum, Ph.D.",
+			"title": "Associate Professor, Biology"
+		}],
+		"prerequisites": [{
+			"id": "",
+			"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
+		}],
+		"schedule": {
+			"days": "MWF",
+			"times": "11:30am - 12:20pm"
+		},
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQklPTF8yMTI0"
+		}]
+	}, {
+		"id": "CLC3403",
+		"name": "CLC 3403-001",
+		"title": "Law and Justice",
+		"instructor": "Kyle Harper",
+		"detailAnchor": "CLC3403-detail",
+		"kalturaVideo": "0_wanue4j9",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "August 24, 2015",
+		"duration": "16 Weeks",
+		"school": "Department of Classics and Letters at the University of Oklahoma",
+		"description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
+		"prerequisites": [{
+			"id": "",
+			"title": "Junior standing or instructor permission"
+		}],
+		"instructors": [{
+			"defaultphoto": "Harper.png",
+			"name": "Kyle Harper, Ph.D.",
+			"title": "Professor, Classics and Letters"
+		}],
+		"schedule": {
+			"days": "MW",
+			"times": "1:30pm-2:45pm"
+		},
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQ0xDXzM0MDM"
+		}]
+	}, {
+		"id": "ECON2843-030",
+		"name": "ECON 2843-030",
+		"title": "Elementary Business Statistics",
+		"instructor": "Dr. Alexander Holmes",
+		"detailAnchor": "ECON2843-030-detail",
+		"kalturaVideo": "0_knq8z59f",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "August 24, 2015",
+		"duration": "16 Weeks",
+		"school": "Department of Economics, University of Oklahoma",
+		"description": "Elementary Business Statistics is the first level statistics class required for all Business and Economics majors and can be used to satisfy the statistics requirement in other departments if you are enrolled as a for-credit OU-student. It is designed as an introductory course to statistics theory and methodology. The foundation of statistical inference is first developed through coverage of descriptive statistics and then close coverage of probability theory and probability density functions: specifically the binomial, Poisson, geometric, and normal distributions. The leap from probability theory to actual inferential statistics by way of the Central Limit Theory is accomplished with the use of a gaming model in which students actively participate to solve a constrained goals a constrained goal that requires an understanding of the link between the Central Limit Theorem and the sample size. Confidence internals and Hypothesis testing follow with careful development of both the theory and philosophy of the hypothesis test. Specific hypotheses are covered including test for means, proportions, differences in mean and differences in proportions, and for variances. Finally correlations and regression are covered in detail. The foundation OLS model is developed and students will be able to propose and test various hypotheses concerning a causal relationship assumed to be linear. For credit Oklahoma University students will have the opportunity to interact with face2face teaching assistants once per week in regularly scheduled lab classes.",
+		"prerequisites": [{
+			"id": "",
+			"title": "Grade of C or better in Mathematics 1503 or 1743 or 1823"
+		}],
+		"instructors": [{
+			"defaultphoto": "Holmes.png",
+			"name": "Dr. Alexander Holmes",
+			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
+		}],
+		"schedule": {
+			"days": "Fully Online"
+		},
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfRUNPTl8yODQz"
+		}]
+	}, {
+		"id": "PHIL3263",
+		"name": "PHIL 3263",
+		"title": "Virtue Ethics",
+		"instructor": "Linda Zagzebski",
+		"detailAnchor": "PHIL3263-detail",
+		"kalturaVideo": "0_cokgrcxz",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "August 24, 2015",
+		"duration": "16 Weeks",
+		"school": "Department of Philosophy",
+		"description": "This course will begin with an overview of the history of virtue ethics from the ancient Greeks to the present day, covering the historical zenith of virtue ethics through the Middle Ages, the fall of virtue concepts in the early modern period, and the rebirth of virtue ethics in the later 20th century. We will discuss a number of executive, moral, intellectual, and civic virtues and their related vices, and will address some of the fundamental philosophical questions that arise in the study of virtue ethics: What is a virtue? How is virtue related to a life that is good for the individual and good for the community? Can virtue be taught? Can virtue be measured? Are we suspicious of virtue? What are the grounds for critique of some of the traditional virtues?",
+		"prerequisites": [],
+		"instructors": [{
+			"defaultphoto": "Zagzebski.png",
+			"name": "Linda Zagzebski",
+			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
+		}],
+		"schedule": {
+			"days": "TR",
+			"times": "12:00pm-1:15pm"
+		},
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
+		}]
+	}, {
+		"credit": {
+			"hours": 3
+		},
+		"description": "This course examines Supreme Court decisions concerning the development of the 1st, 4th, 5th, 6th, 8th, and 14th Amendments to the United States Constitution. We will look specifically at establishment and free exercise; free speech, including obscene speech; 4th Amendment guarantees against unreasonable searches and seizures; the 5th Amendment right against self-incrimination; 8th Amendment prohibitions against cruel and usual punishment; as well as related cases that have recognized rights of historically marginalized groups in United States history, including African-Americans, women, and sexual minorities through these Amendments. Particular attention will be paid to how the Supreme Court has developed arguments which have expanded and contracted \u201crights\u201d and \u201cliberties.\u201d We will also pay close attention to larger political contexts apart from court decisions that contribute to the overall development of \u201ccivil rights and civil liberties\u201d in the United States.",
+		"detailAnchor": "PSC4283-detail",
+		"duration": "16 Weeks",
+		"id": "P-SC-4283-001",
+		"instructor": "Justin Wert",
+		"instructors": [{
+			"defaultphoto": "Wert.png",
+			"name": "Justin Wert, Ph.D.",
+			"title": "Associates Second Century Presidential Professor & Associate Professor of Political Science"
+		}],
+		"kalturaVideo": "0_459iw3fc",
+		"name": "P SC 4283-001",
+		"prerequisites": [{
+			"id": "",
+			"title": "P SC 1113 or permission of instructor"
+		}],
+		"schedule": {
+			"days": "MW",
+			"times": "3:00pm-4:15pm"
+		},
+		"EnrollmentOptions": [{
+			"Heading": "For Students",
+			"SubText": "Best for students at OU",
+			"CTAText": "Enroll on oZone",
+			"CTAUrl": "https://ozone.ou.edu"
+		}, {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUFNDXzQyODM"
+		}],
+		"school": "Department of Poltical Science at the University of Oklahoma",
+		"startDate": "August 24, 2015",
+		"title": "Civil Rights and Civil Liberties"
+	}],
+
+	"upcomingCoursesLabel": "Upcoming",
+	"upcomingCourses": [{
+		"id": "EDMA4970",
+		"name": "EDMA 4970",
+		"title": "Competition Mathematics for Middle School",
+		"instructor": "Stacy Reeder",
+		"kalturaVideo": "",
+		"url": "https://mathcounts.ou.edu",
+		"credit": {
+			"hours": 1
+		},
+		"startDate": "October 5, 2015",
+		"startTag": "October 5",
+		"duration": "16 Weeks",
+		"school": "Jeannine Rainbolt College of Education",
+		"description": "For those who are new to competition math or those who are looking to take their current math teams to the next level, Competition Math for Middle School will give you the tools you need to become a more effective math team coach.  This course provides content developed by the Art of Problem Solving on how to prepare students for the most common types of questions seen on middle school math competitions, as well as insights and strategies from experienced MATHCOUNTS coaches on how to build successful math team programs. Best of all, course participants will engage with their classmates to build a peer network of fellow math coaches and help each other achieve long-term success.",
+		"prerequisites": [],
+		"instructors": [],
+		"schedule": {}
+	}],
+	"notVisible": [
+
+	]
+}
