@@ -683,6 +683,23 @@
 		"school": "Department of Poltical Science at the University of Oklahoma",
 		"startDate": "August 24, 2015",
 		"title": "Civil Rights and Civil Liberties"
+	}, {
+		"id": "SS-001",
+		"name": "SS 001",
+		"title": "Gary England's Tornado Alley",
+		"url": "http://garyengland.ou.edu/",
+		"instructor": "Gary England",
+		"kalturaVideo": "",
+		"credit": {
+			"hours": 0
+		},
+		"startDate": "April 6, 2015",
+		"duration": "51 Weeks",
+		"school": "University of Oklahoma",
+		"description": "Oklahoma’s own Gary England and The University of Oklahoma have teamed up to create this exciting new series designed to help you prepare for Oklahoma’s severe weather. This Sooner Series consists of short, entertaining videos that will give people of all ages a better understanding of Oklahoma’s weather patterns and how to stay safe when severe weather strikes. This entertaining series will make it easy and fun for you to become familiar with the fundamentals of our weather, the history of weather forecasting, and the technology used by meteorology professionals to keep the public as safe as possible.",
+		"prerequisites": [],
+		"instructors": [],
+		"schedule": {}
 	}],
 
 	"upcomingCoursesLabel": "Upcoming",
