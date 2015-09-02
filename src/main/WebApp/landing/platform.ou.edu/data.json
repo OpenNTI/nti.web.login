@@ -432,7 +432,28 @@
     		"schedule": {
     			"days": "Fully Online"
     		}
-    	}
+    	},	{
+            "id": "SOC3123",
+            "instructor": "B. Mitch Peck",
+            "name": "SOC 3123",
+            "title": "Social Statistics",
+            "detailAnchor": "SOC3123-detail",
+            "school": "Department of Sociology at the University of Oklahoma",
+            "kalturaVideo": "0_win9lpf8",
+            "credit": { "hours": 3 },
+            "startDate": "August 8, 2013",
+            "duration": "16 Weeks",
+            "description": "This course is an undergraduate-level introduction to social statistics. The central focus is descriptive, bivariate, and inferential statistics as they are used in social sciences to analyze survey data. Students will be introduced to how statistics are calculated. The class will focus on (1) understanding the intuitive meaning behind a variety of common social statistics, (2) calculating these statistics by hand with commonly-available spreadsheet software, and (3) practical application of statistical procedures.",
+            "prerequisites": [],
+            "instructors": [{
+                "defaultphoto":"Peck.png",
+                "name": "B. Mitch Peck, Ph.D.",
+                "title": "Associate Professor"
+            }],
+            "schedule": {
+                "days": "Archive"
+            }
+        }
 	],
 
 	"currentCoursesLabel": "Current - Fall 2015",
