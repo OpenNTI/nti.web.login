@@ -375,7 +375,7 @@ img.kWidgetCentered {
 	font-weight: 600;
 	font-size: 0.875rem;
 	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
-} 
+}
 
 /*course detail view*/
 
@@ -496,9 +496,8 @@ div.subpage .course-introduction::before {
 
 div.subpage .promovideo {
 	background: #ccc;
-	min-xheight: 466px;
-/*	max-height: 530px;*/
-	overflow: hidden;
+	min-height: 466px;
+	max-height: 545px;
 }
 
 iframe {
