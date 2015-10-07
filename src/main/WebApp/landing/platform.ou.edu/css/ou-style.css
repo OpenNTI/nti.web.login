@@ -558,10 +558,9 @@ a.tip:hover span::before {
 
 #about h3 {
     color: #494949;
-    font-size: 2.3em;
-    padding-top: 1.09em;
-    margin-left: 1.24em;
+    padding-top: 1em;
     font: normal 300 2em 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 28px;
 }
 
 #about p {
@@ -569,8 +568,51 @@ a.tip:hover span::before {
     font-weight: normal;
     line-height: 2.33em;
     color: #494949;
-    padding-left: 2em;
-    margin-right: 2.916em;
+}
+
+#about {
+    font: normal normal 14px/28px 'Open Sans';
+}
+#about ul {
+    padding-bottom: 1.875em;
+}
+
+#about ul li{
+	font-family: Open Sans;
+}
+
+#about p.nobottom {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+#about h5 {
+    font-size: 14px;
+    font-family: Open Sans;
+    font-weight: 600;
+}
+#about h5 + p {
+    padding-top: 0;
+}
+
+#about p {
+    font-size: 14px;
+    font-family: Open Sans;
+    line-height: 2em;
+}
+.faq_content {
+    background-color: white;
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+}
+
+.faq_content p {
+	padding: 1em 0 0.25em;
+}
+@media only screen and (min-width: 40.063em) {
+	.faq_content, #about_content {
+	    padding-left: 3em;
+		padding-right: 3em;
+	}
 }
 
 /* FOOTER
@@ -739,15 +781,7 @@ a.ou-btn {
 	white-space: nowrap;
 }
 a.ou-btn:focus, a.ou-btn:active, a.ou-btn:hover {
-	background-color: #1c7bb3;
-	background-repeat: repeat-x;
-	background: -moz-linear-gradient(#25cbff, #0076ce);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #25cbff), color-stop(100%, #0076ce));
-	background: -webkit-linear-gradient(#25cbff, #0076ce);
-	background: -o-linear-gradient(#25cbff, #0076ce);
-	filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#25cbff', endColorstr='#0076ce');
-	-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#25cbff', endColorstr='#0076ce')";
-	background: linear-gradient(#25cbff, #0076ce);
+	background-color: #2192D4;
 }
 #main a.ou-btn1, .subpage a.ou-btn1 {
 	background-color: #298AC4;

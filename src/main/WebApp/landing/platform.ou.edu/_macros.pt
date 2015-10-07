@@ -74,8 +74,10 @@
 							next_id python:courseList[next_index]['id'].lower();
 							prev_id python:courseList[prev_index]['id'].lower()">
 				<div class="columns large-8 small-3">
-					<img class="hide-for-large-up januxLogo" src="images/ou_janux_mobile.png" />
-					<img class="show-for-large-up januxLogo" src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community" />
+                    <a href="./">
+    					<img class="hide-for-large-up januxLogo" src="images/ou_janux_mobile.png" />
+    					<img class="show-for-large-up januxLogo" src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community" />
+                    </a>
 				</div>
                 <div id="controls" class="columns large-4 small-4">
 					<controls>

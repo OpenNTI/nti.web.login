@@ -93,7 +93,9 @@
 						<li><a class="ou-btn" href="/login/" role="button" tabindex="2">Go to Janux</a></li>
 					</ul>
 				</div>
-				<img class="logo" id="ou_janux_logo" src="images/ou_janux_logo.png" alt="Logo" />
+				<a href="#">
+					<img class="logo" href="./" id="ou_janux_logo" src="images/ou_janux_logo.png" alt="Logo" />
+				</a>
 			</div>
 		</div>
 	</section>
