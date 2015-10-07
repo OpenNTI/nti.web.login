@@ -15,19 +15,26 @@
 						anchorInternal python:'course.%s.html' % course['id'].lower() if anchorPage else None;
                         anchor python:anchorUrl if anchorUrl else anchorInternal"
 			tal:attributes="id course/id; href anchor | nothing; data-old course/detailAnchor | nothing">
-			<img src="images/courses/${path}/card.png"
-				 alt="Course Image"
-				 title=""
-				 style="background: #DDD;"
-			/>
-			<div tal:condition="course/startTag | nothing">
-				<div class="start-date" tal:content="course/startTag"></div>
-			</div>
-			<div class="meta">
-				<div class="course-code" tal:content="course/name">CLC 3403</div>
-				<div class="course-name" tal:content="course/title">Law And Justice</div>
-				<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
-			</div>
+            <a tal:define="id course/id;
+                                path python: id.upper().replace('-ARCHIVED','');
+                                anchorPage course/detailAnchor | python:None;
+                                anchorUrl course/url | python:None;
+                                anchorInternal python:'course.%s.html' % course['id'].lower() if anchorPage else None;
+                                anchor python:anchorUrl if anchorUrl else anchorInternal" tal:attributes="href anchor | nothing; data-old course/detailAnchor | nothing">
+    			<img src="images/courses/${path}/card.png"
+    				 alt="Course Image"
+    				 title=""
+    				 style="background: #DDD;"
+    			/>
+    			<div tal:condition="course/startTag | nothing">
+    				<div class="start-date" tal:content="course/startTag"></div>
+    			</div>
+    			<div class="meta">
+    				<div class="course-code" tal:content="course/name">CLC 3403</div>
+    				<div class="course-name" tal:content="course/title">Law And Justice</div>
+    				<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
+    			</div>
+            <a>
 		</li>
 		</tal:block>
 	</ul>
