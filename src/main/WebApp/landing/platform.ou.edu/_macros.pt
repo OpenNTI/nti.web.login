@@ -182,7 +182,7 @@
 					 itemprop="performer"
 					 itemtype="http://schema.org/Person"
 					 tal:repeat="instructor course/instructors">
-                     <div class="instructorContain columns small-4">
+                     <div class="instructorContain columns small-4 large-2">
                         <img src="images/courses/${path}/${instructor/defaultphoto}"
                         	 alt="David Sabatini, PhD, PE"
                         	 title=""
@@ -190,7 +190,7 @@
                         	 itemprop="image"
                         	 tal:attributes="alt instructor/name; title instructor/name" />
                      </div>
-					 <div class="columns small-8 wrap">
+					 <div class="columns small-8 large-10 wrap">
 						 <div class="label">Course Instructor</div>
 						 <div class="name" tal:content="instructor/name" itemprop="name">David Sabatini, PhD, PE</div>
 						 <div class="title" tal:content="instructor/title" itemprop="jobtitle">David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering &amp; Environmental Science</div>

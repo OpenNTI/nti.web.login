@@ -14,29 +14,30 @@ Expected variables:
 <head>
 	<title tal:content="page_title">JANUX | The University of Oklahoma</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="JANUX | The University of Oklahoma"
 		  tal:attributes="content description" />
 	<meta name="author" content="NextThought">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=1024">
 	<link rel="shortcut icon" href="favicon.ico">
-	<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
 	<script type="text/javascript">$('html').removeClass('no-js');</script>
 
-	<!-- This is the stylesheet is OU specific style -->
-	<link rel="stylesheet" type="text/css" href="ou-style.css" />
+	<!-- CSS Styles -->
+	<link rel="stylesheet" type="text/css" href="fonts/fonts.css">
+	<link rel="stylesheet" href="css/foundation.css">
+	<link rel="stylesheet" href="css/ou-style.css" media="screen" charset="utf-8">
+	<link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/subpage.css" />
 	<!-- This is the stylesheet that makes the footer stick. -->
-	<link rel="stylesheet" type="text/css" href="stickyfooter-style.css" />
 	<!-- This conditional is for IE8 and IE6 and earlier- 8 needs that display:table -->
 	<!--[if !IE 7]>
 	<style type="text/css">
 		#wrap {display:table;height:100%}
 	</style>
 	<![endif]-->
-	<link rel="stylesheet" type="text/css" href="main.css" />
 
 	<!--! Facebook OpenGraph metadata: http://opengraphprotocol.org
 	-->
