@@ -218,7 +218,7 @@ a.tip:hover span::before {
 	display: inline-block;
 	height: auto;
 	margin: 2% 3%;
-	min-width: 115px;
+	min-width: 105px;
 	width: 22%;
 }
 #header .wrapper {
@@ -234,6 +234,9 @@ a.tip:hover span::before {
 @media only screen and (max-width: 40em) {
 	#header {
 		height: 59px;
+	}
+	#header .logo {
+    	margin: 3% 3%;
 	}
 	#header .wrapper {
 		height: 59px;
@@ -546,6 +549,30 @@ a.tip:hover span::before {
 		padding-left: 3em;
 	}
 }
+/* About Page
+------------------------------------- */
+
+#about_content {
+    background-color: white;
+}
+
+#about h3 {
+    color: #494949;
+    font-size: 2.3em;
+    padding-top: 1.09em;
+    margin-left: 1.24em;
+    font: normal 300 2em 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+#about p {
+    font-size: 1.166em;
+    font-weight: normal;
+    line-height: 2.33em;
+    color: #494949;
+    padding-left: 2em;
+    margin-right: 2.916em;
+}
+
 /* FOOTER
 ------------------------------------- */
 
