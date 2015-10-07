@@ -34,7 +34,7 @@
     				<div class="course-name" tal:content="course/title">Law And Justice</div>
     				<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
     			</div>
-            <a>
+            </a>
 		</li>
 		</tal:block>
 	</ul>

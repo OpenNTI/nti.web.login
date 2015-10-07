@@ -393,7 +393,7 @@ a.tip:hover span::before {
 }
 #feature .meta h4 {
 	font-size: 1.78em;
-	line-height: 0.5em;
+    line-height: 1.1em;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;

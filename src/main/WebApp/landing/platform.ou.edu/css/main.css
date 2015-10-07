@@ -75,7 +75,6 @@
   background-color: #ccc;
   position: static;
   width: 100%;
-  height: 132px;
   background-size: cover;
 }
 
@@ -143,11 +142,14 @@
 }
 
 .library-collection > ul {
-  display: block;
-  white-space: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
-  padding: 1rem 0 1rem 0.625rem;
+	backface-visibility: hidden;
+	-webkit-overflow-scrolling: touch;
+	-ms-overflow-style: -ms-autohiding-scrollbar;
+	display: block;
+	white-space: nowrap;
+	overflow-x: auto;
+	overflow-y: hidden;
+	padding: 1rem 0 1rem 0.625rem;
 }
 
 .library-collection > ul > li {
@@ -156,13 +158,6 @@
   vertical-align: top;
   margin: 0 4px 4px 0;
   cursor: pointer;
-}
-
-
-.library-item img {
-    border: 0;
-    width: 232px;
-    height: 170px;
 }
 
 .library-item .meta {
