@@ -128,6 +128,31 @@ a.tip:hover span::before {
 
 }
 
+/* Global Header Media
+----------------------------------------- */
+@media screen and (max-width: 690px) {
+    .globalheader ul {
+        float: inherit;
+        margin: 0 auto;
+    }
+
+    .globalheader .wrapper {
+        width: 310px;
+    }
+}
+
+@media screen and (min-width: 691px) and (max-width: 1000px) {
+    .globalheader .wrapper {
+        width: 600px;
+    }
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1299px) {
+    .globalheader .wrapper {
+        width: 880px;
+    }
+}
+
 /* HEADER
 ----------------------------------------- */
 

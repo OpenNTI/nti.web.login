@@ -187,3 +187,8 @@
     font-style: italic;
 
 }
+@font-face {
+    font-family: 'Conqueror Sans';
+    src: url('AWConquerorSans-Light.otf');
+    font-weight: 300;
+}

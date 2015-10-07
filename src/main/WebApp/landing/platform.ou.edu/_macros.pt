@@ -2,12 +2,12 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:tal="http://xml.zope.org/namespaces/tal">
 
-	<div class="grid"
+	<ul class=""
         tal:attributes="class cls | string:grid;
                         data-type type | nothing"
         metal:define-macro="course-grid">
 		<tal:block	tal:repeat="course the_courses">
-		<a class="grid-item" id="XXX1234" href="XXX1234.html" tabindex="5"
+		<li class="library-item" id="XXX1234" href="XXX1234.html" tabindex="5"
 		    tal:define="id course/id;
                         path python: id.upper().replace('-ARCHIVED','');
 			            anchorPage course/detailAnchor | python:None;
@@ -28,13 +28,13 @@
 				<div class="course-name" tal:content="course/title">Law And Justice</div>
 				<div class="course-prof" tal:content="string: By ${course/instructor}">By Kyle Harper</div>
 			</div>
-		</a>
+		</li>
 		</tal:block>
-	</div>
+	</ul>
 
 
-
-	<div class="courses" metal:define-macro="course-details">
+    <!-- Beginning of course subpage -->
+	<section class="courses" metal:define-macro="course-details">
 
 		<div id="XXX1234-detail" class="subpage"
 		    tal:define="id course/id;
@@ -57,7 +57,8 @@
 					 title=""
 					 style="background: #DDD;"/>
 			</a>
-			<div class="course-header"
+            <!-- Header Section -->
+			<section class="course-header row"
 				tal:define="courseList python:options['courseList'];
                             indexn python:options['repeat'].course.index + 1;
 							indexp python:options['repeat'].course.index - 1;
@@ -65,20 +66,26 @@
 							prev_index python:options['repeat'].course.length - 1 if options['repeat'].course.start else indexp;
 							next_id python:courseList[next_index]['id'].lower();
 							prev_id python:courseList[prev_index]['id'].lower()">
-				<controls>
-					<a href="./index.html" class="close" title="Home" role="button" tabindex="0">x</a>
-					<a href="" class="next" title="Next" tal:attributes="href string:course.${next_id}.html" role="button" tabindex="0">&gt;</a>
-					<a href="" class="previous" title="Previous" tal:attributes="href string:course.${prev_id}.html" role="button" tabindex="0">&lt;</a>
-				</controls>
-				<img src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community"/>
-			</div>
-			<div class="course-introduction">
-				<div class="promovideo">
+				<div class="columns large-8 small-3">
+					<img class="hide-for-large-up januxLogo" src="images/ou_janux_mobile.png" />
+					<img class="show-for-large-up januxLogo" src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community" />
+				</div>
+                <div id="controls" class="columns large-4 small-4">
+					<controls>
+						<a href="./index.html" class="close" title="Home" role="button" tabindex="0">x</a>
+						<a href="course.biol2124.html" class="next" title="Next" role="button" tabindex="0">&gt;</a>
+						<a href="course.p-sc-4283-001.html" class="previous" title="Previous" role="button" tabindex="0">&lt;</a>
+					</controls>
+				</div>
+			</section>
+			<section class="course-introduction row">
+				<div class="promovideo flex-video">
 					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?iframeembed=true&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="548" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" alt="Video" tabindex="-1"></iframe>
 				</div>
 				<div class="course-title" tal:content="course/title" itemprop="name">Introduction to Water</div>
-			</div>
-			<div class="details"
+			</section>
+            <!-- Enrollment Details Section -->
+			<section class="details row"
 				 tal:define="notOpen course/notOpen | nothing;
 				 			 availableForCredit course/availableForCredit | nothing;">
 				<div class="course-description" tal:content="course/description" itemprop="description">
@@ -102,29 +109,34 @@
 					water problems.
 				</div>
 				<div tal:condition="course/EnrollmentOptions | nothing" class="enrollment-options">
-				    <div tal:omit-tag="" tal:repeat="enrollmentOption course/EnrollmentOptions">
+				    <div tal:omit-tag="" tal:repeat="enrollmentOption columns large-6 small-12 course/EnrollmentOptions">
 				    <div  tal:define="widthClass python: 'full' if (repeat.enrollmentOption.end and repeat.enrollmentOption.even) else 'half';
 						      leadingClass python: 'leading' if repeat.enrollmentOption.even else '';"
 					  tal:attributes="class string: enrollment-option ${widthClass} ${leadingClass}">
-					<h3 tal:content="enrollmentOption/Heading">For Students</h3>
-					<p tal:content="enrollmentOption/SubText" tal:condition="enrollmentOption/SubText">Best for ou students.</p>
-				  	<a class="cta" tal:condition="enrollmentOption/CTAUrl" tal:attributes="href enrollmentOption/CTAUrl" tal:content="enrollmentOption/CTAText">Sign Up Now</a>
+                        <span class="detailContain">
+                            <h3 tal:content="enrollmentOption/Heading">For Students</h3>
+                            <p tal:content="enrollmentOption/SubText" tal:condition="enrollmentOption/SubText">Best for ou students.</p>
+                        </span>
+                        <a class="cta" tal:condition="enrollmentOption/CTAUrl" tal:attributes="href enrollmentOption/CTAUrl" tal:content="enrollmentOption/CTAText">Sign Up Now</a>
 				    </div>
 				    </div>
 				</div>
-			</div>
-			<div class="course-details">
-				<h3>For-Credit Information for OU Students</h3>
+			</section>
+            <!-- Course Details Section -->
+			<section class="course-details row">
+                <div class="course-details-header">
+                    <h3>For-Credit Information for OU Students</h3>
+                </div>
 				<div class="course-fields">
-					<div class="field-row">
-						<div class="course-field-cell">
+					<div class="field-row row">
+						<div class="course-field-cell columns small-12 large-6">
 							<div class="label">Prerequisites</div>
 							<metal:block tal:switch="not:course/prerequisites">
 							<p tal:case="False" tal:repeat="prereq course/prerequisites" tal:content="prereq/title"></p>
 							<p tal:case="True">There are no prerequisites for this course.</p>
 							</metal:block>
 						</div>
-						<div class="course-field-cell credit">
+						<div class="course-field-cell credit columns small-12 large-6">
 							<div class="label">Credit Hours</div>
 							<p><span tal:content="course/credit/hours">1</span> credit
 								<metal:block tal:switch="python:course['credit']['hours'] == 1">
@@ -135,22 +147,22 @@
 							<a href="http://ozone.ou.edu/" target="_blank">OU Students Enroll on Ozone</a>
 						</div>
 					</div>
-					<div class="field-row">
-						<div class="course-field-cell">
+					<div class="field-row row">
+						<div class="course-field-cell columns small-12 large-6">
 							<div class="label" tal:content="course/name">ENGR 1510-001</div>
 							<p  tal:content="course/title">Introduction to Water</p>
 						</div>
-						<div class="course-field-cell">
+						<div class="course-field-cell columns small-12 large-6">
 							<div class="label" tal:content="course/schoolLabel | default">Department/School</div>
 							<p tal:content="course/school">Civil Engineering</p>
 						</div>
 					</div>
-					<div class="field-row">
-						<div class="course-field-cell">
+					<div class="field-row row">
+						<div class="course-field-cell columns small-12 large-6">
 							<div class="label">Start Date</div>
 							<p tal:content="course/startDate" itemprop="startDate">Jan 15, 2014</p> <!--! TODO: This needs to be ISO8601 -->
 						</div>
-						<div class="course-field-cell">
+						<div class="course-field-cell columns small-12 large-6">
 							<div class="course-field-cell third">
 								<div class="label">Duration</div>
 								<p tal:content="course/duration" itemprop="duration">18 Weeks</p> <!--! TODO: This needs to be ISO8601 -->
@@ -162,40 +174,31 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="course-instructors">
+			</section>
+			<!-- Course Instructor Section -->
+			<section class="course-instructors row">
 				<div class="instructor"
 					 itemscope
 					 itemprop="performer"
 					 itemtype="http://schema.org/Person"
 					 tal:repeat="instructor course/instructors">
-					<img src="images/courses/${path}/${instructor/defaultphoto}"
-						 alt="David Sabatini, PhD, PE"
-						 title=""
-						 style="background: #DDD no-repeat center center;"
-						 itemprop="image"
-						 tal:attributes="alt instructor/name; title instructor/name" />
-					 <div class="wrap">
+                     <div class="instructorContain columns small-4">
+                        <img src="images/courses/${path}/${instructor/defaultphoto}"
+                        	 alt="David Sabatini, PhD, PE"
+                        	 title=""
+                        	 style="background: #DDD no-repeat center center;"
+                        	 itemprop="image"
+                        	 tal:attributes="alt instructor/name; title instructor/name" />
+                     </div>
+					 <div class="columns small-8 wrap">
 						 <div class="label">Course Instructor</div>
 						 <div class="name" tal:content="instructor/name" itemprop="name">David Sabatini, PhD, PE</div>
 						 <div class="title" tal:content="instructor/title" itemprop="jobtitle">David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering &amp; Environmental Science</div>
 					 </div>
 				</div>
-			</div>
-		<!--!
-			<div>
-				<div class="course-faq">
-					<div class="label">Frequently Asked Questions</div>
-					<h4>Will I get credit for taking an Open Course?</h4>
-					<p>Credit is currently not offered for Open Course. Currently University of Oklahoma students may receive college credit for these courses by <a href="http://ozone.ou.edu" target="_blank">enrolling for the courses with Ozone.</a></p>
-					<h4>What if I'm the smartest person in the class?</h4>
-					<p>You still won't get credit. <a href="http://ozone.ou.edu/" target="_blank">Enroll for the courses with Ozone to receive credit.</a></p>
-					<h4>If I enrolled for the course through Ozone, do I still have to attend class?</h4>
-					<p>Yes, regular university attendance policies apply for OU courses unless marked "Online Only".</p>
-				</div>
-			</div>
-		-->
-			<div class="course-techsupport">
+			</section>
+            <!-- Tech Support Section -->
+			<section class="course-techsupport row">
 				<img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Tech Suport Image, hand on keybord." style="background: #DDD url('images/tech_support.jpg') no-repeat center center;"/>
 				 <div class="wrap">
 					 <div class="label">Tech Support</div>
@@ -205,54 +208,43 @@
 						 <li><a href="http://www.ou.edu/content/ouit/help/personal.html" target="_blank">Service Centers</a></li>
 					 </ul>
 				 </div>
-			</div>
+			</section>
 		</div>
+	</section>
+    <!-- End of Course SubPage -->
+	<section id="footer" class="row" metal:define-macro="footer">
+        <div classd="wrapper">
+    		<div class="footerColumn logo">
+    			<img alt="OU" src="images/footerlogo.png">
+    		</div>
+    		<div class="footerColumn address">
+    			<a href="http://www.ou.edu/" target="_blank">The University of Oklahoma</a>
+    			<br/> 660 Parrington Oval,
+    			<br/> Norman, OK 73019-0390
+    			<br/> (405) 325-0311
+    		</div>
+    		<div class="footerColumn links">
+    			<ul>
+    				<li><a href="http://www.ou.edu/publicaffairs/WebPolicies/accessstatement.html" target="_blank">Accessibility</a></li>
+    				<li><a href="http://www.ou.edu/sustainability.html" target="_blank">Sustainability</a></li>
+    				<li><a href="http://ouhsc.edu/hipaa/" target="_blank">HIPPA</a></li>
+    				<li><a href="http://hr.ou.edu/employment/" target="_blank">OU Job Search</a></li>
+    			</ul>
+    		</div>
+    		<div class="footerColumn links">
+    			<ul>
+    				<li><a href="http://www.ou.edu/content/web/landing/policy.html" target="_blank">Policies</a></li>
+    				<li><a href="http://www.ou.edu/content/web/landing/legalnotices.html" target="_blank">Legal Notices</a></li>
+    				<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html" target="_blank">Copyright</a></li>
+    			</ul>
+    		</div>
 
-	</div>
 
-	<div id="footer" metal:define-macro="footer">
-		<div class="wrapper">
-
-			<div class="footerColumn logo">
-				<img alt="OU" src="images/footerlogo.png">
-			</div>
-			<div class="footerColumn address">
-				<a href="http://www.ou.edu/" target="_blank">The University of Oklahoma</a><br/>
-				660 Parrington Oval,<br/>
-				Norman, OK 73019-0390<br/>
-				(405) 325-0311
-			</div>
-			<div class="footerColumn links">
-				<ul>
-					<li><a href="http://www.ou.edu/publicaffairs/WebPolicies/accessstatement.html" target="_blank">Accessibility</a></li>
-					<li><a href="http://www.ou.edu/sustainability.html" target="_blank">Sustainability</a></li>
-					<li><a href="http://ouhsc.edu/hipaa/" target="_blank">HIPPA</a></li>
-					<li><a href="http://hr.ou.edu/employment/" target="_blank">OU Job Search</a></li>
-				</ul>
-			</div>
-			<div class="footerColumn links">
-				<ul>
-					<li><a href="http://www.ou.edu/content/web/landing/policy.html" target="_blank">Policies</a></li>
-					<li><a href="http://www.ou.edu/content/web/landing/legalnotices.html" target="_blank">Legal Notices</a></li>
-					<li><a href="http://www.ou.edu/content/publicaffairs/WebPolicies/copyright.html" target="_blank">Copyright</a></li>
-				</ul>
-			</div>
-
-			<!--! <div class="footerColumn social">
-				<h3>Social Links</h3>
-				<ul>
-					<li><a href="http://www.facebook.com/#" class="facebook" target="_blank">facebook</a></li>
-					<li><a href="http://www.twitter.com/oujanux" class="twitter" target="_blank">twitter</a></li>
-					<li><a href="http://www.youtube.com/#" class="youtube" target="_blank">youtube</a></li>
-					<li><a href="https://plus.google.com/100025316723468385420" rel="publisher">Find us on Google+</a></li>
-					<li><a href="http://www.ou.edu/web/socialmediadirectory.html" class="more" target="_blank">more</a></li>
-				</ul>
-			</div> -->
-			<div class="notes">
-				Updated 05/01/2015 by The University of Oklahoma: <a href="mailto:janux@ou.edu">janux@ou.edu</a>
-			</div>
-		</div>
-	</div>
+    		<div class="notes">
+    			Updated 05/01/2015 by The University of Oklahoma: <a href="mailto:janux@ou.edu">janux@ou.edu</a>
+    		</div>
+    	</div>
+	</section>
     <script type="text/javascript" metal:define-macro="analytics">
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
