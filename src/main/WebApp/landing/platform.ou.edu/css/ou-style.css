@@ -3,7 +3,7 @@
 /* CSS Document */
 
 body {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: Open Sans;
 	background-color: #FFF;
 	padding: 0;
 	margin: 0;
@@ -211,8 +211,8 @@ a.tip:hover span::before {
 	border-bottom: 1px solid #300204;
 	height: 8px;
 	display: block;
-    position: relative;
-    z-index: 9;
+	position: relative;
+	z-index: 9;
 }
 #header .logo {
 	display: inline-block;
@@ -230,6 +230,7 @@ a.tip:hover span::before {
 }
 
 /* Mobile Screens Only */
+
 @media only screen and (max-width: 40em) {
 	#header {
 		height: 59px;
@@ -256,7 +257,7 @@ a.tip:hover span::before {
 
 /* Medium Screens and Up */
 
-@media only screen and (min-width: 40.063em) and (max-width: 64em)  {
+@media only screen and (min-width: 40.063em) and (max-width: 64em) {
 	#header .logo {
 		margin: 6% 3%;
 	}
@@ -267,7 +268,7 @@ a.tip:hover span::before {
 @media only screen and (min-width: 64.063em) {
 	#header .logo {
 		margin: 1.8% 5%;
-    	width: 27.54%;
+		width: 27.54%;
 	}
 }
 
@@ -287,7 +288,6 @@ a.tip:hover span::before {
 	background-repeat: repeat;
 	padding: 0px;
 }
-
 #mast-text h3 {
 	text-align: center;
 	font-size: 18px;
@@ -307,8 +307,6 @@ a.tip:hover span::before {
 	color: #bbbbbb;
 	font-size: 1.125rem;
 }
-
-
 @media only screen and (min-width: 40.063em) {
 	#mast-text h3 {
 		text-align: right;
@@ -319,18 +317,15 @@ a.tip:hover span::before {
 		letter-spacing: 2.3px;
 		line-height: 40px;
 	}
-
 	#mast-text {
 		margin-top: 145px;
 	}
-
 	#mast-text p {
 		text-align: right;
 		font-size: 2.3em;
 		font-size: 'Conqueror Sans';
 	}
 }
-
 @media only screen and (min-width: 64.063em) {
 	#video {
 		margin-right: 20px;
@@ -364,6 +359,14 @@ a.tip:hover span::before {
 	margin-top: 20px;
 }
 
+/* Medium Screens and Up */
+
+@media only screen and (min-width: 40.063em) {
+	#about-janux {
+		padding-left: 3em;
+	}
+}
+
 /* Feature
 ----------------------------------------- */
 
@@ -379,21 +382,21 @@ a.tip:hover span::before {
 	padding-right: 15px;
 	border: solid 1px #e6e2d6;
 }
-
 #feature .meta {
-    padding-top: 1.75em;
+	padding-top: 1.75em;
+	padding-left: 0;
+	padding-right: 0;
 }
-
 #feature .meta span {
 	color: #962022;
 	text-transform: uppercase;
 	font-weight: 600;
 	line-height: 140%;
-	font-size:  0.625rem;
+	font-size: 0.625rem;
 }
 #feature .meta h4 {
 	font-size: 1.78em;
-    line-height: 1.1em;
+	line-height: 1.1em;
 	text-transform: uppercase;
 	font-weight: 600;
 	font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
@@ -409,11 +412,11 @@ a.tip:hover span::before {
 	line-height: 200%;
 }
 
-
 /* Mobile Screens Only */
+
 @media only screen and (max-width: 40em) {
 	.feature img {
-	    padding-top: 1.666em;
+		padding-top: 1.666em;
 	}
 }
 
@@ -423,13 +426,17 @@ a.tip:hover span::before {
 	#feature .course img {
 		float: left;
 	}
+	#feature .meta {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+	}
 }
 
 /* Large Screens */
 
 @media only screen and (min-width: 64.063em) {
 	#feature .course {
-		padding: 3em 0 2.9em 35px;
+		padding: 3em 0 2.9em 3em;
 		overflow: hidden;
 	}
 }
@@ -442,21 +449,20 @@ a.tip:hover span::before {
 }
 .enrollment-options .option {
 	padding-top: 1em;
-	height: 126px;
 	text-align: center;
 	padding-bottom: 1em;
 }
-.enrollment-options .option.first {
+.enrollment-options .option {
 	box-shadow: inset 0 -1px 0 #e6e2d6;
 }
 .option .price {
 	text-align: center;
-	font-size: 1.25rem;
-	padding-top: 0.65em;
+	font-size: 2.25rem;
+	padding-top: 0.3em;
 	font-family: Open Sans;
 	font-weight: 600;
 	color: #358bc1;
-	line-height: 137%;
+	line-height: 80%;
 }
 .option .price .old {
 	color: #B8B8B8;
@@ -475,75 +481,89 @@ a.tip:hover span::before {
 /* Large Screens */
 
 @media only screen and (min-width: 64.063em) {
-	.enrollment-options {
+	.enrollment-options .option {
+		padding-bottom: 2.1em;
 	}
 }
 
 /* Course Content
 ------------------------------------- */
+
 .courseContent {
-    background-color: #f3f3f3;
+	background-color: #f3f3f3;
 }
-
 .courseContent h1 {
-    color: #494949;
-    margin-bottom: 0.5em;
-    font: normal 300 1.75rem 'Open Sans', Arial, Helvetica, sans-serif;
-    margin-right: -1em;
+	color: #494949;
+	margin-bottom: 0.5em;
+	font: normal 300 1.75rem 'Open Sans', Arial, Helvetica, sans-serif;
+	margin-right: -1em;
+	margin-left: 0.9375rem;
 }
-
-
+@media only screen and (min-width: 40.063em) {
+	.courseContent h1 {
+		margin-left: 1.286em;
+	}
+}
+/* Large Up */
+@media only screen and (min-width: 64.063em) {
+	.courseContent {
+		padding-bottom: 4em;
+	}
+}
 /* Tech
 ------------------------------------- */
+
 #tech {
-    background-color: white;
-    padding-bottom: 1.666em;
-    padding-top: 3.333em;
-    padding-left: 1.666em;
+	background-color: white;
+	padding-bottom: 1.666em;
+	padding-top: 3.333em;
+	padding-left: 1.666em;
 }
-
 #tech h1 {
-    color: #494949;
-    margin-bottom: 0.5em;
-    margin-top: 0px;
-    font: normal 300 3em 'Open Sans', Arial, Helvetica, sans-serif;
+	color: #494949;
+	margin-bottom: 0.5em;
+	margin-top: 0px;
+	font: normal 300 3em 'Open Sans', Arial, Helvetica, sans-serif;
 }
-
 #tech a.ou-btn1 {
-    background-color: #2580b2;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    margin-left: -4px;
+	background-color: #2580b2;
+	color: white;
+	padding: 10px 20px;
+	border-radius: 4px;
+	margin-left: -4px;
 }
-
 #tech ul {
-    list-style-type: none;
-    margin-left: 0px;
+	list-style-type: none;
+	margin-left: 0px;
 }
-
 #tech ul li {
-    padding-bottom: 1em;
-    font-family: Open Sans;
-    font-weight: 100;
+	padding-bottom: 1em;
+	font-family: Open Sans;
+	font-weight: 100;
 }
-
+@media only screen and (min-width: 64.063em) {
+	#tech {
+		padding-left: 3em;
+	}
+}
 /* FOOTER
 ------------------------------------- */
+
 #footer .third {
-    padding-bottom: 3em;
+	padding-bottom: 3em;
 }
 #footer .second {
-    padding-left: 71px;
-    padding-bottom: 5em;
+	padding-left: 71px;
+	padding-bottom: 5em;
 }
-
 #footer {
 	background-image: url(../images/bg_black.gif);
 	background-repeat: repeat;
 	overflow: hidden;
 	line-height: 1.5em;
 	color: #999;
+	margin-left: 1.666em;
+	margin-right: 1.666em;
 }
 #footer a {
 	text-decoration: none;
