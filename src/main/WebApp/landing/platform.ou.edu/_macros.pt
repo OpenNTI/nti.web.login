@@ -222,7 +222,7 @@
 	</section>
     <!-- End of Course SubPage -->
 	<section id="footer" class="row" metal:define-macro="footer">
-        <div classd="wrapper">
+        <div class="wrapper">
     		<div class="footerColumn logo">
     			<img alt="OU" src="images/footerlogo.png">
     		</div>
