@@ -263,7 +263,7 @@ ul.button-group.radius li:first-child {
 @media only screen and (min-width: 40.063em){
 	.library-collection ul.button-group {
 	    float: right;
-    	margin-right: 2.6em;
+	    margin-right: 2.6em;
 	}
 	.library-collection > ul > li:first-child{
 		margin-left: 0px;

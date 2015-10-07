@@ -165,7 +165,7 @@
 	<!-- Course Content Section -->
 	<section class="courseContent row">
 		<div class="content gradient-bg library-collection tabbed-grids">
-			<div>
+			<div class="tabContain">
 				<ul class="button-group radius">
 					<li><a tal:condition="options/upcomingCoursesLabel" href="#upcoming" data-type="upcoming" class="button tabBtn" tal:content="options/upcomingCoursesLabel">Upcoming</a></li>
 					<li><a tal:condition="options/currentCoursesLabel" href="#current" class="active button tabBtn" data-type="current" tal:content="options/currentCoursesLabel">Current - Fall 2015</a></li>

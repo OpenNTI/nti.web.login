@@ -502,6 +502,9 @@ a.tip:hover span::before {
 	margin-right: -1em;
 	margin-left: 0.9375rem;
 }
+a.button.tabBtn {
+    box-shadow: inset 0px -2px 0 -1px #d6d6d6;
+}
 @media only screen and (min-width: 40.063em) {
 	.courseContent h1 {
 		margin-left: 1.286em;
@@ -631,8 +634,8 @@ a.tip:hover span::before {
 	overflow: hidden;
 	line-height: 1.5em;
 	color: #999;
-	margin-left: 1.666em;
-	margin-right: 1.666em;
+	margin-left: 0.1em;
+    margin-right: 0.1em;
 }
 #footer a {
 	text-decoration: none;

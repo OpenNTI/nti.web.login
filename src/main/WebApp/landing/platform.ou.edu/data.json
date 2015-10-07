@@ -456,7 +456,7 @@
         }
 	],
 
-	"currentCoursesLabel": "Current - Fall 2015",
+	"currentCoursesLabel": "Current - Fall",
 	"currentCourses": [{
 		"credit": {
 			"hours": 3
