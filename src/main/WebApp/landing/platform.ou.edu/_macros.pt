@@ -109,10 +109,10 @@
 					water problems.
 				</div>
 				<div tal:condition="course/EnrollmentOptions | nothing" class="enrollment-options">
-				    <div tal:omit-tag="" tal:repeat="enrollmentOption columns large-6 small-12 course/EnrollmentOptions">
+				    <div tal:omit-tag="" tal:repeat="enrollmentOption course/EnrollmentOptions">
 				    <div  tal:define="widthClass python: 'full' if (repeat.enrollmentOption.end and repeat.enrollmentOption.even) else 'half';
 						      leadingClass python: 'leading' if repeat.enrollmentOption.even else '';"
-					  tal:attributes="class string: enrollment-option ${widthClass} ${leadingClass}">
+					  tal:attributes="class string: enrollment-option columns large-6 small-12 ${widthClass} ${leadingClass}">
                         <span class="detailContain">
                             <h3 tal:content="enrollmentOption/Heading">For Students</h3>
                             <p tal:content="enrollmentOption/SubText" tal:condition="enrollmentOption/SubText">Best for ou students.</p>
