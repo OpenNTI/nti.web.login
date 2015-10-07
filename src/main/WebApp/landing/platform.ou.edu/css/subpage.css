@@ -23,10 +23,9 @@ div.subpage .enrollment-options .enrollment-option .detailContain p {
 		margin-top: 18px;
 		min-height: 40px;
 	}
+
 }
 
-/* Medium screens */
-@media only screen and (min-width: 40.063em) { }
 .promovideo {
     margin-bottom: 0px;
 }
@@ -510,4 +509,19 @@ div.subpage .instructor .label {
     padding-left: 0;
     font-size: 0.725em;
     font-weight: 500;
+}
+
+
+@media only screen and (min-width: 40.063em) {
+	div.subpage .course-instructors .instructor .name {
+    	font-size: 1.9em;
+	}
+
+	div.subpage .course-instructors .instructor .wrap div {
+	    padding-top: 10px;
+	}
+
+	div.subpage .enrollment-options .enrollment-option:first-child {
+	    border-right: 1px solid white;
+	}
 }
