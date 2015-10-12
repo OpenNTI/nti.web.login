@@ -31,6 +31,8 @@ Expected variables:
 	<link rel="stylesheet" href="css/ou-style.css" media="screen" charset="utf-8">
 	<link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/subpage.css" />
+	<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css">
+
 	<!-- This is the stylesheet that makes the footer stick. -->
 	<!-- This conditional is for IE8 and IE6 and earlier- 8 needs that display:table -->
 	<!--[if !IE 7]>

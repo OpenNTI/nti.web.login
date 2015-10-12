@@ -11,12 +11,6 @@ div.subpage .enrollment-options .enrollment-option .detailContain h3 {
 div.subpage .enrollment-options .enrollment-option .detailContain p {
     padding-left: 20px;
 }
-/* -------------- */
-@media only screen and (max-width: 40em) {
-	#controls {
-		float: left;
-	}
-}
 
 @media only screen and (max-width: 64em) {
 	#controls controls{
@@ -31,12 +25,11 @@ div.subpage .enrollment-options .enrollment-option .detailContain p {
 }
 
 .januxLogo {
-    min-width: 200px;
-    margin-left: -15px;
+    min-width: 170px;
 }
 
 div#controls controls {
-    min-width: 250px;
+    min-width: 106px;
 }
 
 div.subpage {
@@ -222,7 +215,7 @@ div.subpage .enrollment-options {
 div.subpage .enrollment-options .enrollment-option {
 	padding: 0px;
 	background: white;
-	margin-bottom: 5px;
+	/* margin-bottom: 5px; */
 }
 
 
@@ -263,6 +256,7 @@ div.subpage .course-details {
 	padding-left: 15px;
 	padding-right: 15px;
 	background: transparent;
+	margin-top: -3px;
 }
 
 div.subpage .course-details h3 {
@@ -292,7 +286,8 @@ div.subpage .label {
 	text-transform: uppercase;
 	font-weight: bold;
 	font-size: 10px;
-    background-color: transparent;
+	background-color: transparent;
+	padding-left: 0;
 }
 
 div.subpage .course-fields {
@@ -312,12 +307,7 @@ div.subpage .field-row:first-child {
 }
 div.subpage .course-field-cell p {
 	font-size: 16px;
-    padding-left: 8px;
 	font-weight: 300;
-}
-
-div.subpage .course-field-cell.credit a{
-    padding-left: 8px;
 }
 
 div.subpage .course-field-cell.credit a,
@@ -361,16 +351,29 @@ div.subpage .course-instructors .instructor img {
 	background-size: cover;
 	background-position: center center;
 	background-repeat: no-repeat;
-	width: 160px;
+	width: 25%;
+	max-width: 160px;
 }
 
 div.subpage .course-instructors .instructor .wrap {
-	/* margin: 0 0 0 160px; */
-	padding: 15px 15px 15px 15px;
 	border-top: 1px solid #f1f1f1;
 }
 div.subpage .course-instructors .instructor:first-child .wrap {
 	border-top: 0;
+	max-width: 73%;
+	float: left;
+	padding-left: 10px;
+	padding-top: 7px;
+}
+
+@media only screen and (min-width: 40.063em) {
+	div.subpage .course-instructors .instructor:first-child .wrap {
+		padding-left: 20px;
+		padding-top: 15px;
+	}
+	div.subpage .course-instructors .instructor img {
+		min-width: 160px;
+	}
 }
 
 div.subpage .course-faq {
@@ -391,6 +394,7 @@ div.subpage .course-techsupport {
 	padding-left: 15px;
 	color: #494949;
 	padding-right: 15px;
+    margin-bottom: 75px;
 }
 
 div.subpage .course-techsupport img {
@@ -404,9 +408,9 @@ div.subpage .course-techsupport img {
 }
 
 div.subpage .course-techsupport .wrap {
-	padding: 15px 5px;
+	padding: 15px 20px;
 	background-color: white;
-	margin-left: 146px;
+	margin-left: 160px;
 	padding-bottom: 25px;
 }
 
@@ -420,6 +424,7 @@ div.subpage a:active {
 
 div.subpage .course-techsupport ul {
 	list-style: none;
+	margin-left: 0;
 }
 
 div.subpage .course-techsupport li {
@@ -511,10 +516,69 @@ div.subpage .instructor .label {
 	}
 
 	div.subpage .course-instructors .instructor .wrap div {
-	    padding-top: 10px;
+	    /* padding-top: 10px; */
 	}
 
 	div.subpage .enrollment-options .enrollment-option:first-child {
 	    border-right: 1px solid white;
 	}
+}
+
+/* Tech Support */
+.columns.phoneNumber {
+    background-color: #46B4F3;
+    color: white;
+    padding: 1rem;
+    padding-bottom: 20px;
+    padding-top: 14px;
+}
+
+section.course-techsupport-buttons {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 9em;
+    background: transparent;
+}
+
+.number {
+    font-size: 16px;
+}
+
+.email {
+    color: white;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+
+.externalLink {
+    color: white;
+    text-align: center;
+    padding-left: 5px;
+    padding-right: 0;
+}
+
+i.fi-mail.medium {
+    font-size: 23px;
+    position: relative;
+    left: -2px;
+}
+
+i.fi-link.medium {
+    font-size: 23px;
+}
+
+.email .fi-mail::before {
+    text-align: center;
+}
+
+.emailWrapper, .externalLinkWrapper {
+    padding: 25px 0;
+    background-color: #46B4F3;
+    color: white;
+}
+
+div.subpage .enrollment-options .enrollment-option:first-child {
+    margin-bottom: 5px;
 }

@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="css/ou-style.css" media="screen" charset="utf-8">
 	<link rel="shortcut icon" href="favicon.ico">
 	<link rel="stylesheet" href="css/main.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="css/foundation-icons/foundation-icons.css">
 	<!-- End of CSS Styles  -->
 	<!-- JS Scripts -->
 	<script src="js/vendor/modernizr.js"></script>
