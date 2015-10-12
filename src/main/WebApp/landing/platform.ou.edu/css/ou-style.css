@@ -313,19 +313,19 @@ a.tip:hover span::before {
 @media only screen and (min-width: 40.063em) {
 	#mast-text h3 {
 		text-align: right;
-		font-size: 38px;
+		font-size: 24px;
 		font-family: Open Sans;
 		font-weight: 100;
 		text-transform: uppercase;
-		letter-spacing: 2.3px;
+		letter-spacing: 1.3px;
 		line-height: 40px;
 	}
 	#mast-text {
-		margin-top: 145px;
+		margin-top: 11%;
 	}
 	#mast-text p {
 		text-align: right;
-		font-size: 2.3em;
+		font-size: 1.75em;
 		font-size: 'Conqueror Sans';
 	}
 }
@@ -334,6 +334,16 @@ a.tip:hover span::before {
 		margin-right: 20px;
 		margin-top: 48px;
 		margin-bottom: 25px;
+	}
+	#mast-text h3 {
+		font-size: 38px;
+		letter-spacing: 2.3px;
+	}
+	#mast-text p {
+		font-size: 2.3em;
+	}
+	#mast-text {
+		margin-top: 14%;
 	}
 }
 
