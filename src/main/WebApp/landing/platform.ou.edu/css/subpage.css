@@ -358,7 +358,7 @@ div.subpage .course-instructors .instructor img {
 div.subpage .course-instructors .instructor .wrap {
 	border-top: 1px solid #f1f1f1;
 }
-div.subpage .course-instructors .instructor:first-child .wrap {
+div.subpage .course-instructors .instructor .wrap {
 	border-top: 0;
 	max-width: 73%;
 	float: left;
@@ -367,7 +367,7 @@ div.subpage .course-instructors .instructor:first-child .wrap {
 }
 
 @media only screen and (min-width: 40.063em) {
-	div.subpage .course-instructors .instructor:first-child .wrap {
+	div.subpage .course-instructors .instructor .wrap {
 		padding-left: 20px;
 		padding-top: 15px;
 	}
