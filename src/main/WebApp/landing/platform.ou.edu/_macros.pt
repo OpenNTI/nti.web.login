@@ -79,12 +79,12 @@
     					<img class="show-for-large-up januxLogo" src="images/ou_janux_tagline.png" alt="JANUX - Interactive Learning Community" />
                     </a>
 				</div>
-                <div id="controls" class="columns large-4 small-6">
-					<controls>
-						<a href="./index.html" class="close" title="Home" role="button" tabindex="0">x</a>
-						<a href="course.biol2124.html" class="next" title="Next" role="button" tabindex="0">&gt;</a>
-						<a href="course.p-sc-4283-001.html" class="previous" title="Previous" role="button" tabindex="0">&lt;</a>
-					</controls>
+                <div id="controls" class="changed columns large-4 small-6">
+                    <controls>
+    					<a href="./" class="close" title="Home" role="button" tabindex="0">x</a>
+    					<a href="" class="next" title="Next" tal:attributes="href string:course.${next_id}.html" role="button" tabindex="0">&gt;</a>
+    					<a href="" class="previous" title="Previous" tal:attributes="href string:course.${prev_id}.html" role="button" tabindex="0">&lt;</a>
+    				</controls>
 				</div>
 			</section>
 			<section class="course-introduction row">
@@ -222,7 +222,7 @@
                 <div class="columns small-3 externalLink">
                     <a href="http://www.ou.edu/content/ouit/help/personal.html">
                         <div class="externalLinkWrapper">
-                            <i class="fi-link medium"></i> 
+                            <i class="fi-link medium"></i>
                         </div>
                     </a>
                 </div>
