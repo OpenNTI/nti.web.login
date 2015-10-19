@@ -644,12 +644,13 @@ a.button.tabBtn {
 	overflow: hidden;
 	line-height: 1.5em;
 	color: #999;
+	margin: 0;
 }
 
 #footer .wrapper {
     margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 1.666em;
+    padding-right: 1.666em;
 }
 
 #footer a {
