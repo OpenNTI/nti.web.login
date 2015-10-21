@@ -162,7 +162,7 @@
 			"school": "Educational Leadership and Policy Studies",
 			"startDate": "January 13, 2014",
 			"title": "Administration of Adult and Higher Education"
-		}, 
+		},
 		{
 		"id": "EDMA4970",
 		"name": "EDMA 4970",
@@ -722,7 +722,7 @@
 		"schedule": {}
 	}],
 
-	"upcomingCoursesLabel": "Upcoming",
+	"upcomingCoursesLabel": "",
 	"upcomingCourses": [],
 	"notVisible": [
         "upcomingCourses"
