@@ -215,14 +215,16 @@ a.tip:hover span::before {
 	z-index: 9;
 }
 #header .logo {
-	display: inline-block;
 	height: auto;
-	margin: 2% 3%;
 	min-width: 105px;
 	width: 22%;
+	vertical-align: middle;
+	display: inline-block;
 }
 #header .wrapper {
 	overflow: hidden;
+	position: relative;
+	width: 100%;
 }
 #header .code {
 	margin: 50px;
@@ -235,9 +237,7 @@ a.tip:hover span::before {
 	#header {
 		height: 59px;
 	}
-	#header .logo {
-    	margin: 3% 3%;
-	}
+
 	#header .wrapper {
 		height: 59px;
 	}
@@ -258,23 +258,42 @@ a.tip:hover span::before {
 	}
 }
 
-/* Medium Screens and Up */
-
-@media only screen and (min-width: 40.063em) and (max-width: 64em) {
+@media only screen and (min-width: 781px) and (max-width: 850px) {
 	#header .logo {
-		margin: 6% 3%;
-	}
-}
-
-/* Large Screens */
-
-@media only screen and (min-width: 64.063em) {
-	#header .logo {
-		margin: 1.8% 5%;
 		width: 27.54%;
 	}
 }
 
+@media only screen and (min-width: 851px) {
+	#header .logo {
+	    width: 27.54%;
+	}
+}
+
+#header .logo-container {
+    position: absolute;
+    top: 0;
+	bottom: 4%;
+    left: 4%;
+    right: 0;/* Align center inline elements */
+}
+
+#header .logo-container:before, #header .logo-container::before {
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+@media only screen and (min-width: 40.063em) {
+	#header .logo-container {
+	    position: absolute;
+	    top: 0;
+		bottom: 8%;
+	    left: 4%;
+	    right: 0;
+	}
+}
 /* BODY
 ----------------------------------------- */
 
@@ -653,6 +672,7 @@ a.button.tabBtn {
     padding-right: 1.666em;
 }
 
+
 #footer a {
 	text-decoration: none;
 }
@@ -780,6 +800,13 @@ a.button.tabBtn {
 	padding: 1em 0;
 	color: #757474;
 	font-size: 1.166em;
+}
+
+@media only screen and (min-width: 40.063em) {
+	#footer .wrapper {
+	    padding-left: 3em;
+	    padding-right: 3em;
+	}
 }
 
 /* Handy OU Styles
