@@ -304,6 +304,9 @@ a.tip:hover span::before {
 
 /* MAST
 ----------------------------------------- */
+#video {
+    margin-top: 2%;
+}
 
 #mast {
 	background-image: url(../images/janux_feature.png);
