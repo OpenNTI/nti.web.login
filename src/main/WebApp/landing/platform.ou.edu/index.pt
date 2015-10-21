@@ -168,9 +168,9 @@
 		<div class="content gradient-bg library-collection tabbed-grids">
 			<div class="tabContain">
 				<ul class="button-group radius">
-					<li><a tal:condition="options/upcomingCoursesLabel" href="#upcoming" data-type="upcoming" class="button tabBtn" tal:content="options/upcomingCoursesLabel">Upcoming</a></li>
-					<li><a tal:condition="options/currentCoursesLabel" href="#current" class="active button tabBtn" data-type="current" tal:content="options/currentCoursesLabel">Current - Fall 2015</a></li>
-					<li><a tal:condition="options/archivedCoursesLabel" href="#archived" data-type="archived" class="button tabBtn" tal:content="options/archivedCoursesLabel">Archived</a></li>
+					<li tal:condition="options/upcomingCoursesLabel"><a href="#upcoming" data-type="upcoming" class="button tabBtn" tal:content="options/upcomingCoursesLabel">Upcoming</a></li>
+					<li tal:condition="options/currentCoursesLabel"><a href="#current" class="active button tabBtn" data-type="current" tal:content="options/currentCoursesLabel">Current - Fall 2015</a></li>
+					<li tal:condition="options/archivedCoursesLabel"><a href="#archived" data-type="archived" class="button tabBtn" tal:content="options/archivedCoursesLabel">Archived</a></li>
 				</ul>
 				<h1 class="show-for-medium-up">Available Courses</h1>
 			</div>
