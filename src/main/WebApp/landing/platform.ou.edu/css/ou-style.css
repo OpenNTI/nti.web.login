@@ -229,6 +229,8 @@ a.tip:hover span::before {
 #header .code {
 	margin: 50px;
 	float: right;
+    position: relative;
+    z-index: 999;
 }
 
 /* Mobile Screens Only */
