@@ -308,6 +308,37 @@ a.tip:hover span::before {
     margin-top: 2%;
 }
 
+#kaltura .tap-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+}
+
+#kaltura .tap-area::after, #kaltura .tap-area:after {
+    content: "\f196";
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    font-family: "foundation-icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 7em;
+    color: white;
+    text-shadow: 0 0px 10px black;
+    text-align: center;
+	cursor: pointer;
+}
+
 #mast {
 	background-image: url(../images/janux_feature.png);
 	background-repeat: repeat;

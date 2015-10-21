@@ -88,9 +88,20 @@
 				</div>
 			</section>
 			<section class="course-introduction row">
-				<div class="promovideo flex-video">
-					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?iframeembed=true&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="548" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" alt="Video" tabindex="-1"></iframe>
-				</div>
+    			<div class="promovideo" id="kaltura">
+
+    			</div>
+    			<script type="text/javascript">
+    		    	ReactDOM.render(
+    		    		React.createElement(NTIVideo, {src: 'kaltura://1500101/${course/kalturaVideo}/'}),
+    		    		document.getElementById('kaltura')
+    		    	);
+    			</script>
+                <noscript>
+    				<div class="promovideo flex-video">
+    					<iframe src="https://cdnapisec.kaltura.com/p/1500101/sp/150010100/embedIframeJs/uiconf_id/20809652/partner_id/1500101?iframeembed=true&entry_id=${course/kalturaVideo}&flashvars[akamaiHD.loadingPolicy]=preInitialize&flashvars[akamaiHD.asyncInit]=true&flashvars[twoPhaseManifest]=true&flashvars[streamerType]=hdnetworkmanifest" width="920" height="548" allowfullscreen webkitallowfullscreen mozAllowFullScreen frameborder="0" alt="Video" tabindex="-1"></iframe>
+    				</div>
+                </noscript>
 				<div class="course-title" tal:content="course/title" itemprop="name">Introduction to Water</div>
 			</section>
             <!-- Enrollment Details Section -->
