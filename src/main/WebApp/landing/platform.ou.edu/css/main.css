@@ -273,8 +273,15 @@ ul.button-group.radius li:first-child {
 	}
 }
 
+/* Speical case for cards */ 
+@media only screen and (min-width: 40.063em) and (max-width: 930px){
+	.library-collection > ul > li:first-child{
+		margin-left: 2em;
+	}
+}
+
 /* Large & Up */
-@media only screen and (min-width: 64.063em) {
+@media only screen and (min-width: 930px) {
 	.library-collection > ul.grid{
 		margin-left: 2.25em;
 	}
