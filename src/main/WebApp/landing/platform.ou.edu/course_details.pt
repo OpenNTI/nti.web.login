@@ -89,7 +89,7 @@ Expected variables:
 		 metal:use-macro="courses/macros/course-details"></div>
 
 	<script type="text/javascript" src="nav.js"></script>
-	<div metal:use-macro="courses/macros/footer"></div>
+	<footer class="row"><div metal:use-macro="courses/macros/footer"></div></footer>
 	<script metal:use-macro="courses/macros/analytics"></script>
 </body>
 </html>
