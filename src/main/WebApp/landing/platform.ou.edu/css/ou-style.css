@@ -61,57 +61,69 @@ img {
 #globalheader {
 	background-image: url(../images/ou-globalheader-bg.jpg);
 	background-repeat: repeat;
-	max-height: 1.875rem;
+    max-height: 1.875rem;
 	padding: 0px;
 }
-.globalheader ul {
+#globalheader::after {
+	content: "";
+	border-top: 1px solid #1a1a1a;
+	height: 2px;
+	display: block;
+	width: 100%;
+}
+#globalheader .wrapper, #globalfooter .wrapper {
+	margin: 0 auto;
+	max-width: 1100px;
+}
+#globalheader ul {
 	list-style-type: none;
 	height: 30px;
 	float: right;
 	padding: 0;
 	margin: 0;
+	margin-right: 35px;
 }
-.globalheader ul::after {
+#globalheader ul::after {
 	content: "";
 	display: block;
 	width: 100%;
 	clear: both;
 	float: none;
 }
-.globalheader ul li {
+#globalheader ul li {
 	float: left;
 }
-.globalheader ul li a.home, .globalheader ul li a.search, .globalheader ul li a.social {
+#globalheader ul li a.home, #globalheader ul li a.search, #globalheader ul li a.social {
 	display: block;
 	height: 30px;
 	width: 30px;
 }
-.globalheader ul li a {
+#globalheader ul li a {
 	background-image: url(../images/glyphicons-globalheader.png);
 	background-repeat: no-repeat;
 }
-.globalheader ul li a.home {
+#globalheader ul li a.home {
 	background-position: 0 0;
 }
-.globalheader ul li a.home:hover {
+#globalheader ul li a.home:hover {
 	background-position: 0 -30px;
 }
-.globalheader ul li a.search {
+#globalheader ul li a.search {
 	background-position: -30px 0;
 }
-.globalheader ul li a.search:hover {
+#globalheader ul li a.search:hover {
 	background-position: -30px -30px;
 }
-.globalheader ul li a.social {
+#globalheader ul li a.social {
 	background-position: -60px 0;
 }
-.globalheader ul li a.social:hover {
+#globalheader ul li a.social:hover {
 	background-position: -60px -30px;
 }
-.globalheader ul li a:hover {
+#globalheader ul li a:hover {
 	background-color: #e8e8e8;
 }
-.globalheader ul li.wordmark {
+#globalheader ul li.wordmark {
 	text-indent: -99999px;
 	width: 200px;
 	height: 30px;
@@ -164,29 +176,14 @@ a.tip:hover span::before {
 	position: absolute;
 }
 
-/* Global Header Media
------------------------------------------ */
-
-@media screen and (max-width: 690px) {
+@media screen and (max-width: 690px){
 	#globalheader ul {
-		float: right;
-		margin: 0 auto;
-		margin-right: 12px;
-	}
-	#globalheader .wrapper {
-		width: 310px;
+	    float: right;
+	    margin: 0 auto;
+	    margin-right: 2px;
 	}
 }
-@media screen and (min-width: 691px) and (max-width: 1000px) {
-	#globalheader .wrapper {
-		width: 600px;
-	}
-}
-@media screen and (min-width: 1001px) and (max-width: 1299px) {
-	#globalheader .wrapper {
-		width: 880px;
-	}
-}
+
 
 /* HEADER
 ----------------------------------------- */
