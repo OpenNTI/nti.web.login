@@ -476,17 +476,6 @@
 			"name": "Joshua Nelson, Ph.D.",
 			"title": "Assistant Professor of English"
 		}],
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQU5USF8xNjEz"
-		}],
 		"kalturaVideo": "0_2ri5g355",
 		"name": "ANTH 1613-001",
 		"prerequisites": [],
@@ -524,18 +513,7 @@
 		"schedule": {
 			"days": "MWF",
 			"times": "11:30am - 12:20pm"
-		},
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQklPTF8yMTI0"
-		}]
+		}
 	}, {
 		"id": "CLC3403",
 		"name": "CLC 3403-001",
@@ -562,18 +540,7 @@
 		"schedule": {
 			"days": "MW",
 			"times": "1:30pm-2:45pm"
-		},
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfQ0xDXzM0MDM"
-		}]
+		}
 	}, {
 		"id": "ECON2843-030",
 		"name": "ECON 2843-030",
@@ -599,18 +566,7 @@
 		}],
 		"schedule": {
 			"days": "Fully Online"
-		},
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfRUNPTl8yODQz"
-		}]
+		}
 	}, {
 		"id": "PHIL3263",
 		"name": "PHIL 3263",
@@ -634,18 +590,7 @@
 		"schedule": {
 			"days": "TR",
 			"times": "12:00pm-1:15pm"
-		},
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUEhJTF8zMjYz"
-		}]
+		}
 	}, {
 		"credit": {
 			"hours": 3
@@ -670,17 +615,6 @@
 			"days": "MW",
 			"times": "3:00pm-4:15pm"
 		},
-		"EnrollmentOptions": [{
-			"Heading": "For Students",
-			"SubText": "Best for students at OU",
-			"CTAText": "Enroll on oZone",
-			"CTAUrl": "https://ozone.ou.edu"
-		}, {
-			"Heading": "Free Open Course",
-			"SubText": "Free to anyone without requirements, tests, or credit",
-			"CTAText": "Sign Up Now",
-			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tRmFsbDIwMTVfUFNDXzQyODM"
-		}],
 		"school": "Department of Poltical Science at the University of Oklahoma",
 		"startDate": "August 24, 2015",
 		"title": "Civil Rights and Civil Liberties"
@@ -722,8 +656,26 @@
 		"prerequisites": [],
 		"instructors": [],
 		"schedule": {}
+	},
+	{
+		"id": "LSTD1153",
+		"name": "LSTD 1153",
+		"title": "United States, 1865 to the Present",
+		"instructor": "Steve Gillon",
+		"kalturaVideo": "",
+		"url": "https://historychannel.ou.edu",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "January 19, 2016",
+		"startTag": "January 18",
+		"duration": "16 Weeks",
+		"school": "",
+		"description": "",
+		"prerequisites": [],
+		"instructors": [],
+		"schedule": {}
 	}],
 	"notVisible": [
-        "upcomingCourses"
 	]
 }
