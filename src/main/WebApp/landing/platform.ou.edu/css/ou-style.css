@@ -58,68 +58,60 @@ img {
 
 /* GLOBAL HEADER
 ----------------------------------------- */
-
 #globalheader {
 	background-image: url(../images/ou-globalheader-bg.jpg);
 	background-repeat: repeat;
 	max-height: 1.875rem;
 	padding: 0px;
 }
-#globalheader::after {
-	content: "";
-	background-color: #6d1717;
-	border-top: 1px solid #1a1a1a;
-	height: 2px;
-	display: block;
-	width: 100%;
-}
-#globalheader ul {
+.globalheader ul {
 	list-style-type: none;
 	height: 30px;
 	float: right;
-	margin-right: 35px;
+	padding: 0;
+	margin: 0;
 }
-#globalheader ul::after {
+.globalheader ul::after {
 	content: "";
 	display: block;
 	width: 100%;
 	clear: both;
 	float: none;
 }
-#globalheader ul li {
+.globalheader ul li {
 	float: left;
 }
-#globalheader ul li a.home, #globalheader ul li a.search, #globalheader ul li a.social {
+.globalheader ul li a.home, .globalheader ul li a.search, .globalheader ul li a.social {
 	display: block;
 	height: 30px;
 	width: 30px;
 }
-#globalheader ul li a {
+.globalheader ul li a {
 	background-image: url(../images/glyphicons-globalheader.png);
 	background-repeat: no-repeat;
 }
-#globalheader ul li a.home {
+.globalheader ul li a.home {
 	background-position: 0 0;
 }
-#globalheader ul li a.home:hover {
+.globalheader ul li a.home:hover {
 	background-position: 0 -30px;
 }
-#globalheader ul li a.search {
+.globalheader ul li a.search {
 	background-position: -30px 0;
 }
-#globalheader ul li a.search:hover {
+.globalheader ul li a.search:hover {
 	background-position: -30px -30px;
 }
-#globalheader ul li a.social {
+.globalheader ul li a.social {
 	background-position: -60px 0;
 }
-#globalheader ul li a.social:hover {
+.globalheader ul li a.social:hover {
 	background-position: -60px -30px;
 }
-#globalheader ul li a:hover {
+.globalheader ul li a:hover {
 	background-color: #e8e8e8;
 }
-#globalheader ul li.wordmark {
+.globalheader ul li.wordmark {
 	text-indent: -99999px;
 	width: 200px;
 	height: 30px;
@@ -139,13 +131,13 @@ a.tip span {
 
 a.tip:hover span {
 	position: absolute;
-	z-index: 25;
+	z-index: 10000;
 	top: 135%;
 	left: -3.75em;
-	width: 8em;
+	width: 10em;
 	display: block;
 	margin: 0;
-	padding: 0.25em 1em;
+	padding: 0.25em .5em;
 	border: 1px solid #444;
 	background-image: url(../images/bg_black.gif);
 	background-repeat: repeat;
