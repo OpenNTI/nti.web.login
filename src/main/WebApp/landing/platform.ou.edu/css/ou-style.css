@@ -309,25 +309,16 @@ a.tip:hover span::before {
 }
 
 #kaltura .tap-area::after, #kaltura .tap-area:after {
-    content: "\f196";
+    content: "";
+    background-image: url('../images/janux-play-button.png');
+    background-repeat: no-repeat;
+    background-position: center center;
     position: absolute;
-    top: 35%;
-    left: 0;
-    right: 0;
-    font-family: "foundation-icons";
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    text-decoration: none;
-    font-size: 7em;
+    top: 45%;
+    width: 100%;
+    height: 90px;
     color: white;
-    text-shadow: 0 0px 10px black;
-    text-align: center;
-	cursor: pointer;
+    cursor: pointer;
 }
 
 #mast {
@@ -353,6 +344,13 @@ a.tip:hover span::before {
 	font-family: 'Conqueror Sans';
 	color: #bbbbbb;
 	font-size: 1.125rem;
+}
+
+@media only screen and (max-width: 40em) {
+	#kaltura .tap-area::after, #kaltura .tap-area:after {
+	    top: 30%;
+	}
+
 }
 @media only screen and (min-width: 40.063em) {
 	#mast-text h3 {
