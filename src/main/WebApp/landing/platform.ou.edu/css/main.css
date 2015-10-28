@@ -273,7 +273,7 @@ ul.button-group.radius li:first-child {
 	}
 }
 
-/* Speical case for cards */ 
+/* Speical case for cards */
 @media only screen and (min-width: 40.063em) and (max-width: 930px){
 	.library-collection > ul > li:first-child{
 		margin-left: 2em;
@@ -429,6 +429,16 @@ li.catalog-item h5 {
 }
 
 /* End of Catalog */
+
+
+/* Video */
+video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+/* End of Video */
+
+
 
 /*animation*/
 
