@@ -118,10 +118,17 @@
 
 			</div>
 			<script type="text/javascript">
-		    	ReactDOM.render(
-		    		React.createElement(NTIVideo, {src: 'kaltura://1500101/0_nmii7y4j/'}),
-		    		document.getElementById('kaltura')
-		    	);
+				(function render() {
+					var node = document.getElementById('kaltura');
+					var v = ReactDOM.render(
+			    		React.createElement(NTIVideo, {
+							src: 'kaltura://1500101/0_nmii7y4j/',
+							onEnded: function(){
+								ReactDOM.unmountComponentAtNode(node);
+								setTimeout(render, 0);
+							}
+						}), node);
+				}())
 			</script>
 			<noscript>
 				<div class="flex-video">
