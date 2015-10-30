@@ -92,10 +92,17 @@
 
     			</div>
     			<script type="text/javascript">
-    		    	ReactDOM.render(
-    		    		React.createElement(NTIVideo, {src: 'kaltura://1500101/${course/kalturaVideo}/'}),
-    		    		document.getElementById('kaltura')
-    		    	);
+    				(function render() {
+    					var node = document.getElementById('kaltura');
+    					var v = ReactDOM.render(
+    			    		React.createElement(NTIVideo, {
+    							src: 'kaltura://1500101/${course/kalturaVideo}/',
+    							onEnded: function(){
+    								ReactDOM.unmountComponentAtNode(node);
+    								setTimeout(render, 0);
+    							}
+    						}), node);
+    				}())
     			</script>
                 <noscript>
     				<div class="promovideo flex-video">
