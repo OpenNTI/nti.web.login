@@ -352,8 +352,8 @@ div.subpage .course-instructors .instructor {
 
 div.subpage .course-instructors .instructor .name {
 	font-weight: 300;
-	font-size: 1em;
-	line-height: 40px;
+	font-size: .9em;
+	line-height: 25px;
 	color: #494949;
 }
 
@@ -375,7 +375,7 @@ div.subpage .course-instructors .instructor .wrap {
 	max-width: 73%;
 	float: left;
 	padding-left: 10px;
-	padding-top: 7px;
+	padding-top: 2px;
 }
 
 @media only screen and (min-width: 40.063em) {
@@ -510,6 +510,7 @@ section.course-instructors .instructor .title {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
+    font-size: .85em;
 }
 .instructorContain.columns.small-4 {
     padding: 0px;
