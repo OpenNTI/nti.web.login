@@ -566,7 +566,13 @@
                 "12:30:00-05:00",
                 "13:20:00-05:00"
             ]
-		}
+		},
+		"EnrollmentOptions": [ {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNl9CSU9MXzIxMjQ"
+		}]
 	},{
 		"id": "ECON2843-030",
 		"name": "ECON 2843-030",
@@ -592,7 +598,13 @@
 		}],
 		"schedule": {
 			"days": ""
-		}
+		},
+		"EnrollmentOptions": [ {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNl9FQ09OXzI4NDM"
+		}]
 	},	{
 			"credit": {
 				"hours": 1
@@ -623,6 +635,12 @@
       "17:20:00-06:00"
     ]
   },
+  "EnrollmentOptions": [ {
+			"Heading": "Free Open Course",
+			"SubText": "Free to anyone without requirements, tests, or credit",
+			"CTAText": "Sign Up Now",
+			"CTAUrl": "/app/#!library/availablecourses/IUB0YWc6bmV4dHRob3VnaHQuY29tLDIwMTEtMTA6TlRJLUNvdXJzZUluZm8tU3ByaW5nMjAxNl9FTkdSXzE1MTA"
+		}],
 			"school": "School of Civil Engineering and Environmental Sceince at the University of Oklahoma",
 			"startDate": "January 12, 2015",
 			"title": "Introduction to Water"
