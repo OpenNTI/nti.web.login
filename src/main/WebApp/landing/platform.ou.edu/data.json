@@ -562,10 +562,7 @@
 		}],
 		"schedule": {
 			"days": "MWF",
-			"times": [
-                "12:30:00-05:00",
-                "13:20:00-05:00"
-            ]
+			"times": "12:30pm - 1:20pm"
 		},
 		"EnrollmentOptions": [ {
 			"Heading": "Free Open Course",
@@ -597,7 +594,7 @@
 			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
 		}],
 		"schedule": {
-			"days": ""
+			"days": "Fully Online"
 		},
 		"EnrollmentOptions": [ {
 			"Heading": "Free Open Course",
@@ -627,14 +624,9 @@
 			"name": "ENGR 1510-901",
 			"prerequisites": [],
 			"schedule": {
-    "days": [
-      "W"
-    ],
-    "times": [
-      "16:30:00-06:00",
-      "17:20:00-06:00"
-    ]
-  },
+                "days": "W",
+                "times": "4:30pm - 5:30pm"
+            },
   "EnrollmentOptions": [ {
 			"Heading": "Free Open Course",
 			"SubText": "Free to anyone without requirements, tests, or credit",
