@@ -1,6 +1,34 @@
 {
 	"archivedCoursesLabel": "Archived",
 	"archivedCourses": [{
+		"credit": {
+			"hours": 3
+		},
+		"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
+		"detailAnchor": "ANTH1613-detail",
+		"duration": "16 Weeks",
+		"id": "ANTH1613",
+		"instructor": "Dan Swan & Joshua Nelson",
+		"instructors": [{
+			"defaultphoto": "Swan.png",
+			"name": "Dan Swan, Ph.D.",
+			"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
+		}, {
+			"defaultphoto": "Nelson.png",
+			"name": "Joshua Nelson, Ph.D.",
+			"title": "Assistant Professor of English"
+		}],
+		"kalturaVideo": "0_2ri5g355",
+		"name": "ANTH 1613-001",
+		"prerequisites": [],
+		"schedule": {
+			"days": "Archived"
+		},
+		"school": "Department of Anthropology",
+		"startDate": "August 24, 2015",
+		"title": "Native Peoples of Oklahoma",
+		"video": "kaltura://1500101/0_2ri5g355/"
+	}, {
 			"credit": {
 				"hours": 1
 			},
@@ -53,6 +81,32 @@
 			"startDate": "August 18, 2014",
 			"title": "Chemistry of Beer"
 		}, {
+		"id": "CLC3403",
+		"name": "CLC 3403-001",
+		"title": "Law and Justice",
+		"instructor": "Kyle Harper",
+		"detailAnchor": "CLC3403-detail",
+		"kalturaVideo": "0_wanue4j9",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "August 24, 2015",
+		"duration": "16 Weeks",
+		"school": "Department of Classics and Letters at the University of Oklahoma",
+		"description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
+		"prerequisites": [{
+			"id": "",
+			"title": "Junior standing or instructor permission"
+		}],
+		"instructors": [{
+			"defaultphoto": "Harper.png",
+			"name": "Kyle Harper, Ph.D.",
+			"title": "Professor, Classics and Letters"
+		}],
+		"schedule": {
+			"days": "Archived"
+		}
+	}, {
 			"credit": {
 				"hours": 1
 			},
@@ -164,33 +218,30 @@
 			"title": "Administration of Adult and Higher Education"
 		},
 		{
-			"credit": {
-				"hours": 1
-			},
-			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for \u0022Water Technologies for Emerging Regions\u0022). The course is designed to generate awareness of water\u2019s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
-			"detailAnchor": "ENGR1510-Spring2015-detail",
-			"duration": "16 Weeks",
-			"id": "ENGR1510-Spring2015",
-			"instructor": "David Sabatini & Jim Chamberlain",
-			"instructors": [{
-				"defaultphoto": "Sabatini.png",
-				"name": "David Sabatini, Ph.D.",
-				"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
-			}, {
-				"defaultphoto": "Chamberlain.png",
-				"name": "Jim Chamberlain, Ph.D.",
-				"title": "OU WaTER Center Staff Researcher"
-			}],
-			"kalturaVideo": "0_6d00mec6",
-			"name": "ENGR 1510-901",
-			"prerequisites": [],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "School of Civil Engineering and Environmental Sceince at the University of Oklahoma",
-			"startDate": "January 12, 2015",
-			"title": "Introduction to Water"
-		}, {
+    		"id": "EIPT5970",
+    		"name": "EIPT 5970",
+    		"title": "Grant Writing for Teachers",
+    		"instructor": "Theresa Cullen",
+    		"detailAnchor": "EIPT5970-detail",
+    		"kalturaVideo": "0_j2vx2rrj",
+    		"credit": {
+    			"hours": 1
+    		},
+    		"startDate": "June 29, 2015",
+    		"duration": "7 Weeks",
+    		"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
+    		"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
+    		"prerequisites": [],
+    		"instructors": [{
+    			"defaultphoto": "Cullen.png",
+    			"name": "Theresa Cullen",
+    			"title": "Associate Professor"
+    		}],
+    		"schedule": {
+    			"days": "Fully Online"
+    		}
+    	},
+	    {
 			"credit": {
 				"hours": 4
 			},
@@ -292,76 +343,8 @@
 			"schedule": {
 				"days": "Archived"
 			}
-		}, {
-			"id": "PHIL1203",
-			"instructor": "Neal Judisch",
-			"name": "PHIL 1203-001",
-			"title": "Philosophy and Human Destiny",
-			"detailAnchor": "PHIL1203-detail",
-			"kalturaVideo": "0_ldltmibn",
-			"credit": {
-				"hours": 3
-			},
-			"startDate": "August 18, 2014",
-			"duration": "16 Weeks",
-			"school": "Department of Philosophy at the University of Oklahoma",
-			"description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
-			"prerequisites": [],
-			"instructors": [{
-				"defaultphoto": "Judisch.png",
-				"name": "Neal Judisch, Ph.D.",
-				"title": "Assistant Professor, Philosophy"
-			}],
-			"schedule": {
-				"days": "Archived"
-			}
-		}, {
-			"credit": {
-				"hours": 3
-			},
-			"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthropology, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
-			"detailAnchor": "SOC1113-Spring2015-detail",
-			"duration": "16 Weeks",
-			"id": "SOC1113-Spring2015",
-			"instructor": "Kelly Damphousse",
-			"instructors": [{
-				"defaultphoto": "Damphousse.png",
-				"name": "Kelly Damphousse, Ph.D.",
-				"title": "Dean, College of Arts and Sciences"
-			}],
-			"kalturaVideo": "0_4ol5o04l",
-			"name": "SOC 1113-001",
-			"prerequisites": [],
-			"schedule": {
-				"days": "Archived"
-			},
-			"school": "Department of Sociology at the University of Oklahoma",
-			"startDate": "January 12, 2015",
-			"title": "Introduction to Sociology"
-		}, {
-			"id": "UCOL1002",
-			"name": "UCOL 1002",
-			"detailAnchor": "UCOL1002-detail",
-			"school": "University College/Freshman Programs at the University of Oklahoma",
-			"kalturaVideo": "0_j8mgxw4a",
-			"title": "Gateway to College Learning",
-			"credit": {
-				"hours": 2
-			},
-			"startDate": "January 12, 2015",
-			"duration": "16 Weeks",
-			"description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
-			"prerequisites": [],
-			"instructor": "Lillian Miller",
-			"schedule": {
-				"days": "Varies"
-			},
-			"instructors": [{
-				"defaultphoto": "Miller.png",
-				"name": "Lillian Miller, M.Ed",
-				"title": "Director of Freshman Programs, University of Oklahoma"
-			}]
-		}, {
+		},
+		{
     		"id": "ISE5013",
     		"name": "ISE 5013",
     		"detailAnchor": "ISE50130-detail",
@@ -387,7 +370,8 @@
     		"schedule": {
     			"days": "Fully Online"
     		}
-    	}, {
+    	},
+		{
     		"id": "MGT2013",
     		"name": "MGT 2013-995",
     		"detailAnchor": "MGT2013-detail",
@@ -410,164 +394,30 @@
     		"schedule": {
     			"days": "Fully Online"
     		}
-    	}, {
-    		"id": "EIPT5970",
-    		"name": "EIPT 5970",
-    		"title": "Grant Writing for Teachers",
-    		"instructor": "Theresa Cullen",
-    		"detailAnchor": "EIPT5970-detail",
-    		"kalturaVideo": "0_j2vx2rrj",
-    		"credit": {
-    			"hours": 1
-    		},
-    		"startDate": "June 29, 2015",
-    		"duration": "7 Weeks",
-    		"school": "Jeannine Rainbolt College of Education/ Educational Psychology",
-    		"description": "Teaching is one of the most underfunded professional fields in the United States.  Teachers often spend their own money to provide basic supplies for their classrooms.  In order to bring in new technology or try new approaches in the classroom teachers often have to write grants to obtain external funding to achieve their teaching goals.  In this course, we will focus on learning about the different kinds of grants available, the grant writing process and common mistakes that may hamper your success. We will work as a learning community to support each other to prepare a crowdsourcing and a traditional grant application that can be submitted to a funding agency. The overall goal of this course is to help you feel informed and empowered to seek funding for your classroom today!",
-    		"prerequisites": [],
-    		"instructors": [{
-    			"defaultphoto": "Cullen.png",
-    			"name": "Theresa Cullen",
-    			"title": "Associate Professor"
-    		}],
-    		"schedule": {
-    			"days": "Fully Online"
-    		}
-    	},	{
-            "id": "SOC3123",
-            "instructor": "B. Mitch Peck",
-            "name": "SOC 3123",
-            "title": "Social Statistics",
-            "detailAnchor": "SOC3123-detail",
-            "school": "Department of Sociology at the University of Oklahoma",
-            "kalturaVideo": "0_win9lpf8",
-            "credit": { "hours": 3 },
-            "startDate": "August 8, 2013",
-            "duration": "16 Weeks",
-            "description": "This course is an undergraduate-level introduction to social statistics. The central focus is descriptive, bivariate, and inferential statistics as they are used in social sciences to analyze survey data. Students will be introduced to how statistics are calculated. The class will focus on (1) understanding the intuitive meaning behind a variety of common social statistics, (2) calculating these statistics by hand with commonly-available spreadsheet software, and (3) practical application of statistical procedures.",
-            "prerequisites": [],
-            "instructors": [{
-                "defaultphoto":"Peck.png",
-                "name": "B. Mitch Peck, Ph.D.",
-                "title": "Associate Professor"
-            }],
-            "schedule": {
-                "days": "Archive"
-            }
-        }
-	],
-
-	"currentCoursesLabel": "Current - Fall",
-	"currentCourses": [{
-		"credit": {
-			"hours": 3
-		},
-		"description": "This course is a general introduction to the history, cultural traditions, and current condition of many of the 38 Native American tribes who reside in Oklahoma. To increase awareness and appreciation of the manners in which the Native American population of Oklahoma contributes to the unique character and capacities of our state, through cultural values, political relationships between sovereign governments, social relations in a diverse place, and enriching artistic expressions. Learners will further understand the roles that indigenous people in Oklahoma have played in national and global contexts.",
-		"detailAnchor": "ANTH1613-detail",
-		"duration": "16 Weeks",
-		"id": "ANTH1613",
-		"instructor": "Dan Swan & Joshua Nelson",
-		"instructors": [{
-			"defaultphoto": "Swan.png",
-			"name": "Dan Swan, Ph.D.",
-			"title": "Associate Professor, Department of Anthropology and Associate Curator of Ethnology, Sam Noble Museum of Natural History"
+    	},{
+			"id": "PHIL1203",
+			"instructor": "Neal Judisch",
+			"name": "PHIL 1203-001",
+			"title": "Philosophy and Human Destiny",
+			"detailAnchor": "PHIL1203-detail",
+			"kalturaVideo": "0_ldltmibn",
+			"credit": {
+				"hours": 3
+			},
+			"startDate": "August 18, 2014",
+			"duration": "16 Weeks",
+			"school": "Department of Philosophy at the University of Oklahoma",
+			"description": "What is it to be human? How did we get here, and what should we strive for, or try to be like? What can we hope for in this life, or (if there is one) the next? In this course we will consider and critically examine a variety of different answers to these questions, both Religious and Secular, from both the East and the West.  We will examine accounts of human nature and destiny as presented in the writings of philosophers, theologians and authors whose works explore the fundamental meaning of our individual lives and the destiny of the human species.",
+			"prerequisites": [],
+			"instructors": [{
+				"defaultphoto": "Judisch.png",
+				"name": "Neal Judisch, Ph.D.",
+				"title": "Assistant Professor, Philosophy"
+			}],
+			"schedule": {
+				"days": "Archived"
+			}
 		}, {
-			"defaultphoto": "Nelson.png",
-			"name": "Joshua Nelson, Ph.D.",
-			"title": "Assistant Professor of English"
-		}],
-		"kalturaVideo": "0_2ri5g355",
-		"name": "ANTH 1613-001",
-		"prerequisites": [],
-		"schedule": {
-			"days": "MW",
-			"times": "10:00am - 11:15am"
-		},
-		"school": "Department of Anthropology",
-		"startDate": "August 24, 2015",
-		"title": "Native Peoples of Oklahoma",
-		"video": "kaltura://1500101/0_2ri5g355/"
-	}, {
-		"id": "BIOL2124",
-		"name": "BIOL 2124",
-		"detailAnchor": "BIOL2124-detail",
-		"school": "Department of Biology, University of Oklahoma",
-		"kalturaVideo": "0_gpczmps5",
-		"title": "Human Physiology",
-		"credit": {
-			"hours": 4
-		},
-		"startDate": "August 24, 2015",
-		"duration": "16 Weeks",
-		"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
-		"instructor": "Heather R. Ketchum, Ph.D.",
-		"instructors": [{
-			"defaultphoto": "Ketchum.png",
-			"name": "Heather R. Ketchum, Ph.D.",
-			"title": "Associate Professor, Biology"
-		}],
-		"prerequisites": [{
-			"id": "",
-			"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
-		}],
-		"schedule": {
-			"days": "MWF",
-			"times": "11:30am - 12:20pm"
-		}
-	}, {
-		"id": "CLC3403",
-		"name": "CLC 3403-001",
-		"title": "Law and Justice",
-		"instructor": "Kyle Harper",
-		"detailAnchor": "CLC3403-detail",
-		"kalturaVideo": "0_wanue4j9",
-		"credit": {
-			"hours": 3
-		},
-		"startDate": "August 24, 2015",
-		"duration": "16 Weeks",
-		"school": "Department of Classics and Letters at the University of Oklahoma",
-		"description": "What makes a law just? In this course we explore fundamental questions about the nature of law and justice through engagement with the great texts of the western tradition. The course covers the sweep of documented history in five units: classical Greece, ancient Rome, early Christianity, the Enlightenment, and the age of market capitalism. The focus of this course is on law, because law is the meeting point between the theory and practice of justice. With  Aristotle's Politics as our principal guide, we will participate in an ancient and enduring conversation about the nature of law and justice.",
-		"prerequisites": [{
-			"id": "",
-			"title": "Junior standing or instructor permission"
-		}],
-		"instructors": [{
-			"defaultphoto": "Harper.png",
-			"name": "Kyle Harper, Ph.D.",
-			"title": "Professor, Classics and Letters"
-		}],
-		"schedule": {
-			"days": "MW",
-			"times": "1:30pm-2:45pm"
-		}
-	}, {
-		"id": "ECON2843-030",
-		"name": "ECON 2843-030",
-		"title": "Elementary Business Statistics",
-		"instructor": "Dr. Alexander Holmes",
-		"detailAnchor": "ECON2843-030-detail",
-		"kalturaVideo": "0_knq8z59f",
-		"credit": {
-			"hours": 3
-		},
-		"startDate": "August 24, 2015",
-		"duration": "16 Weeks",
-		"school": "Department of Economics, University of Oklahoma",
-		"description": "Elementary Business Statistics is the first level statistics class required for all Business and Economics majors and can be used to satisfy the statistics requirement in other departments if you are enrolled as a for-credit OU-student. It is designed as an introductory course to statistics theory and methodology. The foundation of statistical inference is first developed through coverage of descriptive statistics and then close coverage of probability theory and probability density functions: specifically the binomial, Poisson, geometric, and normal distributions. The leap from probability theory to actual inferential statistics by way of the Central Limit Theory is accomplished with the use of a gaming model in which students actively participate to solve a constrained goals a constrained goal that requires an understanding of the link between the Central Limit Theorem and the sample size. Confidence internals and Hypothesis testing follow with careful development of both the theory and philosophy of the hypothesis test. Specific hypotheses are covered including test for means, proportions, differences in mean and differences in proportions, and for variances. Finally correlations and regression are covered in detail. The foundation OLS model is developed and students will be able to propose and test various hypotheses concerning a causal relationship assumed to be linear. For credit Oklahoma University students will have the opportunity to interact with face2face teaching assistants once per week in regularly scheduled lab classes.",
-		"prerequisites": [{
-			"id": "",
-			"title": "Grade of C or better in Mathematics 1503 or 1743 or 1823"
-		}],
-		"instructors": [{
-			"defaultphoto": "Holmes.png",
-			"name": "Dr. Alexander Holmes",
-			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
-		}],
-		"schedule": {
-			"days": "Fully Online"
-		}
-	}, {
 		"id": "PHIL3263",
 		"name": "PHIL 3263",
 		"title": "Virtue Ethics",
@@ -588,8 +438,7 @@
 			"title": "George Lynn Cross Research Professor, Kingfisher College Chair of the Philosophy of Religion and Ethics"
 		}],
 		"schedule": {
-			"days": "TR",
-			"times": "12:00pm-1:15pm"
+			"days": "Archived"
 		}
 	}, {
 		"credit": {
@@ -612,13 +461,172 @@
 			"title": "P SC 1113 or permission of instructor"
 		}],
 		"schedule": {
-			"days": "MW",
-			"times": "3:00pm-4:15pm"
+			"days": "Archived"
 		},
 		"school": "Department of Poltical Science at the University of Oklahoma",
 		"startDate": "August 24, 2015",
 		"title": "Civil Rights and Civil Liberties"
 	}, {
+			"credit": {
+				"hours": 3
+			},
+			"description": "This course is about the fundamental concepts of sociology; foundations of group life; social change, processes, and problems. This class describes the discipline of sociology\u2014the study of social life. It is a fundamental social science (in good company with Economics, Psychology, History, Anthropology, Communication, and Political Science). What is interesting about sociology is that it actually tackles fundamental questions in each of these sub-disciplines. You might even call it the \u201cfather\u201d of the social sciences. That said, it is a pretty new discipline (younger than our country). Still, we have done a lot in just a very short time. It is very likely that you have heard of some of its early founders\u2014the most famous is Karl Marx but others include Max Weber and Emile Durkheim.",
+			"detailAnchor": "SOC1113-Spring2015-detail",
+			"duration": "16 Weeks",
+			"id": "SOC1113-Spring2015",
+			"instructor": "Kelly Damphousse",
+			"instructors": [{
+				"defaultphoto": "Damphousse.png",
+				"name": "Kelly Damphousse, Ph.D.",
+				"title": "Dean, College of Arts and Sciences"
+			}],
+			"kalturaVideo": "0_4ol5o04l",
+			"name": "SOC 1113-001",
+			"prerequisites": [],
+			"schedule": {
+				"days": "Archived"
+			},
+			"school": "Department of Sociology at the University of Oklahoma",
+			"startDate": "January 12, 2015",
+			"title": "Introduction to Sociology"
+		},	{
+            "id": "SOC3123",
+            "instructor": "B. Mitch Peck",
+            "name": "SOC 3123",
+            "title": "Social Statistics",
+            "detailAnchor": "SOC3123-detail",
+            "school": "Department of Sociology at the University of Oklahoma",
+            "kalturaVideo": "0_win9lpf8",
+            "credit": { "hours": 3 },
+            "startDate": "August 8, 2013",
+            "duration": "16 Weeks",
+            "description": "This course is an undergraduate-level introduction to social statistics. The central focus is descriptive, bivariate, and inferential statistics as they are used in social sciences to analyze survey data. Students will be introduced to how statistics are calculated. The class will focus on (1) understanding the intuitive meaning behind a variety of common social statistics, (2) calculating these statistics by hand with commonly-available spreadsheet software, and (3) practical application of statistical procedures.",
+            "prerequisites": [],
+            "instructors": [{
+                "defaultphoto":"Peck.png",
+                "name": "B. Mitch Peck, Ph.D.",
+                "title": "Associate Professor"
+            }],
+            "schedule": {
+                "days": "Archive"
+            }
+        }, {
+			"id": "UCOL1002",
+			"name": "UCOL 1002",
+			"detailAnchor": "UCOL1002-detail",
+			"school": "University College/Freshman Programs at the University of Oklahoma",
+			"kalturaVideo": "0_j8mgxw4a",
+			"title": "Gateway to College Learning",
+			"credit": {
+				"hours": 2
+			},
+			"startDate": "January 12, 2015",
+			"duration": "16 Weeks",
+			"description": "Gateway to College Learning is a course that teaches incoming students how to successfully navigate OU and build a strong foundation for collegiate success. This course focuses on the process of learning and becoming a successful student rather than on a specific academic subject. This course features guest lecturers from across campus to share their insight on various topics. During the course, students will learn about the University of Oklahoma and the many resources available to them, develop and refine academic skills that will help ensure collegiate success, and have opportunities to better understand themselves as students and citizens of their communities.",
+			"prerequisites": [],
+			"instructor": "Lillian Miller",
+			"schedule": {
+				"days": "Varies"
+			},
+			"instructors": [{
+				"defaultphoto": "Miller.png",
+				"name": "Lillian Miller, M.Ed",
+				"title": "Director of Freshman Programs, University of Oklahoma"
+			}]
+		}
+	],
+
+	"currentCoursesLabel": "Current - Spring",
+	"currentCourses": [{
+		"id": "BIOL2124",
+		"name": "BIOL 2124",
+		"detailAnchor": "BIOL2124-detail",
+		"school": "Department of Biology, University of Oklahoma",
+		"kalturaVideo": "0_gpczmps5",
+		"title": "Human Physiology",
+		"credit": {
+			"hours": 4
+		},
+		"startDate": "January 19, 2016",
+		"duration": "16 Weeks",
+		"description": "Human Physiology is the study of normal biological function from atoms to molecules, to cells to tissues, and to organs and organ systems. It is the integration of each of these elements that allows for the human body to function as a whole to accomplish particular tasks. In this course, we will focus on how the human body works through the activities of interconnected organ systems. We will begin by reviewing fundamental concepts from related fields of study including Chemistry, Molecular Biology, and Cell Biology. We will then build upon those concepts as we explore each of the organ systems, their interconnectivity and the effects that specific perturbations will have on those organ systems and subsequent ability to maintain homeostasis. Students will also apply their physiology knowledge to information they encounter on the Internet, in magazines, and on television. Students will complete this course using online resources including lecture videos, animations, workbooks, and discussions, followed by in-class activities that are designed to reinforce online activities and to promote critical thinking skills via case studies and clinical applications. The laboratory session will give students an appreciation of human physiology by conducting hands-on experiments that deal with principles discussed online and in-class.",
+		"instructor": "Heather R. Ketchum, Ph.D.",
+		"instructors": [{
+			"defaultphoto": "Ketchum.png",
+			"name": "Heather R. Ketchum, Ph.D.",
+			"title": "Associate Professor, Biology"
+		}],
+		"prerequisites": [{
+			"id": "",
+			"title": "Introduction to Biology or Zoology and one semester of Chemistry or Physics"
+		}],
+		"schedule": {
+			"days": "MWF",
+			"times": [
+                "12:30:00-05:00",
+                "13:20:00-05:00"
+            ]
+		}
+	},{
+		"id": "ECON2843-030",
+		"name": "ECON 2843-030",
+		"title": "Elementary Business Statistics",
+		"instructor": "Dr. Alexander Holmes",
+		"detailAnchor": "ECON2843-030-detail",
+		"kalturaVideo": "0_knq8z59f",
+		"credit": {
+			"hours": 3
+		},
+		"startDate": "January 19, 2016",
+		"duration": "16 Weeks",
+		"school": "Department of Economics, University of Oklahoma",
+		"description": "Elementary Business Statistics is the first level statistics class required for all Business and Economics majors and can be used to satisfy the statistics requirement in other departments if you are enrolled as a for-credit OU-student. It is designed as an introductory course to statistics theory and methodology. The foundation of statistical inference is first developed through coverage of descriptive statistics and then close coverage of probability theory and probability density functions: specifically the binomial, Poisson, geometric, and normal distributions. The leap from probability theory to actual inferential statistics by way of the Central Limit Theory is accomplished with the use of a gaming model in which students actively participate to solve a constrained goals a constrained goal that requires an understanding of the link between the Central Limit Theorem and the sample size. Confidence internals and Hypothesis testing follow with careful development of both the theory and philosophy of the hypothesis test. Specific hypotheses are covered including test for means, proportions, differences in mean and differences in proportions, and for variances. Finally correlations and regression are covered in detail. The foundation OLS model is developed and students will be able to propose and test various hypotheses concerning a causal relationship assumed to be linear. For credit Oklahoma University students will have the opportunity to interact with face2face teaching assistants once per week in regularly scheduled lab classes.",
+		"prerequisites": [{
+			"id": "",
+			"title": "Grade of C or better in Mathematics 1503 or 1743 or 1823"
+		}],
+		"instructors": [{
+			"defaultphoto": "Holmes.png",
+			"name": "Dr. Alexander Holmes",
+			"title": "Regent's Professor for the Department of Economics at the University of Oklahoma"
+		}],
+		"schedule": {
+			"days": ""
+		}
+	},	{
+			"credit": {
+				"hours": 1
+			},
+			"description": "This course is an introductory course on the significance of water in our world. The title of the course makes reference to (1) water as a global and local natural resource (Water), (2) water as a chemical compound with important properties and characteristics (H20), and (3) the science and technology of bringing clean water to peoples in need (WaTER, an acronym for “Water Technologies for Emerging Regions”). The course is designed to generate awareness of water’s beneficial uses as well as the challenges associated with water quality, degradation, scarcity, over-abundance (flooding), and inequities in access to clean water. It will also introduce the students to the need to consider both technological options and cultural context in determining sustainable solutions to water problems.",
+			"detailAnchor": "ENGR1510-Spring2015-detail",
+			"duration": "16 Weeks",
+			"id": "ENGR1510-Spring2016",
+			"instructor": "David Sabatini & Jim Chamberlain",
+			"instructors": [{
+				"defaultphoto": "Sabatini.png",
+				"name": "David Sabatini, Ph.D.",
+				"title": "David Ross Boyd Professor and Sun Oil Company Endowed Chair, School of Civil Engineering & Environmental Science"
+			}, {
+				"defaultphoto": "Chamberlain.png",
+				"name": "Jim Chamberlain, Ph.D.",
+				"title": "OU WaTER Center Staff Researcher"
+			}],
+			"kalturaVideo": "0_6d00mec6",
+			"name": "ENGR 1510-901",
+			"prerequisites": [],
+			"schedule": {
+    "days": [
+      "W"
+    ],
+    "times": [
+      "16:30:00-06:00",
+      "17:20:00-06:00"
+    ]
+  },
+			"school": "School of Civil Engineering and Environmental Sceince at the University of Oklahoma",
+			"startDate": "January 12, 2015",
+			"title": "Introduction to Water"
+		},{
 		"id": "SS-001",
 		"name": "SS 001",
 		"title": "Gary England's Tornado Alley",
