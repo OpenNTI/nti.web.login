@@ -197,19 +197,7 @@ function iOSversion() {
 if( !(/NextThought|PhantomJS/i.test(navigator.userAgent)) ){
 
 	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|Mobile/i.test(navigator.userAgent) ){
-
-		if(iOSversion() && $AppConfig.allowIPad) {
-			$AppConfig.allowIPad = iOSversion()[0] >= 6;
-		}
-
-		//If the config is set to allow ipad or android in and the userAgent is that same device don't redirect
-		//else you go to mobile
-		if( (!$AppConfig.allowIPad || !/iPad/i.test(navigator.userAgent))
-        &&  (!$AppConfig.allowAndroid || !/Android/i.test(navigator.userAgent))) {
-			location.replace('/mobile/login/'+ (location.search ? ('?'+location.search.replace(/^\?/, '')) : ''));
-		}
-
-
+		location.replace('/mobile/login/'+ (location.search ? ('?'+location.search.replace(/^\?/, '')) : ''));
 	}
 
 	if (/Opera/i.test(navigator.userAgent)
