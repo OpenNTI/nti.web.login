@@ -210,7 +210,7 @@ if( !(/NextThought|PhantomJS/i.test(navigator.userAgent)) ){
 	|| !Modernizr.fontface
 	|| !Modernizr.history
 	|| !Modernizr.postmessage
-	|| !Modernizr.generatedcontent
+	// || !Modernizr.generatedcontent
 	//|| !Modernizr.localstorage || !Modernizr.sessionstorage
 	|| !Modernizr.opacity
 	|| !Modernizr.rgba
