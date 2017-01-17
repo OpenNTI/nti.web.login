@@ -112,15 +112,12 @@ def main():
 								glob.iglob('WebApp/lang/*/*.html.in')):
 		_updateHtml(path,args.analytics_key, args.itunes, dep_mod_date)
 
-	_updateHtml('WebApp/landing/platform.ou.edu/index.html',args.analytics_key, args.itunes, dep_mod_date)
 
 	gzip_files(glob.iglob('WebApp/js/*.js'))
 	gzip_files(glob.iglob('WebApp/resources/css/*.css'))
 	gzip_files(glob.iglob('WebApp/resources/fonts/*.css'))
 	# TTFs compress well, most other font formats do not
 	gzip_files(glob.iglob('WebApp/resources/fonts/*/*.ttf'))
-	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.html'))
-	gzip_files(glob.iglob('WebApp/landing/platform.ou.edu/*.css'))
 
 if __name__ == '__main__':
 		main()
