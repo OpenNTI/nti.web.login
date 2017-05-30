@@ -12,7 +12,8 @@
 			//white list
 			"logon.openid": true,
             "logon.linkedin.oauth1": true,
-            "logon.google": true
+            "logon.google": true,
+            "logon.ou.sso": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
