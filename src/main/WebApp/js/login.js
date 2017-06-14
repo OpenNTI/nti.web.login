@@ -697,9 +697,16 @@
 		}
 	}
 
+	function setHeader() {
+		var welcomeMessage = getString('Welcome to ') + getString('application.title-bar-prefix');
+		var welcomeHeader = $('#welcomeMessage');
+		if (welcomeHeader) welcomeHeader.text(welcomeMessage);
+	}
+
 	$(function(){
 		$('div.forgot').hide();
 		anonymousPing();
+		setHeader();
 		var a, i, v, isUsernameSet;
 
 		message = document.getElementById('message');
