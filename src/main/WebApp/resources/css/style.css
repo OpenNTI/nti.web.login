@@ -1118,7 +1118,7 @@ a.avatar.selected::after{
 }
 
 #oauth-login button:last-of-type {
-    margin-bottom: 15px;
+    /*margin-bottom: 15px;*/
 }
 
 
@@ -1222,6 +1222,22 @@ button.logon:last-of-type {
 	margin: 0;
 }
 
+
+#account-creation.oauth {
+    margin-top: 15px;
+}
+
+#account-creation.oauth a {
+    border: none;
+    box-shadow: none;
+    border-radius: 0px;
+    color: #757474;
+    padding: 0;
+    height: 19px;
+    background-color: transparent;
+    line-height: 0px;
+    font-size: 14px;
+}
 
 #account-creation {
 	margin: 0 25px;
