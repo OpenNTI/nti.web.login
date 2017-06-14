@@ -275,6 +275,9 @@
 			if (allowRel[v.rel] === true) {
 				$('body').addClass('or');
 				addButton(v);
+				$('#account-creation').addClass('oauth');
+				$('.creation-text').text('Create an Account');
+				$('#account-creation .semi-bold').text('New to ' + getString('application.title-bar-prefix') + '? ');
 			}
 			//else {
 			//	console.log('debug: ',v.rel);

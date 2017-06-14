@@ -127,7 +127,7 @@
 
 											<div id="account-creation">
 												<a href="signup.html" role="button" aria-label="Account creation" tabindex="5">
-													<span class="semi-bold">Don’t have an Account?</span> Sign Up
+													<span class="semi-bold">Don’t have an Account? </span><span class="creation-text">Sign up</span>
 													<span class="tagline"></span>
 												</a>
 											</div>
