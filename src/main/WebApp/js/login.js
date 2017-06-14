@@ -10,9 +10,9 @@
 		allowRel = {
 			//white list
 			"logon.openid": true,
-            "logon.linkedin.oauth1": true,
-            "logon.google": true,
-            "logon.ou.sso": true
+      "logon.linkedin.oauth1": true,
+      "logon.google": true,
+      "logon.ou.sso": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
@@ -277,7 +277,12 @@
 				addButton(v);
 				$('#account-creation').addClass('oauth');
 				$('.creation-text').text('Create an Account');
-				$('#account-creation .semi-bold').text('New to ' + getString('application.title-bar-prefix') + '? ');
+				if(v.rel === 'logon.ou.sso') {
+					$('#account-creation .semi-bold').text('New to ' + getString('application.title-bar-prefix') + '? ');
+				} else {
+					$('#account-creation .semi-bold').text('New to NextThought? ');
+				}
+
 			}
 			//else {
 			//	console.log('debug: ',v.rel);
