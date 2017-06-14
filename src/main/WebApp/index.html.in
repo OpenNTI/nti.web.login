@@ -80,11 +80,6 @@
 											</div>
 
 											<div class="field-container">
-                                                <span class="input-wrap">
-												<input id="remember" name="remember" type="checkbox" tabindex="3"/>
-												<label for="remember">Remember me</label>
-                                                </span>
-
 												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
 												<div class="clear"></div>
 											</div>
