@@ -58,7 +58,10 @@
 			<div class="middle zoomin main">
 				<div class="branding">
 					<div class="container main" role="form" aria-label="Login form">
-						<div class="header"></div>
+						<div class="header">
+							<div id="welcomeMessage" />
+						</div>
+						</div>
 						<div class="content">
 							<section id="nt-login">
 									<form id="login" method="post" action="#" onsubmit="return false;">
@@ -80,20 +83,53 @@
 											</div>
 
 											<div class="field-container">
-                                                <span class="input-wrap">
-												<input id="remember" name="remember" type="checkbox" tabindex="3"/>
-												<label for="remember">Remember me</label>
-                                                </span>
-
 												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
 												<div class="clear"></div>
+											</div>
+											<div class="forgot grey">
+												I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
+												<a href="#" id="forgotpass" tabindex="8">password</a>?
+												<div class="dialog username" role="dialog" aria-label="Forgot username form">
+													<div class="top">&nbsp;</div>
+													<div class="middle">
+														<div class="message"></div>
+														<form id="recover" method="post" action="#" onsubmit="return false;">
+															<h1>That&#39;s okay...</h1>
+															<p>Enter your email and we&#39;ll send your username.</p>
+															<div data-title="email">
+																<input type="email" placeholder="email" size="20" aria-label="Enter email">
+																<button id="send" type="submit" aria-label="Submit to retrieve username" disabled>Submit</button>
+															</div>
+														</form>
+													</div>
+													<div class="bottom">&nbsp;</div>
+												</div>
+												<div class="dialog password" role="dialog" aria-label="Forgot password form">
+													<div class="top">&nbsp;</div>
+													<div class="middle">
+														<div class="message"></div>
+														<form id="recoverpass" method="post" action="#" onsubmit="return false;">
+															<h1>That&#39;s okay...</h1>
+															<p>Enter your username and email, and we&#39;ll help you reset it.</p>
+															<div data-title="username and email">
+																<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
+																<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
+																<button id="send-recover-pass" type="submit" disabled>Submit</button>
+															</div>
+														</form>
+													</div>
+													<div class="bottom">&nbsp;</div>
+												</div>
 											</div>
 
 											<div id="oauth-login"></div>
 											<div id="active-session-login"></div>
 
-											<div id="account-creation" >
-												<a href="signup.html" role="button" aria-label="Account creation" tabindex="5">Create an Account.<span class="tagline"></span></a>
+											<div id="account-creation">
+												<a href="signup.html" role="button" aria-label="Account creation" tabindex="5">
+													<span class="semi-bold">Don’t have an Account? </span><span class="creation-text">Sign up</span>
+													<span class="tagline"></span>
+												</a>
 											</div>
 
 											<div id="mask"><div></div><span id="mask-msg">Loading...</span></div>
@@ -101,41 +137,6 @@
 									</form>
 							</section>
 						</div>
-					</div>
-				</div>
-				<div class="forgot">
-					I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
-					<a href="#" id="forgotpass" tabindex="8">password</a>.
-					<div class="dialog username" role="dialog" aria-label="Forgot username form">
-						<div class="top">&nbsp;</div>
-						<div class="middle">
-							<div class="message"></div>
-							<form id="recover" method="post" action="#" onsubmit="return false;">
-								<h1>That&#39;s okay...</h1>
-								<p>Enter your email and we&#39;ll send your username.</p>
-								<div data-title="email">
-									<input type="email" placeholder="email" size="20" aria-label="Enter email">
-									<button id="send" type="submit" aria-label="Submit to retrieve username" disabled>Submit</button>
-								</div>
-							</form>
-						</div>
-						<div class="bottom">&nbsp;</div>
-					</div>
-					<div class="dialog password" role="dialog" aria-label="Forgot password form">
-						<div class="top">&nbsp;</div>
-						<div class="middle">
-							<div class="message"></div>
-							<form id="recoverpass" method="post" action="#" onsubmit="return false;">
-								<h1>That&#39;s okay...</h1>
-								<p>Enter your username and email, and we&#39;ll help you reset it.</p>
-								<div data-title="username and email">
-									<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
-									<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
-									<button id="send-recover-pass" type="submit" disabled>Submit</button>
-								</div>
-							</form>
-						</div>
-						<div class="bottom">&nbsp;</div>
 					</div>
 				</div>
 			</div>

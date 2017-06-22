@@ -7,13 +7,12 @@
 		username,
 		password,
 		showErrorOnReady,
-		remember,
 		allowRel = {
 			//white list
 			"logon.openid": true,
-            "logon.linkedin.oauth1": true,
-            "logon.google": true,
-            "logon.ou.sso": true
+      "logon.linkedin.oauth1": true,
+      "logon.google": true,
+      "logon.ou.sso": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
@@ -131,8 +130,7 @@
 			u = ghanaUser.test(v) ? v+'@aops_ghana.nextthought' : v;
 		return {
 			username: u,
-			password: password.value,
-			remember: remember.checked
+			password: password.value
 		};
 	}
 
@@ -178,7 +176,6 @@
 
 		if (m === 'GET' && data){
 			delete data.password;
-			delete data.remember;
 			delete data.username;
 		}
 
@@ -278,6 +275,14 @@
 			if (allowRel[v.rel] === true) {
 				$('body').addClass('or');
 				addButton(v);
+				$('#account-creation').addClass('oauth');
+				$('.creation-text').text('Create an Account');
+				if(v.rel === 'logon.ou.sso') {
+					$('#account-creation .semi-bold').text('New to ' + getString('application.title-bar-prefix') + '? ');
+				} else {
+					$('#account-creation .semi-bold').text('New to NextThought? ');
+				}
+
 			}
 			//else {
 			//	console.log('debug: ',v.rel);
@@ -389,14 +394,6 @@
 
 	function submitHandler(e){
 		var nextMonth = new Date(new Date().getTime() + 1000*60*60*24*31);// 31 days
-		//check if remember me is checked
-		if($('#remember').is(':checked')){
-			//if its checked set remember-me-username cookie
-			setCookie('remember-me-username',username.value,nextMonth);
-		}else{
-			//if not clear remember-me-username cookie
-			setCookie('remember-me-username','null',new Date(1));
-		}
 		loginWithRel(submitButtonRel,true);
 		return stop(e||event);
 	}
@@ -708,15 +705,21 @@
 		}
 	}
 
+	function setHeader() {
+		var welcomeMessage = getString('Welcome to ') + getString('application.title-bar-prefix');
+		var welcomeHeader = $('#welcomeMessage');
+		if (welcomeHeader) welcomeHeader.text(welcomeMessage);
+	}
+
 	$(function(){
 		$('div.forgot').hide();
 		anonymousPing();
+		setHeader();
 		var a, i, v, isUsernameSet;
 
 		message = document.getElementById('message');
 		password = document.getElementById('password');
 		username = document.getElementById('username');
-		remember = document.getElementById('remember');
 
 		$('#password').change(formValidation).keyup(buffer(formValidation, 350));
 		$('#username').change(formValidation).keyup(usernameChanged);
@@ -773,7 +776,6 @@
 				v = a[i].split('=');
 				cookies[v[0]] = v[1];
 				if(v[0]==='remember-me-username'){
-					remember.checked = true;
 					$(username).val(decodeURIComponent(v[1])).change();
 					username.focus();
 				}
