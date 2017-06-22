@@ -86,7 +86,7 @@
 												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
 												<div class="clear"></div>
 											</div>
-											<div class="forgot">
+											<div class="forgot grey">
 												I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
 												<a href="#" id="forgotpass" tabindex="8">password</a>?
 												<div class="dialog username" role="dialog" aria-label="Forgot username form">
