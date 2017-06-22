@@ -1,0 +1,32 @@
+{
+  "name": "nti-web-login",
+  "version": "1.0.0-alpha",
+  "description": "Nexthought Platform Login App",
+  "author": "nextthought",
+  "license": "UNLICENCED",
+  "publishConfig": {
+    "registry": "https://npm.nextthought.com/"
+  },
+  "homepage": "http://localhost:8083/login/",
+  "main": "src/server/index.js",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "start": "nti-app-scripts start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NextThought/nti.web.login.git"
+  },
+  "dependencies": {
+    "nti-commons": "^2.0.0",
+    "nti-util-logger": "^1.0.0"
+  },
+  "devDependencies": {
+    "nti-app-scripts": "^1.0.0",
+    "react": "^15.5.3",
+    "react-dom": "^15.5.3",
+    "react-proxy-loader": "github:jsg2021/react-proxy-loader#react-15.5"
+  }
+}
