@@ -422,6 +422,10 @@ a.continue.birthday {
 	text-align: center;
 }
 
+.signin .forgot.grey {
+	color: #b8b8b8;
+}
+
 .signin .forgot a {
 	text-decoration: underline;
 }
