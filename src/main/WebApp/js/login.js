@@ -515,6 +515,28 @@
 		$('.field-container').hide();
 	}
 
+	function sendRecoverEmail() {
+		var val = $('#recover input').val();
+		
+		$('.forgot .dialog.username .message').html('<h1>' + getString('Thanks!') + '</h1>');
+		$('#recover').addClass('submitted');
+		$('#recover input').each(function() {
+			$(this).val('');
+		});
+
+		setTimeout(function(){
+			hideDialog($('.forgot .dialog'));
+		},1000);
+
+		$.ajax({
+			url: recoverNameUrl,
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			headers: {Accept:'application/json'},
+			type: 'POST',
+			data: {email: val}
+		});
+	}
 
 	function setupRecovery(){
 		$('#recover input').keyup(function(){
@@ -526,39 +548,76 @@
 				sub.attr('disabled',true);
 			}
 		});
+		
+		$('#recover input').keydown(function(e){
+			var sub = $('#recover button');
+			
+			if("Enter" === e.key) {
+				if(!sub.attr('disabled')) {
+					sendRecoverEmail();
+				}
+				
+				return false;
+			}
+		});
 
 		$('.forgot .dialog.username').click(function(e){
 			e.stopPropagation();
 		});
 
-		$('#recover').submit(function(e){
-			var val = $('#recover input').val();
+		$('#recover button').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-
-			$('.forgot .dialog.username .message').html('<h1>' + getString('Thanks!') + '</h1>');
-			$('#recover').addClass('submitted');
-			$('#recover input').each(function() {
-				$(this).val('');
-			});
-
-			setTimeout(function(){
-				hideDialog($('.forgot .dialog'));
-			},1000);
-
-			$.ajax({
-				url: recoverNameUrl,
-				dataType: 'json',
-				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-				headers: {Accept:'application/json'},
-				type: 'POST',
-				data: {email: val}
-			});
+			
+			sendRecoverEmail();
 
 			return false;
 		});
 	}
 
+	function sendRecoverPasswordEmail() {
+		var user = $('#recover-pass-username').val(),
+			email = $('#recover-pass-email').val(),
+			pathname = window.ourPath.replace('index.html', ''),
+			recoveryURL = window.location.protocol + '//' + window.location.host;
+
+		//ensure trailing slash exists on path
+		if (pathname.lastIndexOf('/') !== pathname.length - 1){
+			pathname += '/';
+		}
+		recoveryURL += (pathname + 'passwordrecover.html?return=' + returnUrl);
+
+		$('.forgot .dialog.password .message').html('<h1>' + getString('Thanks!') + '</h1>');
+		$('#recoverpass').addClass('submitted');
+		$('#recoverpass input').each(function() {
+			$(this).val('');
+		});
+
+		setTimeout(function(){
+			hideDialog($('.forgot .dialog'));
+		},1000);
+
+		$.ajax({
+			url: recoverPassUrl,
+			contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+			dataType: 'json',
+			headers: {Accept:'application/json'},
+			type: 'POST',
+			data: {email: email, username: user, success:recoveryURL}
+		});
+	}
+	
+	function maybeDoPassSubmit(e) {
+		var sub = $('#recoverpass button');
+		
+		if("Enter" === e.key) {
+			if(!sub.attr('disabled')) {
+				sendRecoverPasswordEmail();
+			}
+			
+			return false;
+		}
+	}
 
 	function setupPassRecovery(){
 		function enablePasswordRecoverySubmit(){
@@ -577,45 +636,20 @@
 		$('#recover-pass-username').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
 		$('#recover-pass-email').blur(enablePasswordRecoverySubmit).keyup(enablePasswordRecoverySubmit);
 
+		$('#recover-pass-username').blur(enablePasswordRecoverySubmit).keydown(maybeDoPassSubmit);
+		$('#recover-pass-email').blur(enablePasswordRecoverySubmit).keydown(maybeDoPassSubmit);
+
 		$('.forgot .dialog.password').click(function(e){
 			$('.forgot .dialog.password .message').html('');
 			$('#recoverpass').removeClass('submitted');
 			e.stopPropagation();
 		});
 
-		$('#recoverpass').submit(function(e){
-			var user = $('#recover-pass-username').val(),
-				email = $('#recover-pass-email').val(),
-				pathname = window.ourPath.replace('index.html', ''),
-				recoveryURL = window.location.protocol + '//' + window.location.host;
-
-			//ensure trailing slash exists on path
-			if (pathname.lastIndexOf('/') !== pathname.length - 1){
-				pathname += '/';
-			}
-			recoveryURL += (pathname + 'passwordrecover.html?return=' + returnUrl);
-
+		$('#recoverpass button').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-
-			$('.forgot .dialog.password .message').html('<h1>' + getString('Thanks!') + '</h1>');
-			$('#recoverpass').addClass('submitted');
-			$('#recoverpass input').each(function() {
-				$(this).val('');
-			});
-
-			setTimeout(function(){
-				hideDialog($('.forgot .dialog'));
-			},1000);
-
-			$.ajax({
-				url: recoverPassUrl,
-				contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
-				dataType: 'json',
-				headers: {Accept:'application/json'},
-				type: 'POST',
-				data: {email: email, username: user, success:recoveryURL}
-			});
+			
+			sendRecoverPasswordEmail();
 
 			return false;
 		});
