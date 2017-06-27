@@ -738,6 +738,10 @@
 			$(el).html(offText);
 		}
 	}
+	
+	function goToSignup() {
+		window.location.href = 'signup.html';
+	}
 
 	function setHeader() {
 		var welcomeMessage = getString('Welcome to ') + getString('application.title-bar-prefix');
@@ -761,6 +765,7 @@
 		originalMessage = message.innerHTML;
 
 		$('#oauth-login').click(clickHandler);
+		$('#account-creation button').click(goToSignup);
 		$('#login').submit(submitHandler);
 
 		$('#forgotit').click(function(e){
