@@ -343,6 +343,10 @@ a.continue.birthday {
 	visibility: hidden;
 }
 
+#recover.submitted, #recoverpass.submitted {
+	visibility: hidden;
+}
+
 .signin .forgot .dialog h1{
 	color: #494949;
 	font-weight: 400;
