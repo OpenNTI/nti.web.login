@@ -1117,14 +1117,13 @@ a.avatar.selected::after{
 #password {}
 
 #oauth-login {
-	padding: 45px 0 0 0;
+	padding: 26px 0 0 0;
 	margin: 0;
 }
 
 #oauth-login button:last-of-type {
     /*margin-bottom: 15px;*/
 }
-
 
 #mask {
 	text-align: center;
@@ -1210,7 +1209,7 @@ button.logon.linkedin {}
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;
-	width: 285px;
+	width: 280px;
 	height: 40px;
 	border: none;
 	box-shadow: none;
@@ -1226,47 +1225,22 @@ button.logon:last-of-type {
 	margin: 0;
 }
 
-
-#account-creation.oauth {
-    margin-top: 15px;
-}
-
 #account-creation.oauth a {
-    border: none;
-    box-shadow: none;
-    border-radius: 0px;
-    color: #757474;
-    padding: 0;
-    height: 19px;
-    background-color: transparent;
-    line-height: 0px;
-    font-size: 14px;
-}
 
-#account-creation {
-	margin: 0 25px;
-	margin-top: 45px;
+	margin: 0 25px 9px;
 	position: relative;
-	padding-bottom: 10px;
-}
-
-
-#account-creation a {
-	width: 100%;
+  width: 280px;
   height: 40px;
   border-radius: 3px;
-  background-color: #ffffff;
-  box-shadow: 0 2px 0 0 #d6d6d6, 0 0 1px 1px rgba(0, 0, 0, 0.05);
-  display: block;
-  font-family: 'Open Sans';
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 40px;
-  color: #757474;
-}
-
-#account-creation a .semi-bold {
-	font-weight: 600;
+  background-image: linear-gradient(to bottom, #ffffff, #f8f8f8);
+  border: solid 1px #e2e2e2;
+	font-family: 'Open Sans';
+	font-weight: normal;
+	font-size: 16px;
+	text-align: center;
+	color: #757474;
+	display: block;
+	line-height: 40px;
 }
 
 #account-creation a:hover, #account-creation a:active  {
