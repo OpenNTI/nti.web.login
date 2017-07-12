@@ -339,6 +339,10 @@
 		unmask();
 		$(username).removeAttr("aria-invalid");
 		$(password).removeAttr("aria-invalid");
+		
+		if(msg) {
+			$("#welcomeMessage").hide();
+		}
 
 		if(cls){
 			$('body').addClass(cls);
