@@ -49,8 +49,6 @@ exports.getPage = function getPage () {
 		const path = u.pathname;
 		const cfg = Object.assign({revision}, clientConfig.config || {});
 
-		logger.info(cfg);
-
 		try {
 			let realPath = path;
 			
