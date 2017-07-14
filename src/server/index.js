@@ -8,7 +8,7 @@ const page = require('./lib/page');
 const exists = f => {
 	try { fs.accessSync(f); } catch (e) { return false; } return true; };
 
-let assets = path.resolve(__dirname, '../client/');
+let assets = path.resolve(__dirname, '../main/WebApp/');
 
 exports = module.exports = {
 
