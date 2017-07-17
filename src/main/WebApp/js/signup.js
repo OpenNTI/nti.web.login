@@ -230,8 +230,9 @@
 			ol = cont.find('ol'),
 			me = this,
 			path = document.createElement('A');
-
-		path.href = $('script[src*="support.js?v="]')[0].src;
+		
+		var support = $('script[src*="support.js"]')[0];
+		path.href = (support && support.src) || '';
 		path = path.pathname.split('/').slice(0, -1);
 		path.push('school-data.json');
 
