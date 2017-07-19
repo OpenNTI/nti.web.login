@@ -342,6 +342,7 @@
 		
 		if(msg) {
 			$("#welcomeMessage").hide();
+      $(message).css('opacity', '1');
 		}
 
 		if(cls){
@@ -362,7 +363,7 @@
 			return;
 		}
 		mask();
-		message.innerHTML = '';
+		$(message).css('opacity', '0');
 		try{
 			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
 
