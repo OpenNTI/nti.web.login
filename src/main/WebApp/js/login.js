@@ -342,7 +342,7 @@
 		
 		if(msg) {
 			$("#welcomeMessage").hide();
-      $(message).css('opacity', '1');
+			$(message).css('opacity', '1');
 		}
 
 		if(cls){
