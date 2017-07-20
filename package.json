@@ -1,6 +1,6 @@
 {
   "name": "nti-web-login",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Nexthought Platform Login App",
   "author": "nextthought",
   "license": "UNLICENCED",
@@ -13,18 +13,19 @@
     "src"
   ],
   "scripts": {
-    "start": "nti-app-scripts start"
+    "start": "nti-app-scripts start",
+    "release": "nti-app-scripts release"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
   "dependencies": {
-    "nti-commons": "^2.0.0",
-    "nti-util-logger": "^1.0.0"
+    "nti-commons": "2.5.5",
+    "nti-util-logger": "1.1.2"
   },
   "devDependencies": {
-    "nti-app-scripts": "^1.0.0",
+    "nti-app-scripts": "1.0.27",
     "react": "^15.5.3"
   }
 }
