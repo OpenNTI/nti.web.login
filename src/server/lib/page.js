@@ -52,8 +52,8 @@ exports.getPage = function getPage () {
 		try {
 			let realPath = path;
 			
-			if ( path === '/' ) {
-				realPath = '/index.html';
+			if ( path[path.length - 1] === '/' ) {
+				realPath += 'index.html';
 			}
 			
 			let file = Path.resolve(__dirname, '../../main/WebApp' + realPath + '.in'); //production
