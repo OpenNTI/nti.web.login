@@ -7,14 +7,20 @@
   "publishConfig": {
     "registry": "https://npm.nextthought.com/"
   },
-  "homepage": "http://localhost:8083/login/",
+  "homepage": "proxy://localhost:8083/app/",
   "main": "src/server/index.js",
   "files": [
     "src"
   ],
   "scripts": {
     "start": "nti-app-scripts start",
-    "release": "nti-app-scripts release"
+    "release": "nti-app-scripts release",
+    "test": "nti-app-scripts test",
+    "prepack": "nti-app-scripts build",
+    "build": "nti-app-scripts build",
+    "clean": "nti-app-scripts clean",
+    "check": "nti-app-scripts check",
+    "install-snapshots": "nti-app-scripts install-snapshots"
   },
   "repository": {
     "type": "git",
@@ -25,7 +31,7 @@
     "nti-util-logger": "1.1.2"
   },
   "devDependencies": {
-    "nti-app-scripts": "1.0.27",
+    "nti-app-scripts": "^1.0.47",
     "react": "^15.5.3"
   }
 }
