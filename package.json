@@ -16,7 +16,7 @@
     "start": "nti-app-scripts start",
     "release": "nti-app-scripts release",
     "test": "nti-app-scripts test",
-    "prepack": "nti-app-scripts build",
+    "-prepack": "nti-app-scripts build",
     "build": "nti-app-scripts build",
     "clean": "nti-app-scripts clean",
     "check": "nti-app-scripts check",
