@@ -1,4 +1,4 @@
-/*eslint strict: 0*/
+/*eslint strict: 0, import/no-commonjs: 0, import/no-extraneous-dependencies: 0*/
 'use strict';
 const url = require('url');
 const Path = require('path');
@@ -9,19 +9,16 @@ const {URL: {join: urlJoin}} = require('nti-commons');
 const logger = require('./logger');
 
 const isRootPath = RegExp.prototype.test.bind(/^\/(?!\/).*/);
-const isSiteAssets = RegExp.prototype.test.bind(/^\/site\-assets/);
+const isSiteAssets = RegExp.prototype.test.bind(/^\/site-assets/);
 const isFavicon = RegExp.prototype.test.bind(/^\/favicon\.ico/);
 const shouldPrefixBasePath = val => isRootPath(val) && !isSiteAssets(val) && !isFavicon(val);
 
-const isIndex = RegExp.prototype.test.bind(/^\/index\.html/);
-const isPasswordRecover = RegExp.prototype.test.bind(/^\/passwordrecover\.html/);
-const isSignup = RegExp.prototype.test.bind(/^\/signup\.html/);
-const isUnsupported = RegExp.prototype.test.bind(/^\/unsupported\.html/);
 
 const basepathreplace = /(manifest|src|href)="(.*?)"/igm;
-const configValues = /<\[cfg\:([^\]]*)\]>/igm;
+const configValues = /<\[cfg:([^\]]*)\]>/igm;
 
-const statCache = {};
+const NOOP = () => {};
+const NOT_FOUND = '404 Not Found';
 
 function injectConfig (cfg, orginal, prop) {
 	return cfg[prop] || 'MissingConfigValue';
@@ -35,56 +32,67 @@ function isFile (file) {
 	}
 }
 
-exports.getPage = function getPage () {
-	let revision;
-	let Application;
-	let template;
-	let isDevMode = false;
-	let file;
+function resolveFile (path) {
+	const extensions = ['', 'index.html'];
 
-	return (basePath, req, clientConfig, markNotFound) => {
+	for (let ext of extensions) {
+		const filePath = path + ext + '.in';
+
+		const [file] = [
+			Path.resolve(__dirname, '../../main/WebApp' + filePath), //production
+			Path.resolve(__dirname, '../../main' + filePath), //dev
+		].filter(isFile);
+
+		if (file) {
+			return file;
+		}
+	}
+}
+
+exports.getPage = function getPage () {
+
+	return (basePath, req, clientConfig, markError = NOOP) => {
 		basePath = basePath || '/';
 		const u = url.parse(req.url);
 		const manifest = u.query === 'cache' ? '<html manifest="/manifest.appcache"' : '<html';
 		const path = u.pathname;
-		const cfg = Object.assign({revision}, clientConfig.config || {});
+		const cfg = Object.assign({}, clientConfig.config || {});
 
+		let template;
 		try {
-			let realPath = path;
-			
-			if ( path[path.length - 1] === '/' ) {
-				realPath += 'index.html';
-			}
-			
-			let file = Path.resolve(__dirname, '../../main/WebApp' + realPath + '.in'); //production
-			if (!isFile(file)) {
-				isDevMode = true;
-				file = Path.resolve(__dirname, '../../main' + realPath + '.in'); //dev
+			const file = resolveFile(path);
+
+			if (!file) {
+				throw new Error(NOT_FOUND);
 			}
 
 			template = fs.readFileSync(file, 'utf8');
 		} catch (er) {
-			logger.error('%s', er.stack || er.message || er);
-			template = 'Could not load page template.';
+			if (er.message === NOT_FOUND) {
+				markError(404);
+				template = NOT_FOUND;
+			} else {
+				markError(500);
+				logger.error('%s', er.stack || er.message || er);
+				template = 'Could not load page template.';
+			}
 		}
 
 		const basePathFix = (original, attr, val) =>
-				attr + `="${
-					shouldPrefixBasePath(val)
-						? urlJoin(basePath, val)
-						: val
-				}"`;
+			attr + `="${
+				shouldPrefixBasePath(val)
+					? urlJoin(basePath, val)
+					: val
+			}"`;
 
-		let iTunesAppId = '';
-		if (cfg.itunes){
-			iTunesAppId = '<meta name="apple-itunes-app" content="app-id=' + cfg.itunes + '" />';
-		}
 
-		let out = template
-				.replace(/<html/, manifest)
-				.replace(configValues, injectConfig.bind(this, cfg))
-				.replace('<!--[itunes banner here]-->', iTunesAppId)
-				.replace(basepathreplace, basePathFix);
+		const iTunesAppId = !cfg.itunes ? '' : '<meta name="apple-itunes-app" content="app-id=' + cfg.itunes + '" />';
+
+		const out = template
+			.replace(/<html/, manifest)
+			.replace(configValues, injectConfig.bind(this, cfg))
+			.replace('<!--[itunes banner here]-->', iTunesAppId)
+			.replace(basepathreplace, basePathFix);
 
 		return out;
 	};
