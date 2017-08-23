@@ -692,7 +692,8 @@
 				isUsernameSet = true;
 			}
 			if(q && q.error){
-				showErrorOnReady = function(){ error(decodeURIComponent(q.error)); };
+				originalMessage = decodeURIComponent(q.error);
+				showErrorOnReady = function(){ error(originalMessage); };
 			}
 		}
 		return isUsernameSet;
