@@ -531,6 +531,7 @@
 
 		setTimeout(function(){
 			hideDialog($('.forgot .dialog'));
+			$('#recover').removeClass('submitted');
 		},1000);
 
 		$.ajax({
@@ -600,6 +601,7 @@
 
 		setTimeout(function(){
 			hideDialog($('.forgot .dialog'));
+			$('#recoverpass').removeClass('submitted');
 		},1000);
 
 		$.ajax({
