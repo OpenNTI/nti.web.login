@@ -687,7 +687,7 @@
 	function handleQueryParams(){
 		var q = location.href.split('?')[1], isUsernameSet;
 		if(q){
-			q = parseQueryString(q);
+			q = parseQueryString(q.split('#')[0]);
 			if(q && q.username){
 				$(username).val(decodeURIComponent(q.username)).change();
 				username.focus();
