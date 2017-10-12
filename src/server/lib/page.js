@@ -11,7 +11,7 @@ const logger = require('./logger');
 const isRootPath = RegExp.prototype.test.bind(/^\/(?!\/).*/);
 const isSiteAssets = RegExp.prototype.test.bind(/^\/site-assets/);
 const isFavicon = RegExp.prototype.test.bind(/^\/favicon\.ico/);
-const isMobile = RegExp.prototype.test.bind(/^\/mobile/)
+const isMobile = RegExp.prototype.test.bind(/^\/mobile/);
 const shouldPrefixBasePath = val => isRootPath(val) && !isSiteAssets(val) && !isFavicon(val) && !isMobile(val);
 
 
