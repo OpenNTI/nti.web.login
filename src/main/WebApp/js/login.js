@@ -444,7 +444,6 @@
 			headers: {Accept:'application/json'},
 			type: 'GET'
 		}).done(function(data){
-			messageUser();//reset the error message if there was one.
 			recoverNameUrl = getLink(data,'logon.forgot.username');
 			recoverPassUrl = getLink(data,'logon.forgot.passcode');
 			resetPassUrl = getLink(data,'logon.reset.passcode');
