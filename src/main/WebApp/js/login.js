@@ -12,7 +12,8 @@
 			"logon.openid": true,
       "logon.linkedin.oauth1": true,
       "logon.google": true,
-      "logon.ou.sso": true
+      "logon.ou.sso": true,
+      "logon.ats.imis": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
@@ -339,7 +340,7 @@
 		unmask();
 		$(username).removeAttr("aria-invalid");
 		$(password).removeAttr("aria-invalid");
-		
+
 		if(msg) {
 			$("#welcomeMessage").hide();
 			$(message).css('opacity', '1');
@@ -521,7 +522,7 @@
 
 	function sendRecoverEmail() {
 		var val = $('#recover input').val();
-		
+
 		$('.forgot .dialog.username .message').html('<h1>' + getString('Thanks!') + '</h1>');
 		$('#recover').addClass('submitted');
 		$('#recover input').each(function() {
@@ -553,15 +554,15 @@
 				sub.attr('disabled',true);
 			}
 		});
-		
+
 		$('#recover input').keydown(function(e){
 			var sub = $('#recover button');
-			
+
 			if("Enter" === e.key) {
 				if(!sub.attr('disabled')) {
 					sendRecoverEmail();
 				}
-				
+
 				return false;
 			}
 		});
@@ -573,7 +574,7 @@
 		$('#recover button').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			
+
 			sendRecoverEmail();
 
 			return false;
@@ -612,15 +613,15 @@
 			data: {email: email, username: user, success:recoveryURL}
 		});
 	}
-	
+
 	function maybeDoPassSubmit(e) {
 		var sub = $('#recoverpass button');
-		
+
 		if("Enter" === e.key) {
 			if(!sub.attr('disabled')) {
 				sendRecoverPasswordEmail();
 			}
-			
+
 			return false;
 		}
 	}
@@ -654,7 +655,7 @@
 		$('#recoverpass button').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			
+
 			sendRecoverPasswordEmail();
 
 			return false;
