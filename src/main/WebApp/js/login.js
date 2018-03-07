@@ -10,10 +10,10 @@
 		allowRel = {
 			//white list
 			"logon.openid": true,
-      "logon.linkedin.oauth1": true,
-      "logon.google": true,
-      "logon.ou.sso": true,
-      "logon.ats.imis": true
+			"logon.linkedin.oauth1": true,
+			"logon.google": true,
+			"logon.ou.sso": true,
+			"logon.ats.imis": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
