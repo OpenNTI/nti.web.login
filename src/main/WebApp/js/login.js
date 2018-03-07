@@ -13,7 +13,8 @@
 			"logon.linkedin.oauth1": true,
 			"logon.google": true,
 			"logon.ou.sso": true,
-			"logon.ats.imis": true
+			"logon.ats.imis": true,
+			"logon.ensync.imis": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
