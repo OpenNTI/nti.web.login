@@ -1211,6 +1211,13 @@ button.logon.facebook {
 button.logon.twitter {}
 button.logon.linkedin {}
 
+button.logon.ensync.ims {
+	text-indent: 0;
+	font-size: 1rem;
+	background-color: #3fb3f6;
+}
+
+
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;
