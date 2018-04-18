@@ -4,7 +4,7 @@ const url = require('url');
 const Path = require('path');
 const fs = require('fs');
 
-const {URL: {join: urlJoin}} = require('nti-commons');
+const {URL: {join: urlJoin}} = require('@nti/lib-commons');
 
 const logger = require('./logger');
 

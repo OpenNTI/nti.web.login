@@ -1,5 +1,5 @@
 /*eslint strict: 0, import/no-commonjs: 0, import/no-extraneous-dependencies: 0*/
-const {default: Logger} = require('nti-util-logger');
+const {default: Logger} = require('@nti/util-logger');
 
 const logger = Logger.get('nti.web.login');
 
