@@ -26,10 +26,7 @@
     "type": "git",
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
-  "dependencies": {
-    "@nti/lib-commons": "2.5.5",
-    "@nti/util-logger": "1.1.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@nti/app-scripts": "^1.16.0",
     "react": "^15.5.3"

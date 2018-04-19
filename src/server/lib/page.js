@@ -4,9 +4,6 @@ const url = require('url');
 const Path = require('path');
 const fs = require('fs');
 
-const {URL: {join: urlJoin}} = require('@nti/lib-commons');
-
-const logger = require('./logger');
 
 const isRootPath = RegExp.prototype.test.bind(/^\/(?!\/).*/);
 const isSiteAssets = RegExp.prototype.test.bind(/^\/site-assets/);
@@ -50,6 +47,22 @@ function resolveFile (path) {
 	}
 }
 
+
+function urlJoin (...parts) {
+	const [base, ...urls] = parts
+		.filter(Boolean)
+		.map(x => url.parse(x.toString()));
+
+	for(let part of urls) {
+		base.pathname = Path.join(base.pathname, part.pathname);
+		base.hash = part.hash || base.hash;
+		base.search = part.search || base.search;
+	}
+
+	return base.format();
+}
+
+
 exports.getPage = function getPage () {
 
 	return (basePath, req, clientConfig, markError = NOOP) => {
@@ -74,7 +87,7 @@ exports.getPage = function getPage () {
 				template = NOT_FOUND;
 			} else {
 				markError(500);
-				logger.error('%s', er.stack || er.message || er);
+				console.error('%s', er.stack || er.message || er);
 				template = 'Could not load page template.';
 			}
 		}
