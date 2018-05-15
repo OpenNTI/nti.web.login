@@ -160,10 +160,10 @@
 	}
 
 
-	function call(url,data,back,forceMethod){
+	function call(url,data,back,forceMethod, useAuth){
 		var u = data? data.username : undefined,
 			p = data? data.password : undefined,
-			a = p? ('Basic '+btoa(u+':'+p)) : undefined,
+			a = p && useAuth? ('Basic '+btoa(u+':'+p)) : undefined,
 			m = forceMethod? forceMethod : data? 'POST':'GET',
 			l = url,/* + "?dc="+(new Date().getTime()),*/
 			f = { withCredentials: true },
@@ -389,7 +389,7 @@
 				}
 				document.getElementById('mask-msg').innerHTML = getString('Redirecting...');
 				redirect();
-			}, 'GET');
+			}, 'GET', true);
 
 		}
 		catch(er){
