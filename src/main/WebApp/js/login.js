@@ -300,25 +300,27 @@
 	}
 
 
-	function addButton(rel, optionalSelector){
+	function addButton(link, optionalSelector){
 		var title,
-			button;
-		if( typeof rel === "object" ){
-			title = rel.title;
-			rel = rel.rel;
+			button,
+			href;
+		if( typeof link === "object" ){
+			title = link.title;
+			href = link.href;
+			link = link.rel;
 		}else{
-			title = rel;
+			title = link;
 		}
 
 		 //do not allow duplicates.
-	    if ($('button[name="' + rel + '"]').length > 0) {
+	    if ($('button[name="' + link + '"]').length > 0) {
 	      return;
 	    }
 
 	    if (title) {
-	    	button = '<button type="button" name="'+rel+'" title="'+title+'" class="'+rel.replace(/\./g,' ')+'">'+title+'</button>';
+	    	button = '<button type="button" name="'+link+'" title="'+title+'" data-href="'+(href||'')+'" class="'+link.replace(/\./g,' ')+'">'+title+'</button>';
 	    } else {
-	    	button = '<button type="button" name="'+rel+'" class="'+rel.replace(/\./g,' ')+'"></button>';
+	    	button = '<button type="button" name="'+link+'" data-href="'+(href||'')+'" class="'+link.replace(/\./g,' ')+'"></button>';
 	    }
 
 		return $(button)
@@ -360,14 +362,14 @@
 	}
 
 
-	function loginWithRel(r,xhr){
-		if(!rel.hasOwnProperty(r)){
+	function loginWithRel(r,xhr,fallBack){
+		if(!rel.hasOwnProperty(r) && !fallBack){
 			return;
 		}
 		mask();
 		$(message).css('opacity', '0');
 		try{
-			var url = appendUrl(rel[r],toPost(getRedirects(xhr)));
+			var url = appendUrl(rel[r] || fallBack,toPost(getRedirects(xhr)));
 
 			if(!xhr){
 				document.getElementById('mask-msg').innerHTML = getString('Redirecting...');
@@ -409,7 +411,7 @@
 	function clickHandler(e){
 		var t = $(e.target);
 		if(t.is('button')){
-			loginWithRel(t.attr('name'),false);
+			loginWithRel(t.attr('name'),false,t.attr('data-href'));
 		}
 	}
 
