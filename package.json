@@ -16,7 +16,7 @@
     "start": "app-scripts start",
     "release": "app-scripts release",
     "test": "app-scripts test",
-    "-prepack": "app-scripts build",
+    "prepack": "app-scripts test",
     "build": "app-scripts build",
     "clean": "app-scripts clean",
     "check": "app-scripts check",
