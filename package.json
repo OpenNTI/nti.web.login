@@ -29,6 +29,6 @@
   "dependencies": {},
   "devDependencies": {
     "@nti/app-scripts": "^1.17.0",
-    "react": "^15.5.3"
+    "react": "*"
   }
 }
