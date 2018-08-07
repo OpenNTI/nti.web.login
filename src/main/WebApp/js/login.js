@@ -170,7 +170,10 @@
 			h = {
 				Accept:'application/json',
 				Authorization:a,
-				'Content-Type':'application/x-www-form-urlencoded'
+				'Content-Type':'application/x-www-form-urlencoded',
+				'cache-control': 'no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0',
+				expires: 'Tue, 01 Jan 1980 1:00:00 GMT',
+				pragma: 'no-cache'
 			};
 
 		if(!a){ delete h.Authorization; f = {}; }
@@ -445,7 +448,12 @@
 		$.ajax({
 			dataType: 'json',
 			url:'/dataserver2/logon.ping',
-			headers: {Accept:'application/json'},
+			headers: {
+				Accept:'application/json',
+				'cache-control': 'no-cache, must-revalidate, post-check=0, pre-check=0, max-age=0',
+				expires: 'Tue, 01 Jan 1980 1:00:00 GMT',
+				pragma: 'no-cache'
+			},
 			type: 'GET'
 		}).done(function(data){
 			recoverNameUrl = getLink(data,'logon.forgot.username');
