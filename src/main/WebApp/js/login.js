@@ -14,7 +14,8 @@
 			"logon.google": true,
 			"logon.ou.sso": true,
 			"logon.ats.imis": true,
-			"logon.ensync.imis": true
+			"logon.ensync.imis": true,
+			"logon.ifsta.oauth": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
