@@ -817,7 +817,7 @@
 
 		$('body').click(function(e){hideDialog($(this).parent().find('.dialog'));});
 
-		if(requestParameters.failed){ error(requestParameters.message ? decodeURIComponent(requestParameters.message) : ''); }
+		if(requestParameters.failed){ error(requestParameters.message ? decodeURIComponent(requestParameters.message).replace(/\+/g, ' ') : ''); }
 
 		$('#account-creation a').attr('href',function(i,at){ return at + location.search; });
 
