@@ -15,7 +15,8 @@
 			"logon.ou.sso": true,
 			"logon.ats.imis": true,
 			"logon.ensync.imis": true,
-			"logon.ifsta.oauth": true
+			"logon.ifsta.oauth": true,
+			"logon.your.membership": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,

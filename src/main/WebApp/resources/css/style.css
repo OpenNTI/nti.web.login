@@ -1224,6 +1224,13 @@ button.logon.ifsta.oauth {
 	/*taken from the buttons on ifsta.org*/
 }
 
+button.login.your.membership {
+	text-indent: 0;
+	font-size: 1rem;
+	background-color: #ac0101;
+	/*taken from pdca.org*/
+}
+
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;
