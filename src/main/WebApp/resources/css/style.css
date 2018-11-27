@@ -264,6 +264,16 @@ a.continue.birthday {
   width: 100%;
 }
 
+#oauth-login-message {
+	font-family: 'Open Sans';
+	font-size: 14px;
+	font-weight: 400;
+	color: #494949;
+	text-align: center;
+	padding: 0 40px;
+	margin-bottom: 35px;
+}
+
 .signup .header img {
 	position: absolute;
 	left: -139px;

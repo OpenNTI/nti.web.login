@@ -256,6 +256,22 @@
 	}
 
 
+	function hasOAuthButtons (links) {
+		var i = links.length - 1,
+			v;
+
+		for (; i>=0; i--) {
+			v = links[i];
+
+			if (allowRel[v.rel] === true) {
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+
 	function addOAuthButtons(links, callResults) {
 		var i = links.length - 1,
 			v, submitRelPrefs = ['logon.ldap.ou', 'logon.ldap.okstate', 'logon.nti.password'];
@@ -445,8 +461,40 @@
 	}
 
 
+	function hideNextThoughtLogin () {
+		$('.field-container[data-title="Username"]').hide();
+		$('.field-container[data-title="Password"]').hide();
+		$('button#submit').parent('.field-container').hide();
+		$('div.forgot').hide();
+
+		$(document).on('keypress', function (evt) {
+			if (evt.ctrlKey && evt.shiftKey && evt.charCode === 1) { showNextThoughtLogin(); }
+		});
+	}
+
+	function showNextThoughtLogin () {
+		$('.field-container[data-title="Username"]').show();
+		$('.field-container[data-title="Password"]').show();
+		$('button#submit').parent('.field-container').show();
+		$('div.forgot').show();
+
+		$('#oauth-login-message').hide();
+
+		$(document).off('keypress');
+	}
+
+
+	function showOAuthLoginMessage () {
+		const message = getString('Login with your account to access your content.');
+
+		$('<div id="oauth-login-message">' + message + '</div>').insertBefore('.field-container[data-title="Username"]');
+	}
+
+
 	function anonymousPing(){
+		hideNextThoughtLogin();
 		$('#account-creation').hide();
+
 		$.ajax({
 			dataType: 'json',
 			url:'/dataserver2/logon.ping',
@@ -476,12 +524,21 @@
 
 
 			function finishAnonymous(){
+				var hasOAuth = hasOAuthButtons(data.Links || []);
+				var hasAccountCreation = getLink(data, 'account.create');
+
 				setupRecovery();
 				setupPassRecovery();
 
-				$('div.forgot').show();
+				// $('div.forgot').show();
 				if(getLink(data,'account.create')){
 					$('#account-creation').show();
+				}
+
+				if (hasOAuth && !hasAccountCreation) {
+					showOAuthLoginMessage();
+				} else {
+					showNextThoughtLogin();
 				}
 			}
 
