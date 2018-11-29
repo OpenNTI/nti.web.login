@@ -898,6 +898,8 @@
 		$('input,textarea').placeholder();
 
 		setLanguage();
+
+		window.showNextThoughtLogin = showNextThoughtLogin;
 	});
 
 }(jQuery));
