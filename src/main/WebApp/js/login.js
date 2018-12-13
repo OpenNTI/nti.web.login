@@ -485,7 +485,7 @@
 
 
 	function showOAuthLoginMessage () {
-		const message = getString('Login with your account to access your content.');
+		const message = getString('Sign in with your account to access your content.');
 
 		$('<div id="oauth-login-message">' + message + '</div>').insertBefore('.field-container[data-title="Username"]');
 	}
