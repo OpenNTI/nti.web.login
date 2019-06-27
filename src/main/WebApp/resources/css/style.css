@@ -1241,6 +1241,10 @@ button.logon.your.membership {
 	/*taken from pdca.org*/
 }
 
+button.logon.nrwa {
+	background-color: #2b7ecc;
+}
+
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;

@@ -16,7 +16,8 @@
 			"logon.ats.imis": true,
 			"logon.ensync.imis": true,
 			"logon.ifsta.oauth": true,
-			"logon.your.membership": true
+			"logon.your.membership": true,
+			"logon.nrwa": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
