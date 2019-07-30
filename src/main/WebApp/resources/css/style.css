@@ -1248,6 +1248,13 @@ button.logon.nrwa {
 	/*taken from the nrwa site*/
 }
 
+button.logon.hrpros {
+	text-indent: 0;
+	font-size: 1rem;
+	background-color: #ec4941;
+	/*taken from the hr.com site*/
+}
+
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;
