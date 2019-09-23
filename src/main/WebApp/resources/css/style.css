@@ -1255,6 +1255,13 @@ button.logon.hrpros {
 	/*taken from the hr.com site*/
 }
 
+button.login.mygov {
+	text-indent: 0;
+	font-size: 1rem;
+	background-color: #0279c0;
+	/*taken form mygov.us site*/
+}
+
 button.logon {
 	margin: 0 0 10px 0;
 	text-indent: -9999px;

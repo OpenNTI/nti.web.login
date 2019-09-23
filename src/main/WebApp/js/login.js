@@ -18,7 +18,8 @@
 			"logon.ifsta.oauth": true,
 			"logon.your.membership": true,
 			"logon.nrwa": true,
-			"logon.hrpros": true
+			"logon.hrpros": true,
+			"logon.mygov": true
 		},
 		aboutURL, supportURL,
 		recoverNameUrl,
