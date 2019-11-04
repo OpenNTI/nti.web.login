@@ -1,5 +1,12 @@
 .links .languages {display: none;}
 
+:focus {
+	outline: #757474 auto 3px;
+}
+
+body:not(.user-is-tabbing) :focus {
+  outline: none;
+}
 
 ::-webkit-input-placeholder { font-style: italic; font-weight: 500; color: #b8b8b8; }
 .signup input:-moz-placeholder { font-style: italic; color: #b8b8b8; font-weight: 500; }
