@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
+	<meta http-equiv="Content-Type" content="Type=text/html; charset=utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta http-equiv="cleartype" content="on"/>
+	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<!-- android -->
+	<meta name="mobile-web-app-capable" content="yes"/>
+	<!-- iOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+	<meta name="apple-mobile-web-app-title" content="nextthought app"/>
 	<noscript>
 		<meta http-equiv="refresh" content="0;url=unsupported.html">
 	</noscript>
 	<title data-value="Login">Loading...</title>
 	<link rel="shortcut icon" href="resources/favicon.ico">
 	<!--[itunes banner here]-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="Application Login">
 	<meta name="author" content="NextThought">
 	<link rel="stylesheet" type="text/css" href="/resources/fonts/fonts.css">
@@ -118,44 +128,42 @@
 												<button id="submit" type="submit" tabindex="4" disabled>Sign in</button>
 												<div class="clear"></div>
 											</div>
-											
+
 											<div id="account-creation">
 												<a href="signup.html">Create an Account</a>
 											</div>
-											
+
 											<div class="forgot grey">
 												I forgot my <a href="#" id="forgotit" tabindex="7">username</a> or
 												<a href="#" id="forgotpass" tabindex="8">password</a>?
 												<div class="dialog username" role="dialog" aria-label="Forgot username form">
-													<div class="top">&nbsp;</div>
-													<div class="middle">
+
+														<div class="arrow"></div>
 														<div class="message"></div>
 														<div id="recover">
-															<h1>That&#39;s okay...</h1>
+															<h3>Forgot username?</h3>
 															<p>Enter your email and we&#39;ll send your username.</p>
-															<div data-title="email">
+															<div data-title="email" class="email-input">
 																<input type="email" placeholder="email" size="20" aria-label="Enter email"/>
-																<button id="send" type="button" aria-label="Submit to retrieve username" disabled>Submit</button>
+																<button id="send" type="button" aria-label="Submit to retrieve username" disabled>Send</button>
 															</div>
 														</div>
-													</div>
-													<div class="bottom">&nbsp;</div>
+
 												</div>
 												<div class="dialog password" role="dialog" aria-label="Forgot password form">
-													<div class="top">&nbsp;</div>
-													<div class="middle">
+
+														<div class="arrow"></div>
 														<div class="message"></div>
 														<div id="recoverpass">
-															<h1>That&#39;s okay...</h1>
-															<p>Enter your username and email, and we&#39;ll help you reset it.</p>
-															<div data-title="username and email">
+															<h3>Forgot Password?</h3>
+															<p>Enter your you account info and we’ll help reset it.</p>
+															<div data-title="username and email" class="column-inputs">
 																<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
 																<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
-																<button id="send-recover-pass" type="button" disabled>Submit</button>
+																<button id="send-recover-pass" type="button" disabled>Reset Password</button>
 															</div>
 														</div>
-													</div>
-													<div class="bottom">&nbsp;</div>
+
 												</div>
 											</div>
 
