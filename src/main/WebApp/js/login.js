@@ -581,9 +581,9 @@
 		$('#active-session-login').addClass('visible').html(
 			'<div>' +
 				getString('You are currently logged in somewhere else. Would you like to logout?') +
-			'</div>');
-		addButton(getString('No'), '#active-session-login').click(redirect);
-		addButton(getString('Yes'), '#active-session-login').click(function(){
+			'</div><div class=buttons></div>');
+		addButton(getString('No'), '#active-session-login .buttons').click(redirect);
+		addButton(getString('Yes'), '#active-session-login .buttons').click(function(){
 			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
 			$.ajax({
 				url: logoutUrl + '?_dc=' + new Date().getTime()
@@ -593,10 +593,25 @@
 		$('.field-container').hide();
 	}
 
+	function makeMessage (message, email) {
+		function escape (s) {
+			var div = document.createElement('div');
+			div.appendChild(document.createTextNode(s));
+			return div.innerHTML;
+		}
+
+		return [
+			'<div class="sent-message">',
+			'<h3>',escape(message),'</h3>',
+			'<address>',escape(email),'</address>',
+			'</div>'
+		].join('');
+	}
+
 	function sendRecoverEmail() {
 		var val = $('#recover input').val();
 
-		$('.forgot .dialog.username .message').html('<h1>' + getString('Thanks!') + '</h1>');
+		$('.forgot .dialog.username .message').html(makeMessage(getString('We sent your username to'), val));
 		$('#recover').addClass('submitted');
 		$('#recover input').each(function() {
 			$(this).val('');
@@ -605,7 +620,7 @@
 		setTimeout(function(){
 			hideDialog($('.forgot .dialog'));
 			$('#recover').removeClass('submitted');
-		},1000);
+		},10000);
 
 		$.ajax({
 			url: recoverNameUrl,
@@ -666,7 +681,7 @@
 		}
 		recoveryURL += (pathname + 'passwordrecover.html?return=' + returnUrl);
 
-		$('.forgot .dialog.password .message').html('<h1>' + getString('Thanks!') + '</h1>');
+		$('.forgot .dialog.password .message').html(makeMessage(getString('We sent a link to reset your password.'), email));
 		$('#recoverpass').addClass('submitted');
 		$('#recoverpass input').each(function() {
 			$(this).val('');
@@ -675,7 +690,7 @@
 		setTimeout(function(){
 			hideDialog($('.forgot .dialog'));
 			$('#recoverpass').removeClass('submitted');
-		},1000);
+		},10000);
 
 		$.ajax({
 			url: recoverPassUrl,

@@ -40,8 +40,6 @@
 			'You are currently logged in somewhere else. Would you like to logout?': '',
 			'No': '',
 			'Yes': '',
-
-			'Thanks!': '',
 		});
 	</script>
 	<script type="text/javascript" src="../../js/login.js?v=%time%"></script>

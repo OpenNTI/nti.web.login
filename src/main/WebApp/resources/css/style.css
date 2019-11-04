@@ -352,9 +352,38 @@ a.continue.birthday {
 
 .dialog .message {
 	text-align: left;
-	margin-left: 0;
+    margin: 0;
+    padding: 0;
+    color: currentColor;
 }
 
+.dialog .message .sent-message {
+	position: relative;
+	width: 380px;
+    max-width: 100vw;
+	margin: -5px -21px;
+	padding: 4px 10px 4px 85px;
+}
+
+.dialog .message .sent-message::after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 70px;
+	width: 1px;
+	background: rgba(0,0,0,0.1);
+}
+
+.dialog .message .sent-message::before {
+	content: url(../images/mail.svg);
+	position: absolute;
+	top: 5px;
+	left: 15px;
+}
+
+.dialog .message:not(:empty) + div,
 .dialog form.submitted,
 #recover.submitted,
 #recoverpass.submitted {
@@ -374,11 +403,15 @@ a.continue.birthday {
 	line-height: 22px;
 }
 
+.dialog address,
 .dialog p {
 	color: #757474;
 	margin: 0;
 	font-size: 14px;
 	line-height: 19px;
+	font-weight: 400;
+	font-style: normal;
+	word-break: break-word;
 }
 
 .dialog {
@@ -741,6 +774,13 @@ ol.selectbox.open {
 	margin: 10px 20px;
 }
 
+#active-session-login .buttons{
+	display: flex;
+	justify-content: space-evenly;
+	flex-direction: row-reverse;
+	margin-top: 30px;
+}
+
 #active-session-login div{
 	text-align: left;
 	color: #757474;
@@ -748,35 +788,11 @@ ol.selectbox.open {
 }
 
 #active-session-login button {
-	background: none;
+	min-width: 35%;
+	cursor: pointer;
 }
 #active-session-login button.No {
-
-	color: #707070;
- 	text-shadow: 1px 1px #efefef;
-
-	border: 1px #a8a8a8 solid;
-	box-shadow: inset 0 1px 1px white;
-
-	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U0ZTRlNCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M4YzhjOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-	background-size: 100%;
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e4e4e4), color-stop(100%, #c8c8c8));
-	background-image: -webkit-linear-gradient(top, #e4e4e4 0%, #c8c8c8 100%);
-	background-image: -moz-linear-gradient(top, #e4e4e4 0%, #c8c8c8 100%);
-	background-image: -o-linear-gradient(top, #e4e4e4 0%, #c8c8c8 100%);
-	background-image: linear-gradient(top, #e4e4e4 0%, #c8c8c8 100%);
-}
-
-#active-session-login button.No:active{
-	/*text-shadow: -1px 0 white;*/
-	box-shadow: inset 0 -1px 1px white;
-	background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjUwJSIgeTE9IjAlIiB4Mj0iNTAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M4YzhjOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U0ZTRlNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-	background-size: 100%;
-	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c8c8c8), color-stop(100%, #e4e4e4));
-	background-image: -webkit-linear-gradient(top, #c8c8c8 0%, #e4e4e4 100%);
-	background-image: -moz-linear-gradient(top, #c8c8c8 0%, #e4e4e4 100%);
-	background-image: -o-linear-gradient(top, #c8c8c8 0%, #e4e4e4 100%);
-	background-image: linear-gradient(top, #c8c8c8 0%, #e4e4e4 100%);
+	background: #757474;
 }
 
 
