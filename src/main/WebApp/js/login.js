@@ -616,7 +616,6 @@
 		$('#recover button').prop('disabled',true);
 		$('#recover input').val('');
 
-		setTimeout(function(){ hideDialog($('.forgot .dialog.username')) },10000);
 
 		$.ajax({
 			url: recoverNameUrl,
@@ -680,8 +679,6 @@
 		$('.forgot .dialog.password .message').html(makeMessage(getString('We sent a link to reset your password.'), email));
 		$('#recoverpass').addClass('submitted');
 		$('#recoverpass input').val('');
-
-		setTimeout(function(){ hideDialog($('.forgot .dialog.password')) },10000);
 
 		$.ajax({
 			url: recoverPassUrl,
