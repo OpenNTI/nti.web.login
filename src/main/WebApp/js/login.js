@@ -613,14 +613,10 @@
 
 		$('.forgot .dialog.username .message').html(makeMessage(getString('We sent your username to'), val));
 		$('#recover').addClass('submitted');
-		$('#recover input').each(function() {
-			$(this).val('');
-		});
+		$('#recover button').prop('disabled',true);
+		$('#recover input').val('');
 
-		setTimeout(function(){
-			hideDialog($('.forgot .dialog'));
-			$('#recover').removeClass('submitted');
-		},10000);
+		setTimeout(function(){ hideDialog($('.forgot .dialog.username')) },10000);
 
 		$.ajax({
 			url: recoverNameUrl,
@@ -639,7 +635,7 @@
 				sub.removeAttr('disabled');
 			}
 			else {
-				sub.attr('disabled',true);
+				sub.prop('disabled',true);
 			}
 		});
 
@@ -683,14 +679,9 @@
 
 		$('.forgot .dialog.password .message').html(makeMessage(getString('We sent a link to reset your password.'), email));
 		$('#recoverpass').addClass('submitted');
-		$('#recoverpass input').each(function() {
-			$(this).val('');
-		});
+		$('#recoverpass input').val('');
 
-		setTimeout(function(){
-			hideDialog($('.forgot .dialog'));
-			$('#recoverpass').removeClass('submitted');
-		},10000);
+		setTimeout(function(){ hideDialog($('.forgot .dialog.password')) },10000);
 
 		$.ajax({
 			url: recoverPassUrl,
@@ -724,7 +715,7 @@
 				sub.removeAttr('disabled');
 			}
 			else {
-				sub.attr('disabled',true);
+				sub.prop('disabled',true);
 			}
 		}
 
@@ -753,6 +744,8 @@
 
 	function hideDialog(dialog){
 		$('body').removeClass('dialog-shown');
+		dialog.find('div.message').html('');
+		dialog.find('.submitted').removeClass('submitted');
 		dialog.hide();
 	}
 
@@ -862,26 +855,30 @@
 		$('#forgotit').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.username');
-			d.find('div.message').html('');
-			d.find('form').removeClass('submitted');
-			$('body').addClass('dialog-shown');
+			if (d.is(":visible")) {
+				return;
+			}
+
+			hideDialog($(this).parent().find('.dialog'));
 			d.show();
 			d.find('input').focus();
+			$('body').addClass('dialog-shown');
 			return false;
 		});
 
 		$('#forgotpass').click(function(e){
 			e.stopPropagation();
 			e.preventDefault();
-			hideDialog($(this).parent().find('.dialog'));
 			var d = $(this).parent().find('.dialog.password');
-			d.find('div.message').html('');
-			d.find('form').removeClass('submitted');
-			$('body').addClass('dialog-shown');
+			if (d.is(":visible")) {
+				return;
+			}
+
+			hideDialog($(this).parent().find('.dialog'));
 			d.show();
 			d.find('#recover-pass-username').focus();
+			$('body').addClass('dialog-shown');
 			return false;
 		});
 
