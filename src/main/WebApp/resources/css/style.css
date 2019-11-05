@@ -383,7 +383,7 @@ a.continue.birthday {
 	left: 15px;
 }
 
-.dialog .message:not(:empty) + div,
+/* .dialog .message:not(:empty) + div, */
 .dialog form.submitted,
 #recover.submitted,
 #recoverpass.submitted {
