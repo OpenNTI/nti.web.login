@@ -156,7 +156,7 @@
 														<div class="message"></div>
 														<div id="recoverpass">
 															<h3>Forgot Password?</h3>
-															<p>Enter your you account info and we’ll help reset it.</p>
+															<p>Enter your account info and we’ll help reset it.</p>
 															<div data-title="username and email" class="column-inputs">
 																<input id="recover-pass-username" type="text" placeholder="username" size="20" aria-label="Enter username">
 																<input id="recover-pass-email" type="email" placeholder="email" size="20" aria-label="Enter email">
