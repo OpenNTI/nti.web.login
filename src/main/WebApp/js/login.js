@@ -556,7 +556,7 @@
 					data: {username: cookies.username}
 				}).done(function(dataHS){
 					if(getLink(dataHS,'logon.continue')){
-						setupContinue(getLink(dataHS, 'logon.logout'));
+						setupContinue(getLink(dataHS, 'logon.logout'), dataHS.Username);
 					}
 					else {
 						finishAnonymous();
@@ -577,13 +577,14 @@
 	}
 
 
-	function setupContinue(logoutUrl){
+	function setupContinue(logoutUrl, user){
+		user = !user ? '' :  (' as: <b>' + user + '</b>');
 		$('#active-session-login').addClass('visible').html(
 			'<div>' +
-				getString('You are currently logged in somewhere else. Would you like to logout?') +
+				'You are already logged in' + user + '.<br/>Would you like to continue or logout?' +
 			'</div><div class=buttons></div>');
-		addButton(getString('No'), '#active-session-login .buttons').click(redirect);
-		addButton(getString('Yes'), '#active-session-login .buttons').click(function(){
+			addButton(getString('Continue'), '#active-session-login .buttons').click(redirect);
+			addButton(getString('Logout'), '#active-session-login .buttons').click(function() {
 			$.removeCookie('sidt',{path:'/'});//trigger the other tabs to die
 			$.ajax({
 				url: logoutUrl + '?_dc=' + new Date().getTime()

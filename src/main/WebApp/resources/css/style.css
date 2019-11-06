@@ -770,27 +770,28 @@ ol.selectbox.open {
 
 #active-session-login {
     position: relative;
-	text-align: right;
+	text-align: center;
 	margin: 10px 20px;
 }
 
 #active-session-login .buttons{
 	display: flex;
 	justify-content: space-evenly;
-	flex-direction: row-reverse;
+	flex-direction: row;
 	margin-top: 30px;
 }
 
 #active-session-login div{
-	text-align: left;
 	color: #757474;
 	margin: 10px;
 }
 
 #active-session-login button {
-	min-width: 35%;
+	min-width: 110px;
 	cursor: pointer;
 }
+
+#active-session-login button.Logout,
 #active-session-login button.No {
 	background: #757474;
 }
