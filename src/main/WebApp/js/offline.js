@@ -1,1 +1,0 @@
-location.replace('offline.html');

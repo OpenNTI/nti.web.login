@@ -1,4 +1,4 @@
-dist/
-node_modules/
-reports/
-package-lock.json
+/dist/
+/node_modules/
+/reports/
+/docs/
