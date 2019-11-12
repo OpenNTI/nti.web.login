@@ -1,0 +1,13 @@
+@import url(~normalize.css/normalize.css);
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+body, input, select, textarea {
+	font-family: var(--body-font-family);
+}
+input:required {
+	/* override firefox's default red ring on required inputs */
+	box-shadow: none;
+}

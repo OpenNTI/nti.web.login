@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-function TestCmp () {
-	return (
-		<div>
-			Hello from Web Login
-		</div>
-	);
-}
+import App from './app';
 
 ReactDOM.render(
-	React.createElement(TestCmp),
+	React.createElement(App),
 	document.getElementById('content')
 );
