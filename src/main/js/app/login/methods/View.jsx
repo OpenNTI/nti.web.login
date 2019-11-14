@@ -1,12 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames/bind';
 
 import Store from '../Store';
 
+import Styles from './View.css';
 import Continue from './continue';
 import Oauth from './oauth';
 import Password from './password';
 
+const cx = classnames.bind(Styles);
 
 const Options = [
 	[Continue],
@@ -25,13 +28,15 @@ function getAvailable (handshake) {
 
 
 LoginMethods.propTypes = {
-	handshake: PropTypes.any
+	handshake: PropTypes.object,
+	busy: PropTypes.bool
 };
 function LoginMethods (props) {
-	const available = getAvailable(props);
+	const {busy, handshake} = props;
+	const available = getAvailable(handshake);
 
 	return (
-		<section>
+		<section className={cx({busy})} aria-hidden={busy}>
 			{(available || []).map((option) => {
 				const {Form, name} = option;
 
@@ -46,10 +51,5 @@ function LoginMethods (props) {
 export default Store
 	.monitor({
 		[Store.Handshake]: 'handshake',
-		[Store.Busy]: 'busy',
-		[Store.Error]: 'error',
-		returnURL: 'returnURL',
-		loginRedirectURL: 'loginRedirectURL',
-		canLogout: 'canLogout',
-		logout: 'logout'
+		[Store.Busy]: 'busy'
 	})(LoginMethods);

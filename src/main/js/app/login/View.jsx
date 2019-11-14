@@ -11,28 +11,36 @@ const t = scoped('nti-login.login.View', {
 	setupError: 'Could not communicate with the servers. Please try again later.'
 });
 
+
 Login.propTypes = {
-	settingUp: PropTypes.bool,
-	busy: PropTypes.bool,
-	setupError: PropTypes.any
+	setup: PropTypes.func.isRequired,
+	hasPing: PropTypes.bool,
+	error: PropTypes.any,
+	busy: PropTypes.bool
 };
-function Login ({settingUp, busy, setupError}) {
-	const loading = settingUp || busy;
-	const delay = busy ? 0 : 500;
+function Login ({setup, hasPing, error, busy}) {
+	const initialLoad = !hasPing && busy;
+
+	React.useEffect(() => {
+		if (!hasPing && !busy) { setup(); }
+		return () => {};
+	});
+
+	if (!hasPing && !busy && !error) { return null; }
 
 	return (
-		<div>
-			<Loading.Placeholder loading={loading} delay={delay} fallback={(<Loading.Spinner.Large />)}>
-				{setupError && (<Unavailable error={t('setupError')} />)}
-				{!setupError && (<Methods />)}
-			</Loading.Placeholder>
-		</div>
+		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
+			{error && (<Unavailable error={t('setupError')} />)}
+			{(!error && !initialLoad && busy) && (<Loading.Spinner.Large />)}
+			{!error && (<Methods />)}
+		</Loading.Placeholder>
 	);
 }
 
 export default Store
 	.connect({
-		[Store.SettingUp]: 'settingUp',
-		[Store.SetupError]: 'setupError',
+		[Store.Setup]: 'setup',
+		[Store.HasPing]: 'hasPing',
+		[Store.Error]: 'error',
 		[Store.Busy]: 'busy'
 	})(Login);
