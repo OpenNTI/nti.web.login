@@ -72,6 +72,7 @@ export default class LoginStore extends Stores.SimpleStore {
 		this.set({[Busy]: true, [Error]: null});
 
 		try {
+			//TODO: can this just be fetch? Or can it go through the server? Or does it need to go through the service
 			const service = await getService();
 
 			await service.get(logoutLink);
