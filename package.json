@@ -27,7 +27,9 @@
     "type": "git",
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@nti/lib-store": "^1.14.0"
+  },
   "devDependencies": {
     "@nti/app-scripts": "^2.17.0",
     "@nti/lib-locale": "^1.8.0",
