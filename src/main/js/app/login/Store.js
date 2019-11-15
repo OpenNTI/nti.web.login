@@ -4,23 +4,36 @@ import {getServer, getConfigFor} from '@nti/web-client';//eslint-disable-line
 const Setup = 'setup';
 const HasPing = 'hasPing';
 const Handshake = 'handshake';
+const Ping = 'ping';
+
 const Busy = 'busy';
 const Error = 'error';
+const SetBusy = 'setBusy';
 
 const ReturnURL = 'returnUrl';
 const LoginRedirectURL = 'LoginRedirectURL';
-const SetBusy = 'setBusy';
 
+const UpdateUsername = 'UpdateUsername';
+const GetHandshakeForUsername = 'GetHandshakeForUsername';
+
+const UpdateDelay = 150;
+const UpdateTimeout = Symbol('Update Timeout');
+
+const HandshakeMap = new Map();
 
 export default class LoginStore extends Stores.SimpleStore {
 	static Setup = Setup;
 	static HasPing = HasPing;
 	static Handshake = Handshake;
 	static Busy = Busy;
+	static SetBusy = SetBusy;
 	static Error = Error;
+
 	static ReturnURL = ReturnURL;
 	static LoginRedirectURL = LoginRedirectURL;
-	static SetBusy = SetBusy;
+
+	static UpdateUsername = UpdateUsername;
+	static GetHandshakeForUsername = GetHandshakeForUsername;
 
 	async [Setup] () {
 		this.set({
@@ -38,7 +51,8 @@ export default class LoginStore extends Stores.SimpleStore {
 			this.set({
 				[Busy]: false,
 				[HasPing]: true,
-				[Handshake]: ping
+				[Handshake]: ping,
+				[Ping]: ping
 			});
 		} catch (e) {
 			this.set({
@@ -62,9 +76,8 @@ export default class LoginStore extends Stores.SimpleStore {
 	}
 
 	get [LoginRedirectURL] () {
-		const {returnURL} = this;
 		//TODO: be smarter about this;
-		return `${returnURL}?_u=42`;
+		return `${this[ReturnURL]}?_u=42`;
 	}
 
 	[SetBusy] () {
@@ -79,4 +92,51 @@ export default class LoginStore extends Stores.SimpleStore {
 			}
 		};
 	}
+
+	[UpdateUsername] (username) {
+		if (username.length < 3) { return; }
+
+		clearTimeout(this[UpdateTimeout]);
+
+		const updateUsername = async () => {
+			try {
+				const handshake = await this[GetHandshakeForUsername](username);
+				const ping = this.get(Ping);
+
+				this.set({
+					[Error]: null,
+					[Handshake]: {...(ping || {}), ...(handshake || {})}
+				});
+			} catch (e) {
+				this.set({
+					[Error]: e
+				});
+			}
+		};
+
+		this[UpdateTimeout] = setTimeout(updateUsername, UpdateDelay);
+	}
+
+
+	[GetHandshakeForUsername] (username) {
+		const getHandshake = async () => {
+			try {
+				const handshake = await getServer().ping(username);
+
+				return handshake;
+			} catch (e) {
+				if (e.getLink) { return e; }
+				throw e;
+			}
+		};
+
+		if (!HandshakeMap.has(username)) {
+			//only keep track of the last handshake
+			HandshakeMap.clear();
+			HandshakeMap.set(username, getHandshake());
+		}
+
+		return HandshakeMap.get(username);
+	}
+
 }

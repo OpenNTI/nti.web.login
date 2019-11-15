@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
+import {Loading} from '@nti/web-commons';
 
 import Store from '../Store';
 
@@ -33,18 +34,24 @@ LoginMethods.propTypes = {
 };
 function LoginMethods (props) {
 	const {busy, handshake} = props;
+
+	if (!handshake) { return null; }
+
 	const available = getAvailable(handshake);
 
 	return (
-		<section className={cx({busy})} aria-hidden={busy}>
-			{(available || []).map((option) => {
-				const {Form, name} = option;
+		<>
+			{busy && (<Loading.Spinner.Large />)}
+			<section className={cx({busy})} aria-hidden={busy}>
+				{(available || []).map((option) => {
+					const {Form, name} = option;
 
-				if (!Form || !name) { return null; }
+					if (!Form || !name) { return null; }
 
-				return (<Form key={name} {...props} />);
-			})}
-		</section>
+					return (<Form key={name} {...props} />);
+				})}
+			</section>
+		</>
 	);
 }
 

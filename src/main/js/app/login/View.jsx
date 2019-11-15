@@ -31,8 +31,7 @@ function Login ({setup, hasPing, error, busy}) {
 	return (
 		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
 			{error && (<Unavailable error={t('setupError')} />)}
-			{(!error && !initialLoad && busy) && (<Loading.Spinner.Large />)}
-			{!error && (<Methods />)}
+			<Methods />
 		</Loading.Placeholder>
 	);
 }
