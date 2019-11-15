@@ -1,0 +1,20 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	height: calc(var(--vh, 1vh) * 100);
+	align-items: stretch;
+}
+
+.feature {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.content {
+	flex: 0 0 auto;
+	width: 100vw;
+	max-width: 532px;
+	background: white;
+}

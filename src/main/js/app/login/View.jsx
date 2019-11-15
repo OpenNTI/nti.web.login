@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading} from '@nti/web-commons';
 
@@ -32,6 +33,7 @@ function Login ({setup, hasPing, error, busy}) {
 		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
 			{error && (<Unavailable error={t('setupError')} />)}
 			<Methods />
+			<Link to="./signup">Create Account</Link>
 		</Loading.Placeholder>
 	);
 }
