@@ -10,15 +10,18 @@ export default {
 		background: (_, globalTheme) => globalTheme.assets.background,
 		logo: (_, globalTheme) => globalTheme.assets.logo,
 		title: 'Suh Dude',
+		subTitle: '',
 		description: 'We have everything you need to educate with confidence',
-		subTitle: ''
+		disclaimer: ''
 	},
 	signup: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.fullLogo,
-		title: 'Create An Account',
-		description: ''
+		logo: (_, globalTheme) => globalTheme.assets.logo,
+		title: '',
+		subTitle: 'New Account',
+		description: '',
+		disclaimer: ''
 	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,

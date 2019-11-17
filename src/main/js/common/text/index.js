@@ -30,6 +30,7 @@ export default {
 	Base: Factory(),
 	H1: Factory('heading', 'h1'),
 	SubTitle: Factory('sub-title', 'h6'),
+	Disclaimer: Factory('disclaimer', 'h6'),
 	Body: Factory('body', 'p'),
 	Large: Factory('body-large', 'p'),
 	Medium: Factory('body-medium', 'p')

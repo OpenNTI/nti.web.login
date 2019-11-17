@@ -17,12 +17,14 @@ export default function Description ({className, ...otherProps}) {
 	const title = Theme.useThemeProperty('title');
 	const subTitle = Theme.useThemeProperty('subTitle');
 	const description = Theme.useThemeProperty('description');
+	const disclaimer = Theme.useThemeProperty('disclaimer');
 
 	return (
-		<PaddedContainer className={cx('description', className, {'has-subtitle': !!subTitle})}>
+		<PaddedContainer className={cx('description', className, {'has-disclaimer': !!disclaimer})}>
 			{title && (<Text.H1>{title}</Text.H1>)}
-			{description && (<Text.Large>{description}</Text.Large>)}
 			{subTitle && (<Text.SubTitle>{subTitle}</Text.SubTitle>)}
+			{description && (<Text.Large>{description}</Text.Large>)}
+			{disclaimer && (<Text.Disclaimer>{disclaimer}</Text.Disclaimer>)}
 		</PaddedContainer>
 	);
 }
