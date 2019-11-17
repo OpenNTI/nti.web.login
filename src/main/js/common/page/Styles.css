@@ -34,3 +34,12 @@
 	max-height: 110px;
 	width: auto;
 }
+
+.description {
+	margin-bottom: 1.75rem;
+	padding-bottom: 2rem;
+}
+
+.description.has-subtitle {
+	padding-bottom: 0;
+}

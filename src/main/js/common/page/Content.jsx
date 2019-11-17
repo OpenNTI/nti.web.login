@@ -4,6 +4,7 @@ import classnames from 'classnames/bind';
 import {Theme} from '@nti/web-commons';
 
 import Styles from './Styles.css';
+import Description from './Description';
 
 const cx = classnames.bind(Styles);
 	
@@ -17,6 +18,7 @@ export default function PageContent ({component:Cmp, position, ...otherProps}) {
 			<div className={cx('logo')}>
 				<Theme.Asset name="logo" />
 			</div>
+			<Description />
 			<Cmp {...otherProps} />
 		</div>
 	);
