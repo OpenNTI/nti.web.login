@@ -7,6 +7,8 @@ import {Inputs, Button} from '../../../../common';
 import Store from '../../Store';
 import {getLoginLink} from '../utils';
 
+import Recover from './Recover';
+
 const MoveFocusOn = {
 	'Enter': true
 };
@@ -50,6 +52,7 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 		<Form disabled={disabled} onValid={onValid} onInvalid={onInvalid} onSubmit={onSubmit}>
 			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword}/>
 			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
+			<Recover />
 			<Button as={Form.SubmitButton}>
 				Log In
 			</Button>

@@ -9,11 +9,12 @@ const cx = classnames.bind(Styles);
 
 function Factory (variant, tag) {
 	WithClassName.propTypes = {
-		className: PropTypes.string
+		className: PropTypes.string,
+		right: PropTypes.bool
 	};
-	function WithClassName ({className, ...otherProps}) {
+	function WithClassName ({className, right, ...otherProps}) {
 		return (
-			<Text.Base className={cx(className, variant, 'text')} as={tag} {...otherProps} />
+			<Text.Base className={cx(className, variant, 'text', {right})} as={tag} {...otherProps} />
 		);
 	}
 

@@ -31,3 +31,11 @@
 	font-size: 1.5rem;
 	line-height: 1.3;
 }
+
+.text a:focus {
+	text-decoration: underline;
+}
+
+.right {
+	text-align: right;
+}
