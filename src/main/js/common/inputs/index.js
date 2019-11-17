@@ -9,11 +9,10 @@ const cx = classnames.bind(Styles);
 
 function WrapperFactory (Cmp, inputProps, wrapperClassName) {
 	FormInput.propTypes = {
-		name: PropTypes.string.isRequired,
 		className: PropTypes.string,
 		inputRef: PropTypes.any
 	};
-	function FormInput ({className, name, inputRef, ...otherProps}) {
+	function FormInput ({className, inputRef, ...otherProps}) {
 		return (
 			<Cmp
 				className={cx(className, wrapperClassName, 'input')}

@@ -23,6 +23,21 @@ const UpdateTimeout = Symbol('Update Timeout');
 
 const HandshakeMap = new Map();
 
+function getErrorParams () {
+	const href = global.location?.href;
+
+	if (!href) { return null; }
+
+	const url = new URL(href);
+
+	const error = url.searchParams.get('error');
+	const failed = url.searchParams.get('failed');
+	const message = url.searchParams.get('message');
+
+	if (error) { return error; }
+	if (failed && message) { return message; }
+}
+
 export default class LoginStore extends Stores.SimpleStore {
 	static Setup = Setup;
 	static HasPing = HasPing;
@@ -38,6 +53,8 @@ export default class LoginStore extends Stores.SimpleStore {
 	static GetHandshakeForUsername = GetHandshakeForUsername;
 
 	async [Setup] () {
+		if (this.get(HasPing)) { return; }
+
 		this.set({
 			[HasPing]: false,
 			[Handshake]: null,
@@ -54,7 +71,8 @@ export default class LoginStore extends Stores.SimpleStore {
 				[Busy]: false,
 				[HasPing]: true,
 				[Handshake]: ping,
-				[Ping]: ping
+				[Ping]: ping,
+				[Error]: getErrorParams()
 			});
 		} catch (e) {
 			this.set({

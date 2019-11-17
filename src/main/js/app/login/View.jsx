@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading} from '@nti/web-commons';
 
@@ -9,6 +8,7 @@ import {PaddedContainer} from '../../common';
 import Store from './Store';
 import Methods from './methods';
 import Unavailable from './Unavailable';
+import CreateAccount from './CreateAccount';
 
 const t = scoped('nti-login.login.View', {
 	setupError: 'Could not communicate with the servers. Please try again later.'
@@ -34,9 +34,9 @@ function Login ({setup, hasPing, error, busy}) {
 	return (
 		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
 			<PaddedContainer>
-				{error && (<Unavailable error={t('setupError')} />)}
+				{error && (<Unavailable error={hasPing ? error : t('setupError')} />)}
 				<Methods />
-				<Link to="./signup">Create Account</Link>
+				<CreateAccount />
 			</PaddedContainer>
 		</Loading.Placeholder>
 	);

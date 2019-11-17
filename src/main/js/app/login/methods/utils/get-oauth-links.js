@@ -1,4 +1,4 @@
-const IS_LOGON_REL_REGEX = /^login\./;
+const IS_LOGON_REL_REGEX = /^logon\./;
 
 const BLACK_LIST = {
 	'logon.forgot.passcode': true,

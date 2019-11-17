@@ -10,11 +10,16 @@ const cx = classnames.bind(Styles);
 function Factory (variant, tag) {
 	WithClassName.propTypes = {
 		className: PropTypes.string,
-		right: PropTypes.bool
+		right: PropTypes.bool,
+		center: PropTypes.bool
 	};
-	function WithClassName ({className, right, ...otherProps}) {
+	function WithClassName ({className, right, center, ...otherProps}) {
 		return (
-			<Text.Base className={cx(className, variant, 'text', {right})} as={tag} {...otherProps} />
+			<Text.Base
+				className={cx(className, variant, 'text', {right, center})}
+				as={tag}
+				{...otherProps}
+			/>
 		);
 	}
 
@@ -26,5 +31,6 @@ export default {
 	H1: Factory('heading', 'h1'),
 	SubTitle: Factory('sub-title', 'h6'),
 	Body: Factory('body', 'p'),
-	Large: Factory('body-large', 'p')
+	Large: Factory('body-large', 'p'),
+	Medium: Factory('body-medium', 'p')
 };
