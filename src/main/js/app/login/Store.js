@@ -4,6 +4,7 @@ import {getServer, getConfigFor} from '@nti/web-client';//eslint-disable-line
 import {getAnonymousPing} from '../../data';
 
 const Setup = 'setup';
+const Reload = 'reload';
 const HasPing = 'hasPing';
 const Handshake = 'handshake';
 const Ping = 'ping';
@@ -40,6 +41,7 @@ function getErrorParams () {
 
 export default class LoginStore extends Stores.SimpleStore {
 	static Setup = Setup;
+	static Reload = Reload;
 	static HasPing = HasPing;
 	static Handshake = Handshake;
 	static Busy = Busy;
@@ -73,6 +75,30 @@ export default class LoginStore extends Stores.SimpleStore {
 				[Handshake]: ping,
 				[Ping]: ping,
 				[Error]: getErrorParams()
+			});
+		} catch (e) {
+			this.set({
+				[Busy]: false,
+				[Error]: e
+			});
+		}
+	}
+
+	async [Reload] () {
+		this.set({
+			[Busy]: true,
+			[Error]: null
+		});
+
+		delete this.currentTask;
+
+		try {
+			const ping = await getAnonymousPing(true);
+
+			this.set({
+				[Busy]: false,
+				[Handshake]: ping,
+				[Ping]: ping
 			});
 		} catch (e) {
 			this.set({

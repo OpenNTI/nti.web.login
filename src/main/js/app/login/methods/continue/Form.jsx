@@ -52,7 +52,7 @@ function LoginContinueMethod ({handshake, loginURL, setBusy, reload}) {
 
 export default Store
 	.monitor({
-		[Store.Setup]: 'reload',
+		[Store.Reload]: 'reload',
 		[Store.SetBusy]: 'setBusy',
 		[Store.LoginRedirectURL]: 'loginURL',
 		[Store.Handshake]: 'handshake'

@@ -5,7 +5,8 @@ const BLACK_LIST = {
 	'logon.forgot.username': true,
 	'logon.handshake': true,
 	'logon.reset.passcode': true,
-	'logon.ping': true
+	'logon.ping': true,
+	'logon.nti.password': true
 };
 
 function isOauthREL (rel) {

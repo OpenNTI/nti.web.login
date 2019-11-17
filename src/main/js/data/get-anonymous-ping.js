@@ -8,8 +8,8 @@ async function doPing () {
 	return pong;
 }
 
-export default function getAnonymousPing () {
-	if (!ping) {
+export default function getAnonymousPing (force) {
+	if (!ping || force) {
 		ping = doPing();
 	}
 
