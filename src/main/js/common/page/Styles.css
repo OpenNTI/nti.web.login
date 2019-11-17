@@ -17,4 +17,20 @@
 	width: 100vw;
 	max-width: 532px;
 	background: white;
+	position: relative;
+	padding-top: 147px;
+}
+
+.logo {
+	position: absolute;
+	top: 0; bottom: auto;
+	left: 0; right: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.logo img {
+	display: inline-block;
+	max-height: 110px;
+	width: auto;
 }

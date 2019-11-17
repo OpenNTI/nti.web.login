@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
-import {Loading} from '@nti/web-commons';
+import {Loading, Theme} from '@nti/web-commons';
+
+import {PaddedContainer, Text} from '../../common';
 
 import Store from './Store';
 import Methods from './methods';
@@ -20,6 +22,10 @@ Login.propTypes = {
 	busy: PropTypes.bool
 };
 function Login ({setup, hasPing, error, busy}) {
+	const title = Theme.useThemeProperty('title');
+	const description = Theme.useThemeProperty('description');
+	const subTitle = Theme.useThemeProperty('subTitle');
+
 	const initialLoad = !hasPing && busy;
 
 	React.useEffect(() => {
@@ -31,9 +37,14 @@ function Login ({setup, hasPing, error, busy}) {
 
 	return (
 		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
-			{error && (<Unavailable error={t('setupError')} />)}
-			<Methods />
-			<Link to="./signup">Create Account</Link>
+			<PaddedContainer>
+				{title && (<Text.H1>{title}</Text.H1>)}
+				{description && (<Text.Large>{description}</Text.Large>)}
+				{subTitle && (<Text.SubTitle>{subTitle}</Text.SubTitle>)}
+				{error && (<Unavailable error={t('setupError')} />)}
+				<Methods />
+				<Link to="./signup">Create Account</Link>
+			</PaddedContainer>
 		</Loading.Placeholder>
 	);
 }

@@ -8,9 +8,10 @@ export default {
 	login: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.fullLogo,
+		logo: (_, globalTheme) => globalTheme.assets.logo,
 		title: 'Sup, Dawg!',
-		description: 'We have everything you need to educate with confidence'
+		description: 'We have everything you need to educate with confidence',
+		subTitle: 'Powered By Realized Worth'
 	},
 	signup: {
 		featured: null,
