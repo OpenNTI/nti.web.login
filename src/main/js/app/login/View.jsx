@@ -22,11 +22,41 @@ Login.propTypes = {
 	busy: PropTypes.bool
 };
 function Login ({setup, hasPing, error, busy}) {
+	const [forceNextThoughtLogin, setForceNextThoughtLogin] = React.useState(false);
+
 	const initialLoad = !hasPing && busy;
 
 	React.useEffect(() => {
 		if (!hasPing && !busy) { setup(); }
-		return () => {};
+
+		const keyListener = (e) => {
+			if (e.ctrlKey && e.shiftKey && e.charCode === 1) {
+				setForceNextThoughtLogin(true);
+			}
+		};
+
+		const clickListener = (e) => {
+			const {clientX, clientY} = e;
+			const {innerHeight, innerWidth} = global;
+
+			if (innerHeight == null && innerWidth == null) { return; }
+
+			if (Math.abs(innerWidth - clientX) <= 40 && Math.abs(innerHeight - clientY) <= 40) {
+				setForceNextThoughtLogin(true);
+			}
+		};
+
+		if (typeof document !== 'undefined') {
+			document.addEventListener('keypress', keyListener);
+			document.addEventListener('click', clickListener);
+		}
+
+		return () => {
+			if (typeof document !== 'undefined') {
+				document.removeEventListener('keypress', keyListener);
+				document.removeEventListener('click', clickListener);
+			}
+		};
 	});
 
 	if (!hasPing && !busy && !error) { return null; }
@@ -35,7 +65,7 @@ function Login ({setup, hasPing, error, busy}) {
 		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
 			<PaddedContainer>
 				{error && (<Unavailable error={hasPing ? error : t('setupError')} />)}
-				<Methods />
+				<Methods forceNextThoughtLogin={forceNextThoughtLogin} />
 				<CreateAccount />
 			</PaddedContainer>
 		</Loading.Placeholder>

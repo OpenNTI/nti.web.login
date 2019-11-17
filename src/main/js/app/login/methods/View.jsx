@@ -17,9 +17,9 @@ const Options = [
 	[Password, Oauth]
 ];
 
-function getAvailable (handshake) {
+function getAvailable (handshake, forceNextThoughtLogin) {
 	for (let option of Options) {
-		const available = option.filter(o => !o.isAvailable || o.isAvailable(handshake));
+		const available = option.filter(o => !o.isAvailable || o.isAvailable(handshake, forceNextThoughtLogin));
 
 		if (available.length) { return available; }
 	}
@@ -30,14 +30,15 @@ function getAvailable (handshake) {
 
 LoginMethods.propTypes = {
 	handshake: PropTypes.object,
-	busy: PropTypes.bool
+	busy: PropTypes.bool,
+	forceNextThoughtLogin: PropTypes.bool
 };
 function LoginMethods (props) {
-	const {busy, handshake} = props;
+	const {busy, handshake, forceNextThoughtLogin} = props;
 
 	if (!handshake) { return null; }
 
-	const available = getAvailable(handshake);
+	const available = getAvailable(handshake, forceNextThoughtLogin);
 
 	return (
 		<>
