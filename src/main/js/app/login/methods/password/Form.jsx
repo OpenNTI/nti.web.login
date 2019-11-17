@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import {Form} from '@nti/web-commons';
 import {getServer} from '@nti/web-client';//eslint-disable-line
 
+import {Inputs, Button} from '../../../../common';
 import Store from '../../Store';
 import {getLoginLink} from '../utils';
 
@@ -47,11 +48,11 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 
 	return (
 		<Form disabled={disabled} onValid={onValid} onInvalid={onInvalid} onSubmit={onSubmit}>
-			<Form.Input.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword}/>
-			<Form.Input.Text required ref={passwordRef} name="password" type="password" placeholder="Password" />
-			<Form.SubmitButton>
+			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword}/>
+			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
+			<Button as={Form.SubmitButton}>
 				Log In
-			</Form.SubmitButton>
+			</Button>
 		</Form>
 	);
 }

@@ -9,9 +9,9 @@ export default {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
 		logo: (_, globalTheme) => globalTheme.assets.logo,
-		title: 'Sup, Dawg!',
+		title: 'Suh Dude',
 		description: 'We have everything you need to educate with confidence',
-		subTitle: 'Powered By Realized Worth'
+		subTitle: ''
 	},
 	signup: {
 		featured: null,
