@@ -1,6 +1,8 @@
 import {Stores} from '@nti/lib-store';
 import {getServer, getConfigFor} from '@nti/web-client';//eslint-disable-line
 
+import {getAnonymousPing} from '../../data';
+
 const Setup = 'setup';
 const HasPing = 'hasPing';
 const Handshake = 'handshake';
@@ -46,7 +48,7 @@ export default class LoginStore extends Stores.SimpleStore {
 		delete this.currentTask;
 
 		try {
-			const ping = await getServer().ping();
+			const ping = await getAnonymousPing();
 
 			this.set({
 				[Busy]: false,

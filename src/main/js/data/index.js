@@ -1,0 +1,1 @@
+export getAnonymousPing from './get-anonymous-ping';
