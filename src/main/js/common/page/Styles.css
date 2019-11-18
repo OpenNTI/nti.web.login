@@ -43,3 +43,7 @@
 .description.has-subtitle {
 	padding-bottom: 0;
 }
+
+.description.no-title {
+	padding-bottom: 0;
+}

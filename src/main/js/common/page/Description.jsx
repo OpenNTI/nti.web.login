@@ -20,7 +20,7 @@ export default function Description ({className, ...otherProps}) {
 	const disclaimer = Theme.useThemeProperty('disclaimer');
 
 	return (
-		<PaddedContainer className={cx('description', className, {'has-disclaimer': !!disclaimer})}>
+		<PaddedContainer className={cx('description', className, {'has-disclaimer': !!disclaimer, 'no-title': !title})}>
 			{title && (<Text.H1>{title}</Text.H1>)}
 			{subTitle && (<Text.SubTitle>{subTitle}</Text.SubTitle>)}
 			{description && (<Text.Large>{description}</Text.Large>)}
