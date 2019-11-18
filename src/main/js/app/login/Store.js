@@ -1,7 +1,7 @@
 import {Stores} from '@nti/lib-store';
 import {getServer, getConfigFor} from '@nti/web-client';//eslint-disable-line
 
-import {getAnonymousPing} from '../../data';
+import {getAnonymousPing, getReturnURL, getLoginRedirectURL} from '../../data';
 
 const Setup = 'setup';
 const Reload = 'reload';
@@ -109,22 +109,8 @@ export default class LoginStore extends Stores.SimpleStore {
 	}
 
 
-	get [ReturnURL] () {
-		const {href} = global.location || {};
-		const url = href ? new URL(href) : null;
-
-		const returnParam = url?.searchParams?.get('return');
-
-		const config = getConfigFor('url');
-		const configURL = typeof config === 'string' ? config : null;
-
-		return returnParam || configURL || '/';
-	}
-
-	get [LoginRedirectURL] () {
-		//TODO: be smarter about this;
-		return `${this[ReturnURL]}?_u=42`;
-	}
+	get [ReturnURL] () { return getReturnURL(); }
+	get [LoginRedirectURL] () { return getLoginRedirectURL(); }
 
 	[SetBusy] () {
 		const task = {};

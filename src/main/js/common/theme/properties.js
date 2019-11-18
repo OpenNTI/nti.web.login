@@ -12,7 +12,8 @@ export default {
 		title: 'Suh Dude',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence',
-		disclaimer: ''
+		disclaimer: '',
+		buttonText: 'Log In'
 	},
 	signup: {
 		featured: null,
@@ -21,7 +22,8 @@ export default {
 		title: '',
 		subTitle: 'New Account',
 		description: '',
-		disclaimer: ''
+		disclaimer: '',
+		buttonText: 'Create my account!'
 	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,

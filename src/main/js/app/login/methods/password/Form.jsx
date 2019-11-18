@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Form} from '@nti/web-commons';
+import {Form, Theme} from '@nti/web-commons';
 import {getServer} from '@nti/web-client';//eslint-disable-line
 
 import {Inputs, Button} from '../../../../common';
@@ -20,6 +20,8 @@ LoginPasswordMethod.propTypes = {
 	setBusy: PropTypes.func
 };
 function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedirect}) {
+	const buttonText = Theme.useThemeProperty('buttonText');
+
 	const passwordRef = React.useRef();
 
 	const [disabled, setDisabled] = React.useState(true);
@@ -54,7 +56,7 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
 			<Recover />
 			<Button as={Form.SubmitButton}>
-				Log In
+				{buttonText}
 			</Button>
 		</Form>
 	);

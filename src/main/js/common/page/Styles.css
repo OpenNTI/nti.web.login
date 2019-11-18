@@ -19,6 +19,7 @@
 	background: white;
 	position: relative;
 	padding-top: 147px;
+	overflow: auto;
 }
 
 .logo {
