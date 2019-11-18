@@ -1,0 +1,27 @@
+.page-content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.page-header {
+	flex: 0 0 auto;
+	width: 100%;
+	text-align: center;
+	min-height: 100px;
+}
+
+.page-header img {
+	display: inline-block;
+	max-height: 100px;
+	width: auto;
+}
+
+.page-body {
+	flex: 1 1 auto;
+	padding-top: 47px;
+}
+
+.page-footer {
+	flex: 0 0 auto;
+}

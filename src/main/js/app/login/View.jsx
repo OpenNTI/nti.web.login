@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {scoped} from '@nti/lib-locale';
 import {Loading} from '@nti/web-commons';
 
-import {PaddedContainer} from '../../common';
+import {PaddedContainer, Page} from '../../common';
 
 import Store from './Store';
 import Methods from './methods';
@@ -62,13 +62,22 @@ function Login ({setup, hasPing, error, busy}) {
 	if (!hasPing && !busy && !error) { return null; }
 
 	return (
-		<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
-			<PaddedContainer>
-				{error && (<Unavailable error={hasPing ? error : t('setupError')} />)}
-				<Methods forceNextThoughtLogin={forceNextThoughtLogin} />
-				<CreateAccount />
-			</PaddedContainer>
-		</Loading.Placeholder>
+		<Page.Content>
+			<Page.Header />
+			<Page.Body>
+				<Page.Description />
+				<Loading.Placeholder loading={initialLoad} fallback={(<Loading.Spinner.Large />)}>
+					<PaddedContainer>
+						{error && (<Unavailable error={hasPing ? error : t('setupError')} />)}
+						<Methods forceNextThoughtLogin={forceNextThoughtLogin} />
+						<CreateAccount />
+					</PaddedContainer>
+				</Loading.Placeholder>
+			</Page.Body>
+			<Page.Footer>
+				Support Links
+			</Page.Footer>
+		</Page.Content>
 	);
 }
 

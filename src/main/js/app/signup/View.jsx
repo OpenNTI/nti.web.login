@@ -4,7 +4,7 @@ import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading} from '@nti/web-commons';
 
-import {PaddedContainer} from '../../common';
+import {PaddedContainer, Page} from '../../common';
 
 import Store from './Store';
 import Form from './Form';
@@ -30,13 +30,21 @@ function Signup ({setup, loading, loaded, canCreateAccount}) {
 
 
 	return (
-		<Loading.Placeholder loading={loading} fallback={(<Loading.Spinner.Large />)}>
-			<PaddedContainer>
-				{!canCreateAccount && (<Unavailable error={t('unavailable')} />)}
-				{canCreateAccount && (<Form />)}
+		<Page.Content>
+			<Page.Header />
+			<Page.Body>
+				<Page.Description />
+				<Loading.Placeholder loading={loading} fallback={(<Loading.Spinner.Large />)}>
+					<PaddedContainer>
+						{!canCreateAccount && (<Unavailable error={t('unavailable')} />)}
+						{canCreateAccount && (<Form />)}
+					</PaddedContainer>
+				</Loading.Placeholder>
+			</Page.Body>
+			<Page.Footer>
 				<Link to="/login/">Login</Link>
-			</PaddedContainer>
-		</Loading.Placeholder>
+			</Page.Footer>
+		</Page.Content>
 	);
 }
 

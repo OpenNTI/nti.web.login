@@ -12,13 +12,12 @@
 	justify-content: center;
 }
 
-.content {
+.main {
 	flex: 0 0 auto;
 	width: 100vw;
 	max-width: 532px;
 	background: white;
 	position: relative;
-	padding-top: 147px;
 	overflow: auto;
 }
 

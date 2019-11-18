@@ -5,8 +5,16 @@ import {Theme} from '@nti/web-commons';
 import Description from './Description';
 import Background from './Background';
 import Feature from './Feature';
-import Content from './Content';
+import Main from './Main';
+import Content from './parts/Content';
+import Footer from './parts/Footer';
+import Header from './parts/Header';
+import Body from './parts/Body';
 
+Page.Content = Content;
+Page.Body = Body;
+Page.Header = Header;
+Page.Footer = Footer;
 Page.Description = Description;
 Page.propTypes = {
 	scope: PropTypes.string
@@ -16,7 +24,7 @@ export default function Page ({scope, ...otherProps}) {
 		<Theme.Scope scope={scope}>
 			<Background>
 				<Feature />
-				<Content {...otherProps} />
+				<Main {...otherProps} />
 			</Background>
 		</Theme.Scope>
 	);
