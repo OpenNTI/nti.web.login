@@ -7,18 +7,16 @@ import {Inputs} from '../../common';
 import Store from './Store';
 
 SignupForm.propTypes = {
-	checkUsername: PropTypes.func
+	preflight: PropTypes.func
 };
-function SignupForm ({checkUsername}) {
+function SignupForm ({preflight}) {
 	const [disabled, setDisabled] = React.useState(true);
 
 	const onValid = () => setDisabled(false);
 	const onInvalid = () => setDisabled(true);
 
-	const onChange = ({json}) => {
-		const {Username: username} = json || {};
-
-		return checkUsername(username);
+	const onChange = ({json}, e) => {
+		return preflight(json, e.target?.name);
 	};
 
 	return (
@@ -36,5 +34,5 @@ function SignupForm ({checkUsername}) {
 
 export default Store
 	.monitor({
-		[Store.CheckUsername]: 'checkUsername'
+		[Store.Preflight]: 'preflight'
 	})(SignupForm);

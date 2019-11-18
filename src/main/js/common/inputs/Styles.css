@@ -16,3 +16,30 @@
 .input + .input {
 	margin-top: 1.5rem;
 }
+
+.input:global(.error) {
+	margin-bottom: 0;
+}
+
+.input:global(.error) + .input {
+	margin-top: 0;
+}
+
+.input :global(.nti-label-error) {
+	padding: 0.25rem 0 0.125rem;
+}
+
+.input :global(.checkbox-component) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+.input :global(.checkbox-component input[type=checkbox]:focus + span.label::before) {
+    box-shadow: 0 0 1px 1px var(--primary-blue);
+    border-radius: 4px;
+}
+
+.input :global(label.checkbox-component input[type=checkbox] + span.label) {
+	text-transform: none;
+}

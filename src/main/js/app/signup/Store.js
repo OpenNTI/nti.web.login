@@ -9,17 +9,29 @@ const Loaded = 'Loaded';
 const CanCreateAccount = 'CanCreateAccount';
 const Ping = 'Ping';
 
-const CheckUsername = 'checkUsername';
-const LastUsername = 'lastUsername';
+const Preflight = 'Preflight';
+const PreflightDelay = 750;
 
-const CheckDelay = 150;
-const CheckTimeout = 'CheckTimeout';
+const FieldPreflights = new Map();
+
+function formatData (data) {
+	const formatted = {...data};
+
+	if (formatted.first || formatted.last) {
+		formatted.realname = [formatted.first, formatted.last].join(' ');
+	}
+
+	delete formatted.first;
+	delete formatted.last;
+
+	return formatted;
+}
 
 export default class SignupStore extends Stores.SimpleStore {
 	static Setup = Setup;
 	static Loading = Loading;
 	static CanCreateAccount = CanCreateAccount;
-	static CheckUsername = CheckUsername;
+	static Preflight = Preflight;
 
 	async [Setup] () {
 		this.set({
@@ -45,25 +57,31 @@ export default class SignupStore extends Stores.SimpleStore {
 		}
 	}
 
-	[CheckUsername] (username) {
-		if (username.length < 3 || username === this[LastUsername]) { return; }
+	[Preflight] (data, field = 'all') {
+		const inflight = FieldPreflights.get(field);
 
-		this[LastUsername] = username;
+		this.preflightData = this.preflightData || {};
 
-		clearTimeout(this[CheckTimeout]);
+		if (field === 'all') {
+			this.preflightData = data;
+		} else {
+			this.preflightData[field] = data[field];
+		}
 
-		return new Promise ((fulfill, reject) => {
-			this[CheckTimeout] = setTimeout(async () => {
+		clearTimeout(inflight);
+
+		return new Promise((fulfill, reject) => {
+			const timeout = setTimeout(async () => {
 				try {
-					await getServer().preflightAccountCreate({Username: username});
-					fulfill();
+					await getServer().preflightAccountCreate(formatData(this.preflightData));
 				} catch (e) {
-					if (e.statusCode === 409 && e.code === 'DuplicateUsernameError') { reject(e);}
-
-					//swallow 
+					reject(e);
+				} finally {
+					FieldPreflights.delete(field);
 				}
-			}, CheckDelay);
+			}, PreflightDelay);
+
+			FieldPreflights.set(field, timeout);
 		});
 	}
-
 }

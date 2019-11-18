@@ -27,6 +27,7 @@
 	left: 0; right: 0;
 	width: 100%;
 	text-align: center;
+	min-height: 110px;
 }
 
 .logo img {
