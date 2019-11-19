@@ -5,3 +5,11 @@
 .forgot-form .submit {
 	margin-top: 2.25rem;
 }
+
+.success-message {
+	padding: 0 2.5rem;
+}
+
+.sent-to {
+	margin-top: 1.5rem;
+}

@@ -32,7 +32,7 @@ export default function ForgotUsername ({allowed}) {
 
 	const [disabled, setDisabled] = React.useState(true);
 	const [sending, setSending] = React.useState(false);
-	const [sent, setSent] = React.useState(false);
+	const [sentTo, setSentTo] = React.useState(null);
 
 	const onValid = () => setDisabled(false);
 	const onInvalid = () => setDisabled(true);
@@ -44,7 +44,7 @@ export default function ForgotUsername ({allowed}) {
 
 			await getServer().recoverUsername(json.email);
 
-			setSent(true);
+			setSentTo(json.email);
 		} finally {
 			setSending(false);
 		}
@@ -52,13 +52,16 @@ export default function ForgotUsername ({allowed}) {
 
 	return (
 		<>
-			<Page.Description subTitle={t('title')} description={t('description')} />
+			{!sentTo && (<Page.Description subTitle={t('title')} description={t('description')} />)}
 			<PaddedContainer>
 				{sending && (<Loading.Spinner.Large />)}
-				{sent && (
-					<Text.Medium>{t('success')}</Text.Medium>
+				{sentTo && (
+					<div>
+						<Text.Large className={cx('success-message')} center>{t('success')}</Text.Large>
+						<Text.Body className={cx('sent-to')} center>{sentTo}</Text.Body>
+					</div>
 				)}
-				{!sent && (
+				{!sentTo && (
 					<Form
 						className={cx('forgot-form', {sending})}
 						disabled={disabled}
