@@ -13,8 +13,7 @@ import TermsAndConditions from './terms-and-conditions';
 
 const cx = classnames.bind(Styles);
 const t = scoped('nti-login.signup.Form', {
-	first: 'First Name',
-	last: 'Last Name',
+	fullName: 'Full Name',
 	email: 'Your Email',
 	username: 'Username',
 	password: 'Password',
@@ -26,7 +25,7 @@ SignupForm.propTypes = {
 	preflight: PropTypes.func,
 	returnURL: PropTypes.string,
 	busy: PropTypes.bool,
-	setBusy: PropTypes.bool,
+	setBusy: PropTypes.func,
 	formatData: PropTypes.func
 };
 function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
@@ -47,8 +46,6 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 			await getServer().createAccount(formatData(json));
 
 			global.location?.replace(returnURL);
-		} catch (e) {
-			if (e.field === 'realname') { e.field = 'first'; }
 		} finally {
 			clear();
 		}
@@ -67,8 +64,7 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="first" placeholder={t('first')} />
-				<Inputs.Text required name="last" placeholder={t('last')} />
+				<Inputs.Text required name="realname" placeholder={t('fullName')} />
 				<Inputs.Email required name="email" placeholder={t('email')} />
 				<Inputs.Text required name="Username" placeholder={t('username')} />
 				<Inputs.Password required name="password" placeholder={t('password')}/>
