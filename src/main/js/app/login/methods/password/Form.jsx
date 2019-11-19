@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Form, Theme} from '@nti/web-commons';
+import {scoped} from '@nti/lib-locale';
+import {Form, Theme, Errors} from '@nti/web-commons';
 import {getServer} from '@nti/web-client';//eslint-disable-line
 
 import {Inputs, Button} from '../../../../common';
@@ -8,6 +9,10 @@ import Store from '../../Store';
 import {getLoginLink} from '../utils';
 
 import Recover from './Recover';
+
+const t = scoped('nti-login.login.methods.password.Form', {
+	invalid: 'The username or password you entered is incorrect. Please try again.'
+});
 
 const MoveFocusOn = {
 	'Enter': true
@@ -45,6 +50,10 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 			await getServer().logInPassword(loginLink, json.username, json.password);
 
 			global.location?.replace(loginRedirect);
+		} catch (e) {
+			if (e.statusCode === 401) { throw Errors.Messages.mapMessage(e, t('invalid')); }
+
+			throw e;
 		} finally {
 			clear();
 		}
