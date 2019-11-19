@@ -52,6 +52,8 @@ function Login ({setup, hasPing, error, busy}) {
 			document.addEventListener('click', clickListener);
 		}
 
+		global.showNextThoughtLogin = () => setForceNextThoughtLogin(true);
+
 		return () => {
 			if (typeof document !== 'undefined') {
 				document.removeEventListener('keypress', keyListener);
