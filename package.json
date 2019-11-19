@@ -8,7 +8,7 @@
     "registry": "https://npm.nextthought.com/"
   },
   "homepage": "proxy://localhost:8083/login/",
-  "main": "src/server/index.js",
+  "main": "dist/server/index.js",
   "files": [
     "dist"
   ],
