@@ -34,6 +34,7 @@ function checkPassword (data) {
 export default class SignupStore extends Stores.SimpleStore {
 	static Setup = Setup;
 	static Loading = Loading;
+	static Loaded = Loaded;
 	static CanCreateAccount = CanCreateAccount;
 	static FormatData = FormatData;
 	static Preflight = Preflight;
