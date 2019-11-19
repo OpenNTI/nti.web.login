@@ -9,6 +9,7 @@
 	width: 100%;
 	text-align: center;
 	min-height: 100px;
+	padding-top: 0.625rem;
 }
 
 .page-header img {
