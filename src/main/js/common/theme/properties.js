@@ -9,9 +9,9 @@ export default {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
 		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
-		title: 'Howdy 🤠',
+		title: 'Howdy!',
 		subTitle: '',
-		description: 'We have everything you need to educate with confidence',
+		description: 'We have everything you need to educate with confidence.',
 		disclaimer: '',
 		buttonText: 'Log In'
 	},
