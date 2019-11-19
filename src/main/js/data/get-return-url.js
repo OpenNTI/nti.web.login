@@ -9,5 +9,5 @@ export default function getReturnURL () {
 	const config = getConfigFor('url');
 	const configURL = typeof config === 'string' ? config : null;
 
-	return returnParam || configURL || '/';
+	return returnParam || configURL || '/loginsuccess';
 }
