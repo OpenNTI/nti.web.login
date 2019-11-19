@@ -1,3 +1,5 @@
+import path from 'path';
+
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
@@ -24,9 +26,9 @@ function getReturnURL (location) {
 	const current = new URL(location.href);
 
 	current.search = '';
+	current.pathname = path.join(current.pathname, '../reset');
 
-	//TODO: do this better
-	return `${current.toString().replace(/\/+$/)}/reset/`;
+	return current.toString();
 
 }
 
