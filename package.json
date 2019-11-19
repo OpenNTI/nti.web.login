@@ -10,7 +10,7 @@
   "homepage": "proxy://localhost:8083/login/",
   "main": "src/server/index.js",
   "files": [
-    "src"
+    "dist"
   ],
   "scripts": {
     "start": "app-scripts start",
