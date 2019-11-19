@@ -1,5 +1,7 @@
-import Background from './background.png';
+import Background from './background.jpg';
+import LoginLogo from './login-logo2x.png';
 
 export default {
-	Background
+	Background,
+	LoginLogo
 };

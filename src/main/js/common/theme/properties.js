@@ -8,7 +8,7 @@ export default {
 	login: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.logo,
+		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
 		title: 'Howdy 🤠',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence',
@@ -18,7 +18,7 @@ export default {
 	signup: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.logo,
+		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
 		title: '',
 		subTitle: 'New Account',
 		description: '',
@@ -34,6 +34,11 @@ export default {
 	brandColor: buildTheme.DefaultProperties.brandColor,
 	assets: {
 		...buildTheme.DefaultProperties.assets,
+		loginLogo: buildTheme.getAsset({
+			alt: 'Logo',
+			fallback: Fallbacks.LoginLogo,
+			href: Fallbacks.LoginLogo
+		}),
 		background: buildTheme.getAsset({
 			alt: 'Background Image',
 			href: Fallbacks.Background
