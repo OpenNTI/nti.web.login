@@ -28,13 +28,13 @@
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
   "dependencies": {
-    "@nti/lib-store": "^1.14.0"
   },
   "devDependencies": {
     "@nti/app-scripts": "^2.17.0",
     "@nti/lib-locale": "^1.8.0",
     "@nti/style-common": "^1.9.0",
     "@nti/web-commons": "^0.83.0",
+    "@nti/lib-store": "^1.14.0",
     "@reach/router": "^1.2.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
