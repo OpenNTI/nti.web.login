@@ -17,11 +17,10 @@ Forgot.propTypes = {
 	loading: PropTypes.bool,
 	loaded: PropTypes.bool,
 	canResetPassword: PropTypes.bool,
-	canResetUsername: PropTypes.bool
+	canResetUsername: PropTypes.bool,
+	param: PropTypes.string,
 };
-function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUsername}) {
-	const [param, setParam] = React.useState(null);
-
+function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUsername, param}) {
 	React.useEffect(() => {
 		if (!loaded && !loading) {
 			setup();
@@ -29,14 +28,6 @@ function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUs
 
 		return () => {};
 	});
-
-	React.useEffect(() => {
-		const url = new URL(location.href);
-
-		setParam(url.searchParams.get('f') || 'username');
-
-		return () => {};
-	}, [location]);
 
 	return (
 		<Page.Content>
@@ -49,7 +40,7 @@ function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUs
 			</Page.Body>
 			<Page.Footer>
 				<Text.Medium center>
-					<Link to="../">Return to Login</Link>
+					<Link to="../../">Return to Login</Link>
 				</Text.Medium>
 			</Page.Footer>
 		</Page.Content>

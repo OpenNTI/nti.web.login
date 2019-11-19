@@ -11,7 +11,7 @@ const cx = classnames.bind(Styles);
 export default function Recover () {
 	return (
 		<Text.Body right className={cx('recover')}>
-			I forgot my <Link to="/login/recover?f=username">username</Link> or <Link to="/login/recover?f=password">password.</Link>
+			I forgot my <Link to="/login/recover/username">username</Link> or <Link to="/login/recover/password">password.</Link>
 		</Text.Body>
 	);
 }
