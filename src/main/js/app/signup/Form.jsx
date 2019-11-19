@@ -64,7 +64,7 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="realname" placeholder={t('fullName')} />
+				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus />
 				<Inputs.Email required name="email" placeholder={t('email')} />
 				<Inputs.Text required name="Username" placeholder={t('username')} />
 				<Inputs.Password required name="password" placeholder={t('password')}/>

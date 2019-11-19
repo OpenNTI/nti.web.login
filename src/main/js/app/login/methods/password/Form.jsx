@@ -61,7 +61,7 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 
 	return (
 		<Form disabled={disabled} onValid={onValid} onInvalid={onInvalid} onSubmit={onSubmit}>
-			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword}/>
+			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword} autoFocus/>
 			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
 			<Recover />
 			<Button as={Form.SubmitButton}>

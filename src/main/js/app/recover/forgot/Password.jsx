@@ -83,7 +83,7 @@ export default function ForgotPassword ({location, allowed}) {
 						onInvalid={onInvalid}
 						onSubmit={onSubmit}
 					>
-						<Inputs.Text name="username" placeholder={t('username')} />
+						<Inputs.Text name="username" placeholder={t('username')} autoFocus />
 						<Inputs.Email name="email" placeholder={t('email')} />
 						<Button className={cx('submit')}as={Form.SubmitButton}>
 							{t('reset')}

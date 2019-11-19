@@ -69,7 +69,7 @@ export default function ForgotUsername ({allowed}) {
 						onInvalid={onInvalid}
 						onSubmit={onSubmit}
 					>
-						<Inputs.Email name="email" placeholder={t('email')} />
+						<Inputs.Email name="email" placeholder={t('email')} autoFocus />
 						<Button className={cx('submit')}as={Form.SubmitButton}>
 							{t('reset')}
 						</Button>
