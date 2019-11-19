@@ -43,7 +43,7 @@ function Signup ({setup, loading, loaded, canCreateAccount}) {
 			</Page.Body>
 			<Page.Footer>
 				<Text.Medium center>
-					Have an account? <Link to="/login/">Log in.</Link>
+					Have an account? <Link to="../">Log in.</Link>
 				</Text.Medium>
 			</Page.Footer>
 		</Page.Content>

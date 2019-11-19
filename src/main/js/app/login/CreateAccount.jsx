@@ -22,7 +22,7 @@ function CreateAccount ({busy, handshake}) {
 
 	return (
 		<Text.Medium className={cx('create-account')} center>
-			Create Account? <Link to="/login/signup">Get Started.</Link>
+			Create Account? <Link to="./signup">Get Started.</Link>
 		</Text.Medium>
 	);
 }

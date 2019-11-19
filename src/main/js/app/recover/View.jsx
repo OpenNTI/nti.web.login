@@ -1,11 +1,15 @@
 import React from 'react';
-import {Link} from '@reach/router';
+import {Router} from '@reach/router';
+import {getConfigFor} from '@nti/web-client';//eslint-disable-line
 
-export default function Recover () {
+import Forgot from './forgot';
+import Reset from './reset';
+
+export default function Recover (props) {
 	return (
-		<div>
-			Recover Page
-			<Link to="/">Login</Link>
-		</div>
+		<Router>
+			<Reset path="reset" />
+			<Forgot path="/" />
+		</Router>
 	);
 }

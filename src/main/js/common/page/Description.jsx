@@ -11,13 +11,18 @@ import Styles from './Styles.css';
 const cx = classnames.bind(Styles);
 
 Description.propTypes = {
-	className: PropTypes.string
+	className: PropTypes.string,
+	title: PropTypes.string,
+	subTitle: PropTypes.string,
+	description: PropTypes.string,
+	disclaimer: PropTypes.string
 };
-export default function Description ({className, ...otherProps}) {
-	const title = Theme.useThemeProperty('title');
-	const subTitle = Theme.useThemeProperty('subTitle');
-	const description = Theme.useThemeProperty('description');
-	const disclaimer = Theme.useThemeProperty('disclaimer');
+export default function Description (props) {
+	const {className} = props;
+	const title = props.title || Theme.useThemeProperty('title');
+	const subTitle = props.subTitle || Theme.useThemeProperty('subTitle');
+	const description = props.description || Theme.useThemeProperty('description');
+	const disclaimer = props.disclaimer || Theme.useThemeProperty('disclaimer');
 
 	return (
 		<PaddedContainer className={cx('description', className, {'has-disclaimer': !!disclaimer, 'no-title': !title})}>

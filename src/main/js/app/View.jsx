@@ -19,8 +19,8 @@ export default function LoginApp () {
 	return (
 		<Theme.Apply theme={LoginTheme.getTheme()}>
 			<Router basepath={basePath} >
-				<Page component={Recover} path="/recover" scope="recover" position={3} />
-				<Page component={Signup} path="/signup" scope="signup"  position={2} />
+				<Page component={Recover} path="recover/*" scope="recover" position={3} />
+				<Page component={Signup} path="signup" scope="signup"  position={2} />
 				<Page component={Login} path="/" scope="login" position={1} />
 			</Router>
 		</Theme.Apply>

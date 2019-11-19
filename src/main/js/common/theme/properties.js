@@ -25,6 +25,11 @@ export default {
 		disclaimer: '',
 		buttonText: 'Create my account!'
 	},
+	recover: {
+		featured: null,
+		background: (_, globalTheme) => globalTheme.assets.background,
+		logo: (_, globalTheme) => globalTheme.assets.logo
+	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,
 	assets: {
