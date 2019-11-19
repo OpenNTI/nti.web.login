@@ -28,7 +28,7 @@ export default {
 	recover: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.logo
+		logo: (_, globalTheme) => globalTheme.assets.loginLogo
 	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,

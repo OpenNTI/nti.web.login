@@ -31,6 +31,7 @@ export default {
 	Text: WrapperFactory(Form.Input.Text),
 	Email: WrapperFactory(Form.Input.Email),
 	Password: WrapperFactory(Form.Input.Text, {type: 'password'}),
-	Checkbox: WrapperFactory(Form.Input.Checkbox)
+	Checkbox: WrapperFactory(Form.Input.Checkbox),
+	Hidden: WrapperFactory(Form.Input.Text, {type: 'hidden'})
 };
 
