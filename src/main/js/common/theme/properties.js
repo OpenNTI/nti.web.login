@@ -9,7 +9,7 @@ export default {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
 		logo: (_, globalTheme) => globalTheme.assets.logo,
-		title: 'Suh Dude',
+		title: 'Howdy 🤠',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence',
 		disclaimer: '',

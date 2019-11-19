@@ -9,6 +9,7 @@ import Store from './Store';
 import Methods from './methods';
 import Unavailable from './Unavailable';
 import CreateAccount from './CreateAccount';
+import SupportLinks from './support-links';
 
 const t = scoped('nti-login.login.View', {
 	setupError: 'Could not communicate with the servers. Please try again later.'
@@ -75,7 +76,7 @@ function Login ({setup, hasPing, error, busy}) {
 				</Loading.Placeholder>
 			</Page.Body>
 			<Page.Footer>
-				Support Links
+				<SupportLinks />
 			</Page.Footer>
 		</Page.Content>
 	);

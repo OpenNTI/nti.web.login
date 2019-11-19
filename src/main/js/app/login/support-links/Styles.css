@@ -1,0 +1,18 @@
+.support-links {
+	padding: 0.625rem 0;
+	text-align: center;
+}
+
+.footer-link {
+	text-decoration: none;
+}
+
+.footer-link:focus {
+	text-decoration: underline;
+}
+
+.nt-logo {
+	display: inline-block;
+	max-width: 150px;
+	height: auto;
+}
