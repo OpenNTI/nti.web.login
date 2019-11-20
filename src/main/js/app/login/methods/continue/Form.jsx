@@ -2,12 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {scoped} from '@nti/lib-locale';
 import {getServer} from '@nti/web-client';//eslint-disable-line
-import {Button, Text, Errors} from '@nti/web-commons';
+import {Errors} from '@nti/web-commons';
 
+import {Text, Button} from '../../../../common';
 import Store from '../../Store';
 
+import UserInfo from './UserInfo';
+
 const t = scoped('nti-login.login.methods.continue.Form', {
-	alreadyLoggedIn: 'You are already logged in. Would you like to continue or logout?'
+	loggedIn: 'You are already logged in as:',
+	continue: 'Would you like to continue or logout?'
 });
 
 LoginContinueMethod.propTypes = {
@@ -41,10 +45,11 @@ function LoginContinueMethod ({handshake, loginURL, setBusy, reload}) {
 	return (
 		<div>
 			{error && (<Errors.Message error={error} />)}
-			<Text.Base>{t('alreadyLoggedIn')}</Text.Base>
-			<Button href={loginURL}>Continue</Button>
+			<Text.Large>{t('loggedIn')}</Text.Large>
+			<UserInfo />
+			<Button as="a" href={loginURL}>Continue</Button>
 			{!!logoutLink && (
-				<Button onClick={logout}>Logout</Button>
+				<Button onClick={logout} secondary>Logout</Button>
 			)}
 		</div>
 	);

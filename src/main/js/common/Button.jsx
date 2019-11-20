@@ -8,12 +8,13 @@ const cx = classnames.bind(Styles);
 
 Button.propTypes = {
 	as: PropTypes.any,
-	className: PropTypes.string
+	className: PropTypes.string,
+	secondary: PropTypes.bool,
 };
-export default function Button ({as: tag, className, ...otherProps}) {
+export default function Button ({as: tag, className, secondary, ...otherProps}) {
 	const Cmp = tag || 'button';
 
 	return (
-		<Cmp className={cx(className, 'button')} {...otherProps} tabIndex={0} role="button" />
+		<Cmp className={cx(className, 'button', {secondary})} {...otherProps} tabIndex={0} role="button" />
 	);
 }

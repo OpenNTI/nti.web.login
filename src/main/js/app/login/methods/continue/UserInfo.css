@@ -1,0 +1,34 @@
+.user-info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+	width: 200px;
+	min-height: 150px;
+	margin: 2rem auto;
+	padding: 1.5rem; 
+	
+	box-shadow:  0 2px 2px 0 rgba(0, 0, 0, 0.19), 0 0 3px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.user-info :global(.avatar) {
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	display: block;
+	margin-bottom: 0.875rem;
+}
+
+.user-info :global(.username) {
+	display: block;
+	overflow: hidden;
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: 1.3;
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-word;
+	color: var(--primary-grey);
+}
