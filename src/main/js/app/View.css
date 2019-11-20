@@ -7,6 +7,12 @@
 body, input, select, textarea {
 	font-family: var(--body-font-family);
 }
+
+html body {
+	/* override the style commons */
+	user-select: initial;
+}
+
 input:required {
 	/* override firefox's default red ring on required inputs */
 	box-shadow: none;
