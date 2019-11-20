@@ -22,13 +22,13 @@ const FieldPreflights = new Map();
 const FieldTasks = new Map();
 
 
-function checkPassword (data, field) {
+function checkPassword (data) {
 	if (data.password2 == null) { return; }
 	if (data.password2 === data.password) { return; }
 
 	const error = new Error('Passwords do not match.');
 
-	error.field = field;
+	error.field = 'password2';
 	throw error;
 }
 
@@ -72,12 +72,6 @@ export default class SignupStore extends Stores.SimpleStore {
 	[FormatData] (data) {
 		const formatted = {...data};
 
-		if (formatted.first && formatted.last) {
-			formatted.realname = [formatted.first, formatted.last].join(' ');
-		}
-
-		delete formatted.first;
-		delete formatted.last;
 		delete formatted.password2;
 
 		return formatted;
@@ -103,14 +97,15 @@ export default class SignupStore extends Stores.SimpleStore {
 		return new Promise((fulfill, reject) => {
 			const timeout = setTimeout(async () => {
 				const isCurrentTask = FieldTasks.get(field) === task;
+				const ping = this.get(Ping);
 
 				try {
 					if (field === 'password' || field === 'password2') {
-						checkPassword(this.preflightData, field);
+						checkPassword(this.preflightData);
 					}
 
 					const formatted = this[FormatData](this.preflightData);
-					await getServer().preflightAccountCreate(formatted);
+					await getServer().post(ping.getLink('account.preflight.create'), formatted);
 				} catch (e) {
 					if (!isCurrentTask) { return; }
 

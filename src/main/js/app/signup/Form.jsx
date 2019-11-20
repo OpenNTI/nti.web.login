@@ -39,7 +39,16 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 		const clear = setBusy();
 
 		try {
-			await getServer().createAccount(formatData(json));
+			const resp = await getServer().createAccount(formatData(json));
+
+			if (resp && resp.Class === 'User') {
+				const handshake = await getServer().ping(resp.Username);
+				const initialTOSLink = handshake.getLink('content.initial_tos_page');
+
+				if (initialTOSLink) {
+					await getServer().delete(initialTOSLink);
+				}
+			}
 
 			global.location?.replace(returnURL);
 		} finally {
@@ -74,6 +83,7 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 
 export default Store
 	.monitor({
+		[Store.Ping]: 'ping',
 		[Store.Preflight]: 'preflight',
 		[Store.ReturnURL]: 'returnURL',
 		[Store.Busy]: 'busy',
