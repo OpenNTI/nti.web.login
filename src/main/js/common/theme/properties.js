@@ -34,14 +34,18 @@ export default {
 	brandColor: buildTheme.DefaultProperties.brandColor,
 	assets: {
 		...buildTheme.DefaultProperties.assets,
-		loginLogo: buildTheme.getAsset({
+		'login_logo': buildTheme.getAsset({
 			alt: 'Logo',
 			fallback: Fallbacks.LoginLogo,
 			href: Fallbacks.LoginLogo
 		}),
-		background: buildTheme.getAsset({
+		'login_background': buildTheme.getAsset({
 			alt: 'Background Image',
 			href: Fallbacks.Background
+		}),
+		'login_featured_callout': buildTheme.getAsset({
+			alt: 'Feautred',
+			href: null
 		})
 	}
 };

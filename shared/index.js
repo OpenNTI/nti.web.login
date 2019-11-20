@@ -1,0 +1,1 @@
+export * as Theme from '../src/main/js/common/theme';

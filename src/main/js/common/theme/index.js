@@ -5,6 +5,8 @@ import Properties from './properties';
 
 let LoginTheme = null;
 
+export Properties from './properties';
+
 export function getTheme () {
 	if (!LoginTheme) {
 		LoginTheme = Theme.buildTheme(Properties);

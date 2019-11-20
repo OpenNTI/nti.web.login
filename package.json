@@ -10,7 +10,13 @@
   "homepage": "proxy://localhost:8083/login/",
   "main": "dist/server/index.js",
   "files": [
-    "dist"
+    "dist",
+    "src",
+    "shared"
+  ],
+  "sideEffects": [
+    "*.css",
+    "*.scss"
   ],
   "scripts": {
     "start": "app-scripts start",
