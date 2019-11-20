@@ -30,10 +30,6 @@ SignupForm.propTypes = {
 };
 function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 	const buttonText = Theme.useThemeProperty('buttonText');
-	const [disabled, setDisabled] = React.useState(true);
-
-	const onValid = () => setDisabled(false);
-	const onInvalid = () => setDisabled(true);
 
 	const onChange = ({json}, e) => {
 		return preflight(json, e.target?.name);
@@ -58,9 +54,6 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 			{busy && (<Loading.Spinner.Large />)}
 			<Form
 				className={cx('signup-form', {busy})}
-				disabled={disabled}
-				onValid={onValid}
-				onInvalid={onInvalid}
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>

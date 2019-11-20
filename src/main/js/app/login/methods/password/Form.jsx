@@ -29,11 +29,6 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 
 	const passwordRef = React.useRef();
 
-	const [disabled, setDisabled] = React.useState(true);
-
-	const onValid = () => setDisabled(false);
-	const onInvalid = () => setDisabled(true);
-
 	const maybeFocusPassword = (e) => {
 		if (e.target.value && MoveFocusOn[e.key] && passwordRef.current) {
 			passwordRef.current.focus();
@@ -60,7 +55,7 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 	};
 
 	return (
-		<Form disabled={disabled} onValid={onValid} onInvalid={onInvalid} onSubmit={onSubmit}>
+		<Form onSubmit={onSubmit}>
 			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword} autoFocus/>
 			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
 			<Recover />

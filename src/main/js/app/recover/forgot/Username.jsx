@@ -30,12 +30,9 @@ export default function ForgotUsername ({allowed}) {
 		);
 	}
 
-	const [disabled, setDisabled] = React.useState(true);
 	const [sending, setSending] = React.useState(false);
 	const [sentTo, setSentTo] = React.useState(null);
 
-	const onValid = () => setDisabled(false);
-	const onInvalid = () => setDisabled(true);
 
 	const onSubmit = async ({json}) => {
 		setSending(true);
@@ -64,12 +61,9 @@ export default function ForgotUsername ({allowed}) {
 				{!sentTo && (
 					<Form
 						className={cx('forgot-form', {sending})}
-						disabled={disabled}
-						onValid={onValid}
-						onInvalid={onInvalid}
 						onSubmit={onSubmit}
 					>
-						<Inputs.Email name="email" placeholder={t('email')} autoFocus />
+						<Inputs.Email required name="email" placeholder={t('email')} autoFocus />
 						<Button className={cx('submit')}as={Form.SubmitButton}>
 							{t('reset')}
 						</Button>
