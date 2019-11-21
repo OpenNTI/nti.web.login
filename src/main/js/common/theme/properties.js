@@ -7,9 +7,9 @@ const {buildTheme} = Theme;
 
 export default {
 	login: {
-		featured: null,
-		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
+		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
+		background: (_, globalTheme) => globalTheme.assets['login_background'],
+		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
 		title: 'Howdy!',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence.',
@@ -24,9 +24,9 @@ export default {
 		}
 	},
 	signup: {
-		featured: null,
-		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
+		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
+		background: (_, globalTheme) => globalTheme.assets['login_background'],
+		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
 		title: '',
 		subTitle: 'New Account',
 		description: '',
@@ -36,9 +36,9 @@ export default {
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
 	recover: {
-		featured: null,
-		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
+		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
+		background: (_, globalTheme) => globalTheme.assets['login_background'],
+		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
@@ -53,6 +53,7 @@ export default {
 		}),
 		'login_background': buildTheme.getAsset({
 			alt: 'Background Image',
+			fallback: Fallbacks.Background,
 			href: Fallbacks.Background
 		}),
 		'login_featured_callout': buildTheme.getAsset({
