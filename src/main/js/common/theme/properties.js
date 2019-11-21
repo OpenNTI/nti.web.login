@@ -1,4 +1,5 @@
 import {Theme} from '@nti/web-commons';
+import {Color} from '@nti/lib-commons';
 
 import Fallbacks from './fallback-assets';
 
@@ -13,7 +14,14 @@ export default {
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence.',
 		disclaimer: '',
-		buttonText: 'Log In'
+		buttonText: 'Log In',
+		buttonBackground: '#3fb34f',
+		buttonTheme: (values) => {
+			const color = Color(values.buttonBackground);
+			const isReadable = color.a11y.isReadable('#fff', {'level': 'AA', 'size': 'large'});
+
+			return isReadable ? 'light' : 'dark';
+		}
 	},
 	signup: {
 		featured: null,
@@ -23,12 +31,16 @@ export default {
 		subTitle: 'New Account',
 		description: '',
 		disclaimer: '',
-		buttonText: 'Create my account!'
+		buttonText: 'Create my account!',
+		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
+		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
 	recover: {
 		featured: null,
 		background: (_, globalTheme) => globalTheme.assets.background,
-		logo: (_, globalTheme) => globalTheme.assets.loginLogo
+		logo: (_, globalTheme) => globalTheme.assets.loginLogo,
+		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
+		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,
