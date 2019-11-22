@@ -18,7 +18,7 @@ const t = scoped('nti-login.signup.Form', {
 	username: 'Username',
 	password: 'Password',
 	verifyPassword: 'Verify Password',
-	emailUpdates: 'Send me email updates about NextThought.'
+	emailUpdates: 'Send me email updates.'
 });
 
 SignupForm.propTypes = {

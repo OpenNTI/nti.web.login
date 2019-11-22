@@ -35,3 +35,9 @@ button.button {
 	color: var(--primary-grey);
 	background: var(--tertiary-grey);
 }
+
+@media (max-width: 600px) {
+	.button {
+		font-size: 1rem;
+	}
+}

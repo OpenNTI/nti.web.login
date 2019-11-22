@@ -58,3 +58,17 @@
 .center {
 	text-align: center;
 }
+
+@media (max-width: 600px) {
+	.heading {
+		font-size: 2rem;
+	}
+
+	.sub-title {
+		font-size: 2rem;
+	}
+
+	.body-large {
+		font-size: 1.125rem;
+	}
+}
