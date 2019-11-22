@@ -68,10 +68,10 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 				onSubmit={onSubmit}
 			>
 				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus />
-				<Inputs.Email required name="email" placeholder={t('email')} />
-				<Inputs.Text required name="Username" placeholder={t('username')} />
-				<Inputs.Password required name="password" placeholder={t('password')}/>
-				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} />
+				<Inputs.Email required name="email" placeholder={t('email')} autoComplete="off" />
+				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" />
+				<Inputs.Password required name="password" placeholder={t('password')} autoComplete="off"/>
+				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} autoComplete="off" />
 				<Inputs.Checkbox name="opt_in_email_communication" label={t('emailUpdates')} defaultChecked />
 				<Button as={Form.SubmitButton} className={cx('submit')}>
 					{buttonText}
