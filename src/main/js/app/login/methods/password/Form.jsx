@@ -46,11 +46,9 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 
 			global.location?.replace(loginRedirect);
 		} catch (e) {
-			if (e.statusCode === 401) { throw Errors.Messages.mapMessage(e, t('invalid')); }
-
-			throw e;
-		} finally {
 			clear();
+			if (e.statusCode === 401) { throw Errors.Messages.mapMessage(e, t('invalid')); }
+			throw e;
 		}
 	};
 

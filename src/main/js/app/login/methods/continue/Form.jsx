@@ -37,7 +37,6 @@ function LoginContinueMethod ({handshake, loginURL, setBusy, reload}) {
 			reload();
 		} catch (e) {
 			setError(e);
-		} finally {
 			clear();
 		}
 	};

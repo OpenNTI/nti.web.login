@@ -51,8 +51,9 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 			}
 
 			global.location?.replace(returnURL);
-		} finally {
+		} catch (e) {
 			clear();
+			throw e;
 		}
 
 		setTimeout(() => clear(), 5000);
