@@ -52,7 +52,7 @@ export default class ResetPasswordStore extends Stores.SimpleStore {
 	get [ReturnURL] () {
 		const returnURL = getReturnURL();
 
-		return `../../?return=${returnURL}`;
+		return `/login/?return=${returnURL}`;
 	}
 
 	get [ParamValues] () {
