@@ -30,7 +30,7 @@ export default function Button ({as: tag, className, secondary, background: back
 		<Cmp
 			{...otherProps}
 			style={styles}
-			className={cx(className, 'button', {secondary, theme})}
+			className={cx(className, 'button', theme, {secondary})}
 			tabIndex={0}
 			role="button"
 		/>

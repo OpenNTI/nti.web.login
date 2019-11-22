@@ -14,7 +14,7 @@ export default {
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence.',
 		disclaimer: '',
-		buttonText: 'Log In',
+		buttonText: 'Sign In',
 		buttonBackground: '#3fb34f',
 		buttonTheme: (values) => {
 			const color = Color(values.buttonBackground);

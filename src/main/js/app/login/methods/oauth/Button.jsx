@@ -6,6 +6,7 @@ import {scoped} from '@nti/lib-locale';
 import {Button} from '../../../../common';
 
 import Styles from './Styles.css';
+import Assets from './assets';
 
 const cx = classnames.bind(Styles);
 const getServiceName = rel => rel.split('.')[1].toLowerCase();
@@ -19,19 +20,34 @@ const t = scoped('nti-login.login.methods.oauth.Button', {
 
 const overrides = {
 	google: {
-		background: '#c94b36',
+		background: '#ffffff',
 		title: t('text.google'),
-		theme: 'light'
+		theme: 'dark',
+		icon: {
+			src: Assets.Google,
+			srcset: `${Assets.Google}, ${Assets.Google2x} 2x, ${Assets.Google3x} 3x`,
+			alt: 'Google Logo'
+		}
 	},
 	facebook: {
-		background: '#4469a5',
+		background: '#0076FB',
 		title: t('text.facebook'),
-		theme: 'light'
+		theme: 'light',
+		icon: {
+			src: Assets.Facebook,
+			srcset: `${Assets.Facebook}, ${Assets.Facebook2x} 2x, ${Assets.Facebook3x} 3x`,
+			alt: 'Facebook Logo'
+		}
 	},
 	linkedin: {
-		background: '#0085ae',
+		background: '#2867B2',
 		title: t('text.linkedin'),
-		theme: 'light'
+		theme: 'light',
+		icon: {
+			src: Assets.LinkedIn,
+			srcset: `${Assets.LinkedIn}, ${Assets.LinkedIn2x} 2x, ${Assets.LinkedIn3x} 3x`,
+			alt: 'LinkedIn Logo'
+		}
 	}
 };
 
@@ -72,10 +88,11 @@ export default function OauthButton ({link, returnURL}) {
 		<Button
 			as="a"
 			href={url.toString()}
-			className={cx('oauth-button', getServiceName(rel))}
+			className={cx('oauth-button', getServiceName(rel), {'has-icon': !!override.icon})}
 			{...extraProps}
 		>
-			{text}
+			{override.icon && (<img {...override.icon} className={cx('button-icon')} />)}
+			<span className={cx('button-label')}>{text}</span>
 		</Button>
 	);
 }

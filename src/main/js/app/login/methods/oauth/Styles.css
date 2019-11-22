@@ -7,3 +7,20 @@
 form + .oauth-buttons {
 	margin-top: 1.5rem;
 }
+
+.oauth-button {
+	position: relative;
+}
+
+.oauth-button.google {
+	color: #757575;
+}
+
+.button-icon {
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: auto;
+}
