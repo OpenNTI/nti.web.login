@@ -18,9 +18,9 @@ export default {
 		buttonBackground: '#3fb34f',
 		buttonTheme: (values) => {
 			const color = Color(values.buttonBackground);
-			const isReadable = color.a11y.isReadable('#fff', {'level': 'AA', 'size': 'large'});
+			const readability = color.a11y.readability('#fff');
 
-			return isReadable ? 'light' : 'dark';
+			return readability > 2.3 ? 'light' : 'dark';
 		}
 	},
 	signup: {
