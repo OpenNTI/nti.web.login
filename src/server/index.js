@@ -1,6 +1,5 @@
 /*eslint-disable no-console, strict, import/no-commonjs*/
 'use strict';
-
 const path = require('path');
 
 let dev;
@@ -20,7 +19,7 @@ exports = module.exports = {
 		const devmode = dev ? await dev.setupDeveloperMode(config) : null;
 
 		if (devmode) {
-			expressApp.use(devmode.middleware); //serve in-memory compiled source/assets
+			(expressApp.parent || expressApp).use(devmode.middleware); //serve in-memory compiled sources/assets
 		}
 
 		return {
