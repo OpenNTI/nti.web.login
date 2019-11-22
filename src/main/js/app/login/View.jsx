@@ -62,8 +62,6 @@ function Login ({setup, hasPing, error, busy}) {
 		};
 	});
 
-	if (!hasPing && !busy && !error) { return null; }
-
 	return (
 		<Page.Content>
 			<Page.Header />

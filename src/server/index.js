@@ -5,6 +5,8 @@ const path = require('path');
 let dev;
 let assets = path.resolve(__dirname, '../client');
 
+const pageContent = require('./page-content');
+
 try {
 	if (!/dist\/server/i.test(__dirname)) {
 		dev = require('@nti/app-scripts/server/lib/devmode');
@@ -24,7 +26,8 @@ exports = module.exports = {
 
 		return {
 			devmode,
-			assets
+			assets,
+			renderContent: pageContent.renderer
 		};
 	}
 };
