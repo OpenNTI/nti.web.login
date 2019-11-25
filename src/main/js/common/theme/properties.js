@@ -7,9 +7,11 @@ const {buildTheme} = Theme;
 
 export default {
 	login: {
-		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
+		featured: (values, globalTheme) => values.noFeature ? null : globalTheme.assets['login_featured_callout'],
 		background: (_, globalTheme) => globalTheme.assets['login_background'],
-		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
+		logo: (values, globalTheme) => values.noLogo ? null : globalTheme.assets['login_logo'],
+		noLogo: false,
+		noFeature: false,
 		title: 'Howdy!',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence.',
@@ -24,9 +26,9 @@ export default {
 		}
 	},
 	signup: {
-		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
-		background: (_, globalTheme) => globalTheme.assets['login_background'],
-		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
+		featured: (_, globalTheme) => globalTheme.login.featured,
+		background: (_, globalTheme) => globalTheme.login.background,
+		logo: (_, globalTheme) => globalTheme.login.logo,
 		title: '',
 		subTitle: 'New Account',
 		description: '',
@@ -36,9 +38,9 @@ export default {
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
 	recover: {
-		featured: (_, globalTheme) => globalTheme.assets['login_featured_callout'],
-		background: (_, globalTheme) => globalTheme.assets['login_background'],
-		logo: (_, globalTheme) => globalTheme.assets['login_logo'],
+		featured: (_, globalTheme) => globalTheme.login.featured,
+		background: (_, globalTheme) => globalTheme.login.background,
+		logo: (_, globalTheme) => globalTheme.login.logo,
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
 	},
