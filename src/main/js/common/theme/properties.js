@@ -12,7 +12,7 @@ export default {
 		logo: (values, globalTheme) => values.noLogo ? null : globalTheme.assets['login_logo'],
 		noLogo: false,
 		noFeature: false,
-		title: 'Howdy!',
+		title: 'Hello!',
 		subTitle: '',
 		description: 'We have everything you need to educate with confidence.',
 		disclaimer: '',
