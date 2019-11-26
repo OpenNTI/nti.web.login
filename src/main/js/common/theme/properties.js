@@ -60,7 +60,7 @@ export default {
 		}),
 		'login_featured_callout': buildTheme.getAsset({
 			alt: 'Feautred',
-			href: null
+			href: Fallbacks.Feature
 		})
 	}
 };
