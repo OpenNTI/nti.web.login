@@ -14,6 +14,7 @@ const Busy = 'Busy';
 const SetBusy = 'SetBusy';
 
 const FormatData = 'formatData';
+const FormatAndCheckData = 'formatAndCheckData';
 
 const Preflight = 'Preflight';
 const PreflightDelay = 750;
@@ -38,6 +39,7 @@ export default class SignupStore extends Stores.SimpleStore {
 	static Loaded = Loaded;
 	static CanCreateAccount = CanCreateAccount;
 	static FormatData = FormatData;
+	static FormatAndCheckData = FormatAndCheckData;
 	static Preflight = Preflight;
 	static ReturnURL = ReturnURL;
 	static Busy = Busy;
@@ -76,6 +78,14 @@ export default class SignupStore extends Stores.SimpleStore {
 
 		return formatted;
 	}
+
+	[FormatAndCheckData] (data) {
+		debugger;
+		checkPassword(data);
+
+		return this[FormatData](data);
+	}
+
 
 	[Preflight] (data, field = 'all') {
 		const inflight = FieldPreflights.get(field);

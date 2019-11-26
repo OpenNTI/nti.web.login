@@ -26,9 +26,9 @@ SignupForm.propTypes = {
 	returnURL: PropTypes.string,
 	busy: PropTypes.bool,
 	setBusy: PropTypes.func,
-	formatData: PropTypes.func
+	formatAndCheck: PropTypes.func
 };
-function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
+function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
 	const onChange = ({json}, e) => {
@@ -39,7 +39,7 @@ function SignupForm ({preflight, returnURL, formatData, busy, setBusy}) {
 		const clear = setBusy();
 
 		try {
-			const resp = await getServer().createAccount(formatData(json));
+			const resp = await getServer().createAccount(formatAndCheck(json));
 
 			if (resp && resp.Class === 'User') {
 				const handshake = await getServer().ping(resp.Username);
@@ -89,5 +89,5 @@ export default Store
 		[Store.ReturnURL]: 'returnURL',
 		[Store.Busy]: 'busy',
 		[Store.SetBusy]: 'setBusy',
-		[Store.FormatData]: 'formatData'
+		[Store.FormatAndCheckData]: 'formatAndCheck'
 	})(SignupForm);
