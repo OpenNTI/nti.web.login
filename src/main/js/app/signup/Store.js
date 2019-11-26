@@ -80,7 +80,6 @@ export default class SignupStore extends Stores.SimpleStore {
 	}
 
 	[FormatAndCheckData] (data) {
-		debugger;
 		checkPassword(data);
 
 		return this[FormatData](data);
