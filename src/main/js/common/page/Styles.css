@@ -31,6 +31,7 @@
 	max-width: var(--max-content-width, 500px);
 	background: white;
 	position: relative;
+	box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
 }
 
 .main > div[role="group"] {
