@@ -23,7 +23,8 @@ export default {
 			const readability = color.a11y.readability('#fff');
 
 			return readability > 2.3 ? 'light' : 'dark';
-		}
+		},
+		noBranding: (_, globalTheme) => globalTheme.HideNextThoughtBranding
 	},
 	signup: {
 		featured: (_, globalTheme) => globalTheme.login.featured,
@@ -35,17 +36,20 @@ export default {
 		disclaimer: '',
 		buttonText: 'Create my account!',
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
-		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
+		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
+		noBranding: (_, globalTheme) => globalTheme.login.noBranding
 	},
 	recover: {
 		featured: (_, globalTheme) => globalTheme.login.featured,
 		background: (_, globalTheme) => globalTheme.login.background,
 		logo: (_, globalTheme) => globalTheme.login.logo,
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
-		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme
+		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
+		noBranding: (_, globalTheme) => globalTheme.login.noBranding
 	},
 	brandName: buildTheme.DefaultProperties.brandName,
 	brandColor: buildTheme.DefaultProperties.brandColor,
+	HideNextThoughtBranding: false,
 	assets: {
 		...buildTheme.DefaultProperties.assets,
 		'login_logo': buildTheme.getAsset({

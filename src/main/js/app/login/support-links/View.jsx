@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
-import {List} from '@nti/web-commons';
+import {List, Theme} from '@nti/web-commons';
 
 import {getTermsLink, getSupportLink, getPrivacyLink} from '../../../data';
 import {Text} from '../../../common';
@@ -53,6 +53,8 @@ async function resolveLinks () {
 }
 
 export default function SupportLinks () {
+	const noBranding = Theme.useThemeProperty('noBranding');
+
 	const [links, setLinks] = React.useState([]);
 
 	React.useEffect(() => {
@@ -74,11 +76,13 @@ export default function SupportLinks () {
 
 	return (
 		<div className={cx('support-links')}>
-			<img
-				className={cx('nt-logo')}
-				src={FullLogo}
-				srcSet={`${FullLogo}, ${FullLogox2} x2, ${FullLogox3} 3x`}
-			/>
+			{!noBranding && (
+				<img
+					className={cx('nt-logo')}
+					src={FullLogo}
+					srcSet={`${FullLogo}, ${FullLogox2} x2, ${FullLogox3} 3x`}
+				/>
+			)}
 			<List.SeparatedInline>
 				{links.map((l, key) => {
 					const {label, ...otherProps} = l;
