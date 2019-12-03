@@ -22,7 +22,7 @@ export default function Button ({as: tag, className, secondary, background: back
 
 	const styles = {};
 
-	if (background) {
+	if (background && !secondary) {
 		styles.background = background;
 	}
 
