@@ -53,7 +53,7 @@ export default {
 	assets: {
 		...buildTheme.DefaultProperties.assets,
 		'login_logo': buildTheme.getAsset({
-			alt: '',
+			alt: (_, globalTheme) => `${globalTheme.brandName} Logo`,
 			fallback: Fallbacks.LoginLogo,
 			href: Fallbacks.LoginLogo
 		}),
