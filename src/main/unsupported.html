@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Browser not supported</title>
+	<link rel="shortcut icon" href="resources/images/favicon.ico">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+
+    <meta name="robots" content="noindex,nofollow"/>
+
+    <style type="text/css">
+        .middle{
+            position: absolute;
+            display: table;
+        	width: 100%;
+            height: 80%;
+        }
+
+        .content{
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+        }
+
+        .unsupported_message {
+        	padding: 0.5em;
+        	font-size: 2em;
+        	color: #494949;
+        }
+
+        .content, .notsupported a {
+        	font-family: "Open Sans", sans-serif;
+        	font-size: 1em;
+        	font-weight: normal;
+        }
+
+        a:active, .notsupported a:link, .notsupported a:visited {
+        	color: #3fb3f6;
+        }
+
+        img {
+        	padding-bottom: 1em;
+        }
+
+		.mobile {
+			margin: 2em;
+		}
+    </style>
+
+    <!--[if lte IE 6]>
+    <style type="text/css">
+        #logo {
+            width: 90px;
+            height: 90px;
+            filter: progid:DXImageTransform.Microsoft.AlphaImageLoader (src='resources/images/logoWithNoText.png', sizingMethod='scale');
+        }
+        img {
+            display: none;
+        }
+    </style>
+    <![endif]-->
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create',
+			'<[cfg:analyticsKey]>',
+			'auto' // replace auto with {'cookieDomain': 'none'} for testing on localhost
+		);
+
+		ga('set', {
+			appName: '<[cfg:appName]>',
+			appId: '<[cfg:appId]>',
+			appVersion: '<[cfg:appVersion]>',
+			appInstallerId: navigator.standalone ? 'homescreen':'browser'
+		});
+
+		ga('send', 'pageview');
+	</script>
+	<!-- End Google Analytics -->
+
+</head>
+<body>
+    <div class="middle">
+        <div class="content" id="content">
+
+            <div id="logo"><img src="resources/images/logoWithNoText.png"/></div>
+            <div class="unsupported_message">It looks like you&#39;re using a browser that we don&#39;t support.</div>
+            <div class="alternatives">Please try again with the latest version of <a href="http://www.google.com/chrome">Chrome</a>, <a href="http://www.apple.com/safari/download/">Safari</a>, <a
+href="http://www.getfirefox.com">Firefox</a>, or <a href="http://www.microsoft.com/edge">Microsoft Edge</a><br/>with JavaScript <strong><u>enabled</u></strong>.
+            </div>
+
+        </div>
+    </div>
+	<script type="text/javascript">
+
+	var c = document.getElementById("content");
+	c.innerHTML += '<div class="mobile">Try our <a href="/mobile/">mobile site</a></div>';
+
+    if (typeof URL === 'function') {
+        var url = new URL(location.href);
+        var error = url.searchParams && url.searchParams.get && url.searchParams.get('error');
+
+        console.log('UNSUPPORTED ERROR: ', error);
+    }
+
+	if(document.referrer && history.replaceState){
+		history.replaceState({},null,document.referrer);
+	}
+	</script>
+</body>
+</html>
