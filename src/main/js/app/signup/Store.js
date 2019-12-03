@@ -72,7 +72,7 @@ export default class SignupStore extends Stores.SimpleStore {
 	get [ReturnURL] () { return getReturnURL();	}
 
 	[FormatData] (data) {
-		const formatted = {...data};
+		const formatted = {...data, 'opt_in_email_communication': null};
 
 		delete formatted.password2;
 

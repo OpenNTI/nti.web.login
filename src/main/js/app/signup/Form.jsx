@@ -17,8 +17,7 @@ const t = scoped('nti-login.signup.Form', {
 	email: 'Your Email',
 	username: 'Username',
 	password: 'Password',
-	verifyPassword: 'Verify Password',
-	emailUpdates: 'Send me email updates.'
+	verifyPassword: 'Verify Password'
 });
 
 SignupForm.propTypes = {
@@ -72,7 +71,6 @@ function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" />
 				<Inputs.Password required name="password" placeholder={t('password')} autoComplete="off"/>
 				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} autoComplete="off" />
-				<Inputs.Checkbox name="opt_in_email_communication" label={t('emailUpdates')} defaultChecked />
 				<Button as={Form.SubmitButton} className={cx('submit')}>
 					{buttonText}
 				</Button>
