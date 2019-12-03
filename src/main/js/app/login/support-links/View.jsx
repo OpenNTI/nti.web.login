@@ -3,7 +3,7 @@ import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
 import {List, Theme} from '@nti/web-commons';
 
-import {getTermsLink, getSupportLink, getPrivacyLink} from '../../../data';
+import {getTermsLink, getSupportLink, getPrivacyLink, Cookies} from '../../../data';
 import {Text} from '../../../common';
 
 import Styles from './Styles.css';
@@ -28,23 +28,55 @@ const t = scoped('nti-login.login.support-links.View', {
 	privacy: {
 		title: 'Learn about your privacy and NextThought',
 		label: 'Privacy'
+	},
+	accessibility: {
+		on: {
+			label: 'Disable High Contrast',
+			title: 'Disable high contrast styles in the platform.'
+		},
+		off: {
+			label: 'Enable High Contrast',
+			title: 'Enable high contrast styles in the platform.'
+		}
 	}
 });
 
+const ContrastCookie = 'use-accessibility-mode';
 let resolvedLinks = null;
 
-async function resolveLinks () {
+async function resolveLinks (update) {
 	if (resolvedLinks) { return resolvedLinks; }
 
 	const support = await getSupportLink();
 	const terms = await getTermsLink();
 	const privacy = await getPrivacyLink();
+	const contrast = Cookies.get(ContrastCookie) === 'true';
 
 	const links = [
 		{href: '//nextthought.com', title: t('about.title'), label: t('about.label'), target: '_blank'},
 		support ? ({href: support, title: t('help.title'), label: t('help.label'), target: '_blank'}) : null,
 		terms ? ({href: terms, title: t('terms.title'), label: t('terms.label'), target: '_blank'}) : null,
-		privacy ? ({href: privacy, title: t('privacy.title'), label: t('privacy.label'), target: '_blank'}) : null
+		privacy ? ({href: privacy, title: t('privacy.title'), label: t('privacy.label'), target: '_blank'}) : null,
+		{
+			href: '#',
+			role: 'button',
+			get title () {
+				return contrast ? t('accessibility.on.title') : t('accessibility.off.title');
+			},
+			get label () {
+				return contrast ? t('accessibility.on.label') : t('accessibility.off.label');
+			},
+			onClick: async (e) => {
+				e.stopPropagation();
+				e.preventDefault();
+
+				Cookies.set(ContrastCookie, contrast ? 'false' : 'true');
+
+				resolvedLinks = null;
+				const updated = await resolveLinks(update);
+				update(updated);
+			}
+		}
 	];
 
 	resolvedLinks = links.filter(Boolean);
@@ -60,7 +92,7 @@ export default function SupportLinks () {
 	React.useEffect(() => {
 		const setup = async () => {
 			try {
-				const l = await resolveLinks();
+				const l = await resolveLinks(setLinks);
 
 				if (l !== links) {
 					setLinks(l);

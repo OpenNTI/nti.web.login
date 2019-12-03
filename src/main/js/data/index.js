@@ -1,3 +1,4 @@
+export * as Cookies from './Cookies';
 export getAnonymousPing from './get-anonymous-ping';
 export getForgotPasswordLink from './get-forgot-password-link';
 export getForgotUsernameLink from './get-forgot-username-link';
