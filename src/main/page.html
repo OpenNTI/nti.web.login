@@ -33,13 +33,13 @@
 				'<[cfg:analyticsKey]>',
 				{
 					// cookieDomain: 'none' //  for testing on localhost
-					dimension1: '<[cfg:siteName]>',
 					appName: '<[cfg:appName]>',
 					appId: '<[cfg:appId]>',
 					appVersion: '<[cfg:appVersion]>',
 					appInstallerId: navigator.standalone ? 'homescreen':'browser'
 				}
 			);
+			ga('set', 'dimension1', '<[cfg:siteName]>');
 
 			ga('send', 'pageview');
 		</script>
