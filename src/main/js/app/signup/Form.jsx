@@ -30,8 +30,8 @@ SignupForm.propTypes = {
 function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
-	const onChange = ({json}, e) => {
-		return preflight(json, e.target?.name);
+	const onChange = (values, e) => {
+		return preflight(values.json, values.getValidationErrors(), e.target?.name);
 	};
 
 	const onSubmit = async ({json}) => {

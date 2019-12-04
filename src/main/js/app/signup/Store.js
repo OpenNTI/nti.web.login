@@ -86,7 +86,7 @@ export default class SignupStore extends Stores.SimpleStore {
 	}
 
 
-	[Preflight] (data, field = 'all') {
+	[Preflight] (data, errors, field = 'all') {
 		const inflight = FieldPreflights.get(field);
 
 		this.preflightData = this.preflightData || {};
@@ -107,6 +107,12 @@ export default class SignupStore extends Stores.SimpleStore {
 			const timeout = setTimeout(async () => {
 				const isCurrentTask = FieldTasks.get(field) === task;
 				const ping = this.get(Ping);
+
+				if (errors && errors[field]) {
+					const e = new Error(errors[field]);
+					e.field = field;
+					reject(e);
+				}
 
 				try {
 					if (field === 'password' || field === 'password2') {
