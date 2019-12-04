@@ -112,6 +112,7 @@ export default class SignupStore extends Stores.SimpleStore {
 					const e = new Error(errors[field]);
 					e.field = field;
 					reject(e);
+					return;
 				}
 
 				try {
@@ -123,6 +124,15 @@ export default class SignupStore extends Stores.SimpleStore {
 					await getServer().post(ping.getLink('account.preflight.create'), formatted);
 				} catch (e) {
 					if (!isCurrentTask) { return; }
+
+					const existing = errors[e.field];
+
+					if (existing) {
+						const err = new Error(errors[e.field]);
+						err.field = e.field;
+						reject(err);
+						return;
+					}
 
 					reject(e);
 				} finally {
