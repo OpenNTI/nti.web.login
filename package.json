@@ -1,6 +1,6 @@
 {
   "name": "@nti/web-login",
-  "version": "2019.8.0-alpha",
+  "version": "2019.8.0",
   "description": "Nexthought Platform Login App",
   "author": "nextthought",
   "license": "UNLICENCED",
@@ -33,8 +33,7 @@
     "type": "git",
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@nti/app-scripts": "^2.17.0",
     "@nti/lib-commons": "^2.32.0",
