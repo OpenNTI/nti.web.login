@@ -29,6 +29,7 @@
 	margin: 0 0 0 auto;
 	width: 100vw;
 	max-width: var(--max-content-width, 500px);
+	min-height: calc(var(--vh, 1vh) * 100);
 	background: white;
 	position: relative;
 	box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
