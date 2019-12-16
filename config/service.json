@@ -1,5 +1,6 @@
 {
 	"development": {
-		"public": true
+		"public": true,
+		"SKIP_FRIENDSLISTS": true
 	}
 }
