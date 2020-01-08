@@ -17,12 +17,13 @@ Page.Header = Header;
 Page.Footer = Footer;
 Page.Description = Description;
 Page.propTypes = {
+	position: PropTypes.number,
 	scope: PropTypes.string
 };
-export default function Page ({scope, ...otherProps}) {
+export default function Page ({scope, position, ...otherProps}) {
 	return (
 		<Theme.Scope scope={scope}>
-			<Background>
+			<Background data-position={position}>
 				<Feature />
 				<Main {...otherProps} />
 			</Background>

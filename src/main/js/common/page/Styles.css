@@ -2,6 +2,18 @@
 	--max-content-width: 500px;
 }
 
+:global(.transition-left-exit), :global(.transition-right-exit) {
+	& .container {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: none !important; /* !important used as Background component uses an inline style for background-image */
+		pointer-events: none;
+	}
+}
+
 .feature {
 	position: fixed;
 	top: 0; left: 0;
@@ -33,6 +45,12 @@
 	background: white;
 	position: relative;
 	box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
+}
+
+:global(.transition-left-exit), :global(.transition-right-exit)	{
+	& .main {
+		background: none;
+	}
 }
 
 .main > div[role="group"] {
