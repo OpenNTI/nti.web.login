@@ -40,6 +40,8 @@ function getErrorParams () {
 }
 
 export default class LoginStore extends Stores.SimpleStore {
+	static Singleton = true;
+
 	static Setup = Setup;
 	static Reload = Reload;
 	static HasPing = HasPing;

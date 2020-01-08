@@ -20,10 +20,10 @@ Page.propTypes = {
 	position: PropTypes.number,
 	scope: PropTypes.string
 };
-export default function Page ({scope, position, ...otherProps}) {
+export default function Page ({scope, ...otherProps}) {
 	return (
 		<Theme.Scope scope={scope}>
-			<Background data-position={position}>
+			<Background>
 				<Feature />
 				<Main {...otherProps} />
 			</Background>
