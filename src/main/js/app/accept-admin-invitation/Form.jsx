@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
 import {Form, Theme, Loading} from '@nti/web-commons';
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {getServer} from '@nti/web-client'; //eslint-disable-line
 
 import {Inputs, Button, TermsAndConditions} from '../../common';
+import Store from '../signup/Store';
 
-import Store from './Store';
 import Styles from './Form.css';
 
 const cx = classnames.bind(Styles);
-const t = scoped('nti-login.signup.Form', {
+const t = scoped('nti-login.invitation-form.Form', {
 	fullName: 'Full Name',
 	email: 'Your Email',
 	username: 'Username',
@@ -19,14 +19,21 @@ const t = scoped('nti-login.signup.Form', {
 	verifyPassword: 'Verify Password'
 });
 
-SignupForm.propTypes = {
+InvitationForm.propTypes = {
 	preflight: PropTypes.func,
 	returnURL: PropTypes.string,
 	busy: PropTypes.bool,
 	setBusy: PropTypes.func,
-	formatAndCheck: PropTypes.func
+	formatAndCheck: PropTypes.func,
+	prefill: PropTypes.shape({
+		realName: PropTypes.string,
+		hideRealname: PropTypes.bool,
+		email: PropTypes.string,
+		hideEmail: PropTypes.bool,
+		Username: PropTypes.string
+	})
 };
-function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
+function InvitationForm ({ preflight, returnURL, formatAndCheck, busy, setBusy, prefill }) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
 	const onChange = (values, e) => {
@@ -66,9 +73,9 @@ function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus />
-				<Inputs.Email required name="email" placeholder={t('email')} autoComplete="off" />
-				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" />
+				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus defaultValue={prefill?.realname} type={prefill?.hideRealname ? 'hidden' : 'text'} />
+				<Inputs.Text required name="email" placeholder={t('email')} autoComplete="off" defaultValue={prefill?.email} type={prefill?.hideEmail ? 'hidden' : 'email'} />
+				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" defaultValue={prefill?.Username} />
 				<Inputs.Password required name="password" placeholder={t('password')} autoComplete="off"/>
 				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} autoComplete="off" />
 				<Button as={Form.SubmitButton} className={cx('submit')}>
@@ -88,4 +95,4 @@ export default Store
 		[Store.Busy]: 'busy',
 		[Store.SetBusy]: 'setBusy',
 		[Store.FormatAndCheckData]: 'formatAndCheck'
-	})(SignupForm);
+	})(InvitationForm);
