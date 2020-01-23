@@ -4,3 +4,4 @@ export Text from './text';
 export * as Theme from './theme';
 export Button from './Button';
 export PaddedContainer from './PaddedContainer';
+export TermsAndConditions from './terms-and-conditions';

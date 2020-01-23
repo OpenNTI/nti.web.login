@@ -1,7 +1,7 @@
 import {Stores} from '@nti/lib-store';
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {getServer, getService} from '@nti/web-client';//eslint-disable-line
 
-import {getAnonymousPing, getReturnURL} from '../../data';
+import {getAnonymousPing, getReturnURL, getPrefillData} from '../../data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';
@@ -11,6 +11,7 @@ const Ping = 'Ping';
 const ReturnURL = 'returnURL';
 
 const Busy = 'Busy';
+const ErrorState = 'error';
 const SetBusy = 'SetBusy';
 
 const FormatData = 'formatData';
@@ -22,6 +23,7 @@ const PreflightDelay = 750;
 const FieldPreflights = new Map();
 const FieldTasks = new Map();
 
+const Prefill = 'Prefill';
 
 function checkPassword (data) {
 	if (data.password2 == null) { return; }
@@ -32,6 +34,22 @@ function checkPassword (data) {
 	error.field = 'password2';
 	throw error;
 }
+
+function getErrorParams () {
+	const href = global.location?.href;
+
+	if (!href) { return null; }
+
+	const url = new URL(href);
+
+	const error = url.searchParams.get('error');
+	const failed = url.searchParams.get('failed');
+	const message = url.searchParams.get('message');
+
+	if (error) { return error; }
+	if (failed && message) { return message; }
+}
+
 
 export default class SignupStore extends Stores.SimpleStore {
 	static Setup = Setup;
@@ -44,8 +62,10 @@ export default class SignupStore extends Stores.SimpleStore {
 	static ReturnURL = ReturnURL;
 	static Busy = Busy;
 	static SetBusy = SetBusy;
+	static Prefill = Prefill;
+	static ErrorState = ErrorState;
 
-	async [Setup] () {
+	async [Setup] (isAdminInvitation) {
 		this.set({
 			[Loading]: true,
 			[Ping]: null
@@ -53,12 +73,19 @@ export default class SignupStore extends Stores.SimpleStore {
 
 		try {
 			const ping = await getAnonymousPing();
+			let prefillData = {};
+
+			if (isAdminInvitation) {
+				prefillData = await getPrefillData();
+			}
 
 			this.set({
 				[Loading]: false,
 				[Loaded]: true,
 				[Ping]: ping,
-				[CanCreateAccount]: ping.hasLink('account.create')
+				[CanCreateAccount]: ping.hasLink('account.create'),
+				[Prefill]: prefillData,
+				[ErrorState]: getErrorParams()
 			});
 		} catch (e) {
 			this.set({

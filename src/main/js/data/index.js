@@ -3,6 +3,7 @@ export getAnonymousPing from './get-anonymous-ping';
 export getForgotPasswordLink from './get-forgot-password-link';
 export getForgotUsernameLink from './get-forgot-username-link';
 export getLoginRedirectURL from './get-login-redirect-url';
+export getPrefillData from './get-prefill-data';
 export getPrivacyLink from './get-privacy-link';
 export getResetPasswordLink from './get-reset-password-link';
 export getReturnURL from './get-return-url';

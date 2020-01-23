@@ -1,7 +1,7 @@
 import React from 'react';
 
-import {Text} from '../../../common';
-import {getPrivacyLink, getTermsLink} from '../../../data';
+import Text from '../text';
+import {getPrivacyLink, getTermsLink} from '../../data';
 
 
 export default function TermsAndConditions () {
