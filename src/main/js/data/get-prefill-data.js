@@ -1,15 +1,20 @@
 import { getServer } from "@nti/web-client"; //eslint-disable-line
 
+const INVITATION_INFO_URL = '/dataserver2/invitation-info';
+
 export default async function getPrfillData (id) {
-	// const server = await getServer();
-	// const link = new URL('REPLACE_ME');
-	// link.searchParams.append('id', id);
-	return Promise.resolve({
-		realname: 'Josh Birdwell',
-		hideRealname: true,
-		email: 'josh.birdwell@nextthought.com',
-		hideEmail: true,
-		Username: 'jbirdwell'
-	});
-	// server.get(link.href);
+	try {
+		const server = await getServer();
+		const data = await server.get(INVITATION_INFO_URL);
+		const isNameAnEmail = data['receiver_name'] === data.receiver;
+
+		return {
+			receiver: data.receiver,
+			requireMatchingEmail: data['require_matching_email'],
+			receiverName: isNameAnEmail ? '' : data['receiver_name'],
+		};
+	} catch (error) {
+		return null;
+	}
+
 }
