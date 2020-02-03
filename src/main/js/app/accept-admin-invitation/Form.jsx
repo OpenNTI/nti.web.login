@@ -26,11 +26,9 @@ InvitationForm.propTypes = {
 	setBusy: PropTypes.func,
 	formatAndCheck: PropTypes.func,
 	prefill: PropTypes.shape({
-		realName: PropTypes.string,
-		hideRealname: PropTypes.bool,
-		email: PropTypes.string,
-		hideEmail: PropTypes.bool,
-		Username: PropTypes.string
+		receiverName: PropTypes.string,
+		receiver: PropTypes.string,
+		requireMatchingEmail: PropTypes.bool,
 	})
 };
 function InvitationForm ({ preflight, returnURL, formatAndCheck, busy, setBusy, prefill }) {
@@ -73,9 +71,9 @@ function InvitationForm ({ preflight, returnURL, formatAndCheck, busy, setBusy, 
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus defaultValue={prefill?.realname} type={prefill?.hideRealname ? 'hidden' : 'text'} />
-				<Inputs.Text required name="email" placeholder={t('email')} autoComplete="off" defaultValue={prefill?.email} type={prefill?.hideEmail ? 'hidden' : 'email'} />
-				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" defaultValue={prefill?.Username} />
+				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus defaultValue={prefill?.receiverName} />
+				<Inputs.Text required name="email" placeholder={t('email')} autoComplete="off" defaultValue={prefill?.receiver} type={prefill?.requireMatchingEmail ? 'hidden' : 'email'} />
+				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" />
 				<Inputs.Password required name="password" placeholder={t('password')} autoComplete="off"/>
 				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} autoComplete="off" />
 				<Button as={Form.SubmitButton} className={cx('submit')}>
