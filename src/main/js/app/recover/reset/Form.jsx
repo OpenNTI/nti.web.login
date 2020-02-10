@@ -34,11 +34,11 @@ function ResetPasswordForm ({canResetPassword, resetPassword, paramValues, retur
 	const [busy, setBusy] = React.useState(false);
 	const [sent, setSent] = React.useState(false);
 
-	const onSubmit = async ({formData}) => {
+	const onSubmit = async ({ formData, json }) => {
 		setBusy(true);
 
 		try {
-			await resetPassword(formData);
+			await resetPassword(formData, json);
 			setSent(true);
 
 			setTimeout(() => {
