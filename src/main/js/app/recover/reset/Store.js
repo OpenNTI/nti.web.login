@@ -66,15 +66,16 @@ export default class ResetPasswordStore extends Stores.SimpleStore {
 	}
 
 
-	async [ResetPassword] (data) {
-		if (data.password !== data.password2) {
+	async [ResetPassword] (data, json) {
+
+		if (json.password !== json.password2) {
 			const e = new Error('Passwords do not match.');
 			e.field = 'password2';
 
 			throw e;
 		}
 
-		delete data.password2;
+		data?.delete('password2');
 
 		const link = this.get(Link);
 
