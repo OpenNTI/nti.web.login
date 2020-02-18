@@ -75,7 +75,7 @@ export default class ResetPasswordStore extends Stores.SimpleStore {
 			throw e;
 		}
 
-		data?.delete('password2');
+		data?.delete?.('password2');
 
 		const link = this.get(Link);
 
