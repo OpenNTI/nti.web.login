@@ -11,7 +11,9 @@ import {getLoginLink} from '../utils';
 import Recover from './Recover';
 
 const t = scoped('nti-login.login.methods.password.Form', {
-	invalid: 'The username or password you entered is incorrect. Please try again.'
+	invalid: 'The username or password you entered is incorrect. Please try again.',
+	username: 'Username',
+	password: 'Password'
 });
 
 const MoveFocusOn = {
@@ -54,8 +56,8 @@ function LoginPasswordMethod ({updateUsername, getHandshake, setBusy, loginRedir
 
 	return (
 		<Form onSubmit={onSubmit}>
-			<Inputs.Text required name="username" placeholder="Username" onChange={updateUsername} onKeyPress={maybeFocusPassword} autoFocus/>
-			<Inputs.Password required ref={passwordRef} name="password" placeholder="Password" />
+			<Inputs.Text required name="username" label={t('username')} onChange={updateUsername} onKeyPress={maybeFocusPassword} autoFocus/>
+			<Inputs.Password required ref={passwordRef} name="password" label={t('password')} />
 			<Recover />
 			<Button as={Form.SubmitButton}>
 				{buttonText}

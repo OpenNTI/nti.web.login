@@ -17,6 +17,7 @@ function WrapperFactory (Cmp, inputProps, wrapperClassName) {
 			<Cmp
 				className={cx(className, wrapperClassName, 'input')}
 				ref={inputRef}
+				underlined
 				{...inputProps}
 				{...otherProps}
 			/>
@@ -32,6 +33,6 @@ export default {
 	Email: WrapperFactory(Form.Input.Email),
 	Password: WrapperFactory(Form.Input.Text, {type: 'password'}),
 	Checkbox: WrapperFactory(Form.Input.Checkbox),
-	Hidden: WrapperFactory(Form.Input.Text, {type: 'hidden'})
+	Hidden: WrapperFactory(Form.Input.Hidden)
 };
 

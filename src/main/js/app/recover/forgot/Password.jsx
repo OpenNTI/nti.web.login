@@ -76,8 +76,8 @@ export default function ForgotPassword ({location, allowed}) {
 						className={cx('forgot-form', {sending})}
 						onSubmit={onSubmit}
 					>
-						<Inputs.Text name="username" required placeholder={t('username')} autoFocus />
-						<Inputs.Email name="email" required placeholder={t('email')} />
+						<Inputs.Text name="username" required label={t('username')} autoFocus />
+						<Inputs.Email name="email" required label={t('email')} />
 						<Button className={cx('submit')}as={Form.SubmitButton}>
 							{t('reset')}
 						</Button>

@@ -61,10 +61,10 @@ function ResetPasswordForm ({canResetPassword, resetPassword, paramValues, retur
 				<Form onSubmit={onSubmit} className={cx('reset-form', {busy})}>
 					{paramValues.username && (<Inputs.Hidden name="username" value={paramValues.username} />)}
 					{paramValues.id && (<Inputs.Hidden name="id" value={paramValues.id} />)}
-					{!paramValues.username && (<Inputs.Text name="username" placeholder={t('username')} required />)}
-					{!paramValues.id && (<Inputs.Text name="id" placeholder={t('code')} required />)}
-					<Inputs.Password name="password" placeholder={t('password')} required />
-					<Inputs.Password name="password2" placeholder={t('verifyPassword')} required />
+					{!paramValues.username && (<Inputs.Text name="username" label={t('username')} required />)}
+					{!paramValues.id && (<Inputs.Text name="id" label={t('code')} required />)}
+					<Inputs.Password name="password" label={t('password')} required />
+					<Inputs.Password name="password2" label={t('verifyPassword')} required />
 					<Button as={Form.SubmitButton} className={cx('submit-button')}>
 						{t('save')}
 					</Button>

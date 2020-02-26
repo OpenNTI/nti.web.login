@@ -63,7 +63,7 @@ export default function ForgotUsername ({allowed}) {
 						className={cx('forgot-form', {sending})}
 						onSubmit={onSubmit}
 					>
-						<Inputs.Email required name="email" placeholder={t('email')} autoFocus />
+						<Inputs.Email required name="email" label={t('email')} autoFocus />
 						<Button className={cx('submit')}as={Form.SubmitButton}>
 							{t('reset')}
 						</Button>
