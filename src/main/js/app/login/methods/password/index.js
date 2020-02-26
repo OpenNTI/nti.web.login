@@ -1,4 +1,6 @@
-import {hasOauthLinks, canCreateAccount} from '../utils';
+import {hasOauthLinks} from 'common/utils';
+
+import { canCreateAccount } from '../utils';
 
 import Form from './Form';
 

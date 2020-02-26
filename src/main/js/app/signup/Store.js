@@ -64,6 +64,7 @@ export default class SignupStore extends Stores.SimpleStore {
 	static SetBusy = SetBusy;
 	static Prefill = Prefill;
 	static ErrorState = ErrorState;
+	static Ping = Ping;
 
 	async [Setup] (isAdminInvitation) {
 		this.set({

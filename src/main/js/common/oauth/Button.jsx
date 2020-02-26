@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
 
-import {Button} from '../../../../common';
+import Button from '../Button';
 
 import Styles from './Styles.css';
 import Assets from './assets';

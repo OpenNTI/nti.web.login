@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
 
 import {Utils, OAuth} from 'common';
-
-import Store from '../../Store';
+import Store from 'app/signup/Store';
 
 import Styles from './Styles.css';
 
@@ -13,6 +12,7 @@ const cx = classnames.bind(Styles);
 LoginOauthMethod.propTypes = {
 	handshake: PropTypes.object
 };
+
 function LoginOauthMethod ({handshake, ...otherProps}) {
 	const links = Utils.getOauthLinks(handshake);
 

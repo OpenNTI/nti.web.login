@@ -1,22 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {scoped} from '@nti/lib-locale';
+import {Link} from '@reach/router';
 import {Loading} from '@nti/web-commons';
 import classnames from 'classnames/bind';
 
-import {PaddedContainer, Page} from '../../common';
+import {PaddedContainer, Page, Text} from '../../common';
 import Store from '../signup/Store';
 
 import Form from './Form';
 import Unavailable from './Unavailable';
-import Styles from './View.css';
+import Styles from './AcceptInvitation.css';
 
 const cx = classnames.bind(Styles);
 const t = scoped('nti-login.login.View', {
 	unavailable: 'Account creation is unavailable at this time.'
 });
 
-AcceptAdminInvitation.propTypes = {
+AcceptInvitation.propTypes = {
 	setup: PropTypes.func.isRequired,
 	loading: PropTypes.bool,
 	loaded: PropTypes.bool,
@@ -33,7 +34,7 @@ AcceptAdminInvitation.propTypes = {
 	}),
 	error: PropTypes.any
 };
-function AcceptAdminInvitation ({setup, loading, loaded, canCreateAccount, location, prefill, error }) {
+function AcceptInvitation ({setup, loading, loaded, canCreateAccount, location, prefill, error, isInvitation }) {
 	React.useEffect(() => {
 		const isAdminInvitation = true;
 		setup(isAdminInvitation);
@@ -51,6 +52,13 @@ function AcceptAdminInvitation ({setup, loading, loaded, canCreateAccount, locat
 					</PaddedContainer>
 				</Loading.Placeholder>
 			</Page.Body>
+			{isInvitation && (
+				<Page.Footer>
+					<Text.Medium center>
+						Have an account? <Link to="/login">Log in.</Link>
+					</Text.Medium>
+				</Page.Footer>
+			)}
 		</Page.Content>
 	);
 }
@@ -64,4 +72,4 @@ export default Store
 		[Store.Loaded]: 'loaded',
 		[Store.Prefill]: 'prefill',
 		[Store.ErrorState]: 'error',
-	})(AcceptAdminInvitation);
+	})(AcceptInvitation);
