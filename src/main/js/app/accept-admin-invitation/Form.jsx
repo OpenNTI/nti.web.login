@@ -71,11 +71,11 @@ function InvitationForm ({ preflight, returnURL, formatAndCheck, busy, setBusy, 
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="realname" placeholder={t('fullName')} autoFocus defaultValue={prefill?.receiverName} />
-				<Inputs.Text required name="email" placeholder={t('email')} autoComplete="off" defaultValue={prefill?.receiver} type={prefill?.requireMatchingEmail ? 'hidden' : 'email'} />
-				<Inputs.Text required name="Username" placeholder={t('username')} autoComplete="off" />
-				<Inputs.Password required name="password" placeholder={t('password')} autoComplete="off"/>
-				<Inputs.Password required name="password2" placeholder={t('verifyPassword')} autoComplete="off" />
+				<Inputs.Text required name="realname" label={t('fullName')} autoFocus defaultValue={prefill?.receiverName} />
+				<Inputs.Text required name="email" label={t('email')} autoComplete="off" defaultValue={prefill?.receiver} type={prefill?.requireMatchingEmail ? 'hidden' : 'email'} />
+				<Inputs.Text required name="Username" label={t('username')} autoComplete="off" />
+				<Inputs.Password required name="password" label={t('password')} autoComplete="off"/>
+				<Inputs.Password required name="password2" label={t('verifyPassword')} autoComplete="off" />
 				<Button as={Form.SubmitButton} className={cx('submit')}>
 					{buttonText}
 				</Button>
