@@ -7,10 +7,10 @@ import Disabled from './Disabled';
 
 export default function View (props) {
 	return (
-		<Router>
-			{/* <OAuth path="/" exact {...props} /> */}
+		<>
 			<AcceptInvitation path="signup" {...props}  />
 			<Disabled path="disabled" {...props} />
-		</Router>
+			<OAuth path="/" exact {...props} />
+		</>
 	);
 }

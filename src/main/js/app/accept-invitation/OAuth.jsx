@@ -9,8 +9,7 @@ import Store from '../signup/Store';
 import Oauth from '../login/methods/oauth';
 
 
-function SSO (props) {
-	debugger;
+function OAuth (props) {
 	const { handshake, uri, loading, loaded, location, setup } = props;
 	const available = Oauth.isAvailable(handshake);
 
@@ -19,9 +18,9 @@ function SSO (props) {
 	}, [location]);
 
 	if (!available && !loading && loaded) {
-		return <Redirect to={path.join(uri, 'signup')} />;
+		return <Redirect noThrow to={path.join(uri, 'signup')} />;
 	}
-	debugger;
+
 	return (
 		<section>
 			{loading && (<Loading.Spinner.Large />)}
@@ -30,7 +29,7 @@ function SSO (props) {
 	);
 }
 
-SSO.propTypes = {
+OAuth.propTypes = {
 	handshake: PropTypes.object,
 	uri: PropTypes.string,
 	loading: PropTypes.bool,
@@ -47,4 +46,4 @@ export default Store
 		[Store.Loading]: 'loading',
 		[Store.Loaded]: 'loaded',
 		[Store.Setup]: 'setup',
-	})(SSO);
+	})(OAuth);
