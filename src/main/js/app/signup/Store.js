@@ -1,7 +1,7 @@
 import {Stores} from '@nti/lib-store';
 import {getServer, getService} from '@nti/web-client';//eslint-disable-line
 
-import {getAnonymousPing, getReturnURL, getPrefillData} from '../../data';
+import {getAnonymousPing, getReturnURL} from '../../data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';
@@ -74,18 +74,12 @@ export default class SignupStore extends Stores.SimpleStore {
 
 		try {
 			const ping = await getAnonymousPing();
-			let prefillData = {};
-
-			if (isAdminInvitation) {
-				prefillData = await getPrefillData();
-			}
 
 			this.set({
 				[Loading]: false,
 				[Loaded]: true,
 				[Ping]: ping,
 				[CanCreateAccount]: ping.hasLink('account.create'),
-				[Prefill]: prefillData,
 				[ErrorState]: getErrorParams()
 			});
 		} catch (e) {

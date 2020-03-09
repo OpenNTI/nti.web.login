@@ -47,23 +47,48 @@ export default {
 		subTitle: 'Complete Your Account',
 		description: '',
 		disclaimer: '',
-		buttonText: 'Go to My Site',
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
-		noBranding: (_, globalTheme) => globalTheme.login.noBranding
+		noBranding: (_, globalTheme) => globalTheme.login.noBranding,
+		signup: {
+			featured: (_, globalTheme) => globalTheme.login.featured,
+			background: (_, globalTheme) => globalTheme.login.background,
+			logo: (_, globalTheme) => globalTheme.login.logo,
+			title: '',
+			subTitle: 'New Account',
+			description: '',
+			disclaimer: '',
+			buttonText: 'Go to My Site!',
+			buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
+			buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
+			noBranding: (_, globalTheme) => globalTheme.login.noBranding
+		}
 	},
 	acceptInvitation: {
 		featured: (_, globalTheme) => globalTheme.login.featured,
 		background: (_, globalTheme) => globalTheme.login.background,
 		logo: (_, globalTheme) => globalTheme.login.logo,
 		title: '',
-		subTitle: 'Accept the Invite',
+		subTitle: 'Accept Invitation',
 		description: '',
 		disclaimer: '',
-		buttonText: 'Create My Account',
+		buttonText: '',
 		buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
 		buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
-		noBranding: (_, globalTheme) => globalTheme.login.noBranding
+		noBranding: (_, globalTheme) => globalTheme.login.noBranding,
+		signup: {
+			featured: (_, globalTheme) => globalTheme.login.featured,
+			background: (_, globalTheme) => globalTheme.login.background,
+			logo: (_, globalTheme) => globalTheme.login.logo,
+			title: '',
+			subTitle: 'New Account',
+			description: '',
+			disclaimer: '',
+			buttonText: 'Create my account!',
+			buttonBackground: (_, globalTheme) => globalTheme.login.buttonBackground,
+			buttonTheme: (_, globalTheme) => globalTheme.login.buttonTheme,
+			noBranding: (_, globalTheme) => globalTheme.login.noBranding
+		}
 	},
 	recover: {
 		featured: (_, globalTheme) => globalTheme.login.featured,
