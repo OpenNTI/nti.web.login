@@ -5,19 +5,21 @@ import {Hooks} from '@nti/web-commons';
 
 import {getInvitation} from '../../data';
 
-import Login from './login';
+import Options from './options';
 import Signup from './signup';
+
 
 AcceptInvite.propTypes = {
 	isAccountSetup: PropTypes.bool
 };
 export default function AcceptInvite ({isAccountSetup}) {
-	const invitation = Hooks.useResolver(() => getInvitation(), []); 
+	const invitation = Hooks.useResolver(() => getInvitation(), []);
 
 	return (
 		<Router>
 			<Signup path="signup" isAccountSetup={isAccountSetup} invitation={invitation} />
-			<Login path="/" isAccountSetup={isAccountSetup} invitation={invitation} />
+			<Options path="login" isAccountSetup={isAccountSetup} invitation={invitation} forcePassword />
+			<Options path="/" isAccountSetup={isAccountSetup} invitation={invitation} />
 		</Router>
 	);
 }

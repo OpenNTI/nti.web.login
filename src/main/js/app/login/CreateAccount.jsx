@@ -12,17 +12,18 @@ import {canCreateAccount} from './methods/utils';
 const cx = classnames.bind(Styles);
 
 CreateAccount.propTypes = {
+	path: PropTypes.string,
 	busy: PropTypes.bool,
 	handshake: PropTypes.shape({
 		hasLink: PropTypes.func
 	})
 };
-function CreateAccount ({busy, handshake}) {
+function CreateAccount ({path = './signup', busy, handshake}) {
 	if (busy || !canCreateAccount(handshake)) { return null; }
 
 	return (
 		<Text.Medium className={cx('create-account')} center>
-			Need an Account? <Link to="./signup">Get Started.</Link>
+			Need an Account? <Link to={path}>Get Started.</Link>
 		</Text.Medium>
 	);
 }

@@ -27,7 +27,9 @@ function getAvailable (handshake, forceNextThoughtLogin) {
 	return null;
 }
 
-
+LoginMethods.Continue = Continue;
+LoginMethods.Oauth = Oauth;
+LoginMethods.Password = Password;
 LoginMethods.propTypes = {
 	handshake: PropTypes.object,
 	busy: PropTypes.bool,
