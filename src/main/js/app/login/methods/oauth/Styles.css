@@ -4,6 +4,10 @@
 	margin: 0;
 }
 
+.oauth-buttons > li {
+	margin: 0.5rem 0;
+}
+
 form + .oauth-buttons {
 	margin-top: 1.5rem;
 }

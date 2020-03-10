@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Redirect} from '@reach/router';
+import {Redirect, Link} from '@reach/router';
 import {Theme} from '@nti/web-commons';
 
-// import {Text} from '../../../common/';
+import {Button} from '../../../common/';
 import Store from '../../login/Store';
 import LoginMethods from '../../login/methods';
 import CreateAccount from '../../login/CreateAccount';
@@ -25,8 +25,8 @@ const Options = [
 			hasPassword ?
 				(<Password.Form key="password" />) :
 				(<Redirect to="./" key="password-redirect" />),
-			(<CreateAccount key="create-account" path="../signup" />),
-			(<Oauth.Form key="oauth" />)
+			(<Oauth.Form key="oauth" />),
+			(<CreateAccount key="create-account" path="../signup" />)
 		])
 	},
 	{
@@ -37,7 +37,7 @@ const Options = [
 		isAvailable: () => true,
 		getContent: ({hasCreation}) => ([
 			(<Oauth.Form key="oauth" />),
-			hasCreation ? (<button>Create an Account</button>) : null
+			hasCreation ? (<Button as={Link} to="./signup">Create an Account</Button>) : null
 		])
 	}
 ];

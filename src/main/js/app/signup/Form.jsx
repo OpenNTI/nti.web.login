@@ -19,14 +19,28 @@ const t = scoped('nti-login.signup.Form', {
 	verifyPassword: 'Verify Password'
 });
 
+function getFocusedField (defaultValues) {
+	if (!defaultValues?.realname) { return 'realname'; }
+	if (!defaultValues?.email && !defaultValues?.emailLocked) { return 'email'; }
+	if (!defaultValues?.Username) { return 'Username'; }
+
+	return 'password';
+}
+
 SignupForm.propTypes = {
+	defaultValues: PropTypes.shape({
+		realname: PropTypes.string,
+		email: PropTypes.string,
+		emailLocked: PropTypes.bool,
+		Username: PropTypes.string,
+	}),
 	preflight: PropTypes.func,
 	returnURL: PropTypes.string,
 	busy: PropTypes.bool,
 	setBusy: PropTypes.func,
 	formatAndCheck: PropTypes.func
 };
-function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
+function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy, setBusy}) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
 	const onChange = (values, e) => {
@@ -58,6 +72,9 @@ function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 		setTimeout(() => clear(), 5000);
 	};
 
+	const EmailCmp = defaultValues?.emailLocked ? Inputs.Hidden : Inputs.Email;
+	const autoFocus = getFocusedField(defaultValues);
+
 	return (
 		<>
 			{busy && (<Loading.Spinner.Large />)}
@@ -66,11 +83,41 @@ function SignupForm ({preflight, returnURL, formatAndCheck, busy, setBusy}) {
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
-				<Inputs.Text required name="realname" label={t('fullName')} autoFocus />
-				<Inputs.Email required name="email" label={t('email')} autoComplete="off" />
-				<Inputs.Text required name="Username" label={t('username')} autoComplete="off" />
-				<Inputs.Password required name="password" label={t('password')} autoComplete="off"/>
-				<Inputs.Password required name="password2" label={t('verifyPassword')} autoComplete="off" />
+				<Inputs.Text
+					required
+					name="realname"
+					label={t('fullName')}
+					defaultValue={defaultValues?.realname ?? ''}
+					autoFocus={autoFocus === 'realname'}
+				/>
+				<EmailCmp
+					required
+					name="email"
+					label={t('email')}
+					defaultValue={defaultValues?.email ?? ''}
+					autoFocus={autoFocus === 'email'}
+				/>
+				<Inputs.Text
+					required
+					name="Username"
+					label={t('username')}
+					autoComplete="off"
+					defaultValue={defaultValues?.Username ?? ''}
+					autoFocus={autoFocus === 'Username'}
+				/>
+				<Inputs.Password
+					required
+					name="password"
+					label={t('password')}
+					autoComplete="off"
+					autoFocus={autoFocus === 'password'}
+				/>
+				<Inputs.Password
+					required
+					name="password2"
+					label={t('verifyPassword')}
+					autoComplete="off"
+				/>
 				<Button as={Form.SubmitButton} className={cx('submit')}>
 					{buttonText}
 				</Button>

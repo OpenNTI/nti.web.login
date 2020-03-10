@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading, Hooks, Errors, Theme} from '@nti/web-commons';
 
-import {PaddedContainer, Page} from '../../../common';
+import {PaddedContainer, Page, Text} from '../../../common';
 import Store from '../../login/Store';
 
 import Options from './Options';
@@ -33,6 +34,7 @@ function getInstructions (isAccountSetup, handshake, brandName) {
 
 AcceptInviteOptionsPage.propTypes = {
 	isAccountSetup: PropTypes.bool,
+	forcePassword: PropTypes.bool,
 	invitation: PropTypes.any,
 	handshake: PropTypes.object,
 	setup: PropTypes.func.isRequired,
@@ -40,7 +42,7 @@ AcceptInviteOptionsPage.propTypes = {
 	busy: PropTypes.bool,
 	error: PropTypes.any
 };
-function AcceptInviteOptionsPage ({isAccountSetup, handshake, invitation, setup, hasPing, error:storeError, busy, ...otherProps}) {
+function AcceptInviteOptionsPage ({isAccountSetup, handshake, invitation, setup, hasPing, error:storeError, busy, forcePassword}) {
 	const initialLoad = !hasPing && busy;
 
 	React.useEffect(() => {
@@ -61,10 +63,17 @@ function AcceptInviteOptionsPage ({isAccountSetup, handshake, invitation, setup,
 				<PaddedContainer>
 					<Loading.Placeholder loading={loading} fallback={(<Loading.Spinner.Large />)}>
 						{error && (<Errors.Message error={t('error')} />)}
-						{!error && (<Options invitation={invitation} {...otherProps} />)}
+						{!error && (<Options invitation={invitation} forcePassword={forcePassword} />)}
 					</Loading.Placeholder>
 				</PaddedContainer>
 			</Page.Body>
+			{!forcePassword && (
+				<Page.Footer>
+					<Text.Medium center>
+						Have an account? <Link to="./login">Log in.</Link> 
+					</Text.Medium>
+				</Page.Footer>
+			)}
 		</Page.Content>
 
 	);
