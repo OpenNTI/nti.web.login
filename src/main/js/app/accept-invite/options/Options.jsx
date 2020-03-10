@@ -23,10 +23,9 @@ const Options = [
 		isAvailable: ({forcePassword}) => forcePassword,
 		getContent: ({hasPassword}) => ([
 			hasPassword ?
-				(<Password.Form key="password" />) :
+				(<LoginMethods key="password" />) :
 				(<Redirect to="./" key="password-redirect" />),
-			(<Oauth.Form key="oauth" />),
-			(<CreateAccount key="create-account" path="../signup" />)
+			(<CreateAccount key="create-account" />)
 		])
 	},
 	{
