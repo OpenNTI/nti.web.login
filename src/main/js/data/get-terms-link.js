@@ -1,3 +1,3 @@
-const TermsLink = 'https://docs.google.com/document/u/1/pub?id=1rM40we-bbPNvq8xivEKhkoLE7wmIETmO4kerCYmtISM';
+const TermsLink = 'https://docs.google.com/document/d/e/2PACX-1vRJd0Irh_YFX7Ci9irWLmqrEqddrxSLrDkrJMANlCqQAo-PrLznTjk4G0hfCsjxD8M21Vd54iQ1Rqbn/pub';
 
 export default () => TermsLink;
