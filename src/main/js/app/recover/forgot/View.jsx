@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from '@reach/router';
 import {Loading} from '@nti/web-commons';
 
-import {Page, Text} from '../../../common';
+import {Page, Text, Routing} from '../../../common';
 
 import Store from './Store';
 import Username from './Username';
@@ -40,7 +39,7 @@ function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUs
 			</Page.Body>
 			<Page.Footer>
 				<Text.Medium center>
-					<Link to="../../">Return to Login</Link>
+					<Routing.Link to="../../">Return to Login</Routing.Link>
 				</Text.Medium>
 			</Page.Footer>
 		</Page.Content>

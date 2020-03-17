@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading, Errors, Theme} from '@nti/web-commons';
 
-import {PaddedContainer, Page, Text} from '../../../common';
+import {PaddedContainer, Page, Text, Routing} from '../../../common';
 import Store from '../../signup/Store';
 import Form from '../../signup/Form';
 
@@ -56,7 +55,7 @@ function AcceptInviteSignup ({invitation, setup, loading, loaded, canCreateAccou
 			</Page.Body>
 			<Page.Footer>
 				<Text.Medium center>
-					Have an account? <Link to="../login">Log in.</Link> 
+					Have an account? <Routing.Link to="../login">Log in.</Routing.Link> 
 				</Text.Medium>
 			</Page.Footer>
 		</Page.Content>

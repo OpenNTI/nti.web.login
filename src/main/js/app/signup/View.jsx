@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading} from '@nti/web-commons';
 
-import {PaddedContainer, Page, Text} from '../../common';
+import {PaddedContainer, Page, Text, Routing} from '../../common';
 
 import Store from './Store';
 import Form from './Form';
@@ -43,7 +42,7 @@ function Signup ({setup, loading, loaded, canCreateAccount}) {
 			</Page.Body>
 			<Page.Footer>
 				<Text.Medium center>
-					Have an account? <Link to="../">Log in.</Link>
+					Have an account? <Routing.Link to="../">Log in.</Routing.Link>
 				</Text.Medium>
 			</Page.Footer>
 		</Page.Content>

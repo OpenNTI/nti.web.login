@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Loading, Hooks, Errors, Theme} from '@nti/web-commons';
 
-import {PaddedContainer, Page, Text} from '../../../common';
+import {PaddedContainer, Page, Text, Routing} from '../../../common';
 import Store from '../../login/Store';
 
 import Options from './Options';
@@ -70,7 +69,7 @@ function AcceptInviteOptionsPage ({isAccountSetup, handshake, invitation, setup,
 			{!forcePassword && (
 				<Page.Footer>
 					<Text.Medium center>
-						Have an account? <Link to="./login">Log in.</Link> 
+						Have an account? <Routing.Link to="./login">Log in.</Routing.Link> 
 					</Text.Medium>
 				</Page.Footer>
 			)}

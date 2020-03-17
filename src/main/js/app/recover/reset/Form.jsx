@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
-import {Link} from '@reach/router';
 import {scoped} from '@nti/lib-locale';
 import {Form, Loading} from '@nti/web-commons';
 
-import {Text, Inputs, Button} from '../../../common';
+import {Text, Inputs, Button, Routing} from '../../../common';
 
 import Store from './Store';
 import Styles from './Styles.css';
@@ -54,7 +53,7 @@ function ResetPasswordForm ({canResetPassword, resetPassword, paramValues, retur
 			{busy && (<Loading.Spinner.Large />)}
 			{sent && (
 				<Text.Medium>
-					Password reset successful! <Link to={returnURL}>Log in.</Link>
+					Password reset successful! <Routing.Link to={returnURL}>Log in.</Routing.Link>
 				</Text.Medium>
 			)}
 			{!sent && (

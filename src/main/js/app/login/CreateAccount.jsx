@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames/bind';
-import {Link} from '@reach/router';
 
-import {Text} from '../../common';
+import {Text, Routing} from '../../common';
 
 import Styles from './CreateAccount.css';
 import Store from './Store';
@@ -23,7 +22,7 @@ function CreateAccount ({path = './signup', busy, handshake}) {
 
 	return (
 		<Text.Medium className={cx('create-account')} center>
-			Need an Account? <Link to={path}>Get Started.</Link>
+			Need an Account? <Routing.Link to={path}>Get Started.</Routing.Link>
 		</Text.Medium>
 	);
 }

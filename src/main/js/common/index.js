@@ -1,5 +1,6 @@
 export Inputs from './inputs';
 export Page from './page';
+export * as Routing from './routing';
 export Text from './text';
 export * as Theme from './theme';
 export Button from './Button';
