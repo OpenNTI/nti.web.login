@@ -13,7 +13,7 @@ export function addReturnParam (link) {
 	const [base, query] = link.split('?');
 
 	if (!query) {
-		return `${base}?return=${returnParam}`;
+		return `${base}?return=${encodeURIComponent(returnParam)}`;
 	}
 
 	//TODO: figure out this case if we need to.
