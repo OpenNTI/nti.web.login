@@ -23,6 +23,13 @@
 		<link rel="icon" id="favicon" href="<[cfg:favicon]>" />
 	</head>
 	<body>
+		<script type="text/javascript">
+			window.onerror = function(msg) {
+				if (!window.appInitialized) {
+					window.location.replace('/login/unsupported.html?error='+encodeURIComponent(msg));
+				}
+			}
+		</script>
 		<main id="content">
 			<!--html:server-values-->
 		</main>
