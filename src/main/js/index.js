@@ -6,7 +6,11 @@ import App from './app';
 
 addFeatureCheckClasses();
 
+function onAppMount (APP) {
+	global.appInitialized = !!APP;
+}
+
 ReactDOM.render(
-	React.createElement(App),
+	React.createElement(App, {ref: onAppMount}),
 	document.getElementById('content')
 );
