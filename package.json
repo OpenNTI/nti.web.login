@@ -19,14 +19,12 @@
     "*.scss"
   ],
   "scripts": {
+    "build": "app-scripts build",
     "start": "app-scripts start",
     "release": "app-scripts release",
     "test": "app-scripts test",
-    "prepack": "app-scripts build",
-    "build": "app-scripts build",
     "clean": "app-scripts clean",
     "check": "app-scripts check",
-    "install-snapshots": "app-scripts install-snapshots",
     "fix": "app-scripts fix"
   },
   "repository": {
@@ -36,12 +34,12 @@
   "dependencies": {},
   "devDependencies": {
     "@nti/app-scripts": "^2.17.0",
-    "@nti/lib-commons": "^2.32.0",
-    "@nti/lib-dom": "^1.20.0",
-    "@nti/lib-locale": "^1.8.0",
-    "@nti/lib-store": "^1.14.0",
-    "@nti/style-common": "^1.9.0",
-    "@nti/web-commons": "0.x.x",
+    "@nti/lib-commons": "NextThought/nti.lib.commons",
+    "@nti/lib-dom": "NextThought/nti.lib.dom",
+    "@nti/lib-locale": "NextThought/nti.lib.locale",
+    "@nti/lib-store": "NextThought/nti.lib.store",
+    "@nti/style-common": "NextThought/nti.style.common",
+    "@nti/web-commons": "NextThought/nti.web.commons",
     "@reach/router": "^1.2.1",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
