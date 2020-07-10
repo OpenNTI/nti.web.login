@@ -9,7 +9,7 @@ export default function getLoginRedirectURL () {
 		//so it is always fully resolved. But in an attempt to keep the return value
 		//the same as when it was just `return ${returnURL}?_u=42` we're going to
 		//let it throw for now
-		const url = new URL(returnUrl);
+		const url = new URL(returnURL);
 		
 		url.searchParams.set('_u', 42);
 
