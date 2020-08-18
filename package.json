@@ -3,7 +3,7 @@
   "version": "2020.8.0-alpha",
   "description": "Nexthought Platform Login App",
   "author": "nextthought",
-  "license": "UNLICENCED",
+  "license": "UNLICENSED",
   "publishConfig": {
     "registry": "https://npm.nextthought.com/"
   },
