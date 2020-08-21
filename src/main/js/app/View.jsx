@@ -5,6 +5,7 @@ import {Theme} from '@nti/web-commons';
 
 import {Page, Theme as LoginTheme} from '../common';
 
+import '@nti/style-common/all.scss';
 import '@nti/style-common/variables.css';
 import './View.css';
 
