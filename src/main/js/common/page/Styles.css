@@ -4,9 +4,10 @@
 
 .feature {
 	position: fixed;
-	top: 0; left: 0;
-	right: 500px; bottom: 0;
-
+	top: 0;
+	left: 0;
+	right: 500px;
+	bottom: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -32,7 +33,7 @@
 	min-height: calc(var(--vh, 1vh) * 100);
 	background: white;
 	position: relative;
-	box-shadow: 0 0 3px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .main > div[role="group"] {
@@ -41,8 +42,10 @@
 
 .logo {
 	position: absolute;
-	top: 0; bottom: auto;
-	left: 0; right: 0;
+	top: 0;
+	bottom: auto;
+	left: 0;
+	right: 0;
 	width: 100%;
 	text-align: center;
 	min-height: 110px;
@@ -66,7 +69,6 @@
 .description.no-title {
 	padding-bottom: 0;
 }
-
 
 @media (max-width: 1000px) {
 	.feature {
