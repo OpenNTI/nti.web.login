@@ -42,46 +42,49 @@ const t = scoped('nti-login.login.support-links.View', {
 });
 
 const ContrastCookie = 'use-accessibility-mode';
-let resolvedLinks = null;
 
 async function resolveLinks (update) {
-	if (resolvedLinks) { return resolvedLinks; }
+	if (resolveLinks.cache) { return resolveLinks.cache; }
 
-	const support = await getSupportLink();
-	const terms = await getTermsLink();
-	const privacy = await getPrivacyLink();
-	const contrast = Cookies.get(ContrastCookie) === 'true';
+	const resolve = async () => {
+		const support = await getSupportLink();
+		const terms = await getTermsLink();
+		const privacy = await getPrivacyLink();
+		const contrast = Cookies.get(ContrastCookie) === 'true';
 
-	const links = [
-		{href: '//nextthought.com', title: t('about.title'), label: t('about.label'), target: '_blank'},
-		support ? ({href: support, title: t('help.title'), label: t('help.label'), target: '_blank'}) : null,
-		terms ? ({href: terms, title: t('terms.title'), label: t('terms.label'), target: '_blank'}) : null,
-		privacy ? ({href: privacy, title: t('privacy.title'), label: t('privacy.label'), target: '_blank'}) : null,
-		{
-			href: '#',
-			role: 'button',
-			get title () {
-				return contrast ? t('accessibility.on.title') : t('accessibility.off.title');
-			},
-			get label () {
-				return contrast ? t('accessibility.on.label') : t('accessibility.off.label');
-			},
-			onClick: async (e) => {
-				e.stopPropagation();
-				e.preventDefault();
+		const links = [
+			{href: '//nextthought.com', title: t('about.title'), label: t('about.label'), target: '_blank'},
+			support ? ({href: support, title: t('help.title'), label: t('help.label'), target: '_blank'}) : null,
+			terms ? ({href: terms, title: t('terms.title'), label: t('terms.label'), target: '_blank'}) : null,
+			privacy ? ({href: privacy, title: t('privacy.title'), label: t('privacy.label'), target: '_blank'}) : null,
+			{
+				href: '#',
+				role: 'button',
+				get title () {
+					return contrast ? t('accessibility.on.title') : t('accessibility.off.title');
+				},
+				get label () {
+					return contrast ? t('accessibility.on.label') : t('accessibility.off.label');
+				},
+				onClick: async (e) => {
+					e.stopPropagation();
+					e.preventDefault();
 
-				Cookies.set(ContrastCookie, contrast ? 'false' : 'true');
+					Cookies.set(ContrastCookie, contrast ? 'false' : 'true');
 
-				resolvedLinks = null;
-				const updated = await resolveLinks(update);
-				update(updated);
+					resolveLinks.cache = null;
+					const updated = await resolveLinks(update);
+					update(updated);
+				}
 			}
-		}
-	];
+		];
 
-	resolvedLinks = links.filter(Boolean);
+		return links.filter(Boolean);
+	};
 
-	return resolvedLinks;
+	resolveLinks.cache = resolve();
+
+	return resolveLinks.cache;
 }
 
 export default function SupportLinks () {
@@ -112,7 +115,7 @@ export default function SupportLinks () {
 				<img
 					className={cx('nt-logo')}
 					src={FullLogo}
-					srcSet={`${FullLogo}, ${FullLogox2} x2, ${FullLogox3} 3x`}
+					srcSet={`${FullLogo}, ${FullLogox2} 2x, ${FullLogox3} 3x`}
 				/>
 			)}
 			<List.SeparatedInline>

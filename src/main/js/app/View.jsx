@@ -14,8 +14,9 @@ import Recover from './recover';
 import Signup from './signup';
 import AcceptInvite from './accept-invite';
 
-export default function LoginApp () {
+export default React.forwardRef(function LoginApp (props, ref) {
 	const basePath = getConfigFor('basepath');
+	React.useImperativeHandle(ref, () => ({}));
 
 	return (
 		<Theme.Apply theme={LoginTheme.getTheme()}>
@@ -28,4 +29,4 @@ export default function LoginApp () {
 			</Router>
 		</Theme.Apply>
 	);
-}
+});
