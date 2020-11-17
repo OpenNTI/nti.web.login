@@ -1,6 +1,6 @@
 import React from 'react';
 import {Router} from '@reach/router';
-import {getConfigFor} from '@nti/web-client';//eslint-disable-line
+import {getConfig} from '@nti/web-client';
 import {Theme} from '@nti/web-commons';
 
 import {Page, Theme as LoginTheme} from '../common';
@@ -15,7 +15,7 @@ import Signup from './signup';
 import AcceptInvite from './accept-invite';
 
 export default React.forwardRef(function LoginApp (props, ref) {
-	const basePath = getConfigFor('basepath');
+	const basePath = getConfig('basepath');
 	React.useImperativeHandle(ref, () => ({}));
 
 	return (

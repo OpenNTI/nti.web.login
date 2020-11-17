@@ -39,6 +39,7 @@
     "@nti/lib-locale": "NextThought/nti.lib.locale",
     "@nti/lib-store": "NextThought/nti.lib.store",
     "@nti/style-common": "NextThought/nti.style.common",
+    "@nti/web-client": "NextThought/nti.web.client",
     "@nti/web-commons": "NextThought/nti.web.commons",
     "@reach/router": "^1.2.1",
     "classnames": "^2.2.6",

@@ -1,16 +1,16 @@
 import {Theme} from '@nti/web-commons';
-import {getConfigFor} from '@nti/web-client';//eslint-disable-line
+import {getConfig} from '@nti/web-client';
 
 import Properties from './properties';
 
 let LoginTheme = null;
 
-export Properties from './properties';
+export {default as Properties} from './properties';
 
 export function getTheme () {
 	if (!LoginTheme) {
 		LoginTheme = Theme.buildTheme(Properties);
-		LoginTheme.setOverrides(Theme.siteBrandToTheme(getConfigFor('branding')));
+		LoginTheme.setOverrides(Theme.siteBrandToTheme(getConfig('branding')));
 	}
 
 	return LoginTheme;

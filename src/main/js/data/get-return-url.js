@@ -1,13 +1,5 @@
-import {getConfigFor} from '@nti/web-client';//eslint-disable-line
+import {getConfig, getReturnURL} from '@nti/web-client';
 
-export default function getReturnURL () {
-	const {href} = global.location || {};
-	const url = href ? new URL(href) : null;
-
-	const returnParam = url?.searchParams?.get('return');
-
-	const config = getConfigFor('url');
-	const configURL = typeof config === 'string' ? config : null;
-
-	return returnParam || configURL || '/loginsuccess';
+export default function _getReturnURL () {
+	return getReturnURL() || getConfig('url') || '/loginsuccess';
 }

@@ -1,5 +1,5 @@
 import {Stores} from '@nti/lib-store';
-import {getServer, getConfigFor} from '@nti/web-client';//eslint-disable-line
+import {getServer} from '@nti/web-client';
 
 import {getAnonymousPing, getReturnURL, getLoginRedirectURL} from '../../data';
 

@@ -3,7 +3,6 @@ import path from 'path';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Router, Redirect} from '@reach/router';
-import {getConfigFor} from '@nti/web-client';//eslint-disable-line
 
 import Forgot from './forgot';
 import Reset from './reset';
