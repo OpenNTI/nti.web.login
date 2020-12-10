@@ -29,7 +29,7 @@
 
 <body>
 	<script type="text/javascript">
-		if (window.top === window) {
+		if (window.top !== window) {
 			window.top.location.replace(window.location);
 		}
 
