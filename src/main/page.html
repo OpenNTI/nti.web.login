@@ -25,6 +25,10 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+			if (window.top === window) {
+				window.top.location.replace(window.location);
+			}
+
 			window.onerror = function(msg) {
 				if (!window.appInitialized) {
 					window.location.replace('/login/unsupported.html?error='+encodeURIComponent(msg));

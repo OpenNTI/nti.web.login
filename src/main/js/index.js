@@ -8,10 +8,6 @@ import App from './app';
 addFeatureCheckClasses();
 initLocale();
 
-if (window.top === window) {
-	window.top.location.replace(window.location);
-}
-
 function onAppMount (APP) {
 	global.appInitialized = !!APP;
 }
