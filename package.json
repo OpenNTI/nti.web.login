@@ -48,5 +48,19 @@
     "react": "*",
     "react-dom": "*",
     "prop-types": "*"
+  },
+  "peerDependenciesMeta": {
+    "classnames": {
+      "optional": true
+    },
+    "react": {
+      "optional": true
+    },
+    "react-dom": {
+      "optional": true
+    },
+    "prop-types": {
+      "optional": true
+    }
   }
 }
