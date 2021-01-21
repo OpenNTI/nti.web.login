@@ -26,24 +26,24 @@ Description.propTypes = {
 	description: PropTypes.string,
 	disclaimer: PropTypes.string
 };
-export default function Description (props) {
-	const {className} = props;
+export default function Description ({className, description, disclaimer, subTitle, title}) {
 	const tTitle = Theme.useThemeProperty('title');
 	const tSubTitle = Theme.useThemeProperty('subTitle');
 	const tDescription = Theme.useThemeProperty('description');
 	const tDisclaimer = Theme.useThemeProperty('disclaimer');
 
-	const title = props.title || tTitle;
-	const subTitle = props.subTitle || tSubTitle;
-	const description = props.description || tDescription;
-	const disclaimer = props.disclaimer || tDisclaimer;
+	const lines = [
+		[ title || tTitle, Text.H1 ],
+		[ subTitle || tSubTitle, Text.SubTitle ],
+		[ description || tDescription, Text.Large ],
+		[ disclaimer || tDisclaimer, Text.Disclaimer ]
+	];
 
 	return (
 		<Container className={className} has-subTitle={!!subTitle} no-title={!title}>
-			{title && (<Text.H1>{title}</Text.H1>)}
-			{subTitle && (<Text.SubTitle>{subTitle}</Text.SubTitle>)}
-			{description && (<Text.Large>{description}</Text.Large>)}
-			{disclaimer && (<Text.Disclaimer>{disclaimer}</Text.Disclaimer>)}
+			{lines.filter(([x]) => x).map(([text, Cmp]) => (
+				<Cmp key={text}>{text}</Cmp>
+			))}
 		</Container>
 	);
 }
