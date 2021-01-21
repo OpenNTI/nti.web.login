@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {scoped} from '@nti/lib-locale';
 import {Form, Theme, Errors} from '@nti/web-commons';
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {getServer} from '@nti/web-client';
 
 import {Inputs, Button} from '../../../../common';
 import Store from '../../Store';

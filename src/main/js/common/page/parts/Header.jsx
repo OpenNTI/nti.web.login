@@ -1,15 +1,38 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import {Theme} from '@nti/web-commons';
 
-import Styles from './Styles.css';
 
-const cx = classnames.bind(Styles);
+import {mergeClassName as add} from '../../utils';
+
+const Header = styled('section').attrs(add('page-header'))`
+	flex: 0 0 auto;
+	width: 100%;
+	text-align: center;
+	height: 110px;
+	padding-top: 0.625rem;
+
+	img {
+		display: inline-block;
+		max-height: 100px;
+		width: auto;
+
+		@supports (object-fit: contain) {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	@media (max-width: 600px) {
+		height: 80px;
+	}
+
+`;
 
 export default function PageHeader () {
 	return (
-		<section className={cx('page-header')}>
+		<Header>
 			<Theme.Asset name="logo" />
-		</section>
-	);	
+		</Header>
+	);
 }

@@ -1,14 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
 
-import Button from '../Button';
+import ButtonBase from '../Button';
 
-import Styles from './Styles.css';
 import Assets from './assets';
 
-const cx = classnames.bind(Styles);
 const getServiceName = rel => rel.split('.')[1].toLowerCase();
 const t = scoped('nti-login.login.methods.oauth.Button', {
 	text: {
@@ -52,6 +49,27 @@ const overrides = {
 };
 
 
+const Button = styled(ButtonBase).attrs({as: 'a'})`
+	position: relative;
+
+	&.service-google {
+		color: #757575;
+	}
+
+	&.has-icon {
+		/* w? */
+	}
+`;
+
+const Icon = styled.img`
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: auto;
+`;
+
 OauthButton.propTypes = {
 	link: PropTypes.shape({
 		rel: PropTypes.string.isRequired,
@@ -86,13 +104,14 @@ export default function OauthButton ({link, returnURL}) {
 
 	return (
 		<Button
-			as="a"
 			href={url.toString()}
-			className={cx('oauth-button', getServiceName(rel), {'has-icon': !!override.icon})}
+			className="oauth-button"
+			service={getServiceName(rel)}
+			has-icon={!!override.icon}
 			{...extraProps}
 		>
-			{override.icon && (<img {...override.icon} className={cx('button-icon')} />)}
-			<span className={cx('button-label')}>{text}</span>
+			{override.icon && (<Icon {...override.icon} className="button-icon" />)}
+			<span className="button-label">{text}</span>
 		</Button>
 	);
 }

@@ -1,16 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import {mergeClassName as add} from '../../utils/';
+const PageContent = styled('article').attrs(add('page-content'))`
+	display: flex;
+	flex-direction: column;
+	min-height: calc(var(--vh, 1vh) * 100);
+`;
 
-import Styles from './Styles.css';
-
-const cx = classnames.bind(Styles);
-
-PageContent.propTypes = {
-	className: PropTypes.string
-};
-export default function PageContent ({className, ...otherProps}) {
-	return (
-		<article className={cx('page-content', className)} {...otherProps} />
-	);
-}
+export default PageContent;

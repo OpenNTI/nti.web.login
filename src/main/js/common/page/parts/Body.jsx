@@ -1,16 +1,13 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import {mergeClassName as add} from '../../utils';
 
-import Styles from './Styles.css';
+const PageBody = styled('section').attrs(add('page-body'))`
+	flex: 1 1 auto;
+	padding-top: 3rem;
+	padding-bottom: 1.5rem;
 
-const cx = classnames.bind(Styles);
+	@media (max-width: 600px) {
+		padding-top: 1.5rem;
+	}
+`;
 
-PageBody.propTypes = {
-	className: PropTypes.string
-};
-export default function PageBody ({className, ...otherProps}) {
-	return (
-		<section className={cx('page-body', className)} {...otherProps} />
-	);
-}
+export default PageBody;

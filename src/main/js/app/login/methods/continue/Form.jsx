@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {scoped} from '@nti/lib-locale';
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {getServer} from '@nti/web-client';
 import {Errors} from '@nti/web-commons';
 
 import {Text, Button} from '../../../../common';

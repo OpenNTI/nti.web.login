@@ -2,16 +2,14 @@ import path from 'path';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
-import {getServer} from '@nti/web-client';//eslint-disable-line
-import {Form, Loading} from '@nti/web-commons';
+import {getServer} from '@nti/web-client';
+import {Loading} from '@nti/web-commons';
 
-import {Page, PaddedContainer, Inputs, Button, Text} from '../../../common';
+import {Page, PaddedContainer, Inputs} from '../../../common';
 
-import Styles from './Styles.css';
+import {Form, SuccessMessage, SentTo, Submit} from './Username';
 
-const cx = classnames.bind(Styles);
 const t = scoped('nti-login.recover.forgot.Password', {
 	title: 'Forgot Password?',
 	description: 'Enter your account information and we\'ll help reset your password.',
@@ -67,20 +65,17 @@ export default function ForgotPassword ({location, allowed}) {
 				{sending && (<Loading.Spinner.Large />)}
 				{sentTo && (
 					<div>
-						<Text.Large className={cx('success-message')} center>{t('success')}</Text.Large>
-						<Text.Body className={cx('sent-to')} center>{sentTo}</Text.Body>
+						<SuccessMessage>{t('success')}</SuccessMessage>
+						<SentTo>{sentTo}</SentTo>
 					</div>
 				)}
 				{!sentTo && (
-					<Form
-						className={cx('forgot-form', {sending})}
-						onSubmit={onSubmit}
-					>
+					<Form sending={sending} onSubmit={onSubmit}>
 						<Inputs.Text name="username" required label={t('username')} autoFocus />
 						<Inputs.Email name="email" required label={t('email')} />
-						<Button className={cx('submit')}as={Form.SubmitButton}>
+						<Submit>
 							{t('reset')}
-						</Button>
+						</Submit>
 					</Form>
 				)}
 			</PaddedContainer>

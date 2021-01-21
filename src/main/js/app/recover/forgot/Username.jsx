@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
-import {getServer} from '@nti/web-client';//eslint-disable-line
-import {Form, Loading} from '@nti/web-commons';
+import {getServer} from '@nti/web-client';
+import {Form as FormBase, Loading} from '@nti/web-commons';
 
 import {Page, PaddedContainer, Inputs, Button, Text} from '../../../common';
 
-import Styles from './Styles.css';
-
-const cx = classnames.bind(Styles);
 const t = scoped('nti-login.recover.forgot.Username', {
 	title: 'Forgot Username?',
 	description: 'Enter your email and we\'ll send your username.',
@@ -19,6 +15,24 @@ const t = scoped('nti-login.recover.forgot.Username', {
 	reset: 'Send Username'
 });
 
+export const Form = styled(FormBase).attrs({className:'forgot-form'})`
+	&.sending {
+		display: none;
+	}
+`;
+
+
+export const SuccessMessage = styled(Text.Large).attrs({className: 'success-message', center: true})`
+	padding: 0 2.5rem;
+`;
+
+export const SentTo = styled(Text.Body).attrs({center: true})`
+	margin-top: 1.5rem;
+`;
+
+export const Submit = styled(Button).attrs({as: FormBase.SubmitButton, className: 'submit'})`
+	margin-top: 2.25rem;
+`;
 
 ForgotUsername.propTypes = {
 	allowed: PropTypes.bool
@@ -54,19 +68,16 @@ export default function ForgotUsername ({allowed}) {
 				{sending && (<Loading.Spinner.Large />)}
 				{sentTo && (
 					<div>
-						<Text.Large className={cx('success-message')} center>{t('success')}</Text.Large>
-						<Text.Body className={cx('sent-to')} center>{sentTo}</Text.Body>
+						<SuccessMessage>{t('success')}</SuccessMessage>
+						<SentTo>{sentTo}</SentTo>
 					</div>
 				)}
 				{!sentTo && (
-					<Form
-						className={cx('forgot-form', {sending})}
-						onSubmit={onSubmit}
-					>
+					<Form sending={sending} onSubmit={onSubmit}>
 						<Inputs.Email required name="email" label={t('email')} autoFocus />
-						<Button className={cx('submit')}as={Form.SubmitButton}>
+						<Submit>
 							{t('reset')}
-						</Button>
+						</Submit>
 					</Form>
 				)}
 			</PaddedContainer>

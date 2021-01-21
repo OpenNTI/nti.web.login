@@ -1,16 +1,15 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 
 import {Text, Routing} from '../../../../common';
 
-import Styles from './Recover.css';
-
-const cx = classnames.bind(Styles);
+const Block = styled(Text.Body)`
+	margin-bottom: 2.25rem;
+`;
 
 export default function Recover () {
 	return (
-		<Text.Body right className={cx('recover')}>
+		<Block right className="recover">
 			I forgot my <Routing.Link to="/login/recover/username">username</Routing.Link> or <Routing.Link to="/login/recover/password">password.</Routing.Link>
-		</Text.Body>
+		</Block>
 	);
 }

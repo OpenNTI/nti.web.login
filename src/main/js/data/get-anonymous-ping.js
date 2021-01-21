@@ -1,4 +1,4 @@
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {getServer} from '@nti/web-client';
 
 let ping = null;
 

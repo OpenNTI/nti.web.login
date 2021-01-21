@@ -1,16 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import {mergeClassName as add} from '../../utils';
 
-import Styles from './Styles.css';
+const PagFooter = styled('section').attrs(add('page-footer'))`
+	flex: 0 0 auto;
+	padding: 0.625rem 0;
+`;
 
-const cx = classnames.bind(Styles);
-
-PageFooter.propTypes = {
-	className: PropTypes.string
-};
-export default function PageFooter ({className, ...otherProps}) {
-	return (
-		<section className={cx('page-footer', className)} {...otherProps} />
-	);
-}
+export default PagFooter;

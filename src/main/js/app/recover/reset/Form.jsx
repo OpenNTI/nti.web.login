@@ -1,17 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
-import {Form, Loading} from '@nti/web-commons';
+import {Form as FormBase, Loading} from '@nti/web-commons';
 
 import {Text, Inputs, Button, Routing} from '../../../common';
 
+const Form = styled(FormBase)`
+	&.busy {
+		display: none;
+	}
+`;
+
+const Submit = styled(Button).attrs({as: FormBase.SubmitButton, className: 'submit-button'})`
+	margin-top: 2.25rem;
+`;
+
+
 import Store from './Store';
-import Styles from './Styles.css';
 
 const successRedirectDelay = 1000;
 
-const cx = classnames.bind(Styles);
 const t = scoped('nti-login.recover.reset.Form', {
 	disabled: 'Resetting your password is not available at this time.',
 	username: 'Username',
@@ -57,16 +65,16 @@ function ResetPasswordForm ({canResetPassword, resetPassword, paramValues, retur
 				</Text.Medium>
 			)}
 			{!sent && (
-				<Form onSubmit={onSubmit} className={cx('reset-form', {busy})}>
+				<Form onSubmit={onSubmit} className="reset-form" busy={busy}>
 					{paramValues.username && (<Inputs.Hidden name="username" value={paramValues.username} />)}
 					{paramValues.id && (<Inputs.Hidden name="id" value={paramValues.id} />)}
 					{!paramValues.username && (<Inputs.Text name="username" label={t('username')} required />)}
 					{!paramValues.id && (<Inputs.Text name="id" label={t('code')} required />)}
 					<Inputs.Password name="password" label={t('password')} required />
 					<Inputs.Password name="password2" label={t('verifyPassword')} required />
-					<Button as={Form.SubmitButton} className={cx('submit-button')}>
+					<Submit>
 						{t('save')}
-					</Button>
+					</Submit>
 				</Form>
 			)}
 		</>

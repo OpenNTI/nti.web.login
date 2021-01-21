@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import cx from 'classnames';
 import {Form} from '@nti/web-commons';
 
-import Styles from './Styles.css';
+import styles from './index.css';
 
-const cx = classnames.bind(Styles);
-
-function WrapperFactory (Cmp, inputProps, wrapperClassName) {
+function WrapperFactory (Cmp, inputProps) {
 	FormInput.propTypes = {
 		className: PropTypes.string,
 		inputRef: PropTypes.any
@@ -15,7 +13,7 @@ function WrapperFactory (Cmp, inputProps, wrapperClassName) {
 	function FormInput ({className, inputRef, ...otherProps}) {
 		return (
 			<Cmp
-				className={cx(className, wrapperClassName, 'input')}
+				className={cx(className, styles.input)}
 				ref={inputRef}
 				underlined
 				{...inputProps}

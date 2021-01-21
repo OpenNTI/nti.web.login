@@ -1,17 +1,32 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
 import {List, Theme} from '@nti/web-commons';
 
 import {getTermsLink, getSupportLink, getPrivacyLink, Cookies} from '../../../data';
 import {Text} from '../../../common';
 
-import Styles from './Styles.css';
 import FullLogo from './assets/full-logo.png';
-import FullLogox2 from './assets/full-logo@2x.png';
-import FullLogox3 from './assets/full-logo@3x.png';
+import FullLogoX2 from './assets/full-logo@2x.png';
+import FullLogoX3 from './assets/full-logo@3x.png';
 
-const cx = classnames.bind(Styles);
+const Container = styled.div`
+	text-align: center;
+`;
+
+const Logo = styled.img`
+	display: inline-block;
+	max-width: 150px;
+	height: auto;
+`;
+
+const Link = styled(Text.Body).attrs({as: 'a'})`
+	text-decoration: none;
+
+	&:focus {
+		text-decoration: underline;
+	}
+`;
+
 const t = scoped('nti-login.login.support-links.View', {
 	about: {
 		title: 'About NextThought',
@@ -110,24 +125,24 @@ export default function SupportLinks () {
 	});
 
 	return (
-		<div className={cx('support-links')}>
+		<Container className="support-links">
 			{!noBranding && (
-				<img
-					className={cx('nt-logo')}
+				<Logo
+					className="nt-logo"
 					src={FullLogo}
-					srcSet={`${FullLogo}, ${FullLogox2} 2x, ${FullLogox3} 3x`}
+					srcSet={`${FullLogo}, ${FullLogoX2} 2x, ${FullLogoX3} 3x`}
 				/>
 			)}
 			<List.SeparatedInline>
 				{links.map((l, key) => {
 					const {label, ...otherProps} = l;
 					return (
-						<Text.Body as="a" {...otherProps} key={key} className={cx('footer-link')}>
+						<Link {...otherProps} key={key} className="footer-link">
 							{label}
-						</Text.Body>
+						</Link>
 					);
 				})}
 			</List.SeparatedInline>
-		</div>
+		</Container>
 	);
 }

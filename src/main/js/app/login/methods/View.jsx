@@ -1,21 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {Loading} from '@nti/web-commons';
 
 import Store from '../Store';
 
-import Styles from './View.css';
 import Continue from './continue';
 import Oauth from './oauth';
 import Password from './password';
-
-const cx = classnames.bind(Styles);
 
 const Options = [
 	[Continue],
 	[Password, Oauth]
 ];
+
+const Section = styled.section`
+	&.busy {
+		display: none;
+	}
+`;
 
 function getAvailable (handshake, forceNextThoughtLogin) {
 	for (let option of Options) {
@@ -45,7 +47,7 @@ function LoginMethods (props) {
 	return (
 		<>
 			{busy && (<Loading.Spinner.Large />)}
-			<section className={cx({busy})} aria-hidden={busy}>
+			<Section busy={busy} aria-hidden={busy}>
 				{(available || []).map((option) => {
 					const {Form, name} = option;
 
@@ -53,7 +55,7 @@ function LoginMethods (props) {
 
 					return (<Form key={name} {...props} />);
 				})}
-			</section>
+			</Section>
 		</>
 	);
 }

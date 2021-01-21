@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import cx from 'classnames/bind';
 import {Text} from '@nti/web-commons';
 
-import Styles from './Styles.css';
+import styles from './index.css';
 
-const cx = classnames.bind(Styles);
+// don't mix input classnames with private classnames.
+const _cx = cx.bind(styles);
 
 function Factory (variant, tag) {
 	WithClassName.propTypes = {
@@ -16,7 +17,14 @@ function Factory (variant, tag) {
 	function WithClassName ({className, right, center, ...otherProps}) {
 		return (
 			<Text.Base
-				className={cx(className, variant, 'text', {right, center})}
+				className={cx(
+					// as-is input class names here:
+					className,
+					// Repeat variant as clear-text so we may target it with client stylesheets.
+					variant,
+					// Private css module class names here:
+					_cx(variant, 'text', {right, center})
+				)}
 				as={tag}
 				{...otherProps}
 			/>

@@ -1,14 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 
 import {Text, Routing} from '../../common';
 
-import Styles from './CreateAccount.css';
 import Store from './Store';
 import {canCreateAccount} from './methods/utils';
 
-const cx = classnames.bind(Styles);
+const TextBlock = styled(Text.Medium)`
+	margin-top: 1.5rem;
+`;
+
 
 CreateAccount.propTypes = {
 	path: PropTypes.string,
@@ -21,9 +22,9 @@ function CreateAccount ({path = './signup', busy, handshake}) {
 	if (busy || !canCreateAccount(handshake)) { return null; }
 
 	return (
-		<Text.Medium className={cx('create-account')} center>
+		<TextBlock className="create-account" center>
 			Need an Account? <Routing.Link to={path}>Get Started.</Routing.Link>
-		</Text.Medium>
+		</TextBlock>
 	);
 }
 

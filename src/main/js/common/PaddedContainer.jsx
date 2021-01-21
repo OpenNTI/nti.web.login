@@ -1,19 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import {mergeClassName as add} from './utils';
 
-import Styles from './PaddedContainer.css';
+const PaddedContainer = styled('div').attrs(add('padded-container'))`
+	padding: 0 3.75rem;
 
-const cx = classnames.bind(Styles);
+	@media (max-width: 600px) {
+		padding: 0 7%;
+	}
+`;
 
-PaddedContainer.propTypes = {
-	as: PropTypes.string,
-	className: PropTypes.string
-};
-export default function PaddedContainer ({as: tag, className, ...otherProps}) {
-	const Cmp = tag || 'div';
-
-	return (
-		<Cmp className={cx('padded-container', className)} {...otherProps} />
-	);
-}
+export default PaddedContainer;

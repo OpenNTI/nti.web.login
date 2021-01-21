@@ -1,16 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 import {scoped} from '@nti/lib-locale';
-import {Form, Theme, Loading} from '@nti/web-commons';
-import {getServer} from '@nti/web-client';//eslint-disable-line
+import {Form as FormBase, Theme, Loading} from '@nti/web-commons';
+import {getServer} from '@nti/web-client';
 
 import {Inputs, Button, TermsAndConditions} from '../../common';
 
 import Store from './Store';
-import Styles from './Form.css';
 
-const cx = classnames.bind(Styles);
+const Form = styled(FormBase)`
+	&.busy {
+		display: none;
+	}
+`;
+
+const Submit = styled(Button).attrs({as: Form.SubmitButton})`
+	margin: 3rem 0 1.5rem;
+`;
+
 const t = scoped('nti-login.signup.Form', {
 	fullName: 'Full Name',
 	email: 'Your Email',
@@ -79,7 +86,8 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 		<>
 			{busy && (<Loading.Spinner.Large />)}
 			<Form
-				className={cx('signup-form', {busy})}
+				busy={busy}
+				className="signup-form"
 				onChange={onChange}
 				onSubmit={onSubmit}
 			>
@@ -118,9 +126,9 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 					label={t('verifyPassword')}
 					autoComplete="off"
 				/>
-				<Button as={Form.SubmitButton} className={cx('submit')}>
+				<Submit className="submit">
 					{buttonText}
-				</Button>
+				</Submit>
 				<TermsAndConditions />
 			</Form>
 		</>

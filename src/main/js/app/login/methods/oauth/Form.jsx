@@ -1,14 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
 
 import {Utils, OAuth} from 'common';
 
 import Store from '../../Store';
 
-import Styles from './Styles.css';
+const Container = styled.ul`
+	list-style: none;
+	padding: 0;
+	margin: 0;
 
-const cx = classnames.bind(Styles);
+	& > li {
+		margin: 0.5rem 0;
+	}
+
+	form + & {
+		margin-top: 1.5rem;
+	}
+`;
+
 
 LoginOauthMethod.propTypes = {
 	handshake: PropTypes.object
@@ -19,15 +29,13 @@ function LoginOauthMethod ({handshake, ...otherProps}) {
 	if (!links || !links.length) { return null; }
 
 	return (
-		<ul className={cx('oauth-buttons')}>
-			{links.map((link) => {
-				return (
-					<li key={link.rel}>
-						<OAuth.Button link={link} {...otherProps} />
-					</li>
-				);
-			})}
-		</ul>
+		<Container className="oauth-buttons">
+			{links.map((link) => (
+				<li key={link.rel}>
+					<OAuth.Button link={link} {...otherProps} />
+				</li>
+			))}
+		</Container>
 	);
 }
 

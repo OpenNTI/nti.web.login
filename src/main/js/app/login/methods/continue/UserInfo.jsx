@@ -1,11 +1,41 @@
 import React from 'react';
-import classnames from 'classnames/bind';
-import {getService} from '@nti/web-client';//eslint-disable-line
+import {getService} from '@nti/web-client';
 import {User, Loading, Text} from '@nti/web-commons';
 
-import Styles from './UserInfo.css';
+const Container = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 200px;
+	min-height: 150px;
+	margin: 2rem auto;
+	padding: 1.5rem;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19), 0 0 3px 0 rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+	overflow: hidden;
+`;
 
-const cx = classnames.bind(Styles);
+const Avatar = styled(User.Avatar)`
+	width: 120px;
+	height: 120px;
+	border-radius: 120px;
+	display: block;
+	margin-bottom: 0.875rem;
+`;
+
+const DisplayName = styled(User.DisplayName)`
+	display: block;
+	overflow: hidden;
+	font-size: 1.25rem;
+	font-weight: bold;
+	line-height: 1.3;
+	white-space: normal;
+	word-wrap: break-word;
+	word-break: break-all;
+	word-break: break-word;
+	color: var(--primary-grey);
+`;
+
 
 export default function UserInfo () {
 	const [loading, setLoading] = React.useState(false);
@@ -35,10 +65,10 @@ export default function UserInfo () {
 
 	return (
 		<Loading.Placeholder loading={loading} delay={0} fallback={(<Loading.Spinner.Large />)}>
-			<div className={cx('user-info')}>
-				{user && (<User.Avatar user={user} />)}
-				{user && (<User.DisplayName tag={Text.Base} user={user} limitLines={2} />)}
-			</div>
+			<Container className="user-info">
+				{user && (<Avatar user={user} />)}
+				{user && (<DisplayName tag={Text.Base} user={user} limitLines={2} />)}
+			</Container>
 		</Loading.Placeholder>
 	);
 }

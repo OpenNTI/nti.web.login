@@ -1,15 +1,36 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import {Theme} from '@nti/web-commons';
 
-import Styles from './Styles.css';
+const Feature = styled('div')`
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 500px;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-const cx = classnames.bind(Styles);
+	img {
+		max-width: 100%;
+		height: auto;
+
+		@supports (object-fit: contain) {
+			max-width: 100%;
+			max-height: 100%;
+			object-fit: contain;
+		}
+	}
+
+	@media (max-width: 1000px) {
+		display: none;
+	}
+`;
 
 export default function PageFeature () {
 	return (
-		<div className={cx('page-feature', 'feature')}>
+		<Feature className="page-feature">
 			<Theme.Asset name="featured" />
-		</div>
+		</Feature>
 	);
 }

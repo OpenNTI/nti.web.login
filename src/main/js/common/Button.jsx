@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames/bind';
+import cx from 'classnames/bind';
 import {Theme} from '@nti/web-commons';
 
-import Styles from './Button.css';
+import styles from './Button.css';
 
-const cx = classnames.bind(Styles);
+const _cx = cx.bind(styles);
 
 Button.propTypes = {
 	as: PropTypes.any,
@@ -20,17 +20,13 @@ export default function Button ({as: tag, className, secondary, background: back
 	const background = backgroundProp === undefined ? Theme.useThemeProperty('buttonBackground') : backgroundProp;
 	const theme = themeProp === undefined ?  Theme.useThemeProperty('buttonTheme') : themeProp;
 
-	const styles = {};
-
-	if (background && !secondary) {
-		styles.background = background;
-	}
-
 	return (
 		<Cmp
 			{...otherProps}
-			style={styles}
-			className={cx(className, 'button', theme, {secondary})}
+			style={{
+				background: (background && !secondary) ? background : undefined
+			}}
+			className={cx(className, 'button', _cx('button', theme, {secondary}))}
 			tabIndex={0}
 			role="button"
 		/>

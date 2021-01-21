@@ -1,10 +1,10 @@
 import React from 'react';
-import classnames from 'classnames/bind';
 import {Theme, Background} from '@nti/web-commons';
 
-import Styles from './Styles.css';
+const Container = styled(Background)`
 
-const cx = classnames.bind(Styles);
+	--max-content-width: 500px;
+`;
 
 const getBackgroundURL = (background) => {
 	if (!background) { return null; }
@@ -18,8 +18,8 @@ export default function PageBackground (props) {
 	const background = Theme.useThemeProperty('background');
 
 	return (
-		<Background
-			className={cx('page-container', 'container')}
+		<Container
+			className="page-container"
 			imgUrl={getBackgroundURL(background)}
 			{...props}
 		/>
