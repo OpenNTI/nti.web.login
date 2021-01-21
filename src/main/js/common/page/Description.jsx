@@ -28,10 +28,15 @@ Description.propTypes = {
 };
 export default function Description (props) {
 	const {className} = props;
-	const title = props.title || Theme.useThemeProperty('title');
-	const subTitle = props.subTitle || Theme.useThemeProperty('subTitle');
-	const description = props.description || Theme.useThemeProperty('description');
-	const disclaimer = props.disclaimer || Theme.useThemeProperty('disclaimer');
+	const tTitle = Theme.useThemeProperty('title');
+	const tSubTitle = Theme.useThemeProperty('subTitle');
+	const tDescription = Theme.useThemeProperty('description');
+	const tDisclaimer = Theme.useThemeProperty('disclaimer');
+
+	const title = props.title || tTitle;
+	const subTitle = props.subTitle || tSubTitle;
+	const description = props.description || tDescription;
+	const disclaimer = props.disclaimer || tDisclaimer;
 
 	return (
 		<Container className={className} has-subTitle={!!subTitle} no-title={!title}>

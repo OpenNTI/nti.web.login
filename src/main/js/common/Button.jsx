@@ -17,8 +17,11 @@ Button.propTypes = {
 export default function Button ({as: tag, className, secondary, background: backgroundProp, theme: themeProp, ...otherProps}) {
 	const Cmp = tag || 'button';
 
-	const background = backgroundProp === undefined ? Theme.useThemeProperty('buttonBackground') : backgroundProp;
-	const theme = themeProp === undefined ?  Theme.useThemeProperty('buttonTheme') : themeProp;
+	const tBackground = Theme.useThemeProperty('buttonBackground');
+	const tTheme = Theme.useThemeProperty('buttonTheme');
+
+	const background = backgroundProp === undefined ? tBackground : backgroundProp;
+	const theme = themeProp === undefined ?  tTheme : themeProp;
 
 	return (
 		<Cmp
