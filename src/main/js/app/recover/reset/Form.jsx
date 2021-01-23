@@ -72,7 +72,7 @@ function ResetPasswordForm ({canResetPassword, resetPassword, paramValues, retur
 					{!paramValues.id && (<Inputs.Text name="id" label={t('code')} required />)}
 					<Inputs.Password name="password" label={t('password')} required />
 					<Inputs.Password name="password2" label={t('verifyPassword')} required />
-					<Submit>
+					<Submit data-testid="reset-submit">
 						{t('save')}
 					</Submit>
 				</Form>

@@ -75,7 +75,7 @@ export default function ForgotUsername ({allowed}) {
 				{!sentTo && (
 					<Form sending={sending} onSubmit={onSubmit}>
 						<Inputs.Email required name="email" label={t('email')} autoFocus />
-						<Submit>
+						<Submit data-testid="forgot-submit">
 							{t('reset')}
 						</Submit>
 					</Form>

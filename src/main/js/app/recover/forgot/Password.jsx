@@ -73,7 +73,7 @@ export default function ForgotPassword ({location, allowed}) {
 					<Form sending={sending} onSubmit={onSubmit}>
 						<Inputs.Text name="username" required label={t('username')} autoFocus />
 						<Inputs.Email name="email" required label={t('email')} />
-						<Submit>
+						<Submit data-testid="forgot-submit">
 							{t('reset')}
 						</Submit>
 					</Form>

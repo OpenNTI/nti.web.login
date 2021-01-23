@@ -126,7 +126,7 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 					label={t('verifyPassword')}
 					autoComplete="off"
 				/>
-				<Submit className="submit">
+				<Submit className="submit" data-testid="sign-up-submit">
 					{buttonText}
 				</Submit>
 				<TermsAndConditions />
