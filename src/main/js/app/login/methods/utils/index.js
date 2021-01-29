@@ -1,2 +1,2 @@
-export canCreateAccount from './can-create-account';
-export getLoginLink from './get-login-link';
+export { default as canCreateAccount } from './can-create-account';
+export { default as getLoginLink } from './get-login-link';

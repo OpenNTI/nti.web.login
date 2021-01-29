@@ -1,2 +1,2 @@
-export Link from './Link';
-export Redirect from './Redirect';
+export { default as Link } from './Link';
+export { default as Redirect } from './Redirect';

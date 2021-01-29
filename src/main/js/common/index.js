@@ -1,10 +1,10 @@
-export Inputs from './inputs';
-export Page from './page';
+export { default as Inputs } from './inputs';
+export { default as Page } from './page';
 export * as Routing from './routing';
-export Text from './text';
+export { default as Text } from './text';
 export * as Theme from './theme';
-export Button from './Button';
-export PaddedContainer from './PaddedContainer';
-export TermsAndConditions from './terms-and-conditions';
+export { default as Button } from './Button';
+export { default as PaddedContainer } from './PaddedContainer';
+export { default as TermsAndConditions } from './terms-and-conditions';
 export * as OAuth from './oauth';
 export * as Utils from './utils';
