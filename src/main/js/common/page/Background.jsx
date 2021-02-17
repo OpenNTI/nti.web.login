@@ -1,20 +1,21 @@
 import React from 'react';
-import {Theme, Background} from '@nti/web-commons';
+import { Theme, Background } from '@nti/web-commons';
 
 const Container = styled(Background)`
-
 	--max-content-width: 500px;
 `;
 
-const getBackgroundURL = (background) => {
-	if (!background) { return null; }
+const getBackgroundURL = background => {
+	if (!background) {
+		return null;
+	}
 
-	const {href, cacheBust} = background;
+	const { href, cacheBust } = background;
 
-	return cacheBust ? `${href}?v=${cacheBust}` :  href;
+	return cacheBust ? `${href}?v=${cacheBust}` : href;
 };
 
-export default function PageBackground (props) {
+export default function PageBackground(props) {
 	const background = Theme.useThemeProperty('background');
 
 	return (

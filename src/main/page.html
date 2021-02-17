@@ -1,47 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta
+			http-equiv="Content-Type"
+			content="Type=text/html; charset=utf-8"
+		/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta http-equiv="cleartype" content="on" />
+		<meta
+			name="viewport"
+			content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"
+		/>
+		<!-- android -->
+		<meta name="mobile-web-app-capable" content="yes" />
+		<!-- iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="apple-mobile-web-app-title" content="nextthought app" />
+		<link
+			rel="apple-touch-startup-image"
+			href="/resources/images/app-splash.png"
+		/>
 
-<head>
-	<meta charset="utf-8" />
-	<meta http-equiv="Content-Type" content="Type=text/html; charset=utf-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="msapplication-tap-highlight" content="no" />
-	<meta http-equiv="cleartype" content="on" />
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-	<!-- android -->
-	<meta name="mobile-web-app-capable" content="yes" />
-	<!-- iOS -->
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	<meta name="apple-mobile-web-app-title" content="nextthought app" />
-	<link rel="apple-touch-startup-image" href="/resources/images/app-splash.png" />
+		<link rel="shortcut icon" id="favicon" href="<[cfg:favicon]>" />
+		<link rel="apple-touch-icon" href="<[cfg:favicon]>" />
 
-	<link rel="shortcut icon" id="favicon" href="<[cfg:favicon]>" />
-	<link rel="apple-touch-icon" href="<[cfg:favicon]>" />
+		<title><![CDATA[cfg:siteTitle]]></title>
 
-	<title>
-		<![CDATA[cfg:siteTitle]]>
-	</title>
+		<link rel="icon" id="favicon" href="<[cfg:favicon]>" />
+		<link
+			href="/site-assets/login/site.css"
+			rel="stylesheet"
+			type="text/css"
+			id="site-override-styles"
+		/>
+	</head>
 
-	<link rel="icon" id="favicon" href="<[cfg:favicon]>" />
-	<link href="/site-assets/login/site.css" rel="stylesheet" type="text/css" id="site-override-styles" />
-</head>
-
-<body>
-	<script type="text/javascript">
-		if (window.top !== window) {
-			window.top.location.replace(window.location);
-		}
-
-		window.onerror = function (msg) {
-			if (!window.appInitialized) {
-				window.location.replace('/login/unsupported.html?error=' + encodeURIComponent(msg));
+	<body>
+		<script type="text/javascript">
+			if (window.top !== window) {
+				window.top.location.replace(window.location);
 			}
-		}
-	</script>
-	<main id="content">
-		<!--html:server-values-->
-	</main>
-</body>
 
+			window.onerror = function (msg) {
+				if (!window.appInitialized) {
+					window.location.replace(
+						'/login/unsupported.html?error=' +
+							encodeURIComponent(msg)
+					);
+				}
+			};
+		</script>
+		<main id="content">
+			<!--html:server-values-->
+		</main>
+	</body>
 </html>

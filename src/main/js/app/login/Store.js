@@ -1,7 +1,11 @@
-import {Stores} from '@nti/lib-store';
-import {getServer} from '@nti/web-client';
+import { Stores } from '@nti/lib-store';
+import { getServer } from '@nti/web-client';
 
-import {getAnonymousPing, getReturnURL, getLoginRedirectURL} from '../../data';
+import {
+	getAnonymousPing,
+	getReturnURL,
+	getLoginRedirectURL,
+} from '../../data';
 
 const Setup = 'setup';
 const Reload = 'reload';
@@ -24,10 +28,12 @@ const UpdateTimeout = Symbol('Update Timeout');
 
 const HandshakeMap = new Map();
 
-function getErrorParams () {
+function getErrorParams() {
 	const href = global.location?.href;
 
-	if (!href) { return null; }
+	if (!href) {
+		return null;
+	}
 
 	const url = new URL(href);
 
@@ -35,8 +41,12 @@ function getErrorParams () {
 	const failed = url.searchParams.get('failed');
 	const message = url.searchParams.get('message');
 
-	if (error) { return error; }
-	if (failed && message) { return message; }
+	if (error) {
+		return error;
+	}
+	if (failed && message) {
+		return message;
+	}
 }
 
 export default class LoginStore extends Stores.SimpleStore {
@@ -54,14 +64,16 @@ export default class LoginStore extends Stores.SimpleStore {
 	static UpdateUsername = UpdateUsername;
 	static GetHandshakeForUsername = GetHandshakeForUsername;
 
-	async [Setup] () {
-		if (this.get(HasPing)) { return; }
+	async [Setup]() {
+		if (this.get(HasPing)) {
+			return;
+		}
 
 		this.set({
 			[HasPing]: false,
 			[Handshake]: null,
 			[Error]: null,
-			[Busy]: true
+			[Busy]: true,
 		});
 
 		delete this.currentTask;
@@ -74,20 +86,20 @@ export default class LoginStore extends Stores.SimpleStore {
 				[HasPing]: true,
 				[Handshake]: ping,
 				[Ping]: ping,
-				[Error]: getErrorParams()
+				[Error]: getErrorParams(),
 			});
 		} catch (e) {
 			this.set({
 				[Busy]: false,
-				[Error]: e
+				[Error]: e,
 			});
 		}
 	}
 
-	async [Reload] () {
+	async [Reload]() {
 		this.set({
 			[Busy]: true,
-			[Error]: null
+			[Error]: null,
 		});
 
 		delete this.currentTask;
@@ -98,35 +110,40 @@ export default class LoginStore extends Stores.SimpleStore {
 			this.set({
 				[Busy]: false,
 				[Handshake]: ping,
-				[Ping]: ping
+				[Ping]: ping,
 			});
 		} catch (e) {
 			this.set({
 				[Busy]: false,
-				[Error]: e
+				[Error]: e,
 			});
 		}
 	}
 
+	get [ReturnURL]() {
+		return getReturnURL();
+	}
+	get [LoginRedirectURL]() {
+		return getLoginRedirectURL();
+	}
 
-	get [ReturnURL] () { return getReturnURL(); }
-	get [LoginRedirectURL] () { return getLoginRedirectURL(); }
-
-	[SetBusy] () {
+	[SetBusy]() {
 		const task = {};
 
 		this.currentTask = task;
-		this.set({[Busy]: true});
+		this.set({ [Busy]: true });
 
 		return () => {
 			if (task === this.currentTask) {
-				this.set({[Busy]: false});
+				this.set({ [Busy]: false });
 			}
 		};
 	}
 
-	[UpdateUsername] (username) {
-		if (username.length < 3) { return; }
+	[UpdateUsername](username) {
+		if (username.length < 3) {
+			return;
+		}
 
 		clearTimeout(this[UpdateTimeout]);
 
@@ -137,11 +154,11 @@ export default class LoginStore extends Stores.SimpleStore {
 
 				this.set({
 					[Error]: null,
-					[Handshake]: {...(ping || {}), ...(handshake || {})}
+					[Handshake]: { ...(ping || {}), ...(handshake || {}) },
 				});
 			} catch (e) {
 				this.set({
-					[Error]: e
+					[Error]: e,
 				});
 			}
 		};
@@ -149,15 +166,16 @@ export default class LoginStore extends Stores.SimpleStore {
 		this[UpdateTimeout] = setTimeout(updateUsername, UpdateDelay);
 	}
 
-
-	[GetHandshakeForUsername] (username) {
+	[GetHandshakeForUsername](username) {
 		const getHandshake = async () => {
 			try {
 				const handshake = await getServer().ping(username);
 
 				return handshake;
 			} catch (e) {
-				if (e.getLink) { return e; }
+				if (e.getLink) {
+					return e;
+				}
 				throw e;
 			}
 		};
@@ -170,5 +188,4 @@ export default class LoginStore extends Stores.SimpleStore {
 
 		return HandshakeMap.get(username);
 	}
-
 }

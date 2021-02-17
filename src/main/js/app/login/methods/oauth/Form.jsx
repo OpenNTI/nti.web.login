@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import {Utils, OAuth} from 'common';
+import { Utils, OAuth } from 'common';
 
 import Store from '../../Store';
 
@@ -19,18 +19,19 @@ const Container = styled.ul`
 	}
 `;
 
-
 LoginOauthMethod.propTypes = {
-	handshake: PropTypes.object
+	handshake: PropTypes.object,
 };
-function LoginOauthMethod ({handshake, ...otherProps}) {
+function LoginOauthMethod({ handshake, ...otherProps }) {
 	const links = Utils.getOauthLinks(handshake);
 
-	if (!links || !links.length) { return null; }
+	if (!links || !links.length) {
+		return null;
+	}
 
 	return (
 		<Container className="oauth-buttons">
-			{links.map((link) => (
+			{links.map(link => (
 				<li key={link.rel}>
 					<OAuth.Button link={link} {...otherProps} />
 				</li>
@@ -39,9 +40,8 @@ function LoginOauthMethod ({handshake, ...otherProps}) {
 	);
 }
 
-export default Store
-	.monitor({
-		[Store.ReturnURL]: 'returnURL',
-		[Store.SetBusy]: 'setBusy',
-		[Store.Handshake]: 'handshake'
-	})(LoginOauthMethod);
+export default Store.monitor({
+	[Store.ReturnURL]: 'returnURL',
+	[Store.SetBusy]: 'setBusy',
+	[Store.Handshake]: 'handshake',
+})(LoginOauthMethod);

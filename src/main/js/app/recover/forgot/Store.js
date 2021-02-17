@@ -1,6 +1,6 @@
-import {Stores} from '@nti/lib-store';
+import { Stores } from '@nti/lib-store';
 
-import {getForgotPasswordLink, getForgotUsernameLink} from '../../../data';
+import { getForgotPasswordLink, getForgotUsernameLink } from '../../../data';
 
 const Setup = 'setup';
 const Loaded = 'loaded';
@@ -15,8 +15,8 @@ export default class RecoverLogin extends Stores.SimpleStore {
 	static CanResetPassword = CanResetPassword;
 	static CanResetUsername = CanResetUsername;
 
-	async [Setup] () {
-		this.set({[Loaded]: false, [Loading]: true});
+	async [Setup]() {
+		this.set({ [Loaded]: false, [Loading]: true });
 
 		try {
 			const password = await getForgotPasswordLink();
@@ -26,14 +26,14 @@ export default class RecoverLogin extends Stores.SimpleStore {
 				[Loaded]: true,
 				[Loading]: false,
 				[CanResetUsername]: !!username,
-				[CanResetPassword]: !!password
+				[CanResetPassword]: !!password,
 			});
 		} catch (e) {
 			this.set({
 				[Loaded]: true,
 				[Loading]: false,
 				[CanResetUsername]: false,
-				[CanResetPassword]: false
+				[CanResetPassword]: false,
 			});
 		}
 	}

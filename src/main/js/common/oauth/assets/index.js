@@ -17,6 +17,5 @@ export default {
 	Google3x,
 	LinkedIn,
 	LinkedIn2x,
-	LinkedIn3x
+	LinkedIn3x,
 };
-

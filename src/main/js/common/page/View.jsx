@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Theme} from '@nti/web-commons';
+import { Theme } from '@nti/web-commons';
 
 import Description from './Description';
 import Background from './Background';
@@ -17,9 +17,9 @@ Page.Header = Header;
 Page.Footer = Footer;
 Page.Description = Description;
 Page.propTypes = {
-	scope: PropTypes.string
+	scope: PropTypes.string,
 };
-export default function Page ({scope, ...otherProps}) {
+export default function Page({ scope, ...otherProps }) {
 	return (
 		<Theme.Scope scope={scope}>
 			<Background>

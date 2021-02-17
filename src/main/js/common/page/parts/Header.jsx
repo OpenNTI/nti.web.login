@@ -1,8 +1,7 @@
 import React from 'react';
-import {Theme} from '@nti/web-commons';
+import { Theme } from '@nti/web-commons';
 
-
-import {mergeClassName as add} from '../../utils';
+import { mergeClassName as add } from '../../utils';
 
 const Header = styled('section').attrs(add('page-header'))`
 	flex: 0 0 auto;
@@ -26,10 +25,9 @@ const Header = styled('section').attrs(add('page-header'))`
 	@media (max-width: 600px) {
 		height: 80px;
 	}
-
 `;
 
-export default function PageHeader () {
+export default function PageHeader() {
 	return (
 		<Header>
 			<Theme.Asset name="logo" />

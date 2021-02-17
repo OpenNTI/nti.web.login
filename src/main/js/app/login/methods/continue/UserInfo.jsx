@@ -1,6 +1,6 @@
 import React from 'react';
-import {getService} from '@nti/web-client';
-import {User, Loading, Text} from '@nti/web-commons';
+import { getService } from '@nti/web-client';
+import { User, Loading, Text } from '@nti/web-commons';
 
 const Container = styled.div`
 	display: flex;
@@ -36,8 +36,7 @@ const DisplayName = styled(User.DisplayName)`
 	color: var(--primary-grey);
 `;
 
-
-export default function UserInfo () {
+export default function UserInfo() {
 	const [loading, setLoading] = React.useState(false);
 	const [user, setUser] = React.useState(null);
 
@@ -57,17 +56,26 @@ export default function UserInfo () {
 			}
 		};
 
-		if (!user && !loading) { getUser(); }
+		if (!user && !loading) {
+			getUser();
+		}
 	});
 
-	if (!loading && !user) { return null; }
-
+	if (!loading && !user) {
+		return null;
+	}
 
 	return (
-		<Loading.Placeholder loading={loading} delay={0} fallback={(<Loading.Spinner.Large />)}>
+		<Loading.Placeholder
+			loading={loading}
+			delay={0}
+			fallback={<Loading.Spinner.Large />}
+		>
 			<Container className="user-info">
-				{user && (<Avatar user={user} />)}
-				{user && (<DisplayName tag={Text.Base} user={user} limitLines={2} />)}
+				{user && <Avatar user={user} />}
+				{user && (
+					<DisplayName tag={Text.Base} user={user} limitLines={2} />
+				)}
 			</Container>
 		</Loading.Placeholder>
 	);

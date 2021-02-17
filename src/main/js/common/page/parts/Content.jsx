@@ -1,4 +1,4 @@
-import {mergeClassName as add} from '../../utils/';
+import { mergeClassName as add } from '../../utils/';
 const PageContent = styled('article').attrs(add('page-content'))`
 	display: flex;
 	flex-direction: column;

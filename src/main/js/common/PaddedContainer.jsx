@@ -1,4 +1,4 @@
-import {mergeClassName as add} from './utils';
+import { mergeClassName as add } from './utils';
 
 const PaddedContainer = styled('div').attrs(add('padded-container'))`
 	padding: 0 3.75rem;

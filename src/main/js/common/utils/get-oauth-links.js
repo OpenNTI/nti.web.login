@@ -6,15 +6,17 @@ const BLACK_LIST = {
 	'logon.handshake': true,
 	'logon.reset.passcode': true,
 	'logon.ping': true,
-	'logon.nti.password': true
+	'logon.nti.password': true,
 };
 
-function isOauthREL (rel) {
+function isOauthREL(rel) {
 	return IS_LOGON_REL_REGEX.test(rel) && !BLACK_LIST[rel];
 }
 
-export default function getOauthLinks (handshake) {
-	if (!handshake || !handshake.links) { return []; }
+export default function getOauthLinks(handshake) {
+	if (!handshake || !handshake.links) {
+		return [];
+	}
 
 	return handshake.links
 		.filter(isOauthREL)

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {scoped} from '@nti/lib-locale';
+import { scoped } from '@nti/lib-locale';
 
 import ButtonBase from '../Button';
 
@@ -11,8 +11,8 @@ const t = scoped('nti-login.login.methods.oauth.Button', {
 	text: {
 		google: 'Sign In With Google',
 		facebook: 'Sign In With Facebook',
-		linkedin: 'Sign In With LinkedIn'
-	}
+		linkedin: 'Sign In With LinkedIn',
+	},
 });
 
 const overrides = {
@@ -23,8 +23,8 @@ const overrides = {
 		icon: {
 			src: Assets.Google,
 			srcset: `${Assets.Google}, ${Assets.Google2x} 2x, ${Assets.Google3x} 3x`,
-			alt: 'Google Logo'
-		}
+			alt: 'Google Logo',
+		},
 	},
 	facebook: {
 		background: '#0076FB',
@@ -33,8 +33,8 @@ const overrides = {
 		icon: {
 			src: Assets.Facebook,
 			srcset: `${Assets.Facebook}, ${Assets.Facebook2x} 2x, ${Assets.Facebook3x} 3x`,
-			alt: 'Facebook Logo'
-		}
+			alt: 'Facebook Logo',
+		},
 	},
 	linkedin: {
 		background: '#2867B2',
@@ -43,13 +43,12 @@ const overrides = {
 		icon: {
 			src: Assets.LinkedIn,
 			srcset: `${Assets.LinkedIn}, ${Assets.LinkedIn2x} 2x, ${Assets.LinkedIn3x} 3x`,
-			alt: 'LinkedIn Logo'
-		}
-	}
+			alt: 'LinkedIn Logo',
+		},
+	},
 };
 
-
-const Button = styled(ButtonBase).attrs({as: 'a'})`
+const Button = styled(ButtonBase).attrs({ as: 'a' })`
 	position: relative;
 
 	&.service-google {
@@ -74,12 +73,12 @@ OauthButton.propTypes = {
 	link: PropTypes.shape({
 		rel: PropTypes.string.isRequired,
 		href: PropTypes.string.isRequired,
-		title: PropTypes.string.isRequired
+		title: PropTypes.string.isRequired,
 	}).isRequired,
-	returnURL: PropTypes.string
+	returnURL: PropTypes.string,
 };
-export default function OauthButton ({link, returnURL}) {
-	const {rel, title, href} = link;
+export default function OauthButton({ link, returnURL }) {
+	const { rel, title, href } = link;
 
 	const base = global.location;
 	const url = new URL(href, base);
@@ -110,7 +109,9 @@ export default function OauthButton ({link, returnURL}) {
 			has-icon={!!override.icon}
 			{...extraProps}
 		>
-			{override.icon && (<Icon {...override.icon} className="button-icon" />)}
+			{override.icon && (
+				<Icon {...override.icon} className="button-icon" />
+			)}
 			<span className="button-label">{text}</span>
 		</Button>
 	);

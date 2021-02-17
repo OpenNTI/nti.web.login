@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 //TODO: add a transition between components
 
-
 const Container = styled.div`
 	margin: 0 0 0 auto;
 	width: 100vw;
@@ -12,7 +11,7 @@ const Container = styled.div`
 	position: relative;
 	box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.2);
 
-	& > div[role="group"] {
+	& > div[role='group'] {
 		height: 100%;
 	}
 
@@ -21,12 +20,11 @@ const Container = styled.div`
 	}
 `;
 
-
 PageMain.propTypes = {
 	component: PropTypes.any,
-	position: PropTypes.number
+	position: PropTypes.number,
 };
-export default function PageMain ({component:Cmp, position, ...otherProps}) {
+export default function PageMain({ component: Cmp, position, ...otherProps }) {
 	return (
 		<Container>
 			<Cmp {...otherProps} />

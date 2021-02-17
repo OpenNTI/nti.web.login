@@ -2,15 +2,15 @@ import path from 'path';
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Router, Redirect} from '@reach/router';
+import { Router, Redirect } from '@reach/router';
 
 import Forgot from './forgot';
 import Reset from './reset';
 
 Recover.propTypes = {
-	uri: PropTypes.string
+	uri: PropTypes.string,
 };
-export default function Recover ({uri}) {
+export default function Recover({ uri }) {
 	return (
 		<Router>
 			<Reset path="reset" />

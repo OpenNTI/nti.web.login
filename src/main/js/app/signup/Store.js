@@ -1,7 +1,7 @@
-import {Stores} from '@nti/lib-store';
-import {getServer, getService} from '@nti/web-client';//eslint-disable-line
+import { Stores } from '@nti/lib-store';
+import { getServer, getService } from '@nti/web-client'; //eslint-disable-line
 
-import {getAnonymousPing, getReturnURL} from '../../data';
+import { getAnonymousPing, getReturnURL } from '../../data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';
@@ -25,9 +25,13 @@ const FieldTasks = new Map();
 
 const Prefill = 'Prefill';
 
-function checkPassword (data) {
-	if (data.password2 == null) { return; }
-	if (data.password2 === data.password) { return; }
+function checkPassword(data) {
+	if (data.password2 == null) {
+		return;
+	}
+	if (data.password2 === data.password) {
+		return;
+	}
 
 	const error = new Error('Passwords do not match.');
 
@@ -35,10 +39,12 @@ function checkPassword (data) {
 	throw error;
 }
 
-function getErrorParams () {
+function getErrorParams() {
 	const href = global.location?.href;
 
-	if (!href) { return null; }
+	if (!href) {
+		return null;
+	}
 
 	const url = new URL(href);
 
@@ -46,10 +52,13 @@ function getErrorParams () {
 	const failed = url.searchParams.get('failed');
 	const message = url.searchParams.get('message');
 
-	if (error) { return error; }
-	if (failed && message) { return message; }
+	if (error) {
+		return error;
+	}
+	if (failed && message) {
+		return message;
+	}
 }
-
 
 export default class SignupStore extends Stores.SimpleStore {
 	static Setup = Setup;
@@ -66,10 +75,10 @@ export default class SignupStore extends Stores.SimpleStore {
 	static ErrorState = ErrorState;
 	static Ping = Ping;
 
-	async [Setup] (isAdminInvitation) {
+	async [Setup](isAdminInvitation) {
 		this.set({
 			[Loading]: true,
-			[Ping]: null
+			[Ping]: null,
 		});
 
 		try {
@@ -80,35 +89,36 @@ export default class SignupStore extends Stores.SimpleStore {
 				[Loaded]: true,
 				[Ping]: ping,
 				[CanCreateAccount]: ping.hasLink('account.create'),
-				[ErrorState]: getErrorParams()
+				[ErrorState]: getErrorParams(),
 			});
 		} catch (e) {
 			this.set({
 				[Loading]: false,
 				[Loaded]: true,
-				[CanCreateAccount]: false
+				[CanCreateAccount]: false,
 			});
 		}
 	}
 
-	get [ReturnURL] () { return getReturnURL();	}
+	get [ReturnURL]() {
+		return getReturnURL();
+	}
 
-	[FormatData] (data) {
-		const formatted = {...data, 'opt_in_email_communication': null};
+	[FormatData](data) {
+		const formatted = { ...data, opt_in_email_communication: null };
 
 		delete formatted.password2;
 
 		return formatted;
 	}
 
-	[FormatAndCheckData] (data) {
+	[FormatAndCheckData](data) {
 		checkPassword(data);
 
 		return this[FormatData](data);
 	}
 
-
-	[Preflight] (data, errors, field = 'all') {
+	[Preflight](data, errors, field = 'all') {
 		const inflight = FieldPreflights.get(field);
 
 		this.preflightData = this.preflightData || {};
@@ -143,9 +153,14 @@ export default class SignupStore extends Stores.SimpleStore {
 					}
 
 					const formatted = this[FormatData](this.preflightData);
-					await getServer().post(ping.getLink('account.preflight.create'), formatted);
+					await getServer().post(
+						ping.getLink('account.preflight.create'),
+						formatted
+					);
 				} catch (e) {
-					if (!isCurrentTask) { return; }
+					if (!isCurrentTask) {
+						return;
+					}
 
 					const existing = errors[e.field];
 
@@ -166,17 +181,16 @@ export default class SignupStore extends Stores.SimpleStore {
 		});
 	}
 
-	[SetBusy] () {
+	[SetBusy]() {
 		const task = {};
 
 		this.currentTask = task;
-		this.set({[Busy]: true});
+		this.set({ [Busy]: true });
 
 		return () => {
 			if (task === this.currentTask) {
-				this.set({[Busy]: false});
+				this.set({ [Busy]: false });
 			}
 		};
 	}
-
 }

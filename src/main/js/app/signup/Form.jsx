@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {scoped} from '@nti/lib-locale';
-import {Form as FormBase, Theme, Loading} from '@nti/web-commons';
-import {getServer} from '@nti/web-client';
+import { scoped } from '@nti/lib-locale';
+import { Form as FormBase, Theme, Loading } from '@nti/web-commons';
+import { getServer } from '@nti/web-client';
 
-import {Inputs, Button, TermsAndConditions} from '../../common';
+import { Inputs, Button, TermsAndConditions } from '../../common';
 
 import Store from './Store';
 
@@ -14,7 +14,7 @@ const Form = styled(FormBase)`
 	}
 `;
 
-const Submit = styled(Button).attrs({as: Form.SubmitButton})`
+const Submit = styled(Button).attrs({ as: Form.SubmitButton })`
 	margin: 3rem 0 1.5rem;
 `;
 
@@ -23,13 +23,19 @@ const t = scoped('nti-login.signup.Form', {
 	email: 'Your Email',
 	username: 'Username',
 	password: 'Password',
-	verifyPassword: 'Verify Password'
+	verifyPassword: 'Verify Password',
 });
 
-function getFocusedField (defaultValues) {
-	if (!defaultValues?.realname) { return 'realname'; }
-	if (!defaultValues?.email && !defaultValues?.emailLocked) { return 'email'; }
-	if (!defaultValues?.Username) { return 'Username'; }
+function getFocusedField(defaultValues) {
+	if (!defaultValues?.realname) {
+		return 'realname';
+	}
+	if (!defaultValues?.email && !defaultValues?.emailLocked) {
+		return 'email';
+	}
+	if (!defaultValues?.Username) {
+		return 'Username';
+	}
 
 	return 'password';
 }
@@ -45,16 +51,27 @@ SignupForm.propTypes = {
 	returnURL: PropTypes.string,
 	busy: PropTypes.bool,
 	setBusy: PropTypes.func,
-	formatAndCheck: PropTypes.func
+	formatAndCheck: PropTypes.func,
 };
-function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy, setBusy}) {
+function SignupForm({
+	defaultValues,
+	preflight,
+	returnURL,
+	formatAndCheck,
+	busy,
+	setBusy,
+}) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
 	const onChange = (values, e) => {
-		return preflight(values.json, values.getValidationErrors(), e.target?.name);
+		return preflight(
+			values.json,
+			values.getValidationErrors(),
+			e.target?.name
+		);
 	};
 
-	const onSubmit = async ({json}) => {
+	const onSubmit = async ({ json }) => {
 		const clear = setBusy();
 
 		try {
@@ -62,7 +79,9 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 
 			if (resp && resp.Class === 'User') {
 				const handshake = await getServer().ping(resp.Username);
-				const initialTOSLink = handshake.getLink('content.initial_tos_page');
+				const initialTOSLink = handshake.getLink(
+					'content.initial_tos_page'
+				);
 
 				if (initialTOSLink) {
 					await getServer().delete(initialTOSLink);
@@ -84,7 +103,7 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 
 	return (
 		<>
-			{busy && (<Loading.Spinner.Large />)}
+			{busy && <Loading.Spinner.Large />}
 			<Form
 				busy={busy}
 				className="signup-form"
@@ -135,12 +154,11 @@ function SignupForm ({defaultValues, preflight, returnURL, formatAndCheck, busy,
 	);
 }
 
-export default Store
-	.monitor({
-		[Store.Ping]: 'ping',
-		[Store.Preflight]: 'preflight',
-		[Store.ReturnURL]: 'returnURL',
-		[Store.Busy]: 'busy',
-		[Store.SetBusy]: 'setBusy',
-		[Store.FormatAndCheckData]: 'formatAndCheck'
-	})(SignupForm);
+export default Store.monitor({
+	[Store.Ping]: 'ping',
+	[Store.Preflight]: 'preflight',
+	[Store.ReturnURL]: 'returnURL',
+	[Store.Busy]: 'busy',
+	[Store.SetBusy]: 'setBusy',
+	[Store.FormatAndCheckData]: 'formatAndCheck',
+})(SignupForm);

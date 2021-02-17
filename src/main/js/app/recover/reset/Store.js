@@ -1,7 +1,7 @@
-import {Stores} from '@nti/lib-store';
-import {getServer} from '@nti/web-client';
+import { Stores } from '@nti/lib-store';
+import { getServer } from '@nti/web-client';
 
-import {getResetPasswordLink, getReturnURL} from '../../../data';
+import { getResetPasswordLink, getReturnURL } from '../../../data';
 
 const Setup = 'setup';
 const Loaded = 'Loaded';
@@ -24,12 +24,12 @@ export default class ResetPasswordStore extends Stores.SimpleStore {
 	static ParamValues = ParamValues;
 	static ReturnURL = ReturnURL;
 
-	async [Setup] () {
+	async [Setup]() {
 		this.set({
 			[Loaded]: false,
 			[Loading]: true,
 			[CanResetPassword]: null,
-			[Link]: null
+			[Link]: null,
 		});
 
 		try {
@@ -39,35 +39,33 @@ export default class ResetPasswordStore extends Stores.SimpleStore {
 				[Loaded]: true,
 				[Loading]: false,
 				[Link]: link,
-				[CanResetPassword]: !!link
+				[CanResetPassword]: !!link,
 			});
 		} catch (e) {
 			this.set({
 				[Loaded]: true,
-				[Loading]: false
+				[Loading]: false,
 			});
 		}
 	}
 
-	get [ReturnURL] () {
+	get [ReturnURL]() {
 		const returnURL = getReturnURL();
 
 		return `/login/?return=${returnURL}`;
 	}
 
-	get [ParamValues] () {
-		const {href} = global.location || {};
+	get [ParamValues]() {
+		const { href } = global.location || {};
 		const url = href ? new URL(href) : null;
 
 		return {
 			username: url ? url.searchParams.get('username') : null,
-			id: url ? url.searchParams.get('id') : null
+			id: url ? url.searchParams.get('id') : null,
 		};
 	}
 
-
-	async [ResetPassword] (data, json) {
-
+	async [ResetPassword](data, json) {
 		if (json.password !== json.password2) {
 			const e = new Error('Passwords do not match.');
 			e.field = 'password2';

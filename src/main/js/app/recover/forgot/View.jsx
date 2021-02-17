@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {Loading} from '@nti/web-commons';
+import { Loading } from '@nti/web-commons';
 
-import {Page, Text, Routing} from '../../../common';
+import { Page, Text, Routing } from '../../../common';
 
 import Store from './Store';
 import Username from './Username';
@@ -10,7 +10,7 @@ import Password from './Password';
 
 Forgot.propTypes = {
 	location: PropTypes.shape({
-		href: PropTypes.string
+		href: PropTypes.string,
 	}),
 	setup: PropTypes.func,
 	loading: PropTypes.bool,
@@ -19,7 +19,15 @@ Forgot.propTypes = {
 	canResetUsername: PropTypes.bool,
 	param: PropTypes.string,
 };
-function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUsername, param}) {
+function Forgot({
+	location,
+	setup,
+	loading,
+	loaded,
+	canResetPassword,
+	canResetUsername,
+	param,
+}) {
 	React.useEffect(() => {
 		if (!loaded && !loading) {
 			setup();
@@ -32,9 +40,22 @@ function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUs
 		<Page.Content>
 			<Page.Header />
 			<Page.Body>
-				<Loading.Placeholder loading={!loaded} fallback={(<Loading.Spinner.Large />)} >
-					{param === 'username' && (<Username location={location} allowed={canResetUsername} />)}
-					{param === 'password' && (<Password location={location} allowed={canResetPassword} />)}
+				<Loading.Placeholder
+					loading={!loaded}
+					fallback={<Loading.Spinner.Large />}
+				>
+					{param === 'username' && (
+						<Username
+							location={location}
+							allowed={canResetUsername}
+						/>
+					)}
+					{param === 'password' && (
+						<Password
+							location={location}
+							allowed={canResetPassword}
+						/>
+					)}
 				</Loading.Placeholder>
 			</Page.Body>
 			<Page.Footer>
@@ -46,11 +67,10 @@ function Forgot ({location, setup, loading, loaded, canResetPassword, canResetUs
 	);
 }
 
-export default Store
-	.connect({
-		[Store.Setup]: 'setup',
-		[Store.Loading]: 'loading',
-		[Store.Loaded]: 'loaded',
-		[Store.CanResetPassword]: 'canResetPassword',
-		[Store.CanResetUsername]: 'canResetUsername'
-	})(Forgot);
+export default Store.connect({
+	[Store.Setup]: 'setup',
+	[Store.Loading]: 'loading',
+	[Store.Loaded]: 'loaded',
+	[Store.CanResetPassword]: 'canResetPassword',
+	[Store.CanResetUsername]: 'canResetUsername',
+})(Forgot);

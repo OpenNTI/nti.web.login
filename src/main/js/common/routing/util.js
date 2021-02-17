@@ -1,14 +1,16 @@
-export function getReturnParam () {
-	const {href} = global.location || {};
+export function getReturnParam() {
+	const { href } = global.location || {};
 	const url = href ? new URL(href) : null;
 
 	return url?.searchParams?.get('return');
 }
 
-export function addReturnParam (link) {
+export function addReturnParam(link) {
 	const returnParam = getReturnParam();
 
-	if (!returnParam) { return link; }
+	if (!returnParam) {
+		return link;
+	}
 
 	const [base, query] = link.split('?');
 

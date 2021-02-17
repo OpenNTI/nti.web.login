@@ -1,5 +1,5 @@
 import React from 'react';
-import {Theme} from '@nti/web-commons';
+import { Theme } from '@nti/web-commons';
 
 const Feature = styled('div')`
 	position: fixed;
@@ -27,7 +27,7 @@ const Feature = styled('div')`
 	}
 `;
 
-export default function PageFeature () {
+export default function PageFeature() {
 	return (
 		<Feature className="page-feature">
 			<Theme.Asset name="featured" />

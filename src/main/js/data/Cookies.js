@@ -4,18 +4,22 @@
  * @param  {string} name the cookie to look up
  * @returns {string}      the cookie value
  */
-export function get (name) {
-	const {cookie} = global.document || {};
+export function get(name) {
+	const { cookie } = global.document || {};
 
-	if (!cookie) { return null; }
+	if (!cookie) {
+		return null;
+	}
 
 	const match = cookie.match(`(^|[^;]+)\\s*${name}\\s*=\\s*([^;]+)`);
 
 	return match ? match.pop() : null;
 }
 
-export function set (name, value, exp) {
-	if (!global.document) { return; }
+export function set(name, value, exp) {
+	if (!global.document) {
+		return;
+	}
 
 	let cookie = `${name}=${encodeURIComponent(value)}`;
 
@@ -28,6 +32,4 @@ export function set (name, value, exp) {
 	global.document.cookie = cookie;
 }
 
-export function clear (name) {
-
-}
+export function clear(name) {}

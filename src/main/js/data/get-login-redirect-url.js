@@ -1,6 +1,6 @@
 import getReturnURL from './get-return-url';
 
-export default function getLoginRedirectURL () {
+export default function getLoginRedirectURL() {
 	const returnURL = getReturnURL();
 
 	try {
@@ -10,7 +10,7 @@ export default function getLoginRedirectURL () {
 		//the same as when it was just `return ${returnURL}?_u=42` we're going to
 		//let it throw for now
 		const url = new URL(returnURL);
-		
+
 		url.searchParams.set('_u', 42);
 
 		return url.toString();

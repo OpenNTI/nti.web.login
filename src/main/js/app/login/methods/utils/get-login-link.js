@@ -1,10 +1,12 @@
 const LoginPassword = 'logon.nti.password';
 const LDAPRegex = /login\.ldap\./;
 
-export default function getLoginLink (handshake) {
-	if (!handshake || !handshake.links) { return null; }
+export default function getLoginLink(handshake) {
+	if (!handshake || !handshake.links) {
+		return null;
+	}
 
-	const {links} = handshake;
+	const { links } = handshake;
 
 	let url = handshake.getLink(LoginPassword);
 

@@ -1,4 +1,4 @@
-import {mergeClassName as add} from '../../utils';
+import { mergeClassName as add } from '../../utils';
 
 const PageBody = styled('section').attrs(add('page-body'))`
 	flex: 1 1 auto;
