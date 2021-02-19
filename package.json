@@ -1,6 +1,6 @@
 {
   "name": "@nti/web-login",
-  "version": "2021.2.0",
+  "version": "2021.2.1",
   "description": "Nexthought Platform Login App",
   "author": "nextthought",
   "license": "UNLICENSED",
@@ -31,7 +31,6 @@
     "type": "git",
     "url": "https://github.com/NextThought/nti.web.login.git"
   },
-  "dependencies": {},
   "devDependencies": {
     "@nti/app-scripts": "^2.31.8",
     "@nti/lib-commons": "NextThought/nti.lib.commons",
