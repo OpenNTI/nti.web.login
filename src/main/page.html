@@ -47,8 +47,7 @@
 			window.onerror = function (msg) {
 				if (!window.appInitialized) {
 					window.location.replace(
-						'/unsupported?error=' +
-							encodeURIComponent(msg)
+						'/unsupported?error=' + encodeURIComponent(msg)
 					);
 				}
 			};
