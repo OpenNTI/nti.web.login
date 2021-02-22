@@ -118,7 +118,7 @@ export default class SignupStore extends Stores.SimpleStore {
 		return this[FormatData](data);
 	}
 
-	[Preflight](data, errors, field = 'all') {
+	[Preflight](data, errors = {}, field = 'all') {
 		const inflight = FieldPreflight.get(field);
 
 		this.preflightData = this.preflightData || {};
@@ -140,7 +140,7 @@ export default class SignupStore extends Stores.SimpleStore {
 				const isCurrentTask = FieldTasks.get(field) === task;
 				const ping = this.get(Ping);
 
-				if (errors && errors[field]) {
+				if (errors?.[field]) {
 					const e = new Error(errors[field]);
 					e.field = field;
 					reject(e);
@@ -162,9 +162,7 @@ export default class SignupStore extends Stores.SimpleStore {
 						return;
 					}
 
-					const existing = errors[e.field];
-
-					if (existing) {
+					if (errors?.[e.field]) {
 						const err = new Error(errors[e.field]);
 						err.field = e.field;
 						reject(err);
