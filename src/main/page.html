@@ -47,13 +47,13 @@
 			window.onerror = function (msg) {
 				if (!window.appInitialized) {
 					window.location.replace(
-						'/unsupported?error=' + encodeURIComponent(msg)
+						'./unsupported?error=' + encodeURIComponent(msg)
 					);
 				}
 			};
 
 			// if (!new RegExp(<%= JSON.stringify(SUPPORTED_AGENTS) %>).test(navigator.userAgent)) {
-			// 	location.replace('/unsupported');
+			// 	location.replace('./unsupported');
 			// }
 		</script>
 		<main id="content">
