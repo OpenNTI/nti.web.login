@@ -20,16 +20,16 @@ const FormatAndCheckData = 'formatAndCheckData';
 const Preflight = 'Preflight';
 const PreflightDelay = 750;
 
-const FieldPreflights = new Map();
+const FieldPreflight = new Map();
 const FieldTasks = new Map();
 
 const Prefill = 'Prefill';
 
 function checkPassword(data) {
-	if (data.password2 == null) {
+	if (data?.password2 == null) {
 		return;
 	}
-	if (data.password2 === data.password) {
+	if (data?.password2 === data?.password) {
 		return;
 	}
 
@@ -119,7 +119,7 @@ export default class SignupStore extends Stores.SimpleStore {
 	}
 
 	[Preflight](data, errors, field = 'all') {
-		const inflight = FieldPreflights.get(field);
+		const inflight = FieldPreflight.get(field);
 
 		this.preflightData = this.preflightData || {};
 
@@ -173,11 +173,11 @@ export default class SignupStore extends Stores.SimpleStore {
 
 					reject(e);
 				} finally {
-					FieldPreflights.delete(field);
+					FieldPreflight.delete(field);
 				}
 			}, PreflightDelay);
 
-			FieldPreflights.set(field, timeout);
+			FieldPreflight.set(field, timeout);
 		});
 	}
 
