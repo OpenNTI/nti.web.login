@@ -1,7 +1,8 @@
 import React from 'react';
 
+import { getPrivacyLink, getTermsLink } from 'internal/data';
+
 import Text from '../text';
-import { getPrivacyLink, getTermsLink } from '../../data';
 
 export default function TermsAndConditions() {
 	return (

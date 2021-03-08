@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { Form as FormBase, Loading } from '@nti/web-commons';
-
-import { Text, Inputs, Button, Routing } from '../../../common';
+import { Text, Inputs, Button, Routing } from 'internal/common';
 
 const Form = styled(FormBase)`
 	&.busy {

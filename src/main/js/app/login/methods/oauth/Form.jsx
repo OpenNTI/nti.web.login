@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Utils, OAuth } from 'common';
+import { Utils, OAuth } from 'internal/common';
 
 import Store from '../../Store';
 

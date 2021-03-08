@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { Loading, Hooks, Errors, Theme } from '@nti/web-commons';
-
-import { PaddedContainer, Page, Text, Routing } from '../../../common';
-import Store from '../../login/Store';
+import { PaddedContainer, Page, Text, Routing } from 'internal/common';
+import Store from 'internal/app/login/Store';
 
 import Options from './Options';
 

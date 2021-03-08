@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Router } from '@reach/router';
-import { Hooks } from '@nti/web-commons';
 
-import { getInvitation } from '../../data';
+import { Hooks } from '@nti/web-commons';
+import { getInvitation } from 'internal/data';
 
 import Options from './options';
 import Signup from './signup';

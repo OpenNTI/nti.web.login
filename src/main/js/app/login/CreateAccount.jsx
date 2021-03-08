@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Text, Routing } from '../../common';
+import { Text, Routing } from 'internal/common';
 
 import Store from './Store';
 import { canCreateAccount } from './methods/utils';

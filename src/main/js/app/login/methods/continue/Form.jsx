@@ -1,10 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { getServer } from '@nti/web-client';
 import { Errors } from '@nti/web-commons';
+import { Text, Button } from 'internal/common';
 
-import { Text, Button } from '../../../../common';
 import Store from '../../Store';
 
 import UserInfo from './UserInfo';

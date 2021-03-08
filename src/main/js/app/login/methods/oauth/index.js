@@ -1,4 +1,4 @@
-import { hasOauthLinks } from 'common/utils';
+import { hasOauthLinks } from 'internal/common/utils';
 
 import Form from './Form';
 

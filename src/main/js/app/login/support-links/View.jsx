@@ -1,14 +1,14 @@
 import React from 'react';
+
 import { scoped } from '@nti/lib-locale';
 import { List, Theme } from '@nti/web-commons';
-
 import {
 	getTermsLink,
 	getSupportLink,
 	getPrivacyLink,
 	Cookies,
-} from '../../../data';
-import { Text } from '../../../common';
+} from 'internal/data';
+import { Text } from 'internal/common';
 
 import FullLogo from './assets/full-logo.png';
 import FullLogoX2 from './assets/full-logo@2x.png';

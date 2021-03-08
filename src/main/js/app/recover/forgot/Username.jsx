@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { getServer } from '@nti/web-client';
 import { Form as FormBase, Loading } from '@nti/web-commons';
-
-import { Page, PaddedContainer, Inputs, Button, Text } from '../../../common';
+import { Page, PaddedContainer, Inputs, Button, Text } from 'internal/common';
 
 const t = scoped('nti-login.recover.forgot.Username', {
 	title: 'Forgot Username?',

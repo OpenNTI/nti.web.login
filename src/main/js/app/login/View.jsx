@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { Loading } from '@nti/web-commons';
-
-import { PaddedContainer, Page } from '../../common';
+import { PaddedContainer, Page } from 'internal/common';
 
 import Store from './Store';
 import Methods from './methods';

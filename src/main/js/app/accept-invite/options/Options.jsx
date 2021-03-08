@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Theme } from '@nti/web-commons';
 
-import { Button, Routing } from '../../../common/';
-import Store from '../../login/Store';
-import LoginMethods from '../../login/methods';
-import CreateAccount from '../../login/CreateAccount';
+import { Theme } from '@nti/web-commons';
+import { Button, Routing } from 'internal/common/';
+import Store from 'internal/app/login/Store';
+import LoginMethods from 'internal/app/login/methods';
+import CreateAccount from 'internal/app/login/CreateAccount';
 
 const { Continue, Password, Oauth } = LoginMethods;
 

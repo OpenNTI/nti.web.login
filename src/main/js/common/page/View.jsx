@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { Theme } from '@nti/web-commons';
 
 import Description from './Description';

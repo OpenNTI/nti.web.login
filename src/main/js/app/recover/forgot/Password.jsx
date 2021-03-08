@@ -2,11 +2,11 @@ import path from 'path';
 
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { getServer } from '@nti/web-client';
 import { Loading } from '@nti/web-commons';
-
-import { Page, PaddedContainer, Inputs } from '../../../common';
+import { Page, PaddedContainer, Inputs } from 'internal/common';
 
 import { Form, SuccessMessage, SentTo, Submit } from './Username';
 

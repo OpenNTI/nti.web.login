@@ -1,7 +1,6 @@
 import { Stores } from '@nti/lib-store';
 import { getServer } from '@nti/web-client';
-
-import { getResetPasswordLink, getReturnURL } from '../../../data';
+import { getResetPasswordLink, getReturnURL } from 'internal/data';
 
 const Setup = 'setup';
 const Loaded = 'Loaded';

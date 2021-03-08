@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Loading } from '@nti/web-commons';
 
-import { Page, Text, Routing } from '../../../common';
+import { Loading } from '@nti/web-commons';
+import { Page, Text, Routing } from 'internal/common';
 
 import Store from './Store';
 import Username from './Username';

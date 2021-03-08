@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import { addFeatureCheckClasses } from '@nti/lib-dom';
 import { init as initLocale } from '@nti/lib-locale';
 import { initErrorReporter } from '@nti/web-client';

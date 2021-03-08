@@ -1,7 +1,6 @@
 import { Stores } from '@nti/lib-store';
 import { getServer, getService } from '@nti/web-client'; //eslint-disable-line
-
-import { getAnonymousPing, getReturnURL } from '../../data';
+import { getAnonymousPing, getReturnURL } from 'internal/data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';

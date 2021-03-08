@@ -1,6 +1,5 @@
 import { Stores } from '@nti/lib-store';
-
-import { getForgotPasswordLink, getForgotUsernameLink } from '../../../data';
+import { getForgotPasswordLink, getForgotUsernameLink } from 'internal/data';
 
 const Setup = 'setup';
 const Loaded = 'loaded';

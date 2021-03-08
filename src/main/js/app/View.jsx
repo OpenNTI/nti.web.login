@@ -1,9 +1,9 @@
 import React from 'react';
 import { Router } from '@reach/router';
+
 import { getConfig } from '@nti/web-client';
 import { Theme } from '@nti/web-commons';
-
-import { Page, Theme as LoginTheme } from '../common';
+import { Page, Theme as LoginTheme } from 'internal/common';
 
 import '@nti/style-common/all.scss';
 import '@nti/style-common/variables.css';

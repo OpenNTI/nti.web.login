@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Text, Routing } from '../../../../common';
+import { Text, Routing } from 'internal/common';
 
 const Block = styled(Text.Body)`
 	margin-bottom: 2.25rem;

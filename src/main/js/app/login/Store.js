@@ -1,11 +1,10 @@
 import { Stores } from '@nti/lib-store';
 import { getServer } from '@nti/web-client';
-
 import {
 	getAnonymousPing,
 	getReturnURL,
 	getLoginRedirectURL,
-} from '../../data';
+} from 'internal/data';
 
 const Setup = 'setup';
 const Reload = 'reload';

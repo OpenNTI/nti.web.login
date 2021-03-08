@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+
 import { scoped } from '@nti/lib-locale';
 import { Form as FormBase, Theme, Loading } from '@nti/web-commons';
 import { getServer } from '@nti/web-client';
-
-import { Inputs, Button, TermsAndConditions } from '../../common';
+import { Inputs, Button, TermsAndConditions } from 'internal/common';
 
 import Store from './Store';
 
