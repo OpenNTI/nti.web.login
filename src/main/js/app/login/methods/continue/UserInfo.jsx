@@ -37,6 +37,10 @@ const DisplayName = styled(User.DisplayName)`
 	color: var(--primary-grey);
 `;
 
+const Spinner = styled(Loading.Spinner.Large)`
+	margin: 99px auto;
+`;
+
 export default function UserInfo() {
 	const [loading, setLoading] = React.useState(false);
 	const [user, setUser] = React.useState(null);
@@ -67,11 +71,7 @@ export default function UserInfo() {
 	}
 
 	return (
-		<Loading.Placeholder
-			loading={loading}
-			delay={0}
-			fallback={<Loading.Spinner.Large />}
-		>
+		<Loading.Placeholder loading={loading} delay={0} fallback={<Spinner />}>
 			<Container className="user-info">
 				{user && <Avatar user={user} />}
 				{user && (
