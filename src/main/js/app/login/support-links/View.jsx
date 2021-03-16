@@ -3,6 +3,7 @@ import React from 'react';
 import { scoped } from '@nti/lib-locale';
 import { List, Theme } from '@nti/web-commons';
 import {
+	getAboutLink,
 	getTermsLink,
 	getSupportLink,
 	getPrivacyLink,
@@ -69,18 +70,21 @@ async function resolveLinks(update) {
 	}
 
 	const resolve = async () => {
+		const about = await getAboutLink();
 		const support = await getSupportLink();
 		const terms = await getTermsLink();
 		const privacy = await getPrivacyLink();
 		const contrast = Cookies.get(ContrastCookie) === 'true';
 
 		const links = [
-			{
-				href: '//nextthought.com',
-				title: t('about.title'),
-				label: t('about.label'),
-				target: '_blank',
-			},
+			about
+				? {
+						href: about,
+						title: t('about.title'),
+						label: t('about.label'),
+						target: '_blank',
+				  }
+				: null,
 			support
 				? {
 						href: support,
