@@ -1,6 +1,6 @@
-import getReturnURL from './get-return-url';
+import { getReturnURL } from './get-return-url';
 
-export default function getLoginRedirectURL() {
+export function getLoginRedirectURL() {
 	const returnURL = getReturnURL();
 
 	try {

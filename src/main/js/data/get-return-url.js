@@ -1,7 +1,7 @@
-import { getConfig, getReturnURL } from '@nti/web-client';
+import { getConfig, getReturnURL as _getReturnURL } from '@nti/web-client';
 
 const ifString = x => (typeof x === 'string' ? x : null);
 
-export default function _getReturnURL() {
-	return getReturnURL() || ifString(getConfig('url')) || '/loginsuccess';
+export function getReturnURL() {
+	return _getReturnURL() || ifString(getConfig('url')) || '/loginsuccess';
 }

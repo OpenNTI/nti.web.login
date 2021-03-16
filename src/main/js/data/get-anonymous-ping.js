@@ -2,15 +2,9 @@ import { getServer } from '@nti/web-client';
 
 let ping = null;
 
-async function doPing() {
-	const pong = await getServer().ping();
-
-	return pong;
-}
-
-export default function getAnonymousPing(force) {
+export async function getAnonymousPing(force) {
 	if (!ping || force) {
-		ping = doPing();
+		ping = getServer().ping();
 	}
 
 	return ping;

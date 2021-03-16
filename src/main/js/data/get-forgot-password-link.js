@@ -1,6 +1,6 @@
-import getAnonymousPing from './get-anonymous-ping';
+import { getAnonymousPing } from './get-anonymous-ping';
 
-export default async function getForgotPasswordLink() {
+export async function getForgotPasswordLink() {
 	try {
 		const ping = await getAnonymousPing();
 
