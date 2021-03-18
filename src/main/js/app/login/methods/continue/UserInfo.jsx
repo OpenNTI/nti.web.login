@@ -7,8 +7,9 @@ const Container = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	width: 200px;
-	min-height: 150px;
+	height: 240px;
 	margin: 2rem auto;
 	padding: 1.5rem;
 	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.19), 0 0 3px 0 rgba(0, 0, 0, 0.3);
@@ -38,7 +39,7 @@ const DisplayName = styled(User.DisplayName)`
 `;
 
 const Spinner = styled(Loading.Spinner.Large)`
-	margin: 99px auto;
+	/* margin: 99px auto; */
 `;
 
 export default function UserInfo() {
@@ -66,18 +67,24 @@ export default function UserInfo() {
 		}
 	});
 
-	if (!loading && !user) {
-		return null;
-	}
-
 	return (
-		<Loading.Placeholder loading={loading} delay={0} fallback={<Spinner />}>
-			<Container className="user-info">
-				{user && <Avatar user={user} />}
+		<Container className="user-info">
+			<Loading.Placeholder
+				loading={loading}
+				delay={0}
+				fallback={<Spinner />}
+			>
 				{user && (
-					<DisplayName tag={Text.Base} user={user} limitLines={2} />
+					<>
+						<Avatar user={user} />
+						<DisplayName
+							tag={Text.Base}
+							user={user}
+							limitLines={2}
+						/>
+					</>
 				)}
-			</Container>
-		</Loading.Placeholder>
+			</Loading.Placeholder>
+		</Container>
 	);
 }
