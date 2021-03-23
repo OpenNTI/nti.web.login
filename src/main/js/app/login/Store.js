@@ -1,12 +1,12 @@
 import { Stores } from '@nti/lib-store';
 import { getServer } from '@nti/web-client';
-import { getPing, getReturnURL, getLoginRedirectURL } from 'internal/data';
+import { getPong, getReturnURL, getLoginRedirectURL } from 'internal/data';
 
 const Setup = 'setup';
 const Reload = 'reload';
-const HasPing = 'hasPing';
+const HasPong = 'hasPong';
 const Handshake = 'handshake';
-const Ping = 'ping';
+const Pong = 'pong';
 
 const Busy = 'busy';
 const Error = 'error';
@@ -47,7 +47,7 @@ function getErrorParams() {
 export default class LoginStore extends Stores.SimpleStore {
 	static Setup = Setup;
 	static Reload = Reload;
-	static HasPing = HasPing;
+	static HasPong = HasPong;
 	static Handshake = Handshake;
 	static Busy = Busy;
 	static SetBusy = SetBusy;
@@ -60,12 +60,12 @@ export default class LoginStore extends Stores.SimpleStore {
 	static GetHandshakeForUsername = GetHandshakeForUsername;
 
 	async [Setup]() {
-		if (this.get(HasPing)) {
+		if (this.get(HasPong)) {
 			return;
 		}
 
 		this.set({
-			[HasPing]: false,
+			[HasPong]: false,
 			[Handshake]: null,
 			[Error]: null,
 			[Busy]: true,
@@ -74,13 +74,13 @@ export default class LoginStore extends Stores.SimpleStore {
 		delete this.currentTask;
 
 		try {
-			const ping = await getPing();
+			const pong = await getPong();
 
 			this.set({
 				[Busy]: false,
-				[HasPing]: true,
-				[Handshake]: ping,
-				[Ping]: ping,
+				[HasPong]: true,
+				[Handshake]: pong,
+				[Pong]: pong,
 				[Error]: getErrorParams(),
 			});
 		} catch (e) {
@@ -100,12 +100,12 @@ export default class LoginStore extends Stores.SimpleStore {
 		delete this.currentTask;
 
 		try {
-			const ping = await getPing(true);
+			const pong = await getPong(true);
 
 			this.set({
 				[Busy]: false,
-				[Handshake]: ping,
-				[Ping]: ping,
+				[Handshake]: pong,
+				[Pong]: pong,
 			});
 		} catch (e) {
 			this.set({
@@ -145,11 +145,11 @@ export default class LoginStore extends Stores.SimpleStore {
 		const updateUsername = async () => {
 			try {
 				const handshake = await this[GetHandshakeForUsername](username);
-				const ping = this.get(Ping);
+				const pong = this.get(Pong);
 
 				this.set({
 					[Error]: null,
-					[Handshake]: { ...(ping || {}), ...(handshake || {}) },
+					[Handshake]: { ...(pong || {}), ...(handshake || {}) },
 				});
 			} catch (e) {
 				this.set({
@@ -164,7 +164,7 @@ export default class LoginStore extends Stores.SimpleStore {
 	[GetHandshakeForUsername](username) {
 		const getHandshake = async () => {
 			try {
-				const handshake = await getServer().ping(username);
+				const handshake = await getServer().pong(username);
 
 				return handshake;
 			} catch (e) {

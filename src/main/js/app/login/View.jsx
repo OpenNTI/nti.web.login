@@ -18,19 +18,19 @@ const t = scoped('nti-login.login.View', {
 
 Login.propTypes = {
 	setup: PropTypes.func.isRequired,
-	hasPing: PropTypes.bool,
+	hasPong: PropTypes.bool,
 	error: PropTypes.any,
 	busy: PropTypes.bool,
 };
-function Login({ setup, hasPing, error, busy }) {
+function Login({ setup, hasPong, error, busy }) {
 	const [forceNextThoughtLogin, setForceNextThoughtLogin] = React.useState(
 		false
 	);
 
-	const initialLoad = !hasPing && busy;
+	const initialLoad = !hasPong && busy;
 
 	React.useEffect(() => {
-		if (!hasPing && !busy) {
+		if (!hasPong && !busy) {
 			setup();
 		}
 
@@ -71,7 +71,7 @@ function Login({ setup, hasPing, error, busy }) {
 		};
 	});
 
-	if (!hasPing && !busy && !error) {
+	if (!hasPong && !busy && !error) {
 		return null;
 	}
 
@@ -87,7 +87,7 @@ function Login({ setup, hasPing, error, busy }) {
 					<PaddedContainer>
 						{error && (
 							<Unavailable
-								error={hasPing ? error : t('setupError')}
+								error={hasPong ? error : t('setupError')}
 							/>
 						)}
 						<Methods
@@ -106,7 +106,7 @@ function Login({ setup, hasPing, error, busy }) {
 
 export default Store.connect({
 	[Store.Setup]: 'setup',
-	[Store.HasPing]: 'hasPing',
+	[Store.HasPong]: 'hasPong',
 	[Store.Error]: 'error',
 	[Store.Busy]: 'busy',
 })(Login);

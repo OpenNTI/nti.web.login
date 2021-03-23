@@ -84,7 +84,7 @@ function AcceptInviteSignup({
 
 export default Store.connect({
 	[Store.Setup]: 'setup',
-	[Store.HasPing]: 'hasPing',
+	[Store.HasPong]: 'hasPong',
 	[Store.CanCreateAccount]: 'canCreateAccount',
 	[Store.Loading]: 'loading',
 	[Store.Loaded]: 'loaded',

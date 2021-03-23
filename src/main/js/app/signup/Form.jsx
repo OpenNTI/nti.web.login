@@ -155,7 +155,7 @@ function SignupForm({
 }
 
 export default Store.monitor({
-	[Store.Ping]: 'ping',
+	[Store.Pong]: 'pong',
 	[Store.Preflight]: 'preflight',
 	[Store.ReturnURL]: 'returnURL',
 	[Store.Busy]: 'busy',

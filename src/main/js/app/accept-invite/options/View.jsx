@@ -46,7 +46,7 @@ AcceptInviteOptionsPage.propTypes = {
 	invitation: PropTypes.any,
 	handshake: PropTypes.object,
 	setup: PropTypes.func.isRequired,
-	hasPing: PropTypes.bool,
+	hasPong: PropTypes.bool,
 	busy: PropTypes.bool,
 	error: PropTypes.any,
 };
@@ -55,15 +55,15 @@ function AcceptInviteOptionsPage({
 	handshake,
 	invitation,
 	setup,
-	hasPing,
+	hasPong,
 	error: storeError,
 	busy,
 	forcePassword,
 }) {
-	const initialLoad = !hasPing && busy;
+	const initialLoad = !hasPong && busy;
 
 	React.useEffect(() => {
-		if (!hasPing && !busy) {
+		if (!hasPong && !busy) {
 			setup();
 		}
 	});
@@ -115,7 +115,7 @@ function AcceptInviteOptionsPage({
 export default Store.connect({
 	[Store.Handshake]: 'handshake',
 	[Store.Setup]: 'setup',
-	[Store.HasPing]: 'hasPing',
+	[Store.HasPong]: 'hasPong',
 	[Store.Error]: 'error',
 	[Store.Busy]: 'busy',
 })(AcceptInviteOptionsPage);

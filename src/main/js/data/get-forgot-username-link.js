@@ -1,10 +1,10 @@
-import { getPing } from './get-ping';
+import { getPong } from './get-pong';
 
 export async function getForgotUsernameLink() {
 	try {
-		const ping = await getPing();
+		const pong = await getPong();
 
-		return ping.getLink('logon.forgot.username');
+		return pong.getLink('logon.forgot.username');
 	} catch (e) {
 		return null;
 	}

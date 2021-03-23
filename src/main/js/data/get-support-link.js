@@ -1,9 +1,9 @@
-import { getPing } from './get-ping';
+import { getPong } from './get-pong';
 
 export async function getSupportLink() {
 	try {
-		const ping = await getPing();
-		return ping.getLink('support') || ping.getLink('support-email');
+		const pong = await getPong();
+		return pong.getLink('support') || pong.getLink('support-email');
 	} catch (e) {
 		return null;
 	}

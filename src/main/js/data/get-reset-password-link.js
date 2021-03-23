@@ -1,10 +1,10 @@
-import { getPing } from './get-ping';
+import { getPong } from './get-pong';
 
 export async function getResetPasswordLink() {
 	try {
-		const ping = await getPing();
+		const pong = await getPong();
 
-		return ping.getLink('logon.reset.passcode');
+		return pong.getLink('logon.reset.passcode');
 	} catch (e) {
 		return null;
 	}

@@ -1,12 +1,12 @@
-import { getPing } from './get-ping';
-
-const PrivacyLink =
-	'https://docs.google.com/document/u/1/pub?id=1W9R8s1jIHWTp38gvacXOStsfmUz5TjyDYYy3CVJ2SmM';
+import { getPong } from './get-pong';
 
 export async function getPrivacyLink() {
 	try {
-		const ping = await getPing();
-		return ping.getLink('privacy-policy') || PrivacyLink;
+		const pong = await getPong();
+		return (
+			pong.getLink('privacy-policy') ||
+			pong.getLink('content.permanent_general_privacy_page')
+		);
 	} catch (e) {
 		return null;
 	}

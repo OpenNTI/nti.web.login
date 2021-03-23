@@ -1,11 +1,11 @@
-import { getPing } from './get-ping';
+import { getPong } from './get-pong';
 
 const AboutLink = 'https://nextthought.com';
 
 export async function getAboutLink() {
 	try {
-		const ping = await getPing();
-		return ping.getLink('about') || AboutLink;
+		const pong = await getPong();
+		return pong.getLink('about') || AboutLink;
 	} catch (e) {
 		return null;
 	}

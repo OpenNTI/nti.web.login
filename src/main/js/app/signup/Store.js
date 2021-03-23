@@ -1,12 +1,12 @@
 import { Stores } from '@nti/lib-store';
 import { getServer, getService } from '@nti/web-client'; //eslint-disable-line
-import { getPing, getReturnURL } from 'internal/data';
+import { getPong, getReturnURL } from 'internal/data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';
 const Loaded = 'Loaded';
 const CanCreateAccount = 'CanCreateAccount';
-const Ping = 'Ping';
+const Pong = 'Pong';
 const ReturnURL = 'returnURL';
 
 const Busy = 'Busy';
@@ -72,22 +72,22 @@ export default class SignupStore extends Stores.SimpleStore {
 	static SetBusy = SetBusy;
 	static Prefill = Prefill;
 	static ErrorState = ErrorState;
-	static Ping = Ping;
+	static Pong = Pong;
 
 	async [Setup](isAdminInvitation) {
 		this.set({
 			[Loading]: true,
-			[Ping]: null,
+			[Pong]: null,
 		});
 
 		try {
-			const ping = await getPing();
+			const pong = await getPong();
 
 			this.set({
 				[Loading]: false,
 				[Loaded]: true,
-				[Ping]: ping,
-				[CanCreateAccount]: ping.hasLink('account.create'),
+				[Pong]: pong,
+				[CanCreateAccount]: pong.hasLink('account.create'),
 				[ErrorState]: getErrorParams(),
 			});
 		} catch (e) {
@@ -137,7 +137,7 @@ export default class SignupStore extends Stores.SimpleStore {
 		return new Promise((fulfill, reject) => {
 			const timeout = setTimeout(async () => {
 				const isCurrentTask = FieldTasks.get(field) === task;
-				const ping = this.get(Ping);
+				const pong = this.get(Pong);
 
 				if (errors?.[field]) {
 					const e = new Error(errors[field]);
@@ -153,7 +153,7 @@ export default class SignupStore extends Stores.SimpleStore {
 
 					const formatted = this[FormatData](this.preflightData);
 					await getServer().post(
-						ping.getLink('account.preflight.create'),
+						pong.getLink('account.preflight.create'),
 						formatted
 					);
 				} catch (e) {
