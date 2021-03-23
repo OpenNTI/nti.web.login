@@ -1,6 +1,6 @@
 export * as Cookies from './Cookies';
 export * from './get-about-link';
-export * from './get-anonymous-ping';
+export * from './get-ping';
 export * from './get-forgot-password-link';
 export * from './get-forgot-username-link';
 export * from './get-invitation';

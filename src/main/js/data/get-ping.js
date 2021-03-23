@@ -2,7 +2,7 @@ import { getServer } from '@nti/web-client';
 
 let ping = null;
 
-export async function getAnonymousPing(force) {
+export async function getPing(force) {
 	if (!ping || force) {
 		ping = getServer().ping();
 	}

@@ -1,8 +1,8 @@
-import { getAnonymousPing } from './get-anonymous-ping';
+import { getPing } from './get-ping';
 
 export async function getForgotUsernameLink() {
 	try {
-		const ping = await getAnonymousPing();
+		const ping = await getPing();
 
 		return ping.getLink('logon.forgot.username');
 	} catch (e) {
