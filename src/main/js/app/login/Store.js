@@ -1,10 +1,6 @@
 import { Stores } from '@nti/lib-store';
 import { getServer } from '@nti/web-client';
-import {
-	getAnonymousPing,
-	getReturnURL,
-	getLoginRedirectURL,
-} from 'internal/data';
+import { getPing, getReturnURL, getLoginRedirectURL } from 'internal/data';
 
 const Setup = 'setup';
 const Reload = 'reload';
@@ -78,7 +74,7 @@ export default class LoginStore extends Stores.SimpleStore {
 		delete this.currentTask;
 
 		try {
-			const ping = await getAnonymousPing();
+			const ping = await getPing();
 
 			this.set({
 				[Busy]: false,
@@ -104,7 +100,7 @@ export default class LoginStore extends Stores.SimpleStore {
 		delete this.currentTask;
 
 		try {
-			const ping = await getAnonymousPing(true);
+			const ping = await getPing(true);
 
 			this.set({
 				[Busy]: false,

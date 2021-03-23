@@ -1,6 +1,6 @@
 import { Stores } from '@nti/lib-store';
 import { getServer, getService } from '@nti/web-client'; //eslint-disable-line
-import { getAnonymousPing, getReturnURL } from 'internal/data';
+import { getPing, getReturnURL } from 'internal/data';
 
 const Setup = 'Setup';
 const Loading = 'Loading';
@@ -81,7 +81,7 @@ export default class SignupStore extends Stores.SimpleStore {
 		});
 
 		try {
-			const ping = await getAnonymousPing();
+			const ping = await getPing();
 
 			this.set({
 				[Loading]: false,
