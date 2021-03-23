@@ -3,7 +3,7 @@ import { getAnonymousPing } from './get-anonymous-ping';
 export async function getSupportLink() {
 	try {
 		const ping = await getAnonymousPing();
-		return ping.getLink('support-email');
+		return ping.getLink('support') || ping.getLink('support-email');
 	} catch (e) {
 		return null;
 	}
