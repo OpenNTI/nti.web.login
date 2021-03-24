@@ -164,7 +164,7 @@ export default class LoginStore extends Stores.SimpleStore {
 	[GetHandshakeForUsername](username) {
 		const getHandshake = async () => {
 			try {
-				const handshake = await getServer().pong(username);
+				const handshake = await getServer().ping(username);
 
 				return handshake;
 			} catch (e) {
