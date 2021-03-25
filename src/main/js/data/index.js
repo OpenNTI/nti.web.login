@@ -1,12 +1,12 @@
 export * as Cookies from './Cookies';
 export * from './get-about-link';
-export * from './get-pong';
 export * from './get-forgot-password-link';
 export * from './get-forgot-username-link';
+export * from './get-help-link';
 export * from './get-invitation';
 export * from './get-login-redirect-url';
+export * from './get-pong';
 export * from './get-privacy-link';
 export * from './get-reset-password-link';
 export * from './get-return-url';
-export * from './get-support-link';
 export * from './get-terms-link';

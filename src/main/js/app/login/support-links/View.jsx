@@ -5,7 +5,7 @@ import { List, Theme } from '@nti/web-commons';
 import {
 	getAboutLink,
 	getTermsLink,
-	getSupportLink,
+	getHelpLink,
 	getPrivacyLink,
 	Cookies,
 } from 'internal/data';
@@ -71,7 +71,7 @@ async function resolveLinks(update) {
 
 	const resolve = async () => {
 		const about = await getAboutLink();
-		const support = await getSupportLink();
+		const help = await getHelpLink();
 		const terms = await getTermsLink();
 		const privacy = await getPrivacyLink();
 		const contrast = Cookies.get(ContrastCookie) === 'true';
@@ -85,9 +85,9 @@ async function resolveLinks(update) {
 						target: '_blank',
 				  }
 				: null,
-			support
+			help
 				? {
-						href: support,
+						href: help,
 						title: t('help.title'),
 						label: t('help.label'),
 						target: '_blank',

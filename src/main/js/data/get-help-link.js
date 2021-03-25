@@ -1,9 +1,9 @@
 import { getPong } from './get-pong';
 
-export async function getSupportLink() {
+export async function getHelpLink() {
 	try {
 		const pong = await getPong();
-		return pong.getLink('support') || pong.getLink('support-email');
+		return pong.getLink('content.help-site');
 	} catch (e) {
 		return null;
 	}
