@@ -21,7 +21,8 @@
   "scripts": {
     "build": "app-scripts build",
     "start": "app-scripts start",
-    "release": "app-scripts release",
+    "snapshot": "npx @nti/snapshot",
+    "release": "npx @nti/release",
     "test": "app-scripts test",
     "clean": "app-scripts clean",
     "check": "app-scripts check",
