@@ -13,6 +13,7 @@ import Login from './login';
 import Recover from './recover';
 import Signup from './signup';
 import AcceptInvite from './accept-invite';
+import { CatalogView } from './catalog';
 
 export default React.forwardRef(function LoginApp(props, ref) {
 	const basePath = getConfig('basepath');
@@ -34,6 +35,7 @@ export default React.forwardRef(function LoginApp(props, ref) {
 					path="accept-invite/*"
 					scope="acceptInvitation"
 				/>
+				<CatalogView path="catalog/*" scope="catalog" />
 				<Page component={Login} path="/" scope="login" />
 			</Router>
 		</Theme.Apply>
