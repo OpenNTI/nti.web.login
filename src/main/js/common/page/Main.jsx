@@ -22,9 +22,8 @@ const Container = styled.div`
 
 PageMain.propTypes = {
 	component: PropTypes.any,
-	position: PropTypes.number,
 };
-export default function PageMain({ component: Cmp, position, ...otherProps }) {
+export default function PageMain({ component: Cmp, ...otherProps }) {
 	return (
 		<Container>
 			<Cmp {...otherProps} />

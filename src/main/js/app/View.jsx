@@ -21,32 +21,20 @@ export default React.forwardRef(function LoginApp(props, ref) {
 	return (
 		<Theme.Apply theme={LoginTheme.getTheme()}>
 			<Router basepath={basePath}>
-				<Page
-					component={Recover}
-					path="recover/*"
-					scope="recover"
-					position={3}
-				/>
-				<Page
-					component={Signup}
-					path="signup"
-					scope="signup"
-					position={2}
-				/>
+				<Page component={Recover} path="recover/*" scope="recover" />
+				<Page component={Signup} path="signup" scope="signup" />
 				<Page
 					component={AcceptInvite}
 					path="account-setup/*"
 					scope="accountSetup"
-					position={2}
 					isAccountSetup
 				/>
 				<Page
 					component={AcceptInvite}
 					path="accept-invite/*"
 					scope="acceptInvitation"
-					position={2}
 				/>
-				<Page component={Login} path="/" scope="login" position={1} />
+				<Page component={Login} path="/" scope="login" />
 			</Router>
 		</Theme.Apply>
 	);
