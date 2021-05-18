@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Router } from '@reach/router';
 
 import { Router as NTIRouter } from '@nti/web-routing';
@@ -16,6 +17,7 @@ const Container = styled('div')`
 	max-width: 1024px;
 	margin: 0 auto;
 `;
+
 
 const Detail = ({ id, ...other }) => {
 	const service = useService();
@@ -54,15 +56,21 @@ const Detail = ({ id, ...other }) => {
 // 	}),
 // ]);
 
-export function CatalogView(props) {
+export function CatalogView({location}) {
 	return (
 		<Suspense fallback={<div />}>
 			<NTIRouter.RouteForProvider getRouteFor={getRouteFor}>
 				<Router>
 					<Detail path="/nti-course-catalog-entry/:id" />
-					<Catalog path="/*" />
+					<Catalog path="/*" baseroute={location.pathname} />
 				</Router>
 			</NTIRouter.RouteForProvider>
 		</Suspense>
 	);
 }
+
+CatalogView.propTypes = {
+	location: PropTypes.shape({
+		pathname: PropTypes.string
+	})
+};
