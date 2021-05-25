@@ -1,27 +1,27 @@
 import { useEffect } from 'react';
-import { navigate, globalHistory } from '@reach/router';
+import { navigate, globalHistory, useLocation } from '@reach/router';
 
 import { AnonymousPage as AnonymousCatalog } from '@nti/web-catalog';
 import { getHistory } from '@nti/web-routing';
 
+const webRoutingHistory = getHistory();
+
 export function Catalog(props) {
+	const location = useLocation();
+
 	useEffect(() => {
-		const history = getHistory();
-		const unsubHistory = history.listen(({ pathname, state }) => {
+		return webRoutingHistory.listen(({ pathname, state }) => {
 			if (globalHistory.location?.pathname !== pathname) {
 				navigate(pathname, { replace: true });
 			}
 		});
-		const unsubGlobal = globalHistory.listen(({ action, location }) => {
-			if (location.pathname !== history.pathname) {
-				history.replace(location.pathname);
-			}
-		});
-		return (...args) => {
-			unsubHistory(...args);
-			unsubGlobal(...args);
-		};
-	});
+	}, []);
+
+	useEffect(() => {
+		if (location.pathname !== webRoutingHistory.pathname) {
+			webRoutingHistory.replace(location.pathname);
+		}
+	}, [location.pathname]);
 
 	return <AnonymousCatalog {...props} />;
 }
