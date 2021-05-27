@@ -15,15 +15,23 @@ import Signup from './signup';
 import AcceptInvite from './accept-invite';
 import { Catalog } from './catalog';
 
+const LOGIN = '/';
+const SIGNUP = 'signup';
+
 export default React.forwardRef(function LoginApp(props, ref) {
 	const basePath = getConfig('basepath');
 	React.useImperativeHandle(ref, () => ({}));
+
+	const PATHS = {
+		login: `${basePath}${LOGIN}`,
+		signup: `${basePath}${SIGNUP}`,
+	};
 
 	return (
 		<Theme.Apply theme={LoginTheme.getTheme()}>
 			<Router basepath={basePath}>
 				<Page component={Recover} path="recover/*" scope="recover" />
-				<Page component={Signup} path="signup" scope="signup" />
+				<Page component={Signup} path={SIGNUP} scope="signup" />
 				<Page
 					component={AcceptInvite}
 					path="account-setup/*"
@@ -35,8 +43,12 @@ export default React.forwardRef(function LoginApp(props, ref) {
 					path="accept-invite/*"
 					scope="acceptInvitation"
 				/>
-				<Catalog path="catalog/*" baseroute={`${basePath}catalog`} />
-				<Page component={Login} path="/" scope="login" />
+				<Catalog
+					path="catalog/*"
+					baseroute={`${basePath}catalog`}
+					paths={PATHS}
+				/>
+				<Page component={Login} path={LOGIN} scope="login" />
 			</Router>
 		</Theme.Apply>
 	);
