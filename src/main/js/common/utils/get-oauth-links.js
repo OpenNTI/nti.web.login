@@ -7,6 +7,7 @@ const BLACK_LIST = {
 	'logon.reset.passcode': true,
 	'logon.ping': true,
 	'logon.nti.password': true,
+	'logon.continue-anonymously': true,
 };
 
 function isOauthREL(rel) {
