@@ -36,3 +36,5 @@ export function Catalog(props) {
 
 	return <AnonymousCatalog {...props} />;
 }
+
+export default Catalog; // React.lazy only supports default exports
