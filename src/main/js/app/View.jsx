@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { Router } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
@@ -14,8 +14,8 @@ import Recover from './recover';
 import Signup from './signup';
 import AcceptInvite from './accept-invite';
 
-const Catalog = lazy(() =>
-	/* webpackChunkName: "catalog" */ import('./catalog')
+const Catalog = React.lazy(() =>
+	/* webpackChunkName: "catalog" */ import('./Catalog')
 );
 
 const LOGIN = '/';
