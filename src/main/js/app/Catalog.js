@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { navigate, globalHistory, useLocation } from '@reach/router';
 
 import { AnonymousPage as AnonymousCatalog } from '@nti/web-catalog';
-import { getHistory } from '@nti/web-routing';
+import { getHistory, Router } from '@nti/web-routing';
 
 const webRoutingHistory = getHistory();
 
@@ -16,9 +16,9 @@ function useRouterBridge() {
 
 	//When nti/web-routing changes
 	useEffect(() => {
-		return webRoutingHistory.listen(({ pathname, state }) => {
+		return webRoutingHistory.listen(({ pathname, search, state }) => {
 			if (globalHistory.location?.pathname !== pathname) {
-				navigate(pathname, { replace: true });
+				navigate(`${pathname}${search}`, { replace: true });
 			}
 		});
 	}, []);
@@ -33,8 +33,21 @@ function useRouterBridge() {
 
 export function Catalog(props) {
 	useRouterBridge();
+	const { paths } = props;
 
-	return <AnonymousCatalog {...props} />;
+	const getRouteFor = ({ type } = {}, context) => {
+		if (type === 'redeem-course-code') {
+			return `${paths.login}?return=${encodeURIComponent(
+				'/app/catalog/redeem/'
+			)}`;
+		}
+	};
+
+	return (
+		<Router.RouteForProvider getRouteFor={getRouteFor}>
+			<AnonymousCatalog {...props} />
+		</Router.RouteForProvider>
+	);
 }
 
 export default Catalog; // React.lazy only supports default exports
