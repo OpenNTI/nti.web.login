@@ -35,10 +35,16 @@ export function Catalog(props) {
 	useRouterBridge();
 	const { paths } = props;
 
-	const getRouteFor = ({ type } = {}, context) => {
-		if (type === 'redeem-course-code') {
+	const getRouteFor = (obj, context) => {
+		if (obj?.type === 'redeem-course-code') {
 			return `${paths.login}?return=${encodeURIComponent(
 				'/app/catalog/redeem/'
+			)}`;
+		}
+		if (context === 'enroll' && obj?.parent('NTIID')) {
+			const { NTIID } = obj?.parent('NTIID');
+			return `${paths.login}?return=${encodeURIComponent(
+				`/app/catalog/item/${NTIID}`
 			)}`;
 		}
 	};
