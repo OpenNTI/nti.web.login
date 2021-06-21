@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Router, useLocation, navigate } from '@reach/router';
+import { Router, useLocation } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
 import { Theme, Page as CommonsPage, useService } from '@nti/web-commons';
@@ -39,9 +39,9 @@ const AppRedirect = () => {
 
 	React.useEffect(
 		() =>
-			void navigate(location.pathname.replace(basepath, '/app/'), {
-				replace: true,
-			})
+			void global.location.replace(
+				location.pathname.replace(basepath, '/app/')
+			)
 	);
 
 	return null;
