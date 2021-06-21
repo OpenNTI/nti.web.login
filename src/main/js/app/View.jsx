@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Router } from '@reach/router';
+import { Router, useLocation, navigate } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
 import { Theme, Page as CommonsPage, useService } from '@nti/web-commons';
@@ -33,6 +33,20 @@ export default React.forwardRef(function LoginApp(props, ref) {
 	);
 });
 
+const AppRedirect = () => {
+	const location = useLocation();
+	const basepath = getConfig('basepath');
+
+	React.useEffect(
+		() =>
+			void navigate(location.pathname.replace(basepath, '/app/'), {
+				replace: true,
+			})
+	);
+
+	return null;
+};
+
 const useHasCatalog = () => {
 	const s = useService();
 	const collection = s.getCollection('Courses', 'Catalog');
@@ -40,6 +54,7 @@ const useHasCatalog = () => {
 };
 
 function Routes(props) {
+	const { isAnonymous } = useService();
 	const catalogAvailable = useHasCatalog();
 
 	const basePath = getConfig('basepath');
@@ -62,13 +77,16 @@ function Routes(props) {
 				path="accept-invite/*"
 				scope="acceptInvitation"
 			/>
-			{catalogAvailable && (
-				<Catalog
-					path="catalog/*"
-					baseroute={`${basePath}catalog`}
-					paths={PATHS}
-				/>
-			)}
+			{catalogAvailable &&
+				(isAnonymous ? (
+					<Catalog
+						path="catalog/*"
+						baseroute={`${basePath}catalog`}
+						paths={PATHS}
+					/>
+				) : (
+					<AppRedirect path="catalog/*" />
+				))}
 			<Page component={Login} path={LOGIN} scope="login" />
 			<CommonsPage.Content.NotFound fill default />
 		</Router>
