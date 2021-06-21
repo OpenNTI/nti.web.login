@@ -3,6 +3,7 @@ import { navigate, globalHistory, useLocation } from '@reach/router';
 
 import { AnonymousPage as AnonymousCatalog } from '@nti/web-catalog';
 import { getHistory, Router } from '@nti/web-routing';
+import { Models } from '@nti/lib-interfaces';
 
 const webRoutingHistory = getHistory();
 
@@ -31,16 +32,34 @@ function useRouterBridge() {
 	}, [location.pathname]);
 }
 
+const maybeCatalogEntryPath = (obj, context) => {
+	if (context === 'enroll') {
+		const catalogEntry = obj?.parent(
+			x => x instanceof Models.courses.CatalogEntry
+		);
+		const id = catalogEntry?.getID?.();
+		if (id) {
+			return `/app/catalog/item/${id}`;
+		}
+	}
+};
+
 export function Catalog(props) {
 	useRouterBridge();
 	const { paths } = props;
 
-	const getRouteFor = ({ type } = {}, context) => {
-		if (type === 'redeem-course-code') {
-			return `${paths.login}?return=${encodeURIComponent(
-				'/app/catalog/redeem/'
-			)}`;
+	// login with return path if provided, else null
+	const maybeLoginPath = returnPath =>
+		returnPath
+			? `${paths.login}?return=${encodeURIComponent(returnPath)}`
+			: null;
+
+	const getRouteFor = (obj, context) => {
+		if (obj?.type === 'redeem-course-code') {
+			return maybeLoginPath('/app/catalog/redeem/');
 		}
+
+		return maybeLoginPath(maybeCatalogEntryPath(obj, context));
 	};
 
 	return (
