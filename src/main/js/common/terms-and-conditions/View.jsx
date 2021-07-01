@@ -6,7 +6,7 @@ import { getPrivacyLink, getTermsLink } from 'internal/data';
 import Text from '../text';
 
 const { useResolver } = Hooks;
-const { isPending, isResolved } = useResolver();
+const { isPending, isResolved } = useResolver;
 
 export default function TermsAndConditions() {
 	const resolver = useResolver(async () => {
