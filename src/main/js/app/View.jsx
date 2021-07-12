@@ -2,7 +2,12 @@ import React, { Suspense } from 'react';
 import { Router, useLocation } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
-import { Theme, Page as CommonsPage, useService } from '@nti/web-commons';
+import {
+	Theme,
+	Page as CommonsPage,
+	useService,
+	Layouts,
+} from '@nti/web-commons';
 import { Page, Theme as LoginTheme } from 'internal/common';
 
 import '@nti/style-common/all.scss';
@@ -36,11 +41,12 @@ export default React.forwardRef(function LoginApp(props, ref) {
 const AppRedirect = () => {
 	const location = useLocation();
 	const basepath = getConfig('basepath');
+	const appPath = Layouts.Responsive.isMobile() ? '/mobile/' : '/app/';
 
 	React.useEffect(
 		() =>
 			void global.location.replace(
-				location.pathname.replace(basepath, '/app/')
+				location.pathname.replace(basepath, appPath)
 			)
 	);
 
