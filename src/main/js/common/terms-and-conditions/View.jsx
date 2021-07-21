@@ -25,11 +25,12 @@ export default function TermsAndConditions() {
 
 	return (
 		<Text.Medium center>
-			By creating an account, you agree to <br />{' '}
+			By creating an account,
+			<br /> you agree to the{' '}
 			<a href={termsLink} target="_blank" rel="noopener noreferrer">
 				Terms of Use
-			</a>{' '}
-			and{' '}
+			</a>
+			<br /> and you acknowledge the{' '}
 			<a href={privacyLink} target="_blank" rel="noopener noreferrer">
 				Privacy Policy.
 			</a>
