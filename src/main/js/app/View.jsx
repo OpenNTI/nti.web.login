@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Router, useLocation } from '@reach/router';
+import { Redirect, Router, useLocation } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
 import {
@@ -62,23 +62,33 @@ const useHasCatalog = () => {
 function Routes(props) {
 	const { isAnonymous } = useService();
 	const catalogAvailable = useHasCatalog();
+	const isLoggedIn = !isAnonymous;
 
 	const basePath = getConfig('basepath');
 	const PATHS = {
 		login: `${basePath}${LOGIN}`,
 		signup: `${basePath}${SIGNUP}`,
 	};
+
+	function MaybeRedirect({ to = PATHS.login, when = isLoggedIn, ...props }) {
+		return when ? <Redirect to={to} noThrow /> : <Page {...props} />;
+	}
+
 	return (
 		<Router basepath={basePath}>
-			<Page component={Recover} path="recover/*" scope="recover" />
-			<Page component={Signup} path={SIGNUP} scope="signup" />
-			<Page
+			<MaybeRedirect
+				component={Recover}
+				path="recover/*"
+				scope="recover"
+			/>
+			<MaybeRedirect component={Signup} path={SIGNUP} scope="signup" />
+			<MaybeRedirect
 				component={AcceptInvite}
 				path="account-setup/*"
 				scope="accountSetup"
 				isAccountSetup
 			/>
-			<Page
+			<MaybeRedirect
 				component={AcceptInvite}
 				path="accept-invite/*"
 				scope="acceptInvitation"
