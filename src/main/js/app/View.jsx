@@ -2,12 +2,8 @@ import React, { Suspense } from 'react';
 import { Redirect, Router, useLocation } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
-import {
-	Theme,
-	Page as CommonsPage,
-	useService,
-	Layouts,
-} from '@nti/web-commons';
+import { Theme, Page as CommonsPage, Layouts } from '@nti/web-commons';
+import { useService } from '@nti/web-core';
 import { Page, Theme as LoginTheme } from 'internal/common';
 
 import '@nti/style-common/all.scss';

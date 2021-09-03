@@ -50,6 +50,7 @@
     "@nti/web-catalog": "NextThought/nti.web.catalog",
     "@nti/web-client": "NextThought/nti.web.client",
     "@nti/web-commons": "NextThought/nti.web.commons",
+    "@nti/web-core": "NextThought/nti.web.core",
     "@reach/router": "^1.2.1",
     "internal": "./src/main/js"
   }
