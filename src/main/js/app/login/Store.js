@@ -92,27 +92,7 @@ export default class LoginStore extends Stores.SimpleStore {
 	}
 
 	async [Reload]() {
-		this.set({
-			[Busy]: true,
-			[Error]: null,
-		});
-
-		delete this.currentTask;
-
-		try {
-			const pong = await getPong(true);
-
-			this.set({
-				[Busy]: false,
-				[Handshake]: pong,
-				[Pong]: pong,
-			});
-		} catch (e) {
-			this.set({
-				[Busy]: false,
-				[Error]: e,
-			});
-		}
+		global.location.reload();
 	}
 
 	get [ReturnURL]() {
