@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { Theme } from '@nti/web-commons';
@@ -31,9 +31,7 @@ const Options = [
 	},
 	{
 		isAvailable: ({ hasOauth, hasCreation }) => !hasOauth && hasCreation,
-		getContent: () => [
-			<Routing.Redirect to="./signup" key="signup-redirect" />,
-		],
+		getContent: () => [<SignUp key="sign-up-redirect" />],
 	},
 	{
 		isAvailable: () => true,
@@ -78,3 +76,24 @@ function AcceptInviteOptions({ handshake, invitation, forcePassword }) {
 export default Store.monitor({
 	[Store.Handshake]: 'handshake',
 })(AcceptInviteOptions);
+
+function SignUp() {
+	const [count, setCount] = useState(10);
+
+	useEffect(() => {
+		const decrement = () => setCount(n => n - 1);
+		if (count <= 0) return;
+		const t = setTimeout(decrement, 1000); // count down one second at a time
+		return () => clearTimeout(t);
+	}, [count]);
+
+	return (
+		<Button as={Routing.Link} to="./signup">
+			{count > 0 ? (
+				<>Sign Up ({count})</>
+			) : (
+				<Routing.Redirect to="./signup" />
+			)}
+		</Button>
+	);
+}
