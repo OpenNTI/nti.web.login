@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
 
@@ -23,7 +22,7 @@ const overrides = {
 		theme: 'dark',
 		icon: {
 			src: Assets.Google,
-			srcset: `${Assets.Google}, ${Assets.Google2x} 2x, ${Assets.Google3x} 3x`,
+			srcSet: `${Assets.Google}, ${Assets.Google2x} 2x, ${Assets.Google3x} 3x`,
 			alt: 'Google Logo',
 		},
 	},
@@ -33,7 +32,7 @@ const overrides = {
 		theme: 'light',
 		icon: {
 			src: Assets.Facebook,
-			srcset: `${Assets.Facebook}, ${Assets.Facebook2x} 2x, ${Assets.Facebook3x} 3x`,
+			srcSet: `${Assets.Facebook}, ${Assets.Facebook2x} 2x, ${Assets.Facebook3x} 3x`,
 			alt: 'Facebook Logo',
 		},
 	},
@@ -43,7 +42,7 @@ const overrides = {
 		theme: 'light',
 		icon: {
 			src: Assets.LinkedIn,
-			srcset: `${Assets.LinkedIn}, ${Assets.LinkedIn2x} 2x, ${Assets.LinkedIn3x} 3x`,
+			srcSet: `${Assets.LinkedIn}, ${Assets.LinkedIn2x} 2x, ${Assets.LinkedIn3x} 3x`,
 			alt: 'LinkedIn Logo',
 		},
 	},
@@ -70,14 +69,20 @@ const Icon = styled.img`
 	width: auto;
 `;
 
-OauthButton.propTypes = {
-	link: PropTypes.shape({
-		rel: PropTypes.string.isRequired,
-		href: PropTypes.string.isRequired,
-		title: PropTypes.string.isRequired,
-	}).isRequired,
-	returnURL: PropTypes.string,
-};
+/**
+ * @typedef {object} Link
+ * @property {string} rel
+ * @property {string} href
+ * @property {string} title
+ */
+
+/**
+ *
+ * @param {object} props
+ * @param {Link} props.link
+ * @param {string} props.returnURL
+ * @returns {JSX.Element}
+ */
 export default function OauthButton({ link, returnURL }) {
 	const { rel, title, href } = link;
 
