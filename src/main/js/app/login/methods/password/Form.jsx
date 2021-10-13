@@ -1,4 +1,4 @@
-import React from 'react';
+import { useRef } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -36,7 +36,7 @@ function LoginPasswordMethod({
 }) {
 	const buttonText = Theme.useThemeProperty('buttonText');
 
-	const passwordRef = React.useRef();
+	const passwordRef = useRef();
 
 	const maybeFocusPassword = e => {
 		if (e.target.value && MoveFocusOn[e.key] && passwordRef.current) {

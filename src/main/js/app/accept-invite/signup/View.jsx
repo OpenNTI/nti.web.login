@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -39,7 +39,7 @@ function AcceptInviteSignup({
 	const theme = Theme.useTheme();
 	const inviteLoading = isPending(invitation);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!loading && !loaded) {
 			setup();
 		}

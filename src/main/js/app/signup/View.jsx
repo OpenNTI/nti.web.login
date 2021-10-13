@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -20,7 +20,7 @@ Signup.propTypes = {
 	canCreateAccount: PropTypes.bool,
 };
 function Signup({ setup, loading, loaded, canCreateAccount }) {
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!loading && !loaded) {
 			setup();
 		}

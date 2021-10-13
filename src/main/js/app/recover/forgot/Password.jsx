@@ -1,6 +1,6 @@
 import path from 'path';
 
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -39,8 +39,8 @@ export default function ForgotPassword({ location, allowed }) {
 		return <Page.Description description={t('disabled')} />;
 	}
 
-	const [sending, setSending] = React.useState(false);
-	const [sentTo, setSentTo] = React.useState(null);
+	const [sending, setSending] = useState(false);
+	const [sentTo, setSentTo] = useState(null);
 
 	const onSubmit = async ({ json }) => {
 		setSending(true);

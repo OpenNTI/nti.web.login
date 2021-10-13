@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { Loading } from '@nti/web-commons';
@@ -28,7 +28,7 @@ function Forgot({
 	canResetUsername,
 	param,
 }) {
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!loaded && !loading) {
 			setup();
 		}

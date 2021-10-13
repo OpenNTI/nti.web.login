@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Theme, Background } from '@nti/web-commons';
 
 const Container = styled(Background)`

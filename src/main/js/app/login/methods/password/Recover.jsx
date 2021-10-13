@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Text, Routing } from 'internal/common';
 
 const Block = styled(Text.Body)`

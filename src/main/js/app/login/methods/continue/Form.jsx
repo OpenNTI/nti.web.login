@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -25,7 +25,7 @@ LoginContinueMethod.propTypes = {
 	reload: PropTypes.func,
 };
 function LoginContinueMethod({ handshake, loginURL, setBusy, reload }) {
-	const [error, setError] = React.useState(null);
+	const [error, setError] = useState(null);
 
 	const logoutLink = handshake && handshake.getLink('logon.logout');
 	const logout = async () => {

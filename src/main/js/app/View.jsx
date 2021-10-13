@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useImperativeHandle } from 'react';
 import { Redirect, Router, useLocation } from '@reach/router';
 
 import { getConfig } from '@nti/web-client';
@@ -23,7 +23,7 @@ const LOGIN = '/';
 const SIGNUP = 'signup';
 
 export default React.forwardRef(function LoginApp(props, ref) {
-	React.useImperativeHandle(ref, () => ({}));
+	useImperativeHandle(ref, () => ({}));
 
 	return (
 		<Theme.Apply theme={LoginTheme.getTheme()}>
@@ -39,7 +39,7 @@ const AppRedirect = () => {
 	const basepath = getConfig('basepath');
 	const appPath = Layouts.Responsive.isMobile() ? '/mobile/' : '/app/';
 
-	React.useEffect(
+	useEffect(
 		() =>
 			void global.location.replace(
 				location.pathname.replace(basepath, appPath)

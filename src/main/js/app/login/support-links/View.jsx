@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 import { scoped } from '@nti/lib-locale';
 import { List, Theme } from '@nti/web-commons';
@@ -146,9 +146,9 @@ async function resolveLinks(update) {
 export default function SupportLinks() {
 	const noBranding = Theme.useThemeProperty('noBranding');
 
-	const [links, setLinks] = React.useState([]);
+	const [links, setLinks] = useState([]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const setup = async () => {
 			try {
 				const l = await resolveLinks(setLinks);

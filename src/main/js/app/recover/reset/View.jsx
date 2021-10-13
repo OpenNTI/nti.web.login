@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -18,7 +18,7 @@ ResetPassword.propTypes = {
 	loaded: PropTypes.bool,
 };
 function ResetPassword({ setup, loading, loaded }) {
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!loading && !loaded) {
 			setup();
 		}

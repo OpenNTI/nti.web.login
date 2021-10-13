@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -47,8 +47,8 @@ function ResetPasswordForm({
 		return <Text.Medium>{t('disabled')}</Text.Medium>;
 	}
 
-	const [busy, setBusy] = React.useState(false);
-	const [sent, setSent] = React.useState(false);
+	const [busy, setBusy] = useState(false);
+	const [sent, setSent] = useState(false);
 
 	const onSubmit = async ({ formData, json }) => {
 		setBusy(true);

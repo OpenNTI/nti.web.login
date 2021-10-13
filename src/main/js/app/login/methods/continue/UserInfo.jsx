@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
 import { getService } from '@nti/web-client';
 import { User, Loading, Text } from '@nti/web-commons';
@@ -43,10 +43,10 @@ const Spinner = styled(Loading.Spinner.Large)`
 `;
 
 export default function UserInfo() {
-	const [loading, setLoading] = React.useState(false);
-	const [user, setUser] = React.useState(null);
+	const [loading, setLoading] = useState(false);
+	const [user, setUser] = useState(null);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const getUser = async () => {
 			setLoading(true);
 

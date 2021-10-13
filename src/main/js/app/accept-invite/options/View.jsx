@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -12,8 +12,7 @@ const { useResolver } = Hooks;
 const { isPending, isErrored } = useResolver;
 
 const t = scoped('nti-login.accept-invite.login.View', {
-	error:
-		'Unable to find an invitation. Please check your email for a link to accept an invitation.',
+	error: 'Unable to find an invitation. Please check your email for a link to accept an invitation.',
 	inviteInstructions: {
 		canCreateAccount:
 			"You've been invited to %(brandName)s. Please login or create an account to continue.",
@@ -62,7 +61,7 @@ function AcceptInviteOptionsPage({
 }) {
 	const initialLoad = !hasPong && busy;
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!hasPong && !busy) {
 			setup();
 		}

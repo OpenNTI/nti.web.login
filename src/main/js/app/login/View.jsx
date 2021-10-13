@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
 import { scoped } from '@nti/lib-locale';
@@ -23,13 +23,11 @@ Login.propTypes = {
 	busy: PropTypes.bool,
 };
 function Login({ setup, hasPong, error, busy }) {
-	const [forceNextThoughtLogin, setForceNextThoughtLogin] = React.useState(
-		false
-	);
+	const [forceNextThoughtLogin, setForceNextThoughtLogin] = useState(false);
 
 	const initialLoad = !hasPong && busy;
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if (!hasPong && !busy) {
 			setup();
 		}
